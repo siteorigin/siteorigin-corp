@@ -1,0 +1,68 @@
+p {
+	margin: 0 0 27px;
+}
+
+dfn, 
+cite, 
+em, 
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left: 3px solid $color__accent;
+	font-style: italic;
+	font-size: 16px; 
+	margin: 0 0 27px; 
+	padding: 15px 0 15px 25px;
+	
+	p {
+		margin-bottom: 0;
+	}
+
+	cite {
+		color: $color__text-medium;
+		display: block;
+		font-weight: bold;
+		font-weight: 600;  
+		font-size: 16px; 
+		margin-top: 15px; 
+	}
+}
+
+address {
+	margin: 0 0 27px;
+}
+
+pre {
+	background: $color__background-pre;
+	font: 14px  $font__pre; 
+	line-height: $font__line-height-pre; 
+	margin-bottom: 27px;
+	max-width: 100%;
+	overflow: auto;
+	padding: 25px;
+}
+
+code, 
+kbd, 
+tt, 
+var {
+	font: 14px $font__code;
+}
+
+abbr, 
+acronym {
+	border-bottom: 1px dotted $color__text-medium;
+	cursor: help;
+}
+
+mark, 
+ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}

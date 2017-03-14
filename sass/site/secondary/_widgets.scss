@@ -1,0 +1,145 @@
+.widget {
+	margin: 0 0 45px;
+}
+
+.widget-area .widget, 
+.site-footer .widget {
+
+	.widget-title {
+		font-size: 16px;
+		margin-top: 0;
+		text-transform: uppercase;
+		
+		// Set the font size of elements below the widget title to 14px.
+		~ * {
+			font-size: 14px;
+		}		
+	}
+
+	a {
+		color: $color__text-medium;
+		
+		&:hover {
+			color: $color__accent;
+		} 
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		
+		li {
+			line-height: 2; 
+		} 
+	}	
+
+	input {
+		font-size: 14px; 
+	}			
+}
+
+/*--------------------------------------------------------------
+## Calendar Widgets
+--------------------------------------------------------------*/
+.widget #wp-calendar {
+	border: 0;
+	margin: 0;
+	
+	caption {
+		color: $color__text-dark;
+		font-weight: bold; 
+		font-weight: 600;
+		text-align: left;
+	}
+
+	tr:nth-child(2n+2) {
+		background: none;
+	}	
+
+	th, 
+	td {
+		border: 0;
+		padding: 0;
+	}
+
+	thead {
+		border-bottom: 2px solid $color__background-hr;
+
+		tr {
+			background: none;
+		}
+
+		th {
+			padding: 8px 0;
+			text-align: center;
+		}
+	}
+
+	tbody {
+		font-size: 13px; 
+
+		.pad {
+			background: none;
+		}
+
+		tr:first-of-type td {
+			padding-top: 8px;
+		}
+
+		td { 
+			padding-bottom: 8px;
+			text-align: center;
+		}		
+	}
+	
+	tfoot {
+		font-size: 13px; 
+
+		#prev, 
+		#next {
+			padding-top: 4px; 
+			
+			a {
+				color: $color__text-dark;
+
+				&:hover {
+					color: $color__accent;
+				}				
+			}
+		}
+
+		#next {
+			text-align: right;			
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Search Widget
+--------------------------------------------------------------*/
+.widget .search-form {
+	position: relative;
+
+	input[type="search"] {
+		padding-right: 40px;
+		width: 100%;
+	}
+
+	button[type="submit"] {
+		position: absolute;
+		right: 14px;
+		top: 11px;
+		
+		svg {
+			height: 16px;
+			width: 16px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Tag Cloud Widget
+--------------------------------------------------------------*/
+#page .widget_tag_cloud {
+	@extend .tags-links;
+}

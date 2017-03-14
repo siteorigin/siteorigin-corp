@@ -1,0 +1,32 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: $color__accent;
+	border: 0;
+	border-radius: 0;
+	color: #fff;
+	font-family: $font__main;
+	font-size: 14px;
+	line-height: normal;  
+	padding: 12px 25px;
+	text-transform: uppercase;
+	transition: .3s;
+
+	&:hover {
+		background: darken($color__accent, 1%);
+		color: #fff;
+	}
+
+	&:visited {
+		color: #fff; 
+	}
+
+	&:active,
+	&:focus {
+		background: $color__accent;
+		color: #fff;
+		outline: none;
+	}
+}

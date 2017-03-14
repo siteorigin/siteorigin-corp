@@ -1,0 +1,14 @@
+// Breadcrumb NavXT and Yoast Breadcrumbs.
+.breadcrumbs {
+	color: $color__text-light;
+	font-size: 12px;
+	margin-bottom: 15px;
+
+	a {
+		color: $color__text-light;
+		
+		&:hover {
+			color: $color__accent;
+		}
+	}
+}

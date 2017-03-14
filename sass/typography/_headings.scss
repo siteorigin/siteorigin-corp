@@ -1,0 +1,41 @@
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	clear: both;
+	color: $color__text-dark;
+	font-family: $font__headings;
+	font-weight: 400;
+	margin: 25px 0;
+	
+	a,
+	a:visited {
+		color: $color__text-dark;
+	}
+}
+
+h1 {
+	font-size: 29px;
+}
+
+h2 {
+	font-size: 26px;
+}
+
+h3 {
+	font-size: 23px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}

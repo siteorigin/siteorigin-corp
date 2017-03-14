@@ -1,0 +1,86 @@
+.site-footer {
+	background: $color__background-footer;	
+	margin-top: 80px;
+	
+	.widgets {
+		@include clearfix;
+		padding-top: 95px;
+		width: 100%; 
+
+		@for $i from 1 through 10 {
+			$margin: ($i - 1) * 2.75;
+			&.widgets-#{$i} .widget {
+				width: (100% - $margin) / $i;
+			}
+		}
+
+		.widget {
+			box-sizing: content-box;
+			margin: 0 2.75% 95px 0;
+			float: left;
+			
+			.widget-title {
+				color: #fff;
+			}
+
+			~ * {
+				color: #b4b5b8;
+			}
+
+			a {
+				color: #fff;
+				
+				&:hover {
+					color: #b4b5b8;
+				}
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			@media (max-width: 768px) {
+				float: none;
+				width: 100% !important;
+			}
+		}
+	}
+
+	.site-info {
+		float: left;
+		text-align: left;
+		width: 30%;
+		
+		@media (max-width: 768px) {
+			float: none;
+			text-align: center;
+			width: 100%;
+		} 		
+	}
+
+	.bottom-bar {
+		background: $color__background-bottom-bar;
+		color: #b4b5b8;
+		font-size: 13px; 
+		overflow: auto;
+		padding: 25px 0;
+
+		a {
+			color: #b4b5b8;
+			
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		div:only-of-type {
+			float: none;
+			text-align: center;
+			width: 1190px; // 1140px container.
+		}	
+
+		@at-root .responsive & div:only-of-type {
+			width: 100%; 
+		}	
+	}
+}

@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+// Globally hidden elements when Infinite Scroll is supported and in use.
+.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden).
+.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling).
+	display: none;
+}
+
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before.
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## Sharing
+--------------------------------------------------------------*/
+.site-content #primary .sharedaddy {
+	margin-bottom: 50px; 
+
+	h3 {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: $font__line-height-body; 
+		margin-bottom: 15px;
+		
+		&:before {
+			content: none;
+		}
+	}
+}

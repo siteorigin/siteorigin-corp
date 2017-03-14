@@ -1,0 +1,6 @@
+[submodule "build"]
+	path = build
+	url = git@github.com:siteorigin/theme-build.git
+[submodule "inc/settings"]
+	path = inc/settings
+	url = git@github.com:siteorigin/settings.git

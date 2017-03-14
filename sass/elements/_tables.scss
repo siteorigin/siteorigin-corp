@@ -1,0 +1,28 @@
+table {
+	border: 1px solid $color__background-hr-dark;
+	font-family: $font__main;
+	margin: 0 0 27px;
+	width: 100%;
+	
+	a {
+		text-decoration: none;
+	}
+	
+	thead {
+
+		th {
+			color: $color__text-dark; 
+			text-transform: uppercase;
+		}
+	}
+
+	th,
+	td {
+		border: 1px solid $color__background-hr;  
+		padding: 8px 16px;
+		
+		@media (max-width: 768px) {
+			padding: 2%;
+		}		
+	}
+}

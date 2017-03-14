@@ -1,0 +1,42 @@
+#scroll-to-top {
+	background: rgba(0, 0, 0, .65);
+	border-radius: 2px;
+	bottom: 20px;
+	cursor: pointer;
+	height: 45px;
+	line-height: 0;
+	opacity: 0;
+	padding-top: 15px;
+	position: fixed;
+	right: 20px;
+  	transform: scale(0, 0);
+  	transition: .2s;
+	text-align: center;
+	width: 45px; 
+	z-index: 101;
+	
+	svg path {
+		fill: #fff;
+	}
+
+	img, 
+	svg {
+		display: inline-block;
+		height: 15px;
+		opacity: .6;
+		transition: .3s;
+		width: 15px;	
+	}
+
+	&:hover {
+		
+		svg {
+			opacity: .9;
+		}
+	}
+
+	&.show {
+		opacity: 1;
+    	transform: scale(1, 1);
+	}
+}

@@ -1,0 +1,29 @@
+.gallery {
+	margin-bottom: 27px;
+}
+
+.gallery-item {
+	display: inline-block;
+	margin-bottom: 15px;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	
+	@for $i from 2 through 9 {
+		$margin: ($i - 1) * 2.5;
+		.gallery-columns-#{$i} & {
+			max-width: (100% / $i);
+		}
+	}
+
+	.gallery-icon a {
+		display: block;
+		line-height: 0;
+		margin-bottom: 8px; 
+	}
+}
+
+.gallery-caption {
+	display: block;
+	font-size: 13px; 
+}

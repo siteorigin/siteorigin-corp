@@ -1,0 +1,174 @@
+.site-header {
+	background: #fff;
+	border-bottom: 1px solid $color__background-hr;
+	margin-bottom: 60px; 
+	padding: 25px 0;
+	position: relative;
+	width: 100%;
+	z-index: 999;
+	
+	.page-layout-no-header-margin & {
+		margin-bottom: 0;
+	}
+	
+	@media (max-width: 600px) {
+
+		@at-root .admin-bar .site-header.sticky.stuck {
+			top: 0;
+		}						
+	}			 
+
+	// A class added after scroll.
+	&.stuck {
+    	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);	
+    }
+
+	.site-header-inner {
+		display: table;
+		vertical-align: middle;
+		width: 100%; 
+	}
+	
+	.site-branding {
+		display: table-cell;
+		vertical-align: middle;
+
+		.site-title {
+			font-family: $font__headings;
+			font-size: 29px;
+			line-height: normal;
+			margin: 0;
+			
+			a {
+				color: $color__text-dark;
+			}
+		}
+
+		.site-description {
+			color: $color__text-dark; 
+			font-size: 14px; 
+			line-height: normal;
+			margin: 0; 
+		}
+
+		> * {
+			transform-origin: left center;
+
+			@at-root .centered#{&} {
+				transform-origin: center center;
+			}
+		}		
+	}
+
+	#header-search {
+		background: #fff;
+		display: none;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 99999;
+		
+		.polestar-container {
+			height: 100%; 
+		}		
+
+		form {
+			height: 48px;
+			left: 20px;
+			position: absolute;
+			right: 59px;
+			top: 50%;
+		}
+
+		input[type="search"] {
+			background: rgba(0, 0, 0, .035);
+			border: 0;
+			box-sizing: border-box;
+			font-size: 16px; 
+			height: 48px; 
+			padding: 0 15px;
+			right: 15px;
+			width: 100%;
+			
+			&:-webkit-autofill {
+		    	-webkit-box-shadow: 0 0 0 50px #f6f6f6 inset !important;
+			}			
+		}
+
+		button[type="submit"] {
+			display: none;
+		}
+
+		#close-search {
+			cursor: pointer;
+			margin-top: -12px;
+			position: absolute;
+			right: 20px;
+			top: 50%;
+  			transform: scale(0, 0);
+  			transition: .35s;
+
+			svg {
+				height: 24px;
+				width: 24px;
+
+				path {
+					fill: $color__text-dark;
+				}
+
+				&:hover {
+
+					path {
+						fill: $color__text-medium;
+					}
+				}					
+			}
+
+			&.animate-in {
+				transform: scale(1, 1);
+			}		
+		}
+	}
+
+	&.centered {
+
+		.container-inner {
+			display: block;
+		}
+
+		.site-branding {
+			margin: 0 auto 20px auto;
+			padding: 0;
+			text-align: center;
+
+			img {
+				display: inline-block;
+				max-width: 100%;
+			}
+		}
+
+		.main-navigation {
+			text-align: center;
+		}
+
+		.site-branding, 
+		.main-navigation {
+			display: block;
+		}
+	}
+
+	body.responsive & {
+		min-width: 0;
+	}		
+}
+
+// Sticky header sentinel.
+.masthead-sentinel {
+	margin-bottom: 60px;
+	
+	.no-header-margin & {
+		margin-bottom: 0;
+	}
+}

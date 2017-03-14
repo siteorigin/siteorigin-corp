@@ -1,0 +1,25 @@
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 27px;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 27px;
+}
+
+@media (max-width: 480px) {
+	.alignleft, 
+	.alignright {
+		clear: both;
+		@include center-block;
+		float: none;
+	}
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+}
