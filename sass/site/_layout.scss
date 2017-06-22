@@ -27,7 +27,11 @@
 // Content area with sidebar.
 .sidebar .content-area {
 	float: left;
-	width: 68%;	 	
+	width: 70%;	
+	
+	@at-root .sidebar-left#{&} {
+		float: right;
+	}		 	
 	
 	@media (max-width: 768px) {
 		border: 0;
@@ -36,21 +40,41 @@
 	}
 }
 
-// No sidebar page setting.
-.page-layout-no-sidebar.sidebar .content-area {
+// No Sidebar page layout setting.
+.page-layout-no-sidebar .content-area {
 	float: none;
 	width: 100%; 
 }
 
+// Full Width page layout setting.
+.page-layout-full-width-no-sidebar {
+
+	.content-area {
+		float: none;
+		width: 100%; 
+	}
+
+	.site-content .polestar-container {
+		max-width: none;
+		padding: 0;  
+	}
+} 
+
 // Sidebar.
 .widget-area {
-	float: right;	
+	float: right;
 	padding-left: 4%;
-	width: 32%;	
+	width: 30%;
+	
+	@at-root .sidebar-left & {
+		float: left;
+		padding-right: 4%; 
+		padding-left: 0; 
+	}	
 	
 	@media (max-width: 768px) {
     	border-top: 1px solid $color__background-hr-dark;
-    	margin-top: 60px;
+    	margin-top: 50px;
 		padding: 50px 0 0;		
 		width: 100%;
 	}

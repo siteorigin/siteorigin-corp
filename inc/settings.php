@@ -33,6 +33,7 @@ function siteorigin_corp_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
 
+		// Branding.
 		'branding' => array(
 			'title' => esc_html__( 'Branding', 'siteorigin-corp' ),
 			'fields' => array(
@@ -72,6 +73,23 @@ function siteorigin_corp_settings_init() {
 			)
 		),
 
+		// Blog.
+		'blog'                    => array(
+			'title'                  => esc_html__( 'Blog', 'siteorigin-corp' ),
+			'fields'                 => array(
+				'post_content'          => array(
+					'type'                 => 'select',
+					'label'                => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
+					'description'          => esc_html__( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-corp' ),
+					'options'              => array(
+						'content'             => esc_html__( 'Full Post Content', 'siteorigin-corp' ),
+						'excerpt'             => esc_html__( 'Post Excerpt', 'siteorigin-corp' ),
+					)
+				),
+			)
+		),		
+
+		// Footer.
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-corp' ),
 			'fields' => array(
@@ -123,14 +141,17 @@ add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
  */
 function siteorigin_corp_settings_defaults( $defaults ) {
 
-	// Branding defaults.
+	// Branding.
 	$defaults['branding_logo']             = false;
 	$defaults['branding_site_description'] = false;
 	$defaults['branding_attribution']      = true;
 	$defaults['branding_accent']           = '#24c48a';
 	$defaults['branding_accent_dark']      = '#00a76a';
 
-	// Footer settings.
+	// Blog settings
+	$defaults['blog_post_content']          = 'content';
+	
+	// Footer.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
 	$defaults['footer_constrained']  = true;
 	$defaults['footer_top_padding']  = '80px';

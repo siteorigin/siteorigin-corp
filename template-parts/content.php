@@ -11,6 +11,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="entry-thumbnail">
+		<a href="<?php the_permalink(); ?>">			
+			<?php the_post_thumbnail(); ?>			
+		</a>
+	</div>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -21,7 +26,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php siteorigin_corp_posted_on(); ?>
+			<?php siteorigin_corp_post_meta(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -29,20 +34,22 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'siteorigin-corp' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
+			if ( is_single() ) :
+				the_content();
+			elseif ( siteorigin_setting( 'blog_archive_post_content' ) == 'excerpt' ) : 
+				the_excerpt();
+			else : 
+				the_content();
+			endif;
+			
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-corp' ),
+				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'polestar' ) . '</span>',
 				'after'  => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php siteorigin_corp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php siteorigin_corp_entry_footer(); ?>
 </article><!-- #post-## -->

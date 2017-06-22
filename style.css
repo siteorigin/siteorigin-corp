@@ -813,7 +813,7 @@ a {
       color: #f14e4e; }
     .post-navigation a .sub-title {
       border-bottom: 2px solid #d6d6d6;
-      color: #828282;
+      color: #929292;
       display: inline-block;
       font-size: 14px;
       font-weight: normal;
@@ -872,11 +872,11 @@ a {
 ## Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-  color: #828282;
+  color: #929292;
   font-size: 12px;
   margin-bottom: 15px; }
   .breadcrumbs a {
-    color: #828282; }
+    color: #929292; }
     .breadcrumbs a:hover {
       color: #f14e4e; }
 
@@ -1155,25 +1155,39 @@ a {
 
 .sidebar .content-area {
   float: left;
-  width: 68%; }
+  width: 70%; }
+  .sidebar-left.sidebar .content-area {
+    float: right; }
   @media (max-width: 768px) {
     .sidebar .content-area {
       border: 0;
       padding-right: 0;
       width: 100%; } }
 
-.page-layout-no-sidebar.sidebar .content-area {
+.page-layout-no-sidebar .content-area {
   float: none;
   width: 100%; }
+
+.page-layout-full-width-no-sidebar .content-area {
+  float: none;
+  width: 100%; }
+
+.page-layout-full-width-no-sidebar .site-content .polestar-container {
+  max-width: none;
+  padding: 0; }
 
 .widget-area {
   float: right;
   padding-left: 4%;
-  width: 32%; }
+  width: 30%; }
+  .sidebar-left .widget-area {
+    float: left;
+    padding-right: 4%;
+    padding-left: 0; }
   @media (max-width: 768px) {
     .widget-area {
       border-top: 1px solid #d6d6d6;
-      margin-top: 60px;
+      margin-top: 50px;
       padding: 50px 0 0;
       width: 100%; } }
 
@@ -1313,7 +1327,7 @@ a {
 --------------------------------------------------------------*/
 .entry-title {
   color: #2d2d2d;
-  font-size: 32px;
+  font-size: 1.6em;
   line-height: normal;
   margin: 0; }
   @media (max-width: 768px) {
@@ -1329,29 +1343,26 @@ a {
       color: #626262; }
 
 .entry-meta {
+  font-size: .8666em;
   font-family: "Open Sans", sans-serif;
   line-height: normal; }
   .entry-meta span {
-    color: #828282;
-    font-size: 14px; }
+    color: #929292;
+    display: inline-block; }
     .entry-meta span:not(:last-child):after {
-      content: '\2022';
-      font-size: 18px;
+      content: '\007c';
+      font-size: 12px;
       padding: 0 5px;
-      vertical-align: middle; }
+      vertical-align: top; }
     .entry-meta span a {
       color: inherit;
       text-decoration: none; }
       .entry-meta span a:hover {
         color: #f14e4e; }
-  .entry-meta svg {
-    height: 12px;
-    margin-right: 3px;
-    position: relative;
-    top: 2px;
-    width: auto; }
-    .entry-meta svg path {
-      fill: #828282; }
+  .entry-meta .post-categories {
+    display: inline-block;
+    list-style: none;
+    margin: 0; }
   .entry-meta .byline,
   .entry-meta .updated:not(.published) {
     display: none; }
@@ -1360,48 +1371,13 @@ a {
 .group-blog .byline {
   display: inline; }
 
-.entry-thumbnail {
-  margin: 25px 0 0;
-  position: relative;
-  text-align: center; }
-  .single .entry-thumbnail {
-    height: 420px;
-    margin: 0 0 60px;
-    overflow: hidden;
-    position: relative; }
-    .single .entry-thumbnail img {
-      height: auto;
-      margin: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%; }
-  .entry-thumbnail .icon-add {
-    background: rgba(0, 0, 0, 0.4);
-    display: inline-block;
-    border-radius: 50%;
-    height: 60px;
-    left: 50%;
-    margin: -30px 0 0 -30px;
-    padding: 16px 0 0 0;
-    position: absolute;
-    top: 50%;
-    transition: all 0.15s;
-    transform: scale(0, 0);
-    width: 60px;
-    z-index: 5; }
-    .entry-thumbnail:hover .icon-add {
-      transform: scale(1, 1); }
-    .entry-thumbnail .icon-add svg {
-      height: 30px;
-      margin-right: -15px;
-      position: absolute;
-      right: 50%;
-      width: 30px; }
-      .entry-thumbnail .icon-add svg path {
-        fill: #fff;
-        opacity: .7; }
+.entry-thumbnail,
+.entry-video {
+  margin-bottom: 25px; }
+  .entry-thumbnail a,
+  .entry-video a {
+    display: block;
+    line-height: 0; }
 
 .more-wrapper {
   display: block;
@@ -1498,7 +1474,7 @@ a {
     height: 16px;
     width: 16px; }
     .search-form button[type="submit"] svg path {
-      fill: #828282; }
+      fill: #929292; }
 
 /*--------------------------------------------------------------
 ## Related Posts
@@ -1565,7 +1541,7 @@ a {
           color: #626262; }
       .yarpp-related ol li .related-post-date,
       .related-posts-section ol li .related-post-date {
-        color: #828282;
+        color: #929292;
         font-size: 13px;
         margin: 0; }
 
@@ -1667,7 +1643,7 @@ a {
         margin-right: 5px; }
     .comment-list .comment .date,
     .comment-list .pingback .date {
-      color: #828282;
+      color: #929292;
       font-size: 13px; }
     .comment-list .comment .comment-content,
     .comment-list .pingback .comment-content {
@@ -1709,7 +1685,7 @@ a {
 .comment-reply-title {
   margin-bottom: 15px; }
   .comment-reply-title #cancel-comment-reply-link {
-    color: #828282;
+    color: #929292;
     font-family: "Open Sans", sans-serif;
     font-size: 13px;
     margin-left: .25em; }

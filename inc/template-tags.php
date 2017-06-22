@@ -272,35 +272,28 @@ function siteorigin_corp_tag_cloud( $args ) {
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_corp_tag_cloud' );
 
-if ( ! function_exists( 'siteorigin_corp_posted_on' ) ) :
+if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
  */
-function siteorigin_corp_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+function siteorigin_corp_post_meta() {
+	if ( ( is_home() || is_archive() || is_search() ) && get_theme_mod( 'post_date', true ) ) {
+		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
+	if ( is_single() ) {
+		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'polestar_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
+	}
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'siteorigin-corp' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'siteorigin-corp' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
+	if ( has_category() ) {
+		echo '<span>' . get_the_category_list() . '</span>';
+	}
+	
+	if ( comments_open() ) { 
+		echo '<span class="comments-link">';
+  		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
+  		echo '</span>';
+	}
 }
 endif;
 
