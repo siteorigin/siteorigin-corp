@@ -22,14 +22,9 @@
 	margin-bottom: 40px; 
 	padding: 30px 0;
 
-	h3 {	
-		color: $color__text-medium;
+	h3 {
+		@extend .sub-heading;
 		display: inline-block;
-		font-size: 14px;
-		font-weight: 600;
-		line-height: $font__line-height-body;
-		margin: 0; 
-		text-transform: uppercase;
 		
 		&:before {
 			content: none;

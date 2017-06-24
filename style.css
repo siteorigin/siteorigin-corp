@@ -254,6 +254,16 @@ h5 {
 h6 {
   font-size: 16px; }
 
+.sub-heading, .site-content #primary .sharedaddy h3, .yarpp-related .related-posts,
+.related-posts-section .related-posts {
+  color: #626262;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: normal;
+  margin: 0;
+  text-transform: uppercase; }
+
 p {
   margin: 0 0 27px; }
 
@@ -1039,13 +1049,7 @@ a {
   margin-bottom: 40px;
   padding: 30px 0; }
   .site-content #primary .sharedaddy h3 {
-    color: #626262;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.6875;
-    margin: 0;
-    text-transform: uppercase; }
+    display: inline-block; }
     .site-content #primary .sharedaddy h3:before {
       content: none; }
   .site-content #primary .sharedaddy .sd-content {
@@ -1515,75 +1519,6 @@ a {
       fill: #929292; }
 
 /*--------------------------------------------------------------
-## Related Posts
---------------------------------------------------------------*/
-.yarpp-related,
-.related-posts-section {
-  padding-bottom: 50px; }
-  .yarpp-related .related-posts,
-  .related-posts-section .related-posts {
-    font-size: 16px; }
-  .yarpp-related ol,
-  .related-posts-section ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%; }
-    .yarpp-related ol::after,
-    .related-posts-section ol::after {
-      clear: both;
-      content: "";
-      display: table; }
-    .yarpp-related ol li,
-    .related-posts-section ol li {
-      display: block;
-      float: left;
-      margin: 0;
-      width: 31%; }
-      @media (max-width: 480px) {
-        .yarpp-related ol li,
-        .related-posts-section ol li {
-          margin-bottom: 15px;
-          width: 100%; } }
-      .yarpp-related ol li:first-child,
-      .related-posts-section ol li:first-child {
-        margin-right: 3.5%; }
-        @media (max-width: 480px) {
-          .yarpp-related ol li:first-child,
-          .related-posts-section ol li:first-child {
-            margin-right: 0; } }
-      .yarpp-related ol li:last-child,
-      .related-posts-section ol li:last-child {
-        margin-left: 3.5%; }
-        @media (max-width: 480px) {
-          .yarpp-related ol li:last-child,
-          .related-posts-section ol li:last-child {
-            margin-left: 0; } }
-      .yarpp-related ol li:only-child,
-      .related-posts-section ol li:only-child {
-        margin: 0; }
-      .yarpp-related ol li a,
-      .related-posts-section ol li a {
-        text-decoration: none; }
-      .yarpp-related ol li img,
-      .related-posts-section ol li img {
-        margin-bottom: 10px;
-        vertical-align: middle; }
-      .yarpp-related ol li .related-post-title,
-      .related-posts-section ol li .related-post-title {
-        font-size: 16px;
-        line-height: normal;
-        margin: 0; }
-        .yarpp-related ol li .related-post-title:hover,
-        .related-posts-section ol li .related-post-title:hover {
-          color: #626262; }
-      .yarpp-related ol li .related-post-date,
-      .related-posts-section ol li .related-post-date {
-        color: #929292;
-        font-size: 13px;
-        margin: 0; }
-
-/*--------------------------------------------------------------
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
@@ -1627,6 +1562,86 @@ a {
           color: #f14e4e; }
     .author-box .author-description div {
       font-size: 14px; }
+
+/*--------------------------------------------------------------
+## - Related Posts
+--------------------------------------------------------------*/
+.yarpp-related,
+.related-posts-section {
+  padding-bottom: 25px; }
+  .yarpp-related .related-posts,
+  .related-posts-section .related-posts {
+    margin-bottom: 20px; }
+  .yarpp-related ol,
+  .related-posts-section ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    .yarpp-related ol::after,
+    .related-posts-section ol::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .yarpp-related ol li,
+    .related-posts-section ol li {
+      display: block;
+      float: left;
+      margin: 0 0 25px 0;
+      width: 31%; }
+      @media (max-width: 480px) {
+        .yarpp-related ol li,
+        .related-posts-section ol li {
+          width: 100%; } }
+      .yarpp-related ol li:nth-child(3n+1),
+      .related-posts-section ol li:nth-child(3n+1) {
+        margin-right: 3.5%; }
+        @media (max-width: 480px) {
+          .yarpp-related ol li:nth-child(3n+1),
+          .related-posts-section ol li:nth-child(3n+1) {
+            margin-right: 0; } }
+      .yarpp-related ol li:nth-child(3n+3),
+      .related-posts-section ol li:nth-child(3n+3) {
+        margin-left: 3.5%; }
+        @media (max-width: 480px) {
+          .yarpp-related ol li:nth-child(3n+3),
+          .related-posts-section ol li:nth-child(3n+3) {
+            margin-left: 0; } }
+      .yarpp-related ol li:only-child,
+      .related-posts-section ol li:only-child {
+        margin: 0; }
+      .yarpp-related ol li div,
+      .related-posts-section ol li div {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        padding: 25px 30px; }
+      .yarpp-related ol li a,
+      .related-posts-section ol li a {
+        display: block;
+        line-height: 0;
+        text-decoration: none; }
+      .yarpp-related ol li img,
+      .related-posts-section ol li img {
+        margin-bottom: -1px; }
+      .yarpp-related ol li .related-post-title,
+      .related-posts-section ol li .related-post-title {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0 0 3px; }
+        .yarpp-related ol li .related-post-title:hover,
+        .related-posts-section ol li .related-post-title:hover {
+          color: #f14e4e; }
+      .yarpp-related ol li .related-post-date,
+      .related-posts-section ol li .related-post-date {
+        color: #929292;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0; }
+        .yarpp-related ol li .related-post-date:hover,
+        .related-posts-section ol li .related-post-date:hover {
+          color: #f14e4e; }
 
 /*--------------------------------------------------------------
 ## Comments

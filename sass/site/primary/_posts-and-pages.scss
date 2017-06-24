@@ -257,83 +257,6 @@
 }
 
 /*--------------------------------------------------------------
-## Related Posts
---------------------------------------------------------------*/
-.yarpp-related,
-.related-posts-section {
-	padding-bottom: 50px;
-
-	.related-posts {
-		font-size: 16px;
-	}
-
-	ol {
-		@include clearfix;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		width: 100%; 
-
-		li {
-			display: block;
-			float: left;
-			margin: 0;
-			width: 31%;			
-
-			@media (max-width: 480px) {
-				margin-bottom: 15px; 
-				width: 100%;
-			}
-
-			&:first-child {
-				margin-right: 3.5%;
-				
-				@media (max-width: 480px) {
-					margin-right: 0; 
-				}
-			}
-
-			&:last-child {
-				margin-left: 3.5%;
-				
-				@media (max-width: 480px) {
-					margin-left: 0; 
-				}				
-			}
-
-			&:only-child {
-				margin: 0;
-			}			
-
-			a {
-				text-decoration: none;
-			}
-
-			img {
-				margin-bottom: 10px; 
-				vertical-align: middle;
-			}
-
-			.related-post-title {
-				font-size: 16px; 
-				line-height: normal;
-				margin: 0;
-
-				@at-root &:hover {
-					color: $color__text-medium;
-				}
-			}
-
-			.related-post-date {
-				color: $color__text-light;
-				font-size: 13px; 
-				margin: 0;
-			}
-		}
-	}
-}
-
-/*--------------------------------------------------------------
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
@@ -395,5 +318,96 @@
 		div {
 			font-size: 14px; 
 		}	
+	}
+}
+
+/*--------------------------------------------------------------
+## - Related Posts
+--------------------------------------------------------------*/
+.yarpp-related,
+.related-posts-section {
+	padding-bottom: 25px;
+
+	.related-posts {
+		@extend .sub-heading;
+		margin-bottom: 20px; 
+	}
+
+	ol {
+		@include clearfix;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%; 
+
+		li {
+			display: block;
+			float: left;
+			margin: 0 0 25px 0;
+			width: 31%;			
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
+
+			&:nth-child(3n+1) {
+				margin-right: 3.5%;
+				
+				@media (max-width: 480px) {
+					margin-right: 0; 
+				}
+			}
+
+			&:nth-child(3n+3) {
+				margin-left: 3.5%;
+				
+				@media (max-width: 480px) {
+					margin-left: 0; 
+				}				
+			}
+
+			&:only-child {
+				margin: 0;
+			}	
+
+			div {
+				background: #fff;
+				border: 1px solid $color__background-hr; 
+				padding: 25px 30px;
+			}		
+
+			a {
+				display: block;
+				line-height: 0; 
+				text-decoration: none;
+			}
+
+			img {
+				margin-bottom: -1px; 
+			}
+
+			.related-post-title {
+				font-size: 16px; 
+				font-weight: normal; 
+				line-height: normal;
+				margin: 0 0 3px;
+
+				@at-root &:hover {
+					color: $color__accent;
+				}
+			}
+
+			.related-post-date {
+				color: $color__text-light;
+				font-size: 13px;
+				font-weight: normal;
+				line-height: normal; 
+				margin: 0;
+				
+				&:hover {
+					color: $color__accent;
+				}
+			}
+		}
 	}
 }
