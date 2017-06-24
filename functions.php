@@ -148,7 +148,7 @@ add_action( 'widgets_init', 'siteorigin_corp_widgets_init' );
  */
 function siteorigin_corp_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin-unwind-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'siteorigin-unwind-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
