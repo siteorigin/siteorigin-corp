@@ -47,6 +47,10 @@ function siteorigin_corp_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// Custom image sizes.
+	add_image_size( 'siteorigin-corp-247x164-crop', 247, 163, true );
+	add_image_size( 'siteorigin-corp-354x234-crop', 354, 234, true );		
+
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Header Menu', 'polestar' ),
