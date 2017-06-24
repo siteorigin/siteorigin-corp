@@ -8,8 +8,9 @@
  * @license GPL 2.0 
  */
 
-define('SITEORIGIN_THEME_VERSION', 'dev');
-define('SITEORIGIN_THEME_JS_PREFIX', '');
+define( 'SITEORIGIN_THEME_VERSION', 'dev' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
+define( 'SITEORIGIN_THEME_CSS_PREFIX', '' );
 
 if ( ! function_exists( 'siteorigin_corp_setup' ) ) :
 /**
