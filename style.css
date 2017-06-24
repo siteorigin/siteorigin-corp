@@ -1422,7 +1422,7 @@ a {
   font-size: 12px;
   height: 28px;
   line-height: 28px;
-  padding: 0 10px 0 23px;
+  padding: 0 10px 0 20px;
   position: relative;
   margin: 0 10px 10px 0;
   transition: .2s; }
@@ -1559,42 +1559,37 @@ a {
         margin: 0; }
 
 /*--------------------------------------------------------------
-## Author Box
+## - Author Box
 --------------------------------------------------------------*/
 .author-box {
   display: table;
-  border: 2px solid #e6e6e6;
   border-right: 0;
   border-left: 0;
   margin: 0;
-  padding: 25px 0;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   width: 100%; }
   .author-box .author-avatar {
     display: table-cell;
     vertical-align: top;
-    width: 105px; }
+    width: 130px; }
     @media (max-width: 480px) {
       .author-box .author-avatar {
         display: block;
         width: 100%; } }
     .author-box .author-avatar img {
-      border-radius: 40px;
+      border-radius: 50px;
       display: block;
-      height: 80px;
-      width: 80px; }
+      height: 100px;
+      width: 100px; }
       @media (max-width: 480px) {
         .author-box .author-avatar img {
           margin: 0 auto 15px; } }
   .author-box .author-description {
     display: table-cell;
     vertical-align: top; }
-    @media (max-width: 768px) {
-      .author-box .author-description {
-        display: block;
-        text-align: center; } }
     .author-box .author-description h3 {
-      font-size: 18px;
+      font-size: 15px;
+      font-weight: bold;
       line-height: normal;
       margin: 0; }
     .author-box .author-description span {
