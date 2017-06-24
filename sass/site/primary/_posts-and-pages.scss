@@ -161,19 +161,36 @@
 }
 
 .tags-links a {
-	background: $color__background-hr-dark;
-	border-radius: 2px;
-	color: $color__text-medium;
+	background: #e4e6eb;
+	color: $color__text-medium; // Andrew: Color variable.
 	display: inline-block;
 	font-size: 12px; 
-	line-height: normal;
-	margin: 0 6px 8px 0;
-	padding: 6px 10px;
-	transition: .3s;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 10px 0 23px;
+	position: relative;
+	margin: 0 10px 10px 0;
+	transition: .2s;
+
+	&:after {
+	  background: $color__background-body; // Andrew: Color variable.
+	  border-bottom: 14px solid transparent;
+	  border-right: 13px solid #e4e6eb;
+	  border-top: 14px solid transparent;
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  transition: .2s;
+	  top: 0;
+	}
 
 	&:hover {
-		background: $color__accent;
-		color: #fff;
+	  background: $color__accent;
+	  color: #fff;
+	}
+
+	&:hover:after {
+		border-right-color: $color__accent;
 	}
 }
 

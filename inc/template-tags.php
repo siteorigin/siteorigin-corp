@@ -282,7 +282,7 @@ function siteorigin_corp_post_meta() {
 	}
 
 	if ( is_single() ) {
-		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'polestar_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
+		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corpdate_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
 	if ( has_category() ) {
@@ -297,32 +297,15 @@ function siteorigin_corp_post_meta() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
+if ( ! function_exists( 'siteorigin_corpentry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Print HTML with meta information for the post tags.
  */
 function siteorigin_corp_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
-		if ( $categories_list && siteorigin_corp_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'siteorigin-corp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'siteorigin-corp' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'siteorigin-corp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'siteorigin-corp' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
-	}
+	if ( is_single() && has_tag() ) {
+		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list( '', esc_html__( '', 'siteorigin-corp' ) ) . '</span></footer>';
+	}	
 }
 endif;
 
