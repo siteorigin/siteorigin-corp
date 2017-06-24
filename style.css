@@ -446,12 +446,13 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   border: 1px solid #d6d6d6;
-  border-radius: 0;
+  border-radius: 2px;
   box-sizing: border-box;
+  font-weight: normal;
   line-height: normal;
   outline: none;
   padding: 9px 13px 10px;
-  transition: 0.3s;
+  transition: .3s;
   max-width: 100%;
   -webkit-appearance: none; }
   input[type="text"]:focus,
@@ -472,12 +473,26 @@ textarea {
   textarea:focus {
     border-color: #c4c4c4; }
 
+input[type="checkbox"] {
+  margin-right: 2px; }
+
 select {
   border: 1px solid #d6d6d6;
   max-width: 100%; }
 
 textarea {
   width: 100%; }
+
+label {
+  color: #2d2d2d;
+  font-size: .9em;
+  font-weight: 600; }
+
+fieldset legend {
+  color: #2d2d2d;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  padding: 10px 0; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -1018,14 +1033,24 @@ a {
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
-  margin-bottom: 50px; }
+  border: 2px solid #e6e6e6;
+  border-right: 0;
+  border-left: 0;
+  margin-bottom: 40px;
+  padding: 30px 0; }
   .site-content #primary .sharedaddy h3 {
-    font-size: 16px;
-    font-weight: 400;
+    color: #626262;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
     line-height: 1.6875;
-    margin-bottom: 15px; }
+    margin: 0;
+    text-transform: uppercase; }
     .site-content #primary .sharedaddy h3:before {
       content: none; }
+  .site-content #primary .sharedaddy .sd-content {
+    display: inline-block;
+    float: right; }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -1617,8 +1642,6 @@ a {
     .comment-list .pingback .comment-box {
       border-bottom: 1px solid #e6e6e6;
       padding: 25px 0; }
-      .comment-list .comment:last-of-type .comment-box {
-        border: 0; }
     .comment-list .comment .comment-container,
     .comment-list .pingback .comment-container {
       margin-left: 80px; }
@@ -1636,7 +1659,8 @@ a {
     .comment-list .comment .author,
     .comment-list .pingback .author {
       color: #2d2d2d;
-      font-weight: 700; }
+      font-size: 14px;
+      font-weight: 600; }
       .comment-list .comment .author a,
       .comment-list .pingback .author a {
         color: #2d2d2d;
@@ -1665,7 +1689,6 @@ a {
     .comment-list .comment .comment-reply-link,
     .comment-list .pingback .comment-reply-link {
       color: #2d2d2d;
-      font-family: "Open Sans", sans-serif;
       font-size: 12px;
       font-weight: bold;
       font-weight: 600;
@@ -1674,10 +1697,10 @@ a {
       .comment-list .comment .comment-reply-link:hover,
       .comment-list .pingback .comment-reply-link:hover {
         color: #f14e4e; }
-    .comment-list .comment .children,
-    .comment-list .pingback .children {
-      margin-left: 80px;
-      padding: 0; }
+    @media (min-width: 481px) {
+      .comment-list .comment .children,
+      .comment-list .pingback .children {
+        margin-left: 5px; } }
   .comment-list .pingback {
     list-style: none; }
     .comment-list .pingback .comment-container {
@@ -1686,15 +1709,13 @@ a {
 
 .comments-title,
 .comment-reply-title {
-  font-size: 14px;
-  margin-bottom: 0;
-  text-transform: uppercase; }
+  font-size: 16px;
+  margin-bottom: 0; }
 
 .comment-reply-title {
   margin-bottom: 15px; }
   .comment-reply-title #cancel-comment-reply-link {
     color: #929292;
-    font-family: "Open Sans", sans-serif;
     font-size: 13px;
     margin-left: .25em; }
     .comment-reply-title #cancel-comment-reply-link:hover {
@@ -1705,10 +1726,7 @@ a {
   margin-bottom: 25px; }
 
 #commentform label {
-  color: #2d2d2d;
   display: block;
-  font-size: 13px;
-  font-weight: 600;
   line-height: normal;
   margin-bottom: 8px; }
 
@@ -1753,11 +1771,24 @@ a {
   margin: 0;
   clear: both; }
 
+#commentform .comment-subscription-form {
+  margin: 15px 0 8px; }
+  #commentform .comment-subscription-form ~ p {
+    margin-top: 0; }
+  #commentform .comment-subscription-form label {
+    color: #626262;
+    font-size: 13px;
+    font-weight: normal; }
+
 .no-comments {
   font-size: 14px;
   font-weight: bold;
   font-weight: 600;
   margin: 0; }
+
+.commentform-error {
+  font-size: 14px;
+  margin: 0 0 25px; }
 
 /*--------------------------------------------------------------
 ## Footer

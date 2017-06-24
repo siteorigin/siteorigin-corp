@@ -15,18 +15,23 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	border: 1px solid $color__background-hr-dark;
-	border-radius: 0;
+	border-radius: 2px;
 	box-sizing: border-box;
+	font-weight: normal; 
 	line-height: normal;
 	outline: none;
 	padding: 9px 13px 10px;
-	transition: 0.3s;
+	transition: .3s;
 	max-width: 100%;
 	-webkit-appearance: none;
 	
 	&:focus {
 		border-color: darken($color__background-hr-dark, 7%);
 	}
+}
+
+input[type="checkbox"] {
+	margin-right: 2px; 
 }
 
 select {
@@ -36,4 +41,17 @@ select {
 
 textarea {
 	width: 100%;
+}
+
+label {
+	color: $color__text-dark;
+	font-size: .9em;
+	font-weight: 600;  
+}
+
+fieldset legend {
+	color: $color__text-dark;
+	font-family: $font__headings; 
+	font-size: 18px;
+	padding: 10px 0;
 }
