@@ -219,14 +219,14 @@ function siteorigin_corp_read_more_link() {
 endif;
 add_filter( 'the_content_more_link', 'siteorigin-corp_read_more_link' );
 
-if ( ! function_exists( 'siteorigin-corp_related_posts' ) ) :
+if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 /**
- * Displays the author box in single posts
+ * Display related posts on single posts.
  */
 function siteorigin_corp_related_posts( $post_id ) {
-	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin.
+	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin (https://wordpress.org/plugins/yet-another-related-posts-plugin/).
 		related_posts();
-	} else { // The fallback loop
+	} else { // The fallback loop.
 		$categories = get_the_category( $post_id );
 		$first_cat = $categories[0]->cat_ID;
 		$args=array(
@@ -238,18 +238,23 @@ function siteorigin_corp_related_posts( $post_id ) {
 		$related_posts = new WP_Query( $args ); ?>
 
 		<div class="related-posts-section">
-			<h2 class="related-posts heading-strike"><?php esc_html_e( 'You may also like', 'siteorigin-corp' ); ?></h2>
+			<h3 class="related-posts"><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h3>
 			<?php if ( $related_posts ) : ?>
 				<ol>
 					<?php if ( $related_posts->have_posts() ) : ?>
 						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 							<li>
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php if ( has_post_thumbnail() ) :?>
-										<?php the_post_thumbnail(); ?>
-									<?php endif; ?>
-									<h3 class="related-post-title"><?php the_title(); ?></h3>
-									<p class="related-post-date"><?php the_time( 'M d, Y' ); ?></p>
+									<?php 
+									if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
+										the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
+									elseif ( has_post_thumbnail() )
+										the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
+									?>
+									<div>
+										<h3 class="related-post-title"><?php the_title(); ?></h3>
+										<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
+									</div>
 								</a>
 							</li>
 						<?php endwhile; ?>
