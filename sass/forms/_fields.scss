@@ -15,8 +15,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	border: 1px solid $color__background-hr-dark;
-	border-radius: 2px;
 	box-sizing: border-box;
+	font-size: .9333em;
 	font-weight: normal; 
 	line-height: normal;
 	outline: none;
@@ -45,8 +45,7 @@ textarea {
 
 label {
 	color: $color__text-dark;
-	font-size: .9em;
-	font-weight: 600;  
+	font-size: .8666em;
 }
 
 fieldset legend {

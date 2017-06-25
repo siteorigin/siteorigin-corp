@@ -8,14 +8,15 @@ input[type="submit"] {
 	border-radius: 0;
 	color: #fff;
 	font-family: $font__main;
-	font-size: 14px;
+	font-size: .8666em;
+	letter-spacing: 1px;
 	line-height: normal;  
-	padding: 12px 25px;
+	padding: 11px 25px;
 	text-transform: uppercase;
 	transition: .3s;
 
 	&:hover {
-		background: darken($color__accent, 1%);
+		background: darken($color__accent, 2%);
 		color: #fff;
 	}
 

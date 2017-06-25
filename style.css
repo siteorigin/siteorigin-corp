@@ -255,11 +255,12 @@ h6 {
   font-size: 16px; }
 
 .sub-heading, .site-content #primary .sharedaddy h3, .yarpp-related .related-posts,
-.related-posts-section .related-posts {
+.related-posts-section .related-posts, .comments-title,
+.comment-reply-title {
   color: #626262;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: .5px;
   line-height: normal;
   margin: 0;
   text-transform: uppercase; }
@@ -408,9 +409,10 @@ input[type="submit"] {
   border-radius: 0;
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: .8666em;
+  letter-spacing: 1px;
   line-height: normal;
-  padding: 12px 25px;
+  padding: 11px 25px;
   text-transform: uppercase;
   transition: .3s; }
   .button:hover, .pagination .page-numbers:hover, .page-links span:hover,
@@ -418,7 +420,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: #f14949;
+    background: #f04545;
     color: #fff; }
   .button:visited, .pagination .page-numbers:visited, .page-links span:visited,
   button:visited,
@@ -456,8 +458,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   border: 1px solid #d6d6d6;
-  border-radius: 2px;
   box-sizing: border-box;
+  font-size: .9333em;
   font-weight: normal;
   line-height: normal;
   outline: none;
@@ -495,8 +497,7 @@ textarea {
 
 label {
   color: #2d2d2d;
-  font-size: .9em;
-  font-weight: 600; }
+  font-size: .8666em; }
 
 fieldset legend {
   color: #2d2d2d;
@@ -765,7 +766,7 @@ a {
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-  margin: 0 0 50px;
+  margin: 0 0 40px;
   width: 100%; }
   .comment-navigation::after,
   .posts-navigation::after,
@@ -1442,7 +1443,7 @@ a {
     color: #626262; }
 
 .single .entry-footer {
-  margin: 25px 0; }
+  margin: 40px 0; }
 
 .tags-links a, #page .widget_tag_cloud a {
   background: #e4e6eb;
@@ -1526,7 +1527,7 @@ a {
   border-right: 0;
   border-left: 0;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   width: 100%; }
   .author-box .author-avatar {
     display: table-cell;
@@ -1568,7 +1569,7 @@ a {
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
-  padding-bottom: 25px; }
+  padding-bottom: 15px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
     margin-bottom: 20px; }
@@ -1722,11 +1723,6 @@ a {
       list-style: none;
       margin-left: 0; }
 
-.comments-title,
-.comment-reply-title {
-  font-size: 16px;
-  margin-bottom: 0; }
-
 .comment-reply-title {
   margin-bottom: 15px; }
   .comment-reply-title #cancel-comment-reply-link {
@@ -1743,7 +1739,7 @@ a {
 #commentform label {
   display: block;
   line-height: normal;
-  margin-bottom: 8px; }
+  margin-bottom: 6px; }
 
 #commentform textarea {
   width: 100%; }
@@ -1753,6 +1749,8 @@ a {
 #commentform .comment-form-url {
   box-sizing: border-box;
   float: left;
+  line-height: 0;
+  margin-bottom: 30px;
   width: 31%; }
   @media (max-width: 768px) {
     #commentform .comment-form-author,
@@ -1783,6 +1781,7 @@ a {
       color: #f14e4e; }
 
 #commentform .form-submit {
+  display: block;
   margin: 0;
   clear: both; }
 

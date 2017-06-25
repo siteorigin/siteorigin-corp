@@ -101,8 +101,7 @@
 
 .comments-title, 
 .comment-reply-title {
-	font-size: 16px;
-	margin-bottom: 0;
+	@extend .sub-heading;
 }
 
 .comment-reply-title {
@@ -129,7 +128,7 @@
 	label {
 		display: block;
 		line-height: normal;
-		margin-bottom: 8px; 
+		margin-bottom: 6px; 
 	}
 
 	textarea {
@@ -141,6 +140,8 @@
 	.comment-form-url {
 		box-sizing: border-box;
 		float: left;
+		line-height: 0;
+		margin-bottom: 30px; 
 		width: 31%;
 
 		@media (max-width: 768px) {
@@ -176,6 +177,7 @@
 	}
 
 	.form-submit {
+		display: block;
 		margin: 0;
 		clear: both;
 	}
