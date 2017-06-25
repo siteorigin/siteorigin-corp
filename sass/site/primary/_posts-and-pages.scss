@@ -30,7 +30,7 @@
 	color: $color__text-dark;
 	font-size: 1.6em; 
 	line-height: normal;
-	margin: 0;
+	margin: 0 0 3px;
 	
 	@media (max-width: 768px) {
 		font-size: 26px; 
@@ -157,7 +157,7 @@
 }
 
 .single .entry-footer {
-	margin: 40px 0;
+	margin: 15px 0;
 }
 
 .tags-links a {
