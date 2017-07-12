@@ -288,7 +288,7 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
  * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
  */
 function siteorigin_corp_post_meta() {
-	if ( ( is_home() || is_archive() || is_search() ) && get_theme_mod( 'post_date', true ) ) {
+	if ( ( is_home() || is_archive() || is_search() ) ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
@@ -297,7 +297,7 @@ function siteorigin_corp_post_meta() {
 	}
 
 	if ( has_category() ) {
-		echo '<span>' . get_the_category_list() . '</span>';
+		echo '<span>' . get_the_category_list( ', ' ) . '</span>';
 	}
 	
 	if ( comments_open() ) { 
