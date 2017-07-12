@@ -1044,7 +1044,7 @@ a {
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
-  border: 2px solid #e6e6e6;
+  border: 1px solid #e6e6e6;
   border-right: 0;
   border-left: 0;
   margin-bottom: 40px;
