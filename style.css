@@ -1569,7 +1569,7 @@ a {
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
-  padding-bottom: 15px; }
+  margin-bottom: 60px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
     margin-bottom: 20px; }
