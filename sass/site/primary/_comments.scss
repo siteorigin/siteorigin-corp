@@ -32,8 +32,9 @@
 
 		.author {
 			color: $color__text-dark;
-			font-size: 14px; 
-			font-weight: 600;
+			font-family: $font__headings; 
+			font-size: 15px; 
+			font-weight: bold;
 
 			a {
 				color: $color__text-dark;
@@ -54,7 +55,13 @@
 
 		.date {
 			color: $color__text-light;
-			font-size: 13px; 
+			font-size: 13px;
+			
+			&:before {
+				content: '\00b7';
+				font-size: 14px; 
+				margin: 0 9px; 
+			}
 		}
 
 		.comment-content {
@@ -71,9 +78,9 @@
 
 		.comment-reply-link {
 			color: $color__text-dark;
+			font-family: $font__headings; 
 			font-size: 12px;
 			font-weight: bold; 
-			font-weight: 600; 
 			line-height: normal;
 			text-transform: uppercase;
 

@@ -1675,8 +1675,9 @@ a {
     .comment-list .comment .author,
     .comment-list .pingback .author {
       color: #2d2d2d;
-      font-size: 14px;
-      font-weight: 600; }
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: bold; }
       .comment-list .comment .author a,
       .comment-list .pingback .author a {
         color: #2d2d2d;
@@ -1693,6 +1694,11 @@ a {
     .comment-list .pingback .date {
       color: #929292;
       font-size: 13px; }
+      .comment-list .comment .date:before,
+      .comment-list .pingback .date:before {
+        content: '\00b7';
+        font-size: 14px;
+        margin: 0 9px; }
     .comment-list .comment .comment-content,
     .comment-list .pingback .comment-content {
       font-size: 14px; }
@@ -1705,9 +1711,9 @@ a {
     .comment-list .comment .comment-reply-link,
     .comment-list .pingback .comment-reply-link {
       color: #2d2d2d;
+      font-family: "Montserrat", sans-serif;
       font-size: 12px;
       font-weight: bold;
-      font-weight: 600;
       line-height: normal;
       text-transform: uppercase; }
       .comment-list .comment .comment-reply-link:hover,
