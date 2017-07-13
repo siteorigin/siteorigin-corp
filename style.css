@@ -209,7 +209,7 @@ textarea {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
-  line-height: 1.6875; }
+  line-height: 1.7333; }
 
 h1,
 h2,
@@ -266,7 +266,7 @@ h6 {
   text-transform: uppercase; }
 
 p {
-  margin: 0 0 27px; }
+  margin: 0 0 26px; }
 
 dfn,
 cite,
@@ -278,7 +278,7 @@ blockquote {
   border-left: 3px solid #f14e4e;
   font-style: italic;
   font-size: 16px;
-  margin: 0 0 27px;
+  margin: 0 0 26px;
   padding: 15px 0 15px 25px; }
   blockquote p {
     margin-bottom: 0; }
@@ -291,13 +291,13 @@ blockquote {
     margin-top: 15px; }
 
 address {
-  margin: 0 0 27px; }
+  margin: 0 0 26px; }
 
 pre {
   background: #eee;
   font: 14px "Courier 10 Pitch", Courier, monospace;
   line-height: 1.6;
-  margin-bottom: 27px;
+  margin-bottom: 26px;
   max-width: 100%;
   overflow: auto;
   padding: 25px; }
@@ -380,7 +380,7 @@ figure {
 table {
   border: 1px solid #d6d6d6;
   font-family: "Open Sans", sans-serif;
-  margin: 0 0 27px;
+  margin: 0 0 26px;
   width: 100%; }
   table a {
     text-decoration: none; }
