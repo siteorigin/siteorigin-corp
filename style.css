@@ -538,13 +538,10 @@ a {
     margin: 0;
     padding: 0; }
     .main-navigation ul ul {
-      background: #fff;
-      border: 1px solid #d6d6d6;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
       opacity: 0;
       position: absolute;
       text-align: left;
-      top: 100%;
+      top: 16px;
       transform: scale(0.95);
       transition: all 0.15s ease-in;
       transform-origin: center top;
@@ -552,58 +549,62 @@ a {
       z-index: 99999; }
       .main-navigation ul ul ul {
         left: 100%;
-        top: -1px;
+        top: -2px;
         transform-origin: left center; }
       .main-navigation ul ul li {
         margin: 0;
         padding: 0;
         min-width: 100%; }
+        .main-navigation ul ul li:hover > a {
+          color: #fff; }
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
-        .main-navigation ul ul li:first-of-type a {
-          padding-top: 15px; }
+        .main-navigation ul ul li:first-of-type {
+          border-top: 2px solid #f14e4e; }
         .main-navigation ul ul li:last-of-type a {
-          border: 0;
-          padding-bottom: 15px; }
+          border-bottom: none; }
       .main-navigation ul ul a {
-        border-bottom: 1px solid #f6f6f6;
-        font-size: 13px;
-        margin: 0 25px;
+        background: #262627;
+        border-bottom: 1px solid #353538;
+        color: #b2b2b2;
+        font-size: 12px;
         max-width: 100%;
-        padding: 10px 0;
+        padding: 12px 20px;
         white-space: nowrap; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       opacity: 1;
       transform: scale(1);
       visibility: visible; }
-  .main-navigation li {
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    line-height: normal;
-    margin: 0 39px -10px 0;
-    padding: 0 0 10px;
-    position: relative;
-    text-align: left;
-    text-transform: uppercase; }
-    .main-navigation li:last-of-type {
-      margin-right: 0; }
-    .main-navigation li:hover > a,
-    .main-navigation li.focus > a {
+    .main-navigation ul li {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      line-height: normal;
+      margin: 0 39px -10px 0;
+      padding: 0 0 10px;
+      position: relative;
+      text-align: left;
+      text-transform: uppercase; }
+      .main-navigation ul li.menu-item .main-navigation ul li:last-of-type {
+        margin-right: 0; }
+    .main-navigation ul a {
+      border-bottom: 2px solid #fff;
+      color: #2d2d2d;
+      display: block;
+      letter-spacing: 1px; }
+    .main-navigation ul .current a,
+    .main-navigation ul .current_page_item > a,
+    .main-navigation ul .current-menu-item > a,
+    .main-navigation ul .current_page_ancestor > a,
+    .main-navigation ul .current-menu-ancestor > a {
       border-color: #f14e4e; }
-  .main-navigation a {
-    border-bottom: 2px solid #fff;
-    color: #2d2d2d;
-    display: block;
-    letter-spacing: 1px; }
-  .main-navigation .current a,
-  .main-navigation .current_page_item > a,
-  .main-navigation .current-menu-item > a,
-  .main-navigation .current_page_ancestor > a,
-  .main-navigation .current-menu-ancestor > a {
+  .main-navigation div > ul > li:hover > a {
     border-color: #f14e4e; }
+  .main-navigation div > ul > li.menu-item-has-children:hover > a,
+  .main-navigation div > ul > li.page_item_has_children:hover > a {
+    border-color: #fff; }
   .main-navigation .search-icon {
     display: inline-block;
     cursor: pointer;
