@@ -16,7 +16,7 @@ input[type="submit"] {
 	transition: .3s;
 
 	&:hover {
-		background: darken($color__accent, 2%);
+		background: darken($color__accent, 5%);
 		color: #fff;
 	}
 
