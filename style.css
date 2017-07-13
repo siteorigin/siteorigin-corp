@@ -420,7 +420,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: #f04545;
+    background: #ef3636;
     color: #fff; }
   .button:visited, .pagination .page-numbers:visited, .page-links span:visited,
   button:visited,
@@ -851,9 +851,20 @@ a {
       line-height: normal; }
 
 .comment-navigation {
+  text-transform: capitalize;
   margin: 25px 0; }
+  .comment-navigation span {
+    font-size: 13px;
+    position: relative;
+    right: 0;
+    top: 1px; }
+    .comment-navigation span.icon-long-arrow-left {
+      padding-right: 3px; }
+    .comment-navigation span.icon-long-arrow-right {
+      padding-left: 3px; }
   .comment-navigation a {
     color: #626262;
+    font-size: 14px;
     font-weight: bold;
     font-weight: 600; }
     .comment-navigation a:hover {

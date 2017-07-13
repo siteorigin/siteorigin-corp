@@ -450,10 +450,27 @@ $sel: '';
 }
 
 .comment-navigation {
+	text-transform: capitalize;
 	margin: 25px 0;
+	
+	span {
+		font-size: 13px;
+		position: relative;
+		right: 0;
+		top: 1px;
+		
+		&.icon-long-arrow-left {
+			padding-right: 3px; 
+		}
+
+		&.icon-long-arrow-right {
+			padding-left: 3px; 
+		}		
+	} 	
 	
 	a {
 		color: $color__text-medium;
+		font-size: 14px; 
 		font-weight: bold; 
 		font-weight: 600; 
 		
