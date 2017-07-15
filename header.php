@@ -46,20 +46,20 @@
 				
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
-					<a class="search-icon">
-						<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-corp' ); ?></label>
-						<?php siteorigin_corp_display_icon( 'search' ); ?>
-					</a>
+	                <button id="search-button" class="search-toggle">
+	                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
+	                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
+                	</button>
 				</nav><!-- #site-navigation -->
 
-				<div id="header-search">
+				<div id="fullscreen-search">
 					<div class="corp-container">
-						<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-corp' ); ?></label>
-						<?php get_search_form() ?>
-						<a id="close-search">
-							<span class="screen-reader-text"><?php esc_html_e( 'Close search bar', 'siteorigin-corp' ); ?></span>
-							<?php siteorigin_corp_display_icon( 'close' ); ?>
-						</a>
+						<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
+							<input type="search" name="s" placeholder="<?php esc_attr_e( 'Type and press enter to search', 'siteorigin-corp') ?>" value="<?php echo get_search_query() ?>" />
+							<button type="submit">
+								<label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-corp' ); ?></label>
+							</button>
+						</form>
 					</div>
 				</div><!-- #header-search -->				
 

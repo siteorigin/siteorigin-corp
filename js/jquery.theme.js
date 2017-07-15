@@ -53,4 +53,47 @@ jQuery( function( $ ) {
 		} );
 	} );
 
+	// Fullscreen search.
+	$( '#search-button' ).click( function( e ) {
+		e.preventDefault();
+		var $$ = $( this );
+		$$.toggleClass( 'close-search' );
+
+		$( "input[type='search']" ).each( function () { $( this ).attr( 'size', $( this ).attr( 'placeholder' ).length ); } );
+
+		var fullscreenSearch = function() {
+			var vpw = $( window ).width(),
+				vph = $( window ).height();
+			$( '#fullscreen-search' ).css( { 'height': vph + 'px', 'width': vpw + 'px' } );
+		};
+		fullscreenSearch();
+		$( window ).resize( fullscreenSearch );
+
+		// Disable scrolling when fullscreen search is open.
+		if ( $$.hasClass( 'close-search' ) ) {
+			$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
+			$( 'body' ).css( 'overflow', 'hidden' );
+		} else {
+			$( 'body' ).css( 'overflow', '' );
+			$( 'body' ).css( 'margin-right', '' );
+		}
+
+		$( '#fullscreen-search' ).slideToggle( 'fast' );
+
+		$( '#fullscreen-search input' ).focus();
+
+	} );
+
+	$( '#fullscreen-search-form' ).submit( function() {
+		$(this).find( 'button svg' ).hide();
+		$(this).find( 'button svg:last-child' ).show();
+	} );
+
+	// Close fullscreen search with escape key.
+	$( document ).keyup( function(e) {
+		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
+			$( '#search-button.close-search' ).trigger( 'click' );
+		}
+	} );	
+
 } );

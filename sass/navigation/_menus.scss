@@ -96,17 +96,10 @@
 			color: $color__text-dark; 
 			display: block;
 			letter-spacing: 1px;
-		}
-
-		.current a,
-		.current_page_item > a,
-		.current-menu-item > a,
-		.current_page_ancestor > a,
-		.current-menu-ancestor > a {
-			border-color: $color__accent;
 		}				
 	}
 
+	// First level items.
 	div > ul > li {
 
 		&:hover > a {
@@ -117,31 +110,60 @@
 		&.page_item_has_children:hover > a {
 			border-color: #fff;
 		}
+
+		&.current a,
+		&.current_page_item > a,
+		&.current-menu-item > a,
+		&.current_page_ancestor > a,
+		&.current-menu-ancestor > a {
+			border-color: $color__accent;
+		}		
 	}	
 
-	.search-icon {
+	// Menu search.
+	.search-toggle {
+		background: transparent;
+		border: none;
 		display: inline-block;
-		cursor: pointer;
-		margin-left: 27px; 
+		outline: none;
+		padding: 0;	
 		position: relative;
 		top: 3px;
 		
-		svg {
-			height: 16px;
-			width: 16px;
-			
-			path {
-				fill: $color__text-dark;
-				transition: .3s;				
-			}
+		.open {
 
-			&:hover {
+			.svg-icon-search {
+				height: 14px;
+				width: 12px;
 
 				path {
-					fill: $color__text-medium;			
+					fill: $color__text-dark;
 				}
-			}		
-		}		
+			}
+		}
+
+		.close {
+			display: none;
+
+			.svg-icon-close {
+				height: 16px;
+				width: 16px;
+				path {
+					fill: $color__text-medium;
+				}
+			}
+		}
+
+		&.close-search {
+
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: block;
+			}
+		}
 	}
 }
 

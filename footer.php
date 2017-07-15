@@ -15,7 +15,11 @@
 		</div><!-- .corp-container -->
 	</div><!-- #content -->
 
+	<?php do_action( 'siteorigin_corp_before' ); ?>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<?php do_action( 'siteorigin_corp_top' ); ?>
 
 		<div class="corp-container">
 			<?php
@@ -51,6 +55,8 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'container_class' => 'footer-menu', 'depth' => 1, 'fallback_cb' => '' ) ); ?>				
 			</div></div><!-- .corp-container -->
 		</div><!-- .bottom-bar -->
+
+		<?php do_action( 'siteorigin_corp_bottom' ); ?>
 		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
