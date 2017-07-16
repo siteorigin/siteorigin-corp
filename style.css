@@ -613,10 +613,10 @@ a {
     padding: 0;
     position: relative;
     top: 3px; }
-    .main-navigation .search-toggle .open .svg-icon-search {
+    .main-navigation .search-toggle .open svg {
       height: 14px;
-      width: 12px; }
-      .main-navigation .search-toggle .open .svg-icon-search path {
+      width: 17px; }
+      .main-navigation .search-toggle .open svg path {
         fill: #2d2d2d; }
     .main-navigation .search-toggle .close {
       display: none; }
@@ -635,75 +635,48 @@ a {
 --------------------------------------------------------------*/
 #mobile-menu-button {
   display: none;
-  height: 30px;
-  padding: 0;
+  line-height: 0;
+  padding: 5px;
   position: relative;
   right: -5px;
-  top: 6px;
-  transform: rotate(0deg);
-  transition: .5 ease-in-out;
-  width: 36px; }
-  #mobile-menu-button span {
-    display: block;
-    border-radius: 5px;
-    background: #2d2d2d;
-    height: 2px;
-    left: 8px;
-    max-width: 20px;
-    opacity: 1;
-    position: absolute;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-    width: 100%; }
-    #mobile-menu-button span:nth-child(1) {
-      top: 8px; }
-    #mobile-menu-button span:nth-child(2), #mobile-menu-button span:nth-child(3) {
-      top: 14px; }
-    #mobile-menu-button span:nth-child(4) {
-      top: 20px; }
-  #mobile-menu-button.to-close span:nth-child(1) {
-    left: 50%;
-    top: 14px;
-    width: 0; }
-  #mobile-menu-button.to-close span:nth-child(2) {
-    transform: rotate(45deg); }
-  #mobile-menu-button.to-close span:nth-child(3) {
-    transform: rotate(-45deg); }
-  #mobile-menu-button.to-close span:nth-child(4) {
-    left: 50%;
-    top: 14px;
-    width: 0; }
+  top: 6px; }
+  #mobile-menu-button svg {
+    height: 19px;
+    width: 23px; }
 
 #mobile-navigation {
-  background: #fff;
-  border-bottom: 1px solid #e6e6e6;
-  display: none;
+  background: #262627;
   left: 0;
+  overflow-x: hidden;
   overflow-y: scroll;
-  padding: 0 25px 25px;
   position: absolute;
-  overflow: hidden;
-  top: 100%;
+  top: 101%;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   z-index: 10; }
+  #mobile-navigation::-webkit-scrollbar {
+    display: none; }
   #mobile-navigation ul {
     list-style: none;
     margin: 0;
     padding: 0; }
     #mobile-navigation ul li {
       font-family: "Montserrat", sans-serif;
-      font-size: 14px;
-      line-height: 3;
+      font-size: 12px;
+      letter-spacing: 1px;
+      line-height: 3.3;
       position: relative;
       width: 100%; }
       #mobile-navigation ul li a {
-        border-bottom: 1px solid #e6e6e6;
-        color: #2d2d2d;
+        border-bottom: 1px solid #353538;
+        color: #b2b2b2;
         display: block;
+        padding: 0 30px;
         text-decoration: none;
+        text-transform: uppercase;
         width: 100% !important; }
         #mobile-navigation ul li a:hover {
-          color: #626262; }
+          color: #fff; }
       #mobile-navigation ul li.menu-item-has-children > a {
         padding-right: 40px; }
       #mobile-navigation ul li .dropdown-toggle {
@@ -726,23 +699,6 @@ a {
       padding: 0; }
       #mobile-navigation ul ul ul {
         display: none; }
-  #mobile-navigation > ul {
-    margin-bottom: 15px; }
-  #mobile-navigation .search-form {
-    position: relative; }
-    #mobile-navigation .search-form[style] {
-      margin-top: 0 !important; }
-    #mobile-navigation .search-form input[type="search"] {
-      font-size: 14px;
-      padding-right: 40px;
-      width: 100%; }
-    #mobile-navigation .search-form button[type="submit"] {
-      position: absolute;
-      right: 14px;
-      top: 10px; }
-      #mobile-navigation .search-form button[type="submit"] svg {
-        height: 16px;
-        width: 16px; }
 
 #mobile-navigation ul ul li a {
   padding-left: 25px; }
@@ -760,6 +716,8 @@ a {
   padding-left: 125px; }
 
 @media (max-width: 1100px) {
+  #masthead .search-toggle {
+    margin-right: 20px; }
   #masthead #mobile-menu-button {
     display: inline-block; }
   #masthead .main-navigation ul {
@@ -1345,8 +1303,7 @@ a {
       border-bottom: 1px solid #b2b2b2;
       color: #fff;
       display: inline-block;
-      font-family: "Montserrat", sans-serif;
-      font-size: 40px;
+      font-size: 32px;
       font-weight: normal;
       outline: none;
       padding: 0 49px 0 14px;
@@ -1363,7 +1320,7 @@ a {
       padding: 0;
       position: absolute;
       right: 12px;
-      top: 6px; }
+      top: -4px; }
       @media (max-width: 768px) {
         #fullscreen-search form button[type="submit"] {
           top: -15px; } }

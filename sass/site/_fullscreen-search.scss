@@ -42,8 +42,7 @@
 			border-bottom: 1px solid #b2b2b2; 
 			color: #fff;
 			display: inline-block;
-			font-family: $font__headings; 
-			font-size: 40px;
+			font-size: 32px;
 			font-weight: normal; 
 			outline: none;
 			padding: 0 49px 0 14px;
@@ -63,7 +62,7 @@
 			padding: 0;
 			position: absolute;
 			right: 12px;
-			top: 6px;
+			top: -4px;
 
 			@media (max-width: 768px) {
 				top: -15px;

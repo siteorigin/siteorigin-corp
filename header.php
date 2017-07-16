@@ -38,11 +38,6 @@
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-
-					<a href="#menu" id="mobile-menu-button">
-						<?php siteorigin_corp_display_icon( 'menu' ); ?>							
-						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
-					</a>
 				
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
@@ -50,6 +45,12 @@
 	                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
 	                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
                 	</button>
+
+					<a href="#menu" id="mobile-menu-button">
+						<?php siteorigin_corp_display_icon( 'menu' ); ?>							
+						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
+					</a>
+                	
 				</nav><!-- #site-navigation -->
 
 				<div id="fullscreen-search">
