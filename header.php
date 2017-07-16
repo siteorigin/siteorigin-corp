@@ -54,10 +54,12 @@
 
 				<div id="fullscreen-search">
 					<div class="corp-container">
+						<h3><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></h3>
 						<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
-							<input type="search" name="s" placeholder="<?php esc_attr_e( 'Type and press enter to search', 'siteorigin-corp') ?>" value="<?php echo get_search_query() ?>" />
+							<input type="search" name="s" placeholder="" value="<?php echo get_search_query() ?>" />
 							<button type="submit">
 								<label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-corp' ); ?></label>
+								<?php siteorigin_corp_display_icon( 'search' ); ?>
 							</button>
 						</form>
 					</div>

@@ -15,13 +15,23 @@
 	}
 
 	h3 {
-		color: $color__text-medium;
-		@include font-size(1.0666);
-		font-weight: 400;
-		letter-spacing: .2em;
+		color: #b2b2b2; 
+		font-family: $font__main; 
+		font-size: 20px;
+		font-weight: 300; 
+		letter-spacing: 2px;
 		text-align: center;
+		margin: 0 0 41px;
 		text-transform: uppercase;
-	}
+		
+		@media (max-width: 768px) {
+			font-size: 18px;
+		}
+
+		@media (max-width: 768px) {
+			font-size: 16px;
+		}		
+	}	
 
 	form {
 		position: relative;
@@ -29,65 +39,45 @@
 		input[type="search"] {
 			background: transparent;
 			border: 0;
-			color: $color__text-medium;
+			border-bottom: 1px solid #b2b2b2; 
+			color: #fff;
 			display: inline-block;
-			font-size: 32px;
-			max-width: 493px;
+			font-family: $font__headings; 
+			font-size: 40px;
+			font-weight: normal; 
 			outline: none;
+			padding: 0 49px 0 14px;
+			text-align: center;
+			width: 100%; 
 
 			@media (max-width: 768px) {
 				font-size: 24px;
-				max-width: 100%;
-				padding-left: 0;
 			}
 		}
 
 		button[type="submit"] {
+			background: transparent; 
 			border: none;
 			display: inline-block;
 			outline: none;
 			padding: 0;
 			position: absolute;
-			right: 0;
-			top: 16px;
+			right: 12px;
+			top: 6px;
 
 			@media (max-width: 768px) {
-				top: 14px;
+				top: -15px;
 			}
 
 			svg {
 				fill: $color__text-light;
-				height: 31px;
-				width: 32px;
-
-				@media (max-width: 768px) {
-					height: 24px;
-				}
+				height: 23px;
+				width: 23px;
 
 				@media (max-width: 480px) {
 					display: none;
 				}
-
-				&:last-child {
-					display: none;
-
-					path {
-						@include animation( spin 2s linear infinite );
-						@include transform-origin( 50% 50% );
-					}
-				}
 			}
 		}
-	}
-}
-
-@include keyframes( spin ) {
-
-	from {
-		@include transform( rotate( 0 ) );
-	}
-	
-	to {
-		@include transform( rotate( 360deg ) );
 	}
 }
