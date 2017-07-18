@@ -681,19 +681,19 @@ a {
         padding-right: 40px; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
-        color: #2d2d2d;
-        font-size: 12px;
+        color: #4d4d4d;
+        font-size: 14px;
         padding: 14px;
         position: absolute;
         right: 0;
         top: 0;
         transition: none; }
         #mobile-navigation ul li .dropdown-toggle:hover {
-          color: #626262;
-          box-shadow: none; }
+          color: #fff; }
         #mobile-navigation ul li .dropdown-toggle.toggle-open {
           transform: rotate(-180deg); }
     #mobile-navigation ul ul {
+      background: #18181a;
       display: none;
       margin: 0;
       padding: 0; }
@@ -701,19 +701,19 @@ a {
         display: none; }
 
 #mobile-navigation ul ul li a {
-  padding-left: 25px; }
+  padding-left: 30px; }
 
 #mobile-navigation ul ul ul li a {
-  padding-left: 50px; }
+  padding-left: 60px; }
 
 #mobile-navigation ul ul ul ul li a {
-  padding-left: 75px; }
+  padding-left: 90px; }
 
 #mobile-navigation ul ul ul ul ul li a {
-  padding-left: 100px; }
+  padding-left: 120px; }
 
 #mobile-navigation ul ul ul ul ul ul li a {
-  padding-left: 125px; }
+  padding-left: 150px; }
 
 @media (max-width: 1100px) {
   #masthead .search-toggle {
@@ -870,8 +870,12 @@ a {
         padding: 0; }
       .footer-menu .menu li a {
         color: inherit; }
-        .footer-menu .menu li a:hover, .footer-menu .menu li a:hover:before {
+        .footer-menu .menu li a:hover {
           color: #fff; }
+        .footer-menu .menu li a:before {
+          color: #fff; }
+        .footer-menu .menu li a:hover:before {
+          background: #818388; }
       .footer-menu .menu li:last-of-type {
         margin-right: 0; }
 
@@ -882,7 +886,7 @@ a {
   font-size: 0;
   text-align: center; }
   .footer-menu a[href*="behance.net"]:before, .footer-menu a[href*="codepen.io"]:before, .footer-menu a[href*="delicious.com"]:before, .footer-menu a[href*="deviantart.com"]:before, .footer-menu a[href*="digg.com"]:before, .footer-menu a[href*="dribbble.com"]:before, .footer-menu a[href*="facebook.com"]:before, .footer-menu a[href*="flickr.com"]:before, .footer-menu a[href*="foursquare.com"]:before, .footer-menu a[href*="github.com"]:before, .footer-menu a[href*="plus.google.com"]:before, .footer-menu a[href*="instagram.com"]:before, .footer-menu a[href*="linkedin.com"]:before, .footer-menu a[href*="pinterest.com"]:before, .footer-menu a[href*="reddit.com"]:before, .footer-menu a[href*="soundcloud.com"]:before, .footer-menu a[href*="stackexchange.com"]:before, .footer-menu a[href*="stackoverflow.com"]:before, .footer-menu a[href*="tumblr.com"]:before, .footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="vimeo.com"]:before, .footer-menu a[href*="vine.co"]:before, .footer-menu a[href*="vk.com"]:before, .footer-menu a[href*="weibo.com"]:before, .footer-menu a[href*="wordpress.com"]:before, .footer-menu a[href*="xing"]:before, .footer-menu a[href*="youtube.com"]:before {
-    font-family: "corp-icons";
+    font-family: "siteorigin-corp-icons";
     font-size: 16px; }
 
 .footer-menu a:before {
@@ -1787,7 +1791,7 @@ a {
           color: #626262; }
       .comment-list .bypostauthor .author:before {
         content: "\f040";
-        font-family: "corp-icons";
+        font-family: "siteorigin-corp-icons";
         font-size: 14px;
         margin-right: 5px; }
     .comment-list .comment .date,

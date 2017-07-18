@@ -232,8 +232,8 @@
 
 			.dropdown-toggle {
 				background: transparent;
-				color: $color__text-dark;
-				font-size: 12px; 
+				color: #4d4d4d;
+				font-size: 14px; 
 				padding: 14px;
 				position: absolute;
 				right: 0;
@@ -241,8 +241,7 @@
 				transition: none;
 				
 				&:hover {
-					color: $color__text-medium;
-					box-shadow: none;
+					color: #fff;
 				}			
 
 				&.toggle-open {
@@ -252,6 +251,7 @@
 		}
 
 		ul {
+			background: #18181a; 
 			display: none;
 			margin: 0;
 			padding: 0;
@@ -269,7 +269,7 @@ $sel: '';
 	
 	#{$sel} {
     	ul ul li a {
-        	padding-left: 25px * $i;
+        	padding-left: 30px * $i;
       	}
 	}
 }
@@ -481,10 +481,17 @@ $sel: '';
 			a {
 				color: inherit;
 
-				&:hover,
-				&:hover:before {
+				&:hover {
 					color: #fff;
-				}			
+				}
+
+				&:before {
+					color: #fff;
+				}	
+
+				&:hover:before {
+					background: #818388;
+				}		
 			}	
 
 			&:last-of-type {

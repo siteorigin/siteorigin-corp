@@ -110,6 +110,13 @@ SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](ht
 
 == Fonts and Icons ==
 
+The `siteorigin-corp-icons` font family was created using IcoMoon and contains icons from Font Awesome.
+
+`/inc/template-tags.php` contains SVG icons created using IcoMoon and includes icons from Font Awesome.
+
+Font Awesome by Dave Gandy
+Font released under the SIL OFL 1.1, CSS released under the MIT License
+[Source](http://fontawesome.io)
 
 == Bundled Resources ==
 

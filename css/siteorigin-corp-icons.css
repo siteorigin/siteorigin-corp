@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 'corp-icons';
-  src:  url('fonts/corp-icons.eot?5hqd0w');
-  src:  url('fonts/corp-icons.eot?5hqd0w#iefix') format('embedded-opentype'),
-    url('fonts/corp-icons.ttf?5hqd0w') format('truetype'),
-    url('fonts/corp-icons.woff?5hqd0w') format('woff'),
-    url('fonts/corp-icons.svg?5hqd0w#corp-icons') format('svg');
+  font-family: 'siteorigin-corp-icons';
+  src:  url('fonts/siteorigin-corp-icons.eot?j1vvdu');
+  src:  url('fonts/siteorigin-corp-icons.eot?j1vvdu#iefix') format('embedded-opentype'),
+    url('fonts/siteorigin-corp-icons.ttf?j1vvdu') format('truetype'),
+    url('fonts/siteorigin-corp-icons.woff?j1vvdu') format('woff'),
+    url('fonts/siteorigin-corp-icons.svg?j1vvdu#siteorigin-corp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'corp-icons' !important;
+  font-family: 'siteorigin-corp-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-angle-down:before {
+  content: "\e91d";
+}
 .icon-youtube-play:before {
   content: "\e91c";
 }
