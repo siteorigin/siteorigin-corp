@@ -1444,15 +1444,38 @@ z.page-layout-no-sidebar .content-area {
 .sticky {
   display: block; }
 
-.hentry {
-  border-bottom: 1px solid #d6d6d6;
-  margin: 0 0 50px;
-  padding: 0 0 30px; }
-  .hentry:last-of-type {
-    border: 0; }
-  .hentry:only-of-type {
-    border: 0;
+body:not(.single) .hentry {
+  display: block;
+  float: left;
+  margin: 0 0 30px;
+  width: 31%; }
+  @media (max-width: 480px) {
+    body:not(.single) .hentry {
+      width: 100%; } }
+  body:not(.single) .hentry:nth-child(3n+1) {
+    margin-right: 3.5%; }
+    @media (max-width: 480px) {
+      body:not(.single) .hentry:nth-child(3n+1) {
+        margin-right: 0; } }
+  body:not(.single) .hentry:nth-child(3n+3) {
+    clear: right;
+    margin-left: 3.5%; }
+    @media (max-width: 480px) {
+      body:not(.single) .hentry:nth-child(3n+3) {
+        margin-left: 0; } }
+  body:not(.single) .hentry:only-child {
     margin: 0; }
+  body:not(.single) .hentry .entry-title {
+    font-size: 1.0666em; }
+  body:not(.single) .hentry .entry-thumbnail {
+    margin-bottom: 0; }
+    body:not(.single) .hentry .entry-thumbnail ~ div {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-top: 0;
+      padding: 25px 30px; }
+  body:not(.single) .hentry .entry-content {
+    padding-bottom: 0; }
 
 .page-content,
 .entry-content,
