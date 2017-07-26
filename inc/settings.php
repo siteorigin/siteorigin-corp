@@ -13,25 +13,16 @@ function siteorigin_corp_settings_localize( $loc ) {
 	return wp_parse_args( array(
 		'section_title' => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
 		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-corp' ),
-		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
-		'premium_url' => 'https://siteorigin.com/premium/?target=theme_corp',
-
-		// For the controls.
-		'variant' => esc_html__( 'Variant', 'siteorigin-corp' ),
-		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
-
-		// For the settings metabox.
-		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),
-	), $loc);
+	), $loc );
 }
-add_filter( 'siteorigin_settings_localization', 'siteorigin_unwind_settings_localize' );
+add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_localize' );
 
 /**
  * Initialize the settings.
  */
 function siteorigin_corp_settings_init() {
 
-	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_unwind_settings_array', array(
+	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_corp_settings_array', array(
 
 		// Branding.
 		'branding' => array(
@@ -46,48 +37,14 @@ function siteorigin_corp_settings_init() {
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
 					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-corp' )
-				),
+				),				
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Site Description', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Show your site description below your site title or logo.', 'siteorigin-corp' )
 				),
-				'attribution' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Choose if the link to SiteOrigin is displayed in your footer.', 'siteorigin-corp' ),
-					'teaser' => true,
-				),
-				'accent' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Accent Color', 'siteorigin-corp' ),
-					'description' => esc_html__( 'The color used for links and various other accents.', 'siteorigin-corp' ),
-					'live' => true,
-				),
-				'accent_dark' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Dark Accent Color', 'siteorigin-corp' ),
-					'description' => esc_html__( 'The color used for link hovers and various other accents.', 'siteorigin-corp' ),
-					'live' => true,
-				),
 			)
 		),
-
-		// Blog.
-		'blog'                    => array(
-			'title'                  => esc_html__( 'Blog', 'siteorigin-corp' ),
-			'fields'                 => array(
-				'post_content'          => array(
-					'type'                 => 'select',
-					'label'                => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
-					'description'          => esc_html__( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-corp' ),
-					'options'              => array(
-						'content'             => esc_html__( 'Full Post Content', 'siteorigin-corp' ),
-						'excerpt'             => esc_html__( 'Post Excerpt', 'siteorigin-corp' ),
-					)
-				),
-			)
-		),		
 
 		// Footer.
 		'footer' => array(
@@ -99,31 +56,6 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Footer Text', 'siteorigin-corp' ),
 					'description' => esc_html__( "{sitename} and {year} are your site's name and current year.", 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
-				),
-
-				'constrained' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Constrain', 'siteorigin-corp' ),
-					'description' => esc_html__( "Constrain the footer width.", 'siteorigin-corp' ),
-				),
-
-				'top_padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Top Padding', 'siteorigin-corp' ),
-					'live'	=> true,
-				),
-
-				'side_padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Side Padding', 'siteorigin-corp' ),
-					'description' => esc_html__( "Applies if the footer width is not constrained.", 'siteorigin-corp' ),
-					'live'	=> true,
-				),
-
-				'top_margin' => array(
-					'type' => 'measurement',
-					'label' => esc_html__( 'Top Margin', 'siteorigin-corp' ),
-					'live' => true,
 				),
 			),
 		),		
@@ -144,19 +76,9 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	// Branding.
 	$defaults['branding_logo']             = false;
 	$defaults['branding_site_description'] = false;
-	$defaults['branding_attribution']      = true;
-	$defaults['branding_accent']           = '#24c48a';
-	$defaults['branding_accent_dark']      = '#00a76a';
-
-	// Blog settings
-	$defaults['blog_post_content']          = 'content';
 	
 	// Footer.
 	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
-	$defaults['footer_constrained']  = true;
-	$defaults['footer_top_padding']  = '80px';
-	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin']   = '80px';
 
 	return $defaults;
 }
