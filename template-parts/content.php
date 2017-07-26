@@ -34,12 +34,11 @@
 
 	<div class="entry-content">
 		<?php
-			if ( is_single() ) :
+			if ( is_single() ) {
 				the_content();
-			elseif ( siteorigin_setting( 'blog_archive_post_content' ) == 'excerpt' ) : 
+			} else {				
 				the_excerpt();
-			else : 
-				the_content();
+			}
 			endif;
 			
 			wp_link_pages( array(
