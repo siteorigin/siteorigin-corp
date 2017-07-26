@@ -24,7 +24,7 @@ jQuery( function( $ ) {
     // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
     if ( typeof $.fn.fitVids !== 'undefined' ) {
         $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }	
+    }
 
 	// Mobile menu.
 	var $mobileMenu = false;
@@ -37,12 +37,12 @@ jQuery( function( $ ) {
 			$mobileMenu = $( '<div></div>' )
 				.append( $( '.main-navigation ul' ).first().clone() )
 				.attr( 'id', 'mobile-navigation' )
-				.appendTo( '#masthead' ).hide();	
+				.appendTo( '#masthead' ).hide();
 
 			if ( $( '.main-navigation .shopping-cart' ).length ) {
 				$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 			}
-			
+
         	$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
 			$mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="icon-angle-down" aria-hidden="true"></i></button>' );
 			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
@@ -71,11 +71,11 @@ jQuery( function( $ ) {
 			if ( $mobileMenu.is(' :visible' ) ) {
 				$mobileMenu.slideUp( 'fast' );
 			}
-			
+
 			$$.removeClass( 'to-close' );
 		} );
 
-	} );  
+	} );
 
 	// Fullscreen search.
 	$( '#search-button' ).click( function( e ) {
@@ -113,11 +113,17 @@ jQuery( function( $ ) {
 		$(this).find( 'button svg:last-child' ).show();
 	} );
 
+	// Close fullscreen search with close button
+	$( '#fullscreen-search #search-close-button' ).click( function(e) {
+		e.preventDefault();
+		$( '#search-button.close-search' ).trigger( 'click' );
+	} );
+
 	// Close fullscreen search with escape key.
 	$( document ).keyup( function(e) {
 		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
-	} );	
+	} );
 
 } );

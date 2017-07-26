@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 ?><!DOCTYPE html>
@@ -34,11 +34,11 @@
 					<?php siteorigin_corp_display_logo(); ?>
 					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
 						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-					<?php endif ?>					
+					<?php endif ?>
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-				
+
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
 	                <button id="search-button" class="search-toggle">
@@ -47,15 +47,18 @@
                 	</button>
 
 					<a href="#menu" id="mobile-menu-button">
-						<?php siteorigin_corp_display_icon( 'menu' ); ?>							
+						<?php siteorigin_corp_display_icon( 'menu' ); ?>
 						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
 					</a>
-                	
+
 				</nav><!-- #site-navigation -->
 
 				<div id="fullscreen-search">
 					<div class="corp-container">
 						<h3><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></h3>
+						<button id="search-close-button" class="search-close-button">
+		                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
+	                	</button>
 						<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
 							<input type="search" name="s" placeholder="" value="<?php echo get_search_query() ?>" />
 							<button type="submit">
@@ -64,7 +67,7 @@
 							</button>
 						</form>
 					</div>
-				</div><!-- #header-search -->				
+				</div><!-- #header-search -->
 
 			</div><!-- .site-header-inner -->
 
@@ -73,7 +76,7 @@
 	</header><!-- #masthead -->
 
 	<?php do_action( 'siteorigin_corp_content_before' ); ?>
-	
+
 	<div id="content" class="site-content">
 
 		<div class="corp-container">
