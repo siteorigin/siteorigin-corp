@@ -1,11 +1,11 @@
 === SiteOrigin Corp ===
 
-Contributors: SiteOrigin
+Contributors: siteorigin
 
-Tags: 
+Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 
-Requires at least: 4.6
-Tested up to: 4.7.2
+Requires at least: 4.7
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Long description.
 
 == Documentation ==
 
-[Documentation](https://siteorigin.com/) is available on siteorigin.com.
+[Documentation](https://siteorigin.com/corp-documentation) is available on siteorigin.com.
 
 == Support ==
 
@@ -32,14 +32,6 @@ Long description.
 == Frequently Asked Questions ==
 
 = How do I setup the posts slider? =
-
-The posts slider uses the [Jetpack Featured Content](https://jetpack.com/support/featured-content/).
-
-1. If you don't yet have Jetpack installed, go to Plugins > Add New, search for Jetpack, install, activate and connect to your WordPress.com account as instructed. 
-2. Go to Appearance > Customize > Featured Content and insert a tag name. Any posts tagged with the tag name entered will be featured in your slider.
-3. Go to Posts and add the featured tag to the posts you'd like to display in your slider. When editing a post, the Tags meta box is located in the right column.
-
-The slider will then automatically display on your blog home page (Front page displays: Your latest posts) or assigned posts (blog) page.
 
 = How do I add social network icons to the footer menu? =
 
@@ -78,6 +70,7 @@ Available icons:
 * Weibo
 * WordPress.com
 * Xing
+* Yelp
 * YouTube
 
 == Plugin Support ==
@@ -85,7 +78,6 @@ Available icons:
 SiteOrigin Corp includes support for the following plugins:
 
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
-* [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
@@ -131,3 +123,11 @@ Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/necolas/normalize.css/)
+
+TinyColor, Copyright (c), Brian Grinstead
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](https://github.com/bgrins/TinyColor)
+
+== SiteOrigin Settings ==
+
+This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header. 
