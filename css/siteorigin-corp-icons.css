@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'siteorigin-corp-icons';
-  src:  url('fonts/siteorigin-corp-icons.eot?j1vvdu');
-  src:  url('fonts/siteorigin-corp-icons.eot?j1vvdu#iefix') format('embedded-opentype'),
-    url('fonts/siteorigin-corp-icons.ttf?j1vvdu') format('truetype'),
-    url('fonts/siteorigin-corp-icons.woff?j1vvdu') format('woff'),
-    url('fonts/siteorigin-corp-icons.svg?j1vvdu#siteorigin-corp-icons') format('svg');
+  src:  url('fonts/siteorigin-corp-icons.eot?myweo7');
+  src:  url('fonts/siteorigin-corp-icons.eot?myweo7#iefix') format('embedded-opentype'),
+    url('fonts/siteorigin-corp-icons.ttf?myweo7') format('truetype'),
+    url('fonts/siteorigin-corp-icons.woff?myweo7') format('woff'),
+    url('fonts/siteorigin-corp-icons.svg?myweo7#siteorigin-corp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-yelp:before {
+  content: "\e91e";
+}
 .icon-angle-down:before {
   content: "\e91d";
 }
