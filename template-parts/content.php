@@ -39,8 +39,7 @@
 			} else {				
 				the_excerpt();
 			}
-			endif;
-			
+						
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'polestar' ) . '</span>',
 				'after'  => '</div>',

@@ -29,7 +29,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	$classes[] = 'responsive';
 
 	// Sidebar.
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_active_sidebar( 'sidebar-main' ) ) {
 		 $classes[] = 'sidebar';
 	}
 

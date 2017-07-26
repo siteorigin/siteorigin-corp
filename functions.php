@@ -101,7 +101,7 @@ add_action( 'after_setup_theme', 'siteorigin_corp_content_width', 0 );
 function siteorigin_corp_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'siteorigin-corp' ),
-		'id'            => 'main-sidebar',
+		'id'            => 'sidebar-main',
 		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -111,7 +111,7 @@ function siteorigin_corp_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'siteorigin-corp' ),
-		'id'            => 'footer-sidebar',
+		'id'            => 'sidebar-footer',
 		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

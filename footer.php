@@ -23,11 +23,11 @@
 
 		<div class="corp-container">
 			<?php
-				if ( is_active_sidebar( 'footer-sidebar' ) ) {
+				if ( is_active_sidebar( 'sidebar-footer' ) ) {
 					$corp_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
-						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 					</div>
 					<?php
 				}
