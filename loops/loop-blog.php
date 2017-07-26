@@ -2,7 +2,7 @@
 /**
  * Loop Name: Blog
  *
- * @package corp
+ * @package siteorigin-corp
  * @license GPL 2.0 
  */
 
