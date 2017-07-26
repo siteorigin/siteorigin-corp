@@ -27,7 +27,7 @@
 // Content area with sidebar.
 .sidebar .content-area {
 	float: left;
-	width: 70%;	
+	width: 66%;	
 	
 	@at-root .sidebar-left#{&} {
 		float: right;
@@ -39,8 +39,7 @@
 		width: 100%; 	
 	}
 }
-
-// No Sidebar page layout setting.
+z// No Sidebar page layout setting.
 .page-layout-no-sidebar .content-area {
 	float: none;
 	width: 100%; 
@@ -63,12 +62,12 @@
 // Sidebar.
 .widget-area {
 	float: right;
-	padding-left: 4%;
-	width: 30%;
+	padding-left: 2.75%;
+	width: 34%;
 	
 	@at-root .sidebar-left & {
 		float: left;
-		padding-right: 4%; 
+		padding-right: 2.75%; 
 		padding-left: 0; 
 	}	
 	

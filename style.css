@@ -1143,16 +1143,17 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 45px; }
+  margin: 0 0 55px; }
 
 .widget-area .widget .widget-title,
 .site-footer .widget .widget-title {
-  font-size: 16px;
-  margin-top: 0;
+  font-size: .9333em;
+  font-weight: 600;
+  margin: 0 0 20px;
   text-transform: uppercase; }
   .widget-area .widget .widget-title ~ *,
   .site-footer .widget .widget-title ~ * {
-    font-size: 14px; }
+    font-size: .9333em; }
 
 .widget-area .widget a,
 .site-footer .widget a {
@@ -1221,20 +1222,23 @@ a {
       text-align: right; }
 
 /*--------------------------------------------------------------
-## Search Widget
+## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
   position: relative; }
   .widget .search-form input[type="search"] {
-    padding-right: 40px;
+    font-size: .9285em;
+    padding: 10px 30px 10px 13px;
     width: 100%; }
   .widget .search-form button[type="submit"] {
     position: absolute;
     right: 14px;
-    top: 11px; }
+    top: 13px; }
     .widget .search-form button[type="submit"] svg {
-      height: 16px;
-      width: 16px; }
+      height: 14px;
+      width: 14px; }
+      .widget .search-form button[type="submit"] svg path {
+        fill: #626262; }
 
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
@@ -1267,7 +1271,7 @@ a {
 
 .sidebar .content-area {
   float: left;
-  width: 70%; }
+  width: 66%; }
   .sidebar-left.sidebar .content-area {
     float: right; }
   @media (max-width: 768px) {
@@ -1276,7 +1280,7 @@ a {
       padding-right: 0;
       width: 100%; } }
 
-.page-layout-no-sidebar .content-area {
+z.page-layout-no-sidebar .content-area {
   float: none;
   width: 100%; }
 
@@ -1290,11 +1294,11 @@ a {
 
 .widget-area {
   float: right;
-  padding-left: 4%;
-  width: 30%; }
+  padding-left: 2.75%;
+  width: 34%; }
   .sidebar-left .widget-area {
     float: left;
-    padding-right: 4%;
+    padding-right: 2.75%;
     padding-left: 0; }
   @media (max-width: 768px) {
     .widget-area {

@@ -1,18 +1,19 @@
 .widget {
-	margin: 0 0 45px;
+	margin: 0 0 55px;
 }
 
 .widget-area .widget, 
 .site-footer .widget {
 
 	.widget-title {
-		font-size: 16px;
-		margin-top: 0;
+		font-size: .9333em;
+		font-weight: 600; 
+		margin: 0 0 20px;
 		text-transform: uppercase;
 		
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
-			font-size: 14px;
+			font-size: .9333em;
 		}		
 	}
 
@@ -115,24 +116,29 @@
 }
 
 /*--------------------------------------------------------------
-## Search Widget
+## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
 	position: relative;
 
 	input[type="search"] {
-		padding-right: 40px;
+		font-size: .9285em;
+		padding: 10px 30px 10px 13px;
 		width: 100%;
 	}
 
 	button[type="submit"] {
 		position: absolute;
 		right: 14px;
-		top: 11px;
+		top: 13px;
 		
 		svg {
-			height: 16px;
-			width: 16px;
+			height: 14px;
+			width: 14px;
+			
+			path {
+				fill: $color__text-medium;
+			}
 		}
 	}
 }
