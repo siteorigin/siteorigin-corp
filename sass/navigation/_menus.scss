@@ -506,7 +506,7 @@ $sel: '';
 --------------------------------------------------------------*/
 .footer-menu {
 
-	a[href*="behance.net"], a[href*="codepen.io"], a[href*="delicious.com"], a[href*="deviantart.com"], a[href*="digg.com"], a[href*="dribbble.com"], a[href*="facebook.com"], a[href*="flickr.com"], a[href*="foursquare.com"], a[href*="github.com"], a[href*="plus.google.com"], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="pinterest.com"], a[href*="reddit.com"], a[href*="soundcloud.com"], a[href*="stackexchange.com"], a[href*="stackoverflow.com"], a[href*="tumblr.com"], a[href*="twitter.com"], a[href*="vimeo.com"], a[href*="vine.co"], a[href*="vk.com"], a[href*="weibo.com"], a[href*="wordpress.com"], a[href*="xing"], a[href*="youtube.com"] {		
+	a[href*="behance.net"], a[href*="codepen.io"], a[href*="delicious.com"], a[href*="deviantart.com"], a[href*="digg.com"], a[href*="dribbble.com"], a[href*="facebook.com"], a[href*="flickr.com"], a[href*="foursquare.com"], a[href*="github.com"], a[href*="plus.google.com"], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="pinterest.com"], a[href*="reddit.com"], a[href*="soundcloud.com"], a[href*="stackexchange.com"], a[href*="stackoverflow.com"], a[href*="tumblr.com"], a[href*="twitter.com"], a[href*="vimeo.com"], a[href*="vine.co"], a[href*="vk.com"], a[href*="weibo.com"], a[href*="wordpress.com"], a[href*="xing"], a[href*="yelp.com"], a[href*="youtube.com"] {		
 		font-size: 0;
 		text-align: center;
 		
@@ -625,7 +625,11 @@ $sel: '';
 
 	a[href*="xing"]:before {
 		content: "\e902";
-	}							
+	}	
+
+	a[href*="yelp.com"]:before {
+		content: "\f1e9";
+	}								
 
 	a[href*="youtube.com"]:before {
 		content: "\e91c";

@@ -7,7 +7,7 @@ Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-corp
-Tags:
+Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 */
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
@@ -16,10 +16,6 @@ Please don't edit this file; any changes made here will be lost
 during the theme update process. If you need to make CSS 
 modifications, use the Additional CSS section in the Customizer 
 or a child theme.
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -882,10 +878,10 @@ a {
 /*--------------------------------------------------------------
 ## Footer Menu Social Icons
 --------------------------------------------------------------*/
-.footer-menu a[href*="behance.net"], .footer-menu a[href*="codepen.io"], .footer-menu a[href*="delicious.com"], .footer-menu a[href*="deviantart.com"], .footer-menu a[href*="digg.com"], .footer-menu a[href*="dribbble.com"], .footer-menu a[href*="facebook.com"], .footer-menu a[href*="flickr.com"], .footer-menu a[href*="foursquare.com"], .footer-menu a[href*="github.com"], .footer-menu a[href*="plus.google.com"], .footer-menu a[href*="instagram.com"], .footer-menu a[href*="linkedin.com"], .footer-menu a[href*="pinterest.com"], .footer-menu a[href*="reddit.com"], .footer-menu a[href*="soundcloud.com"], .footer-menu a[href*="stackexchange.com"], .footer-menu a[href*="stackoverflow.com"], .footer-menu a[href*="tumblr.com"], .footer-menu a[href*="twitter.com"], .footer-menu a[href*="vimeo.com"], .footer-menu a[href*="vine.co"], .footer-menu a[href*="vk.com"], .footer-menu a[href*="weibo.com"], .footer-menu a[href*="wordpress.com"], .footer-menu a[href*="xing"], .footer-menu a[href*="youtube.com"] {
+.footer-menu a[href*="behance.net"], .footer-menu a[href*="codepen.io"], .footer-menu a[href*="delicious.com"], .footer-menu a[href*="deviantart.com"], .footer-menu a[href*="digg.com"], .footer-menu a[href*="dribbble.com"], .footer-menu a[href*="facebook.com"], .footer-menu a[href*="flickr.com"], .footer-menu a[href*="foursquare.com"], .footer-menu a[href*="github.com"], .footer-menu a[href*="plus.google.com"], .footer-menu a[href*="instagram.com"], .footer-menu a[href*="linkedin.com"], .footer-menu a[href*="pinterest.com"], .footer-menu a[href*="reddit.com"], .footer-menu a[href*="soundcloud.com"], .footer-menu a[href*="stackexchange.com"], .footer-menu a[href*="stackoverflow.com"], .footer-menu a[href*="tumblr.com"], .footer-menu a[href*="twitter.com"], .footer-menu a[href*="vimeo.com"], .footer-menu a[href*="vine.co"], .footer-menu a[href*="vk.com"], .footer-menu a[href*="weibo.com"], .footer-menu a[href*="wordpress.com"], .footer-menu a[href*="xing"], .footer-menu a[href*="yelp.com"], .footer-menu a[href*="youtube.com"] {
   font-size: 0;
   text-align: center; }
-  .footer-menu a[href*="behance.net"]:before, .footer-menu a[href*="codepen.io"]:before, .footer-menu a[href*="delicious.com"]:before, .footer-menu a[href*="deviantart.com"]:before, .footer-menu a[href*="digg.com"]:before, .footer-menu a[href*="dribbble.com"]:before, .footer-menu a[href*="facebook.com"]:before, .footer-menu a[href*="flickr.com"]:before, .footer-menu a[href*="foursquare.com"]:before, .footer-menu a[href*="github.com"]:before, .footer-menu a[href*="plus.google.com"]:before, .footer-menu a[href*="instagram.com"]:before, .footer-menu a[href*="linkedin.com"]:before, .footer-menu a[href*="pinterest.com"]:before, .footer-menu a[href*="reddit.com"]:before, .footer-menu a[href*="soundcloud.com"]:before, .footer-menu a[href*="stackexchange.com"]:before, .footer-menu a[href*="stackoverflow.com"]:before, .footer-menu a[href*="tumblr.com"]:before, .footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="vimeo.com"]:before, .footer-menu a[href*="vine.co"]:before, .footer-menu a[href*="vk.com"]:before, .footer-menu a[href*="weibo.com"]:before, .footer-menu a[href*="wordpress.com"]:before, .footer-menu a[href*="xing"]:before, .footer-menu a[href*="youtube.com"]:before {
+  .footer-menu a[href*="behance.net"]:before, .footer-menu a[href*="codepen.io"]:before, .footer-menu a[href*="delicious.com"]:before, .footer-menu a[href*="deviantart.com"]:before, .footer-menu a[href*="digg.com"]:before, .footer-menu a[href*="dribbble.com"]:before, .footer-menu a[href*="facebook.com"]:before, .footer-menu a[href*="flickr.com"]:before, .footer-menu a[href*="foursquare.com"]:before, .footer-menu a[href*="github.com"]:before, .footer-menu a[href*="plus.google.com"]:before, .footer-menu a[href*="instagram.com"]:before, .footer-menu a[href*="linkedin.com"]:before, .footer-menu a[href*="pinterest.com"]:before, .footer-menu a[href*="reddit.com"]:before, .footer-menu a[href*="soundcloud.com"]:before, .footer-menu a[href*="stackexchange.com"]:before, .footer-menu a[href*="stackoverflow.com"]:before, .footer-menu a[href*="tumblr.com"]:before, .footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="vimeo.com"]:before, .footer-menu a[href*="vine.co"]:before, .footer-menu a[href*="vk.com"]:before, .footer-menu a[href*="weibo.com"]:before, .footer-menu a[href*="wordpress.com"]:before, .footer-menu a[href*="xing"]:before, .footer-menu a[href*="yelp.com"]:before, .footer-menu a[href*="youtube.com"]:before {
     font-family: "siteorigin-corp-icons";
     font-size: 16px; }
 
@@ -973,6 +969,9 @@ a {
 
 .footer-menu a[href*="xing"]:before {
   content: "\e902"; }
+
+.footer-menu a[href*="yelp.com"]:before {
+  content: "\f1e9"; }
 
 .footer-menu a[href*="youtube.com"]:before {
   content: "\e91c"; }
