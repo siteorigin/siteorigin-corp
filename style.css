@@ -1445,6 +1445,9 @@ z.page-layout-no-sidebar .content-area {
         width: 24px; }
         #fullscreen-search .search-close-button .close svg path {
           fill: #929292; }
+    @media (max-width: 1100px) {
+      #fullscreen-search .search-close-button {
+        right: 25px; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
