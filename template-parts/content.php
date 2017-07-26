@@ -12,9 +12,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-thumbnail">
-		<a href="<?php the_permalink(); ?>">			
-			<?php the_post_thumbnail(); ?>			
-		</a>
+		<?php 
+			if ( is_single() ) :
+				the_post_thumbnail();		
+			else : ?>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'siteorigin-corp-354x234-crop' ); ?>
+				</a>
+			<?php endif;
+		?>
 	</div>
 	<div>
 		<header class="entry-header">

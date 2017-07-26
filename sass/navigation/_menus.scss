@@ -322,6 +322,7 @@ $sel: '';
 }
 
 .pagination {
+	@include clearfix-after;
 	text-align: center;
 
 	.page-numbers {
