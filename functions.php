@@ -204,13 +204,6 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Load WooCommerce compatibility file.
- */
-if ( function_exists( 'is_woocommerce' ) ) {
-	require get_template_directory() . '/woocommerce/functions.php';
-}
-
 /* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
 If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
 
