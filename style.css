@@ -616,15 +616,8 @@ a {
         fill: #2d2d2d; }
     .main-navigation .search-toggle .close {
       display: none; }
-      .main-navigation .search-toggle .close .svg-icon-close {
-        height: 16px;
-        width: 16px; }
-        .main-navigation .search-toggle .close .svg-icon-close path {
-          fill: #626262; }
     .main-navigation .search-toggle.close-search .open {
       display: none; }
-    .main-navigation .search-toggle.close-search .close {
-      display: block; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
@@ -1381,11 +1374,7 @@ z.page-layout-no-sidebar .content-area {
   top: 0;
   z-index: 10000; }
   #fullscreen-search .corp-container {
-    left: 50%;
-    max-width: 555px;
-    position: absolute;
-    top: 40%;
-    transform: translate(-50%, -50%); }
+    top: 40%; }
   #fullscreen-search h3 {
     color: #b2b2b2;
     font-family: "Open Sans", sans-serif;
@@ -1402,7 +1391,10 @@ z.page-layout-no-sidebar .content-area {
       #fullscreen-search h3 {
         font-size: 16px; } }
   #fullscreen-search form {
-    position: relative; }
+    left: 50%;
+    max-width: 555px;
+    position: absolute;
+    transform: translate(-50%, -50%); }
     #fullscreen-search form input[type="search"] {
       background: transparent;
       border: 0;
@@ -1437,6 +1429,22 @@ z.page-layout-no-sidebar .content-area {
         @media (max-width: 480px) {
           #fullscreen-search form button[type="submit"] svg {
             display: none; } }
+  #fullscreen-search .search-close-button {
+    background: transparent;
+    border: none;
+    display: block;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: -100px; }
+    #fullscreen-search .search-close-button .close {
+      display: inline-block; }
+      #fullscreen-search .search-close-button .close svg {
+        height: 24px;
+        width: 24px; }
+        #fullscreen-search .search-close-button .close svg path {
+          fill: #929292; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
