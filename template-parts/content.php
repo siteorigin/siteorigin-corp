@@ -17,7 +17,7 @@
 				the_post_thumbnail();		
 			else : ?>
 				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'siteorigin-corp-354x234-crop' ); ?>
+					<?php the_post_thumbnail( 'siteorigin-corp-480x317-crop' ); ?>
 				</a>
 			<?php endif;
 		?>

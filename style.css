@@ -759,6 +759,7 @@ a {
 
 .pagination {
   clear: both;
+  padding-top: 30px;
   text-align: center; }
   .pagination .page-numbers {
     border: 1px solid #626262;
@@ -1463,23 +1464,40 @@ z.page-layout-no-sidebar .content-area {
 body:not(.single) .hentry {
   display: block;
   float: left;
-  margin: 0 0 30px;
+  margin: 0 0 31px;
   width: 31%; }
+  body.sidebar:not(.single) .hentry {
+    width: 48.25%; }
+    @media (max-width: 480px) {
+      body.sidebar:not(.single) .hentry {
+        width: 100%; } }
+  @media (max-width: 768px) {
+    body:not(.single) .hentry {
+      width: 48.25%; } }
   @media (max-width: 480px) {
     body:not(.single) .hentry {
       width: 100%; } }
   body:not(.single) .hentry:nth-child(3n+1) {
     margin-right: 3.5%; }
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       body:not(.single) .hentry:nth-child(3n+1) {
         margin-right: 0; } }
+  @media (max-width: 768px) {
+    body:not(.single) .hentry:nth-child(2n+1) {
+      margin-right: 3.5%; } }
   body:not(.single) .hentry:nth-child(3n+3) {
     margin-left: 3.5%; }
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       body:not(.single) .hentry:nth-child(3n+3) {
         margin-left: 0; } }
   body:not(.single) .hentry:nth-child(3n+4) {
     clear: left; }
+    @media (max-width: 768px) {
+      body:not(.single) .hentry:nth-child(3n+4) {
+        clear: none; } }
+  @media (max-width: 768px) {
+    body:not(.single) .hentry:nth-child(2n+3) {
+      clear: left; } }
   body:not(.single) .hentry:only-child {
     margin: 0; }
   body:not(.single) .hentry .entry-title {
@@ -1489,8 +1507,9 @@ body:not(.single) .hentry {
     body:not(.single) .hentry .entry-thumbnail ~ div {
       background: #fff;
       border: 1px solid #e6e6e6;
-      padding: 25px 30px; }
+      padding: 15px 30px 33px; }
   body:not(.single) .hentry .entry-content {
+    font-size: .8666em;
     padding-bottom: 0; }
     body:not(.single) .hentry .entry-content p:last-of-type {
       margin: 0; }
