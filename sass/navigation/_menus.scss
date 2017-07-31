@@ -326,21 +326,23 @@ $sel: '';
 	text-align: center;
 
 	.page-numbers {
-		@extend .button;
-		background: $color__background-hr-dark;
+		border: 1px solid $color__text-medium;
 		color: $color__text-medium;
 		display: inline-block;
-		margin-right: 3px;
-		padding-right: 17px;
-		padding-left: 17px;
+		font-family: $font__main;
+		font-size: 0.9333em;
+		line-height: normal;  
+		margin-right: 4px;
+		padding: 11px 17px;
+		transition: .3s;
 
 		&:visited {
 			color: $color__text-medium;
 		}
 
 		&:hover {
-			background: $color__accent;
-			color: #fff;
+			border-color: $color__accent;
+			color: $color__accent;
 		}
 
 		&.next,
@@ -351,7 +353,7 @@ $sel: '';
 	}
 
 	.dots {
-		background: none;
+		border: none;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 		font-size: 13px;
 		padding-right: 0;
@@ -364,8 +366,8 @@ $sel: '';
 	}
 
 	.current {
-		background: $color__accent;
-		color: #fff;
+		border-color: $color__accent;
+		color: $color__accent;
 	}
 }
 

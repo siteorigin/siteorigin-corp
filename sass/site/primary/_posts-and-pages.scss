@@ -171,6 +171,7 @@ body:not(.single) .hentry {
 }	
 
 .page-links {
+	margin-top: 26px; 
 	text-align: left;
 
 	.page-links-title {
@@ -180,27 +181,40 @@ body:not(.single) .hentry {
 	}
 
 	.page-links-title {
-		background: none;
+		border: none; 
 		color: $color__text-medium;
 		font-weight: 600; 
 		padding: 0;
 		text-transform: none;
 		
 		&:hover {
-			background: none;
+			border: none; 
 			color: $color__text-medium;
 		}
 	}
 
 	span {
-		@extend .button;
-		margin-right: 3px;
-		padding-right: 17px;
-		padding-left: 17px;	
+		border: 1px solid $color__text-medium;
+		color: $color__text-medium;
+		display: inline-block;
+		font-family: $font__main;
+		font-size: 0.9333em;
+		line-height: normal;  
+		margin-right: 4px;
+		padding: 11px 17px;
+		transition: .3s;
+
+		&:visited {
+			color: $color__text-medium;
+		}
+
+		&:hover {
+			border-color: $color__accent;
+			color: $color__accent;
+		}
 	}
 
 	a span {
-		background: $color__background-hr-dark;
 		color: $color__text-medium;
 	}		
 }

@@ -395,7 +395,7 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-.button, .pagination .page-numbers, .page-links span,
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -411,20 +411,20 @@ input[type="submit"] {
   padding: 11px 25px;
   text-transform: uppercase;
   transition: .3s; }
-  .button:hover, .pagination .page-numbers:hover, .page-links span:hover,
+  .button:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     background: #ef3636;
     color: #fff; }
-  .button:visited, .pagination .page-numbers:visited, .page-links span:visited,
+  .button:visited,
   button:visited,
   input[type="button"]:visited,
   input[type="reset"]:visited,
   input[type="submit"]:visited {
     color: #fff; }
-  .button:active, .pagination .page-numbers:active, .page-links span:active, .button:focus, .pagination .page-numbers:focus, .page-links span:focus,
+  .button:active, .button:focus,
   button:active,
   button:focus,
   input[type="button"]:active,
@@ -761,22 +761,25 @@ a {
   clear: both;
   text-align: center; }
   .pagination .page-numbers {
-    background: #d6d6d6;
+    border: 1px solid #626262;
     color: #626262;
     display: inline-block;
-    margin-right: 3px;
-    padding-right: 17px;
-    padding-left: 17px; }
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9333em;
+    line-height: normal;
+    margin-right: 4px;
+    padding: 11px 17px;
+    transition: .3s; }
     .pagination .page-numbers:visited {
       color: #626262; }
     .pagination .page-numbers:hover {
-      background: #f14e4e;
-      color: #fff; }
+      border-color: #f14e4e;
+      color: #f14e4e; }
     .pagination .page-numbers.next, .pagination .page-numbers.prev {
       font-family: Verdana;
       padding: 12px 13px; }
   .pagination .dots {
-    background: none;
+    border: none;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 13px;
     padding-right: 0;
@@ -785,8 +788,8 @@ a {
       background: none;
       color: #626262; }
   .pagination .current {
-    background: #f14e4e;
-    color: #fff; }
+    border-color: #f14e4e;
+    color: #f14e4e; }
 
 .post-navigation {
   font-size: 16px; }
@@ -1143,6 +1146,7 @@ a {
 .site-footer .widget .widget-title {
   font-size: .9333em;
   font-weight: 600;
+  letter-spacing: 1px;
   margin: 0 0 20px;
   text-transform: uppercase; }
   .widget-area .widget .widget-title ~ *,
@@ -1566,26 +1570,37 @@ body:not(.single) .hentry {
       color: #f14e4e; }
 
 .page-links {
+  margin-top: 26px;
   text-align: left; }
   .page-links .page-links-title {
     color: #2d2d2d;
     font-size: 14px;
     font-weight: 500; }
   .page-links .page-links-title {
-    background: none;
+    border: none;
     color: #626262;
     font-weight: 600;
     padding: 0;
     text-transform: none; }
     .page-links .page-links-title:hover {
-      background: none;
+      border: none;
       color: #626262; }
   .page-links span {
-    margin-right: 3px;
-    padding-right: 17px;
-    padding-left: 17px; }
+    border: 1px solid #626262;
+    color: #626262;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9333em;
+    line-height: normal;
+    margin-right: 4px;
+    padding: 11px 17px;
+    transition: .3s; }
+    .page-links span:visited {
+      color: #626262; }
+    .page-links span:hover {
+      border-color: #f14e4e;
+      color: #f14e4e; }
   .page-links a span {
-    background: #d6d6d6;
     color: #626262; }
 
 .single .entry-footer {
@@ -1994,7 +2009,9 @@ body:not(.single) .hentry {
       margin: 0 2.75% 95px 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
-        color: #fff; }
+        color: #fff;
+        font-size: 1.0666em;
+        font-weight: normal; }
       .site-footer .widgets .widget ~ * {
         color: #b4b5b8; }
       .site-footer .widgets .widget a {
