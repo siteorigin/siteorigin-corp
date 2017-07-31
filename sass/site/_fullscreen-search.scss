@@ -17,7 +17,7 @@
 		font-weight: 300;
 		letter-spacing: 2px;
 		text-align: center;
-		margin: 0 0 41px;
+		margin: 0 0 85px;
 		text-transform: uppercase;
 
 		@media (max-width: 768px) {
@@ -86,8 +86,8 @@
 		outline: none;
 		padding: 0;
 		position: absolute;
-		right: 0;
-		top: -100px;
+		right: 60px;
+		top: 60px;
 
 		.close {
 			display: inline-block;
@@ -95,6 +95,7 @@
 			svg {
 				height: 24px;
 				width: 24px;
+				
 				path {
 					fill: $color__text-light;
 				}

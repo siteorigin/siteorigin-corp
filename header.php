@@ -43,7 +43,6 @@
 
 	                <button id="search-button" class="search-toggle">
 	                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
-	                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
                 	</button>
 
 					<a href="#menu" id="mobile-menu-button">
@@ -56,9 +55,6 @@
 				<div id="fullscreen-search">
 					<div class="corp-container">
 						<h3><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></h3>
-						<button id="search-close-button" class="search-close-button">
-		                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
-	                	</button>
 						<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
 							<input type="search" name="s" placeholder="" value="<?php echo get_search_query() ?>" />
 							<button type="submit">
@@ -67,6 +63,9 @@
 							</button>
 						</form>
 					</div>
+					<button id="search-close-button" class="search-close-button">
+		            	<span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
+	                </button>					
 				</div><!-- #header-search -->
 
 			</div><!-- .site-header-inner -->

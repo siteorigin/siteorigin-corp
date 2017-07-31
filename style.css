@@ -1388,7 +1388,7 @@ z.page-layout-no-sidebar .content-area {
     font-weight: 300;
     letter-spacing: 2px;
     text-align: center;
-    margin: 0 0 41px;
+    margin: 0 0 85px;
     text-transform: uppercase; }
     @media (max-width: 768px) {
       #fullscreen-search h3 {
@@ -1442,8 +1442,8 @@ z.page-layout-no-sidebar .content-area {
     outline: none;
     padding: 0;
     position: absolute;
-    right: 0;
-    top: -100px; }
+    right: 60px;
+    top: 60px; }
     #fullscreen-search .search-close-button .close {
       display: inline-block; }
       #fullscreen-search .search-close-button .close svg {
@@ -1503,7 +1503,6 @@ body:not(.single) .hentry {
     body.sidebar:not(.single) .hentry:nth-child(2n+1) {
       margin-right: 3.5%; }
     body.sidebar:not(.single) .hentry:nth-child(3n+3) {
-      clear: none;
       margin-left: 0; }
     body.sidebar:not(.single) .hentry:nth-child(3n+4) {
       clear: none; }
