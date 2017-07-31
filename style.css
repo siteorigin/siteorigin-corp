@@ -1466,11 +1466,6 @@ body:not(.single) .hentry {
   float: left;
   margin: 0 0 31px;
   width: 31%; }
-  body.sidebar:not(.single) .hentry {
-    width: 48.25%; }
-    @media (max-width: 480px) {
-      body.sidebar:not(.single) .hentry {
-        width: 100%; } }
   @media (max-width: 768px) {
     body:not(.single) .hentry {
       width: 48.25%; } }
@@ -1498,6 +1493,20 @@ body:not(.single) .hentry {
   @media (max-width: 768px) {
     body:not(.single) .hentry:nth-child(2n+3) {
       clear: left; } }
+  body.sidebar:not(.single) .hentry {
+    width: 48.25%; }
+    @media (max-width: 480px) {
+      body.sidebar:not(.single) .hentry {
+        width: 100%; } }
+    body.sidebar:not(.single) .hentry:nth-child(3n+1) {
+      margin-right: 0; }
+    body.sidebar:not(.single) .hentry:nth-child(2n+1) {
+      margin-right: 3.5%; }
+    body.sidebar:not(.single) .hentry:nth-child(3n+3) {
+      clear: none;
+      margin-left: 0; }
+    body.sidebar:not(.single) .hentry:nth-child(3n+4) {
+      clear: none; }
   body:not(.single) .hentry:only-child {
     margin: 0; }
   body:not(.single) .hentry .entry-title {
