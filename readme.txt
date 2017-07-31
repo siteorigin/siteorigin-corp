@@ -31,8 +31,6 @@ Long description.
 
 == Frequently Asked Questions ==
 
-= How do I setup the posts slider? =
-
 = How do I add social network icons to the footer menu? =
 
 1. The Corp footer menu supports social network icon links as used by many other themes. Icons are rendered by the [Font Awesome library](http://fontawesome.io/icons/). 

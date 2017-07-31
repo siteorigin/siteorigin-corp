@@ -2053,6 +2053,7 @@ body:not(.single) .hentry {
           width: 100% !important; } }
   .site-footer .site-info {
     float: left;
+    font-size: 13px;
     text-align: left;
     width: 30%; }
     @media (max-width: 768px) {
@@ -2063,22 +2064,18 @@ body:not(.single) .hentry {
   .site-footer .bottom-bar {
     background: #2f333b;
     color: #b4b5b8;
-    font-size: 13px;
     overflow: auto;
     padding: 25px 0; }
-    .site-footer .bottom-bar a {
-      color: #b4b5b8; }
-      .site-footer .bottom-bar a:hover {
-        color: #fff; }
-    .site-footer .bottom-bar div.container {
-      height: 35px;
-      line-height: 35px; }
     .site-footer .bottom-bar div:only-of-type {
       float: none;
       text-align: center;
       width: 1190px; }
     .responsive .site-footer .bottom-bar div:only-of-type {
       width: 100%; }
+    .site-footer .bottom-bar a {
+      color: #b4b5b8; }
+      .site-footer .bottom-bar a:hover {
+        color: #fff; }
 
 /*--------------------------------------------------------------
 # Media

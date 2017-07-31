@@ -50,6 +50,7 @@
 
 	.site-info {
 		float: left;
+		font-size: 13px; 
 		text-align: left;
 		width: 30%;
 		
@@ -63,9 +64,18 @@
 	.bottom-bar {
 		background: $color__background-bottom-bar;
 		color: #b4b5b8;
-		font-size: 13px; 
 		overflow: auto;
-		padding: 25px 0;
+		padding: 25px 0;		
+
+		div:only-of-type {
+			float: none;
+			text-align: center;
+			width: 1190px; // 1140px container.
+		}	
+
+		@at-root .responsive & div:only-of-type {
+			width: 100%; 
+		}
 
 		a {
 			color: #b4b5b8;
@@ -74,23 +84,5 @@
 				color: #fff;
 			}
 		}
-
-		div {
-
-			&.container {
-				height: 35px; 
-				line-height: 35px; 
-			}
-			
-			&:only-of-type {
-				float: none;
-				text-align: center;
-				width: 1190px; // 1140px container.
-			}	
-		}
-
-		@at-root .responsive & div:only-of-type {
-			width: 100%; 
-		}	
 	}
 }
