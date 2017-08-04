@@ -36,7 +36,6 @@
 		<div class="bottom-bar">
 			<div class="corp-container">
 				<div class="site-info">
-					<div class="container">
 						<?php
 						siteorigin_corp_footer_text();
 
@@ -50,10 +49,9 @@
 							echo wp_kses_post( $credit_text );
 						}
 						?>
-					</div><!-- .container -->
 				</div><!-- .site-info -->
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'container_class' => 'footer-menu', 'depth' => 1, 'fallback_cb' => '' ) ); ?>				
-			</div></div><!-- .corp-container -->
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'container_class' => 'footer-menu', 'depth' => 1, 'fallback_cb' => '' ) ); ?>	
+			</div><!-- .corp-container -->
 		</div><!-- .bottom-bar -->
 
 		<?php do_action( 'siteorigin_corp_bottom' ); ?>
