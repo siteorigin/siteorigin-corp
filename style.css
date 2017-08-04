@@ -3,7 +3,7 @@ Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Description:
-Version: dev
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-corp
@@ -2069,8 +2069,6 @@ body:not(.single) .hentry {
     .site-footer .bottom-bar div:only-of-type {
       float: none;
       text-align: center;
-      width: 1190px; }
-    .responsive .site-footer .bottom-bar div:only-of-type {
       width: 100%; }
     .site-footer .bottom-bar a {
       color: #b4b5b8; }
@@ -2146,5 +2144,3 @@ object {
 .gallery-caption {
   display: block;
   font-size: 13px; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
