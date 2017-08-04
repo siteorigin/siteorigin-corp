@@ -1,4 +1,4 @@
 == Changelog ==
 
-= 0.1 - 2017 =
-* Initial release.
+= 0.1 - 04 August 2017 =
+* Pre-release.
