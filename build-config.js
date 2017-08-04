@@ -61,6 +61,11 @@ module.exports = {
             '!{tmp,tmp/**}'                     // Ignore tmp/ and contents
         ]
     },
+    css: {
+        src: [
+            'style.css'
+        ],
+    },
     copy: {
         src: [
             '**/!(*.js|*.scss|*.md|style.css|woocommerce.css)',   // Everything except .js and .scss files
