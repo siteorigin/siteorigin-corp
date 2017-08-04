@@ -9,11 +9,11 @@ Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Short description.
+A modern business theme from SiteOrigin.
 
 == Description ==
 
-Long description.
+A modern business theme from SiteOrigin. Corp is versatile and quick to customize. 
 
 == Installation ==
 
@@ -95,7 +95,7 @@ You should have received a copy of the GNU General Public License along with thi
 SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](http://underscores.me/), Copyright 2012 Automattic. Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 
 == Images ==
-
+Theme screenshot images sourced from [Unsplash](https://unsplash.com/) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Fonts and Icons ==
 
