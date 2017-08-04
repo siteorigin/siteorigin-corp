@@ -59,8 +59,8 @@ function siteorigin_corp_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Header Menu', 'polestar' ),
-		'menu-2' => esc_html__( 'Footer Menu', 'polestar' )
+		'menu-1' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
+		'menu-2' => esc_html__( 'Footer Menu', 'siteorigin-corp' )
 	) );
 	
 	/*
