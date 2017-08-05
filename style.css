@@ -1221,7 +1221,19 @@ a {
       text-align: right; }
 
 /*--------------------------------------------------------------
-## Recent Comments
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories .cat-item {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 8px; }
+  .widget_categories .cat-item:last-of-type {
+    margin-bottom: 0; }
+  .widget_categories .cat-item a {
+    color: #2d2d2d; }
+
+/*--------------------------------------------------------------
+## Recent Comments Widget
 --------------------------------------------------------------*/
 .widget_recent_comments .recentcomments {
   color: #929292;

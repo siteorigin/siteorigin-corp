@@ -117,7 +117,24 @@
 }
 
 /*--------------------------------------------------------------
-## Recent Comments
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories .cat-item {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 8px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	} 
+	
+	a {
+		color: $color__text-dark;
+	} 
+}
+
+/*--------------------------------------------------------------
+## Recent Comments Widget
 --------------------------------------------------------------*/
 .widget_recent_comments .recentcomments {
 	color: $color__text-light;
