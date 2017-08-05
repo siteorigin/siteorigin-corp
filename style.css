@@ -1269,6 +1269,36 @@ a {
     display: block; }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.widget.recent-posts-extended li {
+  clear: both;
+  padding-top: 3px; }
+
+.widget.recent-posts-extended .rpwe-alignleft {
+  float: left;
+  margin-right: 15px;
+  padding-bottom: 17px; }
+
+.widget.recent-posts-extended h3 {
+  color: #2d2d2d;
+  clear: none;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding-top: 6px; }
+  .widget.recent-posts-extended h3 a {
+    color: #2d2d2d; }
+    .widget.recent-posts-extended h3 a:hover {
+      color: #626262; }
+
+.widget.recent-posts-extended time {
+  color: #929292;
+  font-size: .9285em;
+  line-height: normal; }
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {

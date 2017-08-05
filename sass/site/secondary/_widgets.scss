@@ -186,6 +186,47 @@
 }
 
 /*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.widget.recent-posts-extended {
+
+	li {
+		clear: both;
+		padding-top: 3px;
+	}
+
+	.rpwe-alignleft {
+	  	float: left;
+    	margin-right: 15px;
+    	padding-bottom: 17px;
+	}
+
+	h3 {
+		color: $color__text-dark;
+		clear: none;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: 1;
+		margin: 0;
+		padding-top: 6px;
+
+		a {
+			color: $color__text-dark;
+			
+			&:hover {
+				color: $color__text-medium;
+			}
+		}
+	}
+
+	time {
+		color: $color__text-light;
+		font-size: .9285em;
+		line-height: normal;
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
