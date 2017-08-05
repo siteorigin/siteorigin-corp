@@ -3,7 +3,7 @@ Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Description:
-Version: 1.0
+Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-corp
@@ -1141,14 +1141,14 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 55px; }
+  margin: 0 0 50px; }
 
 .widget-area .widget .widget-title,
 .site-footer .widget .widget-title {
   font-size: .9333em;
   font-weight: 600;
   letter-spacing: 1px;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   text-transform: uppercase; }
   .widget-area .widget .widget-title ~ *,
   .site-footer .widget .widget-title ~ * {
@@ -1219,6 +1219,28 @@ a {
           color: #f14e4e; }
     .widget #wp-calendar tfoot #next {
       text-align: right; }
+
+/*--------------------------------------------------------------
+## Recent Comments
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 16px; }
+  .widget_recent_comments .recentcomments:last-of-type {
+    margin-bottom: 0; }
+  .widget_recent_comments .recentcomments .comment-author-link {
+    color: #2d2d2d; }
+    .widget_recent_comments .recentcomments .comment-author-link:before {
+      color: #929292;
+      content: "\e91f";
+      display: inline-block;
+      font-family: "siteorigin-corp-icons";
+      font-size: 12px;
+      padding: 0 9px 0 0;
+      vertical-align: top; }
+  .widget_recent_comments .recentcomments a {
+    color: #2d2d2d; }
 
 /*--------------------------------------------------------------
 ## - Search Widget
@@ -2144,3 +2166,5 @@ object {
 .gallery-caption {
   display: block;
   font-size: 13px; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

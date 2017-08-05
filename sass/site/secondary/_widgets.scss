@@ -1,5 +1,5 @@
 .widget {
-	margin: 0 0 55px;
+	margin: 0 0 50px;
 }
 
 .widget-area .widget, 
@@ -9,7 +9,7 @@
 		font-size: .9333em;
 		font-weight: 600;
 		letter-spacing: 1px; 
-		margin: 0 0 20px;
+		margin: 0 0 15px;
 		text-transform: uppercase;
 		
 		// Set the font size of elements below the widget title to 14px.
@@ -113,6 +113,37 @@
 		#next {
 			text-align: right;			
 		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Comments
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 16px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	}
+	
+	.comment-author-link {
+		color: $color__text-dark;
+		
+		&:before {
+			color: $color__text-light;
+			content: "\e91f";
+			display: inline-block;
+			font-family: $font__icon;
+			font-size: 12px; 
+    		padding: 0 9px 0 0;
+    		vertical-align: top;
+		}
+	}
+	
+	a {
+		color: $color__text-dark;
 	}
 }
 
