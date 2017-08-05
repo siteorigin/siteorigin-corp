@@ -1255,6 +1255,20 @@ a {
     color: #2d2d2d; }
 
 /*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries li {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 11px; }
+  .widget_recent_entries li:last-of-type {
+    margin-bottom: 0; }
+  .widget_recent_entries li a {
+    color: #2d2d2d; }
+  .widget_recent_entries li span {
+    display: block; }
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {

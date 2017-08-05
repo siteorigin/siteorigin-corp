@@ -165,6 +165,27 @@
 }
 
 /*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries li {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 11px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	} 
+	
+	a {
+		color: $color__text-dark;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
