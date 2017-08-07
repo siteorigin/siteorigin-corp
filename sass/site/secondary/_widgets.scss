@@ -257,6 +257,6 @@
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
-#page .widget_tag_cloud {
+aside.widget.widget_tag_cloud .tagcloud {
 	@extend .tags-links;
 }
