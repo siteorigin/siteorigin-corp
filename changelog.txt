@@ -1,4 +1,7 @@
 == Changelog ==
 
+= 0.2 - 07 August 2017 =
+* Improved Recent Comments, Recent Posts and Categories widget styling.
+
 = 0.1 - 04 August 2017 =
 * Initial release.

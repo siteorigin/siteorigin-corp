@@ -1,5 +1,5 @@
 .widget {
-	margin: 0 0 55px;
+	margin: 0 0 50px;
 }
 
 .widget-area .widget, 
@@ -9,7 +9,7 @@
 		font-size: .9333em;
 		font-weight: 600;
 		letter-spacing: 1px; 
-		margin: 0 0 20px;
+		margin: 0 0 15px;
 		text-transform: uppercase;
 		
 		// Set the font size of elements below the widget title to 14px.
@@ -117,6 +117,116 @@
 }
 
 /*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories .cat-item {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 8px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	} 
+	
+	a {
+		color: $color__text-dark;
+	} 
+}
+
+/*--------------------------------------------------------------
+## Recent Comments Widget
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 16px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	}
+	
+	.comment-author-link {
+		color: $color__text-dark;
+		
+		&:before {
+			color: $color__text-light;
+			content: "\e91f";
+			display: inline-block;
+			font-family: $font__icon;
+			font-size: 12px; 
+    		padding: 0 9px 0 0;
+    		vertical-align: top;
+		}
+	}
+	
+	a {
+		color: $color__text-dark;
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries li {
+	color: $color__text-light;
+	font-size: 0.8666em;
+	margin-bottom: 11px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	} 
+	
+	a {
+		color: $color__text-dark;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.widget.recent-posts-extended {
+
+	li {
+		clear: both;
+		padding-top: 3px;
+	}
+
+	.rpwe-alignleft {
+	  	float: left;
+    	margin-right: 15px;
+    	padding-bottom: 17px;
+	}
+
+	h3 {
+		color: $color__text-dark;
+		clear: none;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: 1;
+		margin: 0;
+		padding-top: 6px;
+
+		a {
+			color: $color__text-dark;
+			
+			&:hover {
+				color: $color__text-medium;
+			}
+		}
+	}
+
+	time {
+		color: $color__text-light;
+		font-size: .9285em;
+		line-height: normal;
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
@@ -147,6 +257,6 @@
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
-#page .widget_tag_cloud {
+aside.widget.widget_tag_cloud .tagcloud {
 	@extend .tags-links;
 }

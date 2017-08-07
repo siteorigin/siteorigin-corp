@@ -111,7 +111,7 @@ function siteorigin_corp_widgets_init() {
 		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -121,7 +121,7 @@ function siteorigin_corp_widgets_init() {
 		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -132,7 +132,7 @@ function siteorigin_corp_widgets_init() {
 			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-corp' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</aside>',
-			'before_title' 	=> '<h2 class="widget-title heading-strike">',
+			'before_title' 	=> '<h2 class="widget-title">',
 			'after_title' 	=> '</h2>',
 		) );
 	}

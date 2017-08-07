@@ -3,7 +3,7 @@ Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Description:
-Version: 1.0
+Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-corp
@@ -1141,14 +1141,14 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 55px; }
+  margin: 0 0 50px; }
 
 .widget-area .widget .widget-title,
 .site-footer .widget .widget-title {
   font-size: .9333em;
   font-weight: 600;
   letter-spacing: 1px;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   text-transform: uppercase; }
   .widget-area .widget .widget-title ~ *,
   .site-footer .widget .widget-title ~ * {
@@ -1219,6 +1219,84 @@ a {
           color: #f14e4e; }
     .widget #wp-calendar tfoot #next {
       text-align: right; }
+
+/*--------------------------------------------------------------
+## Categories Widget
+--------------------------------------------------------------*/
+.widget_categories .cat-item {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 8px; }
+  .widget_categories .cat-item:last-of-type {
+    margin-bottom: 0; }
+  .widget_categories .cat-item a {
+    color: #2d2d2d; }
+
+/*--------------------------------------------------------------
+## Recent Comments Widget
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 16px; }
+  .widget_recent_comments .recentcomments:last-of-type {
+    margin-bottom: 0; }
+  .widget_recent_comments .recentcomments .comment-author-link {
+    color: #2d2d2d; }
+    .widget_recent_comments .recentcomments .comment-author-link:before {
+      color: #929292;
+      content: "\e91f";
+      display: inline-block;
+      font-family: "siteorigin-corp-icons";
+      font-size: 12px;
+      padding: 0 9px 0 0;
+      vertical-align: top; }
+  .widget_recent_comments .recentcomments a {
+    color: #2d2d2d; }
+
+/*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries li {
+  color: #929292;
+  font-size: 0.8666em;
+  margin-bottom: 11px; }
+  .widget_recent_entries li:last-of-type {
+    margin-bottom: 0; }
+  .widget_recent_entries li a {
+    color: #2d2d2d; }
+  .widget_recent_entries li span {
+    display: block; }
+
+/*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.widget.recent-posts-extended li {
+  clear: both;
+  padding-top: 3px; }
+
+.widget.recent-posts-extended .rpwe-alignleft {
+  float: left;
+  margin-right: 15px;
+  padding-bottom: 17px; }
+
+.widget.recent-posts-extended h3 {
+  color: #2d2d2d;
+  clear: none;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding-top: 6px; }
+  .widget.recent-posts-extended h3 a {
+    color: #2d2d2d; }
+    .widget.recent-posts-extended h3 a:hover {
+      color: #626262; }
+
+.widget.recent-posts-extended time {
+  color: #929292;
+  font-size: .9285em;
+  line-height: normal; }
 
 /*--------------------------------------------------------------
 ## - Search Widget
@@ -1633,7 +1711,7 @@ body:not(.single) .hentry {
 .single .entry-footer {
   margin: 15px 0; }
 
-.tags-links a, #page .widget_tag_cloud a {
+.tags-links a, aside.widget.widget_tag_cloud .tagcloud a {
   background: #e4e6eb;
   color: #626262;
   display: inline-block;
@@ -1644,7 +1722,7 @@ body:not(.single) .hentry {
   position: relative;
   margin: 0 10px 10px 0;
   transition: .2s; }
-  .tags-links a:after, #page .widget_tag_cloud a:after {
+  .tags-links a:after, aside.widget.widget_tag_cloud .tagcloud a:after {
     background: #f9f9f9;
     border-bottom: 14px solid transparent;
     border-right: 13px solid #e4e6eb;
@@ -1654,10 +1732,10 @@ body:not(.single) .hentry {
     left: 0;
     transition: .2s;
     top: 0; }
-  .tags-links a:hover, #page .widget_tag_cloud a:hover {
+  .tags-links a:hover, aside.widget.widget_tag_cloud .tagcloud a:hover {
     background: #f14e4e;
     color: #fff; }
-  .tags-links a:hover:after, #page .widget_tag_cloud a:hover:after {
+  .tags-links a:hover:after, aside.widget.widget_tag_cloud .tagcloud a:hover:after {
     border-right-color: #f14e4e; }
 
 /*--------------------------------------------------------------
@@ -2144,3 +2222,5 @@ object {
 .gallery-caption {
   display: block;
   font-size: 13px; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
