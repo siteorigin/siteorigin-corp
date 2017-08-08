@@ -259,4 +259,11 @@
 --------------------------------------------------------------*/
 aside.widget.widget_tag_cloud .tagcloud {
 	@extend .tags-links;
+	
+	@at-root .site-footer & {
+
+		a:after {
+			background: $color__background-footer;	
+		}		
+	}
 }
