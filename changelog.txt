@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 0.3 - 08 August 2017 =
+* Fixed incorrect theme tag name.
+* Improved Tags widget when displayed in footer widget area.
+
 = 0.2 - 07 August 2017 =
 * Improved Recent Comments, Recent Posts and Categories widget styling.
 
