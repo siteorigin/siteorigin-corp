@@ -78,7 +78,6 @@
 	}
 
 	tbody {
-		font-size: 13px; 
 
 		.pad {
 			background: none;
@@ -95,7 +94,6 @@
 	}
 	
 	tfoot {
-		font-size: 13px; 
 
 		#prev, 
 		#next {
@@ -121,7 +119,6 @@
 --------------------------------------------------------------*/
 .widget_categories .cat-item {
 	color: $color__text-light;
-	font-size: 0.8666em;
 	margin-bottom: 8px;
 	
 	&:last-of-type {
@@ -138,7 +135,6 @@
 --------------------------------------------------------------*/
 .widget_recent_comments .recentcomments {
 	color: $color__text-light;
-	font-size: 0.8666em;
 	margin-bottom: 16px;
 	
 	&:last-of-type {
@@ -153,7 +149,6 @@
 			content: "\e91f";
 			display: inline-block;
 			font-family: $font__icon;
-			font-size: 12px; 
     		padding: 0 9px 0 0;
     		vertical-align: top;
 		}
@@ -169,7 +164,6 @@
 --------------------------------------------------------------*/
 .widget_recent_entries li {
 	color: $color__text-light;
-	font-size: 0.8666em;
 	margin-bottom: 11px;
 	
 	&:last-of-type {

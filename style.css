@@ -1197,35 +1197,30 @@ a {
     .widget #wp-calendar thead th {
       padding: 8px 0;
       text-align: center; }
-  .widget #wp-calendar tbody {
-    font-size: 13px; }
-    .widget #wp-calendar tbody .pad {
-      background: none; }
-    .widget #wp-calendar tbody tr:first-of-type td {
-      padding-top: 8px; }
-    .widget #wp-calendar tbody td {
-      padding-bottom: 8px;
-      text-align: center; }
-  .widget #wp-calendar tfoot {
-    font-size: 13px; }
-    .widget #wp-calendar tfoot #prev,
-    .widget #wp-calendar tfoot #next {
-      padding-top: 4px; }
-      .widget #wp-calendar tfoot #prev a,
-      .widget #wp-calendar tfoot #next a {
-        color: #2d2d2d; }
-        .widget #wp-calendar tfoot #prev a:hover,
-        .widget #wp-calendar tfoot #next a:hover {
-          color: #f14e4e; }
-    .widget #wp-calendar tfoot #next {
-      text-align: right; }
+  .widget #wp-calendar tbody .pad {
+    background: none; }
+  .widget #wp-calendar tbody tr:first-of-type td {
+    padding-top: 8px; }
+  .widget #wp-calendar tbody td {
+    padding-bottom: 8px;
+    text-align: center; }
+  .widget #wp-calendar tfoot #prev,
+  .widget #wp-calendar tfoot #next {
+    padding-top: 4px; }
+    .widget #wp-calendar tfoot #prev a,
+    .widget #wp-calendar tfoot #next a {
+      color: #2d2d2d; }
+      .widget #wp-calendar tfoot #prev a:hover,
+      .widget #wp-calendar tfoot #next a:hover {
+        color: #f14e4e; }
+  .widget #wp-calendar tfoot #next {
+    text-align: right; }
 
 /*--------------------------------------------------------------
 ## Categories Widget
 --------------------------------------------------------------*/
 .widget_categories .cat-item {
   color: #929292;
-  font-size: 0.8666em;
   margin-bottom: 8px; }
   .widget_categories .cat-item:last-of-type {
     margin-bottom: 0; }
@@ -1237,7 +1232,6 @@ a {
 --------------------------------------------------------------*/
 .widget_recent_comments .recentcomments {
   color: #929292;
-  font-size: 0.8666em;
   margin-bottom: 16px; }
   .widget_recent_comments .recentcomments:last-of-type {
     margin-bottom: 0; }
@@ -1248,7 +1242,6 @@ a {
       content: "\e91f";
       display: inline-block;
       font-family: "siteorigin-corp-icons";
-      font-size: 12px;
       padding: 0 9px 0 0;
       vertical-align: top; }
   .widget_recent_comments .recentcomments a {
@@ -1259,7 +1252,6 @@ a {
 --------------------------------------------------------------*/
 .widget_recent_entries li {
   color: #929292;
-  font-size: 0.8666em;
   margin-bottom: 11px; }
   .widget_recent_entries li:last-of-type {
     margin-bottom: 0; }
@@ -1598,7 +1590,7 @@ body:not(.single) .hentry {
       border: 1px solid #e6e6e6;
       padding: 15px 30px 33px; }
   body:not(.single) .hentry .entry-content {
-    font-size: .8666em;
+    font-size: .9333em;
     padding-bottom: 0; }
     body:not(.single) .hentry .entry-content p:last-of-type {
       margin: 0; }
