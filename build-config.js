@@ -63,7 +63,8 @@ module.exports = {
     },
     css: {
         src: [
-            'style.css'
+            'style.css',
+            'css/siteorigin-corp-icons.css',
         ],
     },
     copy: {
