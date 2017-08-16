@@ -2,7 +2,7 @@
 Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
-Description:
+Description: A modern business theme from SiteOrigin. Corp is versatile and quick to customize.
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1545,39 +1545,39 @@ body:not(.single) .hentry {
   @media (max-width: 480px) {
     body:not(.single) .hentry {
       width: 100%; } }
-  body:not(.single) .hentry:nth-child(3n+1) {
+  body:not(.single) .hentry:nth-of-type(3n+1) {
     margin-right: 3.5%; }
     @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-child(3n+1) {
+      body:not(.single) .hentry:nth-of-type(3n+1) {
         margin-right: 0; } }
   @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-child(2n+1) {
+    body:not(.single) .hentry:nth-of-type(2n+1) {
       margin-right: 3.5%; } }
-  body:not(.single) .hentry:nth-child(3n+3) {
+  body:not(.single) .hentry:nth-of-type(3n+3) {
     margin-left: 3.5%; }
     @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-child(3n+3) {
+      body:not(.single) .hentry:nth-of-type(3n+3) {
         margin-left: 0; } }
-  body:not(.single) .hentry:nth-child(3n+4) {
+  body:not(.single) .hentry:nth-of-type(3n+4) {
     clear: left; }
     @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-child(3n+4) {
+      body:not(.single) .hentry:nth-of-type(3n+4) {
         clear: none; } }
   @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-child(2n+3) {
+    body:not(.single) .hentry:nth-of-type(2n+3) {
       clear: left; } }
   body.sidebar:not(.single) .hentry {
     width: 48.25%; }
     @media (max-width: 480px) {
       body.sidebar:not(.single) .hentry {
         width: 100%; } }
-    body.sidebar:not(.single) .hentry:nth-child(3n+1) {
+    body.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
       margin-right: 0; }
-    body.sidebar:not(.single) .hentry:nth-child(2n+1) {
+    body.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
       margin-right: 3.5%; }
-    body.sidebar:not(.single) .hentry:nth-child(3n+3) {
+    body.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
       margin-left: 0; }
-    body.sidebar:not(.single) .hentry:nth-child(3n+4) {
+    body.sidebar:not(.single) .hentry:nth-of-type(3n+4) {
       clear: none; }
   body:not(.single) .hentry:only-child {
     margin: 0; }

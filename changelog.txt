@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 0.5 - 16 August 2017 =
+* Added theme description.
+
 = 0.4 - 15 August 2017 =
 * Fixed build script to minify the icons CSS file.
 * Increased font sizes of certain sidebar widgets and the main grid blog layout.
