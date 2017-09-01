@@ -969,7 +969,7 @@ a {
   content: "\e902"; }
 
 .footer-menu a[href*="yelp.com"]:before {
-  content: "\f1e9"; }
+  content: "\e91e"; }
 
 .footer-menu a[href*="youtube.com"]:before {
   content: "\e91c"; }
