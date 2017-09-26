@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 0.6 - 26 September 2017 =
+* Added Yelp icon.
+* Prevented Featured Image markup from outputting when image not present.
+* Fixed search content meta function name.
+* Removed core HTML5 search form support.
+* Updated the comments title and navigation.
+* Updated the tag list function.
+
 = 0.5 - 16 August 2017 =
 * Added theme description.
 
