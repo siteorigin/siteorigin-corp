@@ -27,23 +27,31 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'siteorigin-corp' ) ),
-					number_format_i18n( get_comments_number() ),
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'siteorigin-corp' ),
 					'<span>' . get_the_title() . '</span>'
 				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'siteorigin-corp' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
-		</h2>
+		</h2><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'siteorigin-corp' ); ?></h2>
-			<div class="nav-links">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="icon-long-arrow-left"></span> ' . esc_html__( 'Older comments', 'siteorigin-corp' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer comments', 'siteorigin-corp' ) . ' <span class="icon-long-arrow-right"></span>' ); ?></div>
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php 
+			$args = array(
+				'prev_text' => '<span class="icon-long-arrow-left"></span> ' . esc_html__( 'Older comments', 'siteorigin-corp' ),
+				'next_text' => esc_html__( 'Newer comments', 'siteorigin-corp' ) . ' <span class="icon-long-arrow-right"></span>',
+			);
+			the_comments_navigation( $args ); 
+		?>
 
 		<ol class="comment-list">
 			<?php
@@ -55,16 +63,12 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'siteorigin-corp' ); ?></h2>
-			<div class="nav-links">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="icon-long-arrow-left"></span> ' . esc_html__( 'Older comments', 'siteorigin-corp' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer comments', 'siteorigin-corp' ) . ' <span class="icon-long-arrow-right"></span>' ); ?></div>
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
+		<?php 
+			$args = array(
+				'prev_text' => '<span class="icon-long-arrow-left"></span> ' . esc_html__( 'Older comments', 'siteorigin-corp' ),
+				'next_text' => esc_html__( 'Newer comments', 'siteorigin-corp' ) . ' <span class="icon-long-arrow-right"></span>',
+			);
+			the_comments_navigation( $args ); 
 
 	endif; // Check for have_comments().
 
