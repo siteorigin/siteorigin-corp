@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.wordpress.org/Template_Hierarchy 480 x 317
  *
  * @package siteorigin-corp
  * @license GPL 2.0 
@@ -11,18 +11,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-thumbnail">
-		<?php 
-			if ( is_single() ) :
-				the_post_thumbnail();		
-			else : ?>
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'siteorigin-corp-480x317-crop' ); ?>
-				</a>
-			<?php endif;
-		?>
-	</div>
-	<div>
+	
+	<?php 
+	if ( is_single() && has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	<?php elseif ( has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-480x317-crop' ); ?>		
+			</a>
+		</div>
+	<?php endif; ?>	
+
+	<div class="content-wrapper">
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :

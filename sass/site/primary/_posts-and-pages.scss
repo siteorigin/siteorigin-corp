@@ -99,13 +99,13 @@ body:not(.single) .hentry {
 
 	.entry-thumbnail {
 		margin-bottom: -1px; 
-
-		~ div {
-			background: #fff;
-			border: 1px solid $color__background-hr;
-			padding: 15px 30px 33px;
-		}
 	}	
+
+	.content-wrapper {
+		background: #fff;
+		border: 1px solid $color__background-hr;
+		padding: 15px 30px 33px;
+	}
 
 	.entry-content {
 		font-size: .9333em; 

@@ -969,7 +969,7 @@ a {
   content: "\e902"; }
 
 .footer-menu a[href*="yelp.com"]:before {
-  content: "\f1e9"; }
+  content: "\e91e"; }
 
 .footer-menu a[href*="youtube.com"]:before {
   content: "\e91c"; }
@@ -1587,10 +1587,10 @@ body:not(.single) .hentry {
     font-size: 1.0666em; }
   body:not(.single) .hentry .entry-thumbnail {
     margin-bottom: -1px; }
-    body:not(.single) .hentry .entry-thumbnail ~ div {
-      background: #fff;
-      border: 1px solid #e6e6e6;
-      padding: 15px 30px 33px; }
+  body:not(.single) .hentry .content-wrapper {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    padding: 15px 30px 33px; }
   body:not(.single) .hentry .entry-content {
     font-size: .9333em;
     padding-bottom: 0; }
