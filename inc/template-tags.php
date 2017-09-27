@@ -88,17 +88,8 @@ if ( ! function_exists( 'siteorigin_corp_display_logo' ) ) :
  * Display the logo or site title.
  */
 function siteorigin_corp_display_logo() {
-	$logo = siteorigin_setting( 'branding_logo' );
-	if ( ! empty( $logo ) ) {
-		$attrs = apply_filters( 'siteorigin-corp_logo_attributes', array() );
-
-		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-corp' ); ?></span><?php
-			echo wp_get_attachment_image( $logo, 'full', false, $attrs );
-		?></a><?php
-
-	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-		?><?php the_custom_logo(); ?><?php
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		the_custom_logo();
 	}
 	else {
 		if ( is_front_page() ) : ?>
@@ -111,24 +102,17 @@ function siteorigin_corp_display_logo() {
 endif;
 
 /**
- * Display a retina ready logo.
+ * Add the retina srcset to the custom logo attributes
  */
-function siteorigin_corp_display_retina_logo( $attr ){
-	$logo = siteorigin_setting( 'branding_logo' );
+function siteorigin_corp_display_retina_logo( $attr, $attachment ){
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
 
-	if( !empty( $retina ) ) {
+	if( ! empty( $retina ) && ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+		$srcset = empty( $attr['srcset'] ) ? array() : explode( ',', $attr['srcset'] );
 
-		$srcset = array();
-
-		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
-
-		if( !empty( $logo_src ) ) {
-			$srcset[] = $logo_src[0] . ' 1x';
-		}
-
-		if( !empty( $logo_src ) ) {
+		if( !empty( $retina_src ) ) {
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
 
@@ -139,7 +123,7 @@ function siteorigin_corp_display_retina_logo( $attr ){
 
 	return $attr;
 }
-add_filter( 'siteorigin_corp_logo_attributes', 'siteorigin-corp_display_retina_logo', 10, 1 );
+add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
 
 if ( ! function_exists( 'siteorigin_corp_display_icon' ) ) :
 /**

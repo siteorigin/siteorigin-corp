@@ -28,11 +28,6 @@ function siteorigin_corp_settings_init() {
 		'branding' => array(
 			'title' => esc_html__( 'Branding', 'siteorigin-corp' ),
 			'fields' => array(
-				'logo' => array(
-					'type' => 'media',
-					'label' => esc_html__( 'Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Logo displayed in your header.', 'siteorigin-corp' )
-				),
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
