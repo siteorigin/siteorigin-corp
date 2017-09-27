@@ -33,6 +33,10 @@
 		display: table-cell;
 		vertical-align: middle;
 
+		img {
+			display: block;
+		}
+
 		.site-title {
 			font-family: $font__headings;
 			font-size: 29px;
