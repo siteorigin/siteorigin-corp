@@ -44,6 +44,11 @@
 			}
 		}
 
+		img {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
 		.site-description {
 			color: $color__text-dark; 
 			font-size: 14px; 
