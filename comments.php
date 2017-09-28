@@ -30,20 +30,20 @@ if ( post_password_required() ) {
 			$comment_count = get_comments_number();
 			if ( 1 === $comment_count ) {
 				printf(
-					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'siteorigin-corp' ),
+					/* Translators: 1: title. */
+					esc_html_e( '1 Comment', 'polestar' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'siteorigin-corp' ) ),
+					/* Translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', $comment_count, 'comments title', 'polestar' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2><!--. comments-title -->
 
 		<?php 
 			$args = array(
