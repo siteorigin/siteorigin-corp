@@ -1405,7 +1405,8 @@ z.page-layout-no-sidebar .content-area {
     display: table-cell;
     vertical-align: middle; }
     .site-header .site-branding img {
-      display: block; }
+      display: inline-block;
+      vertical-align: middle; }
     .site-header .site-branding .site-title {
       font-family: "Montserrat", sans-serif;
       font-size: 29px;
