@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* Translators: 1: title. */
-					esc_html_e( '1 Comment', 'polestar' ),
+					esc_html_e( '1 Comment', 'siteorigin-corp' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* Translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s Comment', '%1$s Comments', $comment_count, 'comments title', 'polestar' ) ),
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', $comment_count, 'comments title', 'siteorigin-corp' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
