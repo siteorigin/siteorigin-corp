@@ -105,7 +105,7 @@ endif;
  */
 function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$retina = siteorigin_setting( 'branding_retina_logo' );
+	$retina = siteorigin_setting( 'header_retina_logo' );
 	if( ! empty( $retina ) && ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 		$srcset = empty( $attr['srcset'] ) ? array() : explode( ',', $attr['srcset'] );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );

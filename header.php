@@ -32,7 +32,7 @@
 
 				<div class="site-branding">
 					<?php siteorigin_corp_display_logo(); ?>
-					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+					<?php if ( siteorigin_setting( 'header_site_description' ) ) : ?>
 						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 					<?php endif ?>
 				</div><!-- .site-branding -->

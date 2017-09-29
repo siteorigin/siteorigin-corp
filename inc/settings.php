@@ -24,9 +24,9 @@ function siteorigin_corp_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_corp_settings_array', array(
 
-		// Branding.
-		'branding' => array(
-			'title' => esc_html__( 'Branding', 'siteorigin-corp' ),
+		// Header.
+		'header' => array(
+			'title' => esc_html__( 'Header', 'siteorigin-corp' ),
 			'fields' => array(
 				'retina_logo' => array(
 					'type' => 'media',
@@ -68,12 +68,12 @@ add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
  */
 function siteorigin_corp_settings_defaults( $defaults ) {
 
-	// Branding.
-	$defaults['branding_logo']             = false;
-	$defaults['branding_site_description'] = false;
+	// Header.
+	$defaults['header_retina_logo']			= false;
+	$defaults['header_site_description']	= false;
 	
 	// Footer.
-	$defaults['footer_text']         = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_text']	= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
 
 	return $defaults;
 }
