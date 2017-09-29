@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.7
-Tested up to: 4.8
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,7 @@ You should have received a copy of the GNU General Public License along with thi
 SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](http://underscores.me/), Copyright 2012 Automattic. Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 
 == Images ==
+
 Theme screenshot images sourced from [Unsplash](https://unsplash.com/) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Fonts and Icons ==
