@@ -1493,7 +1493,7 @@ body:not(.single) .hentry {
   body:not(.single) .hentry .content-wrapper {
     background: #fff;
     border: 1px solid #e6e6e6;
-    padding: 15px 30px 33px; }
+    padding: 25px 30px 33px; }
   body:not(.single) .hentry .entry-content {
     font-size: .9333em;
     padding-bottom: 0; }
