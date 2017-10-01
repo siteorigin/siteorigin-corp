@@ -41,6 +41,49 @@ function siteorigin_corp_settings_init() {
 			)
 		),
 
+		// Navigation.
+		'navigation' => array(
+			'title' => esc_html__( 'Navigation', 'siteorigin-corp' ),
+			'fields' => array(
+
+				'header_menu' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the main menu in the header.', 'siteorigin-corp' )
+				),
+
+				'mobile_menu' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Mobile Menu', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Use a mobile menu for small screen devices. Header Menu setting must be enabled.', 'siteorigin-corp' )
+				),	
+
+				'mobile_menu_collapse' => array(
+					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
+					'type' => 'number',
+					'description' => esc_html__( 'The pixel resolution when the primary menu collapses into the mobile menu.', 'siteorigin-corp' )
+				),							
+
+				'menu_search' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Menu Search', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a search icon in the main menu.', 'siteorigin-corp' )
+				),
+
+				'post' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Navigation', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the next/previous post navigation.', 'siteorigin-corp' )
+				),
+
+				'scroll_to_top' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Scroll to Top', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the scroll to top button.', 'siteorigin-corp' )
+				),											
+			),
+		),		
+
 		// Footer.
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-corp' ),
@@ -59,6 +102,40 @@ function siteorigin_corp_settings_init() {
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 
+if ( ! function_exists( 'siteorigin_corp_menu_breakpoint_css' ) ) :
+/**
+ * Add CSS for mobile menu breakpoint.
+ */
+function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
+	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
+
+	$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
+		#masthead .search-toggle {
+			margin-right: 20px;
+		}
+
+		#masthead #mobile-menu-button {
+			display: inline-block;
+		}
+
+		#masthead .main-navigation ul {
+			display: none;
+		}
+
+		#masthead .main-navigation .search-icon {
+			display: none;
+		}
+	}
+	@media (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+		#masthead #mobile-navigation {
+			display: none !important;
+		}
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
+
 /**
  * Add default settings.
  *
@@ -69,9 +146,17 @@ add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 function siteorigin_corp_settings_defaults( $defaults ) {
 
 	// Header.
-	$defaults['header_retina_logo']			= false;
-	$defaults['header_site_description']	= false;
+	$defaults['header_retina_logo']						= false;
+	$defaults['header_site_description']				= false;
 	
+	// Navigation
+	$defaults['navigation_header_menu']					= true;
+	$defaults['navigation_mobile_menu']					= true;
+	$defaults['navigation_mobile_menu_collapse']		= 768;
+	$defaults['navigation_menu_search']					= true;
+	$defaults['navigation_post']						= true;
+	$defaults['navigation_scroll_to_top']				= true;
+
 	// Footer.
 	$defaults['footer_text']	= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
 

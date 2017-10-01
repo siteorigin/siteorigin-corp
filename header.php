@@ -39,16 +39,22 @@
 
 				<nav id="site-navigation" class="main-navigation">
 
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+					<?php $mega_menu_active = function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'menu-1' ); ?>
 
-	                <button id="search-button" class="search-toggle">
-	                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
-                	</button>
+					<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
-					<a href="#menu" id="mobile-menu-button">
-						<?php siteorigin_corp_display_icon( 'menu' ); ?>
-						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
-					</a>
+					<?php if ( siteorigin_setting( 'navigation_menu_search' ) ) : ?>
+		                <button id="search-button" class="search-toggle">
+		                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
+	                	</button>
+	                <?php endif; ?>
+
+					<?php if ( siteorigin_setting( 'navigation_header_menu' ) && siteorigin_setting( 'navigation_mobile_menu' ) && ! $mega_menu_active ) : ?>
+						<a href="#menu" id="mobile-menu-button">
+							<?php siteorigin_corp_display_icon( 'menu' ); ?>
+							<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
+						</a>
+					<?php endif; ?>
 
 				</nav><!-- #site-navigation -->
 

@@ -22,7 +22,9 @@ get_header(); ?>
 				echo sharing_display();
 			}
 
-			siteorigin_corp_the_post_navigation();
+			if ( siteorigin_setting( 'navigation_post' ) ) :
+				siteorigin_corp_the_post_navigation();
+			endif;
 
 			siteorigin_corp_author_box();		
 
