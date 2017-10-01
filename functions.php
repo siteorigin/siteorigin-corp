@@ -177,6 +177,28 @@ function siteorigin_corp_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
 
+if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
+/**
+ * Add support for SiteOrigin Premium theme addons.
+ */
+function siteorigin_corp_premium_setup() {
+
+	// Ajax Comments addon.
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'siteorigin_setting' => 'blog_ajax_comments'
+	) );
+
+	// No Attribution addon.
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter'  => 'siteorigin_corp_footer_credits',
+		'enabled' => ! siteorigin_setting( 'footer_attribution' ),
+		'siteorigin_setting' => '!footer_attribution'
+	) );
+}
+endif;
+add_action( 'after_setup_theme', 'siteorigin_corp_premium_setup' );
+
 /**
  * Custom functions that act independently of the theme templates.
  */
