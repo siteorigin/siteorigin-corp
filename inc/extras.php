@@ -15,10 +15,6 @@
  * @return array
  */
 function siteorigin_corp_body_classes( $classes ) {
-	// Group blog.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
 
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
