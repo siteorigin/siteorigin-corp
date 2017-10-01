@@ -30,6 +30,7 @@
 	}
 
 	form {
+		border-bottom: 1px solid #b2b2b2;
 		left: 50%;
 		max-width: 555px;
 		position: absolute;
@@ -38,13 +39,12 @@
 		input[type="search"] {
 			background: transparent;
 			border: 0;
-			border-bottom: 1px solid #b2b2b2;
 			color: #fff;
 			display: inline-block;
 			font-size: 32px;
 			font-weight: normal;
 			outline: none;
-			padding: 0 49px 0 14px;
+			padding: 0 39px 10px 14px;
 			text-align: center;
 			width: 100%;
 
@@ -61,7 +61,7 @@
 			padding: 0;
 			position: absolute;
 			right: 12px;
-			top: -4px;
+			top: 6px;
 
 			@media (max-width: 768px) {
 				top: -15px;
