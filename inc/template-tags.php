@@ -298,7 +298,7 @@ if ( ! function_exists( 'siteorigin_corpentry_footer' ) ) :
 function siteorigin_corp_entry_footer() {
 
 	if ( is_single() && has_tag() ) {
-		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list( '', esc_html__( '', 'siteorigin-corp' ) ) . '</span></footer>';
+		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
 	}	
 }
 endif;
