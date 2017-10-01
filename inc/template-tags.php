@@ -90,8 +90,7 @@ if ( ! function_exists( 'siteorigin_corp_display_logo' ) ) :
 function siteorigin_corp_display_logo() {
 	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo();
-	}
-	else {
+	} else {
 		if ( is_front_page() ) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
@@ -106,21 +105,17 @@ endif;
  */
 function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$retina = siteorigin_setting( 'branding_retina_logo' );
-
+	$retina = siteorigin_setting( 'header_retina_logo' );
 	if ( ! empty( $retina ) && ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 		$srcset = empty( $attr['srcset'] ) ? array() : explode( ',', $attr['srcset'] );
-
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
 		if ( ! empty( $retina_src ) ) {
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
-
 		if ( ! empty( $srcset ) ) {
 			$attr['srcset'] = implode( ',', $srcset );
 		}
 	}
-
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
