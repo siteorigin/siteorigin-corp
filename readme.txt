@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.7
-Tested up to: 4.8
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,7 +95,16 @@ You should have received a copy of the GNU General Public License along with thi
 SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](http://underscores.me/), Copyright 2012 Automattic. Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 
 == Images ==
-Theme screenshot images sourced from [Unsplash](https://unsplash.com/) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+
+Screenshot image "Teal and Black Motor Scooter" sourced from [Peakpx](http://www.peakpx.com/402736/teal-and-black-motor-scooter) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+
+Screenshot image "Public Transportation: Bus Seats" sourced from [Pexels](https://www.pexels.com/photo/bus-public-transportation-seats-subway-373978/) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+
+Screenshot image "Hiker Arms Spread" sourced from [StockSnap](https://stocksnap.io/photo/GIK662HVHL) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+
+Screenshot image "Golden Gate Bridge" sourced from [Peakpx](http://www.peakpx.com/477855/golden-gate-bridge) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+
+Screenshot image "Running Sunset" sourced from [StockSnap](https://stocksnap.io/photo/HAM087SSHZ) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Fonts and Icons ==
 

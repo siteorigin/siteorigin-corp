@@ -1414,6 +1414,9 @@ z.page-layout-no-sidebar .content-area {
       margin: 0; }
       .site-header .site-branding .site-title a {
         color: #2d2d2d; }
+    .site-header .site-branding img {
+      display: inline-block;
+      vertical-align: middle; }
     .site-header .site-branding .site-description {
       color: #2d2d2d;
       font-size: 14px;
