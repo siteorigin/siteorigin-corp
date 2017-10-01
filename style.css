@@ -1848,7 +1848,7 @@ body:not(.single) .hentry {
         .comment-list .pingback .author a:hover {
           color: #626262; }
       .comment-list .bypostauthor .author:before {
-        content: "\f040";
+        content: "\e902";
         font-family: "siteorigin-corp-icons";
         font-size: 14px;
         margin-right: 5px; }
