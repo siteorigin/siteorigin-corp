@@ -199,6 +199,7 @@ body,
 button,
 input,
 select,
+optgroup,
 textarea {
   color: #626262;
   font-size: 15px;
