@@ -170,7 +170,7 @@ function siteorigin_corp_the_post_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">

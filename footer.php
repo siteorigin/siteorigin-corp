@@ -17,7 +17,7 @@
 
 	<?php do_action( 'siteorigin_corp_before' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 
 		<?php do_action( 'siteorigin_corp_top' ); ?>
 
@@ -26,7 +26,7 @@
 				if ( is_active_sidebar( 'sidebar-footer' ) ) {
 					$corp_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>"  aria-label="<?php esc_html_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
 						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 					</div>
 					<?php
