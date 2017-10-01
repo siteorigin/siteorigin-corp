@@ -1,6 +1,8 @@
 == Changelog ==
 
 = 0.7 - 01 October 2017 =
+* Minor code enhancements.
+* Removed Logo theme setting.
 
 = 0.6 - 26 September 2017 =
 * Added Yelp icon.
