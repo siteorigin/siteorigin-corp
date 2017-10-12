@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy 480 x 317
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-corp
  * @license GPL 2.0 
