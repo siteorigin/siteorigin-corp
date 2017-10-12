@@ -11,12 +11,35 @@
 		margin-bottom: 0;
 	}
 	
+	@at-root {
+
+		.topbar-out & {
+			@include clearfix;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		.topbar-out.admin-bar & {
+			top: 32px;
+
+			@media (max-width: 782px) {
+				top: 46px;
+			}
+
+			@media (max-width: 600px) {
+				position: fixed;
+				top: 0;
+			}
+		}		
+	}
+	
 	@media (max-width: 600px) {
 
 		@at-root .admin-bar .site-header.sticky.stuck {
 			top: 0;
 		}						
-	}			 
+	}	
 
 	// A class added after scroll.
 	&.stuck {
@@ -63,43 +86,8 @@
 
 		> * {
 			transform-origin: left center;
-
-			@at-root .centered#{&} {
-				transform-origin: center center;
-			}
 		}		
 	}
-	
-	&.centered {
-
-		.container-inner {
-			display: block;
-		}
-
-		.site-branding {
-			margin: 0 auto 20px auto;
-			padding: 0;
-			text-align: center;
-
-			img {
-				display: inline-block;
-				max-width: 100%;
-			}
-		}
-
-		.main-navigation {
-			text-align: center;
-		}
-
-		.site-branding, 
-		.main-navigation {
-			display: block;
-		}
-	}
-
-	body.responsive & {
-		min-width: 0;
-	}		
 }
 
 // Sticky header sentinel.
@@ -109,4 +97,10 @@
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
+}
+
+#topbar {
+	position: relative;
+	width: 100%;
+	z-index: 1000;
 }

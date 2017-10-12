@@ -29,6 +29,13 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'sidebar';
 	}
 
+	// WooCommerce top bar.
+	if ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) {
+		$classes[] = 'no-topbar';
+	} elseif ( ! class_exists( 'Woocommerce' ) ) {
+		$classes[] = 'no-topbar';
+	}	
+
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) ) {
 		 $classes[] = 'woocommerce-sidebar';
