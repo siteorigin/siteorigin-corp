@@ -57,10 +57,10 @@ jQuery( function( $ ) {
 		} );
 	};			
 
-    // Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
-    if ( typeof $.fn.fitVids !== 'undefined' ) {
-        $( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }
+	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
+	if ( typeof $.fn.fitVids !== 'undefined' ) {
+		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+	}
 
 	// Main menu.
 	// Remove the no-js body class.
@@ -117,7 +117,7 @@ jQuery( function( $ ) {
 				$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 			}
 
-        	$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
+			$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
 			$mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="icon-angle-down" aria-hidden="true"></i></button>' );
 			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
 				e.preventDefault();
