@@ -52,10 +52,6 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
-		
-		@at-root .centered#{&} {
-			flex-direction: column;
-		}
 	}
 	
 	.site-branding {
@@ -83,20 +79,16 @@
 		}
 
 		.site-description {
-			color: $color__text-medium; 
-			font-family: $font__headings;
+			color: $color__text-light;
+			font-family: $font__main;
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;
-			margin: 0; 
+			margin: -3px 0 0; 
 		}
 
 		> * {
 			transform-origin: left center;
-
-			@at-root .centered#{&} {
-				transform-origin: center center;
-			}
 		}		
 	}
 }

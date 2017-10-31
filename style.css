@@ -1302,8 +1302,6 @@ z.page-layout-no-sidebar .content-area {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%; }
-    .centered.site-header .site-header-inner {
-      flex-direction: column; }
   .site-header .site-branding {
     flex-shrink: 0;
     padding-right: 20px; }
@@ -1320,16 +1318,14 @@ z.page-layout-no-sidebar .content-area {
       .tagline.site-header .site-branding img {
         padding-bottom: 5px; }
     .site-header .site-branding .site-description {
-      color: #626262;
-      font-family: "Montserrat", sans-serif;
+      color: #929292;
+      font-family: "Open Sans", sans-serif;
       font-weight: normal;
       font-size: 13px;
       line-height: normal;
-      margin: 0; }
+      margin: -3px 0 0; }
     .site-header .site-branding > * {
       transform-origin: left center; }
-      .centered.site-header .site-branding > * {
-        transform-origin: center center; }
 
 .masthead-sentinel {
   margin-bottom: 60px; }
