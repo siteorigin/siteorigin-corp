@@ -192,7 +192,6 @@ function siteorigin_corp_the_post_navigation() {
 }
 endif;
 
-
 if ( ! function_exists( 'siteorigin-corp_read_more_link' ) ) :
 /**
  * Filter the read more link.
