@@ -226,9 +226,9 @@ if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
  */
 function siteorigin_corp_excerpt_more( $more ) {
 	if ( is_search() ) return;
-	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_post_excerpt_read_more_link' ) ) {
 		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-corp' );
-		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a>';
+		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . ' <span class="icon-long-arrow-right"></span></span></a>';
 	}
 }
 endif;
