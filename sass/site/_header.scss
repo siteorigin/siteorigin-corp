@@ -26,11 +26,6 @@
 			@media (max-width: 782px) {
 				top: 46px;
 			}
-
-			@media (max-width: 600px) {
-				position: fixed;
-				top: 0;
-			}
 		}		
 	}
 	
@@ -47,19 +42,25 @@
     }
 
 	.site-header-inner {
-		display: table;
-		vertical-align: middle;
-		width: 100%; 
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+	    align-items: center;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		width: 100%;
+		
+		@at-root .centered#{&} {
+			flex-direction: column;
+		}
 	}
 	
 	.site-branding {
-		display: table-cell;
-		vertical-align: middle;
-
-		img {
-			display: inline-block;
-			vertical-align: middle;
-		}
+		flex-shrink: 0; // Fix for Safari.
+		padding-right: 20px;
 
 		.site-title {
 			font-family: $font__headings;
@@ -75,17 +76,27 @@
 		img {
 			display: inline-block;
 			vertical-align: middle;
+			
+			@at-root .tagline#{&} {
+				padding-bottom: 5px;
+			}	
 		}
 
 		.site-description {
-			color: $color__text-dark; 
-			font-size: 14px; 
+			color: $color__text-medium; 
+			font-family: $font__headings;
+			font-weight: normal; 
+			font-size: 13px; 
 			line-height: normal;
 			margin: 0; 
 		}
 
 		> * {
 			transform-origin: left center;
+
+			@at-root .centered#{&} {
+				transform-origin: center center;
+			}
 		}		
 	}
 }

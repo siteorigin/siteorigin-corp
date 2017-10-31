@@ -1646,12 +1646,14 @@ body:not(.single) .hentry {
 
 .archive .page-title,
 .search-results .page-title {
-  font-size: 18px; }
+  font-size: 24px;
+  text-align: center; }
 
 .archive .taxonomy-description,
 .search-results .taxonomy-description {
   font-size: 14px;
-  margin-top: 15px; }
+  margin-top: 5px;
+  text-align: center; }
 
 .archive .entry-title,
 .search-results .entry-title {

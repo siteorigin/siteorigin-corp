@@ -329,12 +329,14 @@ body:not(.single) .hentry {
 	}
 
 	.page-title {
-		font-size: 18px;
+		font-size: 24px;
+		text-align: center;
 	}
 
 	.taxonomy-description {
-		font-size: 14px; 
-		margin-top: 15px; 
+		font-size: 14px;
+		margin-top: 5px;
+		text-align: center; 
 	}
 	
 	.entry-title {

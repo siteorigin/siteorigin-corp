@@ -37,7 +37,7 @@ jQuery( function( $ ) {
 				$o = $( '<div class="burst-animation-overlay"></div>' ),
 				$c = $( '<div class="burst-circle"></div>' ).appendTo( $o );
 
-			$$.on( settings.event, function () {
+			$$.on( settings.event, function() {
 				$o.appendTo( $p );
 				$c
 					.css( {
@@ -49,7 +49,7 @@ jQuery( function( $ ) {
 					.transition( {
 						opacity: 0,
 						scale: $p.width()
-					}, 500, 'ease', function () {
+					}, 500, 'ease', function() {
 						$o.detach();
 					} );
 			} );
@@ -59,7 +59,7 @@ jQuery( function( $ ) {
 
 	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
-		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+		$( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
 	}
 
 	// Main menu.
