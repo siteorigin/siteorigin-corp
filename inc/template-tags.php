@@ -191,7 +191,7 @@ function siteorigin_corp_the_post_navigation() {
 				<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . '' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -209,6 +209,30 @@ function siteorigin_corp_read_more_link() {
 }
 endif;
 add_filter( 'the_content_more_link', 'siteorigin-corp_read_more_link' );
+
+if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
+/**
+ * Filter the excerpt length.
+ */
+function siteorigin_corp_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
+endif;
+
+if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
+/**
+ * Add a more link to the excerpt.
+ */
+function siteorigin_corp_excerpt_more( $more ) {
+	if ( is_search() ) return;
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more', true ) ) {
+		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-corp' );
+		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . '</span></a>';
+	}
+}
+endif;
+add_filter( 'excerpt_more', 'siteorigin_corp_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 /**
@@ -279,19 +303,19 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
  * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
  */
 function siteorigin_corp_post_meta() {
-	if ( ( is_home() || is_archive() || is_search() ) ) {
+	if ( ( is_home() || is_archive() || is_search() ) && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
-	if ( is_single() ) {
+	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corpdate_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
-	if ( has_category() ) {
+	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {
 		echo '<span>' . get_the_category_list( ', ' ) . '</span>';
 	}
 	
-	if ( comments_open() ) { 
+	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) { 
 		echo '<span class="comments-link">';
   		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
   		echo '</span>';
@@ -299,13 +323,13 @@ function siteorigin_corp_post_meta() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_corpentry_footer' ) ) :
+if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
 /**
  * Print HTML with meta information for the post tags.
  */
 function siteorigin_corp_entry_footer() {
 
-	if ( is_single() && has_tag() ) {
+	if ( is_single() && has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
 		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
 	}	
 }

@@ -121,10 +121,20 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the featured image on the single post page.', 'siteorigin-corp' )
 				),
+				'post_date' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Date', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the post date on archive and single post pages.', 'siteorigin-corp' )
+				),		
+				'post_categories' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Categories', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the post categories on archive and single post pages.', 'siteorigin-corp' )
+				),							
 				'post_comment_count' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post comment count on the archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post comment count on archive and single post pages.', 'siteorigin-corp' )
 				),				
 				'post_tags' => array(
 					'type' => 'checkbox',
@@ -134,7 +144,7 @@ function siteorigin_corp_settings_init() {
 				'post_author_box' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Author Box', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post author biographical info.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post author biographical info on single post pages.', 'siteorigin-corp' )
 				),				
 				'related_posts' => array(
 					'type' => 'checkbox',
@@ -235,6 +245,8 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_excerpt_length']          			= 55;	
 	$defaults['blog_post_excerpt_read_more_link']		= false;
 	$defaults['blog_post_featured_image']				= true;
+	$defaults['blog_post_date']							= true;
+	$defaults['blog_post_categories']					= true;
 	$defaults['blog_post_comment_count']				= true;
 	$defaults['blog_post_tags']							= true;
 	$defaults['blog_post_author_box']					= true;

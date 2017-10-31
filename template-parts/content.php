@@ -44,12 +44,12 @@
 
 		<div class="entry-content">
 			<?php
-				if ( is_single() ) {
+				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
 					the_content();
-				} else {				
+				} else {
 					the_excerpt();
 				}
-							
+
 				wp_link_pages( array(
 					'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
 					'after'  => '</div>',
