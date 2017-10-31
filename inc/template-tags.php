@@ -52,8 +52,10 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
 /**
- * Comment list callback function.
- */
+ * The callback function for wp_list_comments in comments.php.
+ *
+ * @link https://codex.wordpress.org/Function_Reference/wp_list_comments.
+ */	
 function siteorigin_corp_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -71,15 +73,15 @@ function siteorigin_corp_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="comment-content content">
-					<?php if( ! $comment->comment_approved ) : ?>
+					<?php if ( ! $comment->comment_approved ) : ?>
 						<p class="comment-awaiting-moderation">
-							<?php _e( 'Your comment is awaiting moderation.', 'siteorigin-corp' ); ?>
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-corp' ); ?>
 						</p>
 					<?php endif; ?>
 					<?php comment_text() ?>
 				</div>
 
-				<?php if($depth <= $args['max_depth']) : ?>
+				<?php if ( $depth <= $args['max_depth'] ) : ?>
 					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 				<?php endif; ?>
 			</div>
