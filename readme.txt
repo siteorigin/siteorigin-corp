@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.7
-Tested up to: 4.8.2
+Tested up to: 4.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,48 +28,6 @@ A modern business theme from SiteOrigin. Corp is versatile and quick to customiz
 == Support ==
 
 [Support](http://siteorigin.com/thread/) is available on siteorigin.com.
-
-== Frequently Asked Questions ==
-
-= How do I add social network icons to the footer menu? =
-
-1. The Corp footer menu supports social network icon links as used by many other themes. Icons are rendered by the [Font Awesome library](http://fontawesome.io/icons/). 
-
-2. To add a social network icon or icons to the footer menu, go to Appearance > Menus. If you haven't yet created a menu for the footer menu location, click the "create a new menu" link. Scroll down to the bottom of the page and locate the Theme Locations sub-heading under the Menu Settings heading, select the Footer option and click the blue "Save Menu" button. 
-
-3. Next look at the left column and locate the "Custom Links" tab, open it and add your first network. For example if we were adding a Twitter icon for Puro Themes we'd add the following to the URL field: https://twitter.com/purothemes. The URL should be a link to your profile page on one of the supported networks below. The Link Text can be anything you'd like, it won't be displayed on the front end of your site.
-
-4. The footer menu location supports both regular links and social network links. If a link matches one of the icons below, an icon will be displayed. If a link doesn't match one of the icons below, the regular link text/label will be displayed.
-
-Available icons:
-
-* Behance
-* CodePen
-* Delicious
-* deviantART
-* Digg
-* Dribbble
-* Facebook
-* Flickr
-* Foursquare
-* GitHub
-* Google Plus
-* Instagram
-* LinkedIn
-* Pinterest
-* reddit
-* SoundCloud
-* StackExchange
-* Stack Overflow
-* Tumblr
-* Twitter
-* Vimeo
-* Vk
-* Weibo
-* WordPress.com
-* Xing
-* Yelp
-* YouTube
 
 == Plugin Support ==
 
