@@ -347,8 +347,9 @@ $sel: '';
 }
 
 .post-navigation {
-	border-bottom: 1px solid $color__background-hr;
-	padding-bottom: 40px;
+	border-top: 1px solid $color__background-hr;
+	margin-bottom: 0; 
+	padding: 40px 0;
 
 	a {
 		

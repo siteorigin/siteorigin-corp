@@ -775,8 +775,9 @@ a {
     color: #f14e4e; }
 
 .post-navigation {
-  border-bottom: 1px solid #e6e6e6;
-  padding-bottom: 40px; }
+  border-top: 1px solid #e6e6e6;
+  margin-bottom: 0;
+  padding: 40px 0; }
   .post-navigation a img {
     display: block;
     float: left;
@@ -1602,7 +1603,7 @@ body:not(.single) .hentry {
     color: #626262; }
 
 .single .entry-footer {
-  margin: 15px 0; }
+  margin: 0 0 40px; }
 
 .tags-links a, aside.widget.widget_tag_cloud .tagcloud a {
   background: #e4e6eb;
@@ -1684,11 +1685,12 @@ body:not(.single) .hentry {
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
+  border-top: 1px solid #e6e6e6;
   display: table;
   border-right: 0;
   border-left: 0;
-  margin: 0;
   margin-bottom: 60px;
+  padding-top: 40px;
   width: 100%; }
   .author-box .author-avatar {
     display: table-cell;
