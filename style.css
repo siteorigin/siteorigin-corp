@@ -1286,25 +1286,27 @@ z.page-layout-no-sidebar .content-area {
     @media (max-width: 782px) {
       .topbar-out.admin-bar .site-header {
         top: 46px; } }
-    @media (max-width: 600px) {
-      .topbar-out.admin-bar .site-header {
-        position: fixed;
-        top: 0; } }
   @media (max-width: 600px) {
     .admin-bar .site-header.sticky.stuck {
       top: 0; } }
   .site-header.stuck {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
   .site-header .site-header-inner {
-    display: table;
-    vertical-align: middle;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     width: 100%; }
+    .centered.site-header .site-header-inner {
+      flex-direction: column; }
   .site-header .site-branding {
-    display: table-cell;
-    vertical-align: middle; }
-    .site-header .site-branding img {
-      display: inline-block;
-      vertical-align: middle; }
+    flex-shrink: 0;
+    padding-right: 20px; }
     .site-header .site-branding .site-title {
       font-family: "Montserrat", sans-serif;
       font-size: 29px;
@@ -1315,13 +1317,19 @@ z.page-layout-no-sidebar .content-area {
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
+      .tagline.site-header .site-branding img {
+        padding-bottom: 5px; }
     .site-header .site-branding .site-description {
-      color: #2d2d2d;
-      font-size: 14px;
+      color: #626262;
+      font-family: "Montserrat", sans-serif;
+      font-weight: normal;
+      font-size: 13px;
       line-height: normal;
       margin: 0; }
     .site-header .site-branding > * {
       transform-origin: left center; }
+      .centered.site-header .site-branding > * {
+        transform-origin: center center; }
 
 .masthead-sentinel {
   margin-bottom: 60px; }
@@ -1422,9 +1430,6 @@ z.page-layout-no-sidebar .content-area {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-  display: block; }
-
 body:not(.single) .hentry {
   display: block;
   float: left;
