@@ -262,32 +262,6 @@ $sel: '';
 	}
 }
 
-// @media (max-width: 1100px) {
-
-// 	#masthead .search-toggle {
-// 		margin-right: 20px;
-// 	}
-
-// 	#masthead #mobile-menu-button {
-// 		display: inline-block;
-// 	}
-
-// 	#masthead .main-navigation ul {
-// 		display: none;
-// 	}
-
-// 	#masthead .main-navigation .search-icon {
-// 		display: none;
-// 	}
-// }
-
-// @media (min-width: 1100px) {
-
-// 	#masthead #mobile-navigation {
-// 		display: none !important;
-// 	}
-// }
-
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
 --------------------------------------------------------------*/
@@ -373,31 +347,33 @@ $sel: '';
 }
 
 .post-navigation {
-	font-size: 16px;
+	border-bottom: 1px solid $color__background-hr;
+	padding-bottom: 40px;  
 
 	a {
-		color: $color__text-medium;
-		font-weight: bold;
-		font-weight: 600;
-
-		&:hover {
-			color: $color__accent;
-		}
 
 		.sub-title {
-			border-bottom: 2px solid $color__background-hr-dark;
 			color: $color__text-light;
 			display: inline-block;
-			font-size: 14px;
+			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
+			letter-spacing: .5px; 
 			line-height: normal;
-			margin-bottom: 10px;
-			padding-bottom: 3px;
+			margin-bottom: 1px;
 		}
 
 		div {
+			color: $color__text-dark;
+			font-family: $font__headings;
+			font-weight: 400;   
+			font-size: 15px; 
 			line-height: normal;
+			transition: .3s;
+		}
+
+		&:hover div {
+			color: $color__accent;
 		}
 	}
 }
