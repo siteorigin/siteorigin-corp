@@ -24,6 +24,11 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-corp' ); ?></a>
 
+	<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) : ?>
+		<div id="topbar">
+			<?php siteorigin_corp_woocommerce_demo_store(); ?>
+		</div><!-- #topbar -->
+	<?php endif; ?>
 	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
 
 		<div class="corp-container">
