@@ -1813,6 +1813,9 @@ body:not(.single) .hentry {
     .comment-list .comment .comment-container,
     .comment-list .pingback .comment-container {
       margin-left: 80px; }
+      .comment-list .comment .comment-container .comment-awaiting-moderation,
+      .comment-list .pingback .comment-container .comment-awaiting-moderation {
+        font-style: italic; }
     .comment-list .comment .avatar-container,
     .comment-list .pingback .avatar-container {
       float: left; }
