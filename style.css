@@ -1002,11 +1002,42 @@ a {
 ## Infinite Scroll
 --------------------------------------------------------------*/
 .infinite-scroll .posts-navigation,
+.infinite-scroll .pagination,
+.infinite-scroll .woocommerce-pagination,
 .infinite-scroll.neverending .site-footer {
   display: none; }
 
 .infinity-end.neverending .site-footer {
   display: block; }
+
+#page #infinite-handle {
+  clear: both;
+  padding-top: 30px;
+  text-align: center; }
+  #page #infinite-handle span {
+    background: inherit;
+    border-radius: initial;
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    padding: inherit; }
+    #page #infinite-handle span button {
+      background: transparent;
+      border: 2px solid;
+      border-color: #2d2d2d;
+      color: #2d2d2d;
+      font-size: 13px;
+      letter-spacing: 1px;
+      line-height: normal;
+      padding: 9px 30px;
+      transition: .3s; }
+      #page #infinite-handle span button:hover {
+        border-color: #f14e4e;
+        color: #f14e4e; }
+
+.infinite-scroll .infinite-loader .spinner {
+  margin: 0 auto;
+  text-align: center; }
 
 /*--------------------------------------------------------------
 ## Sharing
