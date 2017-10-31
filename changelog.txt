@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 0.8 - 01 November 2017 =
+* Added additional theme settings for header, navigation, blog, sidebar and footer.
+* Added SiteOrigin Premium support.
+* Various code improvements.
+
 = 0.7 - 01 October 2017 =
 * Minor code enhancements.
 * Removed Logo theme setting.
