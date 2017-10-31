@@ -317,39 +317,3 @@ function siteorigin_corp_footer_text() {
 	echo wp_kses_post( $text );
 }
 endif;
-
-if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
-/**
- * The callback function for wp_list_comments in comments.php.
- *
- * @link https://codex.wordpress.org/Function_Reference/wp_list_comments.
- */		
-function siteorigin_corp_comment( $comment, $args, $depth ) {
-	?>
-	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
-		<?php $type = get_comment_type( $comment->comment_ID ); ?>
-		<div class="comment-box">
-			<?php if ( $type == 'comment' ) : ?>
-				<div class="avatar-container">
-					<?php echo get_avatar( get_comment_author_email(), 60 ) ?>
-				</div>
-			<?php endif; ?>
-
-			<div class="comment-container">
-				<div class="info">
-					<span class="author"><?php comment_author_link(); ?></span><br>
-					<span class="date"><?php comment_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></span>
-				</div>
-
-				<div class="comment-content content">
-					<?php comment_text(); ?>
-				</div>
-
-				<?php if ( $depth <= $args['max_depth'] ) : ?>
-					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
-				<?php endif; ?>
-			</div>
-		</div>
-	<?php
-}
-endif;
