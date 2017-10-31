@@ -97,6 +97,20 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the featured image on the archive and single post pages.', 'siteorigin-corp' )
 				),
+				'archive_content' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
+					'options' => array(
+						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-corp' ),
+						'full' => esc_html__( 'Full Post Content', 'siteorigin-corp' ),
+					),
+					'description' => esc_html__( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-corp' ),
+				),
+				'excerpt_length' => array(
+					'type' => 'number',
+					'label' => esc_html__( 'Excerpt Length', 'siteorigin-corp' ),
+					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-corp' ),
+				),				
 				'post_excerpt_read_more_link' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-corp' ),
@@ -217,7 +231,9 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	// Blog.
 	$defaults['blog_archive_featured_image']			= true;
-	$defaults['blog_post_excerpt_read_more_link']		= true;
+	$defaults['blog_archive_content']         			= 'excerpt';
+	$defaults['blog_excerpt_length']          			= 55;	
+	$defaults['blog_post_excerpt_read_more_link']		= false;
 	$defaults['blog_post_featured_image']				= true;
 	$defaults['blog_post_comment_count']				= true;
 	$defaults['blog_post_tags']							= true;
