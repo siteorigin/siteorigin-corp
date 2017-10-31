@@ -73,7 +73,7 @@ function siteorigin_corp_comment( $comment, $args, $depth ) {
 				<div class="comment-content content">
 					<?php if( ! $comment->comment_approved ) : ?>
 						<p class="comment-awaiting-moderation">
-							<?php _e( 'Your comment is awaiting moderation.', 'siteorigin-unwind' ); ?>
+							<?php _e( 'Your comment is awaiting moderation.', 'siteorigin-corp' ); ?>
 						</p>
 					<?php endif; ?>
 					<?php comment_text() ?>
