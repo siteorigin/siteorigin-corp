@@ -20,6 +20,12 @@ function siteorigin_corp_body_classes( $classes ) {
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
 	$classes[] = 'no-touch';
+	
+
+	// Non-singlar pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}	
 
 	// Responsive layout.
 	$classes[] = 'responsive';
@@ -39,12 +45,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) ) {
 		 $classes[] = 'woocommerce-sidebar';
-	}		
-
-	// Non-singlar pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}		
+	}				
 
 	return $classes;
 }
