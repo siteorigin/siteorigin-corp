@@ -1589,15 +1589,12 @@ body:not(.single) .hentry {
     display: block;
     line-height: 0; }
 
-.more-wrapper {
-  display: block;
-  font-size: 14px;
-  text-transform: uppercase; }
-  .more-wrapper a {
-    color: #2d2d2d;
-    font-weight: 600; }
-    .more-wrapper a:hover {
-      color: #f14e4e; }
+.more-text {
+  display: block; }
+  .more-text span {
+    display: inline-block;
+    padding-left: 3px;
+    vertical-align: middle; }
 
 .page-links {
   margin-top: 26px;
