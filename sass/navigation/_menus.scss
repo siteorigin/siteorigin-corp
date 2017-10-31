@@ -348,9 +348,16 @@ $sel: '';
 
 .post-navigation {
 	border-bottom: 1px solid $color__background-hr;
-	padding-bottom: 40px;  
+	padding-bottom: 40px;
 
 	a {
+		
+		img {
+			display: block;
+			float: left;
+			margin-right: 15px; 
+			max-width: 80px;
+		}
 
 		.sub-title {
 			color: $color__text-light;
@@ -360,7 +367,7 @@ $sel: '';
 			text-transform: uppercase;
 			letter-spacing: .5px; 
 			line-height: normal;
-			margin-bottom: 1px;
+			margin: 8px 0 1px;
 		}
 
 		div {

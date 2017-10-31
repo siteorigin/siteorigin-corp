@@ -494,7 +494,7 @@ body:not(.single) .hentry {
 
 			a {
 				display: block;
-				line-height: 0; 
+				line-height: 0;
 				text-decoration: none;
 			}
 
@@ -507,6 +507,7 @@ body:not(.single) .hentry {
 				font-weight: normal; 
 				line-height: normal;
 				margin: 0 0 3px;
+				transition: .3s;
 
 				@at-root &:hover {
 					color: $color__accent;
@@ -519,6 +520,7 @@ body:not(.single) .hentry {
 				font-weight: normal;
 				line-height: normal; 
 				margin: 0;
+				transition: .3s;
 				
 				&:hover {
 					color: $color__accent;

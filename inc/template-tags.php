@@ -169,6 +169,7 @@ if ( ! function_exists( 'siteorigin_corp_the_post_navigation' ) ) :
  * Display navigation to next/previous posts.
  */
 function siteorigin_corp_the_post_navigation() {
+
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -176,15 +177,21 @@ function siteorigin_corp_the_post_navigation() {
 	if ( ! $next && ! $previous ) {
 		return;
 	}
+
+	$previous_post 	= get_previous_post();
+	$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
+	$next_post 		= get_next_post();
+	$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );	
+
 	?>
 	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">
-				<?php previous_post_link ( '%link', '<span class="sub-title"> ' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
+				<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . ' </span> <div>%title</div>' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . '' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

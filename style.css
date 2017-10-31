@@ -775,25 +775,31 @@ a {
     color: #f14e4e; }
 
 .post-navigation {
-  font-size: 16px; }
-  .post-navigation a {
-    color: #626262;
-    font-weight: bold;
-    font-weight: 600; }
-    .post-navigation a:hover {
-      color: #f14e4e; }
-    .post-navigation a .sub-title {
-      border-bottom: 2px solid #d6d6d6;
-      color: #929292;
-      display: inline-block;
-      font-size: 14px;
-      font-weight: normal;
-      text-transform: uppercase;
-      line-height: normal;
-      margin-bottom: 10px;
-      padding-bottom: 3px; }
-    .post-navigation a div {
-      line-height: normal; }
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 40px; }
+  .post-navigation a img {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    max-width: 80px; }
+  .post-navigation a .sub-title {
+    color: #929292;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    line-height: normal;
+    margin: 8px 0 1px; }
+  .post-navigation a div {
+    color: #2d2d2d;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    transition: .3s; }
+  .post-navigation a:hover div {
+    color: #f14e4e; }
 
 .comment-navigation {
   text-transform: capitalize;
@@ -1784,7 +1790,8 @@ body:not(.single) .hentry {
         font-size: 16px;
         font-weight: normal;
         line-height: normal;
-        margin: 0 0 3px; }
+        margin: 0 0 3px;
+        transition: .3s; }
         .yarpp-related ol li .related-post-title:hover,
         .related-posts-section ol li .related-post-title:hover {
           color: #f14e4e; }
@@ -1794,7 +1801,8 @@ body:not(.single) .hentry {
         font-size: 13px;
         font-weight: normal;
         line-height: normal;
-        margin: 0; }
+        margin: 0;
+        transition: .3s; }
         .yarpp-related ol li .related-post-date:hover,
         .related-posts-section ol li .related-post-date:hover {
           color: #f14e4e; }
