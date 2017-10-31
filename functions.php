@@ -147,7 +147,7 @@ function siteorigin_corp_scripts() {
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), 1.1, true );
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
 	}
 
 	// Flexslider.
@@ -159,6 +159,12 @@ function siteorigin_corp_scripts() {
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	
+	// Mobile menu collapse localisation.
+	$collapse_array = array( 
+		'collapse' => 768
+	);	
+	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $collapse_array );  	
 
 	// Theme icons.
 	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );  	
@@ -230,6 +236,13 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * WooCommerce compatibility.
+ */
+if ( function_exists( 'is_woocommerce' ) ) {
+	require get_template_directory() . '/woocommerce/functions.php';
+}
 
 /* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
 If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
