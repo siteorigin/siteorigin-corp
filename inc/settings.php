@@ -263,7 +263,7 @@ function siteorigin_corp_sidebar_width( $css, $settings ) {
 		return $css;
 	}
 
-	$sidebar_width = $settings['theme_settings_sidebar_width'];
+	$sidebar_width = str_replace( array( '%' ), '', $settings['theme_settings_sidebar_width'] );
 	$content_width = 100 - $sidebar_width;
 
 	$css .= '.sidebar .content-area {
