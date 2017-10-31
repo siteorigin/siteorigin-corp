@@ -1271,7 +1271,7 @@ a {
       padding-right: 0;
       width: 100%; } }
 
-z.page-layout-no-sidebar .content-area {
+.page-layout-no-sidebar .content-area {
   float: none;
   width: 100%; }
 

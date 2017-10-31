@@ -158,7 +158,28 @@ function siteorigin_corp_settings_init() {
 					'teaser' => true,
 				),
 			),											
-		),	
+		),
+
+		// Sidebar.
+		'sidebar' => array(
+			'title' => esc_html__( 'Sidebar', 'siteorigin-corp' ),
+			'fields' => array(			
+				'position'	=> array(
+					'type'	=> 'select',
+					'label'	=> esc_html__( 'Position', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Choose the sidebar position.', 'siteorigin-corp' ),
+					'options' => array(
+						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-corp' ),
+					),
+				),
+				'width' => array(
+					'label'       => esc_html__( 'Width', 'siteorigin-unwind' ),
+					'type'        => 'measurement',
+					'live'        => true,
+				),										
+			),		
+		),		
 
 		// Footer.
 		'footer' => array(
@@ -181,6 +202,23 @@ function siteorigin_corp_settings_init() {
 	) ) );
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
+
+/**
+ * Add custom CSS for the theme settings
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_corp_settings_custom_css( $css ) {
+	// Custom CSS.
+	$css .= '/* style */
+	.widget-area {
+	width: ${sidebar_width};
+	}';
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_corp_menu_breakpoint_css' ) ) :
 /**
@@ -215,6 +253,26 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 }
 endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
+
+if ( ! function_exists( 'siteorigin_corp_sidebar_width' ) ) :
+/**
+ * Add CSS for the sidebar width setting.
+ */
+function siteorigin_corp_sidebar_width( $css, $settings ) {
+	if ( ! isset( $settings['theme_settings_sidebar_width'] ) ) {
+		return $css;
+	}
+
+	$sidebar_width = $settings['theme_settings_sidebar_width'];
+	$content_width = 100 - $sidebar_width;
+
+	$css .= '.sidebar .content-area {
+		width: ' . $content_width .'%;	
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_sidebar_width', 10, 2 );
 
 /**
  * Add default settings.
@@ -251,6 +309,10 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_tags']							= true;
 	$defaults['blog_post_author_box']					= true;
 	$defaults['blog_related_posts']						= true;
+
+	// Sidebar.
+	$defaults['sidebar_position']						= 'right';
+	$defaults['sidebar_width']							= '34%%';
 
 	// Footer.
 	$defaults['footer_text']							= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );

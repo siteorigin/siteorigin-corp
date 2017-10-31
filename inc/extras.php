@@ -35,6 +35,10 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'sidebar';
 	}
 
+	if ( siteorigin_setting( 'sidebar_position' ) == 'left' ) {
+		 $classes[] = 'sidebar-left';
+	}	
+
 	// WooCommerce top bar.
 	if ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) {
 		$classes[] = 'no-topbar';
