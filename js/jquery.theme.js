@@ -25,7 +25,7 @@ jQuery( function( $ ) {
 		};
 	} );
 
-	$.fn.burstAnimation = function( options ) {
+	$.fn.siteoriginCorpBurstAnimation = function( options ) {
 		var settings = $.extend( {
 			event: "click",
 			container: "parent"
@@ -94,7 +94,7 @@ jQuery( function( $ ) {
 		} );
 
 		// Burst animation when the user clicks on a sub link.
-		$( '.main-navigation ul ul li a' ).burstAnimation( {
+		$( '.main-navigation ul ul li a' ).siteoriginCorpBurstAnimation( {
 			event: "click",
 			container: "parent"
 		} );
