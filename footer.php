@@ -61,7 +61,7 @@
 
 <?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
 	<div id="scroll-to-top">
-		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-unwind' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-corp' ); ?></span>
 		<?php siteorigin_corp_display_icon( 'up-arrow' ); ?>
 	</div>
 <?php endif; ?>
