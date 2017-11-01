@@ -143,7 +143,7 @@ add_action( 'widgets_init', 'siteorigin_corp_widgets_init' );
  */
 function siteorigin_corp_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin-unwind-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );
+	wp_enqueue_style( 'siteorigin-corp-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
@@ -174,7 +174,7 @@ function siteorigin_corp_scripts() {
 	wp_enqueue_style( 'google-font-raleway', '//fonts.googleapis.com/css?family=Open+Sans' );	
 
 	// Skip link focus fix.
-	wp_enqueue_script( 'siteorigin-unwind-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
+	wp_enqueue_script( 'siteorigin-corp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
 
 	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

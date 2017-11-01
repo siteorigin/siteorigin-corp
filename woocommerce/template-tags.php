@@ -30,8 +30,8 @@ function siteorigin_corp_woocommerce_demo_store() {
 	$notice = get_option( 'woocommerce_demo_store_notice' );
 
 	if ( empty( $notice ) ) {
-		$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'siteorigin_corp' );
+		$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'siteorigin-corp' );
 	}
 
-	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'siteorigin_corp' ) . '</a></p>';
+	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'siteorigin-corp' ) . '</a></p>';
 }
