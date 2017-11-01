@@ -161,16 +161,10 @@ function siteorigin_corp_scripts() {
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 	
 	// Mobile menu collapse localisation.
-	if ( siteorigin_setting( 'navigation_mobile_menu_collapse' ) != 768 ) {
-		$collapse_array = array( 
-			'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
-		);	
-	} else {
-		$collapse_array = array( 
-			'collapse' => 768
-		);		
-	}	
-	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $collapse_array );  	
+	$menu_params = array( 
+		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
+	);	
+	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );  	
 
 	// Theme icons.
 	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );  	
