@@ -20,7 +20,7 @@
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-480x317-crop' ); ?>		
+				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
 			</a>
 		</div>
 	<?php endif; ?>	
