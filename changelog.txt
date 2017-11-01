@@ -1,21 +1,17 @@
 == Changelog ==
 
-= 0.8 - 01 November 2017 =
+= 0.7 - 01 November 2017 =
 * Added additional theme settings for header, navigation, blog, sidebar and footer.
 * Added SiteOrigin Premium support.
 * Various code improvements.
 
-= 0.7 - 01 October 2017 =
-* Minor code enhancements.
-* Removed Logo theme setting.
-
-= 0.6 - 26 September 2017 =
-* Added Yelp icon.
+= 0.6 - 02 September 2017 =
 * Prevented Featured Image markup from outputting when image not present.
 * Fixed search content meta function name.
 * Removed core HTML5 search form support.
 * Updated the comments title and navigation.
 * Updated the tag list function.
+* Removed Logo theme setting.
 
 = 0.5 - 16 August 2017 =
 * Added theme description.
