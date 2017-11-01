@@ -40,7 +40,7 @@ get_header(); ?>
 				comments_template();
 			}
 
-		} // end while
+		} // End while.
 		?>
 
 		</main><!-- #main -->
