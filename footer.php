@@ -17,7 +17,7 @@
 
 	<?php do_action( 'siteorigin_corp_before' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 
 		<?php do_action( 'siteorigin_corp_top' ); ?>
 
@@ -26,7 +26,7 @@
 				if ( is_active_sidebar( 'sidebar-footer' ) ) {
 					$corp_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
 						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 					</div>
 					<?php
@@ -41,7 +41,7 @@
 
 						$credit_text = apply_filters(
 							'siteorigin_corp_footer_credits',
-							sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-corp' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+							sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-corp' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
 						);
 
 						if ( ! empty( $credit_text ) ) {
@@ -59,10 +59,12 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<div id="scroll-to-top">
-	<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-corp' ); ?></span>
-	<?php siteorigin_corp_display_icon( 'up-arrow' ); ?>
-</div>
+<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
+	<div id="scroll-to-top">
+		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-unwind' ); ?></span>
+		<?php siteorigin_corp_display_icon( 'up-arrow' ); ?>
+	</div>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

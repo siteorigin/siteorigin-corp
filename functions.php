@@ -50,7 +50,7 @@ function siteorigin_corp_setup() {
 	// Custom image sizes.
 	add_image_size( 'siteorigin-corp-247x164-crop', 247, 163, true );
 	add_image_size( 'siteorigin-corp-354x234-crop', 354, 234, true );
-	add_image_size( 'siteorigin-corp-480x317-crop', 480, 317, true );
+	add_image_size( 'siteorigin-corp-551x364-crop', 551, 364, true );
 
 	/*
 	 * Enable support for the custom logo.
@@ -68,7 +68,6 @@ function siteorigin_corp_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -148,7 +147,7 @@ function siteorigin_corp_scripts() {
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), 1.1, true );
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
 	}
 
 	// Flexslider.
@@ -160,6 +159,12 @@ function siteorigin_corp_scripts() {
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	
+	// Mobile menu collapse localisation.
+	$menu_params = array( 
+		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
+	);	
+	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );  	
 
 	// Theme icons.
 	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );  	
@@ -177,6 +182,28 @@ function siteorigin_corp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
+
+if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
+/**
+ * Add support for SiteOrigin Premium theme addons.
+ */
+function siteorigin_corp_premium_setup() {
+
+	// Ajax Comments addon.
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'siteorigin_setting' => 'blog_ajax_comments'
+	) );
+
+	// No Attribution addon.
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter'  => 'siteorigin_corp_footer_credits',
+		'enabled' => ! siteorigin_setting( 'footer_attribution' ),
+		'siteorigin_setting' => '!footer_attribution'
+	) );
+}
+endif;
+add_action( 'after_setup_theme', 'siteorigin_corp_premium_setup' );
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -210,6 +237,12 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+/**
+ * WooCommerce compatibility.
+ */
+if ( function_exists( 'is_woocommerce' ) ) {
+	require get_template_directory() . '/woocommerce/functions.php';
+}
+
 /* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
 If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
-

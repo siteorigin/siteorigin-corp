@@ -1,7 +1,3 @@
-.sticky {
-	display: block;
-}
-
 body:not(.single) .hentry {
 	display: block;
 	float: left;
@@ -99,13 +95,13 @@ body:not(.single) .hentry {
 
 	.entry-thumbnail {
 		margin-bottom: -1px; 
-
-		~ div {
-			background: #fff;
-			border: 1px solid $color__background-hr;
-			padding: 15px 30px 33px;
-		}
 	}	
+
+	.content-wrapper {
+		background: #fff;
+		border: 1px solid $color__background-hr;
+		padding: 25px 30px 33px;
+	}
 
 	.entry-content {
 		font-size: .9333em; 
@@ -210,18 +206,13 @@ body:not(.single) .hentry {
 	}	
 }
 
-.more-wrapper {
+.more-text {
 	display: block;
-	font-size: 14px;
-	text-transform: uppercase; 
-	
-	a {
-		color: $color__text-dark;
-		font-weight: 600;
-		
-		&:hover {
-			color: $color__accent;
-		}
+
+	span {
+		display: inline-block;
+		padding-left: 3px; 
+		vertical-align: middle;
 	}
 }	
 
@@ -275,7 +266,7 @@ body:not(.single) .hentry {
 }
 
 .single .entry-footer {
-	margin: 15px 0;
+	margin: 0 0 40px;
 }
 
 .tags-links a {
@@ -333,12 +324,14 @@ body:not(.single) .hentry {
 	}
 
 	.page-title {
-		font-size: 18px;
+		font-size: 24px;
+		text-align: center;
 	}
 
 	.taxonomy-description {
-		font-size: 14px; 
-		margin-top: 15px; 
+		font-size: 14px;
+		margin-top: 5px;
+		text-align: center; 
 	}
 	
 	.entry-title {
@@ -378,11 +371,12 @@ body:not(.single) .hentry {
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
+	border-top: 1px solid $color__background-hr;
 	display: table;
 	border-right: 0; 
 	border-left: 0;
-	margin: 0;
 	margin-bottom: 60px; 
+	padding-top: 40px; 
 	width: 100%;
 		
 	.author-avatar {
@@ -496,7 +490,7 @@ body:not(.single) .hentry {
 
 			a {
 				display: block;
-				line-height: 0; 
+				line-height: 0;
 				text-decoration: none;
 			}
 
@@ -509,6 +503,7 @@ body:not(.single) .hentry {
 				font-weight: normal; 
 				line-height: normal;
 				margin: 0 0 3px;
+				transition: .3s;
 
 				@at-root &:hover {
 					color: $color__accent;
@@ -521,6 +516,7 @@ body:not(.single) .hentry {
 				font-weight: normal;
 				line-height: normal; 
 				margin: 0;
+				transition: .3s;
 				
 				&:hover {
 					color: $color__accent;

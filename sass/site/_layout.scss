@@ -1,3 +1,5 @@
+$sidebar__width: 34%;
+
 .corp-container {
 	margin: 0 auto;
 	max-width: none; 
@@ -39,7 +41,7 @@
 		width: 100%; 	
 	}
 }
-z// No Sidebar page layout setting.
+// No Sidebar page layout setting.
 .page-layout-no-sidebar .content-area {
 	float: none;
 	width: 100%; 
@@ -63,7 +65,7 @@ z// No Sidebar page layout setting.
 .widget-area {
 	float: right;
 	padding-left: 2.75%;
-	width: 34%;
+	width: $sidebar__width;
 	
 	@at-root .sidebar-left & {
 		float: left;

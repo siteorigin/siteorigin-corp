@@ -11,18 +11,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-thumbnail">
-		<?php 
-			if ( is_single() ) :
-				the_post_thumbnail();		
-			else : ?>
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'siteorigin-corp-480x317-crop' ); ?>
-				</a>
-			<?php endif;
-		?>
-	</div>
-	<div>
+	
+	<?php 
+	if ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
+			</a>
+		</div>
+	<?php endif; ?>	
+
+	<div class="content-wrapper">
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :
@@ -41,12 +44,12 @@
 
 		<div class="entry-content">
 			<?php
-				if ( is_single() ) {
+				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
 					the_content();
-				} else {				
+				} else {
 					the_excerpt();
 				}
-							
+
 				wp_link_pages( array(
 					'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
 					'after'  => '</div>',

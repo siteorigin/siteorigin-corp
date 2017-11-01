@@ -262,32 +262,6 @@ $sel: '';
 	}
 }
 
-@media (max-width: 1100px) {
-
-	#masthead .search-toggle {
-		margin-right: 20px;
-	}
-
-	#masthead #mobile-menu-button {
-		display: inline-block;
-	}
-
-	#masthead .main-navigation ul {
-		display: none;
-	}
-
-	#masthead .main-navigation .search-icon {
-		display: none;
-	}
-}
-
-@media (min-width: 1100px) {
-
-	#masthead #mobile-navigation {
-		display: none !important;
-	}
-}
-
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation
 --------------------------------------------------------------*/
@@ -373,31 +347,41 @@ $sel: '';
 }
 
 .post-navigation {
-	font-size: 16px;
+	border-top: 1px solid $color__background-hr;
+	margin-bottom: 0; 
+	padding: 40px 0;
 
 	a {
-		color: $color__text-medium;
-		font-weight: bold;
-		font-weight: 600;
-
-		&:hover {
-			color: $color__accent;
+		
+		img {
+			display: block;
+			float: left;
+			margin-right: 15px; 
+			max-width: 80px;
 		}
 
 		.sub-title {
-			border-bottom: 2px solid $color__background-hr-dark;
 			color: $color__text-light;
 			display: inline-block;
-			font-size: 14px;
+			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
+			letter-spacing: .5px; 
 			line-height: normal;
-			margin-bottom: 10px;
-			padding-bottom: 3px;
+			margin: 8px 0 1px;
 		}
 
 		div {
+			color: $color__text-dark;
+			font-family: $font__headings;
+			font-weight: 400;   
+			font-size: 15px; 
 			line-height: normal;
+			transition: .3s;
+		}
+
+		&:hover div {
+			color: $color__accent;
 		}
 	}
 }
@@ -490,140 +474,5 @@ $sel: '';
 				margin-right: 0;
 			}
 		}
-	}
-}
-
-/*--------------------------------------------------------------
-## Footer Menu Social Icons
---------------------------------------------------------------*/
-.footer-menu {
-
-	a[href*="behance.net"], a[href*="codepen.io"], a[href*="delicious.com"], a[href*="deviantart.com"], a[href*="digg.com"], a[href*="dribbble.com"], a[href*="facebook.com"], a[href*="flickr.com"], a[href*="foursquare.com"], a[href*="github.com"], a[href*="plus.google.com"], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="pinterest.com"], a[href*="reddit.com"], a[href*="soundcloud.com"], a[href*="stackexchange.com"], a[href*="stackoverflow.com"], a[href*="tumblr.com"], a[href*="twitter.com"], a[href*="vimeo.com"], a[href*="vine.co"], a[href*="vk.com"], a[href*="weibo.com"], a[href*="wordpress.com"], a[href*="xing"], a[href*="yelp.com"], a[href*="youtube.com"] {
-		font-size: 0;
-		text-align: center;
-
-		&:before {
-			font-family: $font__icon;
-			font-size: 16px;
-		}
-	}
-
-	a:before {
-		display: inline-block;
-		background: #5b5f68;
-		border-radius: 50%;
-		color: #b4b5b8;
-		height: 35px;
-		line-height: 35px;
-		transition: .3s;
-		width: 35px;
-	}
-
-	a[href*="behance.net"]:before {
-		content: "\e91a";
-	}
-
-	a[href*="codepen.io"]:before {
-		content: "\e919";
-	}
-
-	a[href*="delicious.com"]:before {
-		content: "\e918";
-	}
-
-	a[href*="deviantart.com"]:before {
-		content: "\e917";
-	}
-
-	a[href*="digg.com"]:before {
-		content: "\e916";
-	}
-
-	a[href*="dribbble.com"]:before {
-		content: "\e915";
-	}
-
-	a[href*="facebook.com"]:before {
-		content: "\e914";
-	}
-
-	a[href*="flickr.com"]:before {
-		content: "\e913";
-	}
-
-	a[href*="foursquare.com"]:before {
-		content: "\e912";
-	}
-
-	a[href*="github.com"]:before {
-		content: "\e911";
-	}
-
-	a[href*="plus.google.com"]:before {
-		content: "\e910";
-	}
-
-	a[href*="instagram.com"]:before {
-		content: "\e90f";
-	}
-
-	a[href*="linkedin.com"]:before {
-		content: "\e90e";
-	}
-
-	a[href*="pinterest.com"]:before {
-		content: "\e90d";
-	}
-
-	a[href*="reddit.com"]:before {
-		content: "\e90c";
-	}
-
-	a[href*="soundcloud.com"]:before {
-		content: "\e90b";
-	}
-
-	a[href*="stackexchange.com"]:before {
-		content: "\e90a";
-	}
-
-	a[href*="stackoverflow.com"]:before {
-		content: "\e909";
-	}
-
-	a[href*="tumblr.com"]:before {
-		content: "\e908";
-	}
-
-	a[href*="twitter.com"]:before {
-		content: "\e907";
-	}
-
-	a[href*="vimeo.com"]:before {
-		content: "\e906";
-	}
-
-	a[href*="vk.com"]:before {
-		content: "\e905";
-	}
-
-	a[href*="weibo.com"]:before {
-		content: "\e904";
-	}
-
-	a[href*="wordpress.com"]:before {
-		content: "\e903";
-	}
-
-	a[href*="xing"]:before {
-		content: "\e902";
-	}
-
-	a[href*="yelp.com"]:before {
-		content: "\f1e9";
-	}
-
-	a[href*="youtube.com"]:before {
-		content: "\e91c";
 	}
 }
