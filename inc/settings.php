@@ -24,7 +24,6 @@ function siteorigin_corp_settings_init() {
 
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_corp_settings_array', array(
 
-		// Header.
 		'header' => array(
 			'title' => esc_html__( 'Header', 'siteorigin-corp' ),
 			'fields' => array(
@@ -51,7 +50,6 @@ function siteorigin_corp_settings_init() {
 			),
 		),
 
-		// Navigation.
 		'navigation' => array(
 			'title' => esc_html__( 'Navigation', 'siteorigin-corp' ),
 			'fields' => array(
@@ -88,7 +86,6 @@ function siteorigin_corp_settings_init() {
 			),
 		),		
 
-		// Blog.
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-corp' ),
 			'fields' => array(
@@ -160,7 +157,6 @@ function siteorigin_corp_settings_init() {
 			),											
 		),
 
-		// Sidebar.
 		'sidebar' => array(
 			'title' => esc_html__( 'Sidebar', 'siteorigin-corp' ),
 			'fields' => array(			
@@ -174,14 +170,13 @@ function siteorigin_corp_settings_init() {
 					),
 				),
 				'width' => array(
-					'label'       => esc_html__( 'Width', 'siteorigin-unwind' ),
+					'label'       => esc_html__( 'Width', 'siteorigin-corp' ),
 					'type'        => 'measurement',
 					'live'        => true,
 				),										
 			),		
 		),		
 
-		// Footer.
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-corp' ),
 			'fields' => array(
@@ -193,8 +188,8 @@ function siteorigin_corp_settings_init() {
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Hide SiteOrigin Attribution', 'siteorigin-north' ),
-					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-north' ),
+					'label' => esc_html__( 'Hide SiteOrigin Attribution', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
 			),
@@ -244,7 +239,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			display: none;
 		}
 	}
-	@media (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+	@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
 		#masthead #mobile-navigation {
 			display: none !important;
 		}
