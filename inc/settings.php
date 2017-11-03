@@ -67,11 +67,11 @@ function siteorigin_corp_settings_init() {
 				),
 				'padding'	=> array(
 					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Padding', 'siteorigin-unwind' ),
-					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-corp' ),
+					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
 					'live'	=> true,
 				),
-				'bottom_margin'	=> array(
+				'margin'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
 					'live'	=> true,
@@ -221,6 +221,27 @@ function siteorigin_corp_settings_init() {
 					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
+				'background' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'bottom_bar_background' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Bottom Bar Background Color', 'siteorigin-corp' ),
+					'live' => true,
+				),				
+				'padding'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
+					'live'	=> true,
+				),
+				'margin'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> esc_html__( 'Top Margin', 'siteorigin-corp' ),
+					'live'	=> true,
+				),				
 			),
 		),
 	) ) );
@@ -344,6 +365,10 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	// Footer.
 	$defaults['footer_text']							= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_background']						= '#363a43';
+	$defaults['footer_bottom_bar_background']			= '#2f333b';
+	$defaults['footer_padding']							= '95px';
+	$defaults['footer_margin']							= '80px';	
 
 	return $defaults;
 }
