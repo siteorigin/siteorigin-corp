@@ -85,6 +85,10 @@ FlexSlider, Copyright 2012 WooThemes
 Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [Source](http://www.woothemes.com/flexslider/)
 
+FlexSlider, Copyright 2012 WooThemes
+Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[Source](http://www.woothemes.com/flexslider/)
+
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/necolas/normalize.css/)

@@ -74,6 +74,16 @@ function siteorigin_corp_setup() {
 		'caption',
 	) );
 
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'gallery',
+		'image',
+		'video',
+	) );	
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_corp_custom_background_args', array(
 		'default-color' => 'f9f9f9',
@@ -155,8 +165,9 @@ function siteorigin_corp_scripts() {
 
 	// Flexslider.
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
-	
-	if ( ( function_exists( 'is_woocommerce' ) && is_product() ) ) {
+
+	if ( is_single() && has_post_format( 'gallery' ) ) {
+		wp_enqueue_style( 'siteorigin-corp-flexslider' );
 		wp_enqueue_script( 'jquery-flexslider' );
 	}
 
@@ -185,6 +196,13 @@ function siteorigin_corp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
+
+/**
+ * Enqueue Flexslider.
+ */
+function siteorigin_corp_enqueue_flexslider() {
+	wp_enqueue_script( 'jquery-flexslider' );
+}
 
 if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
 /**
