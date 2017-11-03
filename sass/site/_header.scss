@@ -1,8 +1,8 @@
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid $color__background-hr;
-	margin-bottom: 60px; 
-	padding: 25px 0;
+	background: $color__header-background;
+	border-bottom: 1px solid $color__header-border;
+	margin-bottom: $header__bottom-margin; 
+	padding: $header__padding 0;
 	position: relative;
 	width: 100%;
 	z-index: 999;

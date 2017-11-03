@@ -54,7 +54,28 @@ function siteorigin_corp_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' )
-				),						
+				),
+				'background' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'border' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'padding'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> esc_html__( 'Padding', 'siteorigin-unwind' ),
+					'description' => esc_html__( 'Top and bottom header padding.', 'siteorigin-corp' ),
+					'live'	=> true,
+				),
+				'bottom_margin'	=> array(
+					'type'	=> 'measurement',
+					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
+					'live'	=> true,
+				),																
 			),
 		),
 
@@ -291,8 +312,12 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['header_site_description']				= false;
 	$defaults['header_sticky']							= false;
 	$defaults['header_scales']							= false;
+	$defaults['header_background']						= '#ffffff';
+	$defaults['header_border']							= '#e6e6e6';
+	$defaults['header_padding']							= '25px';
+	$defaults['header_margin']							= '60px';
 	
-	// Navigation
+	// Navigation.
 	$defaults['navigation_header_menu']					= true;
 	$defaults['navigation_mobile_menu']					= true;
 	$defaults['navigation_mobile_menu_collapse']		= 768;

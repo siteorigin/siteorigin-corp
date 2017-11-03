@@ -4,6 +4,10 @@
 return array(
 	'variables' => array(
 
+		// Header.
+		'header_background' => 'color__header-background',
+		'header_border' => 'color__header-border'
+
 		// Sidebar.
 		'sidebar_width' => 'sidebar__width',
 
