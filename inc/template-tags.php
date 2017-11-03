@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom template tags for this theme
+ * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -328,7 +328,6 @@ if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
  * Print HTML with meta information for the post tags.
  */
 function siteorigin_corp_entry_footer() {
-
 	if ( is_single() && has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
 		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
 	}	

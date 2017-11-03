@@ -2,6 +2,10 @@
 	background: $color__background-footer;	
 	margin-top: 80px;
 	
+	.no-footer-margin & {
+		margin-top: 0;
+	}		
+	
 	.widgets {
 		@include clearfix;
 		padding-top: 95px;

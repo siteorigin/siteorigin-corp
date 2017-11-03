@@ -21,18 +21,22 @@
 
 		<?php do_action( 'siteorigin_corp_top' ); ?>
 
-		<div class="corp-container">
-			<?php
-				if ( is_active_sidebar( 'sidebar-footer' ) ) {
-					$corp_sidebars = wp_get_sidebars_widgets();
-					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
-						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
-					</div>
-					<?php
-				}
-			?>
-		</div><!-- .corp-container -->
+
+		<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) : ?>
+			<div class="corp-container">
+				<?php
+					if ( is_active_sidebar( 'sidebar-footer' ) ) {
+						$corp_sidebars = wp_get_sidebars_widgets();
+						?>
+						<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+							<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+						</div>
+						<?php
+					}
+				?>
+			</div><!-- .corp-container -->
+		<?php endif; ?>
+
 		<div class="bottom-bar">
 			<div class="corp-container">
 				<div class="site-info">

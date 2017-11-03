@@ -1,6 +1,6 @@
 <?php
 /**
- * siteorigin-corp functions and definitions
+ * Siteorigin Corp functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -82,6 +82,9 @@ function siteorigin_corp_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add theme support for SiteOrigin Page Template Settings.
+	add_theme_support( 'siteorigin-template-settings' );	
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_corp_setup' );

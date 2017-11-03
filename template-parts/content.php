@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -29,7 +29,9 @@
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				if ( siteorigin_page_setting( 'page_title' ) ) :
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				endif;
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;

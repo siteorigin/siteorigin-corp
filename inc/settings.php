@@ -13,6 +13,14 @@ function siteorigin_corp_settings_localize( $loc ) {
 	return wp_parse_args( array(
 		'section_title' => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
 		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-corp' ),
+		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
+
+		// For the controls.
+		'variant' => esc_html__( 'Variant', 'siteorigin-corp' ),
+		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
+
+		// For the settings metabox.
+		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),		
 	), $loc );
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_localize' );
@@ -315,3 +323,64 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );
+
+/**
+ * Setup Page Settings.
+ */
+function siteorigin_corp_page_settings( $settings, $type, $id ) {
+
+	$settings['layout'] = array(
+		'type'    => 'select',
+		'label'   => esc_html__( 'Page Layout', 'siteorigin-corp' ),
+		'options' => array(
+			'default'            	=> esc_html__( 'Default', 'siteorigin-corp' ),
+			'no-sidebar'         	=> esc_html__( 'No Sidebar', 'siteorigin-corp' ),
+			'full-width-no-sidebar' => esc_html__( 'Full Width, No Sidebar', 'siteorigin-corp' ),
+		),
+	);
+
+	$settings['header_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-corp' )
+	);	
+
+	$settings['page_title'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Page Title', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the page title.', 'siteorigin-corp' )
+	);
+
+	$settings['footer_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-corp' )
+	);
+
+	$settings['footer_widgets'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-corp' )
+	);
+
+	return $settings;
+}
+add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 );
+
+/**
+ * Add the default Page Settings.
+ */
+function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
+	$defaults['layout']                 = 'default';
+	$defaults['header_margin']        	= true;
+	$defaults['page_title']             = true;
+	$defaults['footer_margin']          = true;
+	$defaults['footer_widgets'] 		= true;
+
+	return $defaults;
+}
+add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_setting_defaults', 10, 3 );
