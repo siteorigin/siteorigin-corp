@@ -38,7 +38,7 @@
 
 	// A class added after scroll.
 	&.stuck {
-    	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);	
+    	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);	
     }
 
 	.site-header-inner {
@@ -65,7 +65,7 @@
 			margin: 0;
 			
 			a {
-				color: $color__text-dark;
+				color: $color__site_title; 
 			}
 		}
 
@@ -79,7 +79,7 @@
 		}
 
 		.site-description {
-			color: $color__text-light;
+			color: $color__site_tagline;
 			font-family: $font__main;
 			font-weight: normal; 
 			font-size: 13px; 

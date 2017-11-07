@@ -1,25 +1,38 @@
-// Background colors.
+// Background.
 $color__background-body: #f9f9f9;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-// Border colors.
+// Border.
 $color__background-hr: #e6e6e6;
 $color__background-hr-dark: #d6d6d6;
 
-// Accent color.
+// Accent.
 $color__accent: #f14e4e;
 
-// Text colors.
+// Text.
 $color__text-light: #929292;
 $color__text-medium: #626262;
 $color__text-dark: #2d2d2d;
 
-// Heading colors.
+// Heading.
 $color__header-background: #fff;
 $color__header-border: #e6e6e6;
 
-// Footer colors.
+// Navigation.
+$color__navigation-link: #2d2d2d;
+$color__navigation_link_accent: #f14e4e;
+$color__navigation-drop-down-background: #262627;
+$color__navigation-drop-down-divider: #353538;
+$color__navigation-drop-down-link: #b2b2b2;
+$color__navigation-drop-down-link-hover: #ffffff;
+$color__navigation-search-overlay: #090d14;
+
+// Typography.
+$color__site_title: #2d2d2d;
+$color__site_tagline: #929292;
+
+// Footer.
 $color__footer-widget-title: #ffffff;
 $color__footer-widget-text: #b4b5b8;
 $color__footer-widget-link: #ffffff;

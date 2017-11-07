@@ -10,6 +10,24 @@ return array(
 		'header_padding' 					=> 'header__padding',
 		'header_margin' 					=> 'header__margin',
 
+		// Navigation.
+		'navigation_link'					=> 'color__navigation-link',		
+		'navigation_link_accent'			=> 'color__navigation_link_accent',
+		'navigation_drop_down_background'	=> 'color__navigation-drop-down-background',	
+		'navigation_drop_down_divider'		=> 'color__navigation-drop-down-divider',		
+		'navigation_drop_down_link'			=> 'color__navigation-drop-down-link',			
+		'navigation_drop_down_link_hover'	=> 'color__navigation-drop-down-link-hover',	
+		'navigation_search_overlay'			=> 'color__navigation-search-overlay',
+
+		// Typhography. 
+		'typography_site_title'				=> 'color__site_title',
+		'typography_site_tagline'			=> 'color__site_tagline',
+		'typography_accent'					=> 'color__accent',
+		'typography_heading'				=> 'color__text-dark',
+		'typography_text'					=> 'color__text-medium',
+		'typography_secondary_text'			=> 'color__text-light',
+		'typography_border'					=> 'color__background-hr',
+
 		// Sidebar.
 		'sidebar_width'						=> 'sidebar__width',
 

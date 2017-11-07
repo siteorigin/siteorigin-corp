@@ -520,9 +520,7 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  display: table-cell;
-  text-align: right;
-  vertical-align: middle; }
+  text-align: right; }
   .main-navigation > div {
     display: inline-block; }
   .main-navigation ul {
@@ -548,7 +546,7 @@ a {
         padding: 0;
         min-width: 100%; }
         .main-navigation ul ul li:hover > a {
-          color: #fff; }
+          color: #ffffff; }
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -579,7 +577,7 @@ a {
       position: relative;
       text-align: left;
       text-transform: uppercase; }
-      .main-navigation ul li.menu-item .main-navigation ul li:last-of-type {
+      .main-navigation ul li.menu-item, .main-navigation ul li:last-of-type {
         margin-right: 0; }
     .main-navigation ul a {
       border-bottom: 2px solid #fff;
@@ -628,6 +626,8 @@ a {
   #mobile-menu-button svg {
     height: 19px;
     width: 23px; }
+    #mobile-menu-button svg path {
+      fill: #2d2d2d; }
 
 #mobile-navigation {
   background: #262627;
@@ -761,15 +761,15 @@ a {
     .pagination .page-numbers.next, .pagination .page-numbers.prev {
       font-family: Verdana;
       padding: 12px 13px; }
-  .pagination .dots {
-    border: none;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-    font-size: 13px;
-    padding-right: 0;
-    padding-left: 0; }
-    .pagination .dots:hover {
-      background: none;
-      color: #626262; }
+    .pagination .page-numbers.dots {
+      border: none;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      font-size: 13px;
+      padding-right: 0;
+      padding-left: 0; }
+      .pagination .page-numbers.dots:hover {
+        background: none;
+        color: #626262; }
   .pagination .current {
     border-color: #f14e4e;
     color: #f14e4e; }

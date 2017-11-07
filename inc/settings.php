@@ -111,9 +111,105 @@ function siteorigin_corp_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Scroll to Top', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the scroll to top button.', 'siteorigin-corp' )
-				),											
+				),
+				'link' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Link Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'link_accent' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Link Hover Accent Color', 'siteorigin-corp' ),
+					'live' => true,
+				),				
+				'drop_down_background' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'drop_down_divider' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'drop_down_link' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Link Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'drop_down_link_hover' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Link Hover Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'search_overlay' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
+					'live' => true,
+				),																																														
 			),
-		),		
+		),
+
+		'typography' => array(
+			'title' => esc_html__( 'Typography', 'siteorigin-corp' ),
+			'fields' => array(
+				'site_title_font' => array(
+					'type' => 'font',
+					'label' => esc_html__( 'Site Title Font', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'site_tagline_font' => array(
+					'type' => 'font',
+					'label' => esc_html__( 'Site Tagline Font', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'heading_font' => array(
+					'type' => 'font',
+					'label' => esc_html__( 'Heading Font', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'body_font' => array(
+					'type' => 'font',
+					'label' => esc_html__( 'Body Font', 'siteorigin-corp' ),
+					'live' => true,
+				),											
+				'site_title' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Site Title Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'site_tagline' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Site Tagline Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'accent' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Accent Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'heading' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Heading Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'text' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Text Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'secondary_text' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Secondary Text Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'border' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'live' => true,
+				),					
+			),		
+		),			
 
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-corp' ),
@@ -284,7 +380,49 @@ function siteorigin_corp_settings_init() {
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 
 /**
- * Add custom CSS for the theme settings
+ * Tell the settings framework which settings we're using as fonts.
+ *
+ * @param $settings
+ *
+ * @return array
+ */
+function siteorigin_corp_font_settings( $settings ) {
+
+	$settings['typography_site_title_font'] = array(
+		'name'    => 'Montserrat',
+		'weights' => array(
+			400,
+			700,
+		),
+	);
+	$settings['typography_site_tagline_font'] = array(
+		'name'    => 'Open Sans',
+		'weights' => array(
+			400,
+			700,
+		),
+	);
+	$settings['typography_heading_font'] = array(
+		'name'    => 'Montserrat',
+		'weights' => array(
+			400,
+			700,
+		),
+	);
+	$settings['typography_body_font'] = array(
+		'name'    => 'Open Sans',
+		'weights' => array(
+			400,
+			700,
+		),
+	);	
+
+	return $settings;
+}
+add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings' );
+
+/**
+ * Add custom CSS for the theme settings.
  *
  * @param $css
  *
@@ -293,6 +431,203 @@ add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 function siteorigin_corp_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
+	body,button,input,select,optgroup,textarea {
+	color: ${typography_text};
+	}
+	h1,h2,h3,h4,h5,h6 {
+	color: ${typography_heading};
+	}
+	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
+	color: ${typography_heading};
+	}
+	.sub-heading,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.comments-title,.comment-reply-title {
+	color: ${typography_text};
+	}
+	blockquote {
+	border-left: 3px solid ${typography_accent};
+	}
+	blockquote cite {
+	color: ${typography_text};
+	}
+	abbr,acronym {
+	border-bottom: 1px dotted ${typography_text};
+	}
+	hr {
+	background-color: ${typography_border};
+	}
+	table thead th {
+	color: ${typography_heading};
+	}
+	table th,table td {
+	border: 1px solid ${typography_border};
+	}
+	.button,button,input[type="button"],input[type="reset"],input[type="submit"] {
+	background: ${typography_accent};
+	}
+	.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+	background: .darken( ${typography_accent}, 5%);
+	}
+	.button:active,.button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus {
+	background: ${typography_accent};
+	}
+	label {
+	color: ${typography_heading};
+	}
+	fieldset legend {
+	color: ${typography_heading};
+	}
+	a {
+	color: ${typography_accent};
+	}
+	a:visited {
+	color: ${typography_accent};
+	}
+	a:hover,a:focus,a:active {
+	color: ${typography_text};
+	}
+	.main-navigation ul ul li:hover > a {
+	color: ${navigation_drop_down_link_hover};
+	}
+	.main-navigation ul ul li:first-of-type {
+	border-top: 2px solid ${navigation_link_accent};
+	}
+	.main-navigation ul ul a {
+	background: ${navigation_drop_down_background};
+	border-bottom: 1px solid ${navigation_drop_down_divider};
+	color: ${navigation_drop_down_link};
+	}
+	.main-navigation ul a {
+	border-bottom: 2px solid ${header_background};
+	color: ${navigation_link};
+	}
+	.main-navigation div > ul > li:hover > a {
+	border-color: ${navigation_link_accent};
+	}
+	.main-navigation div > ul > li.menu-item-has-children:hover > a,.main-navigation div > ul > li.page_item_has_children:hover > a {
+	border-color: ${header_background};
+	}
+	.main-navigation div > ul > li.current a,.main-navigation div > ul > li.current_page_item > a,.main-navigation div > ul > li.current-menu-item > a,.main-navigation div > ul > li.current_page_ancestor > a,.main-navigation div > ul > li.current-menu-ancestor > a {
+	border-color: ${navigation_link_accent};
+	}
+	.main-navigation .search-toggle .open svg path {
+	fill: ${navigation_link};
+	}
+	#mobile-menu-button svg path {
+	fill: ${navigation_link};
+	}
+	.pagination .page-numbers {
+	border: 1px solid ${typography_text};
+	color: ${typography_text};
+	}
+	.pagination .page-numbers:visited {
+	color: ${typography_text};
+	}
+	.pagination .page-numbers:hover {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
+	}
+	.pagination .dots:hover {
+	color: ${typography_text};
+	}
+	.pagination .current {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
+	}
+	.post-navigation {
+	border-top: 1px solid ${typography_border};
+	}
+	.post-navigation a .sub-title {
+	color: ${typography_secondary_text};
+	}
+	.post-navigation a div {
+	color: ${typography_heading};
+	}
+	.post-navigation a:hover div {
+	color: ${typography_accent};
+	}
+	.comment-navigation a {
+	color: ${typography_text};
+	}
+	.comment-navigation a:hover {
+	color: ${typography_accent};
+	}
+	.breadcrumbs {
+	color: ${typography_secondary_text};
+	}
+	.breadcrumbs a {
+	color: ${typography_secondary_text};
+	}
+	.breadcrumbs a:hover {
+	color: ${typography_accent};
+	}
+	#page #infinite-handle span button {
+	border-color: ${typography_heading};
+	color: ${typography_heading};
+	}
+	#page #infinite-handle span button:hover {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
+	}
+	.site-content #primary .sharedaddy {
+	border: 1px solid ${typography_border};
+	}
+	.widget-area .widget a,.site-footer .widget a {
+	color: ${typography_text};
+	}
+	.widget-area .widget a:hover,.site-footer .widget a:hover {
+	color: ${typography_accent};
+	}
+	.widget #wp-calendar caption {
+	color: ${typography_heading};
+	}
+	.widget #wp-calendar thead {
+	border-bottom: 2px solid ${typography_border};
+	}
+	.widget #wp-calendar tfoot #prev a,.widget #wp-calendar tfoot #next a {
+	color: ${typography_heading};
+	}
+	.widget #wp-calendar tfoot #prev a:hover,.widget #wp-calendar tfoot #next a:hover {
+	color: ${typography_accent};
+	}
+	.widget_categories .cat-item {
+	color: ${typography_secondary_text};
+	}
+	.widget_categories .cat-item a {
+	color: ${typography_heading};
+	}
+	.widget_recent_comments .recentcomments {
+	color: ${typography_secondary_text};
+	}
+	.widget_recent_comments .recentcomments .comment-author-link {
+	color: ${typography_heading};
+	}
+	.widget_recent_comments .recentcomments .comment-author-link:before {
+	color: ${typography_secondary_text};
+	}
+	.widget_recent_comments .recentcomments a {
+	color: ${typography_heading};
+	}
+	.widget_recent_entries li {
+	color: ${typography_secondary_text};
+	}
+	.widget_recent_entries li a {
+	color: ${typography_heading};
+	}
+	.widget.recent-posts-extended h3 {
+	color: ${typography_heading};
+	}
+	.widget.recent-posts-extended h3 a {
+	color: ${typography_heading};
+	}
+	.widget.recent-posts-extended h3 a:hover {
+	color: ${typography_text};
+	}
+	.widget.recent-posts-extended time {
+	color: ${typography_secondary_text};
+	}
+	.widget .search-form button[type="submit"] svg path {
+	fill: ${typography_text};
+	}
 	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
 	background: ${footer_background};
 	}
@@ -304,6 +639,131 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	border-bottom: 1px solid ${header_border};
 	margin-bottom: ${header_margin};
 	padding: ${header_padding} 0;
+	}
+	.site-header .site-branding .site-title a {
+	color: ${typography_site_title};
+	}
+	.site-header .site-branding .site-description {
+	color: ${typography_site_tagline};
+	}
+	#fullscreen-search {
+	background: .rgba( ${navigation_search_overlay}, 0.95);
+	}
+	#fullscreen-search form button[type="submit"] svg {
+	fill: ${typography_secondary_text};
+	}
+	#fullscreen-search .search-close-button .close svg path {
+	fill: ${typography_secondary_text};
+	}
+	body:not(.single) .hentry .content-wrapper {
+	border: 1px solid ${typography_border};
+	}
+	.entry-title {
+	color: ${typography_heading};
+	}
+	.entry-title a:hover {
+	color: ${typography_text};
+	}
+	.entry-meta span {
+	color: ${typography_secondary_text};
+	}
+	.entry-meta span a:hover {
+	color: ${typography_accent};
+	}
+	.page-links .page-links-title {
+	color: ${typography_heading};
+	}
+	.page-links .page-links-title {
+	color: ${typography_text};
+	}
+	.page-links .page-links-title:hover {
+	color: ${typography_text};
+	}
+	.page-links span {
+	border: 1px solid ${typography_text};
+	color: ${typography_text};
+	}
+	.page-links span:visited {
+	color: ${typography_text};
+	}
+	.page-links span:hover {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
+	}
+	.page-links a span {
+	color: ${typography_text};
+	}
+	.tags-links a,aside.widget.widget_tag_cloud .tagcloud a {
+	color: ${typography_text};
+	}
+	.tags-links a:hover,aside.widget.widget_tag_cloud .tagcloud a:hover {
+	background: ${typography_accent};
+	}
+	.tags-links a:hover:after,aside.widget.widget_tag_cloud .tagcloud a:hover:after {
+	border-right-color: ${typography_accent};
+	}
+	.search-form button[type="submit"] svg path {
+	fill: ${typography_secondary_text};
+	}
+	.author-box {
+	border-top: 1px solid ${typography_border};
+	}
+	.author-box .author-description span a {
+	color: ${typography_text};
+	}
+	.author-box .author-description span a:hover {
+	color: ${typography_accent};
+	}
+	.yarpp-related ol li div,.related-posts-section ol li div {
+	border: 1px solid ${typography_border};
+	}
+	.yarpp-related ol li .related-post-title:hover,.related-posts-section ol li .related-post-title:hover {
+	color: ${typography_accent};
+	}
+	.yarpp-related ol li .related-post-date,.related-posts-section ol li .related-post-date {
+	color: ${typography_secondary_text};
+	}
+	.yarpp-related ol li .related-post-date:hover,.related-posts-section ol li .related-post-date:hover {
+	color: ${typography_accent};
+	}
+	.comment-list .comment,.comment-list .pingback {
+	color: ${typography_text};
+	}
+	.comment-list .comment .comment-box,.comment-list .pingback .comment-box {
+	border-bottom: 1px solid ${typography_border};
+	}
+	.comment-list .comment .author,.comment-list .pingback .author {
+	color: ${typography_heading};
+	}
+	.comment-list .comment .author a,.comment-list .pingback .author a {
+	color: ${typography_heading};
+	}
+	.comment-list .comment .author a:hover,.comment-list .pingback .author a:hover {
+	color: ${typography_text};
+	}
+	.comment-list .comment .date,.comment-list .pingback .date {
+	color: ${typography_secondary_text};
+	}
+	.comment-list .comment .comment-reply-link,.comment-list .pingback .comment-reply-link {
+	color: ${typography_heading};
+	}
+	.comment-list .comment .comment-reply-link:hover,.comment-list .pingback .comment-reply-link:hover {
+	color: ${typography_accent};
+	}
+	.comment-reply-title #cancel-comment-reply-link {
+	color: ${typography_secondary_text};
+	}
+	.comment-reply-title #cancel-comment-reply-link:hover {
+	color: ${typography_accent};
+	}
+	#commentform .comment-notes a,#commentform .logged-in-as a {
+	color: ${typography_text};
+	}
+	#commentform .comment-notes a:hover,#commentform .logged-in-as a:hover {
+	color: ${typography_accent};
+	}
+	#commentform .comment-subscription-form label {
+	color: ${typography_text};
 	}
 	.site-footer {
 	background: ${footer_background};
@@ -333,6 +793,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.site-footer .bottom-bar a:hover {
 	color: ${footer_bottom_bar_link_hover};
+	}
+	.featured-posts-slider .slides .slide {
+	background-color: ${typography_text};
 	}';
 	return $css;
 }
@@ -401,7 +864,6 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_sidebar_width', 1
  */
 function siteorigin_corp_settings_defaults( $defaults ) {
 
-	// Header.
 	$defaults['header_retina_logo']						= false;
 	$defaults['header_site_description']				= false;
 	$defaults['header_sticky']							= false;
@@ -411,15 +873,20 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['header_padding']							= '25px';
 	$defaults['header_margin']							= '60px';
 	
-	// Navigation.
 	$defaults['navigation_header_menu']					= true;
 	$defaults['navigation_mobile_menu']					= true;
 	$defaults['navigation_mobile_menu_collapse']		= 768;
 	$defaults['navigation_menu_search']					= true;
 	$defaults['navigation_post']						= true;
 	$defaults['navigation_scroll_to_top']				= true;
+	$defaults['navigation_link']						= '#2d2d2d';
+	$defaults['navigation_link_accent']					= '#f14e4e';
+	$defaults['navigation_drop_down_background']		= '#262627';
+	$defaults['navigation_drop_down_divider']			= '#353538';
+	$defaults['navigation_drop_down_link']				= '#b2b2b2';
+	$defaults['navigation_drop_down_link_hover']		= '#ffffff';
+	$defaults['navigation_search_overlay']				= '#090d14';
 
-	// Blog.
 	$defaults['blog_archive_featured_image']			= true;
 	$defaults['blog_archive_content']         			= 'excerpt';
 	$defaults['blog_excerpt_length']          			= 55;	
@@ -432,11 +899,17 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_author_box']					= true;
 	$defaults['blog_related_posts']						= true;
 
-	// Sidebar.
+	$defaults['typography_site_title']					='#2d2d2d';
+	$defaults['typography_site_tagline']				='#929292';
+	$defaults['typography_accent']						='#f14e4e';
+	$defaults['typography_heading']						='#2d2d2d';
+	$defaults['typography_text']						='#626262';
+	$defaults['typography_secondary_text']				='#929292';
+	$defaults['typography_border']						='#e6e6e6';
+
 	$defaults['sidebar_position']						= 'right';
 	$defaults['sidebar_width']							= '34%%';
 
-	// Footer.
 	$defaults['footer_text']							= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
 	$defaults['footer_widget_title']					= '#ffffff';
 	$defaults['footer_widget_text']						= '#b4b5b8';

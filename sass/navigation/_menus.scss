@@ -1,8 +1,6 @@
 .main-navigation {
-	display: table-cell;
 	text-align: right;
-	vertical-align: middle;
-
+		
 	> div {
 		display: inline-block;
 	}
@@ -35,7 +33,7 @@
 				min-width: 100%;
 
 				&:hover > a {
-					color: #fff;
+					color: $color__navigation-drop-down-link-hover;
 				}
 
 				&:hover > ul,
@@ -44,7 +42,7 @@
 				}
 
 				&:first-of-type {
-					border-top: 2px solid $color__accent;
+					border-top: 2px solid $color__navigation_link_accent;
 				}
 
 				&:last-of-type {
@@ -56,9 +54,9 @@
 			}
 
 			a {
-				background: #262627;
-    			border-bottom: 1px solid #353538;
-    			color: #b2b2b2;
+				background: $color__navigation-drop-down-background;
+    			border-bottom: 1px solid $color__navigation-drop-down-divider;
+    			color: $color__navigation-drop-down-link;
     			font-size: 12px;
     			max-width: 100%;
     			padding: 12px 20px;
@@ -84,16 +82,15 @@
 			text-align: left;
 			text-transform: uppercase;
 
-			&.menu-item
-
+			&.menu-item,
 			&:last-of-type {
 				margin-right: 0;
 			}
 		}
 
 		a {
-			border-bottom: 2px solid #fff;
-			color: $color__text-dark;
+			border-bottom: 2px solid $color__header-background;
+			color: $color__navigation-link;
 			display: block;
 			letter-spacing: 1px;
 		}
@@ -103,12 +100,12 @@
 	div > ul > li {
 
 		&:hover > a {
-			border-color: $color__accent;
+			border-color: $color__navigation_link_accent;
 		}
 
 		&.menu-item-has-children:hover > a,
 		&.page_item_has_children:hover > a {
-			border-color: #fff;
+			border-color: $color__header-background;
 		}
 
 		&.current a,
@@ -116,7 +113,7 @@
 		&.current-menu-item > a,
 		&.current_page_ancestor > a,
 		&.current-menu-ancestor > a {
-			border-color: $color__accent;
+			border-color: $color__navigation_link_accent;
 		}
 	}
 
@@ -137,7 +134,7 @@
 				width: 17px;
 
 				path {
-					fill: $color__text-dark;
+					fill: $color__navigation-link;
 				}
 			}
 		}
@@ -169,6 +166,10 @@
 	svg {
 		height: 19px;
 		width: 23px;
+		
+		path {
+			fill: $color__navigation-link;
+		}
 	}
 }
 
@@ -325,19 +326,19 @@ $sel: '';
 			font-family: Verdana;
 			padding: 12px 13px;
 		}
-	}
 
-	.dots {
-		border: none;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-		font-size: 13px;
-		padding-right: 0;
-		padding-left: 0;
+		&.dots {
+			border: none;
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+			font-size: 13px;
+			padding-right: 0;
+			padding-left: 0;
 
-		&:hover {
-			background: none;
-			color: $color__text-medium;
-		}
+			&:hover {
+				background: none;
+				color: $color__text-medium;
+			}
+		}		
 	}
 
 	.current {
