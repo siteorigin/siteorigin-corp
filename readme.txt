@@ -43,7 +43,7 @@ SiteOrigin Corp includes support for the following plugins:
 
 == License ==
 
-SiteOrigin Corp WordPress Theme, Copyright 2017 Puro. SiteOrigin Corp is distributed under the terms of the GNU GPL.
+SiteOrigin Corp WordPress Theme, Copyright 2017 SiteOrigin. SiteOrigin Corp is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
