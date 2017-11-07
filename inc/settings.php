@@ -15,11 +15,11 @@ function siteorigin_corp_settings_localize( $loc ) {
 		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-corp' ),
 		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
 
-		// For the controls.
+		// Controls.
 		'variant' => esc_html__( 'Variant', 'siteorigin-corp' ),
 		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
 
-		// For the settings metabox.
+		// Settings metabox.
 		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),		
 	), $loc );
 }
@@ -221,11 +221,46 @@ function siteorigin_corp_settings_init() {
 					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
+				'widget_title' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Widget Title Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'widget_text' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Widget Text Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'widget_link' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Widget Link Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'widget_link_hover' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Widget Link Hover Color', 'siteorigin-corp' ),
+					'live' => true,
+				),																
 				'background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
 					'live' => true,
 				),
+				'bottom_bar_text' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Bottom Bar Text Color', 'siteorigin-corp' ),
+					'live' => true,
+				),	
+				'bottom_bar_link' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Bottom Bar Link Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'bottom_bar_link_hover' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Bottom Bar Link Hover Color', 'siteorigin-corp' ),
+					'live' => true,
+				),												
 				'bottom_bar_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Bottom Bar Background Color', 'siteorigin-corp' ),
@@ -258,8 +293,46 @@ add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 function siteorigin_corp_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
+	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
+	background: ${footer_background};
+	}
 	.widget-area {
 	width: ${sidebar_width};
+	}
+	.site-header {
+	background: ${header_background};
+	border-bottom: 1px solid ${header_border};
+	margin-bottom: ${header_margin};
+	padding: ${header_padding} 0;
+	}
+	.site-footer {
+	background: ${footer_background};
+	margin-top: ${footer_margin};
+	}
+	.site-footer .widgets {
+	padding-top: ${footer_padding};
+	}
+	.site-footer .widgets .widget .widget-title {
+	color: ${footer_widget_title};
+	}
+	.site-footer .widgets .widget ~ * {
+	color: ${footer_widget_text};
+	}
+	.site-footer .widgets .widget a {
+	color: ${footer_widget_link};
+	}
+	.site-footer .widgets .widget a:hover {
+	color: ${footer_widget_link_hover};
+	}
+	.site-footer .bottom-bar {
+	background: ${footer_bottom_bar_background};
+	color: ${footer_bottom_bar_text};
+	}
+	.site-footer .bottom-bar a {
+	color: ${footer_bottom_bar_link};
+	}
+	.site-footer .bottom-bar a:hover {
+	color: ${footer_bottom_bar_link_hover};
 	}';
 	return $css;
 }
@@ -365,7 +438,14 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	// Footer.
 	$defaults['footer_text']							= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_widget_title']					= '#ffffff';
+	$defaults['footer_widget_text']						= '#b4b5b8';
+	$defaults['footer_widget_link']						= '#ffffff';
+	$defaults['footer_widget_link_hover']				= '#b4b5b8';
 	$defaults['footer_background']						= '#363a43';
+	$defaults['footer_bottom_bar_text']					= '#b4b5b8';
+	$defaults['footer_bottom_bar_link']					= '#b4b5b8';
+	$defaults['footer_bottom_bar_link_hover']			= '#ffffff';
 	$defaults['footer_bottom_bar_background']			= '#2f333b';
 	$defaults['footer_padding']							= '95px';
 	$defaults['footer_margin']							= '80px';	

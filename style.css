@@ -2045,13 +2045,13 @@ body:not(.single) .hentry {
       margin: 0 2.75% 95px 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
-        color: #fff;
+        color: #ffffff;
         font-size: 1.0666em;
         font-weight: normal; }
       .site-footer .widgets .widget ~ * {
         color: #b4b5b8; }
       .site-footer .widgets .widget a {
-        color: #fff; }
+        color: #ffffff; }
         .site-footer .widgets .widget a:hover {
           color: #b4b5b8; }
       .site-footer .widgets .widget:last-of-type {
@@ -2082,7 +2082,7 @@ body:not(.single) .hentry {
     .site-footer .bottom-bar a {
       color: #b4b5b8; }
       .site-footer .bottom-bar a:hover {
-        color: #fff; }
+        color: #ffffff; }
 
 /*--------------------------------------------------------------
 # Media

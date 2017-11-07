@@ -24,20 +24,20 @@
 			float: left;
 			
 			.widget-title {
-				color: #fff;
+				color: $color__footer-widget-title;
 				font-size: 1.0666em;
 				font-weight: normal;	 
 			}
 
 			~ * {
-				color: #b4b5b8;
+				color: $color__footer-widget-text;
 			}
 
 			a {
-				color: #fff;
+				color: $color__footer-widget-link;
 				
 				&:hover {
-					color: #b4b5b8;
+					color: $color__footer-widget-link-hover;
 				}
 			}
 
@@ -67,7 +67,7 @@
 
 	.bottom-bar {
 		background: $color__bottom-bar-background;
-		color: #b4b5b8;
+		color: $color__bottom-bar-text;
 		overflow: auto;
 		padding: 25px 0;
 
@@ -78,10 +78,10 @@
 		}	
 
 		a {
-			color: #b4b5b8;
+			color: $color__bottom-bar-link;
 			
 			&:hover {
-				color: #fff;
+				color: $color__bottom-bar-link-hover;
 			}
 		}
 	}	
