@@ -600,6 +600,7 @@ a {
     border: none;
     display: inline-block;
     outline: none;
+    margin-left: 37px;
     padding: 0;
     position: relative;
     top: 3px; }
