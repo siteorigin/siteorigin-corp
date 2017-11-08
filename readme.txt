@@ -2,7 +2,7 @@
 
 Contributors: siteorigin
 
-Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.7
 Tested up to: 4.8.3
