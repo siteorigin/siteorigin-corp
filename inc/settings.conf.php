@@ -19,7 +19,11 @@ return array(
 		'navigation_drop_down_link_hover'	=> 'color__navigation-drop-down-link-hover',	
 		'navigation_search_overlay'			=> 'color__navigation-search-overlay',
 
-		// Typhography. 
+		// Typhography.
+		'typography_site_title_font'		=> 'font__site-title',
+		'typography_site_tagline_font'		=> 'font__site-tagline',
+		'typography_heading_font'			=> 'font__headings',
+		'typography_body_font'				=> 'font__main',
 		'typography_site_title'				=> 'color__site_title',
 		'typography_site_tagline'			=> 'color__site_tagline',
 		'typography_accent'					=> 'color__accent',
@@ -27,6 +31,7 @@ return array(
 		'typography_text'					=> 'color__text-medium',
 		'typography_secondary_text'			=> 'color__text-light',
 		'typography_border'					=> 'color__background-hr',
+		'typography_border_dark'			=> 'color__background-hr-dark',
 
 		// Sidebar.
 		'sidebar_width'						=> 'sidebar__width',

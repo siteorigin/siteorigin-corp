@@ -59,7 +59,7 @@
 		padding-right: 20px;
 
 		.site-title {
-			font-family: $font__headings;
+			font-family: $font__site-title;
 			font-size: 29px;
 			line-height: normal;
 			margin: 0;
@@ -80,7 +80,7 @@
 
 		.site-description {
 			color: $color__site_tagline;
-			font-family: $font__main;
+			font-family: $font__site-tagline;
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;

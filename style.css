@@ -412,7 +412,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: #ef3636;
+    background: rgba(241, 78, 78, 0.8);
     color: #fff; }
   .button:visited,
   button:visited,
@@ -475,7 +475,7 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    border-color: #c4c4c4; }
+    border-color: rgba(214, 214, 214, 0.8); }
 
 input[type="checkbox"] {
   margin-right: 2px; }
@@ -650,11 +650,12 @@ a {
       font-family: "Montserrat", sans-serif;
       font-size: 12px;
       letter-spacing: 1px;
-      line-height: 3.3;
+      line-height: 3.4;
       position: relative;
       width: 100%; }
       #mobile-navigation ul li a {
-        border-bottom: 1px solid #353538;
+        border-bottom: 1px solid;
+        border-color: #353538;
         color: #b2b2b2;
         display: block;
         padding: 0 30px;
@@ -662,24 +663,23 @@ a {
         text-transform: uppercase;
         width: 100% !important; }
         #mobile-navigation ul li a:hover {
-          color: #fff; }
+          color: #ffffff; }
       #mobile-navigation ul li.menu-item-has-children > a {
         padding-right: 40px; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
-        color: #4d4d4d;
+        color: #b2b2b2;
         font-size: 14px;
         padding: 14px;
         position: absolute;
         right: 0;
-        top: 0;
+        top: -2px;
         transition: none; }
         #mobile-navigation ul li .dropdown-toggle:hover {
-          color: #fff; }
+          color: #ffffff; }
         #mobile-navigation ul li .dropdown-toggle.toggle-open {
           transform: rotate(-180deg); }
     #mobile-navigation ul ul {
-      background: #18181a;
       display: none;
       margin: 0;
       padding: 0; }
@@ -687,19 +687,19 @@ a {
         display: none; }
 
 #mobile-navigation ul ul li a {
-  padding-left: 30px; }
+  padding-left: 40px; }
 
 #mobile-navigation ul ul ul li a {
-  padding-left: 60px; }
+  padding-left: 80px; }
 
 #mobile-navigation ul ul ul ul li a {
-  padding-left: 90px; }
-
-#mobile-navigation ul ul ul ul ul li a {
   padding-left: 120px; }
 
+#mobile-navigation ul ul ul ul ul li a {
+  padding-left: 160px; }
+
 #mobile-navigation ul ul ul ul ul ul li a {
-  padding-left: 150px; }
+  padding-left: 200px; }
 
 /*--------------------------------------------------------------
 ## Posts, Post and Comment Navigation

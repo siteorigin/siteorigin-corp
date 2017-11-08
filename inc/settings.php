@@ -38,22 +38,22 @@ function siteorigin_corp_settings_init() {
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-corp' )
+					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-corp' ),
 				),				
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Tagline', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
 				),
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Sticks the header to the top of the screen as the user scrolls down.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Sticks the header to the top of the screen as the user scrolls down.', 'siteorigin-corp' ),
 				),			
 				'scales' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' ),
 				),
 				'background' => array(
 					'type' => 'color',
@@ -64,7 +64,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
 					'live' => true,
-				),
+				),			
 				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
@@ -146,7 +146,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
 					'live' => true,
-				),																																														
+				),				
 			),
 		),
 
@@ -206,8 +206,15 @@ function siteorigin_corp_settings_init() {
 				'border' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for form field and table borders.', 'siteorigin-corp' ),
 					'live' => true,
-				),					
+				),
+				'border_dark' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Border Dark Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for form field and table borders.', 'siteorigin-corp' ),
+					'live' => true,
+				),									
 			),		
 		),			
 
@@ -392,28 +399,28 @@ function siteorigin_corp_font_settings( $settings ) {
 		'name'    => 'Montserrat',
 		'weights' => array(
 			400,
-			700,
 		),
 	);
 	$settings['typography_site_tagline_font'] = array(
 		'name'    => 'Open Sans',
 		'weights' => array(
+			300,
 			400,
-			700,
+			600,
 		),
 	);
 	$settings['typography_heading_font'] = array(
 		'name'    => 'Montserrat',
 		'weights' => array(
 			400,
-			700,
 		),
 	);
 	$settings['typography_body_font'] = array(
 		'name'    => 'Open Sans',
 		'weights' => array(
+			300,
 			400,
-			700,
+			600,
 		),
 	);	
 
@@ -431,11 +438,14 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
 function siteorigin_corp_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Q7Eh2P/sass/style.css ***/
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
+	.font( ${typography_body_font} );
 	}
 	h1,h2,h3,h4,h5,h6 {
 	color: ${typography_heading};
+	.font( ${typography_heading_font} );
 	}
 	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
 	color: ${typography_heading};
@@ -455,6 +465,10 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	hr {
 	background-color: ${typography_border};
 	}
+	table {
+	border: 1px solid ${typography_border_dark};
+	.font( ${typography_body_font} );
+	}
 	table thead th {
 	color: ${typography_heading};
 	}
@@ -463,18 +477,29 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.button,button,input[type="button"],input[type="reset"],input[type="submit"] {
 	background: ${typography_accent};
+	.font( ${typography_body_font} );
 	}
 	.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
-	background: .darken( ${typography_accent}, 5%);
+	background: .rgba( ${typography_accent}, .8);
 	}
 	.button:active,.button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus {
 	background: ${typography_accent};
+	}
+	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea {
+	border: 1px solid ${typography_border_dark};
+	}
+	input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus {
+	border-color: .rgba( ${typography_border_dark}, .8);
+	}
+	select {
+	border: 1px solid ${typography_border_dark};
 	}
 	label {
 	color: ${typography_heading};
 	}
 	fieldset legend {
 	color: ${typography_heading};
+	.font( ${typography_heading_font} );
 	}
 	a {
 	color: ${typography_accent};
@@ -496,6 +521,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	border-bottom: 1px solid ${navigation_drop_down_divider};
 	color: ${navigation_drop_down_link};
 	}
+	.main-navigation ul li {
+	.font( ${typography_heading_font} );
+	}
 	.main-navigation ul a {
 	border-bottom: 2px solid ${header_background};
 	color: ${navigation_link};
@@ -515,9 +543,29 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	#mobile-menu-button svg path {
 	fill: ${navigation_link};
 	}
+	#mobile-navigation {
+	background: ${navigation_drop_down_background};
+	}
+	#mobile-navigation ul li {
+	.font( ${typography_heading_font} );
+	}
+	#mobile-navigation ul li a {
+	border-color: ${navigation_drop_down_divider};
+	color: ${navigation_drop_down_link};
+	}
+	#mobile-navigation ul li a:hover {
+	color: ${navigation_drop_down_link_hover};
+	}
+	#mobile-navigation ul li .dropdown-toggle {
+	color: ${navigation_drop_down_link};
+	}
+	#mobile-navigation ul li .dropdown-toggle:hover {
+	color: ${navigation_drop_down_link_hover};
+	}
 	.pagination .page-numbers {
 	border: 1px solid ${typography_text};
 	color: ${typography_text};
+	.font( ${typography_body_font} );
 	}
 	.pagination .page-numbers:visited {
 	color: ${typography_text};
@@ -526,7 +574,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
-	.pagination .dots:hover {
+	.pagination .page-numbers.dots:hover {
 	color: ${typography_text};
 	}
 	.pagination .current {
@@ -541,6 +589,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.post-navigation a div {
 	color: ${typography_heading};
+	.font( ${typography_heading_font} );
 	}
 	.post-navigation a:hover div {
 	color: ${typography_accent};
@@ -634,20 +683,32 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.widget-area {
 	width: ${sidebar_width};
 	}
+	@media (max-width: 768px) {
+	.widget-area {
+	border-top: 1px solid ${typography_border_dark};
+	}
+	}
 	.site-header {
 	background: ${header_background};
 	border-bottom: 1px solid ${header_border};
 	margin-bottom: ${header_margin};
 	padding: ${header_padding} 0;
 	}
+	.site-header .site-branding .site-title {
+	.font( ${typography_site_title_font} );
+	}
 	.site-header .site-branding .site-title a {
 	color: ${typography_site_title};
 	}
 	.site-header .site-branding .site-description {
 	color: ${typography_site_tagline};
+	.font( ${typography_site_tagline_font} );
 	}
 	#fullscreen-search {
-	background: .rgba( ${navigation_search_overlay}, 0.95);
+	background: .rgba( ${navigation_search_overlay}, .95);
+	}
+	#fullscreen-search h3 {
+	.font( ${typography_body_font} );
 	}
 	#fullscreen-search form button[type="submit"] svg {
 	fill: ${typography_secondary_text};
@@ -663,6 +724,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.entry-title a:hover {
 	color: ${typography_text};
+	}
+	.entry-meta {
+	.font( ${typography_body_font} );
 	}
 	.entry-meta span {
 	color: ${typography_secondary_text};
@@ -682,6 +746,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.page-links span {
 	border: 1px solid ${typography_text};
 	color: ${typography_text};
+	.font( ${typography_body_font} );
 	}
 	.page-links span:visited {
 	color: ${typography_text};
@@ -734,6 +799,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.comment-list .comment .author,.comment-list .pingback .author {
 	color: ${typography_heading};
+	.font( ${typography_heading_font} );
 	}
 	.comment-list .comment .author a,.comment-list .pingback .author a {
 	color: ${typography_heading};
@@ -746,6 +812,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.comment-list .comment .comment-reply-link,.comment-list .pingback .comment-reply-link {
 	color: ${typography_heading};
+	.font( ${typography_heading_font} );
 	}
 	.comment-list .comment .comment-reply-link:hover,.comment-list .pingback .comment-reply-link:hover {
 	color: ${typography_accent};
@@ -864,65 +931,66 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_sidebar_width', 1
  */
 function siteorigin_corp_settings_defaults( $defaults ) {
 
-	$defaults['header_retina_logo']						= false;
-	$defaults['header_site_description']				= false;
-	$defaults['header_sticky']							= false;
-	$defaults['header_scales']							= false;
-	$defaults['header_background']						= '#ffffff';
-	$defaults['header_border']							= '#e6e6e6';
-	$defaults['header_padding']							= '25px';
-	$defaults['header_margin']							= '60px';
+	$defaults['header_retina_logo']							= false;
+	$defaults['header_site_description']					= false;
+	$defaults['header_sticky']								= false;
+	$defaults['header_scales']								= false;
+	$defaults['header_background']							= '#ffffff';
+	$defaults['header_border']								= '#e6e6e6';
+	$defaults['header_padding']								= '25px';
+	$defaults['header_margin']								= '60px';
+		
+	$defaults['navigation_header_menu']						= true;
+	$defaults['navigation_mobile_menu']						= true;
+	$defaults['navigation_mobile_menu_collapse']			= 768;
+	$defaults['navigation_menu_search']						= true;
+	$defaults['navigation_post']							= true;
+	$defaults['navigation_scroll_to_top']					= true;
+	$defaults['navigation_link']							= '#2d2d2d';
+	$defaults['navigation_link_accent']						= '#f14e4e';
+	$defaults['navigation_drop_down_background']			= '#262627';
+	$defaults['navigation_drop_down_divider']				= '#353538';
+	$defaults['navigation_drop_down_link']					= '#b2b2b2';
+	$defaults['navigation_drop_down_link_hover']			= '#ffffff';
+	$defaults['navigation_search_overlay']					= '#090d14';
+
+	$defaults['blog_archive_featured_image']				= true;
+	$defaults['blog_archive_content']         				= 'excerpt';
+	$defaults['blog_excerpt_length']          				= 55;	
+	$defaults['blog_post_excerpt_read_more_link']			= false;
+	$defaults['blog_post_featured_image']					= true;
+	$defaults['blog_post_date']								= true;
+	$defaults['blog_post_categories']						= true;
+	$defaults['blog_post_comment_count']					= true;
+	$defaults['blog_post_tags']								= true;
+	$defaults['blog_post_author_box']						= true;
+	$defaults['blog_related_posts']							= true;
+
+	$defaults['typography_site_title']						='#2d2d2d';
+	$defaults['typography_site_tagline']					='#929292';
+	$defaults['typography_accent']							='#f14e4e';
+	$defaults['typography_heading']							='#2d2d2d';
+	$defaults['typography_text']							='#626262';
+	$defaults['typography_secondary_text']					='#929292';
+	$defaults['typography_border']							='#e6e6e6';
+	$defaults['typography_border_dark']						='#d6d6d6';
+
+	$defaults['sidebar_position']							= 'right';
+	$defaults['sidebar_width']								= '34%%';
 	
-	$defaults['navigation_header_menu']					= true;
-	$defaults['navigation_mobile_menu']					= true;
-	$defaults['navigation_mobile_menu_collapse']		= 768;
-	$defaults['navigation_menu_search']					= true;
-	$defaults['navigation_post']						= true;
-	$defaults['navigation_scroll_to_top']				= true;
-	$defaults['navigation_link']						= '#2d2d2d';
-	$defaults['navigation_link_accent']					= '#f14e4e';
-	$defaults['navigation_drop_down_background']		= '#262627';
-	$defaults['navigation_drop_down_divider']			= '#353538';
-	$defaults['navigation_drop_down_link']				= '#b2b2b2';
-	$defaults['navigation_drop_down_link_hover']		= '#ffffff';
-	$defaults['navigation_search_overlay']				= '#090d14';
-
-	$defaults['blog_archive_featured_image']			= true;
-	$defaults['blog_archive_content']         			= 'excerpt';
-	$defaults['blog_excerpt_length']          			= 55;	
-	$defaults['blog_post_excerpt_read_more_link']		= false;
-	$defaults['blog_post_featured_image']				= true;
-	$defaults['blog_post_date']							= true;
-	$defaults['blog_post_categories']					= true;
-	$defaults['blog_post_comment_count']				= true;
-	$defaults['blog_post_tags']							= true;
-	$defaults['blog_post_author_box']					= true;
-	$defaults['blog_related_posts']						= true;
-
-	$defaults['typography_site_title']					='#2d2d2d';
-	$defaults['typography_site_tagline']				='#929292';
-	$defaults['typography_accent']						='#f14e4e';
-	$defaults['typography_heading']						='#2d2d2d';
-	$defaults['typography_text']						='#626262';
-	$defaults['typography_secondary_text']				='#929292';
-	$defaults['typography_border']						='#e6e6e6';
-
-	$defaults['sidebar_position']						= 'right';
-	$defaults['sidebar_width']							= '34%%';
-
-	$defaults['footer_text']							= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
-	$defaults['footer_widget_title']					= '#ffffff';
-	$defaults['footer_widget_text']						= '#b4b5b8';
-	$defaults['footer_widget_link']						= '#ffffff';
-	$defaults['footer_widget_link_hover']				= '#b4b5b8';
-	$defaults['footer_background']						= '#363a43';
-	$defaults['footer_bottom_bar_text']					= '#b4b5b8';
-	$defaults['footer_bottom_bar_link']					= '#b4b5b8';
-	$defaults['footer_bottom_bar_link_hover']			= '#ffffff';
-	$defaults['footer_bottom_bar_background']			= '#2f333b';
-	$defaults['footer_padding']							= '95px';
-	$defaults['footer_margin']							= '80px';	
-
+	$defaults['footer_text']								= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );	
+	$defaults['footer_widget_title']						= '#ffffff';
+	$defaults['footer_widget_text']							= '#b4b5b8';
+	$defaults['footer_widget_link']							= '#ffffff';
+	$defaults['footer_widget_link_hover']					= '#b4b5b8';
+	$defaults['footer_background']							= '#363a43';
+	$defaults['footer_bottom_bar_text']						= '#b4b5b8';
+	$defaults['footer_bottom_bar_link']						= '#b4b5b8';
+	$defaults['footer_bottom_bar_link_hover']				= '#ffffff';
+	$defaults['footer_bottom_bar_background']				= '#2f333b';
+	$defaults['footer_padding']								= '95px';
+	$defaults['footer_margin']								= '80px';	
+	
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );
