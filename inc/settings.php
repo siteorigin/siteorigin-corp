@@ -48,7 +48,7 @@ function siteorigin_corp_settings_init() {
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Sticks the header to the top of the screen as the user scrolls down.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Sticks the header to the top of the screen on scroll.', 'siteorigin-corp' ),
 				),			
 				'scales' => array(
 					'type' => 'checkbox',
@@ -85,7 +85,7 @@ function siteorigin_corp_settings_init() {
 				'header_menu' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the main menu in the header.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display header menu.', 'siteorigin-corp' )
 				),
 				'mobile_menu' => array(
 					'type' => 'checkbox',
@@ -95,17 +95,17 @@ function siteorigin_corp_settings_init() {
 				'mobile_menu_collapse' => array(
 					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
 					'type' => 'number',
-					'description' => esc_html__( 'The pixel resolution when the primary menu collapses into the mobile menu.', 'siteorigin-corp' )
+					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' )
 				),							
 				'menu_search' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Menu Search', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display a search icon in the main menu.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display a search icon in the header menu.', 'siteorigin-corp' )
 				),
 				'post' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Navigation', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the next/previous post navigation.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display next/previous navigation on single post pages.', 'siteorigin-corp' )
 				),
 				'scroll_to_top' => array(
 					'type' => 'checkbox',
@@ -121,16 +121,6 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Link Hover Accent Color', 'siteorigin-corp' ),
 					'live' => true,
-				),				
-				'drop_down_background' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
-					'live' => true,
-				),
-				'drop_down_divider' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
-					'live' => true,
 				),
 				'drop_down_link' => array(
 					'type' => 'color',
@@ -140,6 +130,16 @@ function siteorigin_corp_settings_init() {
 				'drop_down_link_hover' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Link Hover Color', 'siteorigin-corp' ),
+					'live' => true,
+				),
+				'drop_down_divider' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
+					'live' => true,
+				),											
+				'drop_down_background' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'search_overlay' => array(
@@ -186,6 +186,7 @@ function siteorigin_corp_settings_init() {
 				'accent' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Accent Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for links, buttons and blockquotes.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'heading' => array(
@@ -201,18 +202,19 @@ function siteorigin_corp_settings_init() {
 				'secondary_text' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Secondary Text Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for for post meta.', 'siteorigin-corp' ),
 					'live' => true,
 				),	
 				'border' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Used for form field and table borders.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for section borders and hr tags.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'border_dark' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Border Dark Color', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Used for form field and table borders.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Used for tables and form fields.', 'siteorigin-corp' ),
 					'live' => true,
 				),									
 			),		
@@ -224,7 +226,7 @@ function siteorigin_corp_settings_init() {
 				'archive_featured_image' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on the archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on blog and archive pages.', 'siteorigin-corp' )
 				),
 				'archive_content' => array(
 					'type' => 'select',
@@ -253,17 +255,17 @@ function siteorigin_corp_settings_init() {
 				'post_date' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Date', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post date on archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' )
 				),		
 				'post_categories' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Categories', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post categories on archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'siteorigin-corp' )
 				),							
 				'post_comment_count' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post comment count on archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post comment count on blog, archive and single post pages.', 'siteorigin-corp' )
 				),				
 				'post_tags' => array(
 					'type' => 'checkbox',
@@ -278,7 +280,7 @@ function siteorigin_corp_settings_init() {
 				'related_posts' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Related Posts', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display related posts on the single post page.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display related posts on single post pages.', 'siteorigin-corp' )
 				),						
 				'ajax_comments' => array(
 					'type' => 'checkbox',
@@ -295,7 +297,6 @@ function siteorigin_corp_settings_init() {
 				'position'	=> array(
 					'type'	=> 'select',
 					'label'	=> esc_html__( 'Position', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Choose the sidebar position.', 'siteorigin-corp' ),
 					'options' => array(
 						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
 						'left'  => esc_html__( 'Left', 'siteorigin-corp' ),
@@ -315,7 +316,7 @@ function siteorigin_corp_settings_init() {
 				'text' => array(
 					'type' => 'text',
 					'label' => esc_html__( 'Footer Text', 'siteorigin-corp' ),
-					'description' => esc_html__( "{sitename} and {year} are your site's name and current year.", 'siteorigin-corp' ),
+					'description' => esc_html__( "{site-title} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'attribution' => array(
@@ -948,10 +949,10 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['navigation_scroll_to_top']					= true;
 	$defaults['navigation_link']							= '#2d2d2d';
 	$defaults['navigation_link_accent']						= '#f14e4e';
-	$defaults['navigation_drop_down_background']			= '#262627';
-	$defaults['navigation_drop_down_divider']				= '#353538';
 	$defaults['navigation_drop_down_link']					= '#b2b2b2';
 	$defaults['navigation_drop_down_link_hover']			= '#ffffff';
+	$defaults['navigation_drop_down_divider']				= '#353538';
+	$defaults['navigation_drop_down_background']			= '#262627';
 	$defaults['navigation_search_overlay']					= '#090d14';
 
 	$defaults['blog_archive_featured_image']				= true;
