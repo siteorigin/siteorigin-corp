@@ -78,11 +78,11 @@ function siteorigin_corp_setup() {
 	 * Enable support for Post Formats.
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
-	add_theme_support( 'post-formats', array(
-		'gallery',
-		'image',
-		'video',
-	) );	
+	// add_theme_support( 'post-formats', array(
+	// 	'gallery',
+	// 	'image',
+	// 	'video',
+	// ) );	
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_corp_custom_background_args', array(
