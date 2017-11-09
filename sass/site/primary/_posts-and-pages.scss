@@ -94,6 +94,7 @@ body:not(.single) .hentry {
 	}
 
 	.entry-thumbnail {
+		@include clearfix;
 		line-height: 0; 
 		margin-bottom: -1px; 
 	}	
@@ -195,8 +196,7 @@ body:not(.single) .hentry {
 	display: inline;
 }
 
-.entry-thumbnail,
-.entry-video {
+.entry-thumbnail {
 	margin-bottom: 25px;
 	
 	a {

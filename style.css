@@ -1517,6 +1517,10 @@ body:not(.single) .hentry {
   body:not(.single) .hentry .entry-thumbnail {
     line-height: 0;
     margin-bottom: -1px; }
+    body:not(.single) .hentry .entry-thumbnail::after {
+      clear: both;
+      content: "";
+      display: table; }
   body:not(.single) .hentry .content-wrapper {
     background: #fff;
     border: 1px solid #e6e6e6;
@@ -1581,11 +1585,9 @@ body:not(.single) .hentry {
 .group-blog .byline {
   display: inline; }
 
-.entry-thumbnail,
-.entry-video {
+.entry-thumbnail {
   margin-bottom: 25px; }
-  .entry-thumbnail a,
-  .entry-video a {
+  .entry-thumbnail a {
     display: block;
     line-height: 0; }
 
