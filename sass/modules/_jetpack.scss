@@ -2,14 +2,53 @@
 ## Infinite Scroll
 --------------------------------------------------------------*/
 // Globally hidden elements when Infinite Scroll is supported and in use.
-.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden).
-.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling).
+.infinite-scroll .posts-navigation, // Older / Newer posts navigation (always hidden).
+.infinite-scroll .pagination, // Pagination navigation (always hidden).
+.infinite-scroll .woocommerce-pagination, // WooCommercep pagination navigation (always hidden).
+.infinite-scroll.neverending .site-footer { // Theme footer (when set to scrolling).
 	display: none;
 }
 
 // When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before.
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+#page #infinite-handle {
+	clear: both;
+	padding-top: 30px; 
+	text-align: center;
+
+	span {
+    	background: inherit;
+    	border-radius: initial;
+    	color: inherit;
+    	cursor: pointer;
+    	font-size: inherit;
+	    padding: inherit;
+
+		button {
+			background: transparent;
+			border: 2px solid;
+			border-color: $color__text-dark;
+			color: $color__text-dark;
+			font-size: 13px; 
+			letter-spacing: 1px;
+			line-height: normal;
+			padding: 9px 30px; 
+			transition: .3s;
+			
+			&:hover {
+				border-color: $color__accent;
+				color: $color__accent; 
+			}
+		}
+	}
+}
+
+.infinite-scroll .infinite-loader .spinner {
+	margin: 0 auto;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------

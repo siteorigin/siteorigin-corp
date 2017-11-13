@@ -15,15 +15,17 @@
  * @return array
  */
 function siteorigin_corp_body_classes( $classes ) {
-	// Group blog.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
 
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
 	$classes[] = 'no-touch';
+	
+
+	// Non-singlar pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}	
 
 	// Responsive layout.
 	$classes[] = 'responsive';
@@ -33,15 +35,21 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'sidebar';
 	}
 
+	if ( siteorigin_setting( 'sidebar_position' ) == 'left' ) {
+		 $classes[] = 'sidebar-left';
+	}	
+
+	// WooCommerce top bar.
+	if ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) {
+		$classes[] = 'no-topbar';
+	} elseif ( ! class_exists( 'Woocommerce' ) ) {
+		$classes[] = 'no-topbar';
+	}	
+
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) ) {
 		 $classes[] = 'woocommerce-sidebar';
-	}		
-
-	// Non-singlar pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}		
+	}				
 
 	return $classes;
 }

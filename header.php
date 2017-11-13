@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 ?><!DOCTYPE html>
@@ -24,7 +24,12 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-corp' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) : ?>
+		<div id="topbar">
+			<?php siteorigin_corp_woocommerce_demo_store(); ?>
+		</div><!-- #topbar -->
+	<?php endif; ?>
+	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
 
 		<div class="corp-container">
 
@@ -32,25 +37,30 @@
 
 				<div class="site-branding">
 					<?php siteorigin_corp_display_logo(); ?>
-					<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
+					<?php if ( siteorigin_setting( 'header_site_description' ) ) : ?>
 						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-					<?php endif ?>					
+					<?php endif ?>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-				
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				<nav id="site-navigation" class="main-navigation">
 
-	                <button id="search-button" class="search-toggle">
-	                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
-	                    <span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
-                	</button>
+					<?php $mega_menu_active = function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'menu-1' ); ?>
 
-					<a href="#menu" id="mobile-menu-button">
-						<?php siteorigin_corp_display_icon( 'menu' ); ?>							
-						<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
-					</a>
-                	
+					<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+
+					<?php if ( siteorigin_setting( 'navigation_menu_search' ) ) : ?>
+		                <button id="search-button" class="search-toggle">
+		                    <span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
+	                	</button>
+	                <?php endif; ?>
+
+					<?php if ( siteorigin_setting( 'navigation_header_menu' ) && siteorigin_setting( 'navigation_mobile_menu' ) && ! $mega_menu_active ) : ?>
+						<a href="#menu" id="mobile-menu-button">
+							<?php siteorigin_corp_display_icon( 'menu' ); ?>
+							<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-corp' ); ?></span>
+						</a>
+					<?php endif; ?>
+
 				</nav><!-- #site-navigation -->
 
 				<div id="fullscreen-search">
@@ -64,7 +74,10 @@
 							</button>
 						</form>
 					</div>
-				</div><!-- #header-search -->				
+					<button id="search-close-button" class="search-close-button">
+		            	<span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
+	                </button>					
+				</div><!-- #header-search -->
 
 			</div><!-- .site-header-inner -->
 
@@ -73,7 +86,7 @@
 	</header><!-- #masthead -->
 
 	<?php do_action( 'siteorigin_corp_content_before' ); ?>
-	
+
 	<div id="content" class="site-content">
 
 		<div class="corp-container">

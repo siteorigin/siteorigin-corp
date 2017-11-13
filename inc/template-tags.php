@@ -52,8 +52,10 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
 /**
- * Comment list callback function.
- */
+ * The callback function for wp_list_comments in comments.php.
+ *
+ * @link https://codex.wordpress.org/Function_Reference/wp_list_comments.
+ */	
 function siteorigin_corp_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -71,10 +73,15 @@ function siteorigin_corp_comment( $comment, $args, $depth ) {
 				</div>
 
 				<div class="comment-content content">
+					<?php if ( ! $comment->comment_approved ) : ?>
+						<p class="comment-awaiting-moderation">
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-corp' ); ?>
+						</p>
+					<?php endif; ?>
 					<?php comment_text() ?>
 				</div>
 
-				<?php if($depth <= $args['max_depth']) : ?>
+				<?php if ( $depth <= $args['max_depth'] ) : ?>
 					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 				<?php endif; ?>
 			</div>
@@ -88,19 +95,9 @@ if ( ! function_exists( 'siteorigin_corp_display_logo' ) ) :
  * Display the logo or site title.
  */
 function siteorigin_corp_display_logo() {
-	$logo = siteorigin_setting( 'branding_logo' );
-	if ( ! empty( $logo ) ) {
-		$attrs = apply_filters( 'siteorigin-corp_logo_attributes', array() );
-
-		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-corp' ); ?></span><?php
-			echo wp_get_attachment_image( $logo, 'full', false, $attrs );
-		?></a><?php
-
-	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-		?><?php the_custom_logo(); ?><?php
-	}
-	else {
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		the_custom_logo();
+	} else {
 		if ( is_front_page() ) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
@@ -111,35 +108,24 @@ function siteorigin_corp_display_logo() {
 endif;
 
 /**
- * Display a retina ready logo.
+ * Add the retina srcset to the custom logo attributes.
  */
-function siteorigin_corp_display_retina_logo( $attr ){
-	$logo = siteorigin_setting( 'branding_logo' );
-	$retina = siteorigin_setting( 'branding_retina_logo' );
-
-	if( !empty( $retina ) ) {
-
-		$srcset = array();
-
-		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
+function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$retina = siteorigin_setting( 'header_retina_logo' );
+	if ( ! empty( $retina ) && ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+		$srcset = empty( $attr['srcset'] ) ? array() : explode( ',', $attr['srcset'] );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
-
-		if( !empty( $logo_src ) ) {
-			$srcset[] = $logo_src[0] . ' 1x';
-		}
-
-		if( !empty( $logo_src ) ) {
+		if ( ! empty( $retina_src ) ) {
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
-
-		if( ! empty( $srcset ) ) {
+		if ( ! empty( $srcset ) ) {
 			$attr['srcset'] = implode( ',', $srcset );
 		}
 	}
-
 	return $attr;
 }
-add_filter( 'siteorigin_corp_logo_attributes', 'siteorigin-corp_display_retina_logo', 10, 1 );
+add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
 
 if ( ! function_exists( 'siteorigin_corp_display_icon' ) ) :
 /**
@@ -183,6 +169,7 @@ if ( ! function_exists( 'siteorigin_corp_the_post_navigation' ) ) :
  * Display navigation to next/previous posts.
  */
 function siteorigin_corp_the_post_navigation() {
+
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -190,22 +177,27 @@ function siteorigin_corp_the_post_navigation() {
 	if ( ! $next && ! $previous ) {
 		return;
 	}
+
+	$previous_post 	= get_previous_post();
+	$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
+	$next_post 		= get_next_post();
+	$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );	
+
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
 		<div class="nav-links">
 			<div class="nav-previous">
-				<?php previous_post_link ( '%link', '<span class="sub-title"> ' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
+				<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
 			</div>
 			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . ' </span> <div>%title</div>' ); ?>
+				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
 			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
 }
 endif;
-
 
 if ( ! function_exists( 'siteorigin-corp_read_more_link' ) ) :
 /**
@@ -217,6 +209,30 @@ function siteorigin_corp_read_more_link() {
 }
 endif;
 add_filter( 'the_content_more_link', 'siteorigin-corp_read_more_link' );
+
+if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
+/**
+ * Filter the excerpt length.
+ */
+function siteorigin_corp_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
+endif;
+
+if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
+/**
+ * Add a more link to the excerpt.
+ */
+function siteorigin_corp_excerpt_more( $more ) {
+	if ( is_search() ) return;
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_post_excerpt_read_more_link' ) ) {
+		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-corp' );
+		return '<a class="more-link" href="' . get_permalink() . '"><span class="more-text">' . $read_more_text . ' <span class="icon-long-arrow-right"></span></span></a>';
+	}
+}
+endif;
+add_filter( 'excerpt_more', 'siteorigin_corp_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 /**
@@ -287,19 +303,19 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
  * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
  */
 function siteorigin_corp_post_meta() {
-	if ( ( is_home() || is_archive() || is_search() ) ) {
+	if ( ( is_home() || is_archive() || is_search() ) && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
-	if ( is_single() ) {
+	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corpdate_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
-	if ( has_category() ) {
+	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {
 		echo '<span>' . get_the_category_list( ', ' ) . '</span>';
 	}
 	
-	if ( comments_open() ) { 
+	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) { 
 		echo '<span class="comments-link">';
   		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
   		echo '</span>';
@@ -307,14 +323,14 @@ function siteorigin_corp_post_meta() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_corpentry_footer' ) ) :
+if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
 /**
  * Print HTML with meta information for the post tags.
  */
 function siteorigin_corp_entry_footer() {
 
-	if ( is_single() && has_tag() ) {
-		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list( '', esc_html__( '', 'siteorigin-corp' ) ) . '</span></footer>';
+	if ( is_single() && has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
+		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
 	}	
 }
 endif;
@@ -331,84 +347,5 @@ function siteorigin_corp_footer_text() {
 		$text
 	);
 	echo wp_kses_post( $text );
-}
-endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function siteorigin_corp_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'siteorigin_corp_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'siteorigin_corp_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so siteorigin_corp_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so siteorigin_corp_categorized_blog should return false.
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in siteorigin_corp_categorized_blog.
- */
-function siteorigin_corp_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'siteorigin_corp_categories' );
-}
-add_action( 'edit_category', 'siteorigin_corp_category_transient_flusher' );
-add_action( 'save_post',     'siteorigin_corp_category_transient_flusher' );
-
-if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
-/**
- * The callback function for wp_list_comments in comments.php.
- *
- * @link https://codex.wordpress.org/Function_Reference/wp_list_comments.
- */		
-function siteorigin_corp_comment( $comment, $args, $depth ) {
-	?>
-	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
-		<?php $type = get_comment_type( $comment->comment_ID ); ?>
-		<div class="comment-box">
-			<?php if ( $type == 'comment' ) : ?>
-				<div class="avatar-container">
-					<?php echo get_avatar( get_comment_author_email(), 60 ) ?>
-				</div>
-			<?php endif; ?>
-
-			<div class="comment-container">
-				<div class="info">
-					<span class="author"><?php comment_author_link(); ?></span><br>
-					<span class="date"><?php comment_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></span>
-				</div>
-
-				<div class="comment-content content">
-					<?php comment_text(); ?>
-				</div>
-
-				<?php if ( $depth <= $args['max_depth'] ) : ?>
-					<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
-				<?php endif; ?>
-			</div>
-		</div>
-	<?php
 }
 endif;

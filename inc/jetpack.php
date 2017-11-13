@@ -15,14 +15,19 @@
  * See: https://jetpack.me/support/responsive-videos/
  */
 function siteorigin_corp_jetpack_setup() {
-	// Add theme support for Infinite Scroll.
+	/*
+	 * Enable support for Jetpack Infinite Scroll.
+	 * See https://jetpack.com/support/infinite-scroll/
+	 */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'siteorigin_corp_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
-	// Add theme support for Responsive Videos.
+	/*
+	 * Enable support for Jetpack Responsive Videos.
+	 * See https://jetpack.com/support/responsive-videos/
+	 */
 	add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );

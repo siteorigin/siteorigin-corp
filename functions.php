@@ -49,12 +49,18 @@ function siteorigin_corp_setup() {
 
 	// Custom image sizes.
 	add_image_size( 'siteorigin-corp-247x164-crop', 247, 163, true );
-	add_image_size( 'siteorigin-corp-354x234-crop', 354, 234, true );		
+	add_image_size( 'siteorigin-corp-354x234-crop', 354, 234, true );
+	add_image_size( 'siteorigin-corp-480x317-crop', 480, 317, true );
+
+	/*
+	 * Enable support for the custom logo.
+	 */
+	add_theme_support( 'custom-logo' );			
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Header Menu', 'polestar' ),
-		'menu-2' => esc_html__( 'Footer Menu', 'polestar' )
+		'menu-1' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
+		'menu-2' => esc_html__( 'Footer Menu', 'siteorigin-corp' )
 	) );
 	
 	/*
@@ -62,7 +68,6 @@ function siteorigin_corp_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -105,7 +110,7 @@ function siteorigin_corp_widgets_init() {
 		'description'   => esc_html__( 'Visible on posts and pages that use the Default or Full Width, With Sidebar layout.', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -115,7 +120,7 @@ function siteorigin_corp_widgets_init() {
 		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted', 'siteorigin-corp' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title heading-strike">',
+		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -126,7 +131,7 @@ function siteorigin_corp_widgets_init() {
 			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-corp' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</aside>',
-			'before_title' 	=> '<h2 class="widget-title heading-strike">',
+			'before_title' 	=> '<h2 class="widget-title">',
 			'after_title' 	=> '</h2>',
 		) );
 	}
@@ -142,7 +147,7 @@ function siteorigin_corp_scripts() {
 
 	// FitVids.
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), 1.1, true );
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
 	}
 
 	// Flexslider.
@@ -154,6 +159,18 @@ function siteorigin_corp_scripts() {
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	
+	// Mobile menu collapse localisation.
+	if ( siteorigin_setting( 'navigation_mobile_menu_collapse' ) != 768 ) {
+		$collapse_array = array( 
+			'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
+		);	
+	} else {
+		$collapse_array = array( 
+			'collapse' => 768
+		);		
+	}	
+	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $collapse_array );  	
 
 	// Theme icons.
 	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );  	
@@ -171,6 +188,28 @@ function siteorigin_corp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
+
+if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
+/**
+ * Add support for SiteOrigin Premium theme addons.
+ */
+function siteorigin_corp_premium_setup() {
+
+	// Ajax Comments addon.
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'siteorigin_setting' => 'blog_ajax_comments'
+	) );
+
+	// No Attribution addon.
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter'  => 'siteorigin_corp_footer_credits',
+		'enabled' => ! siteorigin_setting( 'footer_attribution' ),
+		'siteorigin_setting' => '!footer_attribution'
+	) );
+}
+endif;
+add_action( 'after_setup_theme', 'siteorigin_corp_premium_setup' );
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -204,6 +243,12 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+/**
+ * WooCommerce compatibility.
+ */
+if ( function_exists( 'is_woocommerce' ) ) {
+	require get_template_directory() . '/woocommerce/functions.php';
+}
+
 /* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
 If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
-

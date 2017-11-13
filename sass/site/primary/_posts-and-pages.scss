@@ -1,19 +1,119 @@
-.sticky {
+body:not(.single) .hentry {
 	display: block;
-}
-
-.hentry {
-	border-bottom: 1px solid $color__background-hr-dark;
-	margin: 0 0 50px;
-	padding: 0 0 30px;
+	float: left;
+	margin: 0 0 31px;
+	width: 31%;
 	
-	&:last-of-type {
-		border: 0;
+	// Two column blog layout below 768px.
+	@media (max-width: 768px) {
+		width: 48.25%;
+	}	
+
+	// One column blog layout below 480px.
+	@media (max-width: 480px) {
+		width: 100%;
 	}
 
-	&:only-of-type {
-		border: 0;
-		margin: 0; 
+	// 1, 4, 7, 10
+	&:nth-of-type(3n+1) {
+		margin-right: 3.5%;
+		
+		@media (max-width: 768px) {
+			margin-right: 0; 
+		}
+	}
+	
+	@media (max-width: 768px) {
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-right: 3.5%; 
+		}
+	}
+
+	// 3, 6, 9, 12
+	&:nth-of-type(3n+3) {
+		margin-left: 3.5%;
+		
+		@media (max-width: 768px) {
+			margin-left: 0; 
+		}						
+	}
+
+	// 4, 8, 12, 16
+	&:nth-of-type(3n+4) {
+		clear: left;
+		
+		@media (max-width: 768px) {
+			clear: none;
+		}				
+	}
+
+	@media (max-width: 768px) {
+
+		// 3, 5, 7, 9, 11
+		&:nth-of-type(2n+3) {
+			clear: left;			
+		}		
+	}
+
+	// Two column blog layout when the sidebar is in use.
+	@at-root body.sidebar:not(.single) .hentry {
+		width: 48.25%;
+		
+		@media (max-width: 480px) {
+			width: 100%; 
+		}	
+
+		// 1, 4, 7, 10
+		&:nth-of-type(3n+1) {
+			margin-right: 0;
+		}
+
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-right: 3.5%;
+		}									
+
+		// 3, 6, 9, 12
+		&:nth-of-type(3n+3) {
+			margin-left: 0; 					
+		}	
+
+		// 4, 8, 12, 16
+		&:nth-of-type(3n+4) {
+			clear: none;			
+		}			
+	}		
+
+	&:only-child {
+		margin: 0;
+	}
+
+	.entry-title {
+		font-size: 1.0666em;
+	}
+
+	.entry-thumbnail {
+		margin-bottom: -1px; 
+	}	
+
+	.content-wrapper {
+		background: #fff;
+		border: 1px solid $color__background-hr;
+		padding: 25px 30px 33px;
+	}
+
+	.entry-content {
+		font-size: .9333em; 
+		padding-bottom: 0;
+		
+		p:last-of-type {
+			margin: 0;
+		}
+
+		p:only-of-type {
+			margin: 0;
+		}
 	}
 }
 
@@ -106,22 +206,18 @@
 	}	
 }
 
-.more-wrapper {
+.more-text {
 	display: block;
-	font-size: 14px;
-	text-transform: uppercase; 
-	
-	a {
-		color: $color__text-dark;
-		font-weight: 600;
-		
-		&:hover {
-			color: $color__accent;
-		}
+
+	span {
+		display: inline-block;
+		padding-left: 3px; 
+		vertical-align: middle;
 	}
 }	
 
 .page-links {
+	margin-top: 26px; 
 	text-align: left;
 
 	.page-links-title {
@@ -131,38 +227,51 @@
 	}
 
 	.page-links-title {
-		background: none;
+		border: none; 
 		color: $color__text-medium;
 		font-weight: 600; 
 		padding: 0;
 		text-transform: none;
 		
 		&:hover {
-			background: none;
+			border: none; 
 			color: $color__text-medium;
 		}
 	}
 
 	span {
-		@extend .button;
-		margin-right: 3px;
-		padding-right: 17px;
-		padding-left: 17px;	
+		border: 1px solid $color__text-medium;
+		color: $color__text-medium;
+		display: inline-block;
+		font-family: $font__main;
+		font-size: 0.9333em;
+		line-height: normal;  
+		margin-right: 4px;
+		padding: 11px 17px;
+		transition: .3s;
+
+		&:visited {
+			color: $color__text-medium;
+		}
+
+		&:hover {
+			border-color: $color__accent;
+			color: $color__accent;
+		}
 	}
 
 	a span {
-		background: $color__background-hr-dark;
 		color: $color__text-medium;
 	}		
 }
 
 .single .entry-footer {
-	margin: 15px 0;
+	margin: 0 0 40px;
 }
 
 .tags-links a {
 	background: #e4e6eb;
-	color: $color__text-medium; // Andrew: Color variable.
+	color: $color__text-medium;
 	display: inline-block;
 	font-size: 12px; 
 	height: 28px;
@@ -173,7 +282,7 @@
 	transition: .2s;
 
 	&:after {
-	  background: $color__background-body; // Andrew: Color variable.
+	  background: $color__background-body;
 	  border-bottom: 14px solid transparent;
 	  border-right: 13px solid #e4e6eb;
 	  border-top: 14px solid transparent;
@@ -215,12 +324,14 @@
 	}
 
 	.page-title {
-		font-size: 18px;
+		font-size: 24px;
+		text-align: center;
 	}
 
 	.taxonomy-description {
-		font-size: 14px; 
-		margin-top: 15px; 
+		font-size: 14px;
+		margin-top: 5px;
+		text-align: center; 
 	}
 	
 	.entry-title {
@@ -260,11 +371,12 @@
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
+	border-top: 1px solid $color__background-hr;
 	display: table;
 	border-right: 0; 
 	border-left: 0;
-	margin: 0;
 	margin-bottom: 60px; 
+	padding-top: 40px; 
 	width: 100%;
 		
 	.author-avatar {
@@ -378,7 +490,7 @@
 
 			a {
 				display: block;
-				line-height: 0; 
+				line-height: 0;
 				text-decoration: none;
 			}
 
@@ -391,6 +503,7 @@
 				font-weight: normal; 
 				line-height: normal;
 				margin: 0 0 3px;
+				transition: .3s;
 
 				@at-root &:hover {
 					color: $color__accent;
@@ -403,6 +516,7 @@
 				font-weight: normal;
 				line-height: normal; 
 				margin: 0;
+				transition: .3s;
 				
 				&:hover {
 					color: $color__accent;

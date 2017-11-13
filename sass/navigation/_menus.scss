@@ -1,8 +1,8 @@
 .main-navigation {
 	display: table-cell;
 	text-align: right;
-	vertical-align: middle; 
-	
+	vertical-align: middle;
+
 	> div {
 		display: inline-block;
 	}
@@ -13,9 +13,9 @@
 		padding: 0;
 
 		ul {
-			opacity: 0; 
+			opacity: 0;
 			position: absolute;
-			text-align: left; 
+			text-align: left;
 			top: 16px;
 			transform: scale(0.95);
 			transition: all 0.15s ease-in;
@@ -33,9 +33,9 @@
 				margin: 0;
 				padding: 0;
 				min-width: 100%;
-				
+
 				&:hover > a {
-					color: #fff; 
+					color: #fff;
 				}
 
 				&:hover > ul,
@@ -50,15 +50,15 @@
 				&:last-of-type {
 
 					a {
-						border-bottom: none; 
-					}					
-				}				
+						border-bottom: none;
+					}
+				}
 			}
 
 			a {
-				background: #262627; 
+				background: #262627;
     			border-bottom: 1px solid #353538;
-    			color: #b2b2b2; 
+    			color: #b2b2b2;
     			font-size: 12px;
     			max-width: 100%;
     			padding: 12px 20px;
@@ -70,41 +70,41 @@
 		li.focus > ul {
 			opacity: 1;
 			transform: scale(1);
-			visibility: visible;		
+			visibility: visible;
 		}
 
 		li {
 			display: inline-block;
-			font-family: $font__headings; 
+			font-family: $font__headings;
 			font-size: 12px;
 			line-height: normal;
 			margin: 0 39px -10px 0; // Total right margin is 44px. 5px additional space per item due to inline-block.
-			padding: 0 0 10px; 
+			padding: 0 0 10px;
 			position: relative;
 			text-align: left;
 			text-transform: uppercase;
-			
+
 			&.menu-item
-			
+
 			&:last-of-type {
 				margin-right: 0;
 			}
 		}
 
 		a {
-			border-bottom: 2px solid #fff; 
-			color: $color__text-dark; 
+			border-bottom: 2px solid #fff;
+			color: $color__text-dark;
 			display: block;
 			letter-spacing: 1px;
-		}				
+		}
 	}
 
 	// First level items.
 	div > ul > li {
 
 		&:hover > a {
-			border-color: $color__accent; 
-		}				
+			border-color: $color__accent;
+		}
 
 		&.menu-item-has-children:hover > a,
 		&.page_item_has_children:hover > a {
@@ -117,8 +117,8 @@
 		&.current_page_ancestor > a,
 		&.current-menu-ancestor > a {
 			border-color: $color__accent;
-		}		
-	}	
+		}
+	}
 
 	// Menu search.
 	.search-toggle {
@@ -126,10 +126,10 @@
 		border: none;
 		display: inline-block;
 		outline: none;
-		padding: 0;	
+		padding: 0;
 		position: relative;
 		top: 3px;
-		
+
 		.open {
 
 			svg {
@@ -144,24 +144,12 @@
 
 		.close {
 			display: none;
-
-			.svg-icon-close {
-				height: 16px;
-				width: 16px;
-				path {
-					fill: $color__text-medium;
-				}
-			}
 		}
 
 		&.close-search {
 
 			.open {
 				display: none;
-			}
-
-			.close {
-				display: block;
 			}
 		}
 	}
@@ -175,12 +163,12 @@
 	line-height: 0;
 	padding: 5px;
 	position: relative;
-	right: -5px; 
+	right: -5px;
 	top: 6px;
-	
+
 	svg {
-		height: 19px; 
-		width: 23px; 
+		height: 19px;
+		width: 23px;
 	}
 }
 
@@ -194,10 +182,10 @@
 	-webkit-overflow-scrolling: touch;
 	width: 100%;
 	z-index: 10;
-	
+
 	&::-webkit-scrollbar {
 		display: none;
-	}	
+	}
 
 	ul {
 		list-style: none;
@@ -208,19 +196,19 @@
 			font-family: $font__headings;
 			font-size: 12px;
 			letter-spacing: 1px;
-			line-height: 3.3; 
+			line-height: 3.3;
 			position: relative;
 			width: 100%;
 
 			a {
-				border-bottom: 1px solid #353538; 
+				border-bottom: 1px solid #353538;
 				color: #b2b2b2;
 				display: block;
 				padding: 0 30px;
 				text-decoration: none;
-				text-transform: uppercase; 
+				text-transform: uppercase;
 				width: 100% !important;
-				
+
 				&:hover {
 					color: #fff;
 				}
@@ -228,21 +216,21 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 40px;
-			}			
+			}
 
 			.dropdown-toggle {
 				background: transparent;
 				color: #4d4d4d;
-				font-size: 14px; 
+				font-size: 14px;
 				padding: 14px;
 				position: absolute;
 				right: 0;
 				top: 0;
 				transition: none;
-				
+
 				&:hover {
 					color: #fff;
-				}			
+				}
 
 				&.toggle-open {
 					transform: rotate(-180deg);
@@ -251,7 +239,7 @@
 		}
 
 		ul {
-			background: #18181a; 
+			background: #18181a;
 			display: none;
 			margin: 0;
 			padding: 0;
@@ -266,37 +254,11 @@
 $sel: '';
 @for $i from 1 through 5 {
 	$sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
-	
+
 	#{$sel} {
     	ul ul li a {
         	padding-left: 30px * $i;
       	}
-	}
-}
-
-@media (max-width: 1100px) {
-
-	#masthead .search-toggle {
-		margin-right: 20px; 
-	}
-
-	#masthead #mobile-menu-button {
-		display: inline-block;
-	}
-
-	#masthead .main-navigation ul {
-		display: none; 
-	}
-	
-	#masthead .main-navigation .search-icon {
-		display: none;
-	}
-}
-
-@media (min-width: 1100px) {
-
-	#masthead #mobile-navigation {
-		display: none !important;
 	}
 }
 
@@ -308,66 +270,70 @@ $sel: '';
 .post-navigation {
 	@include clearfix;
 	margin: 0 0 60px;
-	width: 100%;  
+	width: 100%;
 
 	.nav-previous {
 		float: left;
 		text-align: left;
 		width: 50%;
-		
+
 		@media (max-width: 768px) {
 			float: none;
 			margin-bottom: 25px;
-		}		
+		}
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
-		
+
 		@media (max-width: 768px) {
 			float: none;
 			text-align: left;
-		}			
+		}
 	}
 }
 
-.pagination {	
+.pagination {
+	@include clearfix-after;
+	padding-top: 30px; 
 	text-align: center;
-	
+
 	.page-numbers {
-		@extend .button;
-		background: $color__background-hr-dark;
+		border: 1px solid $color__text-medium;
 		color: $color__text-medium;
 		display: inline-block;
-		margin-right: 3px;
-		padding-right: 17px;
-		padding-left: 17px; 
-		
+		font-family: $font__main;
+		font-size: 0.9333em;
+		line-height: normal;  
+		margin-right: 4px;
+		padding: 11px 17px;
+		transition: .3s;
+
 		&:visited {
 			color: $color__text-medium;
-		}		
+		}
 
 		&:hover {
-			background: $color__accent;
-			color: #fff; 
+			border-color: $color__accent;
+			color: $color__accent;
 		}
 
 		&.next,
 		&.prev {
-			font-family: Verdana; 
-			padding: 12px 13px; 
+			font-family: Verdana;
+			padding: 12px 13px;
 		}
 	}
 
 	.dots {
-		background: none;
+		border: none;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-		font-size: 13px; 
+		font-size: 13px;
 		padding-right: 0;
-		padding-left: 0; 
-		
+		padding-left: 0;
+
 		&:hover {
 			background: none;
 			color: $color__text-medium;
@@ -375,37 +341,47 @@ $sel: '';
 	}
 
 	.current {
-		background: $color__accent;
-		color: #fff;
+		border-color: $color__accent;
+		color: $color__accent;
 	}
 }
 
 .post-navigation {
-	font-size: 16px; 
+	border-top: 1px solid $color__background-hr;
+	margin-bottom: 0; 
+	padding: 40px 0;
 
 	a {
-		color: $color__text-medium;
-		font-weight: bold; 
-		font-weight: 600; 
-
-		&:hover {
-			color: $color__accent;
+		
+		img {
+			display: block;
+			float: left;
+			margin-right: 15px; 
+			max-width: 80px;
 		}
 
 		.sub-title {
-			border-bottom: 2px solid $color__background-hr-dark;
 			color: $color__text-light;
 			display: inline-block;
-			font-size: 14px; 
+			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
+			letter-spacing: .5px; 
 			line-height: normal;
-			margin-bottom: 10px;
-			padding-bottom: 3px; 
+			margin: 8px 0 1px;
 		}
 
 		div {
+			color: $color__text-dark;
+			font-family: $font__headings;
+			font-weight: 400;   
+			font-size: 15px; 
 			line-height: normal;
+			transition: .3s;
+		}
+
+		&:hover div {
+			color: $color__accent;
 		}
 	}
 }
@@ -413,32 +389,32 @@ $sel: '';
 .comment-navigation {
 	text-transform: capitalize;
 	margin: 25px 0;
-	
+
 	span {
 		font-size: 13px;
 		position: relative;
 		right: 0;
 		top: 1px;
-		
+
 		&.icon-long-arrow-left {
-			padding-right: 3px; 
+			padding-right: 3px;
 		}
 
 		&.icon-long-arrow-right {
-			padding-left: 3px; 
-		}		
-	} 	
-	
+			padding-left: 3px;
+		}
+	}
+
 	a {
 		color: $color__text-medium;
-		font-size: 14px; 
-		font-weight: bold; 
-		font-weight: 600; 
-		
+		font-size: 14px;
+		font-weight: bold;
+		font-weight: 600;
+
 		&:hover {
 			color: $color__accent;
 		}
-	}	
+	}
 }
 
 /*--------------------------------------------------------------
@@ -446,16 +422,16 @@ $sel: '';
 --------------------------------------------------------------*/
 .footer-menu {
 	float: right;
-	font-size: 13px; 
-	text-align: right;	
-	width: 70%;		
-	
+	font-size: 13px;
+	text-align: right;
+	width: 70%;
+
 	@media (max-width: 768px) {
 		float: none;
 		padding-top: 15px;
 		text-align: center;
 		width: 100%;
-	} 		
+	}
 
 	.menu {
 		list-style: none;
@@ -465,10 +441,10 @@ $sel: '';
 		li {
 			display: inline-block;
 			font-size: 13px;
-			margin-right: 15px;  
+			margin-right: 15px;
 			padding: 0;
 			vertical-align: middle;
-			
+
 			&:after {
 				padding: 0 12px;
 			}
@@ -477,7 +453,7 @@ $sel: '';
 				content: none;
 				padding: 0;
 			}
-			
+
 			a {
 				color: inherit;
 
@@ -487,151 +463,16 @@ $sel: '';
 
 				&:before {
 					color: #fff;
-				}	
+				}
 
 				&:hover:before {
 					background: #818388;
-				}		
-			}	
+				}
+			}
 
 			&:last-of-type {
 				margin-right: 0;
 			}
-		}						
-	}
-}
-
-/*--------------------------------------------------------------
-## Footer Menu Social Icons
---------------------------------------------------------------*/
-.footer-menu {
-
-	a[href*="behance.net"], a[href*="codepen.io"], a[href*="delicious.com"], a[href*="deviantart.com"], a[href*="digg.com"], a[href*="dribbble.com"], a[href*="facebook.com"], a[href*="flickr.com"], a[href*="foursquare.com"], a[href*="github.com"], a[href*="plus.google.com"], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="pinterest.com"], a[href*="reddit.com"], a[href*="soundcloud.com"], a[href*="stackexchange.com"], a[href*="stackoverflow.com"], a[href*="tumblr.com"], a[href*="twitter.com"], a[href*="vimeo.com"], a[href*="vine.co"], a[href*="vk.com"], a[href*="weibo.com"], a[href*="wordpress.com"], a[href*="xing"], a[href*="yelp.com"], a[href*="youtube.com"] {		
-		font-size: 0;
-		text-align: center;
-		
-		&:before {
-			font-family: $font__icon;
-			font-size: 16px;
 		}
 	}
-
-	a:before {
-		display: inline-block;
-		background: #5b5f68; 
-		border-radius: 50%;
-		color: #b4b5b8;
-		height: 35px;
-		line-height: 35px; 
-		transition: .3s;
-		width: 35px; 
-	}
-
-	a[href*="behance.net"]:before {
-		content: "\e91a";
-	}
-
-	a[href*="codepen.io"]:before {
-		content: "\e919";
-	}
-
-	a[href*="delicious.com"]:before {		
-		content: "\e918";
-	}	
-
-	a[href*="deviantart.com"]:before {
-		content: "\e917";
-	}	
-
-	a[href*="digg.com"]:before {
-		content: "\e916";
-	}	
-
-	a[href*="dribbble.com"]:before {
-		content: "\e915";
-	}	
-
-	a[href*="facebook.com"]:before {
-		content: "\e914";
-	}	
-
-	a[href*="flickr.com"]:before {
-		content: "\e913";
-	}	
-
-	a[href*="foursquare.com"]:before {
-		content: "\e912";
-	}
-
-	a[href*="github.com"]:before {
-		content: "\e911";
-	}					
-
-	a[href*="plus.google.com"]:before {
-		content: "\e910";
-	}			
-
-	a[href*="instagram.com"]:before {
-		content: "\e90f";
-	}	
-
-	a[href*="linkedin.com"]:before {
-		content: "\e90e";
-	}			
-
-	a[href*="pinterest.com"]:before {
-		content: "\e90d";
-	}						
-
-	a[href*="reddit.com"]:before {
-		content: "\e90c";
-	}				
-
-	a[href*="soundcloud.com"]:before {
-		content: "\e90b";
-	}	
-
-	a[href*="stackexchange.com"]:before {
-		content: "\e90a";
-	}	
-
-	a[href*="stackoverflow.com"]:before {
-		content: "\e909";
-	}	
-
-	a[href*="tumblr.com"]:before {
-		content: "\e908";
-	}				
-
-	a[href*="twitter.com"]:before {
-		content: "\e907";
-	}				
-
-	a[href*="vimeo.com"]:before {
-		content: "\e906";
-	}		
-
-	a[href*="vk.com"]:before {
-		content: "\e905";
-	}
-
-	a[href*="weibo.com"]:before {
-		content: "\e904";
-	}	
-
-	a[href*="wordpress.com"]:before {
-		content: "\e903";
-	}	
-
-	a[href*="xing"]:before {
-		content: "\e902";
-	}	
-
-	a[href*="yelp.com"]:before {
-		content: "\f1e9";
-	}								
-
-	a[href*="youtube.com"]:before {
-		content: "\e91c";
-	}		
 }
