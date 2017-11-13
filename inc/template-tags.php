@@ -408,13 +408,7 @@ function siteorigin_corp_get_video() {
 			$first_url = trim( $url );
 		}
 
-		if ( is_single() ) {
-			$oembed = wp_oembed_get( esc_url( $url ) );
-		} else {
-			$oembed = wp_oembed_get( esc_url( $url ), array( 'width'=>560, 'height'=>250 ) );
-		}
-
-
+		$oembed = wp_oembed_get( esc_url( $url ) );
 
 		if ( ! $oembed ) continue;
 
@@ -422,6 +416,8 @@ function siteorigin_corp_get_video() {
 
 		break;
 	}
+
+	wp_enqueue_script( 'jquery-fitvids' );
 
 	return ( '' !== $first_video ) ? $first_video : false;
 }
