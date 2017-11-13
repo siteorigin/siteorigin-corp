@@ -26,7 +26,7 @@ function siteorigin_corp_author_box() { ?>
 					<?php esc_html_e( 'View posts by ', 'siteorigin-corp' );
 					echo get_the_author(); ?>
 				</a>
-			</span>	
+			</span>
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
 				<div><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></div>
 			<?php endif; ?>
@@ -55,7 +55,7 @@ if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
  * The callback function for wp_list_comments in comments.php.
  *
  * @link https://codex.wordpress.org/Function_Reference/wp_list_comments.
- */	
+ */
 function siteorigin_corp_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -151,7 +151,7 @@ function siteorigin_corp_display_icon( $type ) {
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
 				<path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zM26 26c0 1.094-0.906 2-2 2-0.531 0-1.047-0.219-1.406-0.594l-5.359-5.344c-1.828 1.266-4.016 1.937-6.234 1.937-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-0.672 4.406-1.937 6.234l5.359 5.359c0.359 0.359 0.578 0.875 0.578 1.406z"></path>
 			</svg>
-		<?php break;		
+		<?php break;
 
 		case 'up-arrow': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -159,7 +159,7 @@ function siteorigin_corp_display_icon( $type ) {
 	                c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
 	                C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>
 			</svg>
-		<?php break;		
+		<?php break;
 	}
 }
 endif;
@@ -181,7 +181,7 @@ function siteorigin_corp_the_post_navigation() {
 	$previous_post 	= get_previous_post();
 	$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
 	$next_post 		= get_next_post();
-	$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );	
+	$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 
 	?>
 	<nav class="navigation post-navigation">
@@ -260,7 +260,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 							<li>
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php 
+									<?php
 									if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
 										the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
 									elseif ( has_post_thumbnail() )
@@ -318,8 +318,8 @@ function siteorigin_corp_post_meta() {
 	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {
 		echo '<span>' . get_the_category_list( ', ' ) . '</span>';
 	}
-	
-	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) { 
+
+	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) {
 		echo '<span class="comments-link">';
   		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
   		echo '</span>';
@@ -334,7 +334,7 @@ if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
 function siteorigin_corp_entry_footer() {
 	if ( is_single() && has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
 		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
-	}	
+	}
 }
 endif;
 
@@ -408,7 +408,13 @@ function siteorigin_corp_get_video() {
 			$first_url = trim( $url );
 		}
 
-		$oembed = wp_oembed_get( esc_url( $url ) );
+		if ( is_single() ) {
+			$oembed = wp_oembed_get( esc_url( $url ) );
+		} else {
+			$oembed = wp_oembed_get( esc_url( $url ), array( 'width'=>560, 'height'=>250 ) );
+		}
+
+
 
 		if ( ! $oembed ) continue;
 
