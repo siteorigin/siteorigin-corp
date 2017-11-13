@@ -1,13 +1,13 @@
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid $color__background-hr;
-	margin-bottom: 60px; 
-	padding: 25px 0;
+	background: $color__header-background;
+	border-bottom: 1px solid $color__header-border;
+	margin-bottom: $header__margin; 
+	padding: $header__padding 0;
 	position: relative;
 	width: 100%;
 	z-index: 999;
 	
-	.page-layout-no-header-margin & {
+	.no-header-margin & {
 		margin-bottom: 0;
 	}
 	
@@ -38,7 +38,7 @@
 
 	// A class added after scroll.
 	&.stuck {
-    	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);	
+    	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);	
     }
 
 	.site-header-inner {
@@ -59,13 +59,13 @@
 		padding-right: 20px;
 
 		.site-title {
-			font-family: $font__headings;
+			font-family: $font__site-title;
 			font-size: 29px;
 			line-height: normal;
 			margin: 0;
 			
 			a {
-				color: $color__text-dark;
+				color: $color__site_title; 
 			}
 		}
 
@@ -79,8 +79,8 @@
 		}
 
 		.site-description {
-			color: $color__text-light;
-			font-family: $font__main;
+			color: $color__site_tagline;
+			font-family: $font__site-tagline;
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;

@@ -21,18 +21,22 @@
 
 		<?php do_action( 'siteorigin_corp_top' ); ?>
 
-		<div class="corp-container">
-			<?php
-				if ( is_active_sidebar( 'sidebar-footer' ) ) {
-					$corp_sidebars = wp_get_sidebars_widgets();
-					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
-						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
-					</div>
-					<?php
-				}
-			?>
-		</div><!-- .corp-container -->
+
+		<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) : ?>
+			<div class="corp-container">
+				<?php
+					if ( is_active_sidebar( 'sidebar-footer' ) ) {
+						$corp_sidebars = wp_get_sidebars_widgets();
+						?>
+						<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+							<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+						</div>
+						<?php
+					}
+				?>
+			</div><!-- .corp-container -->
+		<?php endif; ?>
+
 		<div class="bottom-bar">
 			<div class="corp-container">
 				<div class="site-info">
@@ -61,7 +65,7 @@
 
 <?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
 	<div id="scroll-to-top">
-		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-unwind' ); ?></span>
+		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-corp' ); ?></span>
 		<?php siteorigin_corp_display_icon( 'up-arrow' ); ?>
 	</div>
 <?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying image format posts.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -8,16 +8,20 @@
  * @license GPL 2.0 
  */
 
+$post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php 
-	if ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
+	<?php if ( siteorigin_corp_get_image() ) : ?>
+		<div class="entry-thumbnail">
+			<?php echo siteorigin_corp_get_image(); ?>
+		</div>
+	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
-	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
+	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>		
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
@@ -47,7 +51,7 @@
 		<div class="entry-content">
 			<?php
 				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
-					the_content();
+					echo apply_filters( 'the_content', siteorigin_corp_strip_image( get_the_content() ) );
 				} else {
 					the_excerpt();
 				}

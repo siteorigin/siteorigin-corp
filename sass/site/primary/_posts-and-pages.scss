@@ -94,6 +94,8 @@ body:not(.single) .hentry {
 	}
 
 	.entry-thumbnail {
+		@include clearfix;
+		line-height: 0; 
 		margin-bottom: -1px; 
 	}	
 
@@ -117,10 +119,8 @@ body:not(.single) .hentry {
 	}
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	padding: 25px 0;
+.entry-header {
+	margin-bottom: 25px;
 }
 
 /*--------------------------------------------------------------
@@ -196,8 +196,7 @@ body:not(.single) .hentry {
 	display: inline;
 }
 
-.entry-thumbnail,
-.entry-video {
+.entry-thumbnail {
 	margin-bottom: 25px;
 	
 	a {
@@ -396,14 +395,21 @@ body:not(.single) .hentry {
 			width: 100px;
 			
 			@media (max-width: 480px) {
-				margin: 0 auto 15px;
+				height: 80px;
+				margin: 0 0 15px;
+				width: 80px;				
 			}			
 		}
 	}
 
 	.author-description {
 		display: table-cell;
-		vertical-align: top;		
+		vertical-align: top;
+		
+		@media (max-width: 480px) {
+			display: block;
+			width: 100%; 
+		}					
 	
 		h3 {
 			font-size: 15px;
