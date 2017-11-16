@@ -1342,7 +1342,6 @@ a {
     justify-content: space-between;
     width: 100%; }
   .site-header .site-branding {
-    flex-shrink: 0;
     padding-right: 20px; }
     .site-header .site-branding .site-title {
       font-family: "Montserrat", sans-serif;
