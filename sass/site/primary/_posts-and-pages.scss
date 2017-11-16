@@ -128,7 +128,8 @@ body:not(.single) .hentry {
 --------------------------------------------------------------*/
 .entry-title {
 	color: $color__text-dark;
-	font-size: 1.6em; 
+	font-size: 1.6em;
+	font-weight: 600; 
 	line-height: normal;
 	margin: 0 0 3px;
 	
@@ -506,7 +507,7 @@ body:not(.single) .hentry {
 
 			.related-post-title {
 				font-size: 16px; 
-				font-weight: normal; 
+				font-weight: 600; 
 				line-height: normal;
 				margin: 0 0 3px;
 				transition: .3s;

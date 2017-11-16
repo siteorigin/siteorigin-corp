@@ -38,7 +38,7 @@ function siteorigin_corp_settings_init() {
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'A double sized logo to use on retina devices.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'A double sized logo to use on retina devices. Must be used in addition to a regular logo added in the Site Identity section.', 'siteorigin-corp' ),
 				),				
 				'site_description' => array(
 					'type' => 'checkbox',
@@ -95,7 +95,8 @@ function siteorigin_corp_settings_init() {
 				'mobile_menu_collapse' => array(
 					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
 					'type' => 'number',
-					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' )
+					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' ),
+					'live'	=> true
 				),							
 				'menu_search' => array(
 					'type' => 'checkbox',
@@ -142,7 +143,12 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
 					'live' => true,
 				),
-				'search_overlay' => array(
+				'search_overlay_text' => array(
+					'type' => 'color',
+					'label' => esc_html__( 'Menu Search Overlay Color', 'siteorigin-corp' ),
+					'live' => true,
+				),						
+				'search_overlay_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
 					'live' => true,
@@ -400,6 +406,8 @@ function siteorigin_corp_font_settings( $settings ) {
 		'name'    => 'Montserrat',
 		'weights' => array(
 			400,
+			600,
+			700
 		),
 	);
 	$settings['typography_site_tagline_font'] = array(
@@ -439,7 +447,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
 function siteorigin_corp_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/Q7Eh2P/sass/style.css ***/
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/B6bssz/sass/style.css ***/
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -706,16 +714,20 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.font( ${typography_site_tagline_font} );
 	}
 	#fullscreen-search {
-	background: .rgba( ${navigation_search_overlay}, .95);
+	background: .rgba( ${navigation_search_overlay_background}, .95);
 	}
 	#fullscreen-search h3 {
+	color: ${navigation_search_overlay_text};
 	.font( ${typography_body_font} );
 	}
+	#fullscreen-search form {
+	border-bottom: 1px solid ${navigation_search_overlay_text};
+	}
 	#fullscreen-search form button[type="submit"] svg {
-	fill: ${typography_secondary_text};
+	fill: ${navigation_search_overlay_text};
 	}
 	#fullscreen-search .search-close-button .close svg path {
-	fill: ${typography_secondary_text};
+	fill: ${navigation_search_overlay_text};
 	}
 	body:not(.single) .hentry .content-wrapper {
 	border: 1px solid ${typography_border};
@@ -953,7 +965,8 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['navigation_drop_down_link_hover']			= '#ffffff';
 	$defaults['navigation_drop_down_divider']				= '#353538';
 	$defaults['navigation_drop_down_background']			= '#262627';
-	$defaults['navigation_search_overlay']					= '#090d14';
+	$defaults['navigation_search_overlay_text']				= '#b2b2b2';
+	$defaults['navigation_search_overlay_background']		= '#090d14';
 
 	$defaults['blog_archive_featured_image']				= true;
 	$defaults['blog_archive_content']         				= 'excerpt';

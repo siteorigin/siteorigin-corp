@@ -217,7 +217,7 @@ h6 {
   clear: both;
   color: #2d2d2d;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   margin: 25px 0; }
   h1 a,
   h1 a:visited,
@@ -256,7 +256,6 @@ h6 {
 .comment-reply-title {
   color: #626262;
   font-size: 14px;
-  font-weight: 500;
   letter-spacing: .5px;
   line-height: normal;
   margin: 0;
@@ -583,6 +582,7 @@ a {
       border-bottom: 2px solid #fff;
       color: #2d2d2d;
       display: block;
+      font-weight: bold;
       letter-spacing: 1px; }
   .main-navigation div > ul > li:hover > a {
     border-color: #f14e4e; }
@@ -1066,7 +1066,7 @@ a {
 .widget-area .widget .widget-title,
 .site-footer .widget .widget-title {
   font-size: .9333em;
-  font-weight: 600;
+  font-weight: bold;
   letter-spacing: 1px;
   margin: 0 0 15px;
   text-transform: uppercase; }
@@ -1346,6 +1346,7 @@ a {
     .site-header .site-branding .site-title {
       font-family: "Montserrat", sans-serif;
       font-size: 29px;
+      font-weight: 600;
       line-height: normal;
       margin: 0; }
       .site-header .site-branding .site-title a {
@@ -1435,7 +1436,7 @@ a {
         #fullscreen-search form button[type="submit"] {
           top: -15px; } }
       #fullscreen-search form button[type="submit"] svg {
-        fill: #929292;
+        fill: #b2b2b2;
         height: 23px;
         width: 23px; }
         @media (max-width: 480px) {
@@ -1456,7 +1457,7 @@ a {
         height: 24px;
         width: 24px; }
         #fullscreen-search .search-close-button .close svg path {
-          fill: #929292; }
+          fill: #b2b2b2; }
     @media (max-width: 1100px) {
       #fullscreen-search .search-close-button {
         right: 25px; } }
@@ -1541,6 +1542,7 @@ body:not(.single) .hentry {
 .entry-title {
   color: #2d2d2d;
   font-size: 1.6em;
+  font-weight: 600;
   line-height: normal;
   margin: 0 0 3px; }
   @media (max-width: 768px) {
@@ -1825,7 +1827,7 @@ body:not(.single) .hentry {
       .yarpp-related ol li .related-post-title,
       .related-posts-section ol li .related-post-title {
         font-size: 16px;
-        font-weight: normal;
+        font-weight: 600;
         line-height: normal;
         margin: 0 0 3px;
         transition: .3s; }
@@ -2055,7 +2057,7 @@ body:not(.single) .hentry {
       .site-footer .widgets .widget .widget-title {
         color: #ffffff;
         font-size: 1.0666em;
-        font-weight: normal; }
+        font-weight: 600; }
       .site-footer .widgets .widget ~ * {
         color: #b4b5b8; }
       .site-footer .widgets .widget a {
