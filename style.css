@@ -616,15 +616,16 @@ a {
       padding-bottom: 0; }
       .main-navigation ul .menu-button a {
         background: #f14e4e;
+        border: 0;
+        border-radius: 0;
         color: #fff;
-        display: inline-block;
-        font-size: .95em;
-        letter-spacing: .5px;
+        letter-spacing: 1px;
         line-height: normal;
-        padding: 6.5px 13px 5.5px;
+        padding: 11px 25px;
+        text-transform: uppercase;
         transition: .3s; }
         .main-navigation ul .menu-button a:hover {
-          background-color: rgba(77, 143, 251, 0.8);
+          background: rgba(241, 78, 78, 0.8);
           color: #fff; }
   .main-navigation div > ul > li:hover > a {
     border-color: #f14e4e; }

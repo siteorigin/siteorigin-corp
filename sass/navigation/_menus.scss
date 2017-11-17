@@ -148,16 +148,17 @@
 
 			a {
 				background: $color__accent;
-				color: #fff; 
-				display: inline-block;
-				font-size: .95em;
-				letter-spacing: .5px; 
-				line-height: normal;
-				padding: 6.5px 13px 5.5px;
+				border: 0;
+				border-radius: 0;
+				color: #fff;
+				letter-spacing: 1px;
+				line-height: normal;  
+				padding: 11px 25px;
+				text-transform: uppercase;
 				transition: .3s;
 			
 				&:hover {
-					background-color: rgba(77, 143, 251, .8);
+					background: rgba($color__accent, .8);
 					color: #fff;
 				}	
 			}		
