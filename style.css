@@ -544,6 +544,14 @@ a {
         margin: 0;
         padding: 0;
         min-width: 100%; }
+        .main-navigation ul ul li a {
+          background: #262627;
+          border-bottom: 1px solid #353538;
+          color: #b2b2b2;
+          font-size: 12px;
+          max-width: 100%;
+          padding: 12px 20px;
+          white-space: nowrap; }
         .main-navigation ul ul li:hover > a {
           color: #ffffff; }
         .main-navigation ul ul li:hover > ul,
@@ -553,14 +561,6 @@ a {
           border-top: 2px solid #f14e4e; }
         .main-navigation ul ul li:last-of-type a {
           border-bottom: none; }
-      .main-navigation ul ul a {
-        background: #262627;
-        border-bottom: 1px solid #353538;
-        color: #b2b2b2;
-        font-size: 12px;
-        max-width: 100%;
-        padding: 12px 20px;
-        white-space: nowrap; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       opacity: 1;
@@ -576,14 +576,56 @@ a {
       position: relative;
       text-align: left;
       text-transform: uppercase; }
-      .main-navigation ul li.menu-item, .main-navigation ul li:last-of-type {
+      .main-navigation ul li:last-of-type {
         margin-right: 0; }
-    .main-navigation ul a {
-      border-bottom: 2px solid #fff;
-      color: #2d2d2d;
-      display: block;
-      font-weight: bold;
-      letter-spacing: 1px; }
+      .main-navigation ul li a {
+        border-bottom: 2px solid #fff;
+        color: #2d2d2d;
+        display: block;
+        font-weight: bold;
+        letter-spacing: 1px; }
+    .main-navigation ul .left .sub-menu,
+    .main-navigation ul .left .children {
+      right: 0; }
+      .main-navigation ul .left .sub-menu ul,
+      .main-navigation ul .left .children ul {
+        left: initial;
+        left: auto;
+        right: 100%; }
+      .main-navigation ul .left .sub-menu li:hover > ul,
+      .main-navigation ul .left .sub-menu li.focus > ul,
+      .main-navigation ul .left .children li:hover > ul,
+      .main-navigation ul .left .children li.focus > ul {
+        left: initial;
+        left: auto;
+        right: 100%; }
+    .main-navigation ul .sub-menu .left .sub-menu,
+    .main-navigation ul .sub-menu .left .children {
+      left: initial;
+      left: auto;
+      right: 100%; }
+      .main-navigation ul .sub-menu .left .sub-menu li:hover > ul,
+      .main-navigation ul .sub-menu .left .sub-menu li.focus > ul,
+      .main-navigation ul .sub-menu .left .children li:hover > ul,
+      .main-navigation ul .sub-menu .left .children li.focus > ul {
+        left: initial;
+        left: auto;
+        right: 100%; }
+    .main-navigation ul .menu-button {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      .main-navigation ul .menu-button a {
+        background: #f14e4e;
+        color: #fff;
+        display: inline-block;
+        font-size: .95em;
+        letter-spacing: .5px;
+        line-height: normal;
+        padding: 6.5px 13px 5.5px;
+        transition: .3s; }
+        .main-navigation ul .menu-button a:hover {
+          background-color: rgba(77, 143, 251, 0.8);
+          color: #fff; }
   .main-navigation div > ul > li:hover > a {
     border-color: #f14e4e; }
   .main-navigation div > ul > li.menu-item-has-children:hover > a,
@@ -613,6 +655,9 @@ a {
       display: none; }
     .main-navigation .search-toggle.close-search .open {
       display: none; }
+  .main-navigation .customize-partial-edit-shortcut {
+    right: 45px;
+    top: -22px; }
 
 /*--------------------------------------------------------------
 ## Mobile Menu
