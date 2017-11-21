@@ -549,6 +549,7 @@ a {
           border-bottom: 1px solid #353538;
           color: #b2b2b2;
           font-size: 12px;
+          font-weight: normal;
           max-width: 100%;
           padding: 12px 20px;
           white-space: nowrap; }
