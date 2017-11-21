@@ -2,7 +2,7 @@
 /**
  * Custom WooCommerce template tags for this theme.
  *
- * @package polestar
+ * @package siteorigin-corp
  * @license GPL 2.0 
  */
 
