@@ -1589,7 +1589,7 @@ body:not(.single) .hentry {
 .entry-title {
   color: #2d2d2d;
   font-size: 1.6em;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
   margin: 0 0 3px; }
   @media (max-width: 768px) {
