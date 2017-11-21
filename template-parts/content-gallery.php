@@ -18,14 +18,22 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	
 	<?php if ( siteorigin_corp_get_gallery() ) : ?>
 		<?php $gallery = siteorigin_corp_get_gallery(); ?>
-		<div class="flexslider gallery-format-slider">
-			<ul class="slides gallery-format-slides">
+		<div class="flexslider entry-thumbnail">
+			<ul class="slides">
 				<?php foreach ( $gallery['src'] as $image ) : ?>
 					<li class="gallery-format-slide">
 						<img src="<?php echo $image; ?>">
 					</li>
 				<?php endforeach; ?>
-			<ul>
+			</ul>
+			<ul class="flex-direction-nav">
+				<li class="flex-nav-prev">
+					<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
+				</li>
+				<li class="flex-nav-next">
+					<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
+				</li>
+			</ul>
 		</div>
 	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
@@ -61,7 +69,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<div class="entry-content">
 			<?php
 				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
-					the_content();
+					echo $content;
 				} else {
 					the_excerpt();
 				}

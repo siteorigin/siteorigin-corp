@@ -62,6 +62,16 @@ jQuery( function( $ ) {
 		$( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
 	}
 
+	// FlexSlider.
+	$( window ).on( 'load', function() {
+		$( '.flexslider' ).each( function() {
+			$( this ).flexslider( {
+				animation: 'slide',
+				customDirectionNav: $( this ).find( '.flex-direction-nav a' )
+			} );
+		} );
+	} );
+
 	// Main menu.
 	// Remove the no-js body class.
 	$( 'body.no-js' ).removeClass( 'no-js' );	
