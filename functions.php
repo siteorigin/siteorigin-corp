@@ -79,7 +79,9 @@ function siteorigin_corp_setup() {
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
+		'gallery',
 		'image',
+		'video',
 	) );
 
 	// Set up the WordPress core custom background feature.
