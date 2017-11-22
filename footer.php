@@ -21,7 +21,6 @@
 
 		<?php do_action( 'siteorigin_corp_top' ); ?>
 
-
 		<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) : ?>
 			<div class="corp-container">
 				<?php
