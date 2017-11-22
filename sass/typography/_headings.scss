@@ -7,7 +7,7 @@ h6 {
 	clear: both;
 	color: $color__text-dark;
 	font-family: $font__headings;
-	font-weight: 400;
+	font-weight: bold;
 	margin: 25px 0;
 	
 	a,
@@ -43,8 +43,7 @@ h6 {
 .sub-heading {
 	color: $color__text-medium; 
 	font-size: 14px; 
-	font-weight: 500; 
-	letter-spacing: .5px;
+	letter-spacing: 1px;
 	line-height: normal;
 	margin: 0;
 	text-transform: uppercase; 

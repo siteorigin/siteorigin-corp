@@ -7,7 +7,7 @@
 
 	.widget-title {
 		font-size: .9333em;
-		font-weight: 600;
+		font-weight: bold;
 		letter-spacing: 1px; 
 		margin: 0 0 15px;
 		text-transform: uppercase;
@@ -115,19 +115,23 @@
 }
 
 /*--------------------------------------------------------------
-## Categories Widget
+## Archives and Categories Widgets
 --------------------------------------------------------------*/
-.widget_categories .cat-item {
-	color: $color__text-light;
-	margin-bottom: 8px;
+.widget_archive,
+.widget_categories {
+
+	li {
+		color: $color__text-light;
+		margin-bottom: 8px;
 	
-	&:last-of-type {
-		margin-bottom: 0; 
-	} 
+		&:last-of-type {
+			margin-bottom: 0; 
+		} 
 	
-	a {
-		color: $color__text-dark;
-	} 
+		a {
+			color: $color__text-dark;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -257,7 +261,7 @@ aside.widget.widget_tag_cloud .tagcloud {
 	@at-root .site-footer & {
 
 		a:after {
-			background: $color__background-footer;	
+			background: $color__footer-background;	
 		}		
 	}
 }

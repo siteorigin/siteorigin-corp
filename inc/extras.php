@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Custom functions that act independently of the theme templates.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -20,12 +20,20 @@ function siteorigin_corp_body_classes( $classes ) {
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
 	$classes[] = 'no-touch';
-	
 
 	// Non-singlar pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}	
+
+	// Page Settings.
+	$page_settings = siteorigin_page_setting();
+
+	if ( ! empty( $page_settings ) ) {
+		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if ( empty( $page_settings['header_margin'] ) ) $classes[] = 'no-header-margin';
+		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
+	}
 
 	// Responsive layout.
 	$classes[] = 'responsive';

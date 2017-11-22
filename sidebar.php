@@ -9,6 +9,7 @@
  */
 
 if ( ! is_active_sidebar( 'sidebar-main' ) ) return;
+if ( siteorigin_page_setting( 'layout' ) != 'default' ) return;
 ?>
 
 <aside id="secondary" class="widget-area">

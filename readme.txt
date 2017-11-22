@@ -2,10 +2,10 @@
 
 Contributors: siteorigin
 
-Tags: Two columns, right-sidebar, grid-layout, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.7
-Tested up to: 4.8.3
+Tested up to: 4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +43,7 @@ SiteOrigin Corp includes support for the following plugins:
 
 == License ==
 
-SiteOrigin Corp WordPress Theme, Copyright 2017 Puro. SiteOrigin Corp is distributed under the terms of the GNU GPL.
+SiteOrigin Corp WordPress Theme, Copyright 2017 SiteOrigin. SiteOrigin Corp is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -80,6 +80,10 @@ Font released under the SIL OFL 1.1, CSS released under the MIT License
 FitVids, Copyright 2013, [Chris Coyier](http://css-tricks.com) and [Dave Rupert](http://daverupert.com)
 Released under the WTFPL license
 [Source](https://github.com/davatron5000/FitVids.js/)
+
+FlexSlider, Copyright 2012 WooThemes
+Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[Source](http://www.woothemes.com/flexslider/)
 
 FlexSlider, Copyright 2012 WooThemes
 Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)

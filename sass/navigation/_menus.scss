@@ -1,8 +1,6 @@
 .main-navigation {
-	display: table-cell;
 	text-align: right;
-	vertical-align: middle;
-
+		
 	> div {
 		display: inline-block;
 	}
@@ -33,9 +31,20 @@
 				margin: 0;
 				padding: 0;
 				min-width: 100%;
+				
+				a {
+					background: $color__navigation-drop-down-background;
+	    			border-bottom: 1px solid $color__navigation-drop-down-divider;
+	    			color: $color__navigation-drop-down-link;
+	    			font-size: 12px;
+	    			font-weight: normal; 
+	    			max-width: 100%;
+	    			padding: 12px 20px;
+	    			white-space: nowrap;
+				}				
 
 				&:hover > a {
-					color: #fff;
+					color: $color__navigation-drop-down-link-hover;
 				}
 
 				&:hover > ul,
@@ -44,7 +53,7 @@
 				}
 
 				&:first-of-type {
-					border-top: 2px solid $color__accent;
+					border-top: 2px solid $color__navigation_link_accent;
 				}
 
 				&:last-of-type {
@@ -53,16 +62,6 @@
 						border-bottom: none;
 					}
 				}
-			}
-
-			a {
-				background: #262627;
-    			border-bottom: 1px solid #353538;
-    			color: #b2b2b2;
-    			font-size: 12px;
-    			max-width: 100%;
-    			padding: 12px 20px;
-    			white-space: nowrap;
 			}
 		}
 
@@ -84,31 +83,99 @@
 			text-align: left;
 			text-transform: uppercase;
 
-			&.menu-item
-
 			&:last-of-type {
 				margin-right: 0;
 			}
+
+			a {
+				border-bottom: 2px solid $color__header-background;
+				color: $color__navigation-link;
+				display: block;
+				font-weight: bold; 
+				letter-spacing: 1px;
+			}
 		}
 
-		a {
-			border-bottom: 2px solid #fff;
-			color: $color__text-dark;
-			display: block;
-			letter-spacing: 1px;
+		// If a class of 'left' is added to a menu item, break drop down menu items to the left.
+		.left {
+
+			.sub-menu,
+			.children {
+				right: 0; 
+				
+				ul {
+					left: initial;
+					left: auto;
+					right: 100%;   
+				}
+
+				li {
+
+					&:hover > ul,
+					&.focus > ul {
+						left: initial;
+						left: auto;
+						right: 100%;  
+					}			
+				}				
+			}				
 		}
+
+		// If a class of 'left' is added to a sub-menu item, break drop down menu items to the left.
+		.sub-menu .left {
+
+			.sub-menu,
+			.children {
+				left: initial;
+				left: auto;
+				right: 100%;   
+
+				li {
+
+					&:hover > ul,
+					&.focus > ul {
+						left: initial;
+						left: auto;
+						right: 100%;  
+					}			
+				}
+			}					
+		}	
+
+		// If a class of .menu-button is added to a menu item, style it as a button.
+		.menu-button {
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			a {
+				background: $color__accent;
+				border: 0;
+				border-radius: 0;
+				color: #fff;
+				letter-spacing: 1px;
+				line-height: normal;  
+				padding: 11px 25px;
+				text-transform: uppercase;
+				transition: .3s;
+			
+				&:hover {
+					background: rgba($color__accent, .8);
+					color: #fff;
+				}	
+			}		
+		}		
 	}
 
 	// First level items.
 	div > ul > li {
 
 		&:hover > a {
-			border-color: $color__accent;
+			border-color: $color__navigation_link_accent;
 		}
 
 		&.menu-item-has-children:hover > a,
 		&.page_item_has_children:hover > a {
-			border-color: #fff;
+			border-color: $color__header-background;
 		}
 
 		&.current a,
@@ -116,7 +183,7 @@
 		&.current-menu-item > a,
 		&.current_page_ancestor > a,
 		&.current-menu-ancestor > a {
-			border-color: $color__accent;
+			border-color: $color__navigation_link_accent;
 		}
 	}
 
@@ -126,6 +193,7 @@
 		border: none;
 		display: inline-block;
 		outline: none;
+		margin-left: 37px; 
 		padding: 0;
 		position: relative;
 		top: 3px;
@@ -137,7 +205,7 @@
 				width: 17px;
 
 				path {
-					fill: $color__text-dark;
+					fill: $color__navigation-link;
 				}
 			}
 		}
@@ -152,6 +220,12 @@
 				display: none;
 			}
 		}
+	}
+
+	// Customizer.
+	.customize-partial-edit-shortcut {
+		right: 45px;
+		top: -22px;
 	}
 }
 
@@ -169,11 +243,15 @@
 	svg {
 		height: 19px;
 		width: 23px;
+		
+		path {
+			fill: $color__navigation-link;
+		}
 	}
 }
 
 #mobile-navigation {
-	background: #262627;
+	background: $color__navigation-drop-down-background;
 	left: 0;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -196,13 +274,14 @@
 			font-family: $font__headings;
 			font-size: 12px;
 			letter-spacing: 1px;
-			line-height: 3.3;
+			line-height: 3.4;
 			position: relative;
 			width: 100%;
 
 			a {
-				border-bottom: 1px solid #353538;
-				color: #b2b2b2;
+				border-bottom: 1px solid;
+				border-color: $color__navigation-drop-down-divider;
+				color: $color__navigation-drop-down-link;
 				display: block;
 				padding: 0 30px;
 				text-decoration: none;
@@ -210,7 +289,7 @@
 				width: 100% !important;
 
 				&:hover {
-					color: #fff;
+					color: $color__navigation-drop-down-link-hover;
 				}
 			}
 
@@ -220,16 +299,16 @@
 
 			.dropdown-toggle {
 				background: transparent;
-				color: #4d4d4d;
+				color: $color__navigation-drop-down-link;
 				font-size: 14px;
 				padding: 14px;
 				position: absolute;
 				right: 0;
-				top: 0;
+				top: -2px;
 				transition: none;
 
 				&:hover {
-					color: #fff;
+					color: $color__navigation-drop-down-link-hover;
 				}
 
 				&.toggle-open {
@@ -239,7 +318,6 @@
 		}
 
 		ul {
-			background: #18181a;
 			display: none;
 			margin: 0;
 			padding: 0;
@@ -254,10 +332,10 @@
 $sel: '';
 @for $i from 1 through 5 {
 	$sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
-
+	
 	#{$sel} {
     	ul ul li a {
-        	padding-left: 30px * $i;
+        	padding-left: 40px * $i;
       	}
 	}
 }
@@ -325,19 +403,19 @@ $sel: '';
 			font-family: Verdana;
 			padding: 12px 13px;
 		}
-	}
 
-	.dots {
-		border: none;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-		font-size: 13px;
-		padding-right: 0;
-		padding-left: 0;
+		&.dots {
+			border: none;
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+			font-size: 13px;
+			padding-right: 0;
+			padding-left: 0;
 
-		&:hover {
-			background: none;
-			color: $color__text-medium;
-		}
+			&:hover {
+				background: none;
+				color: $color__text-medium;
+			}
+		}		
 	}
 
 	.current {

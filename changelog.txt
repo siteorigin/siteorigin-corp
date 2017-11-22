@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.0 - 22 November 2017 =
+* Added additional page settings.
+* Added post format support for Gallery, Image, Video.
+* Fixed author box image on mobile.
+* Added sticky post meta.
+
 = 0.7 - 01 November 2017 =
 * Added additional theme settings for header, navigation, blog, sidebar and footer.
 * Added SiteOrigin Premium support.

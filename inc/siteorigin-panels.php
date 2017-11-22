@@ -11,7 +11,7 @@
 /**
  * Remove Post Loop widget templates that aren't complete loops.
  */
-function siteorigin_unwind_filter_post_loop_widget( $templates ) {
+function siteorigin_corp_filter_post_loop_widget( $templates ) {
     $disallowed_template_patterns = array(
         'template-parts/content.php',
         'template-parts/content-gallery.php',
@@ -32,4 +32,4 @@ function siteorigin_unwind_filter_post_loop_widget( $templates ) {
     }
     return $templates;	
 }
-add_filter( 'siteorigin_panels_postloop_templates', 'siteorigin_unwind_filter_post_loop_widget', 10, 1 );
+add_filter( 'siteorigin_panels_postloop_templates', 'siteorigin_corp_filter_post_loop_widget', 10, 1 );

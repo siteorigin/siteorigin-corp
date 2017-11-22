@@ -94,6 +94,7 @@ body:not(.single) .hentry {
 	}
 
 	.entry-thumbnail {
+		@include clearfix; 
 		margin-bottom: -1px; 
 	}	
 
@@ -117,10 +118,8 @@ body:not(.single) .hentry {
 	}
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	padding: 25px 0;
+.entry-header {
+	margin-bottom: 25px;
 }
 
 /*--------------------------------------------------------------
@@ -128,7 +127,8 @@ body:not(.single) .hentry {
 --------------------------------------------------------------*/
 .entry-title {
 	color: $color__text-dark;
-	font-size: 1.6em; 
+	font-size: 1.6em;
+	font-weight: 500; 
 	line-height: normal;
 	margin: 0 0 3px;
 	
@@ -196,14 +196,12 @@ body:not(.single) .hentry {
 	display: inline;
 }
 
-.entry-thumbnail,
-.entry-video {
-	margin-bottom: 25px;
-	
-	a {
-		display: block;
-		line-height: 0; 
-	}	
+.entry-thumbnail {
+	line-height: 0; 	
+}
+
+.single .entry-thumbnail {
+	margin-bottom: 25px; 
 }
 
 .more-text {
@@ -312,6 +310,7 @@ body:not(.single) .hentry {
 
 .page-title {
 	font-size: 32px; 
+	font-weight: 500; 
 	line-height: normal;
 	margin: 0;
 }
@@ -325,6 +324,7 @@ body:not(.single) .hentry {
 
 	.page-title {
 		font-size: 24px;
+		font-weight: 500; 
 		text-align: center;
 	}
 
@@ -339,13 +339,16 @@ body:not(.single) .hentry {
 	}
 }
 
+
+
 /*--------------------------------------------------------------
 ## Search Form
 --------------------------------------------------------------*/
 .search-form {
 
 	input[type="search"] {
-		padding-right: 43px; 
+		padding-right: 43px;
+		min-width: 100px; 
 	}
 
 	button[type="submit"] {
@@ -396,14 +399,21 @@ body:not(.single) .hentry {
 			width: 100px;
 			
 			@media (max-width: 480px) {
-				margin: 0 auto 15px;
+				height: 80px;
+				margin: 0 0 15px;
+				width: 80px;				
 			}			
 		}
 	}
 
 	.author-description {
 		display: table-cell;
-		vertical-align: top;		
+		vertical-align: top;
+		
+		@media (max-width: 480px) {
+			display: block;
+			width: 100%; 
+		}					
 	
 		h3 {
 			font-size: 15px;
@@ -500,7 +510,7 @@ body:not(.single) .hentry {
 
 			.related-post-title {
 				font-size: 16px; 
-				font-weight: normal; 
+				font-weight: 500; 
 				line-height: normal;
 				margin: 0 0 3px;
 				transition: .3s;

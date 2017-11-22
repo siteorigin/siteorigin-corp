@@ -1,18 +1,45 @@
-// Background colors.
+// Background.
 $color__background-body: #f9f9f9;
-$color__background-footer: #363a43;
-$color__background-bottom-bar: #2f333b;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-// Border colors.
+// Border.
 $color__background-hr: #e6e6e6;
 $color__background-hr-dark: #d6d6d6;
 
-// Accent color.
+// Accent.
 $color__accent: #f14e4e;
 
-// Text colors.
+// Text.
 $color__text-light: #929292;
 $color__text-medium: #626262;
 $color__text-dark: #2d2d2d;
+
+// Heading.
+$color__header-background: #fff;
+$color__header-border: #e6e6e6;
+
+// Navigation.
+$color__navigation-link: #2d2d2d;
+$color__navigation_link_accent: #f14e4e;
+$color__navigation-drop-down-background: #262627;
+$color__navigation-drop-down-divider: #353538;
+$color__navigation-drop-down-link: #b2b2b2;
+$color__navigation-drop-down-link-hover: #ffffff;
+$color__navigation-search-overlay_text: #b2b2b2;
+$color__navigation-search-overlay-background: #090d14;
+
+// Typography.
+$color__site_title: #2d2d2d;
+$color__site_tagline: #929292;
+
+// Footer.
+$color__footer-widget-title: #ffffff;
+$color__footer-widget-text: #b4b5b8;
+$color__footer-widget-link: #ffffff;
+$color__footer-widget-link-hover: #b4b5b8;
+$color__footer-background: #363a43;
+$color__bottom-bar-text: #b4b5b8;
+$color__bottom-bar-link: #b4b5b8;
+$color__bottom-bar-link-hover: #ffffff;
+$color__bottom-bar-background: #2f333b;

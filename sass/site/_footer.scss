@@ -1,10 +1,14 @@
 .site-footer {
-	background: $color__background-footer;	
-	margin-top: 80px;
+	background: $color__footer-background;	
+	margin-top: $footer__margin;
+	
+	.no-footer-margin & {
+		margin-top: 0;
+	}		
 	
 	.widgets {
 		@include clearfix;
-		padding-top: 95px;
+		padding-top: $footer__padding;
 		width: 100%; 
 
 		@for $i from 1 through 10 {
@@ -20,20 +24,20 @@
 			float: left;
 			
 			.widget-title {
-				color: #fff;
+				color: $color__footer-widget-title;
 				font-size: 1.0666em;
-				font-weight: normal;	 
+				font-weight: 500; 
 			}
 
 			~ * {
-				color: #b4b5b8;
+				color: $color__footer-widget-text;
 			}
 
 			a {
-				color: #fff;
+				color: $color__footer-widget-link;
 				
 				&:hover {
-					color: #b4b5b8;
+					color: $color__footer-widget-link-hover;
 				}
 			}
 
@@ -62,8 +66,8 @@
 	}
 
 	.bottom-bar {
-		background: $color__background-bottom-bar;
-		color: #b4b5b8;
+		background: $color__bottom-bar-background;
+		color: $color__bottom-bar-text;
 		overflow: auto;
 		padding: 25px 0;
 
@@ -74,10 +78,10 @@
 		}	
 
 		a {
-			color: #b4b5b8;
+			color: $color__bottom-bar-link;
 			
 			&:hover {
-				color: #fff;
+				color: $color__bottom-bar-link-hover;
 			}
 		}
 	}	

@@ -1,5 +1,3 @@
-$sidebar__width: 34%;
-
 .corp-container {
 	margin: 0 auto;
 	max-width: none; 
@@ -42,7 +40,7 @@ $sidebar__width: 34%;
 	}
 }
 // No Sidebar page layout setting.
-.page-layout-no-sidebar .content-area {
+.page-layout-no-sidebar .site-content .content-area {
 	float: none;
 	width: 100%; 
 }
@@ -50,16 +48,16 @@ $sidebar__width: 34%;
 // Full Width page layout setting.
 .page-layout-full-width-no-sidebar {
 
-	.content-area {
+	.site-content .content-area {
 		float: none;
 		width: 100%; 
 	}
 
-	.site-content .polestar-container {
+	.site-content .corp-container {
 		max-width: none;
 		padding: 0;  
 	}
-} 
+}
 
 // Sidebar.
 .widget-area {

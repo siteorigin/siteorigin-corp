@@ -1,5 +1,5 @@
 #fullscreen-search {
-	background: rgba(9, 13, 20, 0.95);
+	background: rgba($color__navigation-search-overlay-background, .95);
 	display: none;
 	left: 0;
 	position: fixed;
@@ -11,7 +11,7 @@
 	}
 
 	h3 {
-		color: #b2b2b2;
+		color: $color__navigation-search-overlay_text;
 		font-family: $font__main;
 		font-size: 20px;
 		font-weight: 300;
@@ -30,7 +30,7 @@
 	}
 
 	form {
-		border-bottom: 1px solid #b2b2b2;
+		border-bottom: 1px solid $color__navigation-search-overlay_text;
 		left: 50%;
 		max-width: 555px;
 		position: absolute;
@@ -68,7 +68,7 @@
 			}
 
 			svg {
-				fill: $color__text-light;
+				fill: $color__navigation-search-overlay_text;
 				height: 23px;
 				width: 23px;
 
@@ -97,7 +97,7 @@
 				width: 24px;
 				
 				path {
-					fill: $color__text-light;
+					fill: $color__navigation-search-overlay_text;
 				}
 			}
 		}

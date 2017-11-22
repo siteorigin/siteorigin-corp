@@ -1,11 +1,11 @@
 <?php
 /**
- * siteorigin-corp functions and definitions
+ * Siteorigin Corp functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 define( 'SITEORIGIN_THEME_VERSION', 'dev' );
@@ -55,14 +55,14 @@ function siteorigin_corp_setup() {
 	/*
 	 * Enable support for the custom logo.
 	 */
-	add_theme_support( 'custom-logo' );			
+	add_theme_support( 'custom-logo' );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
 		'menu-2' => esc_html__( 'Footer Menu', 'siteorigin-corp' )
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -74,6 +74,16 @@ function siteorigin_corp_setup() {
 		'caption',
 	) );
 
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'gallery',
+		'image',
+		'video',
+	) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'siteorigin_corp_custom_background_args', array(
 		'default-color' => 'f9f9f9',
@@ -82,6 +92,9 @@ function siteorigin_corp_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add theme support for SiteOrigin Page Template Settings.
+	add_theme_support( 'siteorigin-template-settings' );
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_corp_setup' );
@@ -146,32 +159,30 @@ function siteorigin_corp_scripts() {
 	wp_enqueue_style( 'siteorigin-corp-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );
 
 	// FitVids.
+	wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+
 	if ( ! class_exists( 'Jetpack' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'jquery-fitvids' );
 	}
 
 	// Flexslider.
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
-	
-	if ( ( function_exists( 'is_woocommerce' ) && is_product() ) ) {
+
+	if ( is_single() && has_post_format( 'gallery' ) ) {
 		wp_enqueue_script( 'jquery-flexslider' );
 	}
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
-	
+
 	// Mobile menu collapse localisation.
-	$menu_params = array( 
+	$menu_params = array(
 		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
-	);	
-	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );  	
+	);
+	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );
 
 	// Theme icons.
-	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );  	
-
-	// Google Fonts.
-	wp_enqueue_style( 'google-font-montserrat', '//fonts.googleapis.com/css?family=Montserrat:400,700' );	
-	wp_enqueue_style( 'google-font-raleway', '//fonts.googleapis.com/css?family=Open+Sans' );	
+	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );
 
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-corp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
@@ -182,6 +193,13 @@ function siteorigin_corp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
+
+/**
+ * Enqueue Flexslider.
+ */
+function siteorigin_corp_enqueue_flexslider() {
+	wp_enqueue_script( 'jquery-flexslider' );
+}
 
 if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
 /**
@@ -244,5 +262,5 @@ if ( function_exists( 'is_woocommerce' ) ) {
 	require get_template_directory() . '/woocommerce/functions.php';
 }
 
-/* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
+/* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process.
 If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
