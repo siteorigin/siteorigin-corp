@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.0 - 21 November 2017 =
+= 1.0 - 22 November 2017 =
 * Added additional page settings.
 * Added post format support for Gallery, Image, Video.
 * Fixed author box image on mobile.
