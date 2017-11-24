@@ -2157,7 +2157,6 @@ body:not(.single) .hentry {
   margin-top: 0;
   padding: 0; }
 
-/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
@@ -2234,6 +2233,9 @@ object {
     position: absolute;
     text-align: center;
     width: 100%; }
+    @media (max-width: 480px) {
+      .flexslider .flex-control-nav {
+        display: none; } }
     .flexslider .flex-control-nav li {
       display: inline-block;
       margin: 0 5px; }
@@ -2299,7 +2301,8 @@ object {
     background-color: #626262;
     background-position: center;
     background-size: cover;
-    height: 520px; }
+    height: 500px;
+    position: relative; }
     @media (max-width: 768px) {
       .featured-posts-slider .slides .slide {
         height: 380px; } }
@@ -2307,52 +2310,42 @@ object {
       .featured-posts-slider .slides .slide {
         height: 155px; } }
     .featured-posts-slider .slides .slide .overlay a {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.3);
       display: block;
       height: 100%;
       position: absolute;
       width: 100%; }
     .featured-posts-slider .slides .slide .slide-content {
       text-align: center;
-      padding: 160px 10% 0;
+      margin-top: -37.5px;
       position: absolute;
+      top: 50%;
       width: 100%;
       z-index: 3; }
-      @media (max-width: 768px) {
-        .featured-posts-slider .slides .slide .slide-content {
-          padding-top: 80px; } }
       @media (max-width: 480px) {
         .featured-posts-slider .slides .slide .slide-content {
-          padding-top: 30px; } }
-      .widget_siteorigin-panels-postloop .featured-posts-slider .slides .slide .slide-content {
-        padding: 15% 10%; }
+          margin-top: -15.5px; } }
+      .featured-posts-slider .slides .slide .slide-content .entry-meta span {
+        color: #fff;
+        margin-bottom: 20px; }
+        @media (max-width: 480px) {
+          .featured-posts-slider .slides .slide .slide-content .entry-meta span {
+            display: none; } }
+        .featured-posts-slider .slides .slide .slide-content .entry-meta span a:hover {
+          color: #fff; }
       .featured-posts-slider .slides .slide .slide-content .entry-title {
         font-size: 46px;
+        font-weight: normal;
         margin-bottom: 0;
         position: relative;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         z-index: 3; }
         @media (max-width: 768px) {
           .featured-posts-slider .slides .slide .slide-content .entry-title {
-            font-size: 41px;
-            line-height: 1.1;
-            margin-bottom: 10px; } }
+            font-size: 41px; } }
         @media (max-width: 480px) {
           .featured-posts-slider .slides .slide .slide-content .entry-title {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
-          .featured-posts-slider .slides .slide .slide-content .entry-title a:hover {
-            color: rgba(255, 255, 255, 0.8); }
-      .featured-posts-slider .slides .slide .slide-content .entry-excerpt {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 18px;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
-        @media (max-width: 768px) {
-          .featured-posts-slider .slides .slide .slide-content .entry-excerpt {
-            font-size: 16px; } }
-        @media (max-width: 480px) {
-          .featured-posts-slider .slides .slide .slide-content .entry-excerpt {
-            display: none; } }
 
 /*# sourceMappingURL=sass/maps/style.css.map */

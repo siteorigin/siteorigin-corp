@@ -365,6 +365,44 @@ function siteorigin_corp_footer_text() {
 }
 endif;
 
+/**
+ * Add a filter for Jetpack Featured Content.
+ */
+function siteorigin_corp_get_featured_posts() {
+	return apply_filters( 'siteorigin_corp_get_featured_posts', array() );
+}
+
+/**
+ * Check the Jetpack Featured Content.
+ */
+function siteorigin_corp_has_featured_posts( $minimum = 1 ) {
+	if ( is_paged() )
+		return false;
+
+	$minimum = absint( $minimum );
+	$featured_posts = apply_filters( 'siteorigin_corp_get_featured_posts', array() );
+
+	if ( ! is_array( $featured_posts ) )
+		return false;
+
+	if ( $minimum > count( $featured_posts ) )
+		return false;
+
+	return true;
+}
+
+if ( ! function_exists( 'siteorigin_corp_display_featured_posts' ) ) :
+/**
+ * Output the Jetpack Featured Content.
+ */
+function siteorigin_corp_display_featured_posts() {
+	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
+		get_template_part( 'template-parts/featured', 'slider' );
+	}
+}
+endif;
+add_action( 'siteorigin_corp_content_before', 'siteorigin_corp_display_featured_posts' );
+
 if ( ! function_exists( 'siteorigin_corp_strip_gallery' ) ) :
 /**
  * Remove gallery.

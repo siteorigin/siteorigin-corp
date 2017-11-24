@@ -73,6 +73,10 @@
 		text-align: center;
 	  	width: 100%;
 	  	
+		@media (max-width: 480px) {
+			display: none;
+		}			  	
+	  	
 	  	li {
 	  		display: inline-block;
 	  		margin: 0 5px;

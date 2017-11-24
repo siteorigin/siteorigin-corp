@@ -16,6 +16,11 @@
  */
 function siteorigin_corp_body_classes( $classes ) {
 
+	// Header margin.
+	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
+		$classes[] = 'no-header-margin';
+	}	
+
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
@@ -33,7 +38,7 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
 		if ( empty( $page_settings['header_margin'] ) ) $classes[] = 'no-header-margin';
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
-	}
+	}	
 
 	// Responsive layout.
 	$classes[] = 'responsive';

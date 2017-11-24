@@ -168,7 +168,7 @@ function siteorigin_corp_scripts() {
 	// Flexslider.
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 
-	if ( is_single() && has_post_format( 'gallery' ) ) {
+	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
 		wp_enqueue_script( 'jquery-flexslider' );
 	}
 

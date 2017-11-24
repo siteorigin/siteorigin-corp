@@ -16,6 +16,15 @@
  */
 function siteorigin_corp_jetpack_setup() {
 	/*
+	 * Enable support for Jetpack Featured Content.
+	 * See https://jetpack.com/support/featured-content/
+	 */
+	add_theme_support( 'featured-content', array(
+		'filter'     => 'siteorigin_corp_get_featured_posts',
+		'post_types' => array( 'post' ),
+	) );
+
+	/*
 	 * Enable support for Jetpack Infinite Scroll.
 	 * See https://jetpack.com/support/infinite-scroll/
 	 */
