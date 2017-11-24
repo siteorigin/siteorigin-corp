@@ -20,21 +20,21 @@
 	}
 	
 	.flex-direction-nav a {
+		background: rgba(0, 0, 0, .5);
 		cursor: pointer;
 		display: block;
-		margin-top: -12.5px; 
+		height: 48px; 
+		margin-top: -24px; 
 		opacity: 0;
 		position: absolute;
 		text-align: center;
 		top: 50%;
 		transition: all .3s ease-in-out;
+		width: 48px; 
 		z-index: 10;
 		
 		&:hover {
-			
-			svg path {
-				fill: rgba(255, 255, 255, .9);
-			}
+			background: rgba(0, 0, 0, .7);
 		}
 		
 		@at-root .flexslider:hover .flex-direction-nav a {
@@ -42,11 +42,11 @@
 		}
 
 		&.flex-prev {
-			left: 20px; 
+			left: 0; 
 		}		
 			
 		&.flex-next {
-			right: 20px;
+			right: 0;
 		}
 
 		&:focus {
@@ -54,18 +54,19 @@
 		}
 
 		svg {
-			height: 27px;
-			width: auto;
+			height: 20px;
+			margin-top: 14px;
+			width: 11px;
 						
 			path {
-				fill: rgba(255, 255, 255, .6);
+				fill: #fff;
 				transition: .3s; 
 			}
 		}
 	}
 
 	.flex-control-nav {
-		bottom: 15px;
+		bottom: 30px;
 		margin: 0;
 		padding: 0;
 		position: absolute;
