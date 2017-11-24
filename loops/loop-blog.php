@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Blog
+ * Loop Name: Blog Grid
  *
  * @package siteorigin-corp
  * @license GPL 2.0 
