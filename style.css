@@ -2167,17 +2167,18 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  font-size: 14px;
+  color: #929292;
+  font-size: 13px;
   max-width: 100%; }
   .wp-caption img[class*="wp-image-"] {
     display: block;
     margin-left: auto;
     margin-right: auto; }
   .wp-caption .wp-caption-text {
-    margin: 12px 0; }
+    margin: 14px 0; }
 
 .wp-caption-text {
-  text-align: center; }
+  text-align: left; }
 
 /*--------------------------------------------------------------
 ## - FlexSlider

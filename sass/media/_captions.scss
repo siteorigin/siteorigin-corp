@@ -1,5 +1,6 @@
 .wp-caption {
-	font-size: 14px; 
+	color: $color__text-light; 
+	font-size: 13px; 
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -7,10 +8,10 @@
 	}
 
 	.wp-caption-text {
-		margin: 12px 0;
+		margin: 14px 0;
 	}
 }
 
 .wp-caption-text {
-	text-align: center;
+	text-align: left;
 }
