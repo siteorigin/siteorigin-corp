@@ -14,7 +14,7 @@
 		
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
-			font-size: .9333em;
+			font-size: 14px;
 		}		
 	}
 
@@ -43,15 +43,22 @@
 /*--------------------------------------------------------------
 ## Calendar Widgets
 --------------------------------------------------------------*/
+.calendar_wrap {
+	background: #fff;
+	border: 1px solid $color__background-hr;
+	padding-left: 6px;
+}
+
 .widget #wp-calendar {
 	border: 0;
+	font-size: 13px; 
 	margin: 0;
 	
 	caption {
 		color: $color__text-dark;
-		font-weight: bold; 
+		font-size: 14px; 
 		font-weight: 600;
-		text-align: left;
+		padding-top: 14px; 
 	}
 
 	tr:nth-child(2n+2) {
@@ -65,14 +72,13 @@
 	}
 
 	thead {
-		border-bottom: 2px solid $color__background-hr;
 
 		tr {
 			background: none;
 		}
 
 		th {
-			padding: 8px 0;
+			padding: 13px 0 8px;
 			text-align: center;
 		}
 	}
@@ -83,21 +89,25 @@
 			background: none;
 		}
 
-		tr:first-of-type td {
-			padding-top: 8px;
-		}
-
 		td { 
 			padding-bottom: 8px;
 			text-align: center;
-		}		
+			
+			a {
+				color: $color__accent;
+
+				&:hover {
+					color: $color__text-medium;
+				}				
+			}			
+		}			
 	}
 	
 	tfoot {
 
 		#prev, 
 		#next {
-			padding-top: 4px; 
+			padding: 4px 20px 17px; 
 			
 			a {
 				color: $color__text-dark;

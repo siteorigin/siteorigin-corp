@@ -554,7 +554,7 @@ a {
           padding: 12px 20px;
           white-space: nowrap; }
         .main-navigation ul ul li:hover > a {
-          color: #ffffff; }
+          color: #fff; }
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -710,7 +710,7 @@ a {
         text-transform: uppercase;
         width: 100% !important; }
         #mobile-navigation ul li a:hover {
-          color: #ffffff; }
+          color: #fff; }
       #mobile-navigation ul li.menu-item-has-children > a {
         padding-right: 40px; }
       #mobile-navigation ul li .dropdown-toggle {
@@ -723,7 +723,7 @@ a {
         top: -2px;
         transition: none; }
         #mobile-navigation ul li .dropdown-toggle:hover {
-          color: #ffffff; }
+          color: #fff; }
         #mobile-navigation ul li .dropdown-toggle.toggle-open {
           transform: rotate(-180deg); }
     #mobile-navigation ul ul {
@@ -1119,7 +1119,7 @@ a {
   text-transform: uppercase; }
   .widget-area .widget .widget-title ~ *,
   .site-footer .widget .widget-title ~ * {
-    font-size: .9333em; }
+    font-size: 14px; }
 
 .widget-area .widget a,
 .site-footer .widget a {
@@ -1143,37 +1143,43 @@ a {
 /*--------------------------------------------------------------
 ## Calendar Widgets
 --------------------------------------------------------------*/
+.calendar_wrap {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding-left: 6px; }
+
 .widget #wp-calendar {
   border: 0;
+  font-size: 13px;
   margin: 0; }
   .widget #wp-calendar caption {
     color: #2d2d2d;
-    font-weight: bold;
+    font-size: 14px;
     font-weight: 600;
-    text-align: left; }
+    padding-top: 14px; }
   .widget #wp-calendar tr:nth-child(2n+2) {
     background: none; }
   .widget #wp-calendar th,
   .widget #wp-calendar td {
     border: 0;
     padding: 0; }
-  .widget #wp-calendar thead {
-    border-bottom: 2px solid #e6e6e6; }
-    .widget #wp-calendar thead tr {
-      background: none; }
-    .widget #wp-calendar thead th {
-      padding: 8px 0;
-      text-align: center; }
+  .widget #wp-calendar thead tr {
+    background: none; }
+  .widget #wp-calendar thead th {
+    padding: 13px 0 8px;
+    text-align: center; }
   .widget #wp-calendar tbody .pad {
     background: none; }
-  .widget #wp-calendar tbody tr:first-of-type td {
-    padding-top: 8px; }
   .widget #wp-calendar tbody td {
     padding-bottom: 8px;
     text-align: center; }
+    .widget #wp-calendar tbody td a {
+      color: #f14e4e; }
+      .widget #wp-calendar tbody td a:hover {
+        color: #626262; }
   .widget #wp-calendar tfoot #prev,
   .widget #wp-calendar tfoot #next {
-    padding-top: 4px; }
+    padding: 4px 20px 17px; }
     .widget #wp-calendar tfoot #prev a,
     .widget #wp-calendar tfoot #next a {
       color: #2d2d2d; }
@@ -2107,7 +2113,7 @@ body:not(.single) .hentry {
       margin: 0 2.75% 95px 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
-        color: #ffffff;
+        color: #fff;
         font-size: 1.0666em;
         font-weight: 500; }
       .site-footer .widgets .widget ~ * {
@@ -2144,7 +2150,7 @@ body:not(.single) .hentry {
     .site-footer .bottom-bar a {
       color: #b4b5b8; }
       .site-footer .bottom-bar a:hover {
-        color: #ffffff; }
+        color: #fff; }
 
 /*--------------------------------------------------------------
 # Media
