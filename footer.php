@@ -58,7 +58,7 @@
 					if ( has_nav_menu( 'menu-2' ) || ! empty( $widget['networks'] ) ) : ?>
 					<div class="footer-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'depth' => 1, 'fallback_cb' => '' ) ); ?>
-		            	<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
+						<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
 		                		the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); 
 		                	} 
 		                ?>					
