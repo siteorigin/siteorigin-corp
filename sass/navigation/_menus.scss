@@ -40,7 +40,7 @@
 	    			font-weight: normal; 
 	    			max-width: 100%;
 	    			padding: 12px 20px;
-	    			white-space: nowrap;
+	    			white-space: nowrap;    			
 				}				
 
 				&:hover > a {
@@ -88,11 +88,15 @@
 			}
 
 			a {
-				border-bottom: 2px solid $color__header-background;
+				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
 				font-weight: bold; 
 				letter-spacing: 1px;
+
+				.overlap-light & {
+					color: #fff; 
+				}					
 			}
 		}
 
@@ -206,6 +210,10 @@
 
 				path {
 					fill: $color__navigation-link;
+					
+					.overlap-light & {
+						fill: #fff; 
+					}						
 				}
 			}
 		}
@@ -246,6 +254,10 @@
 		
 		path {
 			fill: $color__navigation-link;
+			
+			.overlap-light & {
+				fill: #fff; 
+			}						
 		}
 	}
 }

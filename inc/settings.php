@@ -1046,12 +1046,22 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		),
 	);
 
+	$settings['overlap'] = array(
+		'type'    => 'select',
+		'label'   => esc_html__( 'Header Overlap', 'siteorigin-corp' ),
+		'options' => array(
+			'disabled'			=> esc_html__( 'Disabled', 'siteorigin-corp' ),
+			'light'		=> esc_html__( 'Enabled - Light Text', 'siteorigin-corp' ),
+			'dark'		=> esc_html__( 'Enabled - Dark Text', 'siteorigin-corp' ),
+		),
+	);
+
 	$settings['header_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
 		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-corp' )
-	);	
+	);
 
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
@@ -1083,6 +1093,7 @@ add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 )
  */
 function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
 	$defaults['layout']                 = 'default';
+	$defaults['overlap']                = 'default';
 	$defaults['header_margin']        	= true;
 	$defaults['page_title']             = true;
 	$defaults['footer_margin']          = true;

@@ -7,6 +7,12 @@
 	width: 100%;
 	z-index: 999;
 	
+	body[class*="overlap-"] & {
+		background: transparent;
+		border: none;
+		position: absolute;
+	}
+	
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
@@ -65,7 +71,11 @@
 			margin: 0;
 			
 			a {
-				color: $color__site_title; 
+				color: $color__site_title;
+				
+				.overlap-light & {
+					color: #fff; 
+				}									
 			}
 		}
 

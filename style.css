@@ -580,11 +580,13 @@ a {
       .main-navigation ul li:last-of-type {
         margin-right: 0; }
       .main-navigation ul li a {
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid transparent;
         color: #2d2d2d;
         display: block;
         font-weight: bold;
         letter-spacing: 1px; }
+        .overlap-light .main-navigation ul li a {
+          color: #fff; }
     .main-navigation ul .left .sub-menu,
     .main-navigation ul .left .children {
       right: 0; }
@@ -653,6 +655,8 @@ a {
       width: 17px; }
       .main-navigation .search-toggle .open svg path {
         fill: #2d2d2d; }
+        .overlap-light .main-navigation .search-toggle .open svg path {
+          fill: #fff; }
     .main-navigation .search-toggle .close {
       display: none; }
     .main-navigation .search-toggle.close-search .open {
@@ -676,6 +680,8 @@ a {
     width: 23px; }
     #mobile-menu-button svg path {
       fill: #2d2d2d; }
+      .overlap-light #mobile-menu-button svg path {
+        fill: #fff; }
 
 #mobile-navigation {
   background: #262627;
@@ -1365,6 +1371,10 @@ a {
   position: relative;
   width: 100%;
   z-index: 999; }
+  body[class*="overlap-"] .site-header {
+    background: transparent;
+    border: none;
+    position: absolute; }
   .no-header-margin .site-header {
     margin-bottom: 0; }
   .topbar-out .site-header {
@@ -1406,6 +1416,8 @@ a {
       margin: 0; }
       .site-header .site-branding .site-title a {
         color: #2d2d2d; }
+        .overlap-light .site-header .site-branding .site-title a {
+          color: #fff; }
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
