@@ -331,6 +331,14 @@ function siteorigin_corp_settings_init() {
 					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
+				'social_widget' => array(
+					'type' => 'widget',
+					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
+					'bundle_widget' => 'social-media-buttons',
+					'plugin' => 'so-widgets-bundle',
+					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Add social icons to bottom bar menu.', 'siteorigin-corp' ),
+				),				
 				'widget_title' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Title Color', 'siteorigin-corp' ),

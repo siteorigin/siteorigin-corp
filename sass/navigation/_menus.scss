@@ -499,16 +499,17 @@ $sel: '';
 ## Footer Menu
 --------------------------------------------------------------*/
 .footer-menu {
-	float: right;
 	font-size: 13px;
 	text-align: right;
-	width: 70%;
 
 	@media (max-width: 768px) {
-		float: none;
 		padding-top: 15px;
 		text-align: center;
 		width: 100%;
+	}
+
+	> div {
+		display: inline-block;
 	}
 
 	.menu {
