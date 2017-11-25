@@ -640,11 +640,17 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.widget-area .widget a:hover,.site-footer .widget a:hover {
 	color: ${typography_accent};
 	}
+	.calendar_wrap {
+	border: 1px solid ${typography_border};
+	}
 	.widget #wp-calendar caption {
 	color: ${typography_heading};
 	}
-	.widget #wp-calendar thead {
-	border-bottom: 2px solid ${typography_border};
+	.widget #wp-calendar tbody td a {
+	color: ${typography_accent};
+	}
+	.widget #wp-calendar tbody td a:hover {
+	color: ${typography_text};
 	}
 	.widget #wp-calendar tfoot #prev a,.widget #wp-calendar tfoot #next a {
 	color: ${typography_heading};
@@ -878,6 +884,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.site-footer .bottom-bar a:hover {
 	color: ${footer_bottom_bar_link_hover};
+	}
+	.wp-caption {
+	color: ${typography_secondary_text};
 	}
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
