@@ -7,7 +7,7 @@
 	width: 100%;
 	z-index: 999;
 	
-	body[class*="overlap-"] & {
+	body[class*="overlap-"] &:not(.stuck) {
 		background: transparent;
 		border: none;
 		position: absolute;
@@ -106,6 +106,10 @@
 // Sticky header sentinel.
 .masthead-sentinel {
 	margin-bottom: 60px;
+	
+	body[class*="overlap-"] & {
+		display: none;
+	}
 	
 	.no-header-margin & {
 		margin-bottom: 0;

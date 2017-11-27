@@ -1050,7 +1050,8 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		'type'    => 'select',
 		'label'   => esc_html__( 'Header Overlap', 'siteorigin-corp' ),
 		'options' => array(
-			'disabled'			=> esc_html__( 'Disabled', 'siteorigin-corp' ),
+			'disabled'	=> esc_html__( 'Disabled', 'siteorigin-corp' ),
+			'enabled'	=> esc_html__( 'Enabled', 'siteorigin-corp' ),
 			'light'		=> esc_html__( 'Enabled - Light Text', 'siteorigin-corp' ),
 			'dark'		=> esc_html__( 'Enabled - Dark Text', 'siteorigin-corp' ),
 		),
