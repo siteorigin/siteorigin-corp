@@ -14,7 +14,7 @@
 			opacity: 0;
 			position: absolute;
 			text-align: left;
-			top: 16px;
+			top: 20px;
 			transform: scale(0.95);
 			transition: all 0.15s ease-in;
 			transform-origin: center top;
@@ -93,6 +93,7 @@
 				display: block;
 				font-weight: bold; 
 				letter-spacing: 1px;
+				padding-bottom: 4px; 
 
 				.overlap-light & {
 					color: #fff; 

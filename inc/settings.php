@@ -1094,7 +1094,7 @@ add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 )
 function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
 	$defaults['layout']                 = 'default';
 	$defaults['overlap']                = 'default';
-	$defaults['header_margin']        	= true;
+	$defaults['header_margin']			= true;
 	$defaults['page_title']             = true;
 	$defaults['footer_margin']          = true;
 	$defaults['footer_widgets'] 		= true;
