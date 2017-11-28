@@ -17,23 +17,20 @@
 		margin-bottom: 0;
 	}
 	
-	@at-root {
-
-		.topbar-out & {
-			@include clearfix;
-			top: 0;
-			left: 0;
-			width: 100%;
-		}
-
-		.topbar-out.admin-bar & {
-			top: 32px;
-
-			@media (max-width: 782px) {
-				top: 46px;
-			}
-		}		
+	.topbar-out & {
+		@include clearfix;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
+
+	.topbar-out.admin-bar & {
+		top: 32px;
+
+		@media (max-width: 782px) {
+			top: 46px;
+		}
+	}		
 	
 	@media (max-width: 600px) {
 
@@ -75,7 +72,11 @@
 				
 				.overlap-light & {
 					color: #fff; 
-				}									
+				}
+
+				.overlap-dark & {
+					color: #2d2d2d;
+				}													
 			}
 		}
 
@@ -95,6 +96,14 @@
 			font-size: 13px; 
 			line-height: normal;
 			margin: -3px 0 0; 
+			
+			.overlap-light & {
+				color: #fff; 
+			}
+
+			.overlap-dark & {
+				color: #2d2d2d;
+			}				
 		}
 
 		> * {

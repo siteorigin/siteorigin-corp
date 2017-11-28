@@ -1423,6 +1423,8 @@ a {
         color: #2d2d2d; }
         .overlap-light .site-header .site-branding .site-title a {
           color: #fff; }
+        .overlap-dark .site-header .site-branding .site-title a {
+          color: #2d2d2d; }
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
@@ -1435,6 +1437,10 @@ a {
       font-size: 13px;
       line-height: normal;
       margin: -3px 0 0; }
+      .overlap-light .site-header .site-branding .site-description {
+        color: #fff; }
+      .overlap-dark .site-header .site-branding .site-description {
+        color: #2d2d2d; }
     .site-header .site-branding > * {
       transform-origin: left center; }
 
