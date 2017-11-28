@@ -528,7 +528,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.main-navigation ul ul li a {
 	background: ${navigation_drop_down_background};
-	border-bottom: 1px solid ${navigation_drop_down_divider};
+	border-color: ${navigation_drop_down_divider};
 	color: ${navigation_drop_down_link};
 	}
 	.main-navigation ul ul li:hover > a {
@@ -541,20 +541,16 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.font( ${typography_heading_font} );
 	}
 	.main-navigation ul li a {
-	border-bottom: 2px solid ${header_background};
 	color: ${navigation_link};
 	}
-	.main-navigation ul .menu-button a {
+	#site-navigation.main-navigation ul .menu-button a {
 	background: ${typography_accent};
 	}
-	.main-navigation ul .menu-button a:hover {
+	#site-navigation.main-navigation ul .menu-button a:hover {
 	background: .rgba( ${typography_accent}, .8);
 	}
 	.main-navigation div > ul > li:hover > a {
 	border-color: ${navigation_link_accent};
-	}
-	.main-navigation div > ul > li.menu-item-has-children:hover > a,.main-navigation div > ul > li.page_item_has_children:hover > a {
-	border-color: ${header_background};
 	}
 	.main-navigation div > ul > li.current a,.main-navigation div > ul > li.current_page_item > a,.main-navigation div > ul > li.current-menu-item > a,.main-navigation div > ul > li.current_page_ancestor > a,.main-navigation div > ul > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
