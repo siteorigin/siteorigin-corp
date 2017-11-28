@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.1 - 28 November 2017 =
+* Additional styling for the post format gallery slider.
+* Updated image caption styling.
+* Updated Calendar widget styling.
+* Added a posts slider loop for use in the Page Builder Post Loop widget.
+* Added posts slider support for Jetpack Featured Content.
+* Added bottom bar social widget support.
+* Added a header overlap page setting.
+
 = 1.0 - 22 November 2017 =
 * Added additional page settings.
 * Added post format support for Gallery, Image, Video.
