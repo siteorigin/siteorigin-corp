@@ -1398,6 +1398,8 @@ a {
   @media (max-width: 600px) {
     .admin-bar .site-header.sticky.stuck {
       top: 0; } }
+  .topbar-out.site-header {
+    transition: background 500ms ease; }
   .site-header.stuck {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
   .site-header .site-header-inner {

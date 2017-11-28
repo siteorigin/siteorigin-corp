@@ -39,6 +39,10 @@
 		}						
 	}	
 
+	@at-root .topbar-out#{&} {
+		transition: background 500ms ease;
+	}
+
 	// A class added after scroll.
 	&.stuck {
     	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);	
