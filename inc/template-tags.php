@@ -142,8 +142,8 @@ function siteorigin_corp_display_icon( $type ) {
 		<?php break;
 
 		case 'left-arrow' : ?>
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="28" viewBox="0 0 21 28">
-				<path d="M18.297 4.703l-8.297 8.297 8.297 8.297c0.391 0.391 0.391 1.016 0 1.406l-2.594 2.594c-0.391 0.391-1.016 0.391-1.406 0l-11.594-11.594c-0.391-0.391-0.391-1.016 0-1.406l11.594-11.594c0.391-0.391 1.016-0.391 1.406 0l2.594 2.594c0.391 0.391 0.391 1.016 0 1.406z"></path>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
+				<path fill="#fff" d="M18.284 29.705l-2.284 2.285-15.99-15.99 15.99-15.99 2.284 2.285-13.705 13.705z"></path>
 			</svg>
 		<?php break;			
 
@@ -154,8 +154,8 @@ function siteorigin_corp_display_icon( $type ) {
 		<?php break;
 
 		case 'right-arrow' : ?>
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="28" viewBox="0 0 19 28">
-				<path d="M17.297 13.703l-11.594 11.594c-0.391 0.391-1.016 0.391-1.406 0l-2.594-2.594c-0.391-0.391-0.391-1.016 0-1.406l8.297-8.297-8.297-8.297c-0.391-0.391-0.391-1.016 0-1.406l2.594-2.594c0.391-0.391 1.016-0.391 1.406 0l11.594 11.594c0.391 0.391 0.391 1.016 0 1.406z"></path>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
+				<path fill="#fff" d="M17.589 16l-15.402 15.989-2.2-2.283 13.202-13.706-13.202-13.706 2.2-2.283 13.202 13.704z"></path>
 			</svg>
 		<?php break;		
 
@@ -364,6 +364,44 @@ function siteorigin_corp_footer_text() {
 	echo wp_kses_post( $text );
 }
 endif;
+
+/**
+ * Add a filter for Jetpack Featured Content.
+ */
+function siteorigin_corp_get_featured_posts() {
+	return apply_filters( 'siteorigin_corp_get_featured_posts', array() );
+}
+
+/**
+ * Check the Jetpack Featured Content.
+ */
+function siteorigin_corp_has_featured_posts( $minimum = 1 ) {
+	if ( is_paged() )
+		return false;
+
+	$minimum = absint( $minimum );
+	$featured_posts = apply_filters( 'siteorigin_corp_get_featured_posts', array() );
+
+	if ( ! is_array( $featured_posts ) )
+		return false;
+
+	if ( $minimum > count( $featured_posts ) )
+		return false;
+
+	return true;
+}
+
+if ( ! function_exists( 'siteorigin_corp_display_featured_posts' ) ) :
+/**
+ * Output the Jetpack Featured Content.
+ */
+function siteorigin_corp_display_featured_posts() {
+	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
+		get_template_part( 'template-parts/featured', 'slider' );
+	}
+}
+endif;
+add_action( 'siteorigin_corp_content_before', 'siteorigin_corp_display_featured_posts' );
 
 if ( ! function_exists( 'siteorigin_corp_strip_gallery' ) ) :
 /**

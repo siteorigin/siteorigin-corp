@@ -34,6 +34,7 @@ A modern business theme from SiteOrigin. Corp is versatile and quick to customiz
 SiteOrigin Corp includes support for the following plugins:
 
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
+* [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)

@@ -331,6 +331,14 @@ function siteorigin_corp_settings_init() {
 					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
+				'social_widget' => array(
+					'type' => 'widget',
+					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
+					'bundle_widget' => 'social-media-buttons',
+					'plugin' => 'so-widgets-bundle',
+					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Add social icons to bottom bar menu.', 'siteorigin-corp' ),
+				),				
 				'widget_title' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Title Color', 'siteorigin-corp' ),
@@ -447,7 +455,6 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
 function siteorigin_corp_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/B6bssz/sass/style.css ***/
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -519,29 +526,31 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	a:hover,a:focus,a:active {
 	color: ${typography_text};
 	}
+	.main-navigation ul ul li a {
+	background: ${navigation_drop_down_background};
+	border-color: ${navigation_drop_down_divider};
+	color: ${navigation_drop_down_link};
+	}
 	.main-navigation ul ul li:hover > a {
 	color: ${navigation_drop_down_link_hover};
 	}
 	.main-navigation ul ul li:first-of-type {
 	border-top: 2px solid ${navigation_link_accent};
 	}
-	.main-navigation ul ul a {
-	background: ${navigation_drop_down_background};
-	border-bottom: 1px solid ${navigation_drop_down_divider};
-	color: ${navigation_drop_down_link};
-	}
 	.main-navigation ul li {
 	.font( ${typography_heading_font} );
 	}
-	.main-navigation ul a {
-	border-bottom: 2px solid ${header_background};
+	.main-navigation ul li a {
 	color: ${navigation_link};
+	}
+	#site-navigation.main-navigation ul .menu-button a {
+	background: ${typography_accent};
+	}
+	#site-navigation.main-navigation ul .menu-button a:hover {
+	background: .rgba( ${typography_accent}, .8);
 	}
 	.main-navigation div > ul > li:hover > a {
 	border-color: ${navigation_link_accent};
-	}
-	.main-navigation div > ul > li.menu-item-has-children:hover > a,.main-navigation div > ul > li.page_item_has_children:hover > a {
-	border-color: ${header_background};
 	}
 	.main-navigation div > ul > li.current a,.main-navigation div > ul > li.current_page_item > a,.main-navigation div > ul > li.current-menu-item > a,.main-navigation div > ul > li.current_page_ancestor > a,.main-navigation div > ul > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
@@ -635,11 +644,17 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.widget-area .widget a:hover,.site-footer .widget a:hover {
 	color: ${typography_accent};
 	}
+	.calendar_wrap {
+	border: 1px solid ${typography_border};
+	}
 	.widget #wp-calendar caption {
 	color: ${typography_heading};
 	}
-	.widget #wp-calendar thead {
-	border-bottom: 2px solid ${typography_border};
+	.widget #wp-calendar tbody td a {
+	color: ${typography_accent};
+	}
+	.widget #wp-calendar tbody td a:hover {
+	color: ${typography_text};
 	}
 	.widget #wp-calendar tfoot #prev a,.widget #wp-calendar tfoot #next a {
 	color: ${typography_heading};
@@ -647,10 +662,10 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.widget #wp-calendar tfoot #prev a:hover,.widget #wp-calendar tfoot #next a:hover {
 	color: ${typography_accent};
 	}
-	.widget_categories .cat-item {
+	.widget_archive li,.widget_categories li {
 	color: ${typography_secondary_text};
 	}
-	.widget_categories .cat-item a {
+	.widget_archive li a,.widget_categories li a {
 	color: ${typography_heading};
 	}
 	.widget_recent_comments .recentcomments {
@@ -874,6 +889,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.site-footer .bottom-bar a:hover {
 	color: ${footer_bottom_bar_link_hover};
 	}
+	.wp-caption {
+	color: ${typography_secondary_text};
+	}
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
 	}';
@@ -1024,12 +1042,23 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		),
 	);
 
+	$settings['overlap'] = array(
+		'type'    => 'select',
+		'label'   => esc_html__( 'Header Overlap', 'siteorigin-corp' ),
+		'options' => array(
+			'disabled'	=> esc_html__( 'Disabled', 'siteorigin-corp' ),
+			'enabled'	=> esc_html__( 'Enabled', 'siteorigin-corp' ),
+			'light'		=> esc_html__( 'Enabled - Light Text', 'siteorigin-corp' ),
+			'dark'		=> esc_html__( 'Enabled - Dark Text', 'siteorigin-corp' ),
+		),
+	);
+
 	$settings['header_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
 		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-corp' )
-	);	
+	);
 
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
@@ -1060,11 +1089,12 @@ add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 )
  * Add the default Page Settings.
  */
 function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
-	$defaults['layout']                 = 'default';
-	$defaults['header_margin']        	= true;
-	$defaults['page_title']             = true;
-	$defaults['footer_margin']          = true;
-	$defaults['footer_widgets'] 		= true;
+	$defaults['layout']					= 'default';
+	$defaults['overlap']				= 'disabled';
+	$defaults['header_margin']			= true;
+	$defaults['page_title']				= true;
+	$defaults['footer_margin']			= true;
+	$defaults['footer_widgets']			= true;
 
 	return $defaults;
 }

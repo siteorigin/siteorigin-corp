@@ -9,7 +9,8 @@
 		background-color: $color__text-medium;
 		background-position: center;
 		background-size: cover;
-		height: 520px;
+		height: 500px;
+		position: relative;
 		
 		@media (max-width: 768px) {
 			height: 380px; 
@@ -17,46 +18,54 @@
 
 		@media (max-width: 480px) {
 			height: 155px; 
-		}			
-		
+		}
+
 		.overlay a {
-			background: rgba(0, 0, 0, .5);
+			background: rgba(0, 0, 0, .3);
 			display: block;
 			height: 100%;
 			position: absolute;
 			width: 100%;
-		}
+		}					
 
 		.slide-content {
 			text-align: center;
-			padding: 160px 10% 0;
+			margin-top: -37.5px;
 			position: absolute;
+			top: 50%;
 			width: 100%; 
 			z-index: 3;
 			
-			@media (max-width: 768px) {
-				padding-top: 80px;
-			}
-
 			@media (max-width: 480px) {
-				padding-top: 30px;
-			}
+				margin-top: -15.5px;
+			}				
 
 			@at-root .widget_siteorigin-panels-postloop & {
-				padding: 15% 10%;
+
+			}
+
+			.entry-meta span {
+				color: #fff;
+				margin-bottom: 20px;
+						
+				@media (max-width: 480px) {
+					display: none;
+				}					
+				
+				a:hover {
+					color: #fff;
+				}
 			}
 
 			.entry-title {
 				font-size: 46px;
+				font-weight: normal; 
 				margin-bottom: 0; 
 				position: relative;
-				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 				z-index: 3;
 				
 				@media (max-width: 768px) {
 					font-size: 41px;
-					line-height: 1.1;
-					margin-bottom: 10px; 
 				}
 
 				@media (max-width: 480px) {
@@ -65,26 +74,8 @@
 
 				a {
 					color: #fff;
-				
-					&:hover {
-						color: rgba(255, 255, 255, .8);
-					}
 				}
-			}
-
-			.entry-excerpt {
-				color: rgba(255, 255, 255, .9);
-				font-size: 18px; 
-				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-				
-				@media (max-width: 768px) {
-					font-size: 16px; 
-				}				
-				
-				@media (max-width: 480px) {
-					display: none;
-				}					
-			}		
+			}	
 		}
 	}
 }

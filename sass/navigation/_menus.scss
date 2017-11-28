@@ -14,9 +14,9 @@
 			opacity: 0;
 			position: absolute;
 			text-align: left;
-			top: 16px;
+			top: 20px;
 			transform: scale(0.95);
-			transition: all 0.15s ease-in;
+			transition: all .15s ease-in;
 			transform-origin: center top;
 			visibility: hidden;
 			z-index: 99999;
@@ -34,13 +34,14 @@
 				
 				a {
 					background: $color__navigation-drop-down-background;
-	    			border-bottom: 1px solid $color__navigation-drop-down-divider;
+	    			border-bottom: 1px solid;
+	    			border-color: $color__navigation-drop-down-divider; 
 	    			color: $color__navigation-drop-down-link;
 	    			font-size: 12px;
 	    			font-weight: normal; 
 	    			max-width: 100%;
 	    			padding: 12px 20px;
-	    			white-space: nowrap;
+	    			white-space: nowrap;    			
 				}				
 
 				&:hover > a {
@@ -88,13 +89,14 @@
 			}
 
 			a {
-				border-bottom: 2px solid $color__header-background;
+				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
 				font-weight: bold; 
 				letter-spacing: 1px;
+				padding-bottom: 4px;
 			}
-		}
+		}			
 
 		// If a class of 'left' is added to a menu item, break drop down menu items to the left.
 		.left {
@@ -143,7 +145,7 @@
 		}	
 
 		// If a class of .menu-button is added to a menu item, style it as a button.
-		.menu-button {
+		@at-root #site-navigation#{&} .menu-button {
 			margin-bottom: 0;
 			padding-bottom: 0;
 
@@ -160,6 +162,7 @@
 			
 				&:hover {
 					background: rgba($color__accent, .8);
+					border: none; 
 					color: #fff;
 				}	
 			}		
@@ -169,13 +172,18 @@
 	// First level items.
 	div > ul > li {
 
-		&:hover > a {
-			border-color: $color__navigation_link_accent;
+		// Page Settings: Overlap with colors.
+		.overlap-light & > a {
+			color: #fff; 
 		}
 
-		&.menu-item-has-children:hover > a,
-		&.page_item_has_children:hover > a {
-			border-color: $color__header-background;
+		.overlap-dark & > a {
+			color: #2d2d2d; 
+		}		
+
+		&:hover > a {
+			border-bottom: 2px solid; 
+			border-color: $color__navigation_link_accent;
 		}
 
 		&.current a,
@@ -206,6 +214,14 @@
 
 				path {
 					fill: $color__navigation-link;
+					
+					.overlap-light & {
+						fill: #fff; 
+					}
+
+					.overlap-dark & {
+						fill: #2d2d2d;
+					}					
 				}
 			}
 		}
@@ -246,6 +262,10 @@
 		
 		path {
 			fill: $color__navigation-link;
+			
+			.overlap-light & {
+				fill: #fff; 
+			}						
 		}
 	}
 }
@@ -499,16 +519,17 @@ $sel: '';
 ## Footer Menu
 --------------------------------------------------------------*/
 .footer-menu {
-	float: right;
 	font-size: 13px;
 	text-align: right;
-	width: 70%;
 
 	@media (max-width: 768px) {
-		float: none;
 		padding-top: 15px;
 		text-align: center;
 		width: 100%;
+	}
+
+	> div {
+		display: inline-block;
 	}
 
 	.menu {

@@ -7,27 +7,30 @@
 	width: 100%;
 	z-index: 999;
 	
+	body[class*="overlap-"] &:not(.stuck) {
+		background: transparent;
+		border: none;
+		position: absolute;
+	}
+	
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
 	
-	@at-root {
-
-		.topbar-out & {
-			@include clearfix;
-			top: 0;
-			left: 0;
-			width: 100%;
-		}
-
-		.topbar-out.admin-bar & {
-			top: 32px;
-
-			@media (max-width: 782px) {
-				top: 46px;
-			}
-		}		
+	.topbar-out & {
+		@include clearfix;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
+
+	.topbar-out.admin-bar & {
+		top: 32px;
+
+		@media (max-width: 782px) {
+			top: 46px;
+		}
+	}		
 	
 	@media (max-width: 600px) {
 
@@ -35,6 +38,10 @@
 			top: 0;
 		}						
 	}	
+
+	@at-root .topbar-out#{&} {
+		transition: background 500ms ease;
+	}
 
 	// A class added after scroll.
 	&.stuck {
@@ -65,7 +72,15 @@
 			margin: 0;
 			
 			a {
-				color: $color__site_title; 
+				color: $color__site_title;
+				
+				.overlap-light & {
+					color: #fff; 
+				}
+
+				.overlap-dark & {
+					color: #2d2d2d;
+				}													
 			}
 		}
 
@@ -85,6 +100,14 @@
 			font-size: 13px; 
 			line-height: normal;
 			margin: -3px 0 0; 
+			
+			.overlap-light & {
+				color: #fff; 
+			}
+
+			.overlap-dark & {
+				color: #2d2d2d;
+			}				
 		}
 
 		> * {
@@ -96,6 +119,10 @@
 // Sticky header sentinel.
 .masthead-sentinel {
 	margin-bottom: 60px;
+	
+	body[class*="overlap-"] & {
+		display: none;
+	}
 	
 	.no-header-margin & {
 		margin-bottom: 0;
