@@ -92,9 +92,10 @@
 				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
-				font-weight: bold; 
+				font-weight: 600;
 				letter-spacing: 1px;
 				padding-bottom: 4px;
+				transition: none;
 			}
 		}			
 
@@ -173,15 +174,15 @@
 	div > ul > li {
 
 		// Page Settings: Overlap with colors.
-		.overlap-light & > a {
+		.overlap-light .site-header:not(.stuck) & > a {
 			color: #fff; 
 		}
 
-		.overlap-dark & > a {
+		.overlap-dark .site-header:not(.stuck) & > a {
 			color: #2d2d2d; 
 		}		
 
-		&:hover > a {
+		&:not(.menu-item-has-children):hover > a {
 			border-bottom: 2px solid; 
 			border-color: $color__navigation_link_accent;
 		}
@@ -215,11 +216,11 @@
 				path {
 					fill: $color__navigation-link;
 					
-					.overlap-light & {
+					.overlap-light .site-header:not(.stuck) & {
 						fill: #fff; 
 					}
 
-					.overlap-dark & {
+					.overlap-dark .site-header:not(.stuck) & {
 						fill: #2d2d2d;
 					}					
 				}

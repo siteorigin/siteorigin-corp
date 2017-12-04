@@ -584,9 +584,10 @@ a {
         border-bottom: 2px solid transparent;
         color: #2d2d2d;
         display: block;
-        font-weight: bold;
+        font-weight: 600;
         letter-spacing: 1px;
-        padding-bottom: 4px; }
+        padding-bottom: 4px;
+        transition: none; }
     .main-navigation ul .left .sub-menu,
     .main-navigation ul .left .children {
       right: 0; }
@@ -631,11 +632,11 @@ a {
           background: rgba(241, 78, 78, 0.8);
           border: none;
           color: #fff; }
-  .overlap-light .main-navigation div > ul > li > a {
+  .overlap-light .site-header:not(.stuck) .main-navigation div > ul > li > a {
     color: #fff; }
-  .overlap-dark .main-navigation div > ul > li > a {
+  .overlap-dark .site-header:not(.stuck) .main-navigation div > ul > li > a {
     color: #2d2d2d; }
-  .main-navigation div > ul > li:hover > a {
+  .main-navigation div > ul > li:not(.menu-item-has-children):hover > a {
     border-bottom: 2px solid;
     border-color: #f14e4e; }
   .main-navigation div > ul > li.current a,
@@ -658,9 +659,9 @@ a {
       width: 17px; }
       .main-navigation .search-toggle .open svg path {
         fill: #2d2d2d; }
-        .overlap-light .main-navigation .search-toggle .open svg path {
+        .overlap-light .site-header:not(.stuck) .main-navigation .search-toggle .open svg path {
           fill: #fff; }
-        .overlap-dark .main-navigation .search-toggle .open svg path {
+        .overlap-dark .site-header:not(.stuck) .main-navigation .search-toggle .open svg path {
           fill: #2d2d2d; }
     .main-navigation .search-toggle .close {
       display: none; }
@@ -1380,6 +1381,12 @@ a {
     background: transparent;
     border: none;
     position: absolute; }
+  .overlap-light .site-header:not(.stuck) .site-branding .site-title a,
+  .overlap-light .site-header:not(.stuck) .site-branding .site-description {
+    color: #fff; }
+  .overlap-dark .site-header:not(.stuck) .site-branding .site-title a,
+  .overlap-dark .site-header:not(.stuck) .site-branding .site-description {
+    color: #2d2d2d; }
   .no-header-margin .site-header {
     margin-bottom: 0; }
   .topbar-out .site-header {
@@ -1422,11 +1429,8 @@ a {
       line-height: normal;
       margin: 0; }
       .site-header .site-branding .site-title a {
-        color: #2d2d2d; }
-        .overlap-light .site-header .site-branding .site-title a {
-          color: #fff; }
-        .overlap-dark .site-header .site-branding .site-title a {
-          color: #2d2d2d; }
+        color: #2d2d2d;
+        transition: none; }
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
@@ -1439,10 +1443,6 @@ a {
       font-size: 13px;
       line-height: normal;
       margin: -3px 0 0; }
-      .overlap-light .site-header .site-branding .site-description {
-        color: #fff; }
-      .overlap-dark .site-header .site-branding .site-description {
-        color: #2d2d2d; }
     .site-header .site-branding > * {
       transform-origin: left center; }
 
@@ -2370,24 +2370,35 @@ object {
       width: 100%; }
     .featured-posts-slider .slides .slide .slide-content {
       text-align: center;
-      margin-top: -37.5px;
+      margin-top: -54px;
       position: absolute;
       top: 50%;
       width: 100%;
       z-index: 3; }
+      @media (max-width: 768px) {
+        .featured-posts-slider .slides .slide .slide-content {
+          margin-top: -49.5px; } }
       @media (max-width: 480px) {
         .featured-posts-slider .slides .slide .slide-content {
-          margin-top: -15.5px; } }
+          margin-top: -17.5px; } }
       .featured-posts-slider .slides .slide .slide-content .entry-meta span {
         color: #fff;
-        margin-bottom: 20px; }
+        font-size: 20px;
+        margin-bottom: 18px; }
+        .featured-posts-slider .slides .slide .slide-content .entry-meta span:after {
+          font-size: 17px; }
+        @media (max-width: 768px) {
+          .featured-posts-slider .slides .slide .slide-content .entry-meta span {
+            font-size: 17px; }
+            .featured-posts-slider .slides .slide .slide-content .entry-meta span:after {
+              font-size: 15px; } }
         @media (max-width: 480px) {
           .featured-posts-slider .slides .slide .slide-content .entry-meta span {
             display: none; } }
         .featured-posts-slider .slides .slide .slide-content .entry-meta span a:hover {
           color: #fff; }
       .featured-posts-slider .slides .slide .slide-content .entry-title {
-        font-size: 46px;
+        font-size: 48px;
         font-weight: normal;
         margin-bottom: 0;
         position: relative;

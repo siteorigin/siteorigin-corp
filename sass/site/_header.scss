@@ -7,11 +7,34 @@
 	width: 100%;
 	z-index: 999;
 	
+	// Header overlap.
 	body[class*="overlap-"] &:not(.stuck) {
 		background: transparent;
 		border: none;
 		position: absolute;
 	}
+
+	.overlap-light &:not(.stuck) {
+
+		.site-branding {
+
+			.site-title a,
+			.site-description {
+				color: #fff; 
+			}
+		}
+	}
+
+	.overlap-dark &:not(.stuck) {
+		
+		.site-branding {
+
+			.site-title a,
+			.site-description {
+				color: #2d2d2d; 
+			}
+		}
+	}	
 	
 	.no-header-margin & {
 		margin-bottom: 0;
@@ -39,6 +62,7 @@
 		}						
 	}	
 
+	// Transition the header as it becomes sticky.
 	@at-root .topbar-out#{&} {
 		transition: background 500ms ease;
 	}
@@ -73,14 +97,7 @@
 			
 			a {
 				color: $color__site_title;
-				
-				.overlap-light & {
-					color: #fff; 
-				}
-
-				.overlap-dark & {
-					color: #2d2d2d;
-				}													
+				transition: none;									
 			}
 		}
 
@@ -99,15 +116,7 @@
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;
-			margin: -3px 0 0; 
-			
-			.overlap-light & {
-				color: #fff; 
-			}
-
-			.overlap-dark & {
-				color: #2d2d2d;
-			}				
+			margin: -3px 0 0; 	
 		}
 
 		> * {
