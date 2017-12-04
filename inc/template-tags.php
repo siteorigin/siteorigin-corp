@@ -178,7 +178,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_the_post_navigation' ) ) :
 /**
- * Display navigation to next/previous posts.
+ * Display navigation to next/previous post when applicable.
  */
 function siteorigin_corp_the_post_navigation() {
 
@@ -191,20 +191,28 @@ function siteorigin_corp_the_post_navigation() {
 	}
 
 	$previous_post 	= get_previous_post();
-	$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
+	if ( ! empty( $previous_post ) ) {
+		$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
+	}
 	$next_post 		= get_next_post();
-	$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
-
+	if ( ! empty( $next_post ) ) {
+		$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
+	}
+	
 	?>
 	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
 		<div class="nav-links">
-			<div class="nav-previous">
-				<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
-			</div>
-			<div class="nav-next">
-				<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
-			</div>
+			<?php if ( ! empty( $previous_post ) ) : ?>
+				<div class="nav-previous">
+					<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( ! empty( $next_post ) ) : ?>
+				<div class="nav-next">
+					<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
+				</div>
+			<?php endif; ?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
