@@ -2370,7 +2370,7 @@ object {
       width: 100%; }
     .featured-posts-slider .slides .slide .slide-content {
       text-align: center;
-      margin-top: -37.5px;
+      margin-top: -53.5px;
       position: absolute;
       top: 50%;
       width: 100%;
@@ -2380,14 +2380,23 @@ object {
           margin-top: -15.5px; } }
       .featured-posts-slider .slides .slide .slide-content .entry-meta span {
         color: #fff;
-        margin-bottom: 20px; }
+        font-size: 20px;
+        margin-bottom: 17px; }
+        @media (max-width: 768px) {
+          .featured-posts-slider .slides .slide .slide-content .entry-meta span {
+            font-size: 17px; } }
         @media (max-width: 480px) {
           .featured-posts-slider .slides .slide .slide-content .entry-meta span {
             display: none; } }
         .featured-posts-slider .slides .slide .slide-content .entry-meta span a:hover {
           color: #fff; }
+        .featured-posts-slider .slides .slide .slide-content .entry-meta span:not(:last-child):after {
+          font-size: 18px; }
+          @media (max-width: 768px) {
+            .featured-posts-slider .slides .slide .slide-content .entry-meta span:not(:last-child):after {
+              font-size: 15px; } }
       .featured-posts-slider .slides .slide .slide-content .entry-title {
-        font-size: 46px;
+        font-size: 48px;
         font-weight: normal;
         margin-bottom: 0;
         position: relative;

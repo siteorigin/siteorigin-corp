@@ -30,7 +30,7 @@
 
 		.slide-content {
 			text-align: center;
-			margin-top: -37.5px;
+			margin-top: -53.5px;
 			position: absolute;
 			top: 50%;
 			width: 100%; 
@@ -46,7 +46,12 @@
 
 			.entry-meta span {
 				color: #fff;
-				margin-bottom: 20px;
+				font-size: 20px; 
+				margin-bottom: 17px;
+				
+				@media (max-width: 768px) {
+					font-size: 17px; 
+				}					
 						
 				@media (max-width: 480px) {
 					display: none;
@@ -55,10 +60,18 @@
 				a:hover {
 					color: #fff;
 				}
+
+				&:not(:last-child):after {
+					font-size: 18px;
+					
+					@media (max-width: 768px) {
+						font-size: 15px; 
+					}						
+				}
 			}
 
 			.entry-title {
-				font-size: 46px;
+				font-size: 48px;
 				font-weight: normal; 
 				margin-bottom: 0; 
 				position: relative;
