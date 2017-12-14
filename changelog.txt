@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.1.1 - 14 December 2017 =
+* Improved post navigation function to prevent edge case errors.
+* Minor style adjustments.
+* Added new screenshot.
+* Improved posts slider text sizes.
+
 = 1.1 - 28 November 2017 =
 * Additional styling for the post format gallery slider.
 * Updated image caption styling.
