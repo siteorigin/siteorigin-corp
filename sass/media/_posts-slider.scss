@@ -30,18 +30,14 @@
 
 		.slide-content {
 			text-align: center;
-			margin-top: -54px;
+			margin-top: -53.5px;
 			position: absolute;
 			top: 50%;
 			width: 100%; 
 			z-index: 3;
 			
-			@media (max-width: 768px) {
-				margin-top: -49.5px;
-			}		
-
 			@media (max-width: 480px) {
-				margin-top: -17.5px;
+				margin-top: -15.5px;
 			}				
 
 			@at-root .widget_siteorigin-panels-postloop & {
@@ -51,18 +47,10 @@
 			.entry-meta span {
 				color: #fff;
 				font-size: 20px; 
-				margin-bottom: 18px;
+				margin-bottom: 17px;
 				
-				&:after {
-					font-size: 17px; 
-				}
-
 				@media (max-width: 768px) {
-					font-size: 17px;
-					
-					&:after {
-						font-size: 15px; 
-					}					
+					font-size: 17px; 
 				}					
 						
 				@media (max-width: 480px) {
@@ -71,6 +59,14 @@
 				
 				a:hover {
 					color: #fff;
+				}
+
+				&:not(:last-child):after {
+					font-size: 18px;
+					
+					@media (max-width: 768px) {
+						font-size: 15px; 
+					}						
 				}
 			}
 
