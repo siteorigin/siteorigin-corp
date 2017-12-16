@@ -56,15 +56,7 @@ SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](ht
 
 == Images ==
 
-Screenshot image "Teal and Black Motor Scooter" sourced from [Peakpx](http://www.peakpx.com/402736/teal-and-black-motor-scooter) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
-
-Screenshot image "Public Transportation: Bus Seats" sourced from [Pexels](https://www.pexels.com/photo/bus-public-transportation-seats-subway-373978/) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
-
-Screenshot image "Hiker Arms Spread" sourced from [StockSnap](https://stocksnap.io/photo/GIK662HVHL) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
-
-Screenshot image "Golden Gate Bridge" sourced from [Peakpx](http://www.peakpx.com/477855/golden-gate-bridge) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
-
-Screenshot image "Running Sunset" sourced from [StockSnap](https://stocksnap.io/photo/HAM087SSHZ) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
+Screenshot image sourced from [Unsplash](https://unsplash.com/photos/KuUxlN0ZjtQ) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/) by [Paul Bence](https://unsplash.com/@bency).
 
 == Fonts and Icons ==
 
