@@ -15,11 +15,11 @@
 		</div><!-- .corp-container -->
 	</div><!-- #content -->
 
-	<?php do_action( 'siteorigin_corp_before' ); ?>
+	<?php do_action( 'siteorigin_corp_footer_before' ); ?>
 
 	<footer id="colophon" class="site-footer">
 
-		<?php do_action( 'siteorigin_corp_top' ); ?>
+		<?php do_action( 'siteorigin_corp_footer_top' ); ?>
 
 		<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) : ?>
 			<div class="corp-container">
@@ -67,7 +67,7 @@
 			</div><!-- .corp-container -->
 		</div><!-- .bottom-bar -->
 
-		<?php do_action( 'siteorigin_corp_bottom' ); ?>
+	<?php do_action( 'siteorigin_corp_footer_bottom' ); ?>
 		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
