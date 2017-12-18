@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.7
-Tested up to: 4.9
+Tested up to: 4.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,7 +36,9 @@ SiteOrigin Corp includes support for the following plugins:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
+* [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
 * [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
 * [Yoast Breadcrumbs](https://wordpress.org/plugins/wordpress-seo/)
