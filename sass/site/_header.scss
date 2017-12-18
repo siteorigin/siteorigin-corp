@@ -72,15 +72,7 @@
 			margin: 0;
 			
 			a {
-				color: $color__site_title;
-				
-				.overlap-light & {
-					color: #fff; 
-				}
-
-				.overlap-dark & {
-					color: #2d2d2d;
-				}													
+				color: $color__site_title;												
 			}
 		}
 
@@ -99,20 +91,29 @@
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;
-			margin: -3px 0 0; 
-			
-			.overlap-light & {
-				color: #fff; 
-			}
-
-			.overlap-dark & {
-				color: #2d2d2d;
-			}				
+			margin: -3px 0 0; 				
 		}
 
 		> * {
 			transform-origin: left center;
 		}		
+	}
+}
+
+// Overlap.
+.overlap-light .site-header:not(.stuck) .site-branding {
+	
+	.site-title a,
+	.site-description {
+		color: #fff;
+	}
+}
+
+.overlap-dark .site-header:not(.stuck) .site-branding {
+
+	.site-title a,
+	.site-description {
+		color: #2d2d2d;
 	}
 }
 

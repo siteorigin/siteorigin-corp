@@ -172,12 +172,12 @@
 	// First level items.
 	div > ul > li {
 
-		// Page Settings: Overlap with colors.
-		.overlap-light & > a {
+		// Overlap.
+		.overlap-light .site-header:not(.stuck) & > a {
 			color: #fff; 
 		}
 
-		.overlap-dark & > a {
+		.overlap-dark .site-header:not(.stuck) & > a {
 			color: #2d2d2d; 
 		}		
 
@@ -215,11 +215,11 @@
 				path {
 					fill: $color__navigation-link;
 					
-					.overlap-light & {
+					.overlap-light .site-header:not(.stuck) & {
 						fill: #fff; 
 					}
 
-					.overlap-dark & {
+					.overlap-dark .site-header:not(.stuck) & {
 						fill: #2d2d2d;
 					}					
 				}

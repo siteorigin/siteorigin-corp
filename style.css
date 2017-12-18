@@ -631,9 +631,9 @@ a {
           background: rgba(241, 78, 78, 0.8);
           border: none;
           color: #fff; }
-  .overlap-light .main-navigation div > ul > li > a {
+  .overlap-light .site-header:not(.stuck) .main-navigation div > ul > li > a {
     color: #fff; }
-  .overlap-dark .main-navigation div > ul > li > a {
+  .overlap-dark .site-header:not(.stuck) .main-navigation div > ul > li > a {
     color: #2d2d2d; }
   .main-navigation div > ul > li:hover > a {
     border-bottom: 2px solid;
@@ -658,9 +658,9 @@ a {
       width: 17px; }
       .main-navigation .search-toggle .open svg path {
         fill: #2d2d2d; }
-        .overlap-light .main-navigation .search-toggle .open svg path {
+        .overlap-light .site-header:not(.stuck) .main-navigation .search-toggle .open svg path {
           fill: #fff; }
-        .overlap-dark .main-navigation .search-toggle .open svg path {
+        .overlap-dark .site-header:not(.stuck) .main-navigation .search-toggle .open svg path {
           fill: #2d2d2d; }
     .main-navigation .search-toggle .close {
       display: none; }
@@ -1117,38 +1117,35 @@ a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
+.widget-area .widget,
+.site-footer .widget {
   margin: 0 0 50px; }
-
-.widget-area .widget .widget-title,
-.site-footer .widget .widget-title {
-  font-size: .9333em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin: 0 0 15px;
-  text-transform: uppercase; }
-  .widget-area .widget .widget-title ~ *,
-  .site-footer .widget .widget-title ~ * {
+  .widget-area .widget .widget-title,
+  .site-footer .widget .widget-title {
+    font-size: .9333em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 15px;
+    text-transform: uppercase; }
+    .widget-area .widget .widget-title ~ *,
+    .site-footer .widget .widget-title ~ * {
+      font-size: 14px; }
+  .widget-area .widget a,
+  .site-footer .widget a {
+    color: #626262; }
+    .widget-area .widget a:hover,
+    .site-footer .widget a:hover {
+      color: #f14e4e; }
+  .widget-area .widget ul,
+  .site-footer .widget ul {
+    list-style: none;
+    margin: 0; }
+    .widget-area .widget ul li,
+    .site-footer .widget ul li {
+      line-height: 2; }
+  .widget-area .widget input,
+  .site-footer .widget input {
     font-size: 14px; }
-
-.widget-area .widget a,
-.site-footer .widget a {
-  color: #626262; }
-  .widget-area .widget a:hover,
-  .site-footer .widget a:hover {
-    color: #f14e4e; }
-
-.widget-area .widget ul,
-.site-footer .widget ul {
-  list-style: none;
-  margin: 0; }
-  .widget-area .widget ul li,
-  .site-footer .widget ul li {
-    line-height: 2; }
-
-.widget-area .widget input,
-.site-footer .widget input {
-  font-size: 14px; }
 
 /*--------------------------------------------------------------
 ## Calendar Widgets
@@ -1423,10 +1420,6 @@ a {
       margin: 0; }
       .site-header .site-branding .site-title a {
         color: #2d2d2d; }
-        .overlap-light .site-header .site-branding .site-title a {
-          color: #fff; }
-        .overlap-dark .site-header .site-branding .site-title a {
-          color: #2d2d2d; }
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
@@ -1439,12 +1432,16 @@ a {
       font-size: 13px;
       line-height: normal;
       margin: -3px 0 0; }
-      .overlap-light .site-header .site-branding .site-description {
-        color: #fff; }
-      .overlap-dark .site-header .site-branding .site-description {
-        color: #2d2d2d; }
     .site-header .site-branding > * {
       transform-origin: left center; }
+
+.overlap-light .site-header:not(.stuck) .site-branding .site-title a,
+.overlap-light .site-header:not(.stuck) .site-branding .site-description {
+  color: #fff; }
+
+.overlap-dark .site-header:not(.stuck) .site-branding .site-title a,
+.overlap-dark .site-header:not(.stuck) .site-branding .site-description {
+  color: #2d2d2d; }
 
 .masthead-sentinel {
   margin-bottom: 60px; }
@@ -2142,7 +2139,7 @@ body:not(.single) .hentry {
         color: #fff;
         font-size: 1.0666em;
         font-weight: 500; }
-      .site-footer .widgets .widget ~ * {
+      .site-footer .widgets .widget *:not(.widget-title):not(a) {
         color: #b4b5b8; }
       .site-footer .widgets .widget a {
         color: #ffffff; }
@@ -2409,5 +2406,3 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
