@@ -730,7 +730,7 @@ a {
         font-size: 14px;
         padding: 14px;
         position: absolute;
-        right: 0;
+        right: 2px;
         top: -2px;
         transition: none; }
         #mobile-navigation ul li .dropdown-toggle:hover {
