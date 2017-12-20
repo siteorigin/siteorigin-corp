@@ -452,15 +452,28 @@ $sel: '';
 	a {
 		
 		img {
-			display: block;
-			float: left;
-			margin-right: 15px; 
+			display: inline-block;
+			margin-right: 15px;
 			max-width: 80px;
+			
+			@media (max-width: 1136px) {
+				display: none;
+			} 			
 		}
 
-		.sub-title {
-			color: $color__text-light;
+		.nav-innner {
 			display: inline-block;
+			vertical-align: top;
+			width: 74%;
+			
+			@media (max-width: 1136px) {
+				width: 100%; 
+			} 
+		}
+
+		span {
+			color: $color__text-light;
+			display: block;
 			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
@@ -476,12 +489,17 @@ $sel: '';
 			font-size: 15px; 
 			line-height: normal;
 			transition: .3s;
+			word-break: break-all;
 		}
 
 		&:hover div {
 			color: $color__accent;
 		}
 	}
+
+	.nav-next img {
+		margin: 0 0 0 15px;
+	}	
 }
 
 .comment-navigation {

@@ -205,12 +205,12 @@ function siteorigin_corp_the_post_navigation() {
 		<div class="nav-links">
 			<?php if ( ! empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
-					<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
+					<?php previous_post_link( '%link', ' ' . $previous_thumb . '<div class="nav-innner"><span>' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div></div>' ); ?>
 				</div>
 			<?php endif; ?>
 			<?php if ( ! empty( $next_post ) ) : ?>
 				<div class="nav-next">
-					<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
+					<?php next_post_link( '%link', '<div class="nav-innner"><span>' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div></div>' . $next_thumb . ' ' ); ?>
 				</div>
 			<?php endif; ?>
 		</div><!-- .nav-links -->
