@@ -49,12 +49,12 @@ jQuery( function( $ ) {
 	}
 
 	$( window ).load( function() {
-		  siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper' );
+		  siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
 	} );
 
 
 	$( window ).resize( function() {
-		siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper' );
+		siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
 	} );		
 
 	// Burst animation.
