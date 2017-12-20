@@ -1961,7 +1961,7 @@ body:not(.single) .hentry {
       margin-left: 80px; }
       .comment-list .comment .comment-container .comment-awaiting-moderation,
       .comment-list .pingback .comment-container .comment-awaiting-moderation {
-        font-style: bold; }
+        font-weight: bold; }
     .comment-list .comment .avatar-container,
     .comment-list .pingback .avatar-container {
       float: left; }
