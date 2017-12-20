@@ -867,8 +867,7 @@ a {
     font-weight: 400;
     font-size: 15px;
     line-height: normal;
-    transition: .3s;
-    word-break: break-all; }
+    transition: .3s; }
   .post-navigation a:hover div {
     color: #f14e4e; }
   .post-navigation .nav-next img {
