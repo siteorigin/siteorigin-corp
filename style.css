@@ -2375,7 +2375,7 @@ object {
       .featured-posts-slider .slides .slide {
         height: 155px; } }
     .featured-posts-slider .slides .slide .overlay a {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
       display: block;
       height: 100%;
       position: absolute;
