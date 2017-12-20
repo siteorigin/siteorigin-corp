@@ -98,7 +98,7 @@ body:not(.single) .hentry {
 		margin-bottom: -1px; 
 	}	
 
-	.content-wrapper {
+	.corp-content-wrapper {
 		background: #fff;
 		border: 1px solid $color__background-hr;
 		padding: 25px 30px 33px;
@@ -492,7 +492,7 @@ body:not(.single) .hentry {
 				margin: 0;
 			}	
 
-			div {
+			.corp-content-wrapper {
 				background: #fff;
 				border: 1px solid $color__background-hr; 
 				padding: 25px 30px;

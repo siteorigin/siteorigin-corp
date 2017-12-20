@@ -1599,7 +1599,7 @@ body:not(.single) .hentry {
       clear: both;
       content: "";
       display: table; }
-  body:not(.single) .hentry .content-wrapper {
+  body:not(.single) .hentry .corp-content-wrapper {
     background: #fff;
     border: 1px solid #e6e6e6;
     padding: 25px 30px 33px; }
@@ -1892,8 +1892,8 @@ body:not(.single) .hentry {
       .yarpp-related ol li:only-child,
       .related-posts-section ol li:only-child {
         margin: 0; }
-      .yarpp-related ol li div,
-      .related-posts-section ol li div {
+      .yarpp-related ol li .corp-content-wrapper,
+      .related-posts-section ol li .corp-content-wrapper {
         background: #fff;
         border: 1px solid #e6e6e6;
         padding: 25px 30px; }
@@ -2406,3 +2406,5 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

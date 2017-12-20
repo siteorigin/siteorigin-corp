@@ -286,7 +286,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 									elseif ( has_post_thumbnail() )
 										the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
 									?>
-									<div>
+									<div class="corp-content-wrapper">
 										<h3 class="related-post-title"><?php the_title(); ?></h3>
 										<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
 									</div>
