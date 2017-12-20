@@ -17,45 +17,45 @@ jQuery( function( $ ) {
 	};
 
 	// Blog archive equal height content containers.
-	siteoriginCorpEqualHeight = function( container ) {
+	// siteoriginCorpEqualHeight = function( container ) {
 
-		var currentTallest = 0,
-			currentRowStart = 0,
-			rowDivs = new Array(),
-			$el,
-			topPosition = 0;
-		 $( container ).each( function() {
+	// 	var currentTallest = 0,
+	// 		currentRowStart = 0,
+	// 		rowDivs = new Array(),
+	// 		$el,
+	// 		topPosition = 0;
+	// 	 $( container ).each( function() {
 
-			$el = $( this );
-		   	$( $el ).height( 'auto' )
-		   	topPostion = $el.position().top;
+	// 		$el = $( this );
+	// 	   	$( $el ).height( 'auto' )
+	// 	   	topPostion = $el.position().top;
 
-			if ( currentRowStart != topPostion ) {
-				for ( currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++ ) {
-			   		rowDivs[currentDiv].height(currentTallest);
-			 	}
-			 	rowDivs.length = 0; // Empty the array.
-			 	currentRowStart = topPostion;
-			 	currentTallest = $el.height();
-			 	rowDivs.push( $el );
-		   	} else {
-				rowDivs.push( $el );
-				currentTallest = ( currentTallest < $el.height() ) ? ($el.height()) : ( currentTallest );
-			}
-			for ( currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++ ) {
-				rowDivs[currentDiv].height( currentTallest );
-			}
-		} );
-	}
+	// 		if ( currentRowStart != topPostion ) {
+	// 			for ( currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++ ) {
+	// 		   		rowDivs[currentDiv].height(currentTallest);
+	// 		 	}
+	// 		 	rowDivs.length = 0; // Empty the array.
+	// 		 	currentRowStart = topPostion;
+	// 		 	currentTallest = $el.height();
+	// 		 	rowDivs.push( $el );
+	// 	   	} else {
+	// 			rowDivs.push( $el );
+	// 			currentTallest = ( currentTallest < $el.height() ) ? ($el.height()) : ( currentTallest );
+	// 		}
+	// 		for ( currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++ ) {
+	// 			rowDivs[currentDiv].height( currentTallest );
+	// 		}
+	// 	} );
+	// }
 
-	$( window ).load( function() {
-		  siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
-	} );
+	// $( window ).load( function() {
+	// 	  siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
+	// } );
 
 
-	$( window ).resize( function() {
-		siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
-	} );		
+	// $( window ).resize( function() {
+	// 	siteoriginCorpEqualHeight( 'body:not(.single) .site-main .corp-content-wrapper, .related-posts-section .corp-content-wrapper' );
+	// } );		
 
 	// Burst animation.
 	var mousePos = {x: 0, y: 0};

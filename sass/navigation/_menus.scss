@@ -397,6 +397,7 @@ $sel: '';
 	@include clearfix-after;
 	padding-top: 30px; 
 	text-align: center;
+	width: 100%; 
 
 	.page-numbers {
 		border: 1px solid $color__text-medium;

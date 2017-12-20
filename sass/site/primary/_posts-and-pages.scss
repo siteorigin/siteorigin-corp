@@ -1,6 +1,20 @@
+.site-main {
+
+	.blog &,
+	.archive & {
+		display: flex;
+		flex-wrap: wrap;		
+	}
+}
+
+.widget_siteorigin-panels-postloop {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 body:not(.single) .hentry {
-	display: block;
-	float: left;
+	background: #fff;
+	border: 1px solid $color__background-hr;
 	margin: 0 0 31px;
 	width: 31%;
 	
@@ -39,25 +53,8 @@ body:not(.single) .hentry {
 		}						
 	}
 
-	// 4, 8, 12, 16
-	&:nth-of-type(3n+4) {
-		clear: left;
-		
-		@media (max-width: 768px) {
-			clear: none;
-		}				
-	}
-
-	@media (max-width: 768px) {
-
-		// 3, 5, 7, 9, 11
-		&:nth-of-type(2n+3) {
-			clear: left;			
-		}		
-	}
-
 	// Two column blog layout when the sidebar is in use.
-	@at-root body.sidebar:not(.single) .hentry {
+	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
 		width: 48.25%;
 		
 		@media (max-width: 480px) {
@@ -77,12 +74,7 @@ body:not(.single) .hentry {
 		// 3, 6, 9, 12
 		&:nth-of-type(3n+3) {
 			margin-left: 0; 					
-		}	
-
-		// 4, 8, 12, 16
-		&:nth-of-type(3n+4) {
-			clear: none;			
-		}			
+		}				
 	}		
 
 	&:only-child {
@@ -95,12 +87,10 @@ body:not(.single) .hentry {
 
 	.entry-thumbnail {
 		@include clearfix; 
-		margin-bottom: -1px; 
+		margin: -1px; 
 	}	
 
 	.corp-content-wrapper {
-		background: #fff;
-		border: 1px solid $color__background-hr;
 		padding: 25px 30px 33px;
 	}
 
@@ -215,7 +205,7 @@ body:not(.single) .hentry {
 }	
 
 .page-links {
-	margin-top: 26px; 
+	margin: 26px 0; 
 	text-align: left;
 
 	.page-links-title {
@@ -319,7 +309,8 @@ body:not(.single) .hentry {
 .search-results {
 
 	.page-header {
-		margin-bottom: 50px; 
+		margin-bottom: 50px;
+		width: 100%; 
 	}
 
 	.page-title {
@@ -331,7 +322,11 @@ body:not(.single) .hentry {
 	.taxonomy-description {
 		font-size: 14px;
 		margin-top: 5px;
-		text-align: center; 
+		text-align: center;
+		
+		p:last-of-type {
+			margin-bottom: 0;
+		} 
 	}
 	
 	.entry-title {
@@ -448,6 +443,8 @@ body:not(.single) .hentry {
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
+	display: flex;
+	flex-wrap: wrap;		
 	margin-bottom: 60px; 
 
 	.related-posts {

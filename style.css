@@ -801,7 +801,8 @@ a {
 .pagination {
   clear: both;
   padding-top: 30px;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
   .pagination .page-numbers {
     border: 1px solid #626262;
     color: #626262;
@@ -1556,9 +1557,18 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.blog .site-main,
+.archive .site-main {
+  display: flex;
+  flex-wrap: wrap; }
+
+.widget_siteorigin-panels-postloop {
+  display: flex;
+  flex-wrap: wrap; }
+
 body:not(.single) .hentry {
-  display: block;
-  float: left;
+  background: #fff;
+  border: 1px solid #e6e6e6;
   margin: 0 0 31px;
   width: 31%; }
   @media (max-width: 768px) {
@@ -1580,40 +1590,28 @@ body:not(.single) .hentry {
     @media (max-width: 768px) {
       body:not(.single) .hentry:nth-of-type(3n+3) {
         margin-left: 0; } }
-  body:not(.single) .hentry:nth-of-type(3n+4) {
-    clear: left; }
-    @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-of-type(3n+4) {
-        clear: none; } }
-  @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-of-type(2n+3) {
-      clear: left; } }
-  body.sidebar:not(.single) .hentry {
+  body.page-layout-default.sidebar:not(.single) .hentry {
     width: 48.25%; }
     @media (max-width: 480px) {
-      body.sidebar:not(.single) .hentry {
+      body.page-layout-default.sidebar:not(.single) .hentry {
         width: 100%; } }
-    body.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
+    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
       margin-right: 0; }
-    body.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
       margin-right: 3.5%; }
-    body.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
+    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
       margin-left: 0; }
-    body.sidebar:not(.single) .hentry:nth-of-type(3n+4) {
-      clear: none; }
   body:not(.single) .hentry:only-child {
     margin: 0; }
   body:not(.single) .hentry .entry-title {
     font-size: 1.0666em; }
   body:not(.single) .hentry .entry-thumbnail {
-    margin-bottom: -1px; }
+    margin: -1px; }
     body:not(.single) .hentry .entry-thumbnail::after {
       clear: both;
       content: "";
       display: table; }
   body:not(.single) .hentry .corp-content-wrapper {
-    background: #fff;
-    border: 1px solid #e6e6e6;
     padding: 25px 30px 33px; }
   body:not(.single) .hentry .entry-content {
     font-size: .9333em;
@@ -1690,7 +1688,7 @@ body:not(.single) .hentry {
     vertical-align: middle; }
 
 .page-links {
-  margin-top: 26px;
+  margin: 26px 0;
   text-align: left; }
   .page-links .page-links-title {
     color: #2d2d2d;
@@ -1767,7 +1765,8 @@ body:not(.single) .hentry {
 
 .archive .page-header,
 .search-results .page-header {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  width: 100%; }
 
 .archive .page-title,
 .search-results .page-title {
@@ -1780,6 +1779,9 @@ body:not(.single) .hentry {
   font-size: 14px;
   margin-top: 5px;
   text-align: center; }
+  .archive .taxonomy-description p:last-of-type,
+  .search-results .taxonomy-description p:last-of-type {
+    margin-bottom: 0; }
 
 .archive .entry-title,
 .search-results .entry-title {
@@ -1862,6 +1864,8 @@ body:not(.single) .hentry {
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 60px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
