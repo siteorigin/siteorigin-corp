@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.2 - 20 December 2017 =
+* 
+
 = 1.1.1 - 14 December 2017 =
 * Improved post navigation function to prevent edge case errors.
 * Minor style adjustments.

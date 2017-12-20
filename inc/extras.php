@@ -16,6 +16,11 @@
  */
 function siteorigin_corp_body_classes( $classes ) {
 
+	// Blog settings.
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) {
+		$classes[] = 'blog-full';
+	}
+
 	// Header margin.
 	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
 		$classes[] = 'no-header-margin';
@@ -31,7 +36,7 @@ function siteorigin_corp_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}	
 
-	// Page Settings.
+	// Page settings.
 	$page_settings = siteorigin_page_setting();
 
 	if ( ! empty( $page_settings ) ) {
@@ -39,7 +44,7 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( ! empty( $page_settings['overlap'] ) && ( $page_settings['overlap'] != 'disabled' ) ) $classes[] = 'overlap-' . $page_settings['overlap'];
 		if ( empty( $page_settings['header_margin'] ) ) $classes[] = 'no-header-margin';
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
-	}	
+	}
 
 	// Responsive layout.
 	$classes[] = 'responsive';
@@ -53,16 +58,16 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'sidebar-left';
 	}	
 
+	// WooCommerce sidebar.
+	if ( is_active_sidebar( 'shop-sidebar' ) ) {
+		 $classes[] = 'woocommerce-sidebar';
+	}		
+
 	// WooCommerce top bar.
 	if ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) {
 		$classes[] = 'no-topbar';
 	} elseif ( ! class_exists( 'Woocommerce' ) ) {
 		$classes[] = 'no-topbar';
-	}	
-
-	// WooCommerce sidebar.
-	if ( is_active_sidebar( 'shop-sidebar' ) ) {
-		 $classes[] = 'woocommerce-sidebar';
 	}				
 
 	return $classes;

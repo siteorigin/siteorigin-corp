@@ -1561,9 +1561,15 @@ a {
   display: flex;
   flex-wrap: wrap; }
 
+.blog-full.blog .site-main,
+.blog-full.archive .site-main {
+  align-items: flex-start; }
+
 .widget_siteorigin-panels-postloop {
   display: flex;
   flex-wrap: wrap; }
+  .blog-full .widget_siteorigin-panels-postloop {
+    align-items: flex-start; }
 
 body:not(.single) .hentry {
   background: #fff;

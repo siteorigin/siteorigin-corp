@@ -5,11 +5,22 @@
 		display: flex;
 		flex-wrap: wrap;		
 	}
+
+	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
+	.blog-full.blog &,
+	.blog-full.archive & {
+		align-items: flex-start;
+	}
 }
 
 .widget_siteorigin-panels-postloop {
 	display: flex;
 	flex-wrap: wrap;
+	
+	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
+	.blog-full & {
+		align-items: flex-start;
+	}
 }
 
 body:not(.single) .hentry {
