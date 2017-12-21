@@ -205,12 +205,12 @@ function siteorigin_corp_the_post_navigation() {
 		<div class="nav-links">
 			<?php if ( ! empty( $previous_post ) ) : ?>
 				<div class="nav-previous">
-					<?php previous_post_link( '%link', ' ' . $previous_thumb . '<span class="sub-title">' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' ); ?>
+					<?php previous_post_link( '%link', ' ' . $previous_thumb . '<div class="nav-innner"><span>' . esc_html__( 'Previous Post', 'siteorigin-corp' ) . '</span> <div>%title</div></div>' ); ?>
 				</div>
 			<?php endif; ?>
 			<?php if ( ! empty( $next_post ) ) : ?>
 				<div class="nav-next">
-					<?php next_post_link( '%link', '<span class="sub-title">' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div>' . $next_thumb . ' ' ); ?>
+					<?php next_post_link( '%link', '<div class="nav-innner"><span>' . esc_html__( 'Next Post', 'siteorigin-corp' ) . '</span> <div>%title</div></div>' . $next_thumb . ' ' ); ?>
 				</div>
 			<?php endif; ?>
 		</div><!-- .nav-links -->
@@ -286,7 +286,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 									elseif ( has_post_thumbnail() )
 										the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
 									?>
-									<div>
+									<div class="corp-content-wrapper">
 										<h3 class="related-post-title"><?php the_title(); ?></h3>
 										<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
 									</div>

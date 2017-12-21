@@ -29,7 +29,7 @@
 				font-weight: 500; 
 			}
 
-			~ * {
+			*:not(.widget-title):not(a) {
 				color: $color__footer-widget-text;
 			}
 

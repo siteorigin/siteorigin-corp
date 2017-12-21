@@ -25,7 +25,7 @@
 		</div>
 	<?php endif; ?>	
 
-	<div class="content-wrapper">
+	<div class="corp-content-wrapper">
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :
@@ -60,7 +60,7 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-	</div>
+	</div><!-- .corp-content-wrapper -->
 
 	<?php siteorigin_corp_entry_footer(); ?>
 </article><!-- #post-## -->

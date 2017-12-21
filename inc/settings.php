@@ -327,8 +327,8 @@ function siteorigin_corp_settings_init() {
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
-					'label' => esc_html__( 'Hide SiteOrigin Attribution', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Hide the SiteOrigin link in your footer.', 'siteorigin-corp' ),
+					'label' => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a SiteOrigin link in your footer bottom bar.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
 				'social_widget' => array(

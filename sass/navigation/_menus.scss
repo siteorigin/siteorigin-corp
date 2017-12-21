@@ -92,10 +92,9 @@
 				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
-				font-weight: 600;
+				font-weight: bold; 
 				letter-spacing: 1px;
 				padding-bottom: 4px;
-				transition: none;
 			}
 		}			
 
@@ -173,7 +172,7 @@
 	// First level items.
 	div > ul > li {
 
-		// Page Settings: Overlap with colors.
+		// Overlap.
 		.overlap-light .site-header:not(.stuck) & > a {
 			color: #fff; 
 		}
@@ -182,7 +181,7 @@
 			color: #2d2d2d; 
 		}		
 
-		&:not(.menu-item-has-children):hover > a {
+		&:hover > a {
 			border-bottom: 2px solid; 
 			border-color: $color__navigation_link_accent;
 		}
@@ -324,7 +323,7 @@
 				font-size: 14px;
 				padding: 14px;
 				position: absolute;
-				right: 0;
+				right: 2px;
 				top: -2px;
 				transition: none;
 
@@ -398,6 +397,7 @@ $sel: '';
 	@include clearfix-after;
 	padding-top: 30px; 
 	text-align: center;
+	width: 100%; 
 
 	.page-numbers {
 		border: 1px solid $color__text-medium;
@@ -453,15 +453,28 @@ $sel: '';
 	a {
 		
 		img {
-			display: block;
-			float: left;
-			margin-right: 15px; 
+			display: inline-block;
+			margin-right: 15px;
 			max-width: 80px;
+			
+			@media (max-width: 1136px) {
+				display: none;
+			} 			
 		}
 
-		.sub-title {
-			color: $color__text-light;
+		.nav-innner {
 			display: inline-block;
+			vertical-align: top;
+			width: 74%;
+			
+			@media (max-width: 1136px) {
+				width: 100%; 
+			} 
+		}
+
+		span {
+			color: $color__text-light;
+			display: block;
 			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
@@ -483,6 +496,10 @@ $sel: '';
 			color: $color__accent;
 		}
 	}
+
+	.nav-next img {
+		margin: 0 0 0 15px;
+	}	
 }
 
 .comment-navigation {
