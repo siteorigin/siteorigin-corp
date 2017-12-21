@@ -1,7 +1,9 @@
 == Changelog ==
 
-= 1.1.2 - 20 December 2017 =
-* 
+= 1.1.2 - 21 December 2017 =
+* Fixed incorrect footer action hook tags.
+* Changed the blog archive containers to equal height when the post excerpt setting is in use.
+* Minor style fixes.
 
 = 1.1.1 - 14 December 2017 =
 * Improved post navigation function to prevent edge case errors.
