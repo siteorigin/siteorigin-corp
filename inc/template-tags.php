@@ -261,6 +261,8 @@ if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 function siteorigin_corp_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin (https://wordpress.org/plugins/yet-another-related-posts-plugin/).
 		related_posts();
+	} elseif ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_category( $post_id );
 		$first_cat = $categories[0]->cat_ID;

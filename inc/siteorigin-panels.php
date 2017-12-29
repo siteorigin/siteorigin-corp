@@ -9,6 +9,15 @@
  */
 
 /**
+ * Register a custom layouts folder location.
+ */
+function siteorigin_corp_layouts_folder( $layout_folders ) {
+    $layout_folders[] = get_template_directory() . '/inc/layouts';
+    return $layout_folders;
+}
+add_filter( 'siteorigin_panels_local_layouts_directories', 'siteorigin_corp_layouts_folder' );
+
+/**
  * Remove Post Loop widget templates that aren't complete loops.
  */
 function siteorigin_corp_filter_post_loop_widget( $templates ) {

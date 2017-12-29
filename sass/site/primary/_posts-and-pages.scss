@@ -444,7 +444,11 @@ body:not(.single) .hentry {
 		}
 
 		div {
-			font-size: 14px; 
+			font-size: 14px;
+			
+			p:last-of-type {
+				margin-bottom: 0;
+			}
 		}	
 	}
 }

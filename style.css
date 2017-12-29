@@ -251,7 +251,7 @@ h5 {
 h6 {
   font-size: 16px; }
 
-.sub-heading, .site-content #primary .sharedaddy h3, .yarpp-related .related-posts,
+.sub-heading, .site-content #jp-relatedposts .jp-relatedposts-headline, .site-content #primary .sharedaddy h3, .yarpp-related .related-posts,
 .related-posts-section .related-posts, .comments-title,
 .comment-reply-title {
   color: #626262;
@@ -1110,13 +1110,43 @@ a {
   text-align: center; }
 
 /*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts {
+  padding-top: 0;
+  margin: 0 0 45px; }
+  .site-content #jp-relatedposts .jp-relatedposts-headline {
+    float: none;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 20px; }
+  .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+    opacity: 1; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+      color: #2d2d2d;
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
+      margin: 15px 0 0;
+      transition: .3s; }
+      .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+        color: #f14e4e;
+        text-decoration: none; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+      text-decoration: none; }
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+    .site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+      color: #626262;
+      font-size: 13px; }
+
+/*--------------------------------------------------------------
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
-  border: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
   border-right: 0;
   border-left: 0;
-  margin-bottom: 40px;
   padding: 30px 0; }
   .site-content #primary .sharedaddy h3 {
     display: inline-block; }
@@ -1863,6 +1893,8 @@ body:not(.single) .hentry {
           color: #f14e4e; }
     .author-box .author-description div {
       font-size: 14px; }
+      .author-box .author-description div p:last-of-type {
+        margin-bottom: 0; }
 
 /*--------------------------------------------------------------
 ## - Related Posts
@@ -2427,5 +2459,3 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */

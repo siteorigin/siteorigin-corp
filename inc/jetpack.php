@@ -52,3 +52,31 @@ add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
     }
 }
 add_action( 'loop_start', 'siteorigin_corp_remove_share' );
+
+if ( ! function_exists( 'siteorigin_corp_jetpackme_related_posts_headline' ) ) :
+/**
+ * Changing the jetpack related posts title
+ */
+function siteorigin_corp_jetpackme_related_posts_headline( $headline ) {
+	$headline = sprintf(
+	    '<h3 class="jp-relatedposts-headline">%s</h3>',
+	    esc_html( 'Related Posts', 'siteorigin-corp' )
+	);
+	return $headline;
+}
+endif;
+add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_corp_jetpackme_related_posts_headline' );
+
+if ( ! function_exists( 'siteorigin_corp_jetpackme_remove_rp' ) ) :
+/**
+ * Removing jetpack related posts from the bottom of posts
+ */
+function siteorigin_corp_jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+endif;
+add_filter( 'wp', 'siteorigin_corp_jetpackme_remove_rp', 20 );

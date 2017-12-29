@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.2 - 29 December 2017 =
+* Added additional theme settings descriptions.
+* Added placement and styling support for Jetpack Related Posts module.
+* Added prebuilt layout home page layout for Page Builder by SiteOrigin.
+
 = 1.1.2 - 21 December 2017 =
 * Fixed incorrect footer action hook tags.
 * Changed the blog archive containers to equal height when the post excerpt setting is in use.

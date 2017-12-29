@@ -116,41 +116,49 @@ function siteorigin_corp_settings_init() {
 				'link' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Link Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu link color.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'link_accent' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Link Hover Accent Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu accent color used on hover.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'drop_down_link' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Link Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu drop down link color.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'drop_down_link_hover' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Link Hover Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu drop down link hover color.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'drop_down_divider' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu drop down link divider color.', 'siteorigin-corp' ),
 					'live' => true,
 				),											
 				'drop_down_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu drop down background color.', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'search_overlay_text' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Menu Search Overlay Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu search overlay text color.', 'siteorigin-corp' ),
 					'live' => true,
 				),						
 				'search_overlay_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu search background color.', 'siteorigin-corp' ),
 					'live' => true,
 				),				
 			),
@@ -337,7 +345,7 @@ function siteorigin_corp_settings_init() {
 					'bundle_widget' => 'social-media-buttons',
 					'plugin' => 'so-widgets-bundle',
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Add social icons to bottom bar menu.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Add social icons to the bottom bar.', 'siteorigin-corp' ),
 				),				
 				'widget_title' => array(
 					'type' => 'color',
@@ -361,12 +369,13 @@ function siteorigin_corp_settings_init() {
 				),																
 				'background' => array(
 					'type' => 'color',
-					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
+					'label' => esc_html__( 'Widget Background Color', 'siteorigin-corp' ),
 					'live' => true,
 				),
 				'bottom_bar_text' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Bottom Bar Text Color', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Bottom bar appears below footer widget area.', 'siteorigin-corp' ),
 					'live' => true,
 				),	
 				'bottom_bar_link' => array(
@@ -387,12 +396,13 @@ function siteorigin_corp_settings_init() {
 				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Footer widget area top and bottom padding.', 'siteorigin-corp' ),
 					'live'	=> true,
 				),
 				'margin'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Top Margin', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Footer top margin. The space between the footer and content.', 'siteorigin-corp' ),
 					'live'	=> true,
 				),				
 			),
