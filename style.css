@@ -1113,10 +1113,9 @@ a {
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
-  border: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
   border-right: 0;
   border-left: 0;
-  margin-bottom: 40px;
   padding: 30px 0; }
   .site-content #primary .sharedaddy h3 {
     display: inline-block; }
