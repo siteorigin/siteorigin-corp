@@ -52,6 +52,51 @@
 }
 
 /*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts {
+	padding-top: 0;
+	margin: 0 0 45px; // Already 1em from the JP stylesheet.
+
+	.jp-relatedposts-headline {
+		@extend .sub-heading;
+		float: none;
+		font-family: $font__headings; 
+		margin-bottom: 20px; 
+	}
+
+	.jp-relatedposts-items .jp-relatedposts-post {
+		opacity: 1;
+		
+		.jp-relatedposts-post-title a {
+			color: $color__text-dark;
+			display: block;
+			font-family: $font__headings;
+			font-size: 16px; 
+			font-weight: 500; 
+			line-height: normal;
+			margin: 15px 0 0;
+			transition: .3s;
+
+			@at-root &:hover {
+				color: $color__accent;
+				text-decoration: none;
+			}		
+		}		
+
+		&:hover .jp-relatedposts-post-title a {
+			text-decoration: none;
+		}
+
+		.jp-relatedposts-post-date,
+		.jp-relatedposts-post-context {
+			color: $color__text-medium; 
+			font-size: 13px; 
+		}			
+	}
+}
+
+/*--------------------------------------------------------------
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
