@@ -8,7 +8,7 @@
  * @license GPL 2.0
  */
 
-if ( ! is_active_sidebar( 'sidebar-shop' ) ) return;
+if ( ! is_active_sidebar( 'shop-sidebar' ) ) return;
 if ( is_product() ) return;
 ?>
 

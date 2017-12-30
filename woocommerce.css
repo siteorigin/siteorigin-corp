@@ -8,24 +8,28 @@ Version: dev
   width: 100%; }
 
 .woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
-  float: right;
-  width: 70%; }
+  float: left;
+  width: 66%; }
   @media (max-width: 768px) {
     .woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
-      border: 0;
-      padding-right: 0;
       width: 100%; } }
 
 .woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
-  float: left;
-  padding-right: 4%;
-  padding-left: 0; }
-
-.woocommerce.woocommerce-page.woocommerce-sidebar-right .content-area {
-  float: left; }
-
-.woocommerce.woocommerce-page.woocommerce-sidebar-right .widget-area {
   float: right;
+  padding-left: 2.75%;
+  width: 34%; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
+      border-top: 1px solid #d6d6d6;
+      margin-top: 50px;
+      padding: 50px 0 0;
+      width: 100%; } }
+
+.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
+  float: right; }
+
+.woocommerce.woocommerce-page.woocommerce-sidebar-left .widget-area {
+  float: left;
   padding-right: 0;
   padding-left: 4%; }
 
