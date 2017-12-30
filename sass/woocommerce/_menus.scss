@@ -29,15 +29,14 @@
 
 				a,
 				> span {
-					background: $color__background-hr-dark;
-					border-radius: 2px;
+					border: 1px solid $color__text-medium;
 					color: $color__text-medium;
 					display: inline-block;
-					font-size: 14px;
-					line-height: normal; 
-					margin-right: 2px;
-					padding: 12px 17px;
-					text-transform: uppercase;
+					font-family: $font__main;
+					font-size: 0.9333em;
+					line-height: normal;  
+					margin-right: 4px;
+					padding: 11px 17px;
 					transition: .3s;
 
 					&.current:hover {
@@ -46,8 +45,8 @@
 
 					&:hover,
 					&.current {
-						background: $color__accent;
-						color: #fff;
+						border-color: $color__accent;
+						color: $color__accent;
 					}
 				}
 

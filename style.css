@@ -1587,12 +1587,12 @@ a {
 ## Posts and pages
 --------------------------------------------------------------*/
 .blog .site-main,
-.archive .site-main {
+.archive:not(.woocommerce) .site-main {
   display: flex;
   flex-wrap: wrap; }
 
 .blog-full.blog .site-main,
-.blog-full.archive .site-main {
+.blog-full.archive:not(.woocommerce) .site-main {
   align-items: flex-start; }
 
 .widget_siteorigin-panels-postloop {

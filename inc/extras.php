@@ -67,11 +67,11 @@ function siteorigin_corp_body_classes( $classes ) {
 
 	// WooCommerce columns.
 	if ( function_exists( 'is_woocommerce' ) ) {
-		$classes[] = 'columns-' . siteorigin_setting( 'woocommerce_archive_columns', 3 );
+		$classes[] = 'columns-' . siteorigin_setting( 'woocomerce_products_per_row' );
 	}
 	
 	// WooCommerce sidebar.
-	if ( is_active_sidebar( 'sidebar-shop' ) && ( function_exists( 'is_woocommerce' ) && ! is_product() ) ) {
+	if ( is_active_sidebar( 'shop-sidebar' ) && ( function_exists( 'is_woocommerce' ) && ! is_product() ) ) {
 		 $classes[] = 'woocommerce-sidebar';
 	}
 

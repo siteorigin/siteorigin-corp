@@ -411,6 +411,69 @@ function siteorigin_corp_settings_init() {
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 
+function siteorigin_corp_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title' => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
+			'fields' => array(
+
+				'products_per_row' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-corp' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),	
+
+				'shop_sidebar' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Choose the shop sidebar position.', 'siteorigin-corp' ),
+					'options' => array(
+						'left' => esc_html__( 'Left', 'siteorigin-corp' ),
+						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
+					),
+				),						
+
+				'product_gallery' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
+					'options' => array(
+						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-corp' ),
+						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-corp' ),
+						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-corp' ),
+						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-corp' ),
+					),
+				),
+
+				'mini_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-corp' ),
+				),				
+
+				'quick_view' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Quick View', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
+				),
+
+				'add_to_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+				),
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings );
+}
+add_filter( 'siteorigin_corp_settings_array', 'siteorigin_corp_woocommerce_settings' );
+
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
@@ -1031,8 +1094,15 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_bottom_bar_link_hover']				= '#ffffff';
 	$defaults['footer_bottom_bar_background']				= '#2f333b';
 	$defaults['footer_padding']								= '95px';
-	$defaults['footer_margin']								= '80px';	
-	
+	$defaults['footer_margin']								= '80px';
+
+	$defaults['woocomerce_products_per_row']				= 3;
+	$defaults['woocommerce_shop_sidebar']       			= 'left';
+	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
+	$defaults['woocommerce_mini_cart']  					= true;
+	$defaults['woocommerce_quick_view'] 					= true;
+	$defaults['woocomerce_add_to_cart'] 					= true;
+		
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );

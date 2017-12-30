@@ -2,23 +2,7 @@
 	
 	// Page Title.
 	&.archive .page-title {
-		font-size: 29px;
-		line-height: normal;
-		margin: 0;
-		
-		@media (max-width: 768px) {
-
-			@at-root .woocommerce.archive .page-title {
-				font-size: 26px; 	
-			}
-		}		
-		
-		@media (max-width: 480px) {
-
-			@at-root .woocommerce.archive .page-title {
-				font-size: 23px; 	
-			}
-		}			
+		text-align: left		
 	}
 
 	// Result count.
@@ -27,7 +11,7 @@
 		color: $color__text-light;
 		display: flex;
 		float: left;
-		font-size: 13px;
+		font-size: 14px;
 		height: 37px; 
 		justify-content: left;
 		text-align: left;
@@ -145,7 +129,7 @@
 		background: $color__accent;
 		color: #fff;
 		font-size: 12px;
-		left: 10px; 
+		right: 10px; 
 		line-height: normal;  
 		padding: 6px 12px 5px;
 		position: absolute;
@@ -213,7 +197,7 @@
 		// Product list item.
 		.product {
 			float: left;
-			margin: 0 3.5% 50px 0;
+			margin: 0 3.5% 43px 0;
 			text-align: center;
 			width: 100%;
 			
@@ -354,8 +338,11 @@
 			// Product or category title.
 			.woocommerce-loop-product__title,
 			.woocommerce-loop-category__title {
-				font-size: 1.0666em; 
-				margin: 15px 0 5px;
+				font-family: $font__main; 
+				font-size: 14px;
+				font-weight: bold;
+				text-transform: uppercase;  
+				margin: 23px 0 0;
 				
 				@at-root {
 					
@@ -388,8 +375,8 @@
 			// Product price.
 			.price {
 				display: block;
-				font-size: 0.9333em;
-				margin-bottom: 10px;
+				font-size: 14px;
+				margin-bottom: 0;
 				
 				@at-root {
 					

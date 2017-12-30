@@ -77,10 +77,10 @@ function siteorigin_corp_woocommerce_archive_product_image() { ?>
 		<?php woocommerce_template_loop_product_link_open(); ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
-		<?php if ( get_theme_mod( 'quick_view', true ) && ! ( get_theme_mod( 'archive_columns' ) == 5 ) ) {
+		<?php if ( siteorigin_setting( 'quick_view' ) && ! ( siteorigin_setting( 'archive_columns' ) == 5 ) ) {
 			siteorigin_corp_woocommerce_quick_view_button();
 		} ?>		
-		<?php if ( get_theme_mod( 'add_to_cart', true ) && ! ( get_theme_mod( 'archive_columns' ) == 5 ) ) {
+		<?php if ( siteorigin_setting( 'add_to_cart' ) && ! ( siteorigin_setting( 'archive_columns' ) == 5 ) ) {
 			woocommerce_template_loop_add_to_cart();
 		} ?>
 	</div>
@@ -166,7 +166,7 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_quick_view' ) ) :
  * Setup quick view modal in the footer.
  */
 function siteorigin_corp_woocommerce_quick_view() { ?>
-	<?php if ( get_theme_mod( 'quick_view', true ) ) : ?>
+	<?php if ( siteorigin_setting( 'quick_view' ) ) : ?>
 		<!-- WooCommerce Quick View -->
 		<div id="quick-view-container">
 			<div id="product-quick-view" class="quick-view"></div>
