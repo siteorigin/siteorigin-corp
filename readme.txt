@@ -13,7 +13,7 @@ A modern business theme from SiteOrigin.
 
 == Description ==
 
-A modern business theme from SiteOrigin. Corp is versatile and quick to customize. 
+A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin. Custom WooCommerce styling and several new blog layouts to follow soon.
 
 == Installation ==
 
