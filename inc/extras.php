@@ -67,7 +67,7 @@ function siteorigin_corp_body_classes( $classes ) {
 
 	// WooCommerce columns.
 	if ( function_exists( 'is_woocommerce' ) ) {
-		$classes[] = 'columns-' . siteorigin_setting( 'woocomerce_products_per_row' );
+		$classes[] = 'columns-' . siteorigin_setting( 'woocommerce_products_per_row' );
 	}
 	
 	// WooCommerce sidebar.

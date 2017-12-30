@@ -425,7 +425,7 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-corp' ),
 					'min' => 2,
 					'max' => 5,
-					'step' => 1
+					'step' => 1,
 				),	
 
 				'shop_sidebar' => array(
@@ -1096,12 +1096,12 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_padding']								= '95px';
 	$defaults['footer_margin']								= '80px';
 
-	$defaults['woocomerce_products_per_row']				= 3;
-	$defaults['woocommerce_shop_sidebar']       			= 'left';
+	$defaults['woocommerce_products_per_row']				= 3;
+	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
 	$defaults['woocommerce_mini_cart']  					= true;
 	$defaults['woocommerce_quick_view'] 					= true;
-	$defaults['woocomerce_add_to_cart'] 					= true;
+	$defaults['woocommerceadd_to_cart'] 					= true;
 		
 	return $defaults;
 }
