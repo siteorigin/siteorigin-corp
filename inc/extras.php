@@ -56,11 +56,6 @@ function siteorigin_corp_body_classes( $classes ) {
 
 	if ( siteorigin_setting( 'sidebar_position' ) == 'left' ) {
 		 $classes[] = 'sidebar-left';
-	}	
-
-	// WooCommerce sidebar.
-	if ( is_active_sidebar( 'shop-sidebar' ) ) {
-		 $classes[] = 'woocommerce-sidebar';
 	}		
 
 	// WooCommerce top bar.
@@ -68,6 +63,20 @@ function siteorigin_corp_body_classes( $classes ) {
 		$classes[] = 'no-topbar';
 	} elseif ( ! class_exists( 'Woocommerce' ) ) {
 		$classes[] = 'no-topbar';
+	}
+
+	// WooCommerce columns.
+	if ( function_exists( 'is_woocommerce' ) ) {
+		$classes[] = 'columns-' . siteorigin_setting( 'woocommerce_archive_columns', 3 );
+	}
+	
+	// WooCommerce sidebar.
+	if ( is_active_sidebar( 'sidebar-shop' ) && ( function_exists( 'is_woocommerce' ) && ! is_product() ) ) {
+		 $classes[] = 'woocommerce-sidebar';
+	}
+
+	if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'right' ) {
+		 $classes[] = 'woocommerce-sidebar-right';
 	}				
 
 	return $classes;

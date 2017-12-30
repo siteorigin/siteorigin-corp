@@ -1,0 +1,41 @@
+.woocommerce.woocommerce-page {
+
+	.content-area {
+		width: 100%;	
+	}
+
+	// Content area with sidebar.
+	&.woocommerce-sidebar {
+
+		.content-area {
+			float: right;
+			width: 70%;	 	
+		
+			@media (max-width: 768px) {
+				border: 0;
+				padding-right: 0;
+				width: 100%; 	
+			}
+		}
+
+		.widget-area {
+			float: left;
+			padding-right: 4%; 
+			padding-left: 0;
+		}
+	}
+
+	// Content area with right aligned sidebar.
+	&.woocommerce-sidebar-right {
+
+		.content-area {
+			float: left;
+		}
+
+		.widget-area {
+			float: right;
+			padding-right: 0; 
+			padding-left: 4%;
+		}
+	}			
+}

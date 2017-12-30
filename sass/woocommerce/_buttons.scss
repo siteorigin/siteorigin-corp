@@ -1,0 +1,24 @@
+a.button,
+button.button,
+input.button,
+#respond input#submit {
+
+	&.loading::after {
+  		animation: spin 2s linear infinite;		
+  		content: '\e01c';
+		font-family: 'WooCommerce';
+		font-size: .9em;
+		font-weight: 400;
+		margin: .3em 0 0 .3em;
+		position: absolute;
+		vertical-align: middle;
+	}
+
+	&.added:after {
+		font-size: .9em; 
+		font-family: 'WooCommerce';
+		content: '\e017';
+		margin-left: 1em;
+		vertical-align: baseline;
+	}
+}
