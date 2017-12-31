@@ -1186,7 +1186,7 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_set
 function siteorigin_corp_about_page_sections( $about ) {
 	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
 
-	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize.", 'siteorigin-corp' );
+	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
 
 	$about[ 'review' ] = true;
 
