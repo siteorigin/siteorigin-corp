@@ -1190,6 +1190,8 @@ function siteorigin_corp_about_page_sections( $about ) {
 
 	$about[ 'review' ] = true;
 
+	$about[ 'no_video' ] = true;
+
 	$about[ 'sections' ] = array(
 		'free',
 		'documentation',
