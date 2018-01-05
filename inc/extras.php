@@ -75,8 +75,8 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'woocommerce-sidebar';
 	}
 
-	if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'right' ) {
-		 $classes[] = 'woocommerce-sidebar-right';
+	if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
+		 $classes[] = 'woocommerce-sidebar-left';
 	}				
 
 	return $classes;
