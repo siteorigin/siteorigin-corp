@@ -5,8 +5,8 @@
 
 		.images {
 			float: left;
-			margin: 0 0 50px; 
-			width: 48%;
+			margin: 0 0 53px; 
+			width: 48.68%;
 			
 			@media (max-width: 780px) {
 				width: 100%; 
@@ -37,8 +37,8 @@
 				li {
 					cursor: pointer;
 					float: left;
-					margin: 2.5% 2.5% 0 0;
-					width: 23.125%;
+					margin: 25px 25px 0 0;
+					width: 21.624%;
 					
 					&:nth-of-type(4n+4) {
 						margin-right: 0; 
@@ -51,6 +51,7 @@
 						
 						&.flex-active,
 						&:hover {
+							border: 1px solid #828282;
 							opacity: 1;
 						}
 					}
@@ -103,7 +104,7 @@
 		.product-info-wrapper {
 			float: right;
 			padding-top: 0;
-			width: 48%;
+			width: 48.68%;
 			
 			@media (max-width: 786px) {
 				float: none;
@@ -236,32 +237,37 @@
 			margin-bottom: 50px;
 			
 			h2 {
-				@extend .underline;
-				font-size: 14px;
+				font-size: 13px;
 			}
 
 			.wc-tabs {
+				border-bottom: 1px solid $color__background-hr; 
 				list-style: none;
 				margin: 0;
-				overflow: hidden;
-				position: relative;
 
 				li {
 					display: inline-block;
-					font-family: $font__headings; 
-					margin: 0 30px 0 0;
-					padding-bottom: 5px; 
+					margin: 0 34px 0 0;
+					padding-bottom: 7px;
 					text-transform: uppercase;
 					
 					a {
-						color: $color__text-dark;
-						font-weight: 500; 
-						display: inline-block;
-						outline: 0; 
+						color: $color__text-medium;
+						font-weight: 500;
+						outline: 0;
+						
+						&:hover {
+							color: $color__text-dark;
+						}
 					}
 
 					&.active {
-						border-bottom: 2px solid $color__accent;
+						box-shadow: 0 2px 0 $color__accent;
+						margin-bottom: 1px; 
+										
+						a {
+							color: $color__text-dark;
+						}
 					}
 				}
 			}
