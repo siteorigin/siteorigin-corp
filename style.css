@@ -1585,7 +1585,8 @@ a {
 ## Posts and pages
 --------------------------------------------------------------*/
 .blog .site-main,
-.archive:not(.woocommerce) .site-main {
+.archive:not(.woocommerce) .site-main,
+.search-results .site-main {
   display: flex;
   flex-wrap: wrap; }
 

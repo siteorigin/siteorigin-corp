@@ -1,7 +1,8 @@
 .site-main {
 
 	.blog &,
-	.archive:not(.woocommerce) & {
+	.archive:not(.woocommerce) &,
+	.search-results & {
 		display: flex;
 		flex-wrap: wrap;		
 	}
