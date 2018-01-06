@@ -448,24 +448,6 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-corp' ),
 					),
 				),
-
-				'mini_cart' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-corp' ),
-				),				
-
-				'quick_view' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Quick View', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
-				),
-
-				'add_to_cart' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
-				),
 			)
 		)
 	);
@@ -1099,9 +1081,6 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['woocommerce_products_per_row']				= 3;
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
-	$defaults['woocommerce_mini_cart']  					= true;
-	$defaults['woocommerce_quick_view'] 					= true;
-	$defaults['woocommerceadd_to_cart'] 					= true;
 		
 	return $defaults;
 }
