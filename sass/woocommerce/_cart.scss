@@ -9,10 +9,10 @@
 	}
 
 	table.cart {
+		background: #fff; 
 		text-align: left;
 		
 		thead {
-			background: $color__background-hr; 
 			border: 1px solid $color__background-hr-dark;
 			
 			@media (max-width: 768px) {
@@ -23,10 +23,15 @@
 				font-size: 14px;
 			}		
 		}
-		
+
+		tr {
+			border: 1px solid $color__background-hr-dark;
+		}		
+
 		th,
 		td {
-			padding: 16px;
+			padding: 14px;
+			text-transform: uppercase;
 			
 			@media (max-width: 768px) {
 				display: block;
@@ -34,8 +39,12 @@
 			}		
 		}
 
+		td {
+			padding: 20px;
+		}
+
 		.cart_item {
-			border: 1px solid $color__background-hr-dark;
+			
 			font-size: 14px;
 			
 			@media (max-width: 768px) {
@@ -56,18 +65,27 @@
 			}
 			
 			a {
-				color: $color__text-medium;
+				color: $color__text-dark;
+				display: block;
 				font-weight: bold;
-				font-weight: 600;
+				line-height: 0; 
 				
 				&:hover {
-					color: $color__text-light;
+					color: $color__text-medium;
 				}
 			}
 
 			.product-remove {
 				font-size: 20px; 
 				text-align: center;
+				
+				a {
+					color: $color__text-medium;
+					
+					&:hover {
+						color: $color__text-light;
+					}
+				}
 				
 				&:before {
 					content: none; 
@@ -100,7 +118,6 @@
 		}
 
 		td.actions {
-			padding: 30px 0 0; 
 			text-align: right;
 			
 			@media (max-width: 768px) {
@@ -120,6 +137,8 @@
 				}
 
 				label {
+					color: $color__text-dark;
+					font-weight: bold; 
 					
 					@media (max-width: 768px) {
 						display: none;
