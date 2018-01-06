@@ -663,9 +663,20 @@ input.button.added:after,
     .woocommerce .product .product-info-wrapper .variations {
       font-size: 14px;
       margin-bottom: 30px; }
+      .woocommerce .product .summary .variations tr td,
+      .woocommerce .product .product-info-wrapper .variations tr td {
+        padding-bottom: 15px; }
+      .woocommerce .product .summary .variations tr:only-of-type td,
+      .woocommerce .product .product-info-wrapper .variations tr:only-of-type td {
+        padding-bottom: 0; }
       .woocommerce .product .summary .variations .label,
       .woocommerce .product .product-info-wrapper .variations .label {
         text-transform: capitalize; }
+        .woocommerce .product .summary .variations .label label,
+        .woocommerce .product .product-info-wrapper .variations .label label {
+          color: #2d2d2d;
+          font-size: 13px;
+          font-weight: bold; }
       .woocommerce .product .summary .variations select,
       .woocommerce .product .product-info-wrapper .variations select {
         font-size: 14px; }
@@ -710,6 +721,9 @@ input.button.added:after,
         .woocommerce .product .summary .product_meta,
         .woocommerce .product .product-info-wrapper .product_meta {
           margin-bottom: 50px; } }
+      .woocommerce .product .summary .product_meta > span,
+      .woocommerce .product .product-info-wrapper .product_meta > span {
+        display: block; }
       .woocommerce .product .summary .product_meta span span,
       .woocommerce .product .product-info-wrapper .product_meta span span {
         font-weight: normal; }
@@ -753,6 +767,16 @@ input.button.added:after,
             color: #2d2d2d; }
     .woocommerce .product .woocommerce-tabs .wc-tab {
       padding-top: 25px; }
+  .woocommerce .product .shop_attributes tr th {
+    color: #2d2d2d;
+    text-align: left;
+    text-transform: capitalize; }
+  .woocommerce .product .shop_attributes tr th,
+  .woocommerce .product .shop_attributes tr td {
+    padding-bottom: 8px; }
+  .woocommerce .product .shop_attributes tr:last-of-type th,
+  .woocommerce .product .shop_attributes tr:last-of-type td {
+    padding-bottom: 0; }
   .woocommerce .product .woocommerce-Reviews .woocommerce-noreviews {
     font-size: 14px;
     margin-bottom: 16px; }
