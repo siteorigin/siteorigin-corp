@@ -135,7 +135,12 @@
 		position: absolute;
 		text-transform: uppercase;
 		top: 10px; 
-		z-index: 1;   
+		z-index: 1;
+		
+		@at-root .single-product#{&} {
+			left: 10px;
+			right: initial;
+		}
 	}
 
 	// Star Rating.

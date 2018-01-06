@@ -112,7 +112,10 @@
 			}
 			
 			.entry-title {
-				font-size: 26px;
+				font-family: $font__main; 
+				font-size: 24px;
+				font-weight: bold; 
+				text-transform: uppercase; 
 			}
 
 			.star-rating {
@@ -132,12 +135,13 @@
 			}
 
 			.price {
-				font-size: 18px;
+				font-size: 24px;
+				font-weight: 500; 
 				margin-bottom: 25px;
 			}
 
 			.woocommerce-product-details__short-description {
-				margin-bottom: 25px;
+				margin-bottom: 35px;
 				
 				p {
 					margin-bottom: 26px;
@@ -185,7 +189,7 @@
 			}
 
 			.cart {
-				margin-bottom: 35px; 
+				margin-bottom: 30px; 
 			}
 
 			.quantity {
@@ -203,7 +207,7 @@
 
 			.product_meta {
 				border-top: 1px solid $color__background-hr; 
-				color: $color__text-dark;
+				color: $color__text-medium;
 				font-size: 13px;
 				padding-top: 25px;
 				
@@ -211,10 +215,7 @@
 					margin-bottom: 50px; 
 				}
 				
-				> span {
-					display: block;
-					font-weight: bold;
-					font-weight: 600;  	
+				> span {	
 				}
 				
 				span span {
@@ -222,7 +223,7 @@
 				}
 
 				a {
-					color: $color__text-medium;
+					color: $color__text-dark;
 					font-weight: normal; 
 				
 					&:hover {
@@ -234,10 +235,16 @@
 
 		.woocommerce-tabs {
 			@include clearfix-after;
-			margin-bottom: 50px;
+			margin-bottom: 60px;
 			
 			h2 {
-				font-size: 13px;
+				color: $color__text-medium; 
+				font-family: $font__main; 
+				font-size: 14px; 
+				letter-spacing: 1px;
+				line-height: normal;
+				margin: 0;
+				text-transform: uppercase; 
 			}
 
 			.wc-tabs {
@@ -337,10 +344,15 @@
 			}
 
 			.comment-reply-title {
-				border: none;
-				margin-bottom: 15px; 
-				padding-bottom: 0;
-				text-transform: none;  
+				color: $color__text-medium;
+				display: block;
+				font-size: 14px;
+				font-weight: bold;  
+				letter-spacing: 1px;
+				line-height: normal;
+				margin: 0;
+				padding-bottom: 20px; 
+				text-transform: uppercase; 
 			}
 
 			.comment-respond {
@@ -416,14 +428,18 @@
 
 		// Upsells.
 		.upsells {
+			padding-bottom: 15px; 
 			
 			> h2 {
-				@extend .underline;
-				font-size: 16px;
+				font-family: $font__main; 
+				font-size: 20px;
+				font-weight: 500;
+				margin-bottom: 20px; 
+				text-transform: uppercase;
 			}
 
 			.product {
-				margin-bottom: 50px; 
+				margin-bottom: 20px; 
 			}
 		}
 
@@ -431,8 +447,11 @@
 		.related {
 
 			> h2 {
-				@extend .underline;
-				font-size: 16px;
+				font-family: $font__main; 
+				font-size: 20px;
+				font-weight: 500;
+				margin-bottom: 20px;
+				text-transform: uppercase;
 			}
 
 			.product {
