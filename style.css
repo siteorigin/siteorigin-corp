@@ -2083,7 +2083,8 @@ body:not(.single) .hentry {
 #commentform label {
   display: block;
   line-height: normal;
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  text-transform: capitalize; }
 
 #commentform textarea {
   width: 100%; }
