@@ -11,10 +11,11 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) {
+			the_post(); 
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
@@ -22,20 +23,24 @@ get_header(); ?>
 				echo sharing_display();
 			}
 
-			siteorigin_corp_the_post_navigation();
+			if ( siteorigin_setting( 'navigation_post' ) ) {
+				siteorigin_corp_the_post_navigation();
+			}
 
-			siteorigin_corp_author_box();		
+			if ( siteorigin_setting( 'blog_post_author_box' ) ) {
+				siteorigin_corp_author_box();
+			}
 
-			if ( ! is_attachment() ) :
+			if ( ! is_attachment() && siteorigin_setting( 'blog_related_posts' ) ) {
 				siteorigin_corp_related_posts( $post->ID );
-			endif;
+			}
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
+			if ( comments_open() || get_comments_number() ) {
 				comments_template();
-			endif;
+			}
 
-		endwhile; // End of the loop.
+		} // End while.
 		?>
 
 		</main><!-- #main -->

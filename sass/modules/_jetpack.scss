@@ -2,8 +2,10 @@
 ## Infinite Scroll
 --------------------------------------------------------------*/
 // Globally hidden elements when Infinite Scroll is supported and in use.
-.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden).
-.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling).
+.infinite-scroll .posts-navigation, // Older / Newer posts navigation (always hidden).
+.infinite-scroll .pagination, // Pagination navigation (always hidden).
+.infinite-scroll .woocommerce-pagination, // WooCommercep pagination navigation (always hidden).
+.infinite-scroll.neverending .site-footer { // Theme footer (when set to scrolling).
 	display: none;
 }
 
@@ -12,14 +14,95 @@
 	display: block;
 }
 
+#page #infinite-handle {
+	clear: both;
+	padding-top: 30px; 
+	text-align: center;
+
+	span {
+    	background: inherit;
+    	border-radius: initial;
+    	color: inherit;
+    	cursor: pointer;
+    	font-size: inherit;
+	    padding: inherit;
+
+		button {
+			background: transparent;
+			border: 2px solid;
+			border-color: $color__text-dark;
+			color: $color__text-dark;
+			font-size: 13px; 
+			letter-spacing: 1px;
+			line-height: normal;
+			padding: 9px 30px; 
+			transition: .3s;
+			
+			&:hover {
+				border-color: $color__accent;
+				color: $color__accent; 
+			}
+		}
+	}
+}
+
+.infinite-scroll .infinite-loader .spinner {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Related Posts
+--------------------------------------------------------------*/
+.site-content #jp-relatedposts {
+	padding-top: 0;
+	margin: 0 0 45px; // Already 1em from the JP stylesheet.
+
+	.jp-relatedposts-headline {
+		@extend .sub-heading;
+		float: none;
+		font-family: $font__headings; 
+		margin-bottom: 20px; 
+	}
+
+	.jp-relatedposts-items .jp-relatedposts-post {
+		opacity: 1;
+		
+		.jp-relatedposts-post-title a {
+			color: $color__text-dark;
+			display: block;
+			font-family: $font__headings;
+			font-size: 16px; 
+			font-weight: 500; 
+			line-height: normal;
+			margin: 15px 0 0;
+			transition: .3s;
+
+			@at-root &:hover {
+				color: $color__accent;
+				text-decoration: none;
+			}		
+		}		
+
+		&:hover .jp-relatedposts-post-title a {
+			text-decoration: none;
+		}
+
+		.jp-relatedposts-post-date,
+		.jp-relatedposts-post-context {
+			color: $color__text-medium; 
+			font-size: 13px; 
+		}			
+	}
+}
+
 /*--------------------------------------------------------------
 ## Sharing
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
-	border: 1px solid $color__background-hr;
+	border-top: 1px solid $color__background-hr;
 	border-right: 0; 
 	border-left: 0;		
-	margin-bottom: 40px; 
 	padding: 30px 0;
 
 	h3 {

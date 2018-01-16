@@ -1,26 +1,126 @@
-.sticky {
-	display: block;
+.site-main {
+
+	.blog &,
+	.archive & {
+		display: flex;
+		flex-wrap: wrap;		
+	}
+
+	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
+	.blog-full.blog &,
+	.blog-full.archive & {
+		align-items: flex-start;
+	}
 }
 
-.hentry {
-	border-bottom: 1px solid $color__background-hr-dark;
-	margin: 0 0 50px;
-	padding: 0 0 30px;
+.widget_siteorigin-panels-postloop {
+	display: flex;
+	flex-wrap: wrap;
 	
-	&:last-of-type {
-		border: 0;
-	}
-
-	&:only-of-type {
-		border: 0;
-		margin: 0; 
+	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
+	.blog-full & {
+		align-items: flex-start;
 	}
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	padding: 25px 0;
+body:not(.single) .hentry {
+	background: #fff;
+	border: 1px solid $color__background-hr;
+	margin: 0 0 31px;
+	width: 31%;
+	
+	// Two column blog layout below 768px.
+	@media (max-width: 768px) {
+		width: 48.25%;
+	}	
+
+	// One column blog layout below 480px.
+	@media (max-width: 480px) {
+		width: 100%;
+	}
+
+	// 1, 4, 7, 10
+	&:nth-of-type(3n+1) {
+		margin-right: 3.5%;
+		
+		@media (max-width: 768px) {
+			margin-right: 0; 
+		}
+	}
+	
+	@media (max-width: 768px) {
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-right: 3.5%; 
+		}
+	}
+
+	// 3, 6, 9, 12
+	&:nth-of-type(3n+3) {
+		margin-left: 3.5%;
+		
+		@media (max-width: 768px) {
+			margin-left: 0; 
+		}						
+	}
+
+	// Two column blog layout when the sidebar is in use.
+	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
+		width: 48.25%;
+		
+		@media (max-width: 480px) {
+			width: 100%; 
+		}	
+
+		// 1, 4, 7, 10
+		&:nth-of-type(3n+1) {
+			margin-right: 0;
+		}
+
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-right: 3.5%;
+		}									
+
+		// 3, 6, 9, 12
+		&:nth-of-type(3n+3) {
+			margin-left: 0; 					
+		}				
+	}		
+
+	&:only-child {
+		margin: 0;
+	}
+
+	.entry-title {
+		font-size: 1.0666em;
+	}
+
+	.entry-thumbnail {
+		@include clearfix; 
+		margin: -1px; 
+	}	
+
+	.corp-content-wrapper {
+		padding: 25px 30px 33px;
+	}
+
+	.entry-content {
+		font-size: .9333em; 
+		padding-bottom: 0;
+		
+		p:last-of-type {
+			margin: 0;
+		}
+
+		p:only-of-type {
+			margin: 0;
+		}
+	}
+}
+
+.entry-header {
+	margin-bottom: 25px;
 }
 
 /*--------------------------------------------------------------
@@ -28,7 +128,8 @@
 --------------------------------------------------------------*/
 .entry-title {
 	color: $color__text-dark;
-	font-size: 1.6em; 
+	font-size: 1.6em;
+	font-weight: 500; 
 	line-height: normal;
 	margin: 0 0 3px;
 	
@@ -96,32 +197,26 @@
 	display: inline;
 }
 
-.entry-thumbnail,
-.entry-video {
-	margin-bottom: 25px;
-	
-	a {
-		display: block;
-		line-height: 0; 
-	}	
+.entry-thumbnail {
+	line-height: 0; 	
 }
 
-.more-wrapper {
+.single .entry-thumbnail {
+	margin-bottom: 25px; 
+}
+
+.more-text {
 	display: block;
-	font-size: 14px;
-	text-transform: uppercase; 
-	
-	a {
-		color: $color__text-dark;
-		font-weight: 600;
-		
-		&:hover {
-			color: $color__accent;
-		}
+
+	span {
+		display: inline-block;
+		padding-left: 3px; 
+		vertical-align: middle;
 	}
 }	
 
 .page-links {
+	margin: 26px 0; 
 	text-align: left;
 
 	.page-links-title {
@@ -131,38 +226,51 @@
 	}
 
 	.page-links-title {
-		background: none;
+		border: none; 
 		color: $color__text-medium;
 		font-weight: 600; 
 		padding: 0;
 		text-transform: none;
 		
 		&:hover {
-			background: none;
+			border: none; 
 			color: $color__text-medium;
 		}
 	}
 
 	span {
-		@extend .button;
-		margin-right: 3px;
-		padding-right: 17px;
-		padding-left: 17px;	
+		border: 1px solid $color__text-medium;
+		color: $color__text-medium;
+		display: inline-block;
+		font-family: $font__main;
+		font-size: 0.9333em;
+		line-height: normal;  
+		margin-right: 4px;
+		padding: 11px 17px;
+		transition: .3s;
+
+		&:visited {
+			color: $color__text-medium;
+		}
+
+		&:hover {
+			border-color: $color__accent;
+			color: $color__accent;
+		}
 	}
 
 	a span {
-		background: $color__background-hr-dark;
 		color: $color__text-medium;
 	}		
 }
 
 .single .entry-footer {
-	margin: 15px 0;
+	margin: 0 0 40px;
 }
 
 .tags-links a {
 	background: #e4e6eb;
-	color: $color__text-medium; // Andrew: Color variable.
+	color: $color__text-medium;
 	display: inline-block;
 	font-size: 12px; 
 	height: 28px;
@@ -173,7 +281,7 @@
 	transition: .2s;
 
 	&:after {
-	  background: $color__background-body; // Andrew: Color variable.
+	  background: $color__background-body;
 	  border-bottom: 14px solid transparent;
 	  border-right: 13px solid #e4e6eb;
 	  border-top: 14px solid transparent;
@@ -203,6 +311,7 @@
 
 .page-title {
 	font-size: 32px; 
+	font-weight: 500; 
 	line-height: normal;
 	margin: 0;
 }
@@ -211,16 +320,24 @@
 .search-results {
 
 	.page-header {
-		margin-bottom: 50px; 
+		margin-bottom: 50px;
+		width: 100%; 
 	}
 
 	.page-title {
-		font-size: 18px;
+		font-size: 24px;
+		font-weight: 500; 
+		text-align: center;
 	}
 
 	.taxonomy-description {
-		font-size: 14px; 
-		margin-top: 15px; 
+		font-size: 14px;
+		margin-top: 5px;
+		text-align: center;
+		
+		p:last-of-type {
+			margin-bottom: 0;
+		} 
 	}
 	
 	.entry-title {
@@ -228,13 +345,16 @@
 	}
 }
 
+
+
 /*--------------------------------------------------------------
 ## Search Form
 --------------------------------------------------------------*/
 .search-form {
 
 	input[type="search"] {
-		padding-right: 43px; 
+		padding-right: 43px;
+		min-width: 100px; 
 	}
 
 	button[type="submit"] {
@@ -260,11 +380,12 @@
 ## - Author Box
 --------------------------------------------------------------*/
 .author-box {
+	border-top: 1px solid $color__background-hr;
 	display: table;
 	border-right: 0; 
 	border-left: 0;
-	margin: 0;
 	margin-bottom: 60px; 
+	padding-top: 40px; 
 	width: 100%;
 		
 	.author-avatar {
@@ -284,14 +405,21 @@
 			width: 100px;
 			
 			@media (max-width: 480px) {
-				margin: 0 auto 15px;
+				height: 80px;
+				margin: 0 0 15px;
+				width: 80px;				
 			}			
 		}
 	}
 
 	.author-description {
 		display: table-cell;
-		vertical-align: top;		
+		vertical-align: top;
+		
+		@media (max-width: 480px) {
+			display: block;
+			width: 100%; 
+		}					
 	
 		h3 {
 			font-size: 15px;
@@ -316,7 +444,11 @@
 		}
 
 		div {
-			font-size: 14px; 
+			font-size: 14px;
+			
+			p:last-of-type {
+				margin-bottom: 0;
+			}
 		}	
 	}
 }
@@ -326,6 +458,8 @@
 --------------------------------------------------------------*/
 .yarpp-related,
 .related-posts-section {
+	display: flex;
+	flex-wrap: wrap;		
 	margin-bottom: 60px; 
 
 	.related-posts {
@@ -370,7 +504,7 @@
 				margin: 0;
 			}	
 
-			div {
+			.corp-content-wrapper {
 				background: #fff;
 				border: 1px solid $color__background-hr; 
 				padding: 25px 30px;
@@ -378,7 +512,7 @@
 
 			a {
 				display: block;
-				line-height: 0; 
+				line-height: 0;
 				text-decoration: none;
 			}
 
@@ -388,9 +522,10 @@
 
 			.related-post-title {
 				font-size: 16px; 
-				font-weight: normal; 
+				font-weight: 500; 
 				line-height: normal;
 				margin: 0 0 3px;
+				transition: .3s;
 
 				@at-root &:hover {
 					color: $color__accent;
@@ -403,6 +538,7 @@
 				font-weight: normal;
 				line-height: normal; 
 				margin: 0;
+				transition: .3s;
 				
 				&:hover {
 					color: $color__accent;

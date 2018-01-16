@@ -9,8 +9,9 @@
  */
 
 if ( ! is_active_sidebar( 'sidebar-main' ) ) return;
+if ( siteorigin_page_setting( 'layout' ) != 'default' ) return;
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar( 'sidebar-main' ); ?>
 </aside><!-- #secondary -->

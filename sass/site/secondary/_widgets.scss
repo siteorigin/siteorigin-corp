@@ -1,19 +1,17 @@
-.widget {
-	margin: 0 0 55px;
-}
-
 .widget-area .widget, 
 .site-footer .widget {
+	margin: 0 0 50px;
 
 	.widget-title {
 		font-size: .9333em;
-		font-weight: 600; 
-		margin: 0 0 20px;
+		font-weight: bold;
+		letter-spacing: 1px; 
+		margin: 0 0 15px;
 		text-transform: uppercase;
 		
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
-			font-size: .9333em;
+			font-size: 14px;
 		}		
 	}
 
@@ -42,15 +40,22 @@
 /*--------------------------------------------------------------
 ## Calendar Widgets
 --------------------------------------------------------------*/
+.calendar_wrap {
+	background: #fff;
+	border: 1px solid $color__background-hr;
+	padding-left: 6px;
+}
+
 .widget #wp-calendar {
 	border: 0;
+	font-size: 13px; 
 	margin: 0;
 	
 	caption {
 		color: $color__text-dark;
-		font-weight: bold; 
+		font-size: 14px; 
 		font-weight: 600;
-		text-align: left;
+		padding-top: 14px; 
 	}
 
 	tr:nth-child(2n+2) {
@@ -64,41 +69,42 @@
 	}
 
 	thead {
-		border-bottom: 2px solid $color__background-hr;
 
 		tr {
 			background: none;
 		}
 
 		th {
-			padding: 8px 0;
+			padding: 13px 0 8px;
 			text-align: center;
 		}
 	}
 
 	tbody {
-		font-size: 13px; 
 
 		.pad {
 			background: none;
 		}
 
-		tr:first-of-type td {
-			padding-top: 8px;
-		}
-
 		td { 
 			padding-bottom: 8px;
 			text-align: center;
-		}		
+			
+			a {
+				color: $color__accent;
+
+				&:hover {
+					color: $color__text-medium;
+				}				
+			}			
+		}			
 	}
 	
 	tfoot {
-		font-size: 13px; 
 
 		#prev, 
 		#next {
-			padding-top: 4px; 
+			padding: 4px 20px 17px; 
 			
 			a {
 				color: $color__text-dark;
@@ -112,6 +118,116 @@
 		#next {
 			text-align: right;			
 		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Archives and Categories Widgets
+--------------------------------------------------------------*/
+.widget_archive,
+.widget_categories {
+
+	li {
+		color: $color__text-light;
+		margin-bottom: 8px;
+	
+		&:last-of-type {
+			margin-bottom: 0; 
+		} 
+	
+		a {
+			color: $color__text-dark;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Comments Widget
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments {
+	color: $color__text-light;
+	margin-bottom: 16px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	}
+	
+	.comment-author-link {
+		color: $color__text-dark;
+		
+		&:before {
+			color: $color__text-light;
+			content: "\e91f";
+			display: inline-block;
+			font-family: $font__icon;
+    		padding: 0 9px 0 0;
+    		vertical-align: top;
+		}
+	}
+	
+	a {
+		color: $color__text-dark;
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Posts Widget
+--------------------------------------------------------------*/
+.widget_recent_entries li {
+	color: $color__text-light;
+	margin-bottom: 11px;
+	
+	&:last-of-type {
+		margin-bottom: 0; 
+	} 
+	
+	a {
+		color: $color__text-dark;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+/*--------------------------------------------------------------
+## Recent Posts Extended Widget
+--------------------------------------------------------------*/
+.widget.recent-posts-extended {
+
+	li {
+		clear: both;
+		padding-top: 3px;
+	}
+
+	.rpwe-alignleft {
+	  	float: left;
+    	margin-right: 15px;
+    	padding-bottom: 17px;
+	}
+
+	h3 {
+		color: $color__text-dark;
+		clear: none;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: 1;
+		margin: 0;
+		padding-top: 6px;
+
+		a {
+			color: $color__text-dark;
+			
+			&:hover {
+				color: $color__text-medium;
+			}
+		}
+	}
+
+	time {
+		color: $color__text-light;
+		font-size: .9285em;
+		line-height: normal;
 	}
 }
 
@@ -146,6 +262,13 @@
 /*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
-#page .widget_tag_cloud {
+aside.widget.widget_tag_cloud .tagcloud {
 	@extend .tags-links;
+	
+	@at-root .site-footer & {
+
+		a:after {
+			background: $color__footer-background;	
+		}		
+	}
 }

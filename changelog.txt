@@ -1,4 +1,62 @@
 == Changelog ==
 
-= 0.1 - 2017 =
+= 1.2 - 29 December 2017 =
+* Added additional theme settings descriptions.
+* Added placement and styling support for Jetpack Related Posts module.
+* Added prebuilt layout home page layout for Page Builder by SiteOrigin.
+
+= 1.1.2 - 21 December 2017 =
+* Fixed incorrect footer action hook tags.
+* Changed the blog archive containers to equal height when the post excerpt setting is in use.
+* Minor style fixes.
+
+= 1.1.1 - 14 December 2017 =
+* Improved post navigation function to prevent edge case errors.
+* Minor style adjustments.
+* Added new screenshot.
+* Improved posts slider text sizes.
+
+= 1.1 - 28 November 2017 =
+* Additional styling for the post format gallery slider.
+* Updated image caption styling.
+* Updated Calendar widget styling.
+* Added a posts slider loop for use in the Page Builder Post Loop widget.
+* Added posts slider support for Jetpack Featured Content.
+* Added bottom bar social widget support.
+* Added a header overlap page setting.
+
+= 1.0 - 22 November 2017 =
+* Added additional page settings.
+* Added post format support for Gallery, Image, Video.
+* Fixed author box image on mobile.
+* Added sticky post meta.
+
+= 0.7 - 01 November 2017 =
+* Added additional theme settings for header, navigation, blog, sidebar and footer.
+* Added SiteOrigin Premium support.
+* Various code improvements.
+
+= 0.6 - 02 September 2017 =
+* Prevented Featured Image markup from outputting when image not present.
+* Fixed search content meta function name.
+* Removed core HTML5 search form support.
+* Updated the comments title and navigation.
+* Updated the tag list function.
+* Removed Logo theme setting.
+
+= 0.5 - 16 August 2017 =
+* Added theme description.
+
+= 0.4 - 15 August 2017 =
+* Fixed build script to minify the icons CSS file.
+* Increased font sizes of certain sidebar widgets and the main grid blog layout.
+
+= 0.3 - 08 August 2017 =
+* Fixed incorrect theme tag name.
+* Improved Tags widget when displayed in footer widget area.
+
+= 0.2 - 07 August 2017 =
+* Improved Recent Comments, Recent Posts and Categories widget styling.
+
+= 0.1 - 04 August 2017 =
 * Initial release.

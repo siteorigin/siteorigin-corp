@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Custom functions that act independently of the theme templates.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -15,15 +15,36 @@
  * @return array
  */
 function siteorigin_corp_body_classes( $classes ) {
-	// Group blog.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
+
+	// Blog settings.
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) {
+		$classes[] = 'blog-full';
 	}
+
+	// Header margin.
+	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
+		$classes[] = 'no-header-margin';
+	}	
 
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
 	$classes[] = 'no-touch';
+
+	// Non-singlar pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}	
+
+	// Page settings.
+	$page_settings = siteorigin_page_setting();
+
+	if ( ! empty( $page_settings ) ) {
+		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if ( ! empty( $page_settings['overlap'] ) && ( $page_settings['overlap'] != 'disabled' ) ) $classes[] = 'overlap-' . $page_settings['overlap'];
+		if ( empty( $page_settings['header_margin'] ) ) $classes[] = 'no-header-margin';
+		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
+	}
 
 	// Responsive layout.
 	$classes[] = 'responsive';
@@ -33,15 +54,21 @@ function siteorigin_corp_body_classes( $classes ) {
 		 $classes[] = 'sidebar';
 	}
 
+	if ( siteorigin_setting( 'sidebar_position' ) == 'left' ) {
+		 $classes[] = 'sidebar-left';
+	}	
+
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) ) {
 		 $classes[] = 'woocommerce-sidebar';
 	}		
 
-	// Non-singlar pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}		
+	// WooCommerce top bar.
+	if ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) {
+		$classes[] = 'no-topbar';
+	} elseif ( ! class_exists( 'Woocommerce' ) ) {
+		$classes[] = 'no-topbar';
+	}				
 
 	return $classes;
 }

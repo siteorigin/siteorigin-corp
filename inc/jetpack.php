@@ -15,14 +15,28 @@
  * See: https://jetpack.me/support/responsive-videos/
  */
 function siteorigin_corp_jetpack_setup() {
-	// Add theme support for Infinite Scroll.
+	/*
+	 * Enable support for Jetpack Featured Content.
+	 * See https://jetpack.com/support/featured-content/
+	 */
+	add_theme_support( 'featured-content', array(
+		'filter'     => 'siteorigin_corp_get_featured_posts',
+		'post_types' => array( 'post' ),
+	) );
+
+	/*
+	 * Enable support for Jetpack Infinite Scroll.
+	 * See https://jetpack.com/support/infinite-scroll/
+	 */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'siteorigin_corp_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
-	// Add theme support for Responsive Videos.
+	/*
+	 * Enable support for Jetpack Responsive Videos.
+	 * See https://jetpack.com/support/responsive-videos/
+	 */
 	add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
@@ -38,3 +52,31 @@ add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
     }
 }
 add_action( 'loop_start', 'siteorigin_corp_remove_share' );
+
+if ( ! function_exists( 'siteorigin_corp_jetpackme_related_posts_headline' ) ) :
+/**
+ * Changing the jetpack related posts title
+ */
+function siteorigin_corp_jetpackme_related_posts_headline( $headline ) {
+	$headline = sprintf(
+	    '<h3 class="jp-relatedposts-headline">%s</h3>',
+	    esc_html( 'Related Posts', 'siteorigin-corp' )
+	);
+	return $headline;
+}
+endif;
+add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_corp_jetpackme_related_posts_headline' );
+
+if ( ! function_exists( 'siteorigin_corp_jetpackme_remove_rp' ) ) :
+/**
+ * Removing jetpack related posts from the bottom of posts
+ */
+function siteorigin_corp_jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+endif;
+add_filter( 'wp', 'siteorigin_corp_jetpackme_remove_rp', 20 );

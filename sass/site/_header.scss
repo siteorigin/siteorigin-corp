@@ -1,102 +1,137 @@
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid $color__background-hr;
-	margin-bottom: 60px; 
-	padding: 25px 0;
+	background: $color__header-background;
+	border-bottom: 1px solid $color__header-border;
+	margin-bottom: $header__margin; 
+	padding: $header__padding 0;
 	position: relative;
 	width: 100%;
 	z-index: 999;
 	
-	.page-layout-no-header-margin & {
+	body[class*="overlap-"] &:not(.stuck) {
+		background: transparent;
+		border: none;
+		position: absolute;
+	}
+	
+	.no-header-margin & {
 		margin-bottom: 0;
 	}
+	
+	.topbar-out & {
+		@include clearfix;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.topbar-out.admin-bar & {
+		top: 32px;
+
+		@media (max-width: 782px) {
+			top: 46px;
+		}
+	}		
 	
 	@media (max-width: 600px) {
 
 		@at-root .admin-bar .site-header.sticky.stuck {
 			top: 0;
 		}						
-	}			 
+	}	
+
+	@at-root .topbar-out#{&} {
+		transition: background 500ms ease;
+	}
 
 	// A class added after scroll.
 	&.stuck {
-    	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);	
+    	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);	
     }
 
 	.site-header-inner {
-		display: table;
-		vertical-align: middle;
-		width: 100%; 
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+	    align-items: center;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		width: 100%;
 	}
 	
 	.site-branding {
-		display: table-cell;
-		vertical-align: middle;
+		padding-right: 20px;
 
 		.site-title {
-			font-family: $font__headings;
+			font-family: $font__site-title;
 			font-size: 29px;
+			font-weight: 500; 
 			line-height: normal;
 			margin: 0;
 			
 			a {
-				color: $color__text-dark;
+				color: $color__site_title;												
 			}
 		}
 
+		img {
+			display: inline-block;
+			vertical-align: middle;
+			
+			@at-root .tagline#{&} {
+				padding-bottom: 5px;
+			}	
+		}
+
 		.site-description {
-			color: $color__text-dark; 
-			font-size: 14px; 
+			color: $color__site_tagline;
+			font-family: $font__site-tagline;
+			font-weight: normal; 
+			font-size: 13px; 
 			line-height: normal;
-			margin: 0; 
+			margin: -3px 0 0; 				
 		}
 
 		> * {
 			transform-origin: left center;
-
-			@at-root .centered#{&} {
-				transform-origin: center center;
-			}
 		}		
 	}
+}
+
+// Overlap.
+.overlap-light .site-header:not(.stuck) .site-branding {
 	
-	&.centered {
-
-		.container-inner {
-			display: block;
-		}
-
-		.site-branding {
-			margin: 0 auto 20px auto;
-			padding: 0;
-			text-align: center;
-
-			img {
-				display: inline-block;
-				max-width: 100%;
-			}
-		}
-
-		.main-navigation {
-			text-align: center;
-		}
-
-		.site-branding, 
-		.main-navigation {
-			display: block;
-		}
+	.site-title a,
+	.site-description {
+		color: #fff;
 	}
+}
 
-	body.responsive & {
-		min-width: 0;
-	}		
+.overlap-dark .site-header:not(.stuck) .site-branding {
+
+	.site-title a,
+	.site-description {
+		color: #2d2d2d;
+	}
 }
 
 // Sticky header sentinel.
 .masthead-sentinel {
 	margin-bottom: 60px;
 	
+	body[class*="overlap-"] & {
+		display: none;
+	}
+	
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
+}
+
+#topbar {
+	position: relative;
+	width: 100%;
+	z-index: 1000;
 }

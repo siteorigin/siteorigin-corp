@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'siteorigin-corp-icons';
-  src:  url('fonts/siteorigin-corp-icons.eot?myweo7');
-  src:  url('fonts/siteorigin-corp-icons.eot?myweo7#iefix') format('embedded-opentype'),
-    url('fonts/siteorigin-corp-icons.ttf?myweo7') format('truetype'),
-    url('fonts/siteorigin-corp-icons.woff?myweo7') format('woff'),
-    url('fonts/siteorigin-corp-icons.svg?myweo7#siteorigin-corp-icons') format('svg');
+  src:  url('fonts/siteorigin-corp-icons.eot?pvii92');
+  src:  url('fonts/siteorigin-corp-icons.eot?pvii92#iefix') format('embedded-opentype'),
+    url('fonts/siteorigin-corp-icons.ttf?pvii92') format('truetype'),
+    url('fonts/siteorigin-corp-icons.woff?pvii92') format('woff'),
+    url('fonts/siteorigin-corp-icons.svg?pvii92#siteorigin-corp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,92 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-yelp:before {
-  content: "\e91e";
+.icon-pencil:before {
+  content: "\e902";
+}
+.icon-comment:before {
+  content: "\e91f";
 }
 .icon-angle-down:before {
   content: "\e91d";
-}
-.icon-youtube-play:before {
-  content: "\e91c";
-}
-.icon-xing:before {
-  content: "\e902";
-}
-.icon-wordpress:before {
-  content: "\e903";
-}
-.icon-weibo:before {
-  content: "\e904";
-}
-.icon-vk:before {
-  content: "\e905";
-}
-.icon-vimeo:before {
-  content: "\e906";
-}
-.icon-twitter:before {
-  content: "\e907";
-}
-.icon-tumblr:before {
-  content: "\e908";
-}
-.icon-stack-overflow:before {
-  content: "\e909";
-}
-.icon-stack-exchange:before {
-  content: "\e90a";
-}
-.icon-soundcloud:before {
-  content: "\e90b";
-}
-.icon-reddit-alien:before {
-  content: "\e90c";
-}
-.icon-pinterest-p:before {
-  content: "\e90d";
-}
-.icon-linkedin:before {
-  content: "\e90e";
-}
-.icon-instagram:before {
-  content: "\e90f";
-}
-.icon-google-plus:before {
-  content: "\e910";
-}
-.icon-github-alt:before {
-  content: "\e911";
-}
-.icon-foursquare:before {
-  content: "\e912";
-}
-.icon-flickr:before {
-  content: "\e913";
-}
-.icon-facebook:before {
-  content: "\e914";
-}
-.icon-facebook-f:before {
-  content: "\e914";
-}
-.icon-dribbble:before {
-  content: "\e915";
-}
-.icon-digg:before {
-  content: "\e916";
-}
-.icon-deviantart:before {
-  content: "\e917";
-}
-.icon-delicious:before {
-  content: "\e918";
-}
-.icon-codepen:before {
-  content: "\e919";
-}
-.icon-behance:before {
-  content: "\e91a";
 }
 .icon-search:before {
   content: "\e91b";

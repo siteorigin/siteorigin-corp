@@ -14,8 +14,12 @@
 
 		.comment-container {
 			margin-left: 80px;
-		}
 
+			.comment-awaiting-moderation {
+				font-weight: bold; 
+			}
+		}
+		
 		.avatar-container {
 			float: left;
 
@@ -46,7 +50,7 @@
 			}
 
 			@at-root .comment-list .bypostauthor .author:before {
-				content: "\f040";
+				content: "\e902";
 				font-family: $font__icon;
 				font-size: 14px;
 				margin-right: 5px;  

@@ -16,7 +16,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php siteorigin_corp_posted_on(); ?>
+			<?php siteorigin_corp_post_meta(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
