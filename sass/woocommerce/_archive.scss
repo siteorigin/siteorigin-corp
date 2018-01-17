@@ -343,9 +343,8 @@
 			// Product or category title.
 			.woocommerce-loop-product__title,
 			.woocommerce-loop-category__title {
-				font-family: $font__main; 
 				font-size: 14px;
-				font-weight: bold;
+				font-weight: 500; 
 				text-transform: uppercase;  
 				margin: 23px 0 0;
 				

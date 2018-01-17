@@ -112,9 +112,7 @@
 			}
 			
 			.entry-title {
-				font-family: $font__main; 
 				font-size: 24px;
-				font-weight: bold; 
 				text-transform: uppercase; 
 			}
 
@@ -257,7 +255,6 @@
 			
 			h2 {
 				color: $color__text-medium; 
-				font-family: $font__main; 
 				font-size: 14px; 
 				letter-spacing: 1px;
 				line-height: normal;
@@ -272,6 +269,7 @@
 
 				li {
 					display: inline-block;
+					font-family: $font__headings; 
 					margin: 0 34px 0 0;
 					padding-bottom: 7px;
 					text-transform: uppercase;
@@ -474,7 +472,6 @@
 			padding-bottom: 15px; 
 			
 			> h2 {
-				font-family: $font__main; 
 				font-size: 20px;
 				font-weight: 500;
 				margin-bottom: 20px; 
@@ -490,7 +487,6 @@
 		.related {
 
 			> h2 {
-				font-family: $font__main; 
 				font-size: 20px;
 				font-weight: 500;
 				margin-bottom: 20px;
