@@ -1,5 +1,10 @@
 .woocommerce-checkout .entry-content {
-	padding: 0; 
+	padding: 0;
+	
+	h3 {
+		font-size: 24px;
+		font-weight: 500;  
+	}
 }
 
 .woocommerce {
@@ -39,7 +44,6 @@
 	}	
 
 	// Order review.
-	#order_review_heading,
 	#order_review {
 		clear: right; 
 		float: right;
@@ -52,26 +56,33 @@
 		}
 	}
 
+	.woocommerce-checkout-review-order {
+		background: #fff;
+		border: 1px solid $color__background-hr-dark;
+		padding: 23px 20px 30px;
+		
+		h3 {
+			margin: 0;
+		}
+	}
+
 	table.woocommerce-checkout-review-order-table {
 		
-		thead {
-			border: 1px solid $color__background-hr-dark;		
-			
-			th {
-				background: $color__background-hr;
-				font-size: 14px;
-			}		
+		thead th {
+			font-size: 14px;
 		}
-		
+
+		tr {
+			border-bottom: 1px solid $color__background-hr-dark; 
+		}		
 		
 		th,
 		td {
-			padding: 20px;
+			padding: 14px 0 12px;
 			text-align: left;
 		}
 
 		.cart_item {
-			border: 1px solid $color__background-hr-dark;
 			font-size: 14px;
 			
 			@media (max-width: 768px) {
@@ -87,19 +98,11 @@
 		}
 		
 		tfoot {
+			color: $color__text-dark;
 
 			tr {
 				border-bottom: 1px solid $color__background-hr-dark; 
 			}
-			
-			th,
-			td {
-				padding: 20px;
-			}
-			
-			td {
-				text-align: left;
-			}			
 		}
 	}
 
@@ -111,7 +114,7 @@
 			
 			li {
 				border-bottom: 1px solid $color__background-hr-dark;
-				padding: 20px;
+				padding: 14px 0 12px;
 				position: relative;
 				text-align: left;
 				

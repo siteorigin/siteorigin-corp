@@ -33,7 +33,12 @@
 
 	a {
 		color: $color__text-dark;
-		margin-left: 5px; 
+		font-weight: bold;
+		margin-left: 5px;
+		
+		&:hover {
+			color: $color__accent;
+		}
 	}
 }
 

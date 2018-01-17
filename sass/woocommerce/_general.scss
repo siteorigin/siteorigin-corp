@@ -1,12 +1,3 @@
-// Repeated styles we need for @extend.
-.underline {
-	border-bottom: 2px solid $color__background-hr-dark;
-	display: inline-block;
-	margin: 0 0 20px;
-	padding-bottom: 3px;
-	text-transform: uppercase;
-}
-
 .woocommerce {
 
 	// Reset copy styles.
@@ -31,8 +22,8 @@
 		&:before {
 			-webkit-animation: fa-spin 2s infinite linear;
 			animation: fa-spin 2s infinite linear;
-			content: "\f1ce";
-			font-family: $font__icon;
+			content: "\e920";
+			font-family: 'siteorigin-corp-icons';
 			font-size: 30px;
 			height: 30px;
 			left: 50%;
