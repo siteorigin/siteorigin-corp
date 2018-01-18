@@ -3,12 +3,16 @@
 	form {
 
 		p:first-of-type {
-			margin-bottom: 26px; 
+			margin-bottom: 24px; 
 		}
 
 		.form-row {
 			@include clearfix();
-			margin-bottom: 26px; 
+			margin-bottom: 24px;
+			
+			&#billing_address_1_field {
+				margin-bottom: 10px; 
+			}
 
 			label {
 				display: block;

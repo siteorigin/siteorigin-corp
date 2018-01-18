@@ -141,14 +141,16 @@ input.button.added:after,
 # WooCommerce Forms
 --------------------------------------------------------------*/
 .woocommerce form p:first-of-type {
-  margin-bottom: 26px; }
+  margin-bottom: 24px; }
 
 .woocommerce form .form-row {
-  margin-bottom: 26px; }
+  margin-bottom: 24px; }
   .woocommerce form .form-row::after {
     clear: both;
     content: "";
     display: table; }
+  .woocommerce form .form-row#billing_address_1_field {
+    margin-bottom: 10px; }
   .woocommerce form .form-row label {
     display: block;
     margin-bottom: 4px; }
@@ -1405,6 +1407,12 @@ input.button.added:after,
       float: none;
       width: 100%; } }
 
+.woocommerce .woocommerce-billing-fields h3 {
+  margin: 20px 0 11px; }
+
+.woocommerce .woocommerce-additional-fields h3 {
+  margin: 0 0 11px; }
+
 .woocommerce #order_review {
   clear: right;
   float: right;
@@ -1418,9 +1426,9 @@ input.button.added:after,
 .woocommerce .woocommerce-checkout-review-order {
   background: #fff;
   border: 1px solid #d6d6d6;
-  padding: 23px 20px 30px; }
+  padding: 19px 20px 4px; }
   .woocommerce .woocommerce-checkout-review-order h3 {
-    margin: 0; }
+    margin: 0 0 6px; }
 
 .woocommerce table.woocommerce-checkout-review-order-table thead th {
   font-size: 14px; }
@@ -1430,7 +1438,7 @@ input.button.added:after,
 
 .woocommerce table.woocommerce-checkout-review-order-table th,
 .woocommerce table.woocommerce-checkout-review-order-table td {
-  padding: 14px 0 12px;
+  padding: 14px 0 13px;
   text-align: left; }
 
 .woocommerce table.woocommerce-checkout-review-order-table .cart_item {
@@ -1451,7 +1459,7 @@ input.button.added:after,
   margin: 0; }
   .woocommerce #payment .payment_methods li {
     border-bottom: 1px solid #d6d6d6;
-    padding: 14px 0 12px;
+    padding: 14px 0;
     position: relative;
     text-align: left; }
     .woocommerce #payment .payment_methods li label a {
@@ -1470,6 +1478,10 @@ input.button.added:after,
       padding: 10px 0 0; }
       .woocommerce #payment .payment_methods li .payment_box.payment_method_paypal {
         padding-top: 20px; }
+      .woocommerce #payment .payment_methods li .payment_box p {
+        margin-bottom: 0; }
+    .woocommerce #payment .payment_methods li.payment_method_paypal {
+      padding: 23px 0; }
     .woocommerce #payment .payment_methods li.payment_method_stripe img {
       margin-top: -10px;
       position: absolute;

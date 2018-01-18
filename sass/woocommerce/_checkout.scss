@@ -41,7 +41,24 @@
 			float: none;
 			width: 100%; 
 		}
-	}	
+	}
+
+	// Billing fields.
+	.woocommerce-billing-fields {
+		
+		h3 {
+			margin: 20px 0 11px; 
+		}
+	}
+
+	// Additional information.
+	.woocommerce-additional-fields {
+		
+		h3 {
+			margin: 0 0 11px; 	
+		}
+	}
+	
 
 	// Order review.
 	#order_review {
@@ -59,10 +76,10 @@
 	.woocommerce-checkout-review-order {
 		background: #fff;
 		border: 1px solid $color__background-hr-dark;
-		padding: 23px 20px 30px;
+		padding: 19px 20px 4px;
 		
 		h3 {
-			margin: 0;
+			margin: 0 0 6px;
 		}
 	}
 
@@ -78,7 +95,7 @@
 		
 		th,
 		td {
-			padding: 14px 0 12px;
+			padding: 14px 0 13px;
 			text-align: left;
 		}
 
@@ -114,7 +131,7 @@
 			
 			li {
 				border-bottom: 1px solid $color__background-hr-dark;
-				padding: 14px 0 12px;
+				padding: 14px 0;
 				position: relative;
 				text-align: left;
 				
@@ -145,6 +162,14 @@
 					&.payment_method_paypal {
 						padding-top: 20px; 
 					}
+
+					p {
+						margin-bottom: 0;
+					}
+				}
+
+				&.payment_method_paypal {
+					padding: 23px 0;
 				}
 
 				&.payment_method_stripe {
