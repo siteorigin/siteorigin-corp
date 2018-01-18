@@ -31,7 +31,7 @@
 		}		
 	}
 
-	a {
+	a:not(.button) {
 		color: $color__text-dark;
 		font-weight: bold;
 		margin-left: 5px;

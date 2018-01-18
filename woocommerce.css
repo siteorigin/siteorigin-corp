@@ -1092,17 +1092,17 @@ input.button.added:after,
         float: right;
         font-size: 13px;
         position: static; } }
-  .woocommerce-message a,
-  .woocommerce-error a,
-  .woocommerce-info a,
-  .woocommerce-store-notice a {
+  .woocommerce-message a:not(.button),
+  .woocommerce-error a:not(.button),
+  .woocommerce-info a:not(.button),
+  .woocommerce-store-notice a:not(.button) {
     color: #2d2d2d;
     font-weight: bold;
     margin-left: 5px; }
-    .woocommerce-message a:hover,
-    .woocommerce-error a:hover,
-    .woocommerce-info a:hover,
-    .woocommerce-store-notice a:hover {
+    .woocommerce-message a:not(.button):hover,
+    .woocommerce-error a:not(.button):hover,
+    .woocommerce-info a:not(.button):hover,
+    .woocommerce-store-notice a:not(.button):hover {
       color: #f14e4e; }
 
 .woocommerce-error {
@@ -1411,7 +1411,8 @@ input.button.added:after,
   margin: 20px 0 11px; }
 
 .woocommerce .woocommerce-additional-fields h3 {
-  margin: 0 0 11px; }
+  margin: 0 0 11px;
+  padding-top: 25px; }
 
 .woocommerce #order_review {
   clear: right;
