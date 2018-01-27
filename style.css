@@ -1383,7 +1383,7 @@ a {
 .sidebar .site-main {
   margin: 0 34% 0 0; }
   .sidebar-left.sidebar .site-main {
-    margin: 0 0 0 -34%; }
+    margin: 0 0 0 34%; }
   @media (max-width: 768px) {
     .sidebar .site-main {
       margin: 0; } }

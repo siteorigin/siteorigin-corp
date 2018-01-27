@@ -3,10 +3,10 @@
 	max-width: none;
 	padding: 0 15px;
 	position: relative;
-	width: 1170px; // 1170px container.
+	width: 1170px; // 1140px container.
 
 	.responsive & {
-		max-width: 1170px; // 1170px container.
+		max-width: 1170px; // 1140px container.
 		width: 100%;
 	}
 
@@ -25,33 +25,36 @@
 }
 
 // Content area with sidebar.
-.sidebar .content-area {
-	float: left;
-	margin: 0 (-$sidebar__width) 0 0;
-	width: $size__site;
 
-	@at-root .sidebar-left#{&} {
-		float: right;
-		margin: 0 0 0 (-$sidebar__width);
+.sidebar {
+	.content-area {
+		float: left;
+		margin: 0 (-$sidebar__width) 0 0;
+		width: $size__site;
+
+		@at-root .sidebar-left#{&} {
+			float: right;
+			margin: 0 0 0 (-$sidebar__width);
+		}
+
+		@media (max-width: 768px) {
+			border: 0;
+			padding-right: 0;
+			width: 100%;
+			margin: 0;
+		}
 	}
 
-	@media (max-width: 768px) {
-		border: 0;
-		padding-right: 0;
-		width: 100%;
-		margin: 0;
-	}
-}
+	.site-main {
+		margin: 0 $sidebar__width 0 0;
 
-.sidebar .site-main {
-	margin: 0 $sidebar__width 0 0;
+		@at-root .sidebar-left#{&} {
+			margin: 0 0 0 $sidebar__width;
+		}
 
-	@at-root .sidebar-left#{&} {
-		margin: 0 0 0 (-$sidebar__width);
-	}
-
-	@media (max-width: 768px) {
-		margin: 0;
+		@media (max-width: 768px) {
+			margin: 0;
+		}
 	}
 }
 

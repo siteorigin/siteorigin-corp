@@ -737,7 +737,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	margin: 0 ${sidebar_width} 0 0;
 	}
 	.sidebar-left.sidebar .site-main {
-	margin: 0 0 0 -${sidebar_width};
+	margin: 0 0 0 ${sidebar_width};
 	}
 	.widget-area {
 	width: ${sidebar_width};
