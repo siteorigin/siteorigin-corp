@@ -2,7 +2,7 @@
 Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
-Description: A modern business theme from SiteOrigin. Corp is versatile and quick to customize.
+Description: A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin. Custom WooCommerce styling and several new blog layouts to follow soon.
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1457,7 +1457,7 @@ a {
     .site-header .site-branding .site-title {
       font-family: "Montserrat", sans-serif;
       font-size: 29px;
-      font-weight: 500;
+      font-weight: 600;
       line-height: normal;
       margin: 0; }
       .site-header .site-branding .site-title a {
@@ -1665,7 +1665,7 @@ body:not(.single) .hentry {
 .entry-title {
   color: #2d2d2d;
   font-size: 1.6em;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   margin: 0 0 3px; }
   @media (max-width: 768px) {
