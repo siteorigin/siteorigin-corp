@@ -1368,18 +1368,32 @@ a {
 
 .sidebar .content-area {
   float: left;
-  width: 66%; }
+  margin: 0 -34% 0 0;
+  width: 100%; }
   .sidebar-left.sidebar .content-area {
-    float: right; }
+    float: right;
+    margin: 0 0 0 -34%; }
   @media (max-width: 768px) {
     .sidebar .content-area {
       border: 0;
       padding-right: 0;
-      width: 100%; } }
+      width: 100%;
+      margin: 0; } }
+
+.sidebar .site-main {
+  margin: 0 34% 0 0; }
+  .sidebar-left.sidebar .site-main {
+    margin: 0 0 0 34%; }
+  @media (max-width: 768px) {
+    .sidebar .site-main {
+      margin: 0; } }
 
 .page-layout-no-sidebar .site-content .content-area {
   float: none;
-  width: 100%; }
+  width: 100%;
+  margin: 0; }
+  .page-layout-no-sidebar .site-content .content-area .site-main {
+    margin: 0; }
 
 .page-layout-full-width-no-sidebar .site-content .content-area {
   float: none;
@@ -1388,6 +1402,9 @@ a {
 .page-layout-full-width-no-sidebar .site-content .corp-container {
   max-width: none;
   padding: 0; }
+
+.page-layout-full-width-no-sidebar .site-main {
+  margin: 0; }
 
 .widget-area {
   float: right;
@@ -2459,3 +2476,5 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
