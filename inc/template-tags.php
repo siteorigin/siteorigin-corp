@@ -145,7 +145,7 @@ function siteorigin_corp_display_icon( $type ) {
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M18.284 29.705l-2.284 2.285-15.99-15.99 15.99-15.99 2.284 2.285-13.705 13.705z"></path>
 			</svg>
-		<?php break;			
+		<?php break;
 
 		case 'menu': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="32" viewBox="0 0 27 32">
@@ -157,7 +157,7 @@ function siteorigin_corp_display_icon( $type ) {
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M17.589 16l-15.402 15.989-2.2-2.283 13.202-13.706-13.202-13.706 2.2-2.283 13.202 13.704z"></path>
 			</svg>
-		<?php break;		
+		<?php break;
 
 		case 'search': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
@@ -198,7 +198,7 @@ function siteorigin_corp_the_post_navigation() {
 	if ( ! empty( $next_post ) ) {
 		$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 	}
-	
+
 	?>
 	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
@@ -276,29 +276,27 @@ function siteorigin_corp_related_posts( $post_id ) {
 
 		<div class="related-posts-section">
 			<h3 class="related-posts"><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h3>
-			<?php if ( $related_posts ) : ?>
+			<?php if ( $related_posts->have_posts() ) : ?>
 				<ol>
-					<?php if ( $related_posts->have_posts() ) : ?>
-						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-							<li>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php
-									if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
-										the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
-									elseif ( has_post_thumbnail() )
-										the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
-									?>
-									<div class="corp-content-wrapper">
-										<h3 class="related-post-title"><?php the_title(); ?></h3>
-										<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
-									</div>
-								</a>
-							</li>
-						<?php endwhile; ?>
-					<?php endif; ?>
+					<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+						<li>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php
+								if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
+									the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
+								elseif ( has_post_thumbnail() )
+									the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
+								?>
+								<div class="corp-content-wrapper">
+									<h3 class="related-post-title"><?php the_title(); ?></h3>
+									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
+								</div>
+							</a>
+						</li>
+					<?php endwhile; ?>
 				</ol>
 			<?php else : ?>
-				<p><?php esc_html_e( 'No related posts.', 'siteorigin-corp' ); ?></p>
+				<br /><p><?php esc_html_e( 'No related posts.', 'siteorigin-corp' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php wp_reset_query();

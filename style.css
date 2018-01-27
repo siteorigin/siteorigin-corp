@@ -1906,7 +1906,8 @@ body:not(.single) .hentry {
   margin-bottom: 60px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    width: 100%; }
   .yarpp-related ol,
   .related-posts-section ol {
     list-style: none;
@@ -2459,3 +2460,5 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */
