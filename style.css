@@ -724,6 +724,8 @@ a {
           color: #fff; }
       #mobile-navigation ul li.menu-item-has-children > a {
         padding-right: 40px; }
+        #mobile-navigation ul li.menu-item-has-children > a:not([href]) {
+          cursor: pointer; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         color: #b2b2b2;

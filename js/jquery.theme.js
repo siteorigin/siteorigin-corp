@@ -14,7 +14,7 @@ jQuery( function( $ ) {
 			rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) &&
 			rect.left <= ( window.innerWidth || document.documentElement.clientWidth )
 		);
-	};	
+	};
 
 	// Burst animation.
 	var mousePos = {x: 0, y: 0};
@@ -55,7 +55,7 @@ jQuery( function( $ ) {
 			} );
 
 		} );
-	};			
+	};
 
 	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
@@ -74,7 +74,7 @@ jQuery( function( $ ) {
 
 	// Main menu.
 	// Remove the no-js body class.
-	$( 'body.no-js' ).removeClass( 'no-js' );	
+	$( 'body.no-js' ).removeClass( 'no-js' );
 	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
 
 		var siteoriginCorpResetMenu = function() {
@@ -98,7 +98,7 @@ jQuery( function( $ ) {
 		$( '.menu-item' ).children( 'a' ).click( function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
-		
+
 		$( '.menu-item' ).children( 'a' ).focusout( function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
@@ -108,7 +108,7 @@ jQuery( function( $ ) {
 			event: "click",
 			container: "parent"
 		} );
-	} 
+	}
 
 	// Mobile Menu.
 	var $mobileMenu = false;
@@ -128,10 +128,19 @@ jQuery( function( $ ) {
 			}
 
 			$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
-			$mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="icon-angle-down" aria-hidden="true"></i></button>' );
+			$mobileMenu.find( '.menu-item-has-children > a' ).addClass( 'has-dropdown' );
+			$mobileMenu.find( '.page_item_has_children > a' ).addClass( 'has-dropdown' );
+			$mobileMenu.find( '.has-dropdown' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="icon-angle-down" aria-hidden="true"></i></button>' );
 			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
 				e.preventDefault();
 				$( this ).toggleClass( 'toggle-open' ).next( '.children, .sub-menu' ).slideToggle( 'fast' );
+			} );
+
+			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
+				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
+					e.preventDefault();
+					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
+				}
 			} );
 
 			var mmOverflow = function() {
@@ -152,10 +161,11 @@ jQuery( function( $ ) {
 		$mobileMenu.slideToggle( 'fast' );
 
 		$( '#mobile-navigation a' ).click( function( e ) {
-			if ( $mobileMenu.is(' :visible' ) ) {
-				$mobileMenu.slideUp( 'fast' );
+			if ( typeof $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) !== "undefined" || $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) != "#" ) {
+				if ( $mobileMenu.is(' :visible' ) ) {
+					$mobileMenu.slideUp( 'fast' );
+				}
 			}
-
 			$$.removeClass( 'to-close' );
 		} );
 
@@ -241,7 +251,7 @@ jQuery( function( $ ) {
 		var smSetup = function() {
 
 			if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteorigin_corp_resp_menu_params.collapse ) ) return;
-			
+
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
 				$mhs.css( 'height', $mh.outerHeight() );
@@ -257,13 +267,13 @@ jQuery( function( $ ) {
 
 			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $( window ).scrollTop() ) {
 				$( 'body' ).addClass( 'topbar-out' );
-			}			
+			}
 
 			if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) || $tbwc.length ) {
 				$mh.css( 'position', 'fixed' );
 			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $( 'body' ).hasClass( 'topbar-out' ) ) {
 				$mh.css( 'position', 'absolute' );
-			}											
+			}
 
 		};
 		smSetup();
@@ -275,7 +285,7 @@ jQuery( function( $ ) {
 				$( $mh ).addClass( 'stuck' );
 			} else {
 				$( $mh ).removeClass( 'stuck' );
-			}			
+			}
 		};
 		smShadow();
 		$( window ).scroll( smShadow );
@@ -331,6 +341,6 @@ jQuery( function( $ ) {
 			smResizeLogo();
 			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
-	}		
+	}
 
 } );
