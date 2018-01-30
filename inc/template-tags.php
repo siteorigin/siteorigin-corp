@@ -145,7 +145,7 @@ function siteorigin_corp_display_icon( $type ) {
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M18.284 29.705l-2.284 2.285-15.99-15.99 15.99-15.99 2.284 2.285-13.705 13.705z"></path>
 			</svg>
-		<?php break;			
+		<?php break;
 
 		case 'menu': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="32" viewBox="0 0 27 32">
@@ -157,7 +157,7 @@ function siteorigin_corp_display_icon( $type ) {
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M17.589 16l-15.402 15.989-2.2-2.283 13.202-13.706-13.202-13.706 2.2-2.283 13.202 13.704z"></path>
 			</svg>
-		<?php break;		
+		<?php break;
 
 		case 'search': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
@@ -198,7 +198,7 @@ function siteorigin_corp_the_post_navigation() {
 	if ( ! empty( $next_post ) ) {
 		$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 	}
-	
+
 	?>
 	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-corp' ); ?></h2>
