@@ -1,6 +1,6 @@
 .main-navigation {
 	text-align: right;
-		
+
 	> div {
 		display: inline-block;
 	}
@@ -31,18 +31,18 @@
 				margin: 0;
 				padding: 0;
 				min-width: 100%;
-				
+
 				a {
 					background: $color__navigation-drop-down-background;
 	    			border-bottom: 1px solid;
-	    			border-color: $color__navigation-drop-down-divider; 
+	    			border-color: $color__navigation-drop-down-divider;
 	    			color: $color__navigation-drop-down-link;
 	    			font-size: 12px;
-	    			font-weight: normal; 
+	    			font-weight: normal;
 	    			max-width: 100%;
 	    			padding: 12px 20px;
-	    			white-space: nowrap;    			
-				}				
+	    			white-space: nowrap;
+				}
 
 				&:hover > a {
 					color: $color__navigation-drop-down-link-hover;
@@ -92,23 +92,23 @@
 				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
-				font-weight: bold; 
+				font-weight: bold;
 				letter-spacing: 1px;
 				padding-bottom: 4px;
 			}
-		}			
+		}
 
 		// If a class of 'left' is added to a menu item, break drop down menu items to the left.
 		.left {
 
 			.sub-menu,
 			.children {
-				right: 0; 
-				
+				right: 0;
+
 				ul {
 					left: initial;
 					left: auto;
-					right: 100%;   
+					right: 100%;
 				}
 
 				li {
@@ -117,10 +117,10 @@
 					&.focus > ul {
 						left: initial;
 						left: auto;
-						right: 100%;  
-					}			
-				}				
-			}				
+						right: 100%;
+					}
+				}
+			}
 		}
 
 		// If a class of 'left' is added to a sub-menu item, break drop down menu items to the left.
@@ -130,7 +130,7 @@
 			.children {
 				left: initial;
 				left: auto;
-				right: 100%;   
+				right: 100%;
 
 				li {
 
@@ -138,11 +138,11 @@
 					&.focus > ul {
 						left: initial;
 						left: auto;
-						right: 100%;  
-					}			
+						right: 100%;
+					}
 				}
-			}					
-		}	
+			}
+		}
 
 		// If a class of .menu-button is added to a menu item, style it as a button.
 		@at-root #site-navigation#{&} .menu-button {
@@ -155,18 +155,18 @@
 				border-radius: 0;
 				color: #fff;
 				letter-spacing: 1px;
-				line-height: normal;  
+				line-height: normal;
 				padding: 11px 25px;
 				text-transform: uppercase;
 				transition: .3s;
-			
+
 				&:hover {
 					background: rgba($color__accent, .8);
-					border: none; 
+					border: none;
 					color: #fff;
-				}	
-			}		
-		}		
+				}
+			}
+		}
 	}
 
 	// First level items.
@@ -174,15 +174,15 @@
 
 		// Overlap.
 		.overlap-light .site-header:not(.stuck) & > a {
-			color: #fff; 
+			color: #fff;
 		}
 
 		.overlap-dark .site-header:not(.stuck) & > a {
-			color: #2d2d2d; 
-		}		
+			color: #2d2d2d;
+		}
 
 		&:hover > a {
-			border-bottom: 2px solid; 
+			border-bottom: 2px solid;
 			border-color: $color__navigation_link_accent;
 		}
 
@@ -201,7 +201,7 @@
 		border: none;
 		display: inline-block;
 		outline: none;
-		margin-left: 37px; 
+		margin-left: 37px;
 		padding: 0;
 		position: relative;
 		top: 3px;
@@ -214,14 +214,14 @@
 
 				path {
 					fill: $color__navigation-link;
-					
+
 					.overlap-light .site-header:not(.stuck) & {
-						fill: #fff; 
+						fill: #fff;
 					}
 
 					.overlap-dark .site-header:not(.stuck) & {
 						fill: #2d2d2d;
-					}					
+					}
 				}
 			}
 		}
@@ -259,13 +259,13 @@
 	svg {
 		height: 19px;
 		width: 23px;
-		
+
 		path {
 			fill: $color__navigation-link;
-			
+
 			.overlap-light & {
-				fill: #fff; 
-			}						
+				fill: #fff;
+			}
 		}
 	}
 }
@@ -315,6 +315,10 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 40px;
+
+				&:not([href]) {
+					cursor: pointer;
+				}
 			}
 
 			.dropdown-toggle {
@@ -352,7 +356,7 @@
 $sel: '';
 @for $i from 1 through 5 {
 	$sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
-	
+
 	#{$sel} {
     	ul ul li a {
         	padding-left: 40px * $i;
@@ -395,9 +399,9 @@ $sel: '';
 
 .pagination {
 	@include clearfix-after;
-	padding-top: 30px; 
+	padding-top: 30px;
 	text-align: center;
-	width: 100%; 
+	width: 100%;
 
 	.page-numbers {
 		border: 1px solid $color__text-medium;
@@ -405,7 +409,7 @@ $sel: '';
 		display: inline-block;
 		font-family: $font__main;
 		font-size: 0.9333em;
-		line-height: normal;  
+		line-height: normal;
 		margin-right: 4px;
 		padding: 11px 17px;
 		transition: .3s;
@@ -436,7 +440,7 @@ $sel: '';
 				background: none;
 				color: $color__text-medium;
 			}
-		}		
+		}
 	}
 
 	.current {
@@ -447,29 +451,29 @@ $sel: '';
 
 .post-navigation {
 	border-top: 1px solid $color__background-hr;
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	padding: 40px 0;
 
 	a {
-		
+
 		img {
 			display: inline-block;
 			margin-right: 15px;
 			max-width: 80px;
-			
+
 			@media (max-width: 1136px) {
 				display: none;
-			} 			
+			}
 		}
 
 		.nav-innner {
 			display: inline-block;
 			vertical-align: top;
 			width: 74%;
-			
+
 			@media (max-width: 1136px) {
-				width: 100%; 
-			} 
+				width: 100%;
+			}
 		}
 
 		span {
@@ -478,7 +482,7 @@ $sel: '';
 			font-size: 13px;
 			font-weight: normal;
 			text-transform: uppercase;
-			letter-spacing: .5px; 
+			letter-spacing: .5px;
 			line-height: normal;
 			margin: 8px 0 1px;
 		}
@@ -486,8 +490,8 @@ $sel: '';
 		div {
 			color: $color__text-dark;
 			font-family: $font__headings;
-			font-weight: 400;   
-			font-size: 15px; 
+			font-weight: 400;
+			font-size: 15px;
 			line-height: normal;
 			transition: .3s;
 		}
@@ -499,7 +503,7 @@ $sel: '';
 
 	.nav-next img {
 		margin: 0 0 0 15px;
-	}	
+	}
 }
 
 .comment-navigation {

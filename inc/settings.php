@@ -1109,3 +1109,24 @@ function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
 	return $defaults;
 }
 add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_setting_defaults', 10, 3 );
+
+/**
+ * Add the about page sections.
+ */
+function siteorigin_corp_about_page_sections( $about ) {
+	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
+
+	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize.", 'siteorigin-corp' );
+
+	$about[ 'review' ] = true;
+
+	$about[ 'sections' ] = array(
+		'free',
+		'documentation',
+		'page-builder',
+		'github',
+	);
+
+	return $about;
+}
+add_filter( 'siteorigin_about_page', 'siteorigin_corp_about_page_sections' );
