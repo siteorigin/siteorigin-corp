@@ -5,29 +5,29 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+
 	<?php if ( siteorigin_corp_get_video() ) : ?>
-		<div class="entry-thumbnail">
+		<div class="entry-thumbnail entry-video">
 			<?php echo siteorigin_corp_get_video(); ?>
 		</div>
 	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
-	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>		
+	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
+				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>
 			</a>
 		</div>
-	<?php endif; ?>	
+	<?php endif; ?>
 
 	<div class="corp-content-wrapper">
 		<header class="entry-header">
