@@ -3,7 +3,7 @@
 	.blog &,
 	.archive & {
 		display: flex;
-		flex-wrap: wrap;		
+		flex-wrap: wrap;
 	}
 
 	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
@@ -16,7 +16,7 @@
 .widget_siteorigin-panels-postloop {
 	display: flex;
 	flex-wrap: wrap;
-	
+
 	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
 	.blog-full & {
 		align-items: flex-start;
@@ -28,11 +28,11 @@ body:not(.single) .hentry {
 	border: 1px solid $color__background-hr;
 	margin: 0 0 31px;
 	width: 31%;
-	
+
 	// Two column blog layout below 768px.
 	@media (max-width: 768px) {
 		width: 48.25%;
-	}	
+	}
 
 	// One column blog layout below 480px.
 	@media (max-width: 480px) {
@@ -42,35 +42,35 @@ body:not(.single) .hentry {
 	// 1, 4, 7, 10
 	&:nth-of-type(3n+1) {
 		margin-right: 3.5%;
-		
+
 		@media (max-width: 768px) {
-			margin-right: 0; 
+			margin-right: 0;
 		}
 	}
-	
+
 	@media (max-width: 768px) {
 		// 1, 3, 5, 7, 9
 		&:nth-of-type(2n+1) {
-			margin-right: 3.5%; 
+			margin-right: 3.5%;
 		}
 	}
 
 	// 3, 6, 9, 12
 	&:nth-of-type(3n+3) {
 		margin-left: 3.5%;
-		
+
 		@media (max-width: 768px) {
-			margin-left: 0; 
-		}						
+			margin-left: 0;
+		}
 	}
 
 	// Two column blog layout when the sidebar is in use.
 	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
 		width: 48.25%;
-		
+
 		@media (max-width: 480px) {
-			width: 100%; 
-		}	
+			width: 100%;
+		}
 
 		// 1, 4, 7, 10
 		&:nth-of-type(3n+1) {
@@ -80,13 +80,13 @@ body:not(.single) .hentry {
 		// 1, 3, 5, 7, 9
 		&:nth-of-type(2n+1) {
 			margin-right: 3.5%;
-		}									
+		}
 
 		// 3, 6, 9, 12
 		&:nth-of-type(3n+3) {
-			margin-left: 0; 					
-		}				
-	}		
+			margin-left: 0;
+		}
+	}
 
 	&:only-child {
 		margin: 0;
@@ -97,18 +97,18 @@ body:not(.single) .hentry {
 	}
 
 	.entry-thumbnail {
-		@include clearfix; 
-		margin: -1px; 
-	}	
+		@include clearfix;
+		margin: -1px;
+	}
 
 	.corp-content-wrapper {
 		padding: 25px 30px 33px;
 	}
 
 	.entry-content {
-		font-size: .9333em; 
+		font-size: .9333em;
 		padding-bottom: 0;
-		
+
 		p:last-of-type {
 			margin: 0;
 		}
@@ -132,14 +132,14 @@ body:not(.single) .hentry {
 	font-weight: 600; 
 	line-height: normal;
 	margin: 0 0 3px;
-	
+
 	@media (max-width: 768px) {
-		font-size: 26px; 
-	}		
-	
+		font-size: 26px;
+	}
+
 	@media (max-width: 480px) {
-		font-size: 23px; 
-	}	
+		font-size: 23px;
+	}
 
 	a {
 		color: inherit;
@@ -159,16 +159,16 @@ body:not(.single) .hentry {
 	span {
 		color: $color__text-light;
 		display: inline-block;
-		
+
 		&:not(:last-child) {
 
 			&:after {
 				content: '\007c';
-				font-size: 12px; 
+				font-size: 12px;
 				padding: 0 5px;
 				vertical-align: top;
 			}
-		}		
+		}
 
 		a {
 			color: inherit;
@@ -178,7 +178,7 @@ body:not(.single) .hentry {
 				color: $color__accent;
 			}
 		}
-	}	
+	}
 
 	.post-categories {
 		display: inline-block;
@@ -198,11 +198,11 @@ body:not(.single) .hentry {
 }
 
 .entry-thumbnail {
-	line-height: 0; 	
+	line-height: 0;
 }
 
 .single .entry-thumbnail {
-	margin-bottom: 25px; 
+	margin-bottom: 25px;
 }
 
 .more-text {
@@ -210,30 +210,30 @@ body:not(.single) .hentry {
 
 	span {
 		display: inline-block;
-		padding-left: 3px; 
+		padding-left: 3px;
 		vertical-align: middle;
 	}
-}	
+}
 
 .page-links {
-	margin: 26px 0; 
+	margin: 26px 0;
 	text-align: left;
 
 	.page-links-title {
 		color: $color__text-dark;
 		font-size: 14px;
-		font-weight: 500;  
+		font-weight: 500;
 	}
 
 	.page-links-title {
-		border: none; 
+		border: none;
 		color: $color__text-medium;
-		font-weight: 600; 
+		font-weight: 600;
 		padding: 0;
 		text-transform: none;
-		
+
 		&:hover {
-			border: none; 
+			border: none;
 			color: $color__text-medium;
 		}
 	}
@@ -244,7 +244,7 @@ body:not(.single) .hentry {
 		display: inline-block;
 		font-family: $font__main;
 		font-size: 0.9333em;
-		line-height: normal;  
+		line-height: normal;
 		margin-right: 4px;
 		padding: 11px 17px;
 		transition: .3s;
@@ -261,7 +261,7 @@ body:not(.single) .hentry {
 
 	a span {
 		color: $color__text-medium;
-	}		
+	}
 }
 
 .single .entry-footer {
@@ -272,7 +272,7 @@ body:not(.single) .hentry {
 	background: #e4e6eb;
 	color: $color__text-medium;
 	display: inline-block;
-	font-size: 12px; 
+	font-size: 12px;
 	height: 28px;
 	line-height: 28px;
 	padding: 0 10px 0 20px;
@@ -306,12 +306,12 @@ body:not(.single) .hentry {
 ## Archives, Search Results & 404
 --------------------------------------------------------------*/
 .page-header {
-	margin-bottom: 25px; 
+	margin-bottom: 25px;
 }
 
 .page-title {
-	font-size: 32px; 
-	font-weight: 500; 
+	font-size: 32px;
+	font-weight: 500;
 	line-height: normal;
 	margin: 0;
 }
@@ -321,12 +321,12 @@ body:not(.single) .hentry {
 
 	.page-header {
 		margin-bottom: 50px;
-		width: 100%; 
+		width: 100%;
 	}
 
 	.page-title {
 		font-size: 24px;
-		font-weight: 500; 
+		font-weight: 500;
 		text-align: center;
 	}
 
@@ -334,14 +334,14 @@ body:not(.single) .hentry {
 		font-size: 14px;
 		margin-top: 5px;
 		text-align: center;
-		
+
 		p:last-of-type {
 			margin-bottom: 0;
-		} 
+		}
 	}
-	
+
 	.entry-title {
-		font-size: 29px; 
+		font-size: 29px;
 	}
 }
 
@@ -354,11 +354,11 @@ body:not(.single) .hentry {
 
 	input[type="search"] {
 		padding-right: 43px;
-		min-width: 100px; 
+		min-width: 100px;
 	}
 
 	button[type="submit"] {
-		background: none; 
+		background: none;
 		border: none;
 		padding: 0;
 		position: relative;
@@ -368,7 +368,7 @@ body:not(.single) .hentry {
 		svg {
 			height: 16px;
 			width: 16px;
-			
+
 			path {
 				fill: $color__text-light;
 			}
@@ -382,74 +382,74 @@ body:not(.single) .hentry {
 .author-box {
 	border-top: 1px solid $color__background-hr;
 	display: table;
-	border-right: 0; 
+	border-right: 0;
 	border-left: 0;
-	margin-bottom: 60px; 
-	padding-top: 40px; 
+	margin-bottom: 60px;
+	padding-top: 40px;
 	width: 100%;
-		
+
 	.author-avatar {
 		display: table-cell;
 		vertical-align: top;
 		width: 130px;
-		
+
 		@media (max-width: 480px) {
 			display: block;
-			width: 100%; 
+			width: 100%;
 		}
 
 		img {
 			border-radius: 50px;
-			display: block; 
+			display: block;
 			height: 100px;
 			width: 100px;
-			
+
 			@media (max-width: 480px) {
 				height: 80px;
 				margin: 0 0 15px;
-				width: 80px;				
-			}			
+				width: 80px;
+			}
 		}
 	}
 
 	.author-description {
 		display: table-cell;
 		vertical-align: top;
-		
+
 		@media (max-width: 480px) {
 			display: block;
-			width: 100%; 
-		}					
-	
+			width: 100%;
+		}
+
 		h3 {
 			font-size: 15px;
-			font-weight: bold; 
+			font-weight: bold;
 			line-height: normal;
-			margin: 0;	
+			margin: 0;
 		}
 
 		span {
 			display: block;
-			font-size: 13px; 
-			margin-bottom: 10px; 
-			
+			font-size: 13px;
+			margin-bottom: 10px;
+
 			a {
-				color: $color__text-medium;	
-						
+				color: $color__text-medium;
+
 				&:hover {
 					color: $color__accent;
-				} 	
-				
+				}
+
 			}
 		}
 
 		div {
 			font-size: 14px;
-			
+
 			p:last-of-type {
 				margin-bottom: 0;
 			}
-		}	
+		}
 	}
 }
 
@@ -459,12 +459,13 @@ body:not(.single) .hentry {
 .yarpp-related,
 .related-posts-section {
 	display: flex;
-	flex-wrap: wrap;		
-	margin-bottom: 60px; 
+	flex-wrap: wrap;
+	margin-bottom: 60px;
 
 	.related-posts {
 		@extend .sub-heading;
-		margin-bottom: 20px; 
+		margin-bottom: 20px;
+		width: 100%;
 	}
 
 	ol {
@@ -472,13 +473,13 @@ body:not(.single) .hentry {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		width: 100%; 
+		width: 100%;
 
 		li {
 			display: block;
 			float: left;
 			margin: 0 0 25px 0;
-			width: 31%;			
+			width: 31%;
 
 			@media (max-width: 480px) {
 				width: 100%;
@@ -486,29 +487,29 @@ body:not(.single) .hentry {
 
 			&:nth-child(3n+1) {
 				margin-right: 3.5%;
-				
+
 				@media (max-width: 480px) {
-					margin-right: 0; 
+					margin-right: 0;
 				}
 			}
 
 			&:nth-child(3n+3) {
 				margin-left: 3.5%;
-				
+
 				@media (max-width: 480px) {
-					margin-left: 0; 
-				}				
+					margin-left: 0;
+				}
 			}
 
 			&:only-child {
 				margin: 0;
-			}	
+			}
 
 			.corp-content-wrapper {
 				background: #fff;
-				border: 1px solid $color__background-hr; 
+				border: 1px solid $color__background-hr;
 				padding: 25px 30px;
-			}		
+			}
 
 			a {
 				display: block;
@@ -517,12 +518,12 @@ body:not(.single) .hentry {
 			}
 
 			img {
-				margin-bottom: -1px; 
+				margin-bottom: -1px;
 			}
 
 			.related-post-title {
-				font-size: 16px; 
-				font-weight: 500; 
+				font-size: 16px;
+				font-weight: 500;
 				line-height: normal;
 				margin: 0 0 3px;
 				transition: .3s;
@@ -536,10 +537,10 @@ body:not(.single) .hentry {
 				color: $color__text-light;
 				font-size: 13px;
 				font-weight: normal;
-				line-height: normal; 
+				line-height: normal;
 				margin: 0;
 				transition: .3s;
-				
+
 				&:hover {
 					color: $color__accent;
 				}

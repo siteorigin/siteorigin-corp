@@ -276,29 +276,27 @@ function siteorigin_corp_related_posts( $post_id ) {
 
 		<div class="related-posts-section">
 			<h3 class="related-posts"><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h3>
-			<?php if ( $related_posts ) : ?>
+			<?php if ( $related_posts->have_posts() ) : ?>
 				<ol>
-					<?php if ( $related_posts->have_posts() ) : ?>
-						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-							<li>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php
-									if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
-										the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
-									elseif ( has_post_thumbnail() )
-										the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
-									?>
-									<div class="corp-content-wrapper">
-										<h3 class="related-post-title"><?php the_title(); ?></h3>
-										<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
-									</div>
-								</a>
-							</li>
-						<?php endwhile; ?>
-					<?php endif; ?>
+					<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+						<li>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php
+								if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
+									the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
+								elseif ( has_post_thumbnail() )
+									the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
+								?>
+								<div class="corp-content-wrapper">
+									<h3 class="related-post-title"><?php the_title(); ?></h3>
+									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
+								</div>
+							</a>
+						</li>
+					<?php endwhile; ?>
 				</ol>
 			<?php else : ?>
-				<p><?php esc_html_e( 'No related posts.', 'siteorigin-corp' ); ?></p>
+				<br /><p><?php esc_html_e( 'No related posts.', 'siteorigin-corp' ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php wp_reset_query();
