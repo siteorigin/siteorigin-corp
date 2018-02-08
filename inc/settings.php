@@ -463,8 +463,9 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  * @return string
  */
 function siteorigin_corp_settings_custom_css( $css ) {
-	// Custom CSS.
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
+	/**** /private/var/folders/qh/gg52m_yj7zv3bk6hb2x2j9w40000gn/T/BEOxQD/sass/style.css ***/
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -476,7 +477,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
 	color: ${typography_heading};
 	}
-	.sub-heading,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.comments-title,.comment-reply-title {
+	.sub-heading,.site-content #jp-relatedposts .jp-relatedposts-headline,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.comments-title,.comment-reply-title {
 	color: ${typography_text};
 	}
 	blockquote {
@@ -612,7 +613,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.post-navigation {
 	border-top: 1px solid ${typography_border};
 	}
-	.post-navigation a .sub-title {
+	.post-navigation a span {
 	color: ${typography_secondary_text};
 	}
 	.post-navigation a div {
@@ -645,8 +646,21 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
+	.site-content #jp-relatedposts .jp-relatedposts-headline {
+	.font( ${typography_heading_font} );
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+	color: ${typography_heading};
+	.font( ${typography_heading_font} );
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+	color: ${typography_accent};
+	}
+	.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,.site-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+	color: ${typography_text};
+	}
 	.site-content #primary .sharedaddy {
-	border: 1px solid ${typography_border};
+	border-top: 1px solid ${typography_border};
 	}
 	.widget-area .widget a,.site-footer .widget a {
 	color: ${typography_text};
@@ -754,7 +768,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	#fullscreen-search .search-close-button .close svg path {
 	fill: ${navigation_search_overlay_text};
 	}
-	body:not(.single) .hentry .content-wrapper {
+	body:not(.single) .hentry {
 	border: 1px solid ${typography_border};
 	}
 	.entry-title {
@@ -817,7 +831,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.author-box .author-description span a:hover {
 	color: ${typography_accent};
 	}
-	.yarpp-related ol li div,.related-posts-section ol li div {
+	.yarpp-related ol li .corp-content-wrapper,.related-posts-section ol li .corp-content-wrapper {
 	border: 1px solid ${typography_border};
 	}
 	.yarpp-related ol li .related-post-title:hover,.related-posts-section ol li .related-post-title:hover {
@@ -880,7 +894,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.site-footer .widgets .widget .widget-title {
 	color: ${footer_widget_title};
 	}
-	.site-footer .widgets .widget ~ * {
+	.site-footer .widgets .widget *:not(.widget-title):not(a) {
 	color: ${footer_widget_text};
 	}
 	.site-footer .widgets .widget a {
