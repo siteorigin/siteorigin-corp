@@ -1,0 +1,46 @@
+.woocommerce.woocommerce-page {
+
+	.content-area {
+		width: 100%;	
+	}
+
+	// Content area with sidebar.
+	&.woocommerce-sidebar {
+
+		.content-area {
+			float: left;
+			width: 66%;		
+		
+			@media (max-width: 768px) {
+				width: 100%; 	
+			}
+		}
+
+		.widget-area {
+			float: right;
+			padding-left: 2.75%;
+			width: $sidebar__width;
+			
+			@media (max-width: 768px) {
+		    	border-top: 1px solid $color__background-hr-dark;
+		    	margin-top: 50px;
+				padding: 50px 0 0;		
+				width: 100%;
+			}			
+		}
+	}
+
+	// Content area with right aligned sidebar.
+	&.woocommerce-sidebar-left {
+
+		.content-area {
+			float: right;
+		}
+
+		.widget-area {
+			float: left;
+			padding-right: 0; 
+			padding-left: 4%;
+		}
+	}			
+}

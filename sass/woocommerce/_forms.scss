@@ -1,0 +1,105 @@
+.woocommerce {
+
+	form {
+
+		p:first-of-type {
+			margin-bottom: 24px; 
+		}
+
+		.form-row {
+			@include clearfix();
+			margin-bottom: 24px;
+			
+			&#billing_address_1_field {
+				margin-bottom: 10px; 
+			}
+
+			label {
+				display: block;
+				margin-bottom: 4px;   
+
+				.required {
+					color: rgba(255, 0, 0, .6);
+					text-decoration: none;
+				}
+
+				&.inline {
+					font-weight: normal; 
+				}
+
+				&.checkbox {
+					display: inline;
+				}
+			}
+
+			select {
+				width: 100%;
+			}
+
+			.input-text {
+				box-sizing: border-box;
+				width: 100%;
+			}
+
+			&.woocommerce-invalid {
+
+				label {
+					color: rgba(255, 0, 0, .6);
+				}
+				
+				.select2-container,
+				input.input-text,
+				select {
+					border-color: rgba(255, 0, 0, .6);
+				}
+			}
+
+			&.woocommerce-validated {
+
+				.select2-container,
+				input.input-text,
+				select {
+					border-color: rgba(0, 128, 0, .6);
+				}
+			}			
+		}
+
+		.form-row-first,
+		.form-row-last {
+			float: left;
+			overflow: visible;
+			width: 47.8260869565%;
+			
+			@media (max-width: 768px) {
+				float: none;
+				width: 100%; 
+			}
+		}
+
+		.form-row-last {
+			float: right;
+		}
+
+		.form-row-wide {
+			clear: both;
+		}
+	}
+
+	// Login form.
+	.login	{
+
+		.clear ~ .form-row {
+			margin-bottom: 0;
+		}
+
+		.button {
+			margin-bottom: 13px; 
+		}	
+
+		.lost_password {
+			font-size: 0.8666em;
+			margin-bottom: 26px; 
+		}	
+		
+	}
+}

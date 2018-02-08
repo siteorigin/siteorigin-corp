@@ -411,6 +411,51 @@ function siteorigin_corp_settings_init() {
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 
+function siteorigin_corp_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title' => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
+			'fields' => array(
+
+				'products_per_row' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-corp' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1,
+				),	
+
+				'shop_sidebar' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Choose the shop sidebar position.', 'siteorigin-corp' ),
+					'options' => array(
+						'left' => esc_html__( 'Left', 'siteorigin-corp' ),
+						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
+					),
+				),						
+
+				'product_gallery' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
+					'options' => array(
+						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-corp' ),
+						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-corp' ),
+						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-corp' ),
+						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-corp' ),
+					),
+				),
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings );
+}
+add_filter( 'siteorigin_corp_settings_array', 'siteorigin_corp_woocommerce_settings' );
+
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
@@ -1045,8 +1090,12 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_bottom_bar_link_hover']				= '#ffffff';
 	$defaults['footer_bottom_bar_background']				= '#2f333b';
 	$defaults['footer_padding']								= '95px';
-	$defaults['footer_margin']								= '80px';	
-	
+	$defaults['footer_margin']								= '80px';
+
+	$defaults['woocommerce_products_per_row']				= 3;
+	$defaults['woocommerce_shop_sidebar']       			= 'right';
+	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
+		
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );
@@ -1130,9 +1179,11 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_set
 function siteorigin_corp_about_page_sections( $about ) {
 	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
 
-	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize.", 'siteorigin-corp' );
+	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
 
 	$about[ 'review' ] = true;
+
+	$about[ 'no_video' ] = true;
 
 	$about[ 'sections' ] = array(
 		'free',

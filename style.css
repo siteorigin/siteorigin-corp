@@ -1375,8 +1375,6 @@ a {
     float: right; }
   @media (max-width: 768px) {
     .sidebar .content-area {
-      border: 0;
-      padding-right: 0;
       width: 100%; } }
 
 .page-layout-no-sidebar .site-content .content-area {
@@ -1589,12 +1587,13 @@ a {
 ## Posts and pages
 --------------------------------------------------------------*/
 .blog .site-main,
-.archive .site-main {
+.archive:not(.woocommerce) .site-main,
+.search-results .site-main {
   display: flex;
   flex-wrap: wrap; }
 
 .blog-full.blog .site-main,
-.blog-full.archive .site-main {
+.blog-full.archive:not(.woocommerce) .site-main {
   align-items: flex-start; }
 
 .widget_siteorigin-panels-postloop {
@@ -2087,7 +2086,8 @@ body:not(.single) .hentry {
 #commentform label {
   display: block;
   line-height: normal;
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  text-transform: capitalize; }
 
 #commentform textarea {
   width: 100%; }

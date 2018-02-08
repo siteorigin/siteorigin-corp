@@ -34,11 +34,10 @@
 	}		 	
 	
 	@media (max-width: 768px) {
-		border: 0;
-		padding-right: 0;
 		width: 100%; 	
 	}
 }
+
 // No Sidebar page layout setting.
 .page-layout-no-sidebar .site-content .content-area {
 	float: none;

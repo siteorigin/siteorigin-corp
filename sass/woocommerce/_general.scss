@@ -1,0 +1,57 @@
+.woocommerce {
+
+	// Reset copy styles.
+	p {
+		margin-bottom: 0;
+	}
+
+	table {
+		border: 0;
+		margin: 0;
+		
+		th,
+		td {
+			border: 0;
+			padding: 0;
+		}
+	}
+
+	// Loading overlay.
+	.blockUI {
+
+		&:before {
+			-webkit-animation: fa-spin 2s infinite linear;
+			animation: fa-spin 2s infinite linear;
+			content: "\e920";
+			font-family: 'siteorigin-corp-icons';
+			font-size: 30px;
+			height: 30px;
+			left: 50%;
+			line-height: 30px;
+			margin-top: -15px;
+			margin-left: -15px;
+			position: absolute;
+			top: 50%;
+			width: 30px;
+		}
+	}
+
+	.blockOverlay[style] {
+		background-color: transparent !important;
+	}	
+	
+	// Breadcrumbs.
+	.woocommerce-breadcrumb {
+		color: $color__text-light;
+		font-size: 0.8666em;
+		margin-bottom: 15px;
+
+		a {
+			color: $color__text-light;
+			
+			&:hover {
+				color: $color__accent;
+			}
+		}
+	}
+}

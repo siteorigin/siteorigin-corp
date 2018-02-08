@@ -1,14 +1,15 @@
 .site-main {
 
 	.blog &,
-	.archive & {
+	.archive:not(.woocommerce) &,
+	.search-results & {
 		display: flex;
 		flex-wrap: wrap;
 	}
 
 	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
 	.blog-full.blog &,
-	.blog-full.archive & {
+	.blog-full.archive:not(.woocommerce) & {
 		align-items: flex-start;
 	}
 }
