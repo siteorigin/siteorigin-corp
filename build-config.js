@@ -64,6 +64,7 @@ module.exports = {
     css: {
         src: [
             'style.css',
+            'woocommerce.css',
             'css/siteorigin-corp-icons.css',
         ],
     },
