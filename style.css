@@ -1374,7 +1374,7 @@ a {
   .sidebar-left.sidebar .content-area {
     float: right; }
   @media (max-width: 768px) {
-    .sidebar .content-area {
+    body.sidebar .content-area {
       width: 100%; } }
 
 .page-layout-no-sidebar .site-content .content-area {
@@ -1398,7 +1398,7 @@ a {
     padding-right: 2.75%;
     padding-left: 0; }
   @media (max-width: 768px) {
-    .widget-area {
+    body .widget-area {
       border-top: 1px solid #d6d6d6;
       margin-top: 50px;
       padding: 50px 0 0;

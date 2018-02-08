@@ -33,8 +33,11 @@
 		float: right;
 	}		 	
 	
-	@media (max-width: 768px) {
-		width: 100%; 	
+	@at-root body.sidebar .content-area {
+
+		@media (max-width: 768px) {
+			width: 100%; 	
+		}
 	}
 }
 
@@ -62,18 +65,21 @@
 .widget-area {
 	float: right;
 	padding-left: 2.75%;
-	width: $sidebar__width;
+	width: $sidebar__width;	
 	
-	@at-root .sidebar-left & {
+	.sidebar-left & {
 		float: left;
 		padding-right: 2.75%; 
-		padding-left: 0; 
+		padding-left: 0;	
 	}	
 	
-	@media (max-width: 768px) {
-    	border-top: 1px solid $color__background-hr-dark;
-    	margin-top: 50px;
-		padding: 50px 0 0;		
-		width: 100%;
-	}
+	@at-root body .widget-area {
+		
+		@media (max-width: 768px) {
+	    	border-top: 1px solid $color__background-hr-dark;
+	    	margin-top: 50px;
+			padding: 50px 0 0;		
+			width: 100%;
+		}
+	}	
 }
