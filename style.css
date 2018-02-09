@@ -1176,11 +1176,11 @@ a {
     .widget-area .widget .widget-title ~ *,
     .site-footer .widget .widget-title ~ * {
       font-size: 14px; }
-  .widget-area .widget a,
-  .site-footer .widget a {
+  .widget-area .widget a:not(.button),
+  .site-footer .widget a:not(.button) {
     color: #626262; }
-    .widget-area .widget a:hover,
-    .site-footer .widget a:hover {
+    .widget-area .widget a:not(.button):hover,
+    .site-footer .widget a:not(.button):hover {
       color: #f14e4e; }
   .widget-area .widget ul,
   .site-footer .widget ul {

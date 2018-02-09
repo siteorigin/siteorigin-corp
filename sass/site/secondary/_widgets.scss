@@ -15,7 +15,7 @@
 		}		
 	}
 
-	a {
+	a:not(.button) {
 		color: $color__text-medium;
 		
 		&:hover {
