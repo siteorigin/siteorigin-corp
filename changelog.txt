@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.3 - 12 February 2018 =
+* Added theme about page.
+* Added initial WooCommerce design and related theme settings.
+
 = 1.2 - 29 December 2017 =
 * Added additional theme settings descriptions.
 * Added placement and styling support for Jetpack Related Posts module.
