@@ -484,6 +484,7 @@ $sel: '';
 			color: $color__text-light;
 			display: block;
 			font-size: 13px;
+			font-weight: 500;
 			text-transform: uppercase;
 			letter-spacing: .5px;
 			line-height: normal;
@@ -493,7 +494,7 @@ $sel: '';
 		div {
 			color: $color__text-dark;
 			font-family: $font__headings;
-			font-weight: 400;
+			font-weight: 600;
 			font-size: 15px;
 			line-height: normal;
 			transition: .3s;
