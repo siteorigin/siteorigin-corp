@@ -82,7 +82,6 @@ function siteorigin_corp_woocommerce_wrapper_after() {
 }
 add_action( 'woocommerce_after_main_content', 'siteorigin_corp_woocommerce_wrapper_after' );
 
-if ( ! function_exists( 'siteorigin_corp_woocommerce_update_cart_count' ) ) :
 /**
  * Update cart count with the masthead cart icon.
  */
@@ -96,8 +95,17 @@ function siteorigin_corp_woocommerce_update_cart_count( $fragments ) {
 
 	return $fragments;
 }
-endif;
 add_filter( 'add_to_cart_fragments', 'siteorigin_corp_woocommerce_update_cart_count' );
+
+function siteorigin_corp_woocommerce_pagination_args( $array ) {
+	$array = array(
+		'prev_text'	=> '<span class="icon-long-arrow-left"></span>', 
+		'next_text'	=> '<span class="icon-long-arrow-right"></span>',
+		'type'		=> 'list',	
+	);
+	return $array;
+}
+add_filter( 'woocommerce_pagination_args', 'siteorigin_corp_woocommerce_pagination_args', 10, 1 );
 
 /**
  * Custom WooCommerce template tags.
