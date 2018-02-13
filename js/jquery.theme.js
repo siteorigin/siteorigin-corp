@@ -110,6 +110,122 @@ jQuery( function( $ ) {
 		} );
 	}
 
+	// Main menu current menu item indication.
+	jQuery( document ).ready( function( $ ) { 	
+		if ( window.location.hash ) {
+			return;
+		} else {
+			$( '#site-navigation a[href="'+ window.location.href +'"]' ).parent( 'li' ).addClass( 'current-menu-item' );
+		}
+		$( window ).scroll( function() {
+			if ( $( '#site-navigation ul li' ).hasClass( 'current' ) ) {
+			   $( '#site-navigation li' ).removeClass( 'current-menu-item' ); 
+			}
+		} );
+	} ); 
+
+	// Smooth scroll from internal page anchors.
+	var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
+		isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
+		isStickyHeader = $( 'header' ).hasClass( 'sticky' );
+
+	// Header height. 2px to account for header shadow.
+	if ( isStickyHeader && isAdminBar && jQuery( window ).width() > 600 ) { // From 600px the admin bar isn't sticky so we shouldn't take its height into account.
+		var headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 2;
+	} else if ( isStickyHeader ) {
+		var headerHeight = $( 'header' ).outerHeight() - 2;              
+	} else {
+		var headerHeight = 0;
+	}    	
+
+	$.fn.siteoriginCorpSmoothScroll = function() {
+		$( this ).click( function( e ) {
+
+			var hash    = this.hash;
+			var idName  = hash.substring( 1 );	// Get ID name.
+			var alink   = this;                 // This button pressed.
+
+			// Check if there is a section that had same id as the button pressed.
+			if ( jQuery( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
+				jQuery( '#site-navigation .current' ).removeClass('current');
+				jQuery( alink).parent( 'li' ).addClass( 'current' );
+			} else {
+				jQuery( '#site-navigation .current' ).removeClass( 'current' );
+			}
+			if ( location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname ) {
+				var target = jQuery( this.hash );
+				target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) +']' );
+				if ( target.length ) {
+					jQuery( 'html, body' ).animate( {
+						scrollTop: target.offset().top - headerHeight
+					}, 1200 );
+					return false; 
+				}
+			}
+		} );
+	};
+
+	jQuery( window ).load( function() {
+		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
+	} );
+
+    // Adjust for sticky header when linking from external anchors.
+    jQuery( window ).load( function() {
+
+        if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
+            var target = jQuery( window.location.hash );
+            if ( target.length ) {
+                jQuery( 'html, body' ).animate( {
+                    scrollTop: target.offset().top - headerHeight
+                }, 0 );
+                return false;
+            }
+        }
+    } );   
+
+	// Indicate which section of the page we're viewing with selected menu classes.
+	function siteoriginCorpSelected() {  
+
+		// Cursor position.
+		var scrollTop = jQuery( window ).scrollTop();       
+
+		// Used for checking if the cursor is in one section or not.
+		var isInOneSection = 'no';                                        
+
+		// For all sections check if the cursor is inside a section.
+		jQuery( '.panel-row-style' ).each( function() {
+
+			// Section ID.
+			var thisID = '#' + jQuery( this ).attr( 'id' );    
+
+			// Distance between top and our section. Minus 2px to compensate for an extra pixel produced when a Page Builder row bottom margin is set to 0.              
+			var offset = jQuery( this ).offset().top - 2;   
+
+			// Section height.                      
+			var thisHeight = jQuery( this ).outerHeight();                     
+			
+			// Where the section begins.
+			var thisBegin = offset - headerHeight;
+				  
+			// Where the section ends.                            
+			var thisEnd = offset + thisHeight - headerHeight;               
+
+			// If position of the cursor is inside of the this section.
+			if ( scrollTop >= thisBegin && scrollTop <= thisEnd ) {
+				isInOneSection = 'yes';
+				jQuery( '#site-navigation .current' ).removeClass( 'current' );
+				// Find the menu button with the same ID section.
+				jQuery( '#site-navigation a[href$="' + thisID + '"]' ).parent( 'li' ).addClass( 'current' );	// Find the menu button with the same ID section.
+				return false;
+			}
+			if ( isInOneSection === 'no' ) {
+				jQuery( '#site-navigation .current' ).removeClass( 'current' );
+			}
+		} );
+	}
+
+	jQuery( window ).on( 'scroll', siteoriginCorpSelected );	
+
 	// Mobile Menu.
 	var $mobileMenu = false;
 	$( '#mobile-menu-button' ).click( function ( e ) {
