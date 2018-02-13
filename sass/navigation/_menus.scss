@@ -94,7 +94,7 @@
 				display: block;
 				font-weight: bold;
 				letter-spacing: 1px;
-				padding-bottom: 4px;
+				padding-bottom: 5px;
 			}
 		}
 
@@ -186,11 +186,11 @@
 			border-color: $color__navigation_link_accent;
 		}
 
-		&.menu-item-has-children > a {
+		&:not(.current-menu-item).menu-item-has-children > a {
 			border-bottom: none;
 		}
 
-		&.current a,
+		&.current > a,
 		&.current_page_item > a,
 		&.current-menu-item > a,
 		&.current_page_ancestor > a,
