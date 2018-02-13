@@ -64,11 +64,6 @@ function siteorigin_corp_body_classes( $classes ) {
 	} elseif ( ! class_exists( 'Woocommerce' ) ) {
 		$classes[] = 'no-topbar';
 	}
-
-	// WooCommerce columns.
-	if ( function_exists( 'is_woocommerce' ) ) {
-		$classes[] = 'columns-' . siteorigin_setting( 'woocommerce_products_per_row' );
-	}
 	
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) && ( function_exists( 'is_woocommerce' ) && ! is_product() ) ) {

@@ -419,15 +419,6 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 			'title' => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
 			'fields' => array(
 
-				'products_per_row' => array(
-					'type' => 'range',
-					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-corp' ),
-					'min' => 2,
-					'max' => 5,
-					'step' => 1,
-				),	
-
 				'shop_sidebar' => array(
 					'type' => 'select',
 					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
@@ -469,6 +460,7 @@ function siteorigin_corp_font_settings( $settings ) {
 		'name'    => 'Montserrat',
 		'weights' => array(
 			400,
+			500,
 			600,
 			700
 		),
@@ -1092,7 +1084,6 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_padding']								= '95px';
 	$defaults['footer_margin']								= '80px';
 
-	$defaults['woocommerce_products_per_row']				= 3;
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
 		
