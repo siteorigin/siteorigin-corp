@@ -1076,12 +1076,9 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_padding']								= '95px';
 	$defaults['footer_margin']								= '80px';
 
-<<<<<<< HEAD
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
-		
-=======
->>>>>>> 97d926d99fe75cb263ce7317aa76fddcf9ff3410
+
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );
