@@ -20,7 +20,7 @@ function siteorigin_corp_settings_localize( $loc ) {
 		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
 
 		// Settings metabox.
-		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),		
+		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),
 	), $loc );
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_localize' );
@@ -39,7 +39,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'media',
 					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
 					'description' => esc_html__( 'A double sized logo to use on retina devices. Must be used in addition to a regular logo added in the Site Identity section.', 'siteorigin-corp' ),
-				),				
+				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Tagline', 'siteorigin-corp' ),
@@ -49,7 +49,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Sticks the header to the top of the screen on scroll.', 'siteorigin-corp' ),
-				),			
+				),
 				'scales' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
@@ -64,7 +64,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
 					'live' => true,
-				),			
+				),
 				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
@@ -75,7 +75,7 @@ function siteorigin_corp_settings_init() {
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
 					'live'	=> true,
-				),																
+				),
 			),
 		),
 
@@ -91,13 +91,13 @@ function siteorigin_corp_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Mobile Menu', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Use a mobile menu for small screen devices. Header Menu setting must be enabled.', 'siteorigin-corp' )
-				),	
+				),
 				'mobile_menu_collapse' => array(
 					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
 					'type' => 'number',
 					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' ),
 					'live'	=> true
-				),							
+				),
 				'menu_search' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Menu Search', 'siteorigin-corp' ),
@@ -142,7 +142,7 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu drop down link divider color.', 'siteorigin-corp' ),
 					'live' => true,
-				),											
+				),
 				'drop_down_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
@@ -154,13 +154,13 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Menu Search Overlay Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu search overlay text color.', 'siteorigin-corp' ),
 					'live' => true,
-				),						
+				),
 				'search_overlay_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu search background color.', 'siteorigin-corp' ),
 					'live' => true,
-				),				
+				),
 			),
 		),
 
@@ -181,12 +181,12 @@ function siteorigin_corp_settings_init() {
 					'type' => 'font',
 					'label' => esc_html__( 'Heading Font', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'body_font' => array(
 					'type' => 'font',
 					'label' => esc_html__( 'Body Font', 'siteorigin-corp' ),
 					'live' => true,
-				),											
+				),
 				'site_title' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Site Title Color', 'siteorigin-corp' ),
@@ -207,18 +207,18 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Heading Color', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'text' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Text Color', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'secondary_text' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Secondary Text Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for for post meta.', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'border' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
@@ -230,9 +230,9 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Border Dark Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for tables and form fields.', 'siteorigin-corp' ),
 					'live' => true,
-				),									
-			),		
-		),			
+				),
+			),
+		),
 
 		'blog' => array(
 			'title' => esc_html__( 'Blog', 'siteorigin-corp' ),
@@ -255,7 +255,7 @@ function siteorigin_corp_settings_init() {
 					'type' => 'number',
 					'label' => esc_html__( 'Excerpt Length', 'siteorigin-corp' ),
 					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-corp' ),
-				),				
+				),
 				'post_excerpt_read_more_link' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-corp' ),
@@ -270,44 +270,44 @@ function siteorigin_corp_settings_init() {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Date', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' )
-				),		
+				),
 				'post_categories' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Categories', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'siteorigin-corp' )
-				),							
+				),
 				'post_comment_count' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post comment count on blog, archive and single post pages.', 'siteorigin-corp' )
-				),				
+				),
 				'post_tags' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Tags', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post tags on single post pages.', 'siteorigin-corp' )
-				),				
+				),
 				'post_author_box' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Author Box', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post author biographical info on single post pages.', 'siteorigin-corp' )
-				),				
+				),
 				'related_posts' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Related Posts', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display related posts on single post pages.', 'siteorigin-corp' )
-				),						
+				),
 				'ajax_comments' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Ajax Comments', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Keep the conversation flowing with ajax loading comments.', 'siteorigin-corp' ),
 					'teaser' => true,
 				),
-			),											
+			),
 		),
 
 		'sidebar' => array(
 			'title' => esc_html__( 'Sidebar', 'siteorigin-corp' ),
-			'fields' => array(			
+			'fields' => array(
 				'position'	=> array(
 					'type'	=> 'select',
 					'label'	=> esc_html__( 'Position', 'siteorigin-corp' ),
@@ -320,9 +320,9 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Width', 'siteorigin-corp' ),
 					'type'        => 'measurement',
 					'live'        => true,
-				),										
-			),		
-		),		
+				),
+			),
+		),
 
 		'footer' => array(
 			'title' => esc_html__( 'Footer', 'siteorigin-corp' ),
@@ -346,7 +346,7 @@ function siteorigin_corp_settings_init() {
 					'plugin' => 'so-widgets-bundle',
 					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Add social icons to the bottom bar.', 'siteorigin-corp' ),
-				),				
+				),
 				'widget_title' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Title Color', 'siteorigin-corp' ),
@@ -356,17 +356,17 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Text Color', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'widget_link' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Link Color', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'widget_link_hover' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Link Hover Color', 'siteorigin-corp' ),
 					'live' => true,
-				),																
+				),
 				'background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Widget Background Color', 'siteorigin-corp' ),
@@ -377,7 +377,7 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Bottom Bar Text Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Bottom bar appears below footer widget area.', 'siteorigin-corp' ),
 					'live' => true,
-				),	
+				),
 				'bottom_bar_link' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Bottom Bar Link Color', 'siteorigin-corp' ),
@@ -387,12 +387,12 @@ function siteorigin_corp_settings_init() {
 					'type' => 'color',
 					'label' => esc_html__( 'Bottom Bar Link Hover Color', 'siteorigin-corp' ),
 					'live' => true,
-				),												
+				),
 				'bottom_bar_background' => array(
 					'type' => 'color',
 					'label' => esc_html__( 'Bottom Bar Background Color', 'siteorigin-corp' ),
 					'live' => true,
-				),				
+				),
 				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
@@ -404,7 +404,7 @@ function siteorigin_corp_settings_init() {
 					'label'	=> esc_html__( 'Top Margin', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer top margin. The space between the footer and content.', 'siteorigin-corp' ),
 					'live'	=> true,
-				),				
+				),
 			),
 		),
 	) ) );
@@ -486,7 +486,7 @@ function siteorigin_corp_font_settings( $settings ) {
 			400,
 			600,
 		),
-	);	
+	);
 
 	return $settings;
 }
@@ -765,6 +765,18 @@ $css .= '/* style */
 	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
 	background: ${footer_background};
 	}
+	.sidebar .content-area {
+	margin: 0 -${sidebar_width} 0 0;
+	}
+	.sidebar-left.sidebar .content-area {
+	margin: 0 0 0 -${sidebar_width};
+	}
+	.sidebar .site-main {
+	margin: 0 ${sidebar_width} 0 0;
+	}
+	.sidebar-left.sidebar .site-main {
+	margin: 0 0 0 ${sidebar_width};
+	}
 	.widget-area {
 	width: ${sidebar_width};
 	}
@@ -994,26 +1006,6 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
 
-if ( ! function_exists( 'siteorigin_corp_sidebar_width' ) ) :
-/**
- * Add CSS for the sidebar width setting.
- */
-function siteorigin_corp_sidebar_width( $css, $settings ) {
-	if ( ! isset( $settings['theme_settings_sidebar_width'] ) ) {
-		return $css;
-	}
-
-	$sidebar_width = str_replace( '%', '', $settings['theme_settings_sidebar_width'] );
-	$content_width = 100 - $sidebar_width;
-
-	$css .= '.sidebar .content-area {
-		width: ' . intval( $content_width ) .'%;	
-	}';
-	return $css;
-}
-endif;
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_sidebar_width', 10, 2 );
-
 /**
  * Add default settings.
  *
@@ -1031,7 +1023,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['header_border']								= '#e6e6e6';
 	$defaults['header_padding']								= '25px';
 	$defaults['header_margin']								= '60px';
-		
+
 	$defaults['navigation_header_menu']						= true;
 	$defaults['navigation_mobile_menu']						= true;
 	$defaults['navigation_mobile_menu_collapse']			= 768;
@@ -1049,7 +1041,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['blog_archive_featured_image']				= true;
 	$defaults['blog_archive_content']         				= 'excerpt';
-	$defaults['blog_excerpt_length']          				= 55;	
+	$defaults['blog_excerpt_length']          				= 55;
 	$defaults['blog_post_excerpt_read_more_link']			= false;
 	$defaults['blog_post_featured_image']					= true;
 	$defaults['blog_post_date']								= true;
@@ -1070,8 +1062,8 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['sidebar_position']							= 'right';
 	$defaults['sidebar_width']								= '34%%';
-	
-	$defaults['footer_text']								= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );	
+
+	$defaults['footer_text']								= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
 	$defaults['footer_widget_title']						= '#ffffff';
 	$defaults['footer_widget_text']							= '#b4b5b8';
 	$defaults['footer_widget_link']							= '#ffffff';
@@ -1084,9 +1076,12 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_padding']								= '95px';
 	$defaults['footer_margin']								= '80px';
 
+<<<<<<< HEAD
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
 		
+=======
+>>>>>>> 97d926d99fe75cb263ce7317aa76fddcf9ff3410
 	return $defaults;
 }
 add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' );
