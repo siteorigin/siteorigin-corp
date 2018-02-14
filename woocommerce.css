@@ -30,8 +30,8 @@ Version: dev
 
 .woocommerce.woocommerce-page.woocommerce-sidebar-left .widget-area {
   float: left;
-  padding-right: 0;
-  padding-left: 4%; }
+  padding-right: 2.75%;
+  padding-left: 0; }
 
 /*--------------------------------------------------------------
 # Fonts
