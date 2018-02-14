@@ -1259,7 +1259,6 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}';
 	return $css;
 }
-endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_corp_menu_breakpoint_css' ) ) :
