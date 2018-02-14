@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.3 - 12 February 2018 =
+= 1.3 - 14 February 2018 =
 * Added theme about page.
 * Added initial WooCommerce design and related theme settings.
 * Minor style adjustments.
