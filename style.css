@@ -1798,7 +1798,6 @@ body:not(.single) .hentry {
 
 .page-title {
   font-size: 32px;
-  font-weight: 500;
   line-height: normal;
   margin: 0; }
 
@@ -1810,7 +1809,6 @@ body:not(.single) .hentry {
 .archive .page-title,
 .search-results .page-title {
   font-size: 24px;
-  font-weight: 500;
   text-align: center; }
 
 .archive .taxonomy-description,
