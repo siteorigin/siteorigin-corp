@@ -3,6 +3,8 @@
 = 1.3 - 12 February 2018 =
 * Added theme about page.
 * Added initial WooCommerce design and related theme settings.
+* Minor style adjustments.
+* Added smooth scrolling and current section indication for one page navigation.
 
 = 1.2 - 29 December 2017 =
 * Added additional theme settings descriptions.
