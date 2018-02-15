@@ -764,11 +764,23 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
 	background: ${footer_background};
 	}
+	.sidebar .content-area {
+	margin: 0 -${sidebar_width} 0 0;
+	}
+	.sidebar-left.sidebar .content-area {
+	margin: 0 0 0 -${sidebar_width};
+	}
+	.sidebar .site-main {
+	margin: 0 ${sidebar_width} 0 0;
+	}
+	.sidebar-left.sidebar .site-main {
+	margin: 0 0 0 ${sidebar_width};
+	}
 	.widget-area {
 	width: ${sidebar_width};
 	}
 	@media (max-width: 768px) {
-	body .widget-area {
+	.widget-area {
 	border-top: 1px solid ${typography_border_dark};
 	}
 	}
@@ -970,11 +982,23 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
 	$css .= '/* woocommerce */
-	.woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
+	.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	margin: 0 -${sidebar_width} 0 0;
+	}
+	.woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	margin: 0 0 0 -${sidebar_width};
+	}
+	.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	margin: 0 ${sidebar_width} 0 0;
+	}
+	.woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	margin: 0 0 0 ${sidebar_width};
+	}
+	.woocommerce.woocommerce-page .widget-area {
 	width: ${sidebar_width};
 	}
 	@media (max-width: 768px) {
-	.woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
+	.woocommerce.woocommerce-page .widget-area {
 	border-top: 1px solid ${typography_border_dark};
 	}
 	}

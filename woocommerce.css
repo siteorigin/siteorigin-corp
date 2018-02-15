@@ -1,5 +1,5 @@
 /*!
-Version: dev
+Version: 1.3.1
 */
 /*--------------------------------------------------------------
 # Layout
@@ -9,41 +9,58 @@ Version: dev
 
 .woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
   float: left;
-  width: 66%; }
+  margin: 0 -34% 0 0;
+  width: 100%; }
+  .woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+    float: right;
+    margin: 0 0 0 -34%; }
   @media (max-width: 768px) {
     .woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
-      width: 100%; } }
+      margin: 0 !important;
+      width: 100% !important; } }
 
-.woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
-  float: right;
-  padding-left: 2.75%;
-  width: 34%; }
+.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+  margin: 0 34% 0 0; }
+  .woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+    margin: 0 0 0 34%; }
   @media (max-width: 768px) {
-    .woocommerce.woocommerce-page.woocommerce-sidebar .widget-area {
-      border-top: 1px solid #d6d6d6;
-      margin-top: 50px;
-      padding: 50px 0 0;
-      width: 100%; } }
-
-.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
-  float: right; }
-
-.woocommerce.woocommerce-page.woocommerce-sidebar-left .widget-area {
-  float: left;
-  padding-right: 2.75%;
-  padding-left: 0; }
+    .woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+      margin: 0 !important; } }
 
 .woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .content-area {
   float: none;
+  margin: 0;
   width: 100%; }
+
+.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .site-main {
+  margin: 0; }
 
 .woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .content-area {
   float: none;
+  margin: 0;
   width: 100%; }
+
+.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .site-main {
+  margin: 0; }
 
 .woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .corp-container {
   max-width: none;
   padding: 0; }
+
+.woocommerce.woocommerce-page .widget-area {
+  float: right;
+  padding-left: 2.75%;
+  width: 34%; }
+  .woocommerce-sidebar-left.woocommerce.woocommerce-page .widget-area {
+    float: left;
+    padding-right: 2.75%;
+    padding-left: 0; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-page .widget-area {
+      border-top: 1px solid #d6d6d6;
+      margin-top: 50px;
+      padding: 50px 0 0 !important;
+      width: 100% !important; } }
 
 /*--------------------------------------------------------------
 # Fonts
@@ -530,6 +547,9 @@ input.button.added:after,
 /*--------------------------------------------------------------
 # Single
 --------------------------------------------------------------*/
+.woocommerce.single-product .site-main {
+  margin: 0; }
+
 .woocommerce .product {
   position: relative; }
   .woocommerce .product .images {
@@ -1624,5 +1644,3 @@ input.button.added:after,
 --------------------------------------------------------------*/
 .track_order p {
   margin-bottom: 26px; }
-
-/*# sourceMappingURL=sass/maps/woocommerce.css.map */

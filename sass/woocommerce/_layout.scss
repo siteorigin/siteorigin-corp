@@ -2,65 +2,92 @@
 
 	.content-area {
 		width: 100%;	
-	}		
+	}
 
-	// Content area with sidebar.
 	&.woocommerce-sidebar {
-
+	
 		.content-area {
 			float: left;
-			width: 66%;		
-		
+			margin: 0 (-$sidebar__width) 0 0;
+			width: $size__site;
+
+			@at-root .woocommerce-sidebar-left#{&} {
+				float: right;
+				margin: 0 0 0 (-$sidebar__width);
+			}					
+
 			@media (max-width: 768px) {
-				width: 100%; 	
+				margin: 0 !important;
+				width: 100% !important;
 			}
 		}
 
-		.widget-area {
-			float: right;
-			padding-left: 2.75%;
-			width: $sidebar__width;
-			
-			@media (max-width: 768px) {
-		    	border-top: 1px solid $color__background-hr-dark;
-		    	margin-top: 50px;
-				padding: 50px 0 0;		
-				width: 100%;
+		.site-main {
+			margin: 0 $sidebar__width 0 0;
+
+			@at-root .woocommerce-sidebar-left#{&} {
+				margin: 0 0 0 $sidebar__width;			
 			}			
-		}
-	}
-
-	// Content area with right aligned sidebar.
-	&.woocommerce-sidebar-left {
-
-		.content-area {
-			float: right;
-		}
-
-		.widget-area {
-			float: left;
-			padding-right: 2.75%; 
-			padding-left: 0;
-		}
+	
+			@media (max-width: 768px) {
+				margin: 0 !important;
+			}
+	 	}
 	}
 
 	// No Sidebar page layout setting.
-	&.page-layout-no-sidebar .site-content .content-area {
-		float: none;
-		width: 100%; 
-	}
+	&.page-layout-no-sidebar .site-content {
+
+		.content-area {
+			float: none;
+			margin: 0;
+			width: 100%; 
+		}
+
+		.site-main {
+			margin: 0;
+		}
+	} 
 
 	// Full Width page layout setting.
 	&.page-layout-full-width-no-sidebar {
 
-		.site-content .content-area {
-			float: none;
-			width: 100%; 
+		.site-content {
+
+			.content-area {
+				float: none;
+				margin: 0;
+				width: 100%; 
+			}
+
+			.site-main {
+				margin: 0;
+			}
 		}
 
 		.site-content .corp-container {
 			max-width: none;
 			padding: 0;  
+		}
+	}	
+
+	// Sidebar.
+	.widget-area {
+		float: right;
+		padding-left: 2.75%;
+		width: $sidebar__width;	
+		
+		@at-root .woocommerce-sidebar-left#{&} {
+			float: left;
+			padding-right: 2.75%; 
+			padding-left: 0;
+		}	
+					
+		@media (max-width: 768px) {
+			border-top: 1px solid $color__background-hr-dark;
+			margin-top: 50px;
+			padding: 50px 0 0 !important;		
+			width: 100% !important;
 		}
 	}				
 }

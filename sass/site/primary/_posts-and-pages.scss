@@ -81,6 +81,10 @@ body:not(.single) .hentry {
 		// 1, 3, 5, 7, 9
 		&:nth-of-type(2n+1) {
 			margin-right: 3.5%;
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+			}
 		}
 
 		// 3, 6, 9, 12
