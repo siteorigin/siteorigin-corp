@@ -33,6 +33,18 @@ Version: dev
   padding-right: 2.75%;
   padding-left: 0; }
 
+.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .content-area {
+  float: none;
+  width: 100%; }
+
+.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .content-area {
+  float: none;
+  width: 100%; }
+
+.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .corp-container {
+  max-width: none;
+  padding: 0; }
+
 /*--------------------------------------------------------------
 # Fonts
 --------------------------------------------------------------*/
