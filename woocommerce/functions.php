@@ -111,6 +111,14 @@ function siteorigin_corp_woocommerce_pagination_args( $array ) {
 add_filter( 'woocommerce_pagination_args', 'siteorigin_corp_woocommerce_pagination_args', 10, 1 );
 
 /**
+ * Filter the archive page title.
+ */
+function siteorigin_corp_woocommerce_archive_title() {
+	if ( siteorigin_page_setting( 'page_title' ) ) return true;
+}
+add_filter( 'woocommerce_show_page_title', 'siteorigin_corp_woocommerce_archive_title' );
+
+/**
  * Custom WooCommerce template tags.
  */
 include get_template_directory() . '/woocommerce/template-tags.php';

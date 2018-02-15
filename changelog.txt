@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3.1 - 15 February 2018 =
+* Update Customizer Theme Settings CSS for WooCommerce.
+* Apply Page Template Settings to WooCommerce archive pages.
+* Fixed layout settings related bugs.
+
 = 1.3 - 14 February 2018 =
 * Added theme about page.
 * Added initial WooCommerce design and related theme settings.

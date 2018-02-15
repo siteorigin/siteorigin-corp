@@ -1,5 +1,9 @@
 .woocommerce {
 
+	&.single-product .site-main {
+		margin: 0;
+	}
+
 	.product {
 		position: relative;
 
@@ -473,7 +477,6 @@
 			
 			> h2 {
 				font-size: 20px;
-				font-weight: 500;
 				margin-bottom: 20px; 
 				text-transform: uppercase;
 			}
