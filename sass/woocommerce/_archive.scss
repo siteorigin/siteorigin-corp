@@ -346,8 +346,9 @@
 			.woocommerce-loop-product__title,
 			.woocommerce-loop-category__title {
 				font-size: 14px;
+				line-height: normal;
 				text-transform: uppercase;  
-				margin: 23px 0 0;
+				margin: 27px 0 2px;
 
 				&:hover {
 					color: $color__text-medium;

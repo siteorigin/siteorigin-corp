@@ -480,8 +480,9 @@ input.button.added:after,
     .woocommerce .products .product .woocommerce-loop-product__title,
     .woocommerce .products .product .woocommerce-loop-category__title {
       font-size: 14px;
+      line-height: normal;
       text-transform: uppercase;
-      margin: 23px 0 0; }
+      margin: 27px 0 2px; }
       .woocommerce .products .product .woocommerce-loop-product__title:hover,
       .woocommerce .products .product .woocommerce-loop-category__title:hover {
         color: #626262; }
