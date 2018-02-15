@@ -10,6 +10,7 @@
 
 if ( ! is_active_sidebar( 'shop-sidebar' ) ) return;
 if ( is_product() ) return;
+if ( siteorigin_page_setting( 'layout' ) != 'default' ) return;
 ?>
 
 <aside id="secondary" class="widget-area">
