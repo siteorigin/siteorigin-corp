@@ -190,11 +190,11 @@ function siteorigin_corp_the_post_navigation() {
 		return;
 	}
 
-	$previous_post 	= get_previous_post();
+	$previous_post = get_previous_post();
 	if ( ! empty( $previous_post ) ) {
 		$previous_thumb = get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
 	}
-	$next_post 		= get_next_post();
+	$next_post = get_next_post();
 	if ( ! empty( $next_post ) ) {
 		$next_thumb 	= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 	}
