@@ -67,7 +67,10 @@ jQuery( function( $ ) {
 		$( '.flexslider' ).each( function() {
 			$( this ).flexslider( {
 				animation: 'slide',
-				customDirectionNav: $( this ).find( '.flex-direction-nav a' )
+				customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
+				start: function() {
+         			$( '.flexslider .slides img' ).show();
+    			}
 			} );
 		} );
 	} );
