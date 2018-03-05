@@ -280,7 +280,7 @@ jQuery( function( $ ) {
 		$mobileMenu.slideToggle( 'fast' );
 
 		$( '#mobile-navigation a' ).click( function( e ) {
-			if ( typeof $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) !== "undefined" || $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) != "#" ) {
+			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( typeof $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
 				if ( $mobileMenu.is(' :visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
 				}
