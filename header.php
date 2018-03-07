@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php do_action( 'siteorigin_corp_body_top' ); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-corp' ); ?></a>
 
@@ -29,6 +30,7 @@
 			<?php siteorigin_corp_woocommerce_demo_store(); ?>
 		</div><!-- #topbar -->
 	<?php endif; ?>
+	<?php do_action( 'siteorigin_corp_header_before' ); ?>
 	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
 
 		<div class="corp-container">

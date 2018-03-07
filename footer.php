@@ -80,6 +80,7 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+<?php do_action( 'siteorigin_corp_footer_after' ); ?>
 
 </body>
 </html>
