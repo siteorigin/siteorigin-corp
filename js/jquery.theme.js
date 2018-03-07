@@ -25,38 +25,6 @@ jQuery( function( $ ) {
 		};
 	} );
 
-	$.fn.siteoriginCorpBurstAnimation = function( options ) {
-		var settings = $.extend( {
-			event: "click",
-			container: "parent"
-		}, options );
-
-		return $( this ).each( function() {
-			var $$ = $( this ),
-				$p = settings.container === 'parent' ? $$.parent() : $$.closest( settings.container ),
-				$o = $( '<div class="burst-animation-overlay"></div>' ),
-				$c = $( '<div class="burst-circle"></div>' ).appendTo( $o );
-
-			$$.on( settings.event, function() {
-				$o.appendTo( $p );
-				$c
-					.css( {
-						top: mousePos.y - $p.offset().top,
-						left: mousePos.x - $p.offset().left,
-						opacity: 0.1,
-						scale: 1
-					} )
-					.transition( {
-						opacity: 0,
-						scale: $p.width()
-					}, 500, 'ease', function() {
-						$o.detach();
-					} );
-			} );
-
-		} );
-	};
-
 	// Setup FitVids for entry content, video post formats, SiteOrigin panels and WooCommerce pages. Ignore Tableau.
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
 		$( '.entry-content, .entry-content .panel, .entry-video, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
@@ -104,12 +72,6 @@ jQuery( function( $ ) {
 
 		$( '.menu-item' ).children( 'a' ).focusout( function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
-		} );
-
-		// Burst animation when the user clicks on a sub link.
-		$( '.main-navigation ul ul li a' ).siteoriginCorpBurstAnimation( {
-			event: "click",
-			container: "parent"
 		} );
 	}
 
