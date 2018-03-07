@@ -135,6 +135,10 @@
 				padding: 14px 0;
 				position: relative;
 				text-align: left;
+
+				&.woocommerce-notice {
+					padding: 14px;
+				}
 				
 				label {
 					
