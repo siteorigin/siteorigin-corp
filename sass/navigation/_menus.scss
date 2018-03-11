@@ -267,7 +267,7 @@
 		path {
 			fill: $color__navigation-link;
 
-			.overlap-light & {
+			.overlap-light .site-header:not(.stuck) & {
 				fill: #fff;
 			}
 		}
