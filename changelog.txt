@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.3.3 - 11 March 2018 =
+* Added to theme about page.
+* Minor WooCommerce notice style fixes.
+* Minor WooCommerce checkout style fixes.
+* Removed jQuery not in use.
+* Added additional theme action hooks.
+* Resolved header overlap bug when using the light text option and sticky menu.
+
 = 1.3.2 - 06 March 2018 =
 * Ensure theme FlexSliders don't flash all content on initial load.
 * Updated the mobile menu to close on click to enhance one page site behaviour. 
