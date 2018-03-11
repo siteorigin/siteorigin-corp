@@ -1481,8 +1481,11 @@ function siteorigin_corp_about_page_sections( $about ) {
 
 	$about['no_video'] = true;
 
+	$about['video_url'] = 'https://siteorigin.com/theme/corp/';
+
 	$about['sections'] = array(
 		'free',
+		'woocommerce',
 		'documentation',
 		'page-builder',
 		'github',
