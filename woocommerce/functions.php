@@ -111,6 +111,19 @@ function siteorigin_corp_woocommerce_pagination_args( $array ) {
 add_filter( 'woocommerce_pagination_args', 'siteorigin_corp_woocommerce_pagination_args', 10, 1 );
 
 /**
+ * Change the gallery thumbnail image size.
+ * @link https://github.com/woocommerce/woocommerce/wiki/Customizing-image-sizes-in-3.3-
+ */
+function siteorigin_corp_woocommerce_single_gallery_thumbnail_size( $size ) {
+    return array(
+        'width'  => 150,
+        'height' => 150,
+        'crop'   => 1,
+    );	
+}
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'siteorigin_corp_woocommerce_single_gallery_thumbnail_size' );
+
+/**
  * Filter the archive page title.
  */
 function siteorigin_corp_woocommerce_archive_title() {
