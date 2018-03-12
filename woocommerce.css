@@ -7,6 +7,9 @@ Version: dev
 .woocommerce.woocommerce-page .content-area {
   width: 100%; }
 
+.woocommerce.woocommerce-page .site-main {
+  margin: 0; }
+
 .woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
   float: left;
   margin: 0 -34% 0 0;
