@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3.4 - 12 March 2018 =
+* Removed WooCommerce JavaScript file bug.
+* Set WooCommerce single product thumbnails to `150px`.
+* Resolved WooCommerce archive layout bug when no shop sidebar widgets added.
+
 = 1.3.3 - 11 March 2018 =
 * Added to theme about page.
 * Minor WooCommerce notice style fixes.
