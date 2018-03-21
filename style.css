@@ -2472,7 +2472,6 @@ object {
               font-size: 15px; } }
       .featured-posts-slider .slides .slide .slide-content .entry-title {
         font-size: 48px;
-        font-weight: normal;
         margin-bottom: 0;
         position: relative;
         z-index: 3; }
