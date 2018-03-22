@@ -49,6 +49,7 @@ function siteorigin_corp_breadcrumbs() {
 	}
 }
 endif;
+add_action( 'siteorigin_corp_content_top', 'siteorigin_corp_breadcrumbs' );
 
 if ( ! function_exists( 'siteorigin_corp_comment' ) ) :
 /**
