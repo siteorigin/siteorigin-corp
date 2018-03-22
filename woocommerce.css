@@ -686,7 +686,7 @@ input.button.added:after,
         .woocommerce .product .summary .variations .label label,
         .woocommerce .product .product-info-wrapper .variations .label label {
           color: #2d2d2d;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: bold; }
       .woocommerce .product .summary .variations select,
       .woocommerce .product .product-info-wrapper .variations select {
@@ -704,6 +704,29 @@ input.button.added:after,
       display: block;
       margin-top: -25px;
       width: 100%; }
+    .woocommerce .product .summary .woocommerce-grouped-product-list,
+    .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list {
+      margin-bottom: 25px; }
+      @media (min-width: 481px) {
+        .woocommerce .product .summary .woocommerce-grouped-product-list,
+        .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list {
+          width: 75%; } }
+      .woocommerce .product .summary .woocommerce-grouped-product-list td input,
+      .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td input {
+        margin-right: 10px; }
+      .woocommerce .product .summary .woocommerce-grouped-product-list td label,
+      .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td label {
+        font-size: 14px; }
+      .woocommerce .product .summary .woocommerce-grouped-product-list td:first-child,
+      .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td:first-child {
+        padding-bottom: 5px;
+        width: 60px; }
+      .woocommerce .product .summary .woocommerce-grouped-product-list td a,
+      .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a {
+        color: #626262; }
+        .woocommerce .product .summary .woocommerce-grouped-product-list td a:hover,
+        .woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a:hover {
+          color: #f14e4e; }
     .woocommerce .product .summary .stock,
     .woocommerce .product .product-info-wrapper .stock {
       color: #f14e4e;
