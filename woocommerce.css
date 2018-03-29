@@ -811,6 +811,10 @@ input.button.added:after,
   .woocommerce .product .shop_attributes tr:last-of-type th,
   .woocommerce .product .shop_attributes tr:last-of-type td {
     padding-bottom: 0; }
+  .woocommerce .product #tab-description p {
+    margin-bottom: 26px; }
+    .woocommerce .product #tab-description p:only-of-type, .woocommerce .product #tab-description p:last-of-type {
+      margin-bottom: 0; }
   .woocommerce .product .woocommerce-Reviews .woocommerce-noreviews {
     font-size: 14px;
     margin-bottom: 16px; }
@@ -956,7 +960,7 @@ input.button.added:after,
     vertical-align: middle;
     width: 100%; }
     @media (max-width: 1100px) {
-      .responsive #quick-view-container .quick-view {
+      #quick-view-container .quick-view {
         width: 85%; } }
   #quick-view-container .quickview-close-icon {
     color: #2d2d2d;
@@ -977,7 +981,7 @@ input.button.added:after,
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
       vertical-align: middle; }
     @media (max-width: 768px) {
-      .responsive #quick-view-container .product-content-wrapper .product-image-wrapper {
+      #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;
         width: 100%; } }
   #quick-view-container .product-content-wrapper .product-info-wrapper {
@@ -987,10 +991,9 @@ input.button.added:after,
     width: 50%; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-info-wrapper {
-        padding-top: 0; }
-        .responsive #quick-view-container .product-content-wrapper .product-info-wrapper {
-          float: none;
-          width: 100%; } }
+        float: none;
+        padding-top: 0;
+        width: 100%; } }
     #quick-view-container .product-content-wrapper .product-info-wrapper .entry-title {
       line-height: normal;
       margin: 0; }
@@ -1279,10 +1282,10 @@ input.button.added:after,
     margin: 0 0 2px;
     text-transform: uppercase; }
     @media (max-width: 768px) {
-      .responsive .woocommerce-cart .cart_totals h2 {
+      .woocommerce-cart .cart_totals h2 {
         font-size: 23px; } }
     @media (max-width: 480px) {
-      .responsive .woocommerce-cart .cart_totals h2 {
+      .woocommerce-cart .cart_totals h2 {
         font-size: 20px; } }
   .woocommerce-cart .cart_totals table {
     margin-bottom: 20px; }

@@ -46,9 +46,6 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
 	}
 
-	// Responsive layout.
-	$classes[] = 'responsive';
-
 	// Sidebar.
 	if ( is_active_sidebar( 'sidebar-main' ) ) {
 		 $classes[] = 'sidebar';

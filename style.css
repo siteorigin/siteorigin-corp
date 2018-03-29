@@ -1353,13 +1353,10 @@ a {
 --------------------------------------------------------------*/
 .corp-container {
   margin: 0 auto;
-  max-width: none;
+  max-width: 1170px;
   padding: 0 15px;
   position: relative;
-  width: 1170px; }
-  .responsive .corp-container {
-    max-width: 1170px;
-    width: 100%; }
+  width: 100%; }
   .full-width .corp-container {
     max-width: none; }
 

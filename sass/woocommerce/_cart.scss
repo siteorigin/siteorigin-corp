@@ -181,17 +181,11 @@
 			text-transform: uppercase;
 
 			@media (max-width: 768px) {
-				
-				.responsive & {
-					font-size: 23px; 	
-				}
+				font-size: 23px; 	
 			}		
 			
 			@media (max-width: 480px) {
-
-				.responsive & {
-					font-size: 20px; 	
-				}
+				font-size: 20px; 	
 			}			
 		}
 		
