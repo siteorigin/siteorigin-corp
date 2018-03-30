@@ -28,10 +28,7 @@
 		width: 100%;
 
 		@media (max-width: 1100px) {
-
-			@at-root .responsive & {
-				width: 85%;
-			}
+			width: 85%;
 		}
 	}
 
@@ -63,11 +60,8 @@
 			}
 
 			@media (max-width: 768px) {
-
-				@at-root .responsive & {
-					float: none;
-					width: 100%;
-				}
+				float: none;
+				width: 100%;
 			}
 		}
 
@@ -78,12 +72,9 @@
 			width: 50%;
 
 			@media (max-width: 768px) {
+				float: none;
 				padding-top: 0; 
-
-				@at-root .responsive & {
-					float: none;
-					width: 100%;
-				}
+				width: 100%;
 			}
 
 			.entry-title {

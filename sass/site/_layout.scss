@@ -1,15 +1,10 @@
 .corp-container {
 	margin: 0 auto;
-	max-width: none; 
+	max-width: 1170px; // 1140px container.
 	padding: 0 15px;
 	position: relative;
-	width: 1170px; // 1140px container.
-	
-	.responsive & {
-		max-width: 1170px; // 1140px container.
-		width: 100%; 
-	}
-	
+	width: 100%; 
+
 	.full-width & {
 		max-width: none;
 	}
