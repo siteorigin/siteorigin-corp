@@ -84,5 +84,8 @@ module.exports = {
             '!readme.txt',                                        // Not the readme.txt file. It is copied by the 'version' task.
             '!npm-debug.log'                                      // Ignore debug log from NPM if it's there
         ]
+    },
+    googleFonts: {
+        dest: 'inc/settings/data/fonts.php',
     }
 };
