@@ -1,0 +1,67 @@
+/* 
+Theme Name: SiteOrigin Corp
+Adding support for languages written in a Right To Left (RTL).
+*/
+
+/*--------------------------------------------------------------
+## Menus  
+--------------------------------------------------------------*/
+.main-navigation ul li {
+    margin: 0 0 -10px 39px;
+}
+.main-navigation ul li:last-of-type {
+    margin-left: 0;
+}
+.main-navigation .search-toggle {
+    margin-right: 37px;
+    margin-left: 0;
+}
+
+/*--------------------------------------------------------------
+## Posts, Post and Comment Navigation 
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.post-navigation .nav-previous,
+.posts-navigation .nav-previous {
+    float: right;
+    text-align: right;
+}
+.post-navigation .nav-next img {
+    margin: 0 15px 0 0;
+}
+.comment-navigation .nav-next,
+.post-navigation .nav-next,
+.posts-navigation .nav-next {
+    float: left;
+    text-align: left;
+}
+.post-navigation a img {
+    margin: 0 0 0 15px;
+}
+
+/*--------------------------------------------------------------
+## Header 
+--------------------------------------------------------------*/
+.site-header .site-branding {
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages 
+--------------------------------------------------------------*/
+body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+    margin-right: 0;
+    margin-left: 3.5%;
+}
+
+/*--------------------------------------------------------------
+## Related Posts 
+--------------------------------------------------------------*/
+.related-posts-section ol li, .yarpp-related ol li {
+    float: right;
+}
+.related-posts-section ol li:nth-child(3n+1), .yarpp-related ol li:nth-child(3n+1) {
+    margin-right: 0;
+    margin-left: 3.5%;
+}
