@@ -28,6 +28,36 @@ body {
 }
 
 /*--------------------------------------------------------------
+## Posts, Post and Comment Navigation
+--------------------------------------------------------------*/
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.nav-previous {
+		float: right;
+		text-align: right;
+	}
+
+	.nav-next {
+		float: left;
+		text-align: left;
+	}
+}
+
+.post-navigation {
+
+	a img {
+		display: inline-block;
+		margin: 0 0 0 15px;
+	}
+
+	.nav-next img {
+		margin: 0 15px 0 0;
+	}
+}
+
+/*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
 .site-header .site-branding {
@@ -44,7 +74,7 @@ body {
 /*--------------------------------------------------------------
 ## Recent Comments Widget
 --------------------------------------------------------------*/
-.widget_recent_comments .recentcomments .comment-author-link &:before {
+.widget_recent_comments .recentcomments .comment-author-link:before {
 	padding: 0 0 0 9px;
 }
 
@@ -62,3 +92,93 @@ body {
 		right: initial;
 	}
 }
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+body:not(.single) .hentry {
+
+	// 1, 4, 7, 10
+	&:nth-of-type(3n+1) {
+		margin-right: 0;
+		margin-left: 3.5%;
+
+		@media (max-width: 768px) {
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-left: 3.5%;
+		}
+	}
+
+	// 3, 6, 9, 12
+	&:nth-of-type(3n+3) {
+		margin-right: 3.5%;
+		margin-left: 0;
+
+		@media (max-width: 768px) {
+			margin-right: 0;
+			margin-left: 3.5%;
+		}
+	}
+
+	// Two column blog layout when the sidebar is in use.
+	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
+
+		// 1, 4, 7, 10
+		&:nth-of-type(3n+1) {
+			margin-left: 0;
+		}
+
+		// 1, 3, 5, 7, 9
+		&:nth-of-type(2n+1) {
+			margin-right: 0;
+			margin-left: 3.5%;
+
+			@media (max-width: 480px) {
+				margin-left: 0;
+			}
+		}
+
+		// 3, 6, 9, 12
+		&:nth-of-type(3n+3) {
+			margin-right: 0;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## - Related Posts
+--------------------------------------------------------------*/
+.yarpp-related,
+.related-posts-section {
+
+	ol li {
+		float: right;
+
+		&:nth-child(3n+1) {
+			margin-right: 0;
+			margin-left: 3.5%;
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		&:nth-child(3n+3) {
+			margin-right: 3.5%;
+			margin-left: 0;
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+	}
+}
+

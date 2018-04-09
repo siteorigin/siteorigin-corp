@@ -19,6 +19,28 @@ body {
     margin: 0 37px 0 0; }
 
 /*--------------------------------------------------------------
+## Posts, Post and Comment Navigation
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: right;
+  text-align: right; }
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: left;
+  text-align: left; }
+
+.post-navigation a img {
+  display: inline-block;
+  margin: 0 0 0 15px; }
+
+.post-navigation .nav-next img {
+  margin: 0 15px 0 0; }
+
+/*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
 .site-header .site-branding {
@@ -45,5 +67,65 @@ body {
 .widget .search-form button[type="submit"] {
   left: 14px;
   right: initial; }
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+body:not(.single) .hentry:nth-of-type(3n+1) {
+  margin-right: 0;
+  margin-left: 3.5%; }
+  @media (max-width: 768px) {
+    body:not(.single) .hentry:nth-of-type(3n+1) {
+      margin-left: 0; } }
+
+@media (max-width: 768px) {
+  body:not(.single) .hentry:nth-of-type(2n+1) {
+    margin-left: 3.5%; } }
+
+body:not(.single) .hentry:nth-of-type(3n+3) {
+  margin-right: 3.5%;
+  margin-left: 0; }
+  @media (max-width: 768px) {
+    body:not(.single) .hentry:nth-of-type(3n+3) {
+      margin-right: 0;
+      margin-left: 3.5%; } }
+
+body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
+  margin-left: 0; }
+
+body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+  margin-right: 0;
+  margin-left: 3.5%; }
+  @media (max-width: 480px) {
+    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+      margin-left: 0; } }
+
+body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
+  margin-right: 0; }
+
+/*--------------------------------------------------------------
+## - Related Posts
+--------------------------------------------------------------*/
+.yarpp-related ol li,
+.related-posts-section ol li {
+  float: right; }
+  .yarpp-related ol li:nth-child(3n+1),
+  .related-posts-section ol li:nth-child(3n+1) {
+    margin-right: 0;
+    margin-left: 3.5%; }
+    @media (max-width: 480px) {
+      .yarpp-related ol li:nth-child(3n+1),
+      .related-posts-section ol li:nth-child(3n+1) {
+        margin-right: 0;
+        margin-left: 0; } }
+  .yarpp-related ol li:nth-child(3n+3),
+  .related-posts-section ol li:nth-child(3n+3) {
+    margin-right: 3.5%;
+    margin-left: 0; }
+    @media (max-width: 480px) {
+      .yarpp-related ol li:nth-child(3n+3),
+      .related-posts-section ol li:nth-child(3n+3) {
+        margin-right: 0;
+        margin-left: 0; } }
 
 /*# sourceMappingURL=sass/maps/rtl.css.map */
