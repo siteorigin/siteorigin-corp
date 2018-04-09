@@ -1,0 +1,49 @@
+/*
+Theme Name: SiteOrigin Corp
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+*/
+body {
+  direction: rtl;
+  unicode-bidi: embed; }
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  text-align: left; }
+  .main-navigation ul li {
+    margin: 0 0 -10px 39px; }
+    .main-navigation ul li:last-of-type {
+      margin-left: 0; }
+  .main-navigation .search-toggle {
+    margin: 0 37px 0 0; }
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header .site-branding {
+  padding: 0 0 0 20px; }
+
+.widget .search-form input[type="search"] {
+  padding: 10px 13px 10px 30px; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Recent Comments Widget
+--------------------------------------------------------------*/
+.widget_recent_comments .recentcomments .comment-author-link:before {
+  padding: 0 0 0 9px; }
+
+/*--------------------------------------------------------------
+## - Search Widget
+--------------------------------------------------------------*/
+.widget .search-form input[type="search"] {
+  padding: 10px 13px 10px 30px; }
+
+.widget .search-form button[type="submit"] {
+  left: 14px;
+  right: initial; }
+
+/*# sourceMappingURL=sass/maps/rtl.css.map */
