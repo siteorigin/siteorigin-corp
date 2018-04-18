@@ -175,7 +175,7 @@
 					
 					label {
 						color: $color__text-dark;
-						font-size: 13px; 
+						font-size: 14px; 
 						font-weight: bold; 
 					}
 				}
@@ -200,6 +200,38 @@
 				margin-top: -25px; 
 				width: 100%; 
 			}
+
+			.woocommerce-grouped-product-list {
+				margin-bottom: 25px;
+				
+				@media (min-width: 481px) {
+					width: 75%;
+				}
+				
+				td {
+					
+					input {
+						margin-right: 10px;
+					}
+
+					label {
+						font-size: 14px;
+					}
+
+					&:first-child {
+						padding-bottom: 5px;
+						width: 60px;
+					}
+
+					a {
+						color: $color__text-medium;
+						
+						&:hover {
+							color: $color__accent;
+						}
+					}
+				}		
+			}			
 
 			.stock {
 				color: $color__accent;
@@ -328,6 +360,15 @@
 				}
 			}
 		}
+
+		#tab-description p {
+			margin-bottom: 26px;
+			
+			&:only-of-type,
+			&:last-of-type {
+				margin-bottom: 0;
+			}			
+		}		
 
 		.woocommerce-Reviews {
 

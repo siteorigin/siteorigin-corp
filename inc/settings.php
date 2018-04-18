@@ -1285,38 +1285,63 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custom_css' );
 
-if ( ! function_exists( 'siteorigin_corp_menu_breakpoint_css' ) ) :
 /**
  * Add CSS for mobile menu breakpoint.
  */
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
 
-	$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
-		#masthead .search-toggle {
-			margin-right: 20px;
-		}
+	if ( is_rtl() ) {
+		$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
+			#masthead .search-toggle {
+				margin-right: 0;
+				margin-left: 20px;
+			}
 
-		#masthead #mobile-menu-button {
-			display: inline-block;
-		}
+			#masthead #mobile-menu-button {
+				display: inline-block;
+			}
 
-		#masthead .main-navigation ul {
-			display: none;
-		}
+			#masthead .main-navigation ul {
+				display: none;
+			}
 
-		#masthead .main-navigation .search-icon {
-			display: none;
+			#masthead .main-navigation .search-icon {
+				display: none;
+			}
 		}
+		@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
+			#masthead #mobile-navigation {
+				display: none !important;
+			}
+		}';		
+	} else {
+		$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
+			#masthead .search-toggle {
+				margin-right: 20px;
+			}
+
+			#masthead #mobile-menu-button {
+				display: inline-block;
+			}
+
+			#masthead .main-navigation ul {
+				display: none;
+			}
+
+			#masthead .main-navigation .search-icon {
+				display: none;
+			}
+		}
+		@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
+			#masthead #mobile-navigation {
+				display: none !important;
+			}
+		}';		
 	}
-	@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
-		#masthead #mobile-navigation {
-			display: none !important;
-		}
-	}';
+
 	return $css;
 }
-endif;
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
 
 /**

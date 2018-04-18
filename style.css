@@ -8,7 +8,7 @@ Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-corp
-Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 */
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
@@ -1353,13 +1353,10 @@ a {
 --------------------------------------------------------------*/
 .corp-container {
   margin: 0 auto;
-  max-width: none;
+  max-width: 1170px;
   padding: 0 15px;
   position: relative;
-  width: 1170px; }
-  .responsive .corp-container {
-    max-width: 1170px;
-    width: 100%; }
+  width: 100%; }
   .full-width .corp-container {
     max-width: none; }
 

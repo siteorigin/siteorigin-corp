@@ -112,6 +112,14 @@ function siteorigin_corp_content_width() {
 add_action( 'after_setup_theme', 'siteorigin_corp_content_width', 0 );
 
 /**
+ * Add the viewport tag.
+ */
+function siteorigin_corp_viewport_tag() { ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php }
+add_action( 'wp_head', 'siteorigin_corp_viewport_tag' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
