@@ -1110,9 +1110,13 @@ a {
         border-color: #f14e4e;
         color: #f14e4e; }
 
-.infinite-scroll .infinite-loader .spinner {
+.infinite-scroll .infinite-loader {
+  clear: both;
   margin: 0 auto;
   text-align: center; }
+  .infinite-scroll .infinite-loader .spinner {
+    display: block;
+    margin: 0 auto; }
 
 /*--------------------------------------------------------------
 ## Related Posts
@@ -1607,7 +1611,8 @@ a {
 --------------------------------------------------------------*/
 .blog .site-main,
 .archive:not(.woocommerce) .site-main,
-.search-results .site-main {
+.search-results .site-main,
+.site-main .infinite-wrap {
   display: flex;
   flex-wrap: wrap; }
 

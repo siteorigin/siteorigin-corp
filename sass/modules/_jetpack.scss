@@ -46,9 +46,15 @@
 	}
 }
 
-.infinite-scroll .infinite-loader .spinner {
+.infinite-scroll .infinite-loader {
+	clear: both;
 	margin: 0 auto;
 	text-align: center;
+	
+	.spinner {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 /*--------------------------------------------------------------

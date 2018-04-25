@@ -2,7 +2,8 @@
 
 	.blog &,
 	.archive:not(.woocommerce) &,
-	.search-results & {
+	.search-results &,
+	.infinite-wrap {
 		display: flex;
 		flex-wrap: wrap;
 	}
