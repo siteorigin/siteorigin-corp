@@ -15,9 +15,8 @@
 }
 
 #page #infinite-handle {
-	clear: both;
-	padding-top: 30px; 
-	text-align: center;
+	padding-top: 30px;
+	width: 100%;
 
 	span {
     	background: inherit;
@@ -25,16 +24,18 @@
     	color: inherit;
     	cursor: pointer;
     	font-size: inherit;
-	    padding: inherit;
+	    padding: 0;
 
 		button {
 			background: transparent;
 			border: 2px solid;
 			border-color: $color__text-dark;
 			color: $color__text-dark;
+			display: block;
 			font-size: 13px; 
 			letter-spacing: 1px;
 			line-height: normal;
+			margin: 0 auto;
 			padding: 9px 30px; 
 			transition: .3s;
 			
@@ -47,12 +48,10 @@
 }
 
 .infinite-scroll .infinite-loader {
-	clear: both;
-	margin: 0 auto;
-	text-align: center;
+	display: block;
+	width: 100%;
 	
 	.spinner {
-		display: block;
 		margin: 0 auto;
 	}
 }

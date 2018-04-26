@@ -1086,24 +1086,25 @@ a {
   display: block; }
 
 #page #infinite-handle {
-  clear: both;
   padding-top: 30px;
-  text-align: center; }
+  width: 100%; }
   #page #infinite-handle span {
     background: inherit;
     border-radius: initial;
     color: inherit;
     cursor: pointer;
     font-size: inherit;
-    padding: inherit; }
+    padding: 0; }
     #page #infinite-handle span button {
       background: transparent;
       border: 2px solid;
       border-color: #2d2d2d;
       color: #2d2d2d;
+      display: block;
       font-size: 13px;
       letter-spacing: 1px;
       line-height: normal;
+      margin: 0 auto;
       padding: 9px 30px;
       transition: .3s; }
       #page #infinite-handle span button:hover {
@@ -1111,11 +1112,9 @@ a {
         color: #f14e4e; }
 
 .infinite-scroll .infinite-loader {
-  clear: both;
-  margin: 0 auto;
-  text-align: center; }
+  display: block;
+  width: 100%; }
   .infinite-scroll .infinite-loader .spinner {
-    display: block;
     margin: 0 auto; }
 
 /*--------------------------------------------------------------
