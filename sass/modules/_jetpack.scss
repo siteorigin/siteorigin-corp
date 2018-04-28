@@ -14,8 +14,9 @@
 	display: block;
 }
 
-#page #infinite-handle {
-	padding-top: 30px;
+.site-main #infinite-handle {
+	clear: both;
+	text-align: center;
 	width: 100%;
 
 	span {
@@ -49,6 +50,7 @@
 
 .infinite-scroll .infinite-loader {
 	display: block;
+	clear: both;
 	width: 100%;
 	
 	.spinner {
