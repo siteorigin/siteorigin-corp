@@ -1085,34 +1085,41 @@ a {
 .infinity-end.neverending .site-footer {
   display: block; }
 
-#page #infinite-handle {
+.site-main #infinite-handle {
   clear: both;
   padding-top: 30px;
-  text-align: center; }
-  #page #infinite-handle span {
+  text-align: center;
+  width: 100%; }
+  .site-main #infinite-handle span {
     background: inherit;
     border-radius: initial;
     color: inherit;
     cursor: pointer;
     font-size: inherit;
-    padding: inherit; }
-    #page #infinite-handle span button {
+    padding: 0; }
+    .site-main #infinite-handle span button {
       background: transparent;
       border: 2px solid;
       border-color: #2d2d2d;
       color: #2d2d2d;
+      display: block;
       font-size: 13px;
       letter-spacing: 1px;
       line-height: normal;
+      margin: 0 auto;
       padding: 9px 30px;
       transition: .3s; }
-      #page #infinite-handle span button:hover {
+      .site-main #infinite-handle span button:hover {
         border-color: #f14e4e;
         color: #f14e4e; }
 
-.infinite-scroll .infinite-loader .spinner {
-  margin: 0 auto;
-  text-align: center; }
+.infinite-scroll .infinite-loader {
+  display: block;
+  clear: both;
+  margin-top: 30px;
+  width: 100%; }
+  .infinite-scroll .infinite-loader .spinner {
+    margin: 0 auto; }
 
 /*--------------------------------------------------------------
 ## Related Posts
@@ -1607,7 +1614,8 @@ a {
 --------------------------------------------------------------*/
 .blog .site-main,
 .archive:not(.woocommerce) .site-main,
-.search-results .site-main {
+.search-results .site-main,
+.site-main .infinite-wrap {
   display: flex;
   flex-wrap: wrap; }
 

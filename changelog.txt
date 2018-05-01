@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.4.1 - 01 May 2018 =
+* Resolved image post format warning.
+* Improved Jetpack Infinite Scroll styling and functionality.
+* Added style support for the WooCommerce Price Filter widget.
+
 = 1.4 - 18 April 2018 =
 * Added WooCommerce grouped product styling.
 * Minor WooCommerce single product page styling adjustments.

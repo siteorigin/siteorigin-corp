@@ -30,9 +30,10 @@ function siteorigin_corp_jetpack_setup() {
 	 */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'footer'    => 'page',
+		'render' => 'siteorigin_corp_infinite_scroll_render',
+		'footer' => 'page',
+		'posts_per_page' => get_option( 'posts_per_page' ),
 	) );
-
 	/*
 	 * Enable support for Jetpack Responsive Videos.
 	 * See https://jetpack.com/support/responsive-videos/
@@ -40,6 +41,31 @@ function siteorigin_corp_jetpack_setup() {
 	add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
+
+if ( ! function_exists( 'siteorigin_corp_infinite_scroll_render' ) ) :
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function siteorigin_corp_infinite_scroll_render() {
+	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) {
+		echo '<ul class="products columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
+		while ( have_posts() ) {
+			the_post();
+			wc_get_template_part( 'content', 'product' );
+		}
+		echo '</ul>';
+	} else {	
+		while ( have_posts() ) {
+			the_post();
+			if ( is_search() ) :
+				get_template_part( 'template-parts/content', 'search' );
+			else :
+				get_template_part( 'template-parts/content', get_post_format() );
+			endif;
+		}
+	}
+}
+endif;
 
 /**
  * Remove sharing buttons from their default locations

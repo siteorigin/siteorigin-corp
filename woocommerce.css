@@ -1001,6 +1001,23 @@ input.button.added:after,
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.woocommerce #secondary .button,
+.woocommerce #secondary button {
+  background: none;
+  border: 2px solid #2d2d2d;
+  color: #2d2d2d; }
+  .woocommerce #secondary .button:hover,
+  .woocommerce #secondary button:hover {
+    background: #2d2d2d;
+    color: #fff; }
+
+.woocommerce #secondary .widget_tag_cloud .tagcloud a {
+  background: none;
+  border: 1px solid #626262; }
+  .woocommerce #secondary .widget_tag_cloud .tagcloud a:hover {
+    background: #626262;
+    color: #fff; }
+
 /*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
@@ -1020,6 +1037,41 @@ input.button.added:after,
     width: 16px; }
     .widget_product_search .woocommerce-product-search button[type="submit"] svg path {
       fill: #929292; }
+
+/*--------------------------------------------------------------
+## - Price Filter Widget
+--------------------------------------------------------------*/
+.widget_price_filter .ui-slider {
+  background: #d6d6d6;
+  height: 3px;
+  margin: 21px 3.5px 26px;
+  position: relative; }
+  .widget_price_filter .ui-slider .ui-slider-range {
+    background: #2d2d2d;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1; }
+  .widget_price_filter .ui-slider .ui-slider-handle {
+    background: #2d2d2d;
+    cursor: ew-resize;
+    height: 15px;
+    margin-left: -3.5px;
+    outline: none;
+    position: absolute;
+    top: -6px;
+    width: 7px;
+    z-index: 2; }
+
+.widget_price_filter .price_slider_amount {
+  overflow: auto; }
+  .widget_price_filter .price_slider_amount .price_label {
+    font-weight: normal;
+    padding-top: 10px; }
+    .widget_price_filter .price_slider_amount .price_label span {
+      font-weight: bold; }
+  .widget_price_filter .price_slider_amount .button {
+    float: right; }
 
 /*--------------------------------------------------------------
 ## - Cart and Product List Widget

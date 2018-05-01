@@ -1,3 +1,28 @@
+.woocommerce #secondary {
+	
+	.button,
+	button {
+		background: none;
+		border: 2px solid $color__text-dark;
+		color: $color__text-dark;
+		
+		&:hover {
+			background: $color__text-dark;
+			color: #fff;
+		}
+	}
+
+	.widget_tag_cloud .tagcloud a {
+		background: none;
+		border: 1px solid $color__text-medium;
+		
+		&:hover {
+			background: $color__text-medium;
+			color: #fff;
+		}
+	}
+}
+
 /*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
@@ -26,6 +51,56 @@
 					fill: $color__text-light;
 				}
 			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## - Price Filter Widget
+--------------------------------------------------------------*/
+.widget_price_filter {
+
+	.ui-slider {
+		background: $color__background-hr-dark;
+		height: 3px;
+		margin: 21px 3.5px 26px;
+		position: relative;
+		
+		.ui-slider-range {
+			background: $color__text-dark;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			z-index: 1;
+		}			
+		
+		.ui-slider-handle {
+			background: $color__text-dark;
+			cursor: ew-resize;
+			height: 15px;
+			margin-left: -3.5px;
+			outline: none;
+			position: absolute;
+			top: -6px;
+			width: 7px;
+			z-index: 2;
+		}		
+	}
+
+	.price_slider_amount {
+		overflow: auto;
+
+		.price_label {
+			font-weight: normal;
+			padding-top: 10px;
+
+			span {
+				font-weight: bold;
+			}
+		}
+
+		.button {
+			float: right;
 		}
 	}
 }
