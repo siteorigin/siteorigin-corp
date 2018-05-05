@@ -1255,14 +1255,18 @@ a {
 --------------------------------------------------------------*/
 .widget_archive li,
 .widget_categories li {
-  color: #929292;
-  margin-bottom: 8px; }
-  .widget_archive li:last-of-type,
-  .widget_categories li:last-of-type {
-    margin-bottom: 0; }
+  color: #929292; }
   .widget_archive li a,
   .widget_categories li a {
-    color: #2d2d2d; }
+    color: #2d2d2d;
+    display: inline-block;
+    margin-bottom: 8px; }
+  .widget_archive li span,
+  .widget_categories li span {
+    color: #929292; }
+  .widget_archive li .children,
+  .widget_categories li .children {
+    margin-left: 12px; }
 
 /*--------------------------------------------------------------
 ## Recent Comments Widget

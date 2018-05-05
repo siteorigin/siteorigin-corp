@@ -119,6 +119,31 @@
 }
 
 /*--------------------------------------------------------------
+## Product Categories Widget
+--------------------------------------------------------------*/
+.widget_product_categories .product-categories {
+
+	li {
+		color: $color__text-light;
+		
+		a {
+			color: $color__text-dark;
+			display: inline-block;
+			margin-bottom: 8px;
+		}
+
+		span {
+			color: $color__text-light;
+		}			
+
+		.children {
+			margin-left: 12px;
+		}
+
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Price Filter Widget
 --------------------------------------------------------------*/
 .widget_price_filter {

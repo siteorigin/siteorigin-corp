@@ -1087,6 +1087,20 @@ input.button.added:after,
       margin-left: 5px; }
 
 /*--------------------------------------------------------------
+## Product Categories Widget
+--------------------------------------------------------------*/
+.widget_product_categories .product-categories li {
+  color: #929292; }
+  .widget_product_categories .product-categories li a {
+    color: #2d2d2d;
+    display: inline-block;
+    margin-bottom: 8px; }
+  .widget_product_categories .product-categories li span {
+    color: #929292; }
+  .widget_product_categories .product-categories li .children {
+    margin-left: 12px; }
+
+/*--------------------------------------------------------------
 ## - Price Filter Widget
 --------------------------------------------------------------*/
 .widget_price_filter .ui-slider {

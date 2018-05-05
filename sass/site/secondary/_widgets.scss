@@ -129,15 +129,21 @@
 
 	li {
 		color: $color__text-light;
-		margin-bottom: 8px;
-	
-		&:last-of-type {
-			margin-bottom: 0; 
-		} 
-	
+		
 		a {
 			color: $color__text-dark;
+			display: inline-block;
+			margin-bottom: 8px;
 		}
+
+		span {
+			color: $color__text-light;
+		}			
+
+		.children {
+			margin-left: 12px;
+		}
+
 	}
 }
 
