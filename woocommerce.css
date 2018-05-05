@@ -1019,61 +1019,6 @@ input.button.added:after,
     color: #fff; }
 
 /*--------------------------------------------------------------
-## - Search Widget
---------------------------------------------------------------*/
-.widget_product_search .woocommerce-product-search input[type="search"] {
-  padding-right: 43px; }
-
-.widget_product_search .woocommerce-product-search button[type="submit"] {
-  background: none;
-  border: none;
-  color: inherit;
-  padding: 0;
-  position: relative;
-  right: 36px;
-  top: 2px; }
-  .widget_product_search .woocommerce-product-search button[type="submit"] svg {
-    height: 16px;
-    width: 16px; }
-    .widget_product_search .woocommerce-product-search button[type="submit"] svg path {
-      fill: #929292; }
-
-/*--------------------------------------------------------------
-## - Price Filter Widget
---------------------------------------------------------------*/
-.widget_price_filter .ui-slider {
-  background: #d6d6d6;
-  height: 3px;
-  margin: 21px 3.5px 26px;
-  position: relative; }
-  .widget_price_filter .ui-slider .ui-slider-range {
-    background: #2d2d2d;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 1; }
-  .widget_price_filter .ui-slider .ui-slider-handle {
-    background: #2d2d2d;
-    cursor: ew-resize;
-    height: 15px;
-    margin-left: -3.5px;
-    outline: none;
-    position: absolute;
-    top: -6px;
-    width: 7px;
-    z-index: 2; }
-
-.widget_price_filter .price_slider_amount {
-  overflow: auto; }
-  .widget_price_filter .price_slider_amount .price_label {
-    font-weight: normal;
-    padding-top: 10px; }
-    .widget_price_filter .price_slider_amount .price_label span {
-      font-weight: bold; }
-  .widget_price_filter .price_slider_amount .button {
-    float: right; }
-
-/*--------------------------------------------------------------
 ## - Cart and Product List Widget
 --------------------------------------------------------------*/
 .cart_list,
@@ -1140,6 +1085,78 @@ input.button.added:after,
       padding: 10px 24px; }
     .widget_shopping_cart .buttons a.checkout {
       margin-left: 5px; }
+
+/*--------------------------------------------------------------
+## - Price Filter Widget
+--------------------------------------------------------------*/
+.widget_price_filter .ui-slider {
+  background: #d6d6d6;
+  height: 3px;
+  margin: 21px 3.5px 26px;
+  position: relative; }
+  .widget_price_filter .ui-slider .ui-slider-range {
+    background: #2d2d2d;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1; }
+  .widget_price_filter .ui-slider .ui-slider-handle {
+    background: #2d2d2d;
+    cursor: ew-resize;
+    height: 15px;
+    margin-left: -3.5px;
+    outline: none;
+    position: absolute;
+    top: -6px;
+    width: 7px;
+    z-index: 2; }
+
+.widget_price_filter .price_slider_amount {
+  overflow: auto; }
+  .widget_price_filter .price_slider_amount .price_label {
+    font-weight: normal;
+    padding-top: 10px; }
+    .widget_price_filter .price_slider_amount .price_label span {
+      font-weight: bold; }
+  .widget_price_filter .price_slider_amount .button {
+    float: right; }
+
+/*--------------------------------------------------------------
+## - Search Widget
+--------------------------------------------------------------*/
+.widget_product_search .woocommerce-product-search input[type="search"] {
+  padding-right: 43px; }
+
+.widget_product_search .woocommerce-product-search button[type="submit"] {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  position: relative;
+  right: 36px;
+  top: 2px; }
+  .widget_product_search .woocommerce-product-search button[type="submit"] svg {
+    height: 16px;
+    width: 16px; }
+    .widget_product_search .woocommerce-product-search button[type="submit"] svg path {
+      fill: #929292; }
+
+/*--------------------------------------------------------------
+## - Product Tag Cloud Widget
+--------------------------------------------------------------*/
+.widget.widget_product_tag_cloud {
+  margin-right: -8px; }
+  .widget.widget_product_tag_cloud .tagcloud a {
+    border: 1px solid #626262;
+    color: #626262;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 9px;
+    margin: 0 5px 8px 0;
+    transition: .2s; }
+    .widget.widget_product_tag_cloud .tagcloud a:hover {
+      border-color: #f14e4e;
+      color: #f14e4e; }
 
 /*--------------------------------------------------------------
 # Notifications

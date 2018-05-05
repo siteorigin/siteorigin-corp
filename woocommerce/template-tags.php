@@ -123,8 +123,8 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_tag_cloud_widget' ) ) :
  */
 function siteorigin_corp_woocommerce_tag_cloud_widget() {
 	$args['unit'] = 'px';
-	$args['largest'] = 12;
-	$args['smallest'] = 12;
+	$args['largest'] = 13;
+	$args['smallest'] = 13;
 	$args['taxonomy'] = 'product_tag';
 	return $args;	
 }

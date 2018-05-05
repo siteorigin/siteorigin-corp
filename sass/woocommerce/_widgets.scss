@@ -24,88 +24,6 @@
 }
 
 /*--------------------------------------------------------------
-## - Search Widget
---------------------------------------------------------------*/
-.widget_product_search {
-
-	.woocommerce-product-search {
-
-		input[type="search"] {
-			padding-right: 43px; 
-		}
-
-		button[type="submit"] {
-			background: none; 
-			border: none;
-			color: inherit;
-			padding: 0;
-			position: relative;
-			right: 36px;
-			top: 2px;
-
-			svg {
-				height: 16px;
-				width: 16px;
-				
-				path {
-					fill: $color__text-light;
-				}
-			}
-		}
-	}
-}
-
-/*--------------------------------------------------------------
-## - Price Filter Widget
---------------------------------------------------------------*/
-.widget_price_filter {
-
-	.ui-slider {
-		background: $color__background-hr-dark;
-		height: 3px;
-		margin: 21px 3.5px 26px;
-		position: relative;
-		
-		.ui-slider-range {
-			background: $color__text-dark;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			z-index: 1;
-		}			
-		
-		.ui-slider-handle {
-			background: $color__text-dark;
-			cursor: ew-resize;
-			height: 15px;
-			margin-left: -3.5px;
-			outline: none;
-			position: absolute;
-			top: -6px;
-			width: 7px;
-			z-index: 2;
-		}		
-	}
-
-	.price_slider_amount {
-		overflow: auto;
-
-		.price_label {
-			font-weight: normal;
-			padding-top: 10px;
-
-			span {
-				font-weight: bold;
-			}
-		}
-
-		.button {
-			float: right;
-		}
-	}
-}
-
-/*--------------------------------------------------------------
 ## - Cart and Product List Widget
 --------------------------------------------------------------*/
 .cart_list,
@@ -198,4 +116,108 @@
 			}
 		}
 	}	
+}
+
+/*--------------------------------------------------------------
+## - Price Filter Widget
+--------------------------------------------------------------*/
+.widget_price_filter {
+
+	.ui-slider {
+		background: $color__background-hr-dark;
+		height: 3px;
+		margin: 21px 3.5px 26px;
+		position: relative;
+		
+		.ui-slider-range {
+			background: $color__text-dark;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			z-index: 1;
+		}			
+		
+		.ui-slider-handle {
+			background: $color__text-dark;
+			cursor: ew-resize;
+			height: 15px;
+			margin-left: -3.5px;
+			outline: none;
+			position: absolute;
+			top: -6px;
+			width: 7px;
+			z-index: 2;
+		}		
+	}
+
+	.price_slider_amount {
+		overflow: auto;
+
+		.price_label {
+			font-weight: normal;
+			padding-top: 10px;
+
+			span {
+				font-weight: bold;
+			}
+		}
+
+		.button {
+			float: right;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## - Search Widget
+--------------------------------------------------------------*/
+.widget_product_search {
+
+	.woocommerce-product-search {
+
+		input[type="search"] {
+			padding-right: 43px; 
+		}
+
+		button[type="submit"] {
+			background: none; 
+			border: none;
+			color: inherit;
+			padding: 0;
+			position: relative;
+			right: 36px;
+			top: 2px;
+
+			svg {
+				height: 16px;
+				width: 16px;
+				
+				path {
+					fill: $color__text-light;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## - Product Tag Cloud Widget
+--------------------------------------------------------------*/
+.widget.widget_product_tag_cloud {
+	margin-right: -8px;
+
+	.tagcloud a {
+		border: 1px solid $color__text-medium;
+		color: $color__text-medium;
+		display: inline-block;
+		font-size: 14px;
+		padding: 6px 9px;
+		margin: 0 5px 8px 0;
+		transition: .2s;
+
+		&:hover {
+			border-color: $color__accent;
+			color: $color__accent;
+		}
+	}
 }

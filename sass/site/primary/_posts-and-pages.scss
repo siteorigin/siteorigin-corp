@@ -287,20 +287,20 @@ body:not(.single) .hentry {
 	transition: .2s;
 
 	&:after {
-	  background: $color__background-body;
-	  border-bottom: 14px solid transparent;
-	  border-right: 13px solid #e4e6eb;
-	  border-top: 14px solid transparent;
-	  content: '';
-	  position: absolute;
-	  left: 0;
-	  transition: .2s;
-	  top: 0;
+		background: $color__background-body;
+		border-bottom: 14px solid transparent;
+		border-right: 13px solid #e4e6eb;
+		border-top: 14px solid transparent;
+		content: '';
+		position: absolute;
+		left: 0;
+		transition: .2s;
+		top: 0;
 	}
 
 	&:hover {
-	  background: $color__accent;
-	  color: #fff;
+		background: $color__accent;
+		color: #fff;
 	}
 
 	&:hover:after {
