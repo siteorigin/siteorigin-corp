@@ -1332,6 +1332,14 @@ a {
   line-height: normal; }
 
 /*--------------------------------------------------------------
+## - Search Widget
+--------------------------------------------------------------*/
+.widget .search-form {
+  width: 100%; }
+  .widget .search-form input[type="search"] {
+    width: 100%; }
+
+/*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 .site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
