@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'siteorigin-corp-icons';
-  src:  url('fonts/siteorigin-corp-icons.eot?kbesoa');
-  src:  url('fonts/siteorigin-corp-icons.eot?kbesoa#iefix') format('embedded-opentype'),
-    url('fonts/siteorigin-corp-icons.ttf?kbesoa') format('truetype'),
-    url('fonts/siteorigin-corp-icons.woff?kbesoa') format('woff'),
-    url('fonts/siteorigin-corp-icons.svg?kbesoa#siteorigin-corp-icons') format('svg');
+  src:  url('fonts/siteorigin-corp-icons.eot?lfo81t');
+  src:  url('fonts/siteorigin-corp-icons.eot?lfo81t#iefix') format('embedded-opentype'),
+    url('fonts/siteorigin-corp-icons.ttf?lfo81t') format('truetype'),
+    url('fonts/siteorigin-corp-icons.woff?lfo81t') format('woff'),
+    url('fonts/siteorigin-corp-icons.svg?lfo81t#siteorigin-corp-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: "\e903";
+}
 .icon-pencil:before {
   content: "\e902";
 }

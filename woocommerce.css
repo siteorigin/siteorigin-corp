@@ -1019,6 +1019,25 @@ input.button.added:after,
     color: #fff; }
 
 /*--------------------------------------------------------------
+## Active Product Filters Widget
+--------------------------------------------------------------*/
+.widget.widget_layered_nav_filters .chosen a {
+  padding-left: 20px;
+  position: relative; }
+  .widget.widget_layered_nav_filters .chosen a:before {
+    color: #f14e4e;
+    content: "\e903";
+    display: inline-block;
+    font-family: "siteorigin-corp-icons";
+    font-size: 15px;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    top: 3px; }
+  .widget.widget_layered_nav_filters .chosen a:hover {
+    color: #2d2d2d; }
+
+/*--------------------------------------------------------------
 ## - Cart and Product List Widget
 --------------------------------------------------------------*/
 .cart_list,
@@ -1089,15 +1108,19 @@ input.button.added:after,
 /*--------------------------------------------------------------
 ## Product Categories Widget
 --------------------------------------------------------------*/
-.widget_product_categories .product-categories li {
+.widget_product_categories .product-categories li,
+.woocommerce-widget-layered-nav-list li {
   color: #929292; }
-  .widget_product_categories .product-categories li a {
+  .widget_product_categories .product-categories li a,
+  .woocommerce-widget-layered-nav-list li a {
     color: #2d2d2d;
     display: inline-block;
     margin-bottom: 8px; }
-  .widget_product_categories .product-categories li span {
+  .widget_product_categories .product-categories li span,
+  .woocommerce-widget-layered-nav-list li span {
     color: #929292; }
-  .widget_product_categories .product-categories li .children {
+  .widget_product_categories .product-categories li .children,
+  .woocommerce-widget-layered-nav-list li .children {
     margin-left: 12px; }
 
 /*--------------------------------------------------------------

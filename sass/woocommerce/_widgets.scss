@@ -24,6 +24,33 @@
 }
 
 /*--------------------------------------------------------------
+## Active Product Filters Widget
+--------------------------------------------------------------*/
+.widget.widget_layered_nav_filters {
+	
+	.chosen a {
+		padding-left: 20px;
+		position: relative;
+
+		&:before {
+			color: $color__accent;
+			content: "\e903";
+			display: inline-block;
+			font-family: $font__icon;
+			font-size: 15px;
+			left: 0;
+			line-height: 1;
+			position: absolute;
+			top: 3px;
+		}
+
+		&:hover {
+			color: $color__text-dark;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Cart and Product List Widget
 --------------------------------------------------------------*/
 .cart_list,
@@ -121,7 +148,8 @@
 /*--------------------------------------------------------------
 ## Product Categories Widget
 --------------------------------------------------------------*/
-.widget_product_categories .product-categories {
+.widget_product_categories .product-categories,
+.woocommerce-widget-layered-nav-list {
 
 	li {
 		color: $color__text-light;
