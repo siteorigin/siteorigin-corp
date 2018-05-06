@@ -1159,6 +1159,17 @@ input.button.added:after,
     float: right; }
 
 /*--------------------------------------------------------------
+## - Filter Products by Rating Widget
+--------------------------------------------------------------*/
+.widget.widget_rating_filter .wc-layered-nav-rating a {
+  align-items: center;
+  color: #929292;
+  display: flex; }
+  .widget.widget_rating_filter .wc-layered-nav-rating a .star-rating {
+    display: inline-block;
+    margin-right: 3px; }
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget_product_search .woocommerce-product-search input[type="search"] {

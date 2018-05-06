@@ -222,6 +222,20 @@
 }
 
 /*--------------------------------------------------------------
+## - Filter Products by Rating Widget
+--------------------------------------------------------------*/
+.widget.widget_rating_filter .wc-layered-nav-rating a {
+	align-items: center;
+	color: $color__text-light;
+	display: flex;
+
+	.star-rating {
+		display: inline-block;
+		margin-right: 3px;
+	}
+}
+
+/*--------------------------------------------------------------
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget_product_search {
