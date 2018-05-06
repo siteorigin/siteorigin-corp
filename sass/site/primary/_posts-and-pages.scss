@@ -350,31 +350,32 @@ body:not(.single) .hentry {
 }
 
 
-
 /*--------------------------------------------------------------
 ## Search Form
 --------------------------------------------------------------*/
 .search-form {
+	display: inline-block;
+	position: relative;
 
 	input[type="search"] {
-		padding-right: 43px;
-		min-width: 100px;
+		padding-right: 54px;
+		min-width: 300px;
 	}
 
 	button[type="submit"] {
-		background: none;
-		border: none;
-		padding: 0;
-		position: relative;
-		right: 36px;
-		top: 3px;
-
+		background: none !important;
+		border: none !important;
+		padding: 13px 20px 9px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		
 		svg {
-			height: 16px;
-			width: 16px;
-
+			height: 14px;
+			width: 14px;
+			
 			path {
-				fill: $color__text-light;
+				fill: $color__text-medium;
 			}
 		}
 	}

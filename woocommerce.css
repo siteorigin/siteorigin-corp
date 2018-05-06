@@ -134,7 +134,7 @@ input.button.added:after,
       color: #f14e4e; }
 
 .woocommerce .woocommerce-pagination {
-  border: none !important;
+  margin: 0 auto;
   text-align: center; }
   .woocommerce .woocommerce-pagination ul {
     margin: 0; }
@@ -1062,6 +1062,9 @@ input.button.added:after,
     .cart_list li ins,
     .product_list_widget li ins {
       background: none; }
+    .cart_list li .star-rating,
+    .product_list_widget li .star-rating {
+      margin-top: 4px; }
     .cart_list li .amount,
     .cart_list li .quantity,
     .product_list_widget li .amount,
@@ -1168,26 +1171,6 @@ input.button.added:after,
   .widget.widget_rating_filter .wc-layered-nav-rating a .star-rating {
     display: inline-block;
     margin-right: 3px; }
-
-/*--------------------------------------------------------------
-## - Search Widget
---------------------------------------------------------------*/
-.widget_product_search .woocommerce-product-search input[type="search"] {
-  padding-right: 43px; }
-
-.widget_product_search .woocommerce-product-search button[type="submit"] {
-  background: none;
-  border: none;
-  color: inherit;
-  padding: 0;
-  position: relative;
-  right: 36px;
-  top: 2px; }
-  .widget_product_search .woocommerce-product-search button[type="submit"] svg {
-    height: 16px;
-    width: 16px; }
-    .widget_product_search .woocommerce-product-search button[type="submit"] svg path {
-      fill: #929292; }
 
 /*--------------------------------------------------------------
 ## - Product Tag Cloud Widget

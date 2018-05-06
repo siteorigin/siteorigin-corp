@@ -58,10 +58,9 @@
 			border: none;
 			display: inline-block;
 			outline: none;
-			padding: 0;
 			position: absolute;
-			right: 12px;
-			top: 6px;
+			right: 0;
+			top: 0;
 
 			@media (max-width: 768px) {
 				top: -15px;

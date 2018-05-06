@@ -79,6 +79,10 @@
 			background: none; 
 		}
 
+		.star-rating {
+			margin-top: 4px;
+		}
+
 		.amount,
 		.quantity {
 			font-size: 13px;
@@ -232,38 +236,6 @@
 	.star-rating {
 		display: inline-block;
 		margin-right: 3px;
-	}
-}
-
-/*--------------------------------------------------------------
-## - Search Widget
---------------------------------------------------------------*/
-.widget_product_search {
-
-	.woocommerce-product-search {
-
-		input[type="search"] {
-			padding-right: 43px; 
-		}
-
-		button[type="submit"] {
-			background: none; 
-			border: none;
-			color: inherit;
-			padding: 0;
-			position: relative;
-			right: 36px;
-			top: 2px;
-
-			svg {
-				height: 16px;
-				width: 16px;
-				
-				path {
-					fill: $color__text-light;
-				}
-			}
-		}
 	}
 }
 

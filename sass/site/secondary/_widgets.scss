@@ -238,34 +238,6 @@
 }
 
 /*--------------------------------------------------------------
-## - Search Widget
---------------------------------------------------------------*/
-.widget .search-form {
-	position: relative;
-
-	input[type="search"] {
-		font-size: .9285em;
-		padding: 10px 30px 10px 13px;
-		width: 100%;
-	}
-
-	button[type="submit"] {
-		position: absolute;
-		right: 14px;
-		top: 13px;
-		
-		svg {
-			height: 14px;
-			width: 14px;
-			
-			path {
-				fill: $color__text-medium;
-			}
-		}
-	}
-}
-
-/*--------------------------------------------------------------
 ## Tag Cloud Widget
 --------------------------------------------------------------*/
 aside.widget.widget_tag_cloud .tagcloud {
