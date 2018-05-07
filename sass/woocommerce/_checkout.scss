@@ -207,17 +207,16 @@
 			}
 		}
 
-		.wc-terms-and-conditions, 
-		.terms {
-			float: left;
-			padding: 0 1em 0 0;
-			text-align: left;
-		}
+		.wc-terms-and-conditions {
+			border-bottom: 1px solid rgb(214, 214, 214);
+			padding: 14px 0;
+			margin-bottom: 0;
+		}	
 
 		#place_order {
 			float: right;
 			font-size: 16px;
-			margin-top: 30px;  
+			margin-top: 30px;
 		}
 	}
 }

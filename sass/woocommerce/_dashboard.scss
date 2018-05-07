@@ -70,7 +70,11 @@
 		}
 
 		p {
-			margin-bottom: 26px; 
+			margin-bottom: 26px;
+			
+			span em {
+				font-size: 13px;
+			}
 		}
 
 		// Addresses.
@@ -105,5 +109,32 @@
 				}					
 			}
 		}
+
+		// Password Change.
+		.password-change {
+			margin-bottom: 15px;
+		}
+
+		// Password Strength.
+		.woocommerce-password-strength {
+			font-size: 14px;
+			font-weight: 600;
+
+			&.strong {
+				color: #0f834d;
+			}
+
+			&.short {
+				color: #e2401c;
+			}
+
+			&.bad {
+				color: #e2401c;
+			}
+
+			&.good {
+				color: #3d9cd2;
+			}
+		}	
 	}	
 }
