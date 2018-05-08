@@ -187,7 +187,7 @@ input.button.added:after,
     display: block;
     margin-bottom: 4px; }
     .woocommerce form .form-row label .required {
-      color: rgba(255, 0, 0, 0.6);
+      color: rgba(255, 0, 0, 0.7);
       text-decoration: none; }
     .woocommerce form .form-row label.inline {
       font-weight: normal; }
@@ -199,15 +199,15 @@ input.button.added:after,
     box-sizing: border-box;
     width: 100%; }
   .woocommerce form .form-row.woocommerce-invalid label {
-    color: rgba(255, 0, 0, 0.6); }
+    color: rgba(255, 0, 0, 0.7); }
   .woocommerce form .form-row.woocommerce-invalid .select2-container,
   .woocommerce form .form-row.woocommerce-invalid input.input-text,
   .woocommerce form .form-row.woocommerce-invalid select {
-    border-color: rgba(255, 0, 0, 0.6); }
+    border-color: rgba(255, 0, 0, 0.7); }
   .woocommerce form .form-row.woocommerce-validated .select2-container,
   .woocommerce form .form-row.woocommerce-validated input.input-text,
   .woocommerce form .form-row.woocommerce-validated select {
-    border-color: rgba(0, 128, 0, 0.6); }
+    border-color: rgba(0, 128, 0, 0.7); }
 
 .woocommerce form .form-row-first,
 .woocommerce form .form-row-last {
@@ -1249,8 +1249,8 @@ input.button.added:after,
       color: #f14e4e; }
 
 .woocommerce-error {
-  background: rgba(255, 0, 0, 0.6);
   display: block;
+  color: rgba(255, 0, 0, 0.7);
   font-size: 14px;
   list-style: none;
   padding: 20px 20px; }
@@ -1777,13 +1777,13 @@ input.button.added:after,
     font-size: 14px;
     font-weight: 600; }
     .woocommerce-account .woocommerce-MyAccount-content .woocommerce-password-strength.strong {
-      color: #0f834d; }
+      color: rgba(0, 128, 0, 0.7); }
     .woocommerce-account .woocommerce-MyAccount-content .woocommerce-password-strength.short {
-      color: #e2401c; }
+      color: rgba(255, 0, 0, 0.7); }
     .woocommerce-account .woocommerce-MyAccount-content .woocommerce-password-strength.bad {
-      color: #e2401c; }
+      color: rgba(255, 0, 0, 0.7); }
     .woocommerce-account .woocommerce-MyAccount-content .woocommerce-password-strength.good {
-      color: #3d9cd2; }
+      color: rgba(0, 0, 128, 0.7); }
 
 /*--------------------------------------------------------------
 # Order Tracking

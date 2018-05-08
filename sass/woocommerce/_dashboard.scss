@@ -121,19 +121,19 @@
 			font-weight: 600;
 
 			&.strong {
-				color: #0f834d;
+				color: $success;
 			}
 
 			&.short {
-				color: #e2401c;
+				color: $error;
 			}
 
 			&.bad {
-				color: #e2401c;
+				color: $error;
 			}
 
 			&.good {
-				color: #3d9cd2;
+				color: $info;
 			}
 		}	
 	}	
