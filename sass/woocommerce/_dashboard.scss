@@ -6,20 +6,28 @@
 	}
 	
 	.login {
-		max-width: 50%;
+
+		@media (min-width: 769px) {
+			max-width: 75%;
+		}
 		
 		label[for*="rememberme"] {
 			font-size: 13px; 
 			font-weight: normal; 
 			line-height: normal;
 			margin-top: 10px;
-			
-			input {
-			}
 		}
 		
 		.lost_password {
-			font-size: 13px; 
+			font-size: 13px;
+			margin-top: -14px;
+		}
+	}
+
+	.register {
+
+		@media (min-width: 769px) {
+			max-width: 75%;
 		}
 	}
 
@@ -113,28 +121,28 @@
 		// Password Change.
 		.password-change {
 			margin-bottom: 15px;
-		}
-
-		// Password Strength.
-		.woocommerce-password-strength {
-			font-size: 14px;
-			font-weight: 600;
-
-			&.strong {
-				color: $success;
-			}
-
-			&.short {
-				color: $error;
-			}
-
-			&.bad {
-				color: $error;
-			}
-
-			&.good {
-				color: $info;
-			}
 		}	
 	}	
+}
+
+// Password Strength.
+.woocommerce-password-strength {
+	font-size: 14px;
+	font-weight: 600;
+
+	&.strong {
+		color: $success;
+	}
+
+	&.short {
+		color: $error;
+	}
+
+	&.bad {
+		color: $error;
+	}
+
+	&.good {
+		color: $info;
+	}
 }

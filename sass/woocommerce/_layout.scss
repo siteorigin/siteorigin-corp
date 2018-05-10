@@ -1,4 +1,4 @@
-.woocommerce.woocommerce-page {
+.woocommerce-page {
 
 	.content-area {
 		width: 100%;	
@@ -7,6 +7,29 @@
 	.site-main {
 		margin: 0;
 	}
+	
+	// General layout rules.
+	.col2-set {
+		width: 100%;
+
+		.col-1 {
+			float: left;
+			width: 48%;
+			
+			@media (max-width: 768px) {
+				width: 100%;
+			}			
+		}
+
+		.col-2 {
+			float: right;
+			width: 48%;
+			
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+		}
+	}	
 
 	&.woocommerce-sidebar {
 	

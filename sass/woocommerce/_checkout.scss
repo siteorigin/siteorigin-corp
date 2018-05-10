@@ -32,31 +32,37 @@
 		
 	}
 
-	// Billing and shipping details.
-	.col2-set {
-		float: left;
-		width: 47.8260869565%;
-		
-		@media (max-width: 768px) {
-			float: none;
-			width: 100%; 
-		}
-	}
-
-	// Billing fields.
 	.woocommerce-billing-fields {
+
+		@media (max-width: 768px) {
+			padding: 19px 20px 4px;
+		}
 		
 		h3 {
 			margin: 20px 0 11px; 
 		}
 	}
 
-	// Additional information.
+	.woocommerce-account-fields {
+
+		@media (max-width: 768px) {
+			padding: 0 20px 0;
+		}		
+	}
+
 	.woocommerce-additional-fields {
+
+		@media (max-width: 768px) {
+			padding: 19px 20px 4px;
+		}		
 		
 		h3 {
 			margin: 0 0 11px;
-			padding-top: 25px; 
+			padding-top: 25px;
+			
+			@media (max-width: 768px) {
+				padding-top: 0;
+			}				
 		}
 	}
 	
