@@ -985,13 +985,13 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
-	.woocommerce-sidebar-leftbody.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
 	margin: 0 0 0 -${sidebar_width};
 	}
 	body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
 	margin: 0 ${sidebar_width} 0 0;
 	}
-	.woocommerce-sidebar-leftbody.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
 	margin: 0 0 0 ${sidebar_width};
 	}
 	body.woocommerce.woocommerce-page .widget-area {
