@@ -500,8 +500,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  * @return string
  */
 function siteorigin_corp_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -674,11 +674,11 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.breadcrumbs a:hover {
 	color: ${typography_accent};
 	}
-	#page #infinite-handle span button {
+	.site-main #infinite-handle span button {
 	border-color: ${typography_heading};
 	color: ${typography_heading};
 	}
-	#page #infinite-handle span button:hover {
+	.site-main #infinite-handle span button:hover {
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
@@ -728,6 +728,9 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.widget_archive li a,.widget_categories li a {
 	color: ${typography_heading};
 	}
+	.widget_archive li span,.widget_categories li span {
+	color: ${typography_secondary_text};
+	}
 	.widget_recent_comments .recentcomments {
 	color: ${typography_secondary_text};
 	}
@@ -757,9 +760,6 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.widget.recent-posts-extended time {
 	color: ${typography_secondary_text};
-	}
-	.widget .search-form button[type="submit"] svg path {
-	fill: ${typography_text};
 	}
 	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
 	background: ${footer_background};
@@ -868,7 +868,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	border-right-color: ${typography_accent};
 	}
 	.search-form button[type="submit"] svg path {
-	fill: ${typography_secondary_text};
+	fill: ${typography_text};
 	}
 	.author-box {
 	border-top: 1px solid ${typography_border};
@@ -981,24 +981,24 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
 function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 	// Custom WooCommerce CSS Code
-	$css .= '/* woocommerce */
-	.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	$css .= '	/* woocommerce */
+	body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
-	.woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	.woocommerce-sidebar-leftbody.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
 	margin: 0 0 0 -${sidebar_width};
 	}
-	.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
 	margin: 0 ${sidebar_width} 0 0;
 	}
-	.woocommerce-sidebar-left.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	.woocommerce-sidebar-leftbody.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
 	margin: 0 0 0 ${sidebar_width};
 	}
-	.woocommerce.woocommerce-page .widget-area {
+	body.woocommerce.woocommerce-page .widget-area {
 	width: ${sidebar_width};
 	}
 	@media (max-width: 768px) {
-	.woocommerce.woocommerce-page .widget-area {
+	body.woocommerce.woocommerce-page .widget-area {
 	border-top: 1px solid ${typography_border_dark};
 	}
 	}
@@ -1096,6 +1096,12 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce .product .summary .variations .reset_variations:hover,.woocommerce .product .product-info-wrapper .variations .reset_variations:hover {
 	color: ${typography_accent};
 	}
+	.woocommerce .product .summary .woocommerce-grouped-product-list td a,.woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a {
+	color: ${typography_text};
+	}
+	.woocommerce .product .summary .woocommerce-grouped-product-list td a:hover,.woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a:hover {
+	color: ${typography_accent};
+	}
 	.woocommerce .product .summary .stock,.woocommerce .product .product-info-wrapper .stock {
 	color: ${typography_accent};
 	}
@@ -1160,14 +1166,59 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	#quick-view-container .quickview-close-icon:hover {
 	color: ${typography_text};
 	}
-	.widget_product_search .woocommerce-product-search button[type="submit"] svg path {
-	fill: ${typography_secondary_text};
+	.woocommerce #secondary .button,.woocommerce #secondary button {
+	border: 2px solid ${typography_heading};
+	color: ${typography_heading};
+	}
+	.woocommerce #secondary .button:hover,.woocommerce #secondary button:hover {
+	background: ${typography_heading};
+	}
+	.woocommerce #secondary .widget_tag_cloud .tagcloud a {
+	border: 1px solid ${typography_text};
+	}
+	.woocommerce #secondary .widget_tag_cloud .tagcloud a:hover {
+	background: ${typography_text};
+	}
+	.widget.widget_layered_nav_filters .chosen a:before {
+	color: ${typography_accent};
+	}
+	.widget.widget_layered_nav_filters .chosen a:hover {
+	color: ${typography_heading};
 	}
 	.cart_list li,.product_list_widget li {
 	border-bottom: 1px solid ${typography_border};
 	}
 	.widget_shopping_cart .total {
 	border: 1px solid ${typography_border};
+	}
+	.widget_product_categories .product-categories li,.woocommerce-widget-layered-nav-list li {
+	color: ${typography_secondary_text};
+	}
+	.widget_product_categories .product-categories li a,.woocommerce-widget-layered-nav-list li a {
+	color: ${typography_heading};
+	}
+	.widget_product_categories .product-categories li span,.woocommerce-widget-layered-nav-list li span {
+	color: ${typography_secondary_text};
+	}
+	.widget_price_filter .ui-slider {
+	background: ${typography_border_dark};
+	}
+	.widget_price_filter .ui-slider .ui-slider-range {
+	background: ${typography_heading};
+	}
+	.widget_price_filter .ui-slider .ui-slider-handle {
+	background: ${typography_heading};
+	}
+	.widget.widget_rating_filter .wc-layered-nav-rating a {
+	color: ${typography_secondary_text};
+	}
+	.widget.widget_product_tag_cloud .tagcloud a {
+	border: 1px solid ${typography_text};
+	color: ${typography_text};
+	}
+	.widget.widget_product_tag_cloud .tagcloud a:hover {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
 	}
 	.woocommerce-message,.woocommerce-error,.woocommerce-info,.woocommerce-store-notice {
 	color: ${typography_text};
@@ -1256,21 +1307,36 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce #payment .payment_methods li {
 	border-bottom: 1px solid ${typography_border_dark};
 	}
+	.woocommerce #payment .wc-terms-and-conditions {
+	border-bottom: 1px solid ${typography_border_dark};
+	}
 	.woocommerce-order-received table {
 	border: 1px solid ${typography_border_dark};
 	}
 	.woocommerce-order-received table thead th {
-	background: ${typography_border};
 	border: 1px solid ${typography_border_dark};
 	}
-	.woocommerce-order-received table th,.woocommerce-order-received table td {
-	border: 1px solid ${typography_border};
+	.woocommerce-order-received table tr {
+	border-bottom: 1px solid ${typography_border_dark};
+	}
+	.woocommerce-order-received table th a,.woocommerce-order-received table td a {
+	color: ${typography_text};
+	}
+	.woocommerce-order-received table th a:hover,.woocommerce-order-received table td a:hover {
+	color: ${typography_accent};
+	}
+	.woocommerce-order-received table tfoot th {
+	color: ${typography_heading};
 	}
 	.woocommerce-order-received .woocommerce-thankyou-order-details {
-	background: ${typography_border};
+	border: 1px solid ${typography_border_dark};
 	}
 	.woocommerce-order-received .woocommerce-thankyou-order-details li {
 	border-bottom: 1px solid ${typography_border_dark};
+	color: ${typography_heading};
+	}
+	.woocommerce-order-received .woocommerce-thankyou-order-details li strong {
+	color: ${typography_text};
 	}
 	.woocommerce-account .woocommerce-MyAccount-navigation {
 	border: 1px solid ${typography_border_dark};
@@ -1281,6 +1347,7 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
 	color: ${typography_accent};
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custom_css' );

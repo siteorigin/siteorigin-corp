@@ -63,13 +63,13 @@ function siteorigin_corp_body_classes( $classes ) {
 	}
 	
 	// WooCommerce sidebar.
-	if ( is_active_sidebar( 'shop-sidebar' ) && ( function_exists( 'is_woocommerce' ) && ! is_product() ) ) {
-		 $classes[] = 'woocommerce-sidebar';
-	}
+	if ( is_active_sidebar( 'shop-sidebar' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() && ! is_product() ) {
+		$classes[] = 'woocommerce-sidebar';
 
-	if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
-		 $classes[] = 'woocommerce-sidebar-left';
-	}				
+		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
+			$classes[] = 'woocommerce-sidebar-left';
+		}			
+	}		
 
 	return $classes;
 }

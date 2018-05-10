@@ -1,4 +1,4 @@
-.woocommerce-page {
+body.woocommerce.woocommerce-page {
 
 	.content-area {
 		width: 100%;	
@@ -6,30 +6,7 @@
 
 	.site-main {
 		margin: 0;
-	}
-	
-	// General layout rules.
-	.col2-set {
-		width: 100%;
-
-		.col-1 {
-			float: left;
-			width: 48%;
-			
-			@media (max-width: 768px) {
-				width: 100%;
-			}			
-		}
-
-		.col-2 {
-			float: right;
-			width: 48%;
-			
-			@media (max-width: 768px) {
-				width: 100%;
-			}
-		}
-	}	
+	}		
 
 	&.woocommerce-sidebar {
 	
@@ -38,7 +15,7 @@
 			margin: 0 (-$sidebar__width) 0 0;
 			width: $size__site;
 
-			@at-root .woocommerce-sidebar-left#{&} {
+			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
 				float: right;
 				margin: 0 0 0 (-$sidebar__width);
 			}					
@@ -52,7 +29,7 @@
 		.site-main {
 			margin: 0 $sidebar__width 0 0;
 
-			@at-root .woocommerce-sidebar-left#{&} {
+			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main{
 				margin: 0 0 0 $sidebar__width;			
 			}			
 	
@@ -77,22 +54,19 @@
 	} 
 
 	// Full Width page layout setting.
-	&.page-layout-full-width-no-sidebar {
+	&.page-layout-full-width-no-sidebar .site-content {
 
-		.site-content {
-
-			.content-area {
-				float: none;
-				margin: 0;
-				width: 100%; 
-			}
-
-			.site-main {
-				margin: 0;
-			}
+		#primary.content-area {
+			float: none;
+			margin: 0;
+			width: 100%; 
 		}
 
-		.site-content .corp-container {
+		#main.site-main {
+			margin: 0;
+		}
+
+		.corp-container {
 			max-width: none;
 			padding: 0;  
 		}
@@ -104,7 +78,7 @@
 		padding-left: 2.75%;
 		width: $sidebar__width;	
 		
-		@at-root .woocommerce-sidebar-left#{&} {
+		@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .widget-area {
 			float: left;
 			padding-right: 2.75%; 
 			padding-left: 0;
@@ -117,4 +91,29 @@
 			width: 100% !important;
 		}
 	}				
+}
+
+.woocommerce {
+
+	.col2-set {
+		width: 100%;
+
+		.col-1 {
+			float: left;
+			width: 48%;
+			
+			@media (max-width: 768px) {
+				width: 100%;
+			}			
+		}
+
+		.col-2 {
+			float: right;
+			width: 48%;
+			
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+		}
+	}	
 }

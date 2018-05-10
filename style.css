@@ -1388,20 +1388,20 @@ a {
     .sidebar .site-main {
       margin: 0 !important; } }
 
-.page-layout-no-sidebar .site-content .content-area {
+.page-layout-no-sidebar.sidebar .site-content .content-area {
   float: none;
   margin: 0;
   width: 100%; }
 
-.page-layout-no-sidebar .site-content .site-main {
+.page-layout-no-sidebar.sidebar .site-content .site-main {
   margin: 0; }
 
-.page-layout-full-width-no-sidebar .site-content .content-area {
+.page-layout-full-width-no-sidebar .site-content #primary.content-area {
   float: none;
   margin: 0;
   width: 100%; }
 
-.page-layout-full-width-no-sidebar .site-content .site-main {
+.page-layout-full-width-no-sidebar .site-content #main.site-main {
   margin: 0; }
 
 .page-layout-full-width-no-sidebar .site-content .corp-container {

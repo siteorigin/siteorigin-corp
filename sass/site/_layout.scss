@@ -52,7 +52,7 @@
  }
 
 // No Sidebar page layout setting.
-.page-layout-no-sidebar .site-content {
+.page-layout-no-sidebar.sidebar .site-content {
 
 	.content-area {
 		float: none;
@@ -66,22 +66,19 @@
 } 
 
 // Full Width page layout setting.
-.page-layout-full-width-no-sidebar {
+.page-layout-full-width-no-sidebar .site-content {
 
-	.site-content {
-
-		.content-area {
-			float: none;
-			margin: 0;
-			width: 100%; 
-		}
-
-		.site-main {
-			margin: 0;
-		}
+	#primary.content-area {
+		float: none;
+		margin: 0;
+		width: 100%; 
 	}
 
-	.site-content .corp-container {
+	#main.site-main {
+		margin: 0;
+	}
+
+	.corp-container {
 		max-width: none;
 		padding: 0;  
 	}
