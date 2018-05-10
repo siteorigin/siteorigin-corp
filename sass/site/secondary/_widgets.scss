@@ -245,6 +245,10 @@
 
 	input[type="search"] {
 		width: 100%;
+		
+		@at-root #secondary & {
+			min-width: 0;
+		}		
 	}
 }
 
