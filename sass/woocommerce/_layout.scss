@@ -29,7 +29,7 @@ body.woocommerce.woocommerce-page {
 		.site-main {
 			margin: 0 $sidebar__width 0 0;
 
-			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main{
+			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
 				margin: 0 0 0 $sidebar__width;			
 			}			
 	
