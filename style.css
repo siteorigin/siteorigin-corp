@@ -1500,6 +1500,15 @@ a {
       margin: -3px 0 0; }
     .site-header .site-branding > * {
       transform-origin: left center; }
+  @media (max-width: 768px) {
+    .site-header:not(.mobile-menu) .site-header-inner {
+      flex-direction: column; }
+    .site-header:not(.mobile-menu) .site-branding {
+      margin: 0 auto 20px auto;
+      padding: 0;
+      text-align: center; }
+    .site-header:not(.mobile-menu) .main-navigation {
+      text-align: center; } }
 
 .overlap-light .site-header:not(.stuck) .site-branding .site-title a,
 .overlap-light .site-header:not(.stuck) .site-branding .site-description {
