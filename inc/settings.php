@@ -1358,6 +1358,11 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
 
+	// Ensure mobile menu is enabled before outputting any CSS.
+	if( empty( $settings['theme_settings_navigation_mobile_menu'] ) ){
+		return;	
+	}
+	
 	if ( is_rtl() ) {
 		$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
 			#masthead .search-toggle {
