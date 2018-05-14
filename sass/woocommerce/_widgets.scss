@@ -131,22 +131,25 @@
 	}
 
 	.buttons {
+		margin-top: 17px;
 		text-align: center;
 		
-		a {
-			color: #fff; 
-			display: inline-block;
-		
-			&.button {
-				font-size: 12px;
-				padding: 10px 24px;
-			}
-
-			&.checkout {
-				margin-left: 5px; 
+		.button:first-of-type {
+			background: none;
+			border: 2px solid $color__text-dark;
+			color: $color__text-dark;
+			padding: 9px 25px;
+			
+			&:hover {
+				background: $color__text-dark;
+				color: #fff;
 			}
 		}
-	}	
+
+		.checkout {
+			margin-left: 5px;
+		}
+	}		
 }
 
 /*--------------------------------------------------------------

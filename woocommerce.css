@@ -1113,15 +1113,18 @@ input.button.added:after,
     top: 7px; }
 
 .widget_shopping_cart .buttons {
+  margin-top: 17px;
   text-align: center; }
-  .widget_shopping_cart .buttons a {
-    color: #fff;
-    display: inline-block; }
-    .widget_shopping_cart .buttons a.button {
-      font-size: 12px;
-      padding: 10px 24px; }
-    .widget_shopping_cart .buttons a.checkout {
-      margin-left: 5px; }
+  .widget_shopping_cart .buttons .button:first-of-type {
+    background: none;
+    border: 2px solid #2d2d2d;
+    color: #2d2d2d;
+    padding: 9px 25px; }
+    .widget_shopping_cart .buttons .button:first-of-type:hover {
+      background: #2d2d2d;
+      color: #fff; }
+  .widget_shopping_cart .buttons .checkout {
+    margin-left: 5px; }
 
 /*--------------------------------------------------------------
 ## Product Categories Widget
