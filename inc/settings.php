@@ -1356,10 +1356,10 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
  * Add CSS for mobile menu breakpoint.
  */
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
+	$breakpoint = ! empty( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ? siteorigin_setting( 'navigation_mobile_menu_collapse' ) : 768;
 
 	// Ensure mobile menu is enabled before outputting any CSS.
-	if( empty( $settings['theme_settings_navigation_mobile_menu'] ) ){
+	if( empty( siteorigin_setting( 'navigation_mobile_menu') ) ){
 		return;	
 	}
 	
