@@ -48,11 +48,11 @@ function siteorigin_corp_body_classes( $classes ) {
 
 	// Sidebar.
 	if ( is_active_sidebar( 'sidebar-main' ) ) {
-		 $classes[] = 'sidebar';
+		$classes[] = 'sidebar';
 	}
 
 	if ( siteorigin_setting( 'sidebar_position' ) == 'left' ) {
-		 $classes[] = 'sidebar-left';
+		$classes[] = 'sidebar-left';
 	}		
 
 	// WooCommerce top bar.
