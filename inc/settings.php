@@ -500,7 +500,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  * @return string
  */
 function siteorigin_corp_settings_custom_css( $css ) {
-// Custom CSS Code
+
 $css .= 'body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -766,13 +766,13 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	.sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
-	.sidebar-left.sidebar .content-area {
-	margin: 0 0 0 -${sidebar_width};
-	}
 	.sidebar .site-main {
 	margin: 0 ${sidebar_width} 0 0;
 	}
-	.sidebar-left.sidebar .site-main {
+	.sidebar-left .content-area {
+	margin: 0 0 0 -${sidebar_width};
+	}
+	.sidebar-left .site-main {
 	margin: 0 0 0 ${sidebar_width};
 	}
 	.widget-area {
@@ -966,12 +966,13 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_css' );
 
 /**
- * Add custom CSS for the theme woocommerce elements
+ * Add custom CSS for the theme woocommerce elements.
  *
  * @param $css
  *
@@ -979,17 +980,16 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
  */
 function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
-	$css .= '	/* woocommerce */
-	.woocommerce.woocommerce-sidebar .content-area {
+	$css .= '.woocommerce.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
-	}
-	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
-	margin: 0 0 0 -${sidebar_width};
 	}
 	.woocommerce.woocommerce-sidebar .site-main {
 	margin: 0 ${sidebar_width} 0 0;
 	}
-	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
+	.woocommerce.woocommerce-sidebar-left .content-area {
+	margin: 0 0 0 -${sidebar_width};
+	}
+	.woocommerce.woocommerce-sidebar-left .site-main {
 	margin: 0 0 0 ${sidebar_width};
 	}
 	@keyframes "spin" {
@@ -1353,10 +1353,14 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
  * Add CSS for mobile menu breakpoint.
  */
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = isset( $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] ) ? $settings[ 'theme_settings_navigation_mobile_menu_collapse' ] : 768;
-
+	// Ensure mobile menu is enabled before outputting any CSS.
+	$navigation_mobile_menu = siteorigin_setting( 'navigation_mobile_menu' );
+	if( empty( $navigation_mobile_menu ) ){
+		return;	
+	}
+	
 	if ( is_rtl() ) {
-		$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
+		$css .= '@media (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 			#masthead .search-toggle {
 				margin-right: 0;
 				margin-left: 20px;
@@ -1374,13 +1378,13 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: none;
 			}
 		}
-		@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
+		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
 				display: none !important;
 			}
 		}';		
 	} else {
-		$css .= '@media (max-width: ' . intval( $breakpoint ) . 'px) {
+		$css .= '@media (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 			#masthead .search-toggle {
 				margin-right: 20px;
 			}
@@ -1397,7 +1401,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: none;
 			}
 		}
-		@media (min-width: ' . ( 1 + intval( $breakpoint ) ) . 'px) {
+		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
 				display: none !important;
 			}

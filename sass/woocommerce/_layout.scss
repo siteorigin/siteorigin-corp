@@ -36,62 +36,38 @@
 		.content-area {
 			float: left;
 			margin: 0 (-$sidebar__width) 0 0;
-			width: $size__site;
-
-			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
-				float: right;
-				margin: 0 0 0 (-$sidebar__width);
-			}					
+			width: $size__site;			
 
 			@media (max-width: 768px) {
-				margin: 0 !important;
-				width: 100% !important;
+				margin: 0;
+				width: 100%;
 			}
 		}
 
 		.site-main {
 			margin: 0 $sidebar__width 0 0;
-
-			@at-root body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
-				margin: 0 0 0 $sidebar__width;			
-			}			
-	
+			
 			@media (max-width: 768px) {
 				margin: 0 !important;
 			}
 	 	}
 	}
 
-	// No Sidebar page layout setting.
-	&.page-layout-no-sidebar .site-content {
+	&.woocommerce-sidebar-left {
 
 		.content-area {
-			float: none;
-			margin: 0;
-			width: 100%; 
+			float: right;
+			margin: 0 0 0 (-$sidebar__width);
 		}
 
 		.site-main {
-			margin: 0;
-		}
-	} 
-
-	// Full Width page layout setting.
-	&.page-layout-full-width-no-sidebar .site-content {
-
-		#primary.content-area {
-			float: none;
-			margin: 0;
-			width: 100%; 
+			margin: 0 0 0 $sidebar__width;	
 		}
 
-		#main.site-main {
-			margin: 0;
-		}
-
-		.corp-container {
-			max-width: none;
-			padding: 0;  
-		}
-	}				
+		.widget-area {
+			float: left;
+			padding-right: 2.75%; 
+			padding-left: 0;	
+		}		
+	}			
 }

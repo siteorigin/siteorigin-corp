@@ -1374,21 +1374,23 @@ a {
   float: left;
   margin: 0 -34% 0 0;
   width: 100%; }
-  .sidebar-left.sidebar .content-area {
-    float: right;
-    margin: 0 0 0 -34%; }
   @media (max-width: 768px) {
     .sidebar .content-area {
-      margin: 0 !important;
-      width: 100% !important; } }
+      margin: 0;
+      width: 100%; } }
 
 .sidebar .site-main {
   margin: 0 34% 0 0; }
-  .sidebar-left.sidebar .site-main {
-    margin: 0 0 0 34%; }
   @media (max-width: 768px) {
     .sidebar .site-main {
       margin: 0 !important; } }
+
+.sidebar-left .content-area {
+  float: right;
+  margin: 0 0 0 -34%; }
+
+.sidebar-left .site-main {
+  margin: 0 0 0 34%; }
 
 .page-layout-no-sidebar.sidebar .site-content .content-area {
   float: none;
@@ -1422,7 +1424,7 @@ a {
     .widget-area {
       border-top: 1px solid #d6d6d6;
       margin-top: 50px;
-      padding: 50px 0 0 !important;
+      padding: 50px 0 0;
       width: 100% !important; } }
 
 /*--------------------------------------------------------------

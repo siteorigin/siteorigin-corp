@@ -29,41 +29,28 @@ Version: dev
   float: left;
   margin: 0 -34% 0 0;
   width: 100%; }
-  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
-    float: right;
-    margin: 0 0 0 -34%; }
   @media (max-width: 768px) {
     .woocommerce.woocommerce-sidebar .content-area {
-      margin: 0 !important;
-      width: 100% !important; } }
+      margin: 0;
+      width: 100%; } }
 
 .woocommerce.woocommerce-sidebar .site-main {
   margin: 0 34% 0 0; }
-  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
-    margin: 0 0 0 34%; }
   @media (max-width: 768px) {
     .woocommerce.woocommerce-sidebar .site-main {
       margin: 0 !important; } }
 
-.woocommerce.page-layout-no-sidebar .site-content .content-area {
-  float: none;
-  margin: 0;
-  width: 100%; }
+.woocommerce.woocommerce-sidebar-left .content-area {
+  float: right;
+  margin: 0 0 0 -34%; }
 
-.woocommerce.page-layout-no-sidebar .site-content .site-main {
-  margin: 0; }
+.woocommerce.woocommerce-sidebar-left .site-main {
+  margin: 0 0 0 34%; }
 
-.woocommerce.page-layout-full-width-no-sidebar .site-content #primary.content-area {
-  float: none;
-  margin: 0;
-  width: 100%; }
-
-.woocommerce.page-layout-full-width-no-sidebar .site-content #main.site-main {
-  margin: 0; }
-
-.woocommerce.page-layout-full-width-no-sidebar .site-content .corp-container {
-  max-width: none;
-  padding: 0; }
+.woocommerce.woocommerce-sidebar-left .widget-area {
+  float: left;
+  padding-right: 2.75%;
+  padding-left: 0; }
 
 /*--------------------------------------------------------------
 # Fonts
