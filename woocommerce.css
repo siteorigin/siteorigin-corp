@@ -4,66 +4,11 @@ Version: dev
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-body.woocommerce.woocommerce-page .content-area {
-  width: 100%; }
+.woocommerce .clear {
+  clear: both; }
 
-body.woocommerce.woocommerce-page .site-main {
+.woocommerce .site-main {
   margin: 0; }
-
-body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
-  float: left;
-  margin: 0 -34% 0 0;
-  width: 100%; }
-  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
-    float: right;
-    margin: 0 0 0 -34%; }
-  @media (max-width: 768px) {
-    body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
-      margin: 0 !important;
-      width: 100% !important; } }
-
-body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
-  margin: 0 34% 0 0; }
-  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
-    margin: 0 0 0 34%; }
-  @media (max-width: 768px) {
-    body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
-      margin: 0 !important; } }
-
-body.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .content-area {
-  float: none;
-  margin: 0;
-  width: 100%; }
-
-body.woocommerce.woocommerce-page.page-layout-no-sidebar .site-content .site-main {
-  margin: 0; }
-
-body.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content #primary.content-area {
-  float: none;
-  margin: 0;
-  width: 100%; }
-
-body.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content #main.site-main {
-  margin: 0; }
-
-body.woocommerce.woocommerce-page.page-layout-full-width-no-sidebar .site-content .corp-container {
-  max-width: none;
-  padding: 0; }
-
-body.woocommerce.woocommerce-page .widget-area {
-  float: right;
-  padding-left: 2.75%;
-  width: 34%; }
-  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .widget-area {
-    float: left;
-    padding-right: 2.75%;
-    padding-left: 0; }
-  @media (max-width: 768px) {
-    body.woocommerce.woocommerce-page .widget-area {
-      border-top: 1px solid #d6d6d6;
-      margin-top: 50px;
-      padding: 50px 0 0 !important;
-      width: 100% !important; } }
 
 .woocommerce .col2-set {
   width: 100%; }
@@ -79,6 +24,46 @@ body.woocommerce.woocommerce-page .widget-area {
     @media (max-width: 768px) {
       .woocommerce .col2-set .col-2 {
         width: 100%; } }
+
+.woocommerce.woocommerce-sidebar .content-area {
+  float: left;
+  margin: 0 -34% 0 0;
+  width: 100%; }
+  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
+    float: right;
+    margin: 0 0 0 -34%; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-sidebar .content-area {
+      margin: 0 !important;
+      width: 100% !important; } }
+
+.woocommerce.woocommerce-sidebar .site-main {
+  margin: 0 34% 0 0; }
+  body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
+    margin: 0 0 0 34%; }
+  @media (max-width: 768px) {
+    .woocommerce.woocommerce-sidebar .site-main {
+      margin: 0 !important; } }
+
+.woocommerce.page-layout-no-sidebar .site-content .content-area {
+  float: none;
+  margin: 0;
+  width: 100%; }
+
+.woocommerce.page-layout-no-sidebar .site-content .site-main {
+  margin: 0; }
+
+.woocommerce.page-layout-full-width-no-sidebar .site-content #primary.content-area {
+  float: none;
+  margin: 0;
+  width: 100%; }
+
+.woocommerce.page-layout-full-width-no-sidebar .site-content #main.site-main {
+  margin: 0; }
+
+.woocommerce.page-layout-full-width-no-sidebar .site-content .corp-container {
+  max-width: none;
+  padding: 0; }
 
 /*--------------------------------------------------------------
 # Fonts
