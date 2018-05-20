@@ -501,8 +501,7 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  */
 function siteorigin_corp_settings_custom_css( $css ) {
 // Custom CSS Code
-$css .= '/* style */
-	body,button,input,select,optgroup,textarea {
+$css .= 'body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
 	}
@@ -980,27 +979,18 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
  */
 function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
-	// Custom WooCommerce CSS Code
 	$css .= '	/* woocommerce */
-	body.woocommerce.woocommerce-page.woocommerce-sidebar .content-area {
+	.woocommerce.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
 	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .content-area {
 	margin: 0 0 0 -${sidebar_width};
 	}
-	body.woocommerce.woocommerce-page.woocommerce-sidebar .site-main {
+	.woocommerce.woocommerce-sidebar .site-main {
 	margin: 0 ${sidebar_width} 0 0;
 	}
 	body.woocommerce.woocommerce-page.woocommerce-sidebar-left .site-main {
 	margin: 0 0 0 ${sidebar_width};
-	}
-	body.woocommerce.woocommerce-page .widget-area {
-	width: ${sidebar_width};
-	}
-	@media (max-width: 768px) {
-	body.woocommerce.woocommerce-page .widget-area {
-	border-top: 1px solid ${typography_border_dark};
-	}
 	}
 	@keyframes "spin" {
 	100% {
@@ -1190,6 +1180,13 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	.widget_shopping_cart .total {
 	border: 1px solid ${typography_border};
+	}
+	.widget_shopping_cart .buttons .button:first-of-type {
+	border: 2px solid ${typography_heading};
+	color: ${typography_heading};
+	}
+	.widget_shopping_cart .buttons .button:first-of-type:hover {
+	background: ${typography_heading};
 	}
 	.widget_product_categories .product-categories li,.woocommerce-widget-layered-nav-list li {
 	color: ${typography_secondary_text};
