@@ -32,31 +32,37 @@
 		
 	}
 
-	// Billing and shipping details.
-	.col2-set {
-		float: left;
-		width: 47.8260869565%;
-		
-		@media (max-width: 768px) {
-			float: none;
-			width: 100%; 
-		}
-	}
-
-	// Billing fields.
 	.woocommerce-billing-fields {
+
+		@media (max-width: 768px) {
+			padding: 19px 20px 4px;
+		}
 		
 		h3 {
 			margin: 20px 0 11px; 
 		}
 	}
 
-	// Additional information.
+	.woocommerce-account-fields {
+
+		@media (max-width: 768px) {
+			padding: 0 20px 0;
+		}		
+	}
+
 	.woocommerce-additional-fields {
+
+		@media (max-width: 768px) {
+			padding: 19px 20px 4px;
+		}		
 		
 		h3 {
 			margin: 0 0 11px;
-			padding-top: 25px; 
+			padding-top: 25px;
+			
+			@media (max-width: 768px) {
+				padding-top: 0;
+			}				
 		}
 	}
 	
@@ -207,17 +213,16 @@
 			}
 		}
 
-		.wc-terms-and-conditions, 
-		.terms {
-			float: left;
-			padding: 0 1em 0 0;
-			text-align: left;
-		}
+		.wc-terms-and-conditions {
+			border-bottom: 1px solid $color__background-hr-dark;
+			padding: 14px 0;
+			margin-bottom: 0;
+		}	
 
 		#place_order {
 			float: right;
 			font-size: 16px;
-			margin-top: 30px;  
+			margin-top: 30px;
 		}
 	}
 }

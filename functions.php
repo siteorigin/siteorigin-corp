@@ -185,7 +185,7 @@ function siteorigin_corp_scripts() {
 
 	// Mobile menu collapse localisation.
 	$menu_params = array(
-		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse', 768 )
+		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
 	);
 	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );
 

@@ -59,7 +59,7 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
-	}
+	}	
 	
 	.site-branding {
 		padding-right: 20px;
@@ -98,6 +98,26 @@
 			transform-origin: left center;
 		}		
 	}
+
+	@media (max-width: 768px) {
+
+		&:not(.mobile-menu) {
+
+			.site-header-inner {
+				flex-direction: column;
+			}
+
+			.site-branding {
+				margin: 0 auto 20px auto;
+				padding: 0;
+				text-align: center;
+			}
+
+			.main-navigation {
+				text-align: center;
+			}
+		}		
+	}	
 }
 
 // Overlap.

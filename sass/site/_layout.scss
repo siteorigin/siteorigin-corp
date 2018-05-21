@@ -27,23 +27,14 @@
 		margin: 0 (-$sidebar__width) 0 0;
 		width: $size__site;
 
-		@at-root .sidebar-left#{&} {
-			float: right;
-			margin: 0 0 0 (-$sidebar__width);	
-		}
-
 		@media (max-width: 768px) {
-			margin: 0 !important;
-			width: 100% !important;
+			margin: 0;
+			width: 100%;
 		}
 	}
 
 	.site-main {
 		margin: 0 $sidebar__width 0 0;
-
-		@at-root .sidebar-left#{&} {
-			margin: 0 0 0 $sidebar__width;		
-		}
 
 		@media (max-width: 768px) {
 			margin: 0 !important;
@@ -51,8 +42,21 @@
  	}
  }
 
+// Content area with left sidebar.
+.sidebar-left {
+	
+	.content-area {
+		float: right;
+		margin: 0 0 0 (-$sidebar__width);
+	}
+
+	.site-main {
+		margin: 0 0 0 $sidebar__width;	
+	}
+}
+
 // No Sidebar page layout setting.
-.page-layout-no-sidebar .site-content {
+.page-layout-no-sidebar.sidebar .site-content {
 
 	.content-area {
 		float: none;
@@ -66,27 +70,23 @@
 } 
 
 // Full Width page layout setting.
-.page-layout-full-width-no-sidebar {
+.page-layout-full-width-no-sidebar .site-content {
 
-	.site-content {
-
-		.content-area {
-			float: none;
-			margin: 0;
-			width: 100%; 
-		}
-
-		.site-main {
-			margin: 0;
-		}
+	#primary.content-area {
+		float: none;
+		margin: 0;
+		width: 100%; 
 	}
 
-	.site-content .corp-container {
+	#main.site-main {
+		margin: 0;
+	}
+
+	.corp-container {
 		max-width: none;
 		padding: 0;  
 	}
 }
-	
 
 // Sidebar.
 .widget-area {
@@ -103,7 +103,7 @@
 	@media (max-width: 768px) {
 		border-top: 1px solid $color__background-hr-dark;
 		margin-top: 50px;
-		padding: 50px 0 0 !important;		
+		padding: 50px 0 0;		
 		width: 100% !important;
 	}
 }

@@ -129,15 +129,21 @@
 
 	li {
 		color: $color__text-light;
-		margin-bottom: 8px;
-	
-		&:last-of-type {
-			margin-bottom: 0; 
-		} 
-	
+		
 		a {
 			color: $color__text-dark;
+			display: inline-block;
+			margin-bottom: 8px;
 		}
+
+		span {
+			color: $color__text-light;
+		}			
+
+		.children {
+			margin-left: 12px;
+		}
+
 	}
 }
 
@@ -235,27 +241,14 @@
 ## - Search Widget
 --------------------------------------------------------------*/
 .widget .search-form {
-	position: relative;
+	width: 100%;
 
 	input[type="search"] {
-		font-size: .9285em;
-		padding: 10px 30px 10px 13px;
 		width: 100%;
-	}
-
-	button[type="submit"] {
-		position: absolute;
-		right: 14px;
-		top: 13px;
 		
-		svg {
-			height: 14px;
-			width: 14px;
-			
-			path {
-				fill: $color__text-medium;
-			}
-		}
+		@at-root #secondary & {
+			min-width: 0;
+		}		
 	}
 }
 
