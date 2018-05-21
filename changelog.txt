@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.4.2 - 21 May 2018 =
+* Styled all core WooCommerce widgets.
+* Minor styling adjustments to WooCommerce notifications, dashboard tabs and order received page.
+* Resolved a warning in the image post format by adding a conditional.
+* Updated mobile menu breakpoint setting so it will reflect live in the Customizer.
+* Re-factored primary content and sidebar layout logic to CSS specificity required.
+
 = 1.4.1 - 01 May 2018 =
 * Resolved image post format warning.
 * Improved Jetpack Infinite Scroll styling and functionality.
