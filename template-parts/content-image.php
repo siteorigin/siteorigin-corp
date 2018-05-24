@@ -53,7 +53,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
 					echo apply_filters( 'the_content', siteorigin_corp_strip_image( get_the_content() ) );
 				} else {
-					the_excerpt();
+					siteorigin_corp_excerpt();
 				}
 
 				wp_link_pages( array(

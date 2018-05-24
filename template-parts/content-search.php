@@ -23,7 +23,7 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+			<?php siteorigin_corp_excerpt(); ?>
 		</div><!-- .entry-summary -->
 
 		<footer class="entry-footer">
