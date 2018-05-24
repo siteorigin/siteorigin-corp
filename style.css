@@ -2162,6 +2162,18 @@ body:not(.single) .hentry {
     #commentform .logged-in-as a:hover {
       color: #f14e4e; }
 
+#commentform .comment-form-cookies-consent {
+  align-items: center;
+  clear: both;
+  display: flex; }
+  #commentform .comment-form-cookies-consent input {
+    line-height: 1;
+    margin-right: 5px; }
+  #commentform .comment-form-cookies-consent label {
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0; }
+
 #commentform .form-submit {
   display: block;
   margin: 0;

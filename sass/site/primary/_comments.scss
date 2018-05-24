@@ -188,6 +188,23 @@
 		}
 	}
 
+	.comment-form-cookies-consent {
+		align-items: center;
+		clear: both;
+		display: flex;
+		
+		input {
+			line-height: 1;
+			margin-right: 5px;
+		}
+		
+		label {
+			display: inline-block;
+			font-weight: normal;
+			margin-bottom: 0;
+		}
+	}	
+
 	.form-submit {
 		display: block;
 		margin: 0;
