@@ -49,7 +49,7 @@
 				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
 					the_content();
 				} else {
-					the_excerpt();
+					siteorigin_corp_excerpt();
 				}
 
 				wp_link_pages( array(
