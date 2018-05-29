@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.4.3 - 29 May 2018 =
+* Styled comment form cookie consent setting.
+* Overhauled excerpt function. `siteorigin_corp_excerpt_length` and `siteorigin_corp_excerpt_more` deprecated.
+
 = 1.4.2 - 21 May 2018 =
 * Styled all core WooCommerce widgets.
 * Minor styling adjustments to WooCommerce notifications, dashboard tabs and order received page.
