@@ -264,6 +264,11 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Deprecated functions.
+ */
+require get_template_directory() . '/inc/deprecated.php';
+
+/**
  * WooCommerce compatibility.
  */
 if ( function_exists( 'is_woocommerce' ) ) {
