@@ -231,8 +231,16 @@
 
 	.shopping-cart {
 		display: inline-block;
-		margin: 0 20px -10px 30px;
-	    padding: 0 0 10px;		
+		margin: 0 16px 0 39px;
+	    
+	    li {
+	    	font-size: initial;
+	    	text-transform: none;
+	    }	
+
+	    > li:first-of-type {
+	    	padding: 0;
+	    }
 	}
 
 	.shopping-cart-text {
@@ -242,7 +250,7 @@
 	.shopping-cart-link {
 		display: inline-block;
 		font-family: $font__headings; 
-		position: relative;		
+		position: relative;
 
 		svg {
 			display: inline-block;
@@ -264,16 +272,16 @@
 		    background: $color__accent;
 		    border-radius: 50%;
 		    color: #fff;
-		    height: 18px;
-		    font-size: 9px;
+		    height: 16px;
+		    font-size: 10px;
 		    line-height: 1;
-		    padding: 5.5px 0 0;
+		    padding: 3.5px 0 0 1px;
 		    position: absolute;
-		    right: -19px;
+		    right: -15px;
 		    transition: .3s;
 		    text-align: center;
-		    top: -9px;
-		    width: 18px;
+		    top: -8px;
+		    width: 16px;
 		}
 
 		&:hover {
@@ -291,7 +299,7 @@
 			}
 			
 			.shopping-cart-count {
-				background: rgba(77, 143, 251, .8);
+				background: rgba($color__accent, .8);
 			}
 
 			.shopping-cart-text {
@@ -302,8 +310,7 @@
 
 	.shopping-cart-dropdown {
 		background: #fff; 
-		border: 1px solid $color__background-hr-dark;
-		box-shadow: 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: 0 0 12px rgba(0, 0, 0, .16);
 		opacity: 0; 
 		position: absolute;
 		right: 0;
@@ -313,7 +320,7 @@
 		transition: all 0.15s ease-in;
 		transform-origin: center top;
 		visibility: hidden;
-		width: 303px;
+		width: 300px;
 		z-index: 99999;
 		
 		* {
@@ -321,16 +328,21 @@
 		}
 		
 		.widget {
-			margin: 25px;
+			margin: 20px 20px 30px;
 			max-height: 70vh;
 			overflow-y: auto;
+			
+			li {
+				overflow: initial;
+			}
 
 			.woocommerce-mini-cart__empty-message {
 				display: block;
-				font-size: .95em; 
+				font-size: 14px; 
 				font-weight: 600;
 				padding-bottom: 0;
-			}			
+				text-transform: none;
+			}
 		}
 	}
 }

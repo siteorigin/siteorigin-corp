@@ -10,7 +10,8 @@
 		margin: 0;
 		padding: 0;
 
-		ul {
+		.sub-menu,
+		.children {
 			opacity: 0;
 			position: absolute;
 			text-align: left;

@@ -527,7 +527,8 @@ a {
     list-style: none;
     margin: 0;
     padding: 0; }
-    .main-navigation ul ul {
+    .main-navigation ul .sub-menu,
+    .main-navigation ul .children {
       opacity: 0;
       position: absolute;
       text-align: left;
@@ -537,15 +538,18 @@ a {
       transform-origin: center top;
       visibility: hidden;
       z-index: 99999; }
-      .main-navigation ul ul ul {
+      .main-navigation ul .sub-menu ul,
+      .main-navigation ul .children ul {
         left: 100%;
         top: -2px;
         transform-origin: left center; }
-      .main-navigation ul ul li {
+      .main-navigation ul .sub-menu li,
+      .main-navigation ul .children li {
         margin: 0;
         padding: 0;
         min-width: 100%; }
-        .main-navigation ul ul li a {
+        .main-navigation ul .sub-menu li a,
+        .main-navigation ul .children li a {
           background: #262627;
           border-bottom: 1px solid;
           border-color: #353538;
@@ -555,14 +559,19 @@ a {
           max-width: 100%;
           padding: 12px 20px;
           white-space: nowrap; }
-        .main-navigation ul ul li:hover > a {
+        .main-navigation ul .sub-menu li:hover > a,
+        .main-navigation ul .children li:hover > a {
           color: #fff; }
-        .main-navigation ul ul li:hover > ul,
-        .main-navigation ul ul li.focus > ul {
+        .main-navigation ul .sub-menu li:hover > ul,
+        .main-navigation ul .sub-menu li.focus > ul,
+        .main-navigation ul .children li:hover > ul,
+        .main-navigation ul .children li.focus > ul {
           left: 100%; }
-        .main-navigation ul ul li:first-of-type {
+        .main-navigation ul .sub-menu li:first-of-type,
+        .main-navigation ul .children li:first-of-type {
           border-top: 2px solid #f14e4e; }
-        .main-navigation ul ul li:last-of-type a {
+        .main-navigation ul .sub-menu li:last-of-type a,
+        .main-navigation ul .children li:last-of-type a {
           border-bottom: none; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
@@ -1184,12 +1193,6 @@ a {
     .widget-area .widget .widget-title ~ *,
     .site-footer .widget .widget-title ~ * {
       font-size: 14px; }
-  .widget-area .widget a:not(.button),
-  .site-footer .widget a:not(.button) {
-    color: #626262; }
-    .widget-area .widget a:not(.button):hover,
-    .site-footer .widget a:not(.button):hover {
-      color: #f14e4e; }
   .widget-area .widget ul,
   .site-footer .widget ul {
     list-style: none;
@@ -1200,6 +1203,11 @@ a {
   .widget-area .widget input,
   .site-footer .widget input {
     font-size: 14px; }
+
+.widget-area .widget:not(.widget_shopping_cart) a:not(.button) {
+  color: #626262; }
+  .widget-area .widget:not(.widget_shopping_cart) a:not(.button):hover {
+    color: #f14e4e; }
 
 /*--------------------------------------------------------------
 ## Calendar Widgets

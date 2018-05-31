@@ -15,14 +15,6 @@
 		}		
 	}
 
-	a:not(.button) {
-		color: $color__text-medium;
-		
-		&:hover {
-			color: $color__accent;
-		} 
-	}
-
 	ul {
 		list-style: none;
 		margin: 0;
@@ -35,6 +27,17 @@
 	input {
 		font-size: 14px; 
 	}			
+}
+
+.widget-area .widget:not(.widget_shopping_cart) {
+
+	a:not(.button) {
+		color: $color__text-medium;
+		
+		&:hover {
+			color: $color__accent;
+		} 
+	}	
 }
 
 /*--------------------------------------------------------------
