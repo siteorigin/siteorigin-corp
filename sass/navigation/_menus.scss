@@ -171,7 +171,7 @@
 	}
 
 	// First level items.
-	div > ul > li {
+	div > ul:not(.cart_list) > li {
 
 		// Overlap.
 		.overlap-light .site-header:not(.stuck) & > a {

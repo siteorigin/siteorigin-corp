@@ -1444,13 +1444,14 @@ ul.product_list_widget {
   position: relative; }
   .site-header .shopping-cart-link svg {
     display: inline-block;
+    fill: #2d2d2d;
     position: relative;
     height: auto;
     vertical-align: text-bottom;
     width: 20px; }
     .overlap-light .site-header:not(.stuck) .shopping-cart-link svg {
       fill: #fff; }
-    .overlap-dark .site-header:not(.stuck) .site-header .shopping-cart-link svg {
+    .overlap-dark .site-header:not(.stuck) .shopping-cart-link svg {
       fill: #2d2d2d; }
   .site-header .shopping-cart-link .shopping-cart-count {
     background: #f14e4e;
@@ -1466,12 +1467,10 @@ ul.product_list_widget {
     text-align: center;
     top: -8px;
     width: 16px; }
-  .site-header .shopping-cart-link:hover svg {
-    fill: #626262; }
-    .overlap-light .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
-      fill: rgba(255, 255, 255, 0.8); }
-    .overlap-dark .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
-      fill: rgba(45, 45, 45, 0.8); }
+  .overlap-light .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
+    fill: rgba(255, 255, 255, 0.8); }
+  .overlap-dark .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
+    fill: rgba(45, 45, 45, 0.8); }
   .site-header .shopping-cart-link:hover .shopping-cart-count {
     background: rgba(241, 78, 78, 0.8); }
   .site-header .shopping-cart-link:hover .shopping-cart-text {

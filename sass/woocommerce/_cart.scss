@@ -254,6 +254,7 @@
 
 		svg {
 			display: inline-block;
+			fill: $color__navigation-link;
 			position: relative;
 			height: auto;
 			vertical-align: text-bottom;
@@ -263,7 +264,7 @@
 				fill: #fff; 
 			}
 
-			.overlap-dark .site-header:not(.stuck) & {
+			@at-root .overlap-dark .site-header:not(.stuck) .shopping-cart-link svg {
 				fill: #2d2d2d;
 			}				
 		}
@@ -287,7 +288,6 @@
 		&:hover {
 
 			svg {
-				fill: $color__text-medium;
 				
 				.overlap-light .site-header:not(.stuck) & {
 					fill: rgba(255, 255, 255, .8); 
