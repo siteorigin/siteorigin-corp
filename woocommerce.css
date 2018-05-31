@@ -988,12 +988,12 @@ input.button.added:after,
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.woocommerce #secondary .button,
+.woocommerce #secondary .button:not(.wc-forward),
 .woocommerce #secondary button {
   background: none;
   border: 2px solid #2d2d2d;
   color: #2d2d2d; }
-  .woocommerce #secondary .button:hover,
+  .woocommerce #secondary .button:not(.wc-forward):hover,
   .woocommerce #secondary button:hover {
     background: #2d2d2d;
     color: #fff; }
@@ -1068,14 +1068,16 @@ input.button.added:after,
   border: 1px solid #e6e6e6;
   border-right: 0;
   border-left: 0;
-  margin-bottom: 10px;
+  margin-bottom: 19px;
   padding: 10px 0; }
   .widget_shopping_cart .total strong {
     font-weight: 600; }
 
 .widget_shopping_cart .cart_list li {
+  line-height: 2;
   padding-left: 25px;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .widget_shopping_cart .cart_list li:last-of-type {
     border-bottom: 0; }
   .widget_shopping_cart .cart_list li .remove {
@@ -1085,18 +1087,20 @@ input.button.added:after,
     top: 7px; }
 
 .widget_shopping_cart .buttons {
-  margin-top: 17px;
   text-align: center; }
-  .widget_shopping_cart .buttons .button:first-of-type {
-    background: none;
-    border: 2px solid #2d2d2d;
-    color: #2d2d2d;
-    padding: 9px 25px; }
-    .widget_shopping_cart .buttons .button:first-of-type:hover {
-      background: #2d2d2d;
-      color: #fff; }
+  .widget_shopping_cart .buttons a {
+    display: inline-block;
+    padding: 11px 21px; }
+    .widget_shopping_cart .buttons a:first-of-type {
+      background: none;
+      border: 2px solid #2d2d2d;
+      color: #2d2d2d;
+      padding: 9px 21px; }
+      .widget_shopping_cart .buttons a:first-of-type:hover {
+        background: #2d2d2d;
+        color: #fff; }
   .widget_shopping_cart .buttons .checkout {
-    margin-left: 5px; }
+    margin-left: 10px; }
 
 /*--------------------------------------------------------------
 ## Product Categories Widget
@@ -1469,27 +1473,11 @@ input.button.added:after,
     margin: 25px;
     max-height: 70vh;
     overflow-y: auto; }
-    .site-header .shopping-cart-dropdown .widget li {
-      font-weight: normal;
-      line-height: 2;
-      width: 100%; }
-      .site-header .shopping-cart-dropdown .widget li a {
-        color: #626262; }
-        .site-header .shopping-cart-dropdown .widget li a:hover {
-          color: #f14e4e; }
     .site-header .shopping-cart-dropdown .widget .woocommerce-mini-cart__empty-message {
       display: block;
       font-size: .95em;
       font-weight: 600;
       padding-bottom: 0; }
-  .site-header .shopping-cart-dropdown .buttons {
-    text-align: center; }
-    .site-header .shopping-cart-dropdown .buttons a {
-      color: #fff;
-      display: inline-block; }
-      .site-header .shopping-cart-dropdown .buttons a.button {
-        font-size: 12px;
-        padding: 10px 24px; }
 
 #mobile-navigation .shopping-cart-text {
   color: #2d2d2d;

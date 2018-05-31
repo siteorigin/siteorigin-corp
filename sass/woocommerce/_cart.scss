@@ -324,20 +324,6 @@
 			margin: 25px;
 			max-height: 70vh;
 			overflow-y: auto;
-			
-			li {
-				font-weight: normal;
-				line-height: 2; 
-				width: 100%;
-				
-				a {
-					color: $color__text-medium;
-					
-					&:hover {
-						color: $color__accent;
-					}
-				}
-			}
 
 			.woocommerce-mini-cart__empty-message {
 				display: block;
@@ -345,20 +331,6 @@
 				font-weight: 600;
 				padding-bottom: 0;
 			}			
-		}
-
-		.buttons {
-			text-align: center;
-			
-			a {
-				color: #fff; 
-				display: inline-block;
-			
-				&.button {
-					font-size: 12px;
-					padding: 10px 24px;
-				}
-			}
 		}
 	}
 }
