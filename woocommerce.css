@@ -1457,16 +1457,16 @@ ul.product_list_widget {
     background: #f14e4e;
     border-radius: 50%;
     color: #fff;
-    height: 16px;
-    font-size: 10px;
-    line-height: 1;
-    padding: 4px 0 0 1px;
+    font-size: 9px;
+    height: 18px;
+    line-height: 18px;
+    min-width: 18px;
+    padding-left: 1px;
     position: absolute;
-    right: -15px;
+    right: -18px;
     transition: .3s;
     text-align: center;
-    top: -8px;
-    width: 16px; }
+    top: -9px; }
   .overlap-light .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
     fill: rgba(255, 255, 255, 0.8); }
   .overlap-dark .site-header:not(.stuck) .site-header .shopping-cart-link:hover svg {
