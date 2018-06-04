@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.5 - 29 May 2018 =
+* Added a header menu WooCommerce mini-cart. `Customize > Theme Settings > WooCommerce` to enable.
+
 = 1.4.3 - 29 May 2018 =
 * Styled comment form cookie consent setting.
 * Overhauled excerpt function. `siteorigin_corp_excerpt_length` and `siteorigin_corp_excerpt_more` deprecated.

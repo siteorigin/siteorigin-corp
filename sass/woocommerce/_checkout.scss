@@ -3,7 +3,11 @@
 	
 	h3 {
 		font-size: 24px;
-		font-weight: 500;  
+		font-weight: 500;
+		
+		label {
+			font-weight: 600;
+		} 
 	}
 }
 
@@ -78,6 +82,18 @@
 			float: none;
 			width: 100%; 
 		}
+
+		table {
+			
+			thead {
+				border: none;
+			}
+
+			tr {
+				border: none;
+				border-bottom: 1px solid $color__background-hr-dark;
+			}
+		}
 	}
 
 	.woocommerce-checkout-review-order {
@@ -147,6 +163,7 @@
 				}
 				
 				label {
+					font-weight: 600;
 					
 					a {
 						font-size: 12px; 
@@ -213,11 +230,18 @@
 			}
 		}
 
-		.wc-terms-and-conditions {
-			border-bottom: 1px solid $color__background-hr-dark;
+		.woocommerce-terms-and-conditions-wrapper {
+			font-size: 14px;
 			padding: 14px 0;
-			margin-bottom: 0;
-		}	
+			
+			p {
+				margin-bottom: 14px;
+				
+				&.validate-required {
+					margin-bottom: 0;
+				}
+			}
+		}
 
 		#place_order {
 			float: right;

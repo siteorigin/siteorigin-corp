@@ -7,46 +7,10 @@
 
 	p {
 		margin: 0 0 25px;
-	}
-
-	table {
-		border: 1px solid $color__background-hr-dark;
-		margin: 0 0 25px;
-		text-align: left;
 		
-		thead th {
-			border: 1px solid $color__background-hr-dark;
-			border-right: none;
-			border-left: none; 
-			padding: 16px;
+		&.order-again {
+			margin: 25px 0 0;
 		}
-
-		tr {
-			border-bottom: 1px solid $color__background-hr-dark;
-		}		
-		
-		th,
-		td {
-			background: #fff;
-			font-size: 14px;
-			padding: 8px 16px;
-			
-			a {
-				color: $color__text-medium;
-				
-				&:hover {
-					color: $color__accent;
-				}
-			}	
-		}
-
-		tfoot th {
-			color: $color__text-dark;
-		}
-	}
-
-	section {
-		margin-bottom: 50px; 
 	}
 
 	.woocommerce-thankyou-order-details {

@@ -1,0 +1,30 @@
+.woocommerce .shop_table {
+	background: #fff;
+	font-size: 14px;
+	text-align: left;
+	
+	th {
+		color: $color__text-dark;
+		padding: 14px 20px;
+	}
+
+	thead {
+		border: 1px solid $color__background-hr-dark;
+
+		th {
+			text-transform: uppercase;
+		}		
+	}
+
+	tr {
+		border: 1px solid $color__background-hr-dark;
+		
+		td {
+			padding: 20px;
+		}	
+	}		
+
+	.button {
+		display: inline-block;
+	}
+}
