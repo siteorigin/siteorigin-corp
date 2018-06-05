@@ -1656,16 +1656,12 @@ ul.product_list_widget {
         margin-bottom: 0; }
     .woocommerce #payment .payment_methods li.payment_method_paypal {
       padding: 23px 0; }
-    .woocommerce #payment .payment_methods li.payment_method_stripe img {
-      margin-top: -10px;
-      position: absolute;
-      top: 50%; }
-      .woocommerce #payment .payment_methods li.payment_method_stripe img:nth-of-type(3) {
-        right: 0; }
-      .woocommerce #payment .payment_methods li.payment_method_stripe img:nth-of-type(2) {
-        right: 37px; }
-      .woocommerce #payment .payment_methods li.payment_method_stripe img:nth-of-type(1) {
-        right: 74px; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe input {
+      top: 19px !important; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe label[for=payment_method_stripe] {
+      padding-left: 21.5px; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe p {
+      margin-bottom: 13px; }
 
 .woocommerce #payment .form-row select {
   width: auto; }

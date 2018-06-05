@@ -201,24 +201,18 @@
 				}
 
 				&.payment_method_stripe {
-					
-					img {
-						margin-top: -10px; 
-						position: absolute;
-						top: 50%;
-						
-						&:nth-of-type(3) {
-							right: 0;
-						}
 
-						&:nth-of-type(2) {
-							right: 37px;
-						}	
+					input {
+						top: 19px !important;
+					}
 
-						&:nth-of-type(1) {
-							right: 74px;
-						}											
-					}				
+					label[for=payment_method_stripe] {
+						padding-left: 21.5px
+					}
+
+					p {
+						margin-bottom: 13px;
+					}	
 				}
 			}
 		}
