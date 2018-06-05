@@ -1,7 +1,9 @@
 == Changelog ==
 
-= 1.5 - 29 May 2018 =
+= 1.5 -  June 2018 =
 * Added a header menu WooCommerce mini-cart. `Customize > Theme Settings > WooCommerce` to enable.
+* Improved styling for the WooCommerce dashboard and supplementary pages.
+* Improved WooCommerce Stripe checkout styling.
 
 = 1.4.3 - 29 May 2018 =
 * Styled comment form cookie consent setting.
