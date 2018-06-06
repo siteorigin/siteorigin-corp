@@ -428,7 +428,6 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
 					),
 				),						
-
 				'product_gallery' => array(
 					'type' => 'select',
 					'label' => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
@@ -439,6 +438,11 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-corp' ),
 					),
 				),
+				'mini_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-corp' ),
+				),				
 			)
 		)
 	);
@@ -1370,9 +1374,13 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: inline-block;
 			}
 
-			#masthead .main-navigation ul {
+			#masthead .main-navigation ul:not(.shopping-cart) {
 				display: none;
 			}
+
+			.site-header .shopping-cart {
+				margin: 0;
+			}			
 
 			#masthead .main-navigation .search-icon {
 				display: none;
@@ -1393,8 +1401,12 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: inline-block;
 			}
 
-			#masthead .main-navigation ul {
+			#masthead .main-navigation ul:not(.shopping-cart) {
 				display: none;
+			}
+
+			.site-header .shopping-cart {
+				margin: 0;
 			}
 
 			#masthead .main-navigation .search-icon {
@@ -1484,6 +1496,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
+	$defaults['woocommerce_mini_cart']						= false;	
 
 	return $defaults;
 }

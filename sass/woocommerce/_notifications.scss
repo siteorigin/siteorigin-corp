@@ -2,17 +2,15 @@
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-store-notice {
-	align-items: center;
 	background: #f2f2f2;
 	@include clearfix();
 	color: $color__text-medium;
-	display: flex;
-	font-size: 14px; 
+	font-size: 14px;
+	line-height: 41px;
 	margin: 0 0 25px;
 	min-height: 71px;
 	padding: 15px 20px;
 	position: relative;
-	width: auto;
 	word-wrap: break-word;
 	
 	@media (max-width: 768px) {
@@ -20,14 +18,11 @@
 	}
 
 	.button {
-		position: absolute;
-		right: 20px;
-		top: 15px;
-				
+		display: block;
+		float: right;
+						
 		@media (max-width: 768px) {
-			float: right;
 			font-size: 13px;
-			position: static;
 		}		
 	}
 

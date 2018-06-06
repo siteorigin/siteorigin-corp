@@ -49,6 +49,8 @@
 
 					<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
+					<?php if ( siteorigin_setting( 'woocommerce_mini_cart' ) && ! $mega_menu_active ) siteorigin_corp_woocommerce_mini_cart(); ?>	
+
 					<?php if ( siteorigin_setting( 'navigation_menu_search' ) ) : ?>
 		            	<button id="search-button" class="search-toggle">
 		                	<span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>

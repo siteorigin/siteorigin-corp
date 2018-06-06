@@ -82,6 +82,31 @@ function siteorigin_corp_woocommerce_wrapper_after() {
 }
 add_action( 'woocommerce_after_main_content', 'siteorigin_corp_woocommerce_wrapper_after' );
 
+if ( ! function_exists( 'siteorigin_corp_woocommerce_mini_cart' ) ) :
+/**
+ * Display the WooCommerce mini cart.
+ */
+function siteorigin_corp_woocommerce_mini_cart() {
+	if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) ) : ?>
+		<?php global $woocommerce; ?>
+		<ul class="shopping-cart">
+			<li>
+				<a class="shopping-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View shopping cart', 'siteorigin-corp' ); ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-corp' ); ?></span>
+					<?php siteorigin_corp_display_icon( 'cart' ); ?>
+					<span class="shopping-cart-text"><?php esc_html_e( 'View Cart', 'siteorigin-corp' ); ?></span>
+					<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
+				</a>
+				<ul class="shopping-cart-dropdown" id="cart-drop">
+					<?php the_widget( 'WC_Widget_Cart' );?>
+				</ul>
+			</li>
+		</ul>
+	<?php endif; ?>
+<?php
+}
+endif;
+
 /**
  * Update cart count with the masthead cart icon.
  */
