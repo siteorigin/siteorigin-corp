@@ -1,7 +1,7 @@
 == Changelog ==
 
-= 1.5 -  June 2018 =
-* Added a header menu WooCommerce mini-cart. `Customize > Theme Settings > WooCommerce` to enable.
+= 1.5 - 06 June 2018 =
+* Added a header menu WooCommerce mini-cart. `Customize > Theme Settings > WooCommerce > Mini Cart` to enable.
 * Improved styling for the WooCommerce dashboard and supplementary pages.
 * Improved WooCommerce Stripe checkout styling.
 
