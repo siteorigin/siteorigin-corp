@@ -576,15 +576,15 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	a:hover,a:focus,a:active {
 	color: ${typography_text};
 	}
-	.main-navigation ul ul li a {
+	.main-navigation ul .sub-menu li a,.main-navigation ul .children li a {
 	background: ${navigation_drop_down_background};
 	border-color: ${navigation_drop_down_divider};
 	color: ${navigation_drop_down_link};
 	}
-	.main-navigation ul ul li:hover > a {
+	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .children li:hover > a {
 	color: ${navigation_drop_down_link_hover};
 	}
-	.main-navigation ul ul li:first-of-type {
+	.main-navigation ul .sub-menu li:first-of-type,.main-navigation ul .children li:first-of-type {
 	border-top: 2px solid ${navigation_link_accent};
 	}
 	.main-navigation ul li {
@@ -599,10 +599,10 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	#site-navigation.main-navigation ul .menu-button a:hover {
 	background: .rgba( ${typography_accent}, .8);
 	}
-	.main-navigation div > ul > li:hover > a {
+	.main-navigation div > ul:not(.cart_list) > li:hover > a {
 	border-color: ${navigation_link_accent};
 	}
-	.main-navigation div > ul > li.current > a,.main-navigation div > ul > li.current_page_item > a,.main-navigation div > ul > li.current-menu-item > a,.main-navigation div > ul > li.current_page_ancestor > a,.main-navigation div > ul > li.current-menu-ancestor > a {
+	.main-navigation div > ul:not(.cart_list) > li.current > a,.main-navigation div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
 	}
 	.main-navigation .search-toggle .open svg path {
@@ -701,10 +701,10 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	.site-content #primary .sharedaddy {
 	border-top: 1px solid ${typography_border};
 	}
-	.widget-area .widget a:not(.button),.site-footer .widget a:not(.button) {
+	.widget-area .widget:not(.widget_shopping_cart) a:not(.button) {
 	color: ${typography_text};
 	}
-	.widget-area .widget a:not(.button):hover,.site-footer .widget a:not(.button):hover {
+	.widget-area .widget:not(.widget_shopping_cart) a:not(.button):hover {
 	color: ${typography_accent};
 	}
 	.calendar_wrap {
@@ -1000,6 +1000,15 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	100% {
 	}
 	}
+	.woocommerce .shop_table th {
+	color: ${typography_heading};
+	}
+	.woocommerce .shop_table thead {
+	border: 1px solid ${typography_border_dark};
+	}
+	.woocommerce .shop_table tr {
+	border: 1px solid ${typography_border_dark};
+	}
 	.woocommerce .woocommerce-breadcrumb {
 	color: ${typography_secondary_text};
 	}
@@ -1067,7 +1076,7 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	color: ${typography_accent};
 	}
 	.woocommerce .products .product .woocommerce-loop-product__title:hover,.woocommerce .products .product .woocommerce-loop-category__title:hover {
-	color: ${typography_text};
+	color: ${typography_accent};
 	}
 	.woocommerce .price {
 	color: ${typography_text};
@@ -1160,11 +1169,11 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	#quick-view-container .quickview-close-icon:hover {
 	color: ${typography_text};
 	}
-	.woocommerce #secondary .button,.woocommerce #secondary button {
+	.woocommerce #secondary .button:not(.wc-forward),.woocommerce #secondary button {
 	border: 2px solid ${typography_heading};
 	color: ${typography_heading};
 	}
-	.woocommerce #secondary .button:hover,.woocommerce #secondary button:hover {
+	.woocommerce #secondary .button:not(.wc-forward):hover,.woocommerce #secondary button:hover {
 	background: ${typography_heading};
 	}
 	.woocommerce #secondary .widget_tag_cloud .tagcloud a {
@@ -1179,17 +1188,29 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.widget.widget_layered_nav_filters .chosen a:hover {
 	color: ${typography_heading};
 	}
-	.cart_list li,.product_list_widget li {
+	ul.cart_list li,ul.product_list_widget li {
 	border-bottom: 1px solid ${typography_border};
 	}
-	.widget_shopping_cart .total {
-	border: 1px solid ${typography_border};
+	ul.cart_list li a,ul.product_list_widget li a {
+	color: ${typography_heading};
 	}
-	.widget_shopping_cart .buttons .button:first-of-type {
+	ul.cart_list li a:hover,ul.product_list_widget li a:hover {
+	color: ${typography_accent};
+	}
+	ul.cart_list li .amount,ul.cart_list li .quantity,ul.product_list_widget li .amount,ul.product_list_widget li .quantity {
+	color: ${typography_text};
+	}
+	.widget_shopping_cart .total {
+	border-top: 1px solid ${typography_border};
+	}
+	.widget_shopping_cart .total .amount {
+	color: ${typography_heading};
+	}
+	.widget_shopping_cart .buttons a:first-of-type {
 	border: 2px solid ${typography_heading};
 	color: ${typography_heading};
 	}
-	.widget_shopping_cart .buttons .button:first-of-type:hover {
+	.widget_shopping_cart .buttons a:first-of-type:hover {
 	background: ${typography_heading};
 	}
 	.widget_product_categories .product-categories li,.woocommerce-widget-layered-nav-list li {
@@ -1236,6 +1257,11 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce-cart table.cart tr {
 	border: 1px solid ${typography_border_dark};
 	}
+	@media (max-width: 768px) {
+	.woocommerce-cart table.cart .cart_item td:before {
+	color: ${typography_heading};
+	}
+	}
 	.woocommerce-cart table.cart .cart_item a {
 	color: ${typography_heading};
 	}
@@ -1266,32 +1292,23 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.site-header .shopping-cart-link {
 	.font( ${typography_heading_font} );
 	}
+	.site-header .shopping-cart-link svg {
+	fill: ${navigation_link};
+	}
 	.site-header .shopping-cart-link .shopping-cart-count {
 	background: ${typography_accent};
 	}
-	.site-header .shopping-cart-link:hover svg {
-	fill: ${typography_text};
+	.site-header .shopping-cart-link:hover .shopping-cart-count {
+	background: .rgba( ${typography_accent}, .8);
 	}
 	.site-header .shopping-cart-link:hover .shopping-cart-text {
 	color: ${typography_text};
 	}
-	.site-header .shopping-cart-dropdown {
-	border: 1px solid ${typography_border_dark};
-	}
 	.site-header .shopping-cart-dropdown * {
 	.font( ${typography_body_font} );
 	}
-	.site-header .shopping-cart-dropdown .widget li a {
-	color: ${typography_text};
-	}
-	.site-header .shopping-cart-dropdown .widget li a:hover {
-	color: ${typography_accent};
-	}
-	#mobile-navigation .shopping-cart-text {
-	color: ${typography_heading};
-	}
-	#mobile-navigation .shopping-cart-link:hover .shopping-cart-text {
-	color: ${typography_text};
+	.woocommerce #order_review table tr {
+	border-bottom: 1px solid ${typography_border_dark};
 	}
 	.woocommerce .woocommerce-checkout-review-order {
 	border: 1px solid ${typography_border_dark};
@@ -1307,27 +1324,6 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	.woocommerce #payment .payment_methods li {
 	border-bottom: 1px solid ${typography_border_dark};
-	}
-	.woocommerce #payment .wc-terms-and-conditions {
-	border-bottom: 1px solid ${typography_border_dark};
-	}
-	.woocommerce-order-received table {
-	border: 1px solid ${typography_border_dark};
-	}
-	.woocommerce-order-received table thead th {
-	border: 1px solid ${typography_border_dark};
-	}
-	.woocommerce-order-received table tr {
-	border-bottom: 1px solid ${typography_border_dark};
-	}
-	.woocommerce-order-received table th a,.woocommerce-order-received table td a {
-	color: ${typography_text};
-	}
-	.woocommerce-order-received table th a:hover,.woocommerce-order-received table td a:hover {
-	color: ${typography_accent};
-	}
-	.woocommerce-order-received table tfoot th {
-	color: ${typography_heading};
 	}
 	.woocommerce-order-received .woocommerce-thankyou-order-details {
 	border: 1px solid ${typography_border_dark};
@@ -1347,6 +1343,11 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
 	color: ${typography_accent};
+	}
+	@media (max-width: 768px) {
+	.woocommerce-account .woocommerce-MyAccount-content .woocommerce-MyAccount-orders tr td:before,.woocommerce-account .woocommerce-MyAccount-content .woocommerce-table--order-downloads tr td:before {
+	color: ${typography_heading};
+	}
 	}';
 
 	return $css;
