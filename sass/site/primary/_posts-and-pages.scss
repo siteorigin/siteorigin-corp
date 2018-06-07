@@ -212,8 +212,11 @@ body:not(.single) .hentry {
 }
 
 .more-link {
-	display: block;
-	margin-top: 13px;
+	
+	&.excerpt {
+		display: block;
+		margin-top: 26px;		
+	}
 	
 	.more-text {
 		display: block;
