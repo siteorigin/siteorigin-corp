@@ -211,14 +211,19 @@ body:not(.single) .hentry {
 	margin-bottom: 25px;
 }
 
-.more-text {
+.more-link {
 	display: block;
+	margin-top: 13px;
+	
+	.more-text {
+		display: block;
 
-	span {
-		display: inline-block;
-		padding-left: 3px;
-		vertical-align: middle;
-	}
+		span {
+			display: inline-block;
+			padding-left: 3px;
+			vertical-align: middle;
+		}
+	}	
 }
 
 .page-links {

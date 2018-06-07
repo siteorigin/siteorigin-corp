@@ -1759,12 +1759,15 @@ body:not(.single) .hentry {
 .single .entry-thumbnail {
   margin-bottom: 25px; }
 
-.more-text {
-  display: block; }
-  .more-text span {
-    display: inline-block;
-    padding-left: 3px;
-    vertical-align: middle; }
+.more-link {
+  display: block;
+  margin-top: 13px; }
+  .more-link .more-text {
+    display: block; }
+    .more-link .more-text span {
+      display: inline-block;
+      padding-left: 3px;
+      vertical-align: middle; }
 
 .page-links {
   margin: 26px 0;
