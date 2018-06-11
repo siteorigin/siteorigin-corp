@@ -2255,8 +2255,8 @@ body:not(.single) .hentry {
         color: #fff;
         font-size: 1.0666em;
         font-weight: 500; }
-      .site-footer .widgets .widget *:not(.widget-title):not(a) {
-        color: #b4b5b8; }
+        .site-footer .widgets .widget .widget-title ~ * {
+          color: #b4b5b8; }
       .site-footer .widgets .widget a {
         color: #ffffff; }
         .site-footer .widgets .widget a:hover {
