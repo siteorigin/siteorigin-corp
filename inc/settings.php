@@ -945,7 +945,7 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	.site-footer .widgets .widget .widget-title {
 	color: ${footer_widget_title};
 	}
-	.site-footer .widgets .widget *:not(.widget-title):not(a) {
+	.site-footer .widgets .widget .widget-title ~ * {
 	color: ${footer_widget_text};
 	}
 	.site-footer .widgets .widget a {
