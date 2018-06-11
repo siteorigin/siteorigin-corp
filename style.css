@@ -523,6 +523,9 @@ a {
   text-align: right; }
   .main-navigation > div {
     display: inline-block; }
+  .main-navigation .shopping-cart,
+  .main-navigation .search-toggle {
+    margin-left: 37px; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -661,7 +664,6 @@ a {
     border: none;
     display: inline-block;
     outline: none;
-    margin-left: 37px;
     padding: 0;
     position: relative;
     top: 3px; }

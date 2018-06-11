@@ -1451,8 +1451,7 @@ ul.product_list_widget {
         width: 100%; } }
 
 .site-header .shopping-cart {
-  display: inline-block;
-  margin: 0 16px 0 39px; }
+  display: inline-block; }
   .site-header .shopping-cart li {
     font-size: initial;
     text-transform: none; }
