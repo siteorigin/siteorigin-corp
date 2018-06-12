@@ -249,8 +249,15 @@ function siteorigin_corp_excerpt() {
 	} else {
 		$read_more_text = '';
 	}
-	$ellipsis = '...';
-	$length = siteorigin_setting( 'blog_excerpt_length' );
+
+	if ( is_search() ) {
+		$ellipsis = '';
+		$length = 40;
+	} else {
+		$ellipsis = '...';
+		$length = siteorigin_setting( 'blog_excerpt_length' );
+	}
+	
 	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
 	if ( $length ) {

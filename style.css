@@ -1627,11 +1627,13 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+article::after {
+  clear: both;
+  content: "";
+  display: table; }
+
 .entry-header {
   margin-bottom: 25px; }
-
-.corp-content-wrapper {
-  overflow: auto; }
 
 .blog-layout-grid {
   display: flex;
@@ -1681,7 +1683,8 @@ a {
   .blog-layout-grid article:only-child {
     margin: 0; }
   .blog-layout-grid article .entry-title {
-    font-size: 1.0666em; }
+    font-size: 1.0666em;
+    margin: 0 0 3px 0; }
   .blog-layout-grid article .entry-thumbnail {
     margin: -1px; }
     .blog-layout-grid article .entry-thumbnail::after {
@@ -1706,8 +1709,6 @@ a {
     padding: 25px 30px 38px; }
   .blog-layout-standard article .entry-header {
     margin-bottom: 20px; }
-  .blog-layout-standard article .entry-title {
-    margin: 0 0 6px; }
   .blog-layout-standard article .entry-content p:last-of-type {
     margin: 0; }
   .blog-layout-standard article .entry-content p:only-of-type {
@@ -1721,7 +1722,7 @@ a {
   font-size: 1.6em;
   font-weight: 600;
   line-height: normal;
-  margin: 0 0 3px; }
+  margin: 0 0 5px; }
   @media (max-width: 768px) {
     .entry-title {
       font-size: 26px; } }
@@ -1855,28 +1856,66 @@ a {
   line-height: normal;
   margin: 0; }
 
-.archive .page-header,
-.search-results .page-header {
+.archive .page-header {
   margin-bottom: 50px;
   width: 100%; }
 
-.archive .page-title,
-.search-results .page-title {
+.archive .page-title {
   font-size: 24px;
   text-align: center; }
 
-.archive .taxonomy-description,
-.search-results .taxonomy-description {
+.archive .taxonomy-description {
   font-size: 14px;
   margin-top: 5px;
   text-align: center; }
-  .archive .taxonomy-description p:last-of-type,
-  .search-results .taxonomy-description p:last-of-type {
+  .archive .taxonomy-description p:last-of-type {
     margin-bottom: 0; }
 
-.archive .entry-title,
-.search-results .entry-title {
+.archive .entry-title {
   font-size: 29px; }
+
+.search-results .page-header {
+  margin-bottom: 50px; }
+
+.search-results .page-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  .search-results .page-title span {
+    color: #f14e4e; }
+
+.search-results article {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 30px; }
+  .search-results article .entry-header {
+    margin-bottom: 18px; }
+  .search-results article .entry-title {
+    font-size: 16px; }
+  .search-results article .entry-thumbnail {
+    float: left;
+    margin: -1px;
+    width: 41.5006%; }
+    @media (max-width: 480px) {
+      .search-results article .entry-thumbnail {
+        float: none;
+        text-align: center;
+        width: 100%; } }
+  .search-results article .corp-content-wrapper {
+    padding: 25px 30px 33px;
+    width: 100%; }
+  .search-results article .entry-summary {
+    font-size: 14px; }
+    .search-results article .entry-summary p:last-of-type {
+      margin: 0; }
+    .search-results article .entry-summary p:only-of-type {
+      margin: 0; }
+  .search-results article.has-post-thumbnail .corp-content-wrapper {
+    float: right;
+    width: 58.4994%; }
+    @media (max-width: 480px) {
+      .search-results article.has-post-thumbnail .corp-content-wrapper {
+        width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Search Form
