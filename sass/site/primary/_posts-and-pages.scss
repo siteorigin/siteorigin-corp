@@ -1,31 +1,22 @@
-.site-main {
-
-	.blog &,
-	.archive:not(.woocommerce) &,
-	.search-results &,
-	.infinite-wrap {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
-	.blog-full.blog &,
-	.blog-full.archive:not(.woocommerce) & {
-		align-items: flex-start;
-	}
+.entry-header {
+	margin-bottom: 25px;
 }
 
-.widget_siteorigin-panels-postloop {
+.corp-content-wrapper {
+	overflow: auto;
+}
+
+.blog-layout-grid {
 	display: flex;
 	flex-wrap: wrap;
-
-	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
-	.blog-full & {
-		align-items: flex-start;
-	}
 }
 
-body:not(.single) .hentry {
+// If Archive Post Content is set to Full Post Content, don't use equal height columns.
+.blog-full .blog-layout-grid {
+	align-items: flex-start;
+}
+
+.blog-layout-grid article {
 	background: #fff;
 	border: 1px solid $color__background-hr;
 	margin: 0 0 31px;
@@ -67,7 +58,7 @@ body:not(.single) .hentry {
 	}
 
 	// Two column blog layout when the sidebar is in use.
-	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
+	@at-root body.page-layout-default.sidebar .blog-layout-grid article {
 		width: 48.25%;
 
 		@media (max-width: 480px) {
@@ -125,8 +116,33 @@ body:not(.single) .hentry {
 	}
 }
 
-.entry-header {
-	margin-bottom: 25px;
+.blog-layout-standard article {
+	background: #fff;
+	border: 1px solid $color__background-hr;
+	margin-bottom: 40px;	
+	
+	.corp-content-wrapper {
+		padding: 25px 30px 38px;
+	}
+
+	.entry-header {
+		margin-bottom: 20px;
+	}
+
+	.entry-title {
+		margin: 0 0 6px;
+	}	
+
+	.entry-content {		
+
+		p:last-of-type {
+			margin: 0;
+		}
+
+		p:only-of-type {
+			margin: 0;
+		}
+	}	
 }
 
 /*--------------------------------------------------------------

@@ -39,10 +39,16 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
+	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>	
+			</a>
+		</div>		
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>		
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
+				<?php the_post_thumbnail(); ?>	
 			</a>
 		</div>
 	<?php endif; ?>	

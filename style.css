@@ -1627,83 +1627,91 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.blog .site-main,
-.archive:not(.woocommerce) .site-main,
-.search-results .site-main,
-.site-main .infinite-wrap {
+.entry-header {
+  margin-bottom: 25px; }
+
+.corp-content-wrapper {
+  overflow: auto; }
+
+.blog-layout-grid {
   display: flex;
   flex-wrap: wrap; }
 
-.blog-full.blog .site-main,
-.blog-full.archive:not(.woocommerce) .site-main {
+.blog-full .blog-layout-grid {
   align-items: flex-start; }
 
-.widget_siteorigin-panels-postloop {
-  display: flex;
-  flex-wrap: wrap; }
-  .blog-full .widget_siteorigin-panels-postloop {
-    align-items: flex-start; }
-
-body:not(.single) .hentry {
+.blog-layout-grid article {
   background: #fff;
   border: 1px solid #e6e6e6;
   margin: 0 0 31px;
   width: 31%; }
   @media (max-width: 768px) {
-    body:not(.single) .hentry {
+    .blog-layout-grid article {
       width: 48.25%; } }
   @media (max-width: 480px) {
-    body:not(.single) .hentry {
+    .blog-layout-grid article {
       width: 100%; } }
-  body:not(.single) .hentry:nth-of-type(3n+1) {
+  .blog-layout-grid article:nth-of-type(3n+1) {
     margin-right: 3.5%; }
     @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-of-type(3n+1) {
+      .blog-layout-grid article:nth-of-type(3n+1) {
         margin-right: 0; } }
   @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-of-type(2n+1) {
+    .blog-layout-grid article:nth-of-type(2n+1) {
       margin-right: 3.5%; } }
-  body:not(.single) .hentry:nth-of-type(3n+3) {
+  .blog-layout-grid article:nth-of-type(3n+3) {
     margin-left: 3.5%; }
     @media (max-width: 768px) {
-      body:not(.single) .hentry:nth-of-type(3n+3) {
+      .blog-layout-grid article:nth-of-type(3n+3) {
         margin-left: 0; } }
-  body.page-layout-default.sidebar:not(.single) .hentry {
+  body.page-layout-default.sidebar .blog-layout-grid article {
     width: 48.25%; }
     @media (max-width: 480px) {
-      body.page-layout-default.sidebar:not(.single) .hentry {
+      body.page-layout-default.sidebar .blog-layout-grid article {
         width: 100%; } }
-    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
+    body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(3n+1) {
       margin-right: 0; }
-    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+    body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(2n+1) {
       margin-right: 3.5%; }
       @media (max-width: 480px) {
-        body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+        body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(2n+1) {
           margin-right: 0; } }
-    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
+    body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(3n+3) {
       margin-left: 0; }
-  body:not(.single) .hentry:only-child {
+  .blog-layout-grid article:only-child {
     margin: 0; }
-  body:not(.single) .hentry .entry-title {
+  .blog-layout-grid article .entry-title {
     font-size: 1.0666em; }
-  body:not(.single) .hentry .entry-thumbnail {
+  .blog-layout-grid article .entry-thumbnail {
     margin: -1px; }
-    body:not(.single) .hentry .entry-thumbnail::after {
+    .blog-layout-grid article .entry-thumbnail::after {
       clear: both;
       content: "";
       display: table; }
-  body:not(.single) .hentry .corp-content-wrapper {
+  .blog-layout-grid article .corp-content-wrapper {
     padding: 25px 30px 33px; }
-  body:not(.single) .hentry .entry-content {
+  .blog-layout-grid article .entry-content {
     font-size: .9333em;
     padding-bottom: 0; }
-    body:not(.single) .hentry .entry-content p:last-of-type {
+    .blog-layout-grid article .entry-content p:last-of-type {
       margin: 0; }
-    body:not(.single) .hentry .entry-content p:only-of-type {
+    .blog-layout-grid article .entry-content p:only-of-type {
       margin: 0; }
 
-.entry-header {
-  margin-bottom: 25px; }
+.blog-layout-standard article {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 40px; }
+  .blog-layout-standard article .corp-content-wrapper {
+    padding: 25px 30px 38px; }
+  .blog-layout-standard article .entry-header {
+    margin-bottom: 20px; }
+  .blog-layout-standard article .entry-title {
+    margin: 0 0 6px; }
+  .blog-layout-standard article .entry-content p:last-of-type {
+    margin: 0; }
+  .blog-layout-standard article .entry-content p:only-of-type {
+    margin: 0; }
 
 /*--------------------------------------------------------------
 ## Posts
