@@ -6,6 +6,10 @@ article	{
 	margin-bottom: 25px;
 }
 
+
+/*--------------------------------------------------------------
+## Blog Loop: Grid
+--------------------------------------------------------------*/
 .blog-layout-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -117,6 +121,9 @@ article	{
 	}
 }
 
+/*--------------------------------------------------------------
+## Blog Loop: Standard
+--------------------------------------------------------------*/
 .blog-layout-standard article {
 	background: #fff;
 	border: 1px solid $color__background-hr;
@@ -138,6 +145,85 @@ article	{
 
 		p:only-of-type {
 			margin: 0;
+		}
+	}	
+}
+
+/*--------------------------------------------------------------
+## Blog Loop: Offset
+--------------------------------------------------------------*/
+.blog-layout-offset article {
+
+	.entry-header {
+		margin-left: 22%;
+
+		@media (max-width: 768px) {
+			margin-left: 0;
+		}
+
+		.entry-meta {
+			display: none;
+
+			@media (max-width: 768px) {
+				display: block;
+			}
+		}
+
+		.entry-time {
+			color: $color__text-light;
+			font-size: 13px;
+			letter-spacing: 1px;
+			margin-bottom: 16px;
+			text-transform: uppercase;
+
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}				
+	}	
+
+	.entry-offset {
+		float: left;
+		padding-right: 30px;
+		width: 22%;
+		
+		@media (max-width: 768px) {
+			display: none;
+		}		
+		
+		.entry-author-avatar img {
+			border-radius: 50%;
+			width: 70px;
+		}
+
+		.entry-author-link,
+		.entry-categories,
+		.entry-comments {
+			color: $color__text-light;
+			font-size: 13px;
+			
+			span {
+				display: block;
+			}
+
+			a {
+				color: $color__text-dark;
+				font-size: 14px;
+				
+				&:hover {
+					color: $color__accent;
+				}
+			}
+		}
+	}
+
+	.entry-content {
+		float: right;
+		width: 78%;
+
+		@media (max-width: 768px) {
+			float: none;
+			width: 100%;
 		}
 	}	
 }
