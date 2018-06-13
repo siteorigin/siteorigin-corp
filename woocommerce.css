@@ -1145,6 +1145,7 @@ ul.product_list_widget {
         background: #2d2d2d;
         color: #fff; }
   .widget_shopping_cart .buttons .checkout {
+    color: #fff;
     margin-left: 10px; }
 
 /*--------------------------------------------------------------
