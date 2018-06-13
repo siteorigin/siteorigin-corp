@@ -1495,11 +1495,20 @@ a {
       margin: 0; }
       .site-header .site-branding .site-title a {
         color: #2d2d2d; }
+    .site-header .site-branding .custom-logo-link {
+      display: inline-block;
+      overflow: auto; }
     .site-header .site-branding img {
       display: inline-block;
       vertical-align: middle; }
       .tagline.site-header .site-branding img {
         padding-bottom: 5px; }
+    .stuck.site-header .site-branding .alt-logo {
+      display: none; }
+    .site-header .site-branding .alt-logo-scroll {
+      display: none; }
+      .stuck.site-header .site-branding .alt-logo-scroll {
+        display: block; }
     .site-header .site-branding .site-description {
       color: #929292;
       font-family: "Open Sans", sans-serif;

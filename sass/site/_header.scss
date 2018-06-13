@@ -45,7 +45,7 @@
 
 	// A class added after scroll.
 	&.stuck {
-    	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);	
+    	box-shadow: 0 1px 1px rgba(0, 0, 0, .075);
     }
 
 	.site-header-inner {
@@ -76,13 +76,30 @@
 			}
 		}
 
+		.custom-logo-link {
+			display: inline-block;
+			overflow: auto;
+		}
+
 		img {
 			display: inline-block;
 			vertical-align: middle;
 			
 			@at-root .tagline#{&} {
 				padding-bottom: 5px;
-			}	
+			}
+		}
+
+		@at-root .stuck#{&} .alt-logo {
+			display: none;
+		}
+
+		.alt-logo-scroll {
+			display: none;
+			
+			@at-root .stuck#{&}	{
+				display: block;
+			}
 		}
 
 		.site-description {
