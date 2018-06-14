@@ -46,11 +46,12 @@
 .calendar_wrap {
 	background: #fff;
 	border: 1px solid $color__background-hr;
+	padding: 0 10px;
 }
 
 .widget #wp-calendar {
 	border: 0;
-	font-size: 13px; 
+	font-size: 13px;
 	margin: 0;
 	
 	caption {
@@ -106,10 +107,12 @@
 
 		#prev, 
 		#next {
-			padding: 4px 20px 17px; 
+			padding-top: 4px;
+			padding-bottom: 17px;
 			
 			a {
 				color: $color__text-dark;
+				margin-left: 10px;
 
 				&:hover {
 					color: $color__accent;
@@ -118,10 +121,91 @@
 		}
 
 		#next {
-			text-align: right;			
+			text-align: right;
+			
+			a {
+				margin: 0 10px 0 0;
+			}		
 		}
 	}
 }
+
+// .calendar_wrap {
+// 	background: #fff;
+// 	border: 1px solid $color__background-hr;
+// }
+
+// .widget #wp-calendar {
+// 	border: 0;
+// 	margin: 0;
+	
+// 	caption {
+// 		color: $color__text-dark;
+// 		font-size: 14px; 
+// 		font-weight: bold; 
+// 		font-weight: 600;
+// 	}
+
+// 	tr:nth-child(2n+2) {
+// 		background: none;
+// 	}	
+
+// 	th, 
+// 	td {
+// 		border: 0;
+// 		padding: 0;
+// 	}
+
+// 	thead {
+
+// 		tr {
+// 			background: none;
+// 		}
+
+// 		th {
+// 			padding: 13px 0 8px;
+// 			text-align: center;
+// 		}
+// 	}
+
+// 	tbody {
+// 		font-size: 13px; 
+
+// 		.pad {
+// 			background: none;
+// 		}
+
+// 		tr:first-of-type td {
+// 			padding-top: 8px;
+// 		}
+
+// 		td { 
+// 			padding-bottom: 8px;
+// 			text-align: center;
+// 		}		
+// 	}
+	
+// 	tfoot {
+// 		font-size: 13px; 
+
+// 		#prev, 
+// 		#next {
+// 			padding-top: 4px; 
+			
+// 			a {
+// 				color: $color__text-dark;
+
+// 				&:hover {
+// 					color: $color__accent;
+// 				}				
+// 			}
+// 		}
+
+// 		#next {
+// 			text-align: right;			
+// 		}
+// 	}
+// }
 
 /*--------------------------------------------------------------
 ## Archives and Categories Widgets

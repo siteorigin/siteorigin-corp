@@ -1216,7 +1216,8 @@ a {
 --------------------------------------------------------------*/
 .calendar_wrap {
   background: #fff;
-  border: 1px solid #e6e6e6; }
+  border: 1px solid #e6e6e6;
+  padding: 0 10px; }
 
 .widget #wp-calendar {
   border: 0;
@@ -1249,15 +1250,19 @@ a {
         color: #626262; }
   .widget #wp-calendar tfoot #prev,
   .widget #wp-calendar tfoot #next {
-    padding: 4px 20px 17px; }
+    padding-top: 4px;
+    padding-bottom: 17px; }
     .widget #wp-calendar tfoot #prev a,
     .widget #wp-calendar tfoot #next a {
-      color: #2d2d2d; }
+      color: #2d2d2d;
+      margin-left: 10px; }
       .widget #wp-calendar tfoot #prev a:hover,
       .widget #wp-calendar tfoot #next a:hover {
         color: #f14e4e; }
   .widget #wp-calendar tfoot #next {
     text-align: right; }
+    .widget #wp-calendar tfoot #next a {
+      margin: 0 10px 0 0; }
 
 /*--------------------------------------------------------------
 ## Archives and Categories Widgets
