@@ -98,7 +98,7 @@ if ( comments_open() ) {
 			<div class="entry-header">
 				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 				<div class="entry-meta">
-					<?php siteorigin_corp_post_meta_date(); ?>
+					<?php siteorigin_corp_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			</div>		
 

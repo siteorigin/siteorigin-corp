@@ -375,15 +375,32 @@ function siteorigin_corp_post_meta() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_corp_post_meta_date' ) ) :
-/**
- * Print HTML with meta information for the current post-date/time.
- */
-function siteorigin_corp_post_meta_date() {
-	if ( siteorigin_setting( 'blog_post_date' ) ) {
-		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
-	}	
-}
+if ( ! function_exists( 'siteorigin_corp_posted_on' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date/time.
+	 */
+	function siteorigin_corp_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date( apply_filters( 'siteorigin_corpdate_format', 'F d, Y' ) ) ),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			/* translators: %s: post date. */
+			esc_html_x( 'Posted on %s', 'post date', 'siteorigin-corp' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+
+	}
 endif;
 
 if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
