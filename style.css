@@ -2475,6 +2475,7 @@ object {
 ## - FlexSlider
 --------------------------------------------------------------*/
 .flexslider {
+  background: #2d2d2d;
   position: relative; }
   .flexslider .slides,
   .flexslider .flex-direction-nav {
