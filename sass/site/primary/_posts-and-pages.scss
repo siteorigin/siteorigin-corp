@@ -1,12 +1,3 @@
-article	{
-	@include clearfix;
-}
-
-.entry-header {
-	margin-bottom: 25px;
-}
-
-
 /*--------------------------------------------------------------
 ## Blog Loop: Grid
 --------------------------------------------------------------*/
@@ -22,8 +13,7 @@ article	{
 
 .blog-layout-grid article {
 	background: #fff;
-	border: 1px solid $color__background-hr;
-	margin: 0 0 31px;
+	margin: 0 0 30px;
 	width: 31%;
 
 	// Two column blog layout below 768px.
@@ -93,31 +83,21 @@ article	{
 		margin: 0;
 	}
 
+	.entry-content {
+		font-size: 14px;
+	}
+
 	.entry-title {
-		font-size: 1.0666em;
+		font-size: 16px;
 		margin: 0 0 3px 0;
 	}
 
 	.entry-thumbnail {
 		@include clearfix;
-		margin: -1px;
 	}
 
 	.corp-content-wrapper {
 		padding: 25px 30px 33px;
-	}
-
-	.entry-content {
-		font-size: .9333em;
-		padding-bottom: 0;
-
-		p:last-of-type {
-			margin: 0;
-		}
-
-		p:only-of-type {
-			margin: 0;
-		}
 	}
 }
 
@@ -125,28 +105,14 @@ article	{
 ## Blog Loop: Standard
 --------------------------------------------------------------*/
 .blog-layout-standard article {
-	background: #fff;
-	border: 1px solid $color__background-hr;
-	margin-bottom: 40px;	
-	
-	.corp-content-wrapper {
-		padding: 25px 30px 38px;
-	}
 
 	.entry-header {
 		margin-bottom: 20px;
+		
+		.entry-title {
+			font-size: 24px;
+		}
 	}
-
-	.entry-content {		
-
-		p:last-of-type {
-			margin: 0;
-		}
-
-		p:only-of-type {
-			margin: 0;
-		}
-	}	
 }
 
 /*--------------------------------------------------------------
@@ -155,19 +121,6 @@ article	{
 .blog-layout-offset article {
 
 	.entry-header {
-		margin-left: 22%;
-
-		@media (max-width: 768px) {
-			margin-left: 0;
-		}
-
-		.entry-meta {
-			display: none;
-
-			@media (max-width: 768px) {
-				display: block;
-			}
-		}
 
 		.entry-time {
 			color: $color__text-light;
@@ -175,10 +128,6 @@ article	{
 			letter-spacing: 1px;
 			margin-bottom: 16px;
 			text-transform: uppercase;
-
-			@media (max-width: 768px) {
-				display: none;
-			}
 		}				
 	}	
 
@@ -191,9 +140,18 @@ article	{
 			display: none;
 		}		
 		
-		.entry-author-avatar img {
-			border-radius: 50%;
-			width: 70px;
+		.entry-author-avatar {
+			margin-bottom: 6px;
+
+			a {
+				display: block;
+				line-height: 0;
+			}
+
+			img {
+				border-radius: 50%;
+				width: 70px;
+			}
 		}
 
 		.entry-author-link,
@@ -201,14 +159,18 @@ article	{
 		.entry-comments {
 			color: $color__text-light;
 			font-size: 13px;
+			line-height: normal;
+			margin-bottom: 12px;
 			
 			span {
 				display: block;
+				margin-bottom: 2px;
 			}
 
 			a {
 				color: $color__text-dark;
 				font-size: 14px;
+				font-weight: 500;
 				
 				&:hover {
 					color: $color__accent;
@@ -231,6 +193,15 @@ article	{
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
+article	{
+	@include clearfix;
+	margin-bottom: 40px;
+}
+
+.entry-header {
+	margin-bottom: 25px;
+}
+
 .entry-title {
 	color: $color__text-dark;
 	font-size: 1.6em;
@@ -254,6 +225,16 @@ article	{
 			color: $color__text-medium;
 		}
 	}
+}
+
+.entry-thumbnail {
+	line-height: 0;
+	margin-button: -1px;
+	text-align: center;
+}
+
+.single .entry-thumbnail {
+	margin: 0 0 25px;
 }
 
 .entry-meta {
@@ -302,12 +283,23 @@ article	{
 	display: inline;
 }
 
-.entry-thumbnail {
-	line-height: 0;
+body:not(.single) .corp-content-wrapper {
+	background: #fff;
+	border: 1px solid $color__background-hr;
+	@include clearfix;
+	padding: 25px 30px 38px;
+	width: 100%;
 }
 
-.single .entry-thumbnail {
-	margin-bottom: 25px;
+.entry-content p {
+
+	&:last-of-type {
+		margin: 0;
+	}
+
+	&:only-of-type {
+		margin: 0;
+	}
 }
 
 .more-link {
@@ -498,7 +490,6 @@ article	{
 
 		.corp-content-wrapper {
 			padding: 25px 30px 33px;
-			width: 100%;
 		}
 
 		.entry-summary {
@@ -701,7 +692,8 @@ article	{
 			}
 
 			img {
-				margin-bottom: -1px;
+				display: block;
+				margin: 0 auto -1px;
 			}
 
 			.related-post-title {

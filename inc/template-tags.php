@@ -375,6 +375,17 @@ function siteorigin_corp_post_meta() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_corp_post_meta_date' ) ) :
+/**
+ * Print HTML with meta information for the current post-date/time.
+ */
+function siteorigin_corp_post_meta_date() {
+	if ( siteorigin_setting( 'blog_post_date' ) ) {
+		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
+	}	
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
 /**
  * Print HTML with meta information for the post tags.

@@ -23,23 +23,6 @@ if ( comments_open() ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
 
-	<div class="entry-header">
-
-		<div class="entry-meta">
-			<?php siteorigin_corp_post_meta(); ?>
-		</div><!-- .entry-meta -->
-
-		<?php if ( siteorigin_setting( 'blog_post_date' ) ) : ?>
-			<p class="entry-time">
-				<span class="meta-text"><?php esc_html_e( 'Posted on ', 'siteorigin-corp' ); ?></span>
-				<?php the_time( apply_filters( 'siteorigin_corp_date_format', 'M d, Y' ) ); ?>
-			</p>
-		<?php endif; ?>
-
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-	</div>
-
 	<div class="entry-offset">
 
 		<div class="entry-author-avatar">
@@ -71,7 +54,7 @@ if ( comments_open() ) {
 
 	</div>
 
-	<div class="entry-content">
+	<div class="entry-content">	
 
 		<div class="entry-thumbnail">
 			<?php if ( get_post_format() == 'gallery' && siteorigin_corp_get_gallery() ) : ?>
@@ -110,21 +93,31 @@ if ( comments_open() ) {
 			<?php endif; ?>
 		</div>
 
-		<?php
-			if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
-				the_content();
-			} else {
-				siteorigin_corp_excerpt();
-			}
+		<div class="corp-content-wrapper">
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
-				'after'  => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-		?>
+			<div class="entry-header">
+				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				<div class="entry-meta">
+					<?php siteorigin_corp_post_meta_date(); ?>
+				</div><!-- .entry-meta -->
+			</div>		
 
-	</div><!-- .entry-content -->
+			<?php
+				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
+					the_content();
+				} else {
+					siteorigin_corp_excerpt();
+				}
+
+				wp_link_pages( array(
+					'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
+					'after'  => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+				) );
+			?>
+
+		</div><!-- .entry-content -->
+	</div><!-- .corp-content-wrapper -->
 
 </article>

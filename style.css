@@ -1216,8 +1216,7 @@ a {
 --------------------------------------------------------------*/
 .calendar_wrap {
   background: #fff;
-  border: 1px solid #e6e6e6;
-  padding-left: 6px; }
+  border: 1px solid #e6e6e6; }
 
 .widget #wp-calendar {
   border: 0;
@@ -1627,14 +1626,6 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-article::after {
-  clear: both;
-  content: "";
-  display: table; }
-
-.entry-header {
-  margin-bottom: 25px; }
-
 /*--------------------------------------------------------------
 ## Blog Loop: Grid
 --------------------------------------------------------------*/
@@ -1647,8 +1638,7 @@ article::after {
 
 .blog-layout-grid article {
   background: #fff;
-  border: 1px solid #e6e6e6;
-  margin: 0 0 31px;
+  margin: 0 0 30px;
   width: 31%; }
   @media (max-width: 768px) {
     .blog-layout-grid article {
@@ -1685,63 +1675,35 @@ article::after {
       margin-left: 0; }
   .blog-layout-grid article:only-child {
     margin: 0; }
+  .blog-layout-grid article .entry-content {
+    font-size: 14px; }
   .blog-layout-grid article .entry-title {
-    font-size: 1.0666em;
+    font-size: 16px;
     margin: 0 0 3px 0; }
-  .blog-layout-grid article .entry-thumbnail {
-    margin: -1px; }
-    .blog-layout-grid article .entry-thumbnail::after {
-      clear: both;
-      content: "";
-      display: table; }
+  .blog-layout-grid article .entry-thumbnail::after {
+    clear: both;
+    content: "";
+    display: table; }
   .blog-layout-grid article .corp-content-wrapper {
     padding: 25px 30px 33px; }
-  .blog-layout-grid article .entry-content {
-    font-size: .9333em;
-    padding-bottom: 0; }
-    .blog-layout-grid article .entry-content p:last-of-type {
-      margin: 0; }
-    .blog-layout-grid article .entry-content p:only-of-type {
-      margin: 0; }
 
 /*--------------------------------------------------------------
 ## Blog Loop: Standard
 --------------------------------------------------------------*/
-.blog-layout-standard article {
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  margin-bottom: 40px; }
-  .blog-layout-standard article .corp-content-wrapper {
-    padding: 25px 30px 38px; }
-  .blog-layout-standard article .entry-header {
-    margin-bottom: 20px; }
-  .blog-layout-standard article .entry-content p:last-of-type {
-    margin: 0; }
-  .blog-layout-standard article .entry-content p:only-of-type {
-    margin: 0; }
+.blog-layout-standard article .entry-header {
+  margin-bottom: 20px; }
+  .blog-layout-standard article .entry-header .entry-title {
+    font-size: 24px; }
 
 /*--------------------------------------------------------------
 ## Blog Loop: Offset
 --------------------------------------------------------------*/
-.blog-layout-offset article .entry-header {
-  margin-left: 22%; }
-  @media (max-width: 768px) {
-    .blog-layout-offset article .entry-header {
-      margin-left: 0; } }
-  .blog-layout-offset article .entry-header .entry-meta {
-    display: none; }
-    @media (max-width: 768px) {
-      .blog-layout-offset article .entry-header .entry-meta {
-        display: block; } }
-  .blog-layout-offset article .entry-header .entry-time {
-    color: #929292;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-    text-transform: uppercase; }
-    @media (max-width: 768px) {
-      .blog-layout-offset article .entry-header .entry-time {
-        display: none; } }
+.blog-layout-offset article .entry-header .entry-time {
+  color: #929292;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase; }
 
 .blog-layout-offset article .entry-offset {
   float: left;
@@ -1750,23 +1712,32 @@ article::after {
   @media (max-width: 768px) {
     .blog-layout-offset article .entry-offset {
       display: none; } }
-  .blog-layout-offset article .entry-offset .entry-author-avatar img {
-    border-radius: 50%;
-    width: 70px; }
+  .blog-layout-offset article .entry-offset .entry-author-avatar {
+    margin-bottom: 6px; }
+    .blog-layout-offset article .entry-offset .entry-author-avatar a {
+      display: block;
+      line-height: 0; }
+    .blog-layout-offset article .entry-offset .entry-author-avatar img {
+      border-radius: 50%;
+      width: 70px; }
   .blog-layout-offset article .entry-offset .entry-author-link,
   .blog-layout-offset article .entry-offset .entry-categories,
   .blog-layout-offset article .entry-offset .entry-comments {
     color: #929292;
-    font-size: 13px; }
+    font-size: 13px;
+    line-height: normal;
+    margin-bottom: 12px; }
     .blog-layout-offset article .entry-offset .entry-author-link span,
     .blog-layout-offset article .entry-offset .entry-categories span,
     .blog-layout-offset article .entry-offset .entry-comments span {
-      display: block; }
+      display: block;
+      margin-bottom: 2px; }
     .blog-layout-offset article .entry-offset .entry-author-link a,
     .blog-layout-offset article .entry-offset .entry-categories a,
     .blog-layout-offset article .entry-offset .entry-comments a {
       color: #2d2d2d;
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 500; }
       .blog-layout-offset article .entry-offset .entry-author-link a:hover,
       .blog-layout-offset article .entry-offset .entry-categories a:hover,
       .blog-layout-offset article .entry-offset .entry-comments a:hover {
@@ -1783,6 +1754,16 @@ article::after {
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
+article {
+  margin-bottom: 40px; }
+  article::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.entry-header {
+  margin-bottom: 25px; }
+
 .entry-title {
   color: #2d2d2d;
   font-size: 1.6em;
@@ -1800,6 +1781,14 @@ article::after {
     text-decoration: none; }
     .entry-title a:hover {
       color: #626262; }
+
+.entry-thumbnail {
+  line-height: 0;
+  margin-button: -1px;
+  text-align: center; }
+
+.single .entry-thumbnail {
+  margin: 0 0 25px; }
 
 .entry-meta {
   font-size: .8666em;
@@ -1830,11 +1819,21 @@ article::after {
 .group-blog .byline {
   display: inline; }
 
-.entry-thumbnail {
-  line-height: 0; }
+body:not(.single) .corp-content-wrapper {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 25px 30px 38px;
+  width: 100%; }
+  body:not(.single) .corp-content-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
 
-.single .entry-thumbnail {
-  margin-bottom: 25px; }
+.entry-content p:last-of-type {
+  margin: 0; }
+
+.entry-content p:only-of-type {
+  margin: 0; }
 
 .more-link.excerpt {
   display: block;
@@ -1968,8 +1967,7 @@ article::after {
         text-align: center;
         width: 100%; } }
   .search-results article .corp-content-wrapper {
-    padding: 25px 30px 33px;
-    width: 100%; }
+    padding: 25px 30px 33px; }
   .search-results article .entry-summary {
     font-size: 14px; }
     .search-results article .entry-summary p:last-of-type {
@@ -2121,7 +2119,8 @@ article::after {
         text-decoration: none; }
       .yarpp-related ol li img,
       .related-posts-section ol li img {
-        margin-bottom: -1px; }
+        display: block;
+        margin: 0 auto -1px; }
       .yarpp-related ol li .related-post-title,
       .related-posts-section ol li .related-post-title {
         font-size: 16px;
