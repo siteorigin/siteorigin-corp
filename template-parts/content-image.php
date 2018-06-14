@@ -15,7 +15,9 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	
 	<?php if ( siteorigin_corp_get_image() ) : ?>
 		<div class="entry-thumbnail">
-			<?php echo siteorigin_corp_get_image(); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php echo siteorigin_corp_get_image(); ?>
+			</a>
 		</div>
 	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
@@ -30,10 +32,10 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>		
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail(); ?>	
+				<?php the_post_thumbnail(); ?>
 			</a>
 		</div>
-	<?php endif; ?>	
+	<?php endif; ?>
 
 	<div class="corp-content-wrapper">
 		<header class="entry-header">

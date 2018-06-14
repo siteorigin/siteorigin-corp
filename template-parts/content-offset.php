@@ -19,6 +19,9 @@ if ( comments_open() ) {
 	$comments = NULL;
 }
 
+$content = siteorigin_corp_strip_gallery( get_the_content() );
+$content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
@@ -56,42 +59,42 @@ if ( comments_open() ) {
 
 	<div class="entry-content">	
 
-		<div class="entry-thumbnail">
-			<?php if ( get_post_format() == 'gallery' && siteorigin_corp_get_gallery() ) : ?>
-				<?php $gallery = siteorigin_corp_get_gallery(); ?>
-				<div class="flexslider entry-thumbnail">
-					<ul class="slides">
-						<?php foreach ( $gallery['src'] as $image ) : ?>
-							<li class="gallery-format-slide">
-								<img src="<?php echo $image; ?>">
-							</li>
-						<?php endforeach; ?>
-					</ul>
-					<ul class="flex-direction-nav">
-						<li class="flex-nav-prev">
-							<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
+		<?php if ( get_post_format() == 'gallery' && siteorigin_corp_get_gallery() ) : ?>
+			<?php $gallery = siteorigin_corp_get_gallery(); ?>
+			<div class="flexslider entry-thumbnail">
+				<ul class="slides">
+					<?php foreach ( $gallery['src'] as $image ) : ?>
+						<li class="gallery-format-slide">
+							<img src="<?php echo $image; ?>">
 						</li>
-						<li class="flex-nav-next">
-							<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
-						</li>
-					</ul>
-				</div>
-			<?php elseif ( get_post_format() == 'image' && siteorigin_corp_get_image() ) : ?>
-				<div class="entry-thumbnail">
-					<a href="<?php the_permalink() ?>">
-						<?php echo siteorigin_corp_get_image(); ?>
-					</a>
-				</div>
-			<?php elseif ( get_post_format() == 'video' && siteorigin_corp_get_video() ) : ?>
-				<div class="entry-video">
-					<?php echo siteorigin_corp_get_video(); ?>
-				</div>
-			<?php elseif ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'aligncenter' ) ); ?>
+					<?php endforeach; ?>
+				</ul>
+				<ul class="flex-direction-nav">
+					<li class="flex-nav-prev">
+						<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
+					</li>
+					<li class="flex-nav-next">
+						<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
+					</li>
+				</ul>
+			</div>
+		<?php elseif ( get_post_format() == 'image' && siteorigin_corp_get_image() ) : ?>
+			<div class="entry-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php echo siteorigin_corp_get_image(); ?>
 				</a>
-			<?php endif; ?>
-		</div>
+			</div>
+		<?php elseif ( get_post_format() == 'video' && siteorigin_corp_get_video() ) : ?>
+			<div class="entry-thumbnail entry-video">
+				<?php echo siteorigin_corp_get_video(); ?>
+			</div>
+		<?php elseif ( has_post_thumbnail() ) : ?>
+			<div class="entry-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 
 		<div class="corp-content-wrapper">
 
@@ -103,8 +106,14 @@ if ( comments_open() ) {
 			</div>		
 
 			<?php
-				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
-					the_content();
+				if ( get_post_format() == 'gallery' && siteorigin_corp_get_gallery() ) {
+					echo $content;	
+				} elseif ( get_post_format() == 'image' && siteorigin_corp_get_image() ) {
+					echo apply_filters( 'the_content', siteorigin_corp_strip_image( get_the_content() ) );
+				} elseif ( get_post_format() == 'video' && siteorigin_corp_get_video() ) {
+					echo apply_filters( 'the_content', siteorigin_corp_filter_video( get_the_content() ) );
+				} elseif ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) {
+					the_content(); 
 				} else {
 					siteorigin_corp_excerpt();
 				}

@@ -7,9 +7,16 @@
 		margin: 0;		
 	}
 
-	.slides img {
-		display: none;
-		width: 100%; 
+	.slides {
+		
+		li {
+			line-height: 0;
+		}
+
+		img {
+			display: none;
+			width: 100%;
+		}
 	}
 
 	.slide {
