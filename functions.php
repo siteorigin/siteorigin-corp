@@ -51,6 +51,7 @@ function siteorigin_corp_setup() {
 	add_image_size( 'siteorigin-corp-247x164-crop', 247, 163, true );
 	add_image_size( 'siteorigin-corp-354x234-crop', 354, 234, true );
 	add_image_size( 'siteorigin-corp-551x364-crop', 551, 364, true );
+	add_image_size( 'siteorigin-corp-720x480-crop', 720, 480, true );
 
 	/*
 	 * Enable support for the custom logo.

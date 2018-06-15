@@ -37,7 +37,7 @@ jQuery( function( $ ) {
 				animation: 'slide',
 				customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
 				start: function() {
-         			$( '.flexslider .slides img' ).show();
+					$( '.flexslider .slides img' ).show();
 				}
 			} );
 		} );
@@ -134,19 +134,19 @@ jQuery( function( $ ) {
 		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
 	} );
 
-    // Adjust for sticky header when linking from external anchors.
-    jQuery( window ).load( function() {
+	// Adjust for sticky header when linking from external anchors.
+	jQuery( window ).load( function() {
 
-        if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
-            var target = jQuery( window.location.hash );
-            if ( target.length ) {
-                jQuery( 'html, body' ).animate( {
-                    scrollTop: target.offset().top - headerHeight
-                }, 0 );
-                return false;
-            }
-        }
-    } );   
+		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
+			var target = jQuery( window.location.hash );
+			if ( target.length ) {
+				jQuery( 'html, body' ).animate( {
+					scrollTop: target.offset().top - headerHeight
+				}, 0 );
+				return false;
+			}
+		}
+	} ); 
 
 	// Indicate which section of the page we're viewing with selected menu classes.
 	function siteoriginCorpSelected() {  

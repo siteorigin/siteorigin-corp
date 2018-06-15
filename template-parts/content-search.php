@@ -16,7 +16,7 @@ $post_class = has_post_thumbnail() ? 'has-post-thumbnail' : '';
 	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-354x234-crop' ); ?>
+				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
 			</a>
 		</div>
 	<?php endif; ?>	
