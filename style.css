@@ -2035,39 +2035,53 @@ body:not(.single) .entry-content p:only-of-type {
   .search-results .page-title span {
     color: #f14e4e; }
 
-.search-results article {
+.search-results .corp-search-results {
   display: flex;
-  margin-bottom: 30px; }
-  @media (max-width: 1125px) {
-    .search-results article {
-      display: block; } }
-  .search-results article .entry-header {
+  flex-wrap: wrap; }
+
+.search-results .hentry {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 30px;
+  width: 100%; }
+  @media (max-width: 1024px) {
+    .search-results .hentry {
+      width: 48.25%; }
+      .search-results .hentry:nth-of-type(2n+1) {
+        margin-right: 3.5%; } }
+    @media (max-width: 1024px) and (max-width: 480px) {
+      .search-results .hentry:nth-of-type(2n+1) {
+        margin-right: 0; } }
+  @media (max-width: 480px) {
+    .search-results .hentry {
+      width: 100%; } }
+  .search-results .hentry .entry-header {
     margin-bottom: 18px; }
-  .search-results article .entry-title {
+  .search-results .hentry .entry-title {
     font-size: 16px; }
-  .search-results article .entry-thumbnail {
+  .search-results .hentry .entry-thumbnail {
     float: left;
-    margin: 0;
+    margin: -1px;
+    text-align: left;
     width: 41.5006%; }
-    @media (max-width: 1125px) {
-      .search-results article .entry-thumbnail {
-        display: none; } }
-  .search-results article .corp-content-wrapper {
-    border: 1px solid #e6e6e6;
+    @media (max-width: 1024px) {
+      .search-results .hentry .entry-thumbnail {
+        float: none;
+        text-align: center;
+        width: auto; } }
+  .search-results .hentry .corp-content-wrapper {
     padding: 25px 30px 33px; }
-  .search-results article .entry-summary {
+  .search-results .hentry .entry-summary {
     font-size: 14px; }
-    .search-results article .entry-summary p:last-of-type {
+    .search-results .hentry .entry-summary p:last-of-type {
       margin: 0; }
-    .search-results article .entry-summary p:only-of-type {
+    .search-results .hentry .entry-summary p:only-of-type {
       margin: 0; }
-  .search-results article.has-post-thumbnail .corp-content-wrapper {
-    border-left: none;
-    float: left;
+  .search-results .hentry.has-post-thumbnail .corp-content-wrapper {
+    float: right;
     width: 58.4994%; }
-    @media (max-width: 1125px) {
-      .search-results article.has-post-thumbnail .corp-content-wrapper {
-        border-left: 1px solid #e6e6e6;
+    @media (max-width: 1024px) {
+      .search-results .hentry.has-post-thumbnail .corp-content-wrapper {
         float: none;
         width: 100%; } }
 
