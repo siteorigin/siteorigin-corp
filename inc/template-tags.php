@@ -282,6 +282,19 @@ function siteorigin_corp_excerpt() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_corp_entry_thumbnail_meta' ) ) :
+/**
+ * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ */
+function siteorigin_corp_entry_thumbnail_meta() {
+	echo '<div class="thumbnail-meta">';
+	if ( has_category() ) {
+		echo get_the_category_list();
+	}
+	echo '</div>';
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 /**
  * Display related posts on single posts.

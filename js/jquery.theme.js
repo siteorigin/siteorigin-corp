@@ -31,7 +31,7 @@ jQuery( function( $ ) {
 	}
 
 	// FlexSlider.
-	$( window ).on( 'load', function() {
+	$( document ).ready( function() {
 		$( '.flexslider' ).each( function() {
 			$( this ).flexslider( {
 				animation: 'slide',
@@ -421,3 +421,18 @@ jQuery( function( $ ) {
 	}
 
 } );
+
+( function( $ ) {
+	$( window ).load( function() {
+
+		// Masonry blog layout.
+		if ( $( '.blog-layout-masonry' ).length ) {
+			$( '.blog-layout-masonry' ).masonry( {
+				itemSelector: '.hentry',
+				columnWidth: '.hentry'
+			} );
+		}
+
+	} );
+
+} )( jQuery );

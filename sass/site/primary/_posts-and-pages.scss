@@ -37,12 +37,42 @@ body:not(.single) article	{
 
 .entry-thumbnail {
 	line-height: 0;
+	position: relative;
 	text-align: center;
 	
 	a {
 		display: block;
 		line-height: 0;
 	}
+
+	.thumbnail-meta {
+		display: block;
+		left: 10px; 
+		position: absolute;
+		top: 10px;
+		z-index: 1;  
+
+		ul {
+			display: inline-block;
+			list-style: none;
+			margin: 0 5px 0 0;
+			
+			li {
+				background: rgba(0, 0, 0, .8);
+				color: #fff;
+				display: inline-block;
+				font-size: 11px;
+				letter-spacing: 1px;
+				padding: 5px 12px 6px;
+				text-transform: uppercase;
+
+				a {
+					color: #fff;
+					line-height: normal;
+				}
+			}
+		}
+	}	
 }
 
 .single .entry-thumbnail {
@@ -313,7 +343,6 @@ body:not(.single) .entry-content p {
 		}
 
 		.entry-thumbnail {
-			@include clearfix;
 			margin: -1px;
 		}
 
@@ -531,7 +560,61 @@ body:not(.single) .entry-content p {
 			}
 		}
 	}
-} 
+}
+
+/*--------------------------------------------------------------
+## Blog Loop: Masonry
+--------------------------------------------------------------*/
+.content-area .blog-layout-masonry {
+	clear: both;
+	@include clearfix();
+	margin: 0 -15px;
+	
+	article {
+		float: left;
+		padding: 0 15px;
+		margin-bottom: 30px;
+		width: 33.333%;
+		
+		// Two column blog layout below 768px.
+		@media (max-width: 768px) {
+			width: 48.25%;
+		}
+
+		// One column blog layout below 480px.
+		@media (max-width: 480px) {
+			width: 100%;
+		}
+
+		// Two column blog layout when the sidebar is in use.
+		@at-root body.page-layout-default.sidebar .blog-layout-masonry article {
+			width: 50%;
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
+		}
+
+		.entry-content {
+			font-size: 14px;
+		}
+
+		.entry-title {
+			font-size: 16px;
+			margin: 0 0 3px 0;
+		}
+
+		.entry-thumbnail {
+			@include clearfix;
+			margin-bottom: -1px;
+		}
+
+		.corp-content-wrapper {
+			border: 1px solid $color__background-hr;
+			padding: 25px 30px 33px;
+		}
+	}	
+}
 
 /*--------------------------------------------------------------
 ## Archives, Search Results & 404
@@ -831,7 +914,7 @@ body:not(.single) .entry-content p {
 			.corp-content-wrapper {
 				background: #fff;
 				border: 1px solid $color__background-hr;
-				padding: 15px 20px;
+				padding: 20px 25px;
 			}
 
 			a {
