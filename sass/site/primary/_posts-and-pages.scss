@@ -439,22 +439,23 @@ body:not(.single) .entry-content p {
 	}
 
 	.corp-content-wrapper {
-		border: 1px solid $color__background-hr;
+		border: 1px solid $color__background-hr;	
 	}
 
 	.entry-thumbnail {
 		margin-bottom: -1px;
-	}
+	}	
 
-	.entry-content {
+	.corp-content-wrapper,
+	.entry-thumbnail {
 		float: right;
 		width: 78%;
 
 		@media (max-width: 768px) {
 			float: none;
 			width: 100%;
-		}
-	}	
+		}			
+	}
 }
 
 /*--------------------------------------------------------------
@@ -536,7 +537,7 @@ body:not(.single) .entry-content p {
 				float: none;
 				width: 100%;
 			}				
-		}
+		}			
 
 		&:nth-of-type(2n) {
 			flex-direction: row-reverse;

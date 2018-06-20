@@ -295,6 +295,49 @@ function siteorigin_corp_entry_thumbnail_meta() {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_corp_offset_post_meta' ) ) :
+/**
+ * Print HTML with meta information for the post author, categories and comment count for the offset blog layout.
+ */
+function siteorigin_corp_offset_post_meta() {
+	$num_comments = get_comments_number();
+	if ( comments_open() ) {
+		if ( $num_comments == 0 ) {
+			$comments = esc_html__( 'Post a Comment', 'siteorigin-corp' );
+		} elseif ( $num_comments > 1 ) {
+			$comments = $num_comments . esc_html__( ' Comments', 'siteorigin-corp' );
+		} else {
+			$comments = esc_html__( '1 Comment', 'siteorigin-corp' );
+		}
+	} else {
+		$comments = NULL;
+	} ?>
+	<div class="entry-author-avatar">
+		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+		</a>
+	</div>
+	<div class="entry-author-link">
+		<span class="meta-text"><?php esc_html_e( 'Written by', 'siteorigin-corp' ); ?></span>
+		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+			<?php echo get_the_author(); ?>
+		</a>
+	</div>
+	<?php if ( siteorigin_setting( 'blog_post_categories' ) ) : ?>
+		<div class="entry-categories">
+			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-corp' ); ?></span>
+			<?php the_category( ', ', '', '' ); ?>
+		</div>
+	<?php endif; ?>
+	<?php if ( $comments && siteorigin_setting( 'blog_post_comment_count' ) ) : ?>
+		<div class="entry-comments">
+			<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-corp' ); ?></span>
+			<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
+		</div>
+	<?php endif;
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 /**
  * Display related posts on single posts.
@@ -322,7 +365,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 					<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 						<li>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-								<?php the_post_thumbnail( 'siteorigin-corp-354x234-crop' ); ?>
+								<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
 								<div class="corp-content-wrapper">
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
 									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>

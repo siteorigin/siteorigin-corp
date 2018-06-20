@@ -1942,11 +1942,13 @@ body:not(.single) .entry-content p:only-of-type {
 .blog-layout-offset article .entry-thumbnail {
   margin-bottom: -1px; }
 
-.blog-layout-offset article .entry-content {
+.blog-layout-offset article .corp-content-wrapper,
+.blog-layout-offset article .entry-thumbnail {
   float: right;
   width: 78%; }
   @media (max-width: 768px) {
-    .blog-layout-offset article .entry-content {
+    .blog-layout-offset article .corp-content-wrapper,
+    .blog-layout-offset article .entry-thumbnail {
       float: none;
       width: 100%; } }
 
