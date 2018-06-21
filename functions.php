@@ -254,7 +254,9 @@ require get_template_directory() . '/inc/settings.php';
 /**
  * Page Builder by SiteOrigin compatibility file.
  */
-require get_template_directory() . '/inc/siteorigin-panels.php';
+if ( defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+	require get_template_directory() . '/inc/siteorigin-panels.php';
+}
 
 /**
  * Custom template tags for this theme.
