@@ -9,8 +9,8 @@
  */
 
 $is_page_builder_post_loop_widget = class_exists( 'SiteOrigin_Panels_Widgets_PostLoop' ) &&
-									method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
-									SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
+method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
+SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
 
 $is_post_loop_template_offset = class_exists( 'SiteOrigin_Panels' ) && SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-offset.php';
 $is_post_loop_template_grid = class_exists( 'SiteOrigin_Panels' ) && SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-grid.php';
