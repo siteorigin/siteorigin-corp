@@ -5,6 +5,11 @@
 		display: inline-block;
 	}
 
+	.shopping-cart,
+	.search-toggle {
+		margin-left: 37px;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -206,7 +211,6 @@
 		border: none;
 		display: inline-block;
 		outline: none;
-		margin-left: 37px;
 		padding: 0;
 		position: relative;
 		top: 3px;
@@ -460,6 +464,8 @@ $sel: '';
 	padding: 40px 0;
 
 	a {
+		display: block;
+		line-height: 0;
 
 		img {
 			display: inline-block;
