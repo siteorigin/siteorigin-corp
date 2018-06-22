@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Name: Blog Grid
+ * Loop Name: Blog Alternate
  *
  * @package siteorigin-corp
  * @license GPL 2.0 
@@ -14,19 +14,24 @@ if ( have_posts() ) :
 		</header>
 
 	<?php
-	endif;
+	endif; ?>
 
-	/* Start the Loop */
-	while ( have_posts() ) : the_post();
+	<div class="blog-layout-alternate">
 
-		/*
-		 * Include the Post-Format-specific template for the content.
-		 * If you want to override this in a child theme, then include a file
-		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-		 */
-		get_template_part( 'template-parts/content', get_post_format() );
+		<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-	endwhile;
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
+				
+			endwhile; ?>
+
+	</div><?php
 
 	if ( is_rtl() ) :
 		the_posts_pagination( array( 

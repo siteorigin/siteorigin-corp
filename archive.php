@@ -20,7 +20,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 			<?php endif; ?>
 
-			<?php get_template_part( 'loops/loop', 'blog' ); ?>
+			<?php get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
