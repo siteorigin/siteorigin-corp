@@ -1145,7 +1145,6 @@ ul.product_list_widget {
         background: #2d2d2d;
         color: #fff; }
   .widget_shopping_cart .buttons .checkout {
-    color: #fff;
     margin-left: 10px; }
 
 /*--------------------------------------------------------------
@@ -1452,7 +1451,8 @@ ul.product_list_widget {
         width: 100%; } }
 
 .site-header .shopping-cart {
-  display: inline-block; }
+  display: inline-block;
+  margin: 0 16px 0 39px; }
   .site-header .shopping-cart li {
     font-size: initial;
     text-transform: none; }

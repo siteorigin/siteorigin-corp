@@ -31,13 +31,13 @@ jQuery( function( $ ) {
 	}
 
 	// FlexSlider.
-	$( document ).ready( function() {
+	$( window ).on( 'load', function() {
 		$( '.flexslider' ).each( function() {
 			$( this ).flexslider( {
 				animation: 'slide',
 				customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
 				start: function() {
-					$( '.flexslider .slides img' ).show();
+         			$( '.flexslider .slides img' ).show();
 				}
 			} );
 		} );
@@ -134,19 +134,19 @@ jQuery( function( $ ) {
 		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
 	} );
 
-	// Adjust for sticky header when linking from external anchors.
-	jQuery( window ).load( function() {
+    // Adjust for sticky header when linking from external anchors.
+    jQuery( window ).load( function() {
 
-		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
-			var target = jQuery( window.location.hash );
-			if ( target.length ) {
-				jQuery( 'html, body' ).animate( {
-					scrollTop: target.offset().top - headerHeight
-				}, 0 );
-				return false;
-			}
-		}
-	} ); 
+        if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
+            var target = jQuery( window.location.hash );
+            if ( target.length ) {
+                jQuery( 'html, body' ).animate( {
+                    scrollTop: target.offset().top - headerHeight
+                }, 0 );
+                return false;
+            }
+        }
+    } );   
 
 	// Indicate which section of the page we're viewing with selected menu classes.
 	function siteoriginCorpSelected() {  
@@ -216,7 +216,7 @@ jQuery( function( $ ) {
 			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
 				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
 					e.preventDefault();
-					$( this ).siblings( '.dropdown-toggle' ).trigger( 'click' );
+					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
 				}
 			} );
 
@@ -245,8 +245,6 @@ jQuery( function( $ ) {
 			}
 			$$.removeClass( 'to-close' );
 		} );
-
-		$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
 
 	} );
 
@@ -423,18 +421,3 @@ jQuery( function( $ ) {
 	}
 
 } );
-
-( function( $ ) {
-	$( window ).load( function() {
-
-		// Masonry blog layout.
-		if ( $( '.blog-layout-masonry' ).length ) {
-			$( '.blog-layout-masonry' ).masonry( {
-				itemSelector: '.hentry',
-				columnWidth: '.hentry'
-			} );
-		}
-
-	} );
-
-} )( jQuery );

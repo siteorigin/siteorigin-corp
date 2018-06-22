@@ -249,88 +249,29 @@ function siteorigin_corp_excerpt() {
 	} else {
 		$read_more_text = '';
 	}
-
-	if ( is_search() ) {
-		$ellipsis = '';
-		$length = 40;
-	} else {
-		$ellipsis = '...';
-		$length = siteorigin_setting( 'blog_excerpt_length' );
-	}
-	
+	$ellipsis = '...';
+	$length = siteorigin_setting( 'blog_excerpt_length' );
 	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
 	if ( $length ) {
+
 		if ( count( $excerpt ) >= $length ) {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
 		} else {
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
 		}
+
 	} else {
+		
 		$excerpt = get_the_excerpt();
+
 	}
 
 	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
 
 	echo $excerpt;
 
-}
-endif;
-
-if ( ! function_exists( 'siteorigin_corp_entry_thumbnail_meta' ) ) :
-/**
- * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
- */
-function siteorigin_corp_entry_thumbnail_meta() {
-	echo '<div class="thumbnail-meta">';
-	if ( has_category() ) {
-		echo get_the_category_list();
-	}
-	echo '</div>';
-}
-endif;
-
-if ( ! function_exists( 'siteorigin_corp_offset_post_meta' ) ) :
-/**
- * Print HTML with meta information for the post author, categories and comment count for the offset blog layout.
- */
-function siteorigin_corp_offset_post_meta() {
-	$num_comments = get_comments_number();
-	if ( comments_open() ) {
-		if ( $num_comments == 0 ) {
-			$comments = esc_html__( 'Post a Comment', 'siteorigin-corp' );
-		} elseif ( $num_comments > 1 ) {
-			$comments = $num_comments . esc_html__( ' Comments', 'siteorigin-corp' );
-		} else {
-			$comments = esc_html__( '1 Comment', 'siteorigin-corp' );
-		}
-	} else {
-		$comments = NULL;
-	} ?>
-	<div class="entry-author-avatar">
-		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
-		</a>
-	</div>
-	<div class="entry-author-link">
-		<span class="meta-text"><?php esc_html_e( 'Written by', 'siteorigin-corp' ); ?></span>
-		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-			<?php echo get_the_author(); ?>
-		</a>
-	</div>
-	<?php if ( siteorigin_setting( 'blog_post_categories' ) ) : ?>
-		<div class="entry-categories">
-			<span class="meta-text"><?php esc_html_e( 'Posted in', 'siteorigin-corp' ); ?></span>
-			<?php the_category( ', ', '', '' ); ?>
-		</div>
-	<?php endif; ?>
-	<?php if ( $comments && siteorigin_setting( 'blog_post_comment_count' ) ) : ?>
-		<div class="entry-comments">
-			<span class="meta-text"><?php esc_html_e( 'Comments', 'siteorigin-corp' ); ?></span>
-			<a href="<?php get_comments_link(); ?>"><?php echo $comments; ?></a>
-		</div>
-	<?php endif;
 }
 endif;
 
@@ -361,7 +302,12 @@ function siteorigin_corp_related_posts( $post_id ) {
 					<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 						<li>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-								<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
+								<?php
+								if ( has_post_thumbnail() && is_active_sidebar( 'sidebar-main' ) )
+									the_post_thumbnail( 'siteorigin-corp-247x164-crop' );
+								elseif ( has_post_thumbnail() )
+									the_post_thumbnail( 'siteorigin-corp-354x234-crop' );
+								?>
 								<div class="corp-content-wrapper">
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
 									<p class="related-post-date"><?php the_time( apply_filters( 'siteorigin_corp_date_format', 'F d, Y' ) ); ?></p>
@@ -420,34 +366,6 @@ function siteorigin_corp_post_meta() {
   		echo '</span>';
 	}
 }
-endif;
-
-if ( ! function_exists( 'siteorigin_corp_posted_on' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time.
-	 */
-	function siteorigin_corp_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date( apply_filters( 'siteorigin_corpdate_format', 'F d, Y' ) ) ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'siteorigin-corp' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
-	}
 endif;
 
 if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :

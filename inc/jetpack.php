@@ -47,62 +47,23 @@ if ( ! function_exists( 'siteorigin_corp_infinite_scroll_render' ) ) :
  * Custom render function for Infinite Scroll.
  */
 function siteorigin_corp_infinite_scroll_render() {
-	if ( is_search() ) : ?>
-		<div class="corp-search-results"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', 'search' );
-			endwhile; ?>
-		</div><?php
-	elseif ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) :
-		echo '<ul class="products test columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
-		while ( have_posts() ) :
-			the_post();
-			wc_get_template_part( 'content', 'product' );
-		endwhile;
-		echo '</ul>';		
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
-		<div class="blog-layout-grid"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile; ?>
-		</div><?php
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'standard' ) : ?>
-		<div class="blog-layout-standard"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile; ?>
-		</div><?php		
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'offset' ) : ?>
-		<div class="blog-layout-offset"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile; ?>
-		</div><?php
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) : ?>
-		<div class="blog-layout-alternate"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile; ?>
-		</div><?php
-	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'masonry' ) :
-		wp_enqueue_script( 'jquery-masonry' ); ?>
-		<div class="blog-layout-masonry"><?php
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile; ?>
-		</div><?php
-	else :
+	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) {
+		echo '<ul class="products columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
 		while ( have_posts() ) {
 			the_post();
-			get_template_part( 'template-parts/content', get_post_format() );
+			wc_get_template_part( 'content', 'product' );
 		}
-	endif;
+		echo '</ul>';
+	} else {	
+		while ( have_posts() ) {
+			the_post();
+			if ( is_search() ) :
+				get_template_part( 'template-parts/content', 'search' );
+			else :
+				get_template_part( 'template-parts/content', get_post_format() );
+			endif;
+		}
+	}
 }
 endif;
 

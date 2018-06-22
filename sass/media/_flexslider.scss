@@ -1,5 +1,4 @@
 .flexslider {
-	background: $color__text-dark;
 	position: relative;
 
 	.slides,
@@ -8,23 +7,16 @@
 		margin: 0;		
 	}
 
-	.slides {
-
-		li {
-			line-height: 0;
-		}
-
-		img {
-			display: none;
-			width: 100%;
-		}
+	.slides img {
+		display: none;
+		width: 100%; 
 	}
 
 	.slide {
 		background-repeat: no-repeat;
 		display: none;
 		overflow: hidden;
-		position: relative;
+		position: relative;		
 	}
 	
 	.flex-direction-nav a {
