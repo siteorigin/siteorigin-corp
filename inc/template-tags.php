@@ -606,10 +606,9 @@ if ( ! function_exists( 'siteorigin_corp_get_image' ) ) :
 /**
  * Removes the first image from the page.
  */
-function siteorigin_corp_get_image() {
-	$first_image = '';
+function siteorigin_corp_get_image()  {
 
-	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
+	preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
 
 	if ( empty( $images[0] ) ) return false;
 
