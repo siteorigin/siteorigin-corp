@@ -35,8 +35,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				</li>
 			</ul>
 		</div>
-	<?php elseif( has_post_thumbnail()  ) : ?>
-		<?php siteorigin_corp_entry_thumbnail() ?>
+	<?php elseif ( has_post_thumbnail() ) : ?>
+		<?php siteorigin_corp_entry_thumbnail(); ?>
 	<?php endif; ?>
 
 	<div class="corp-content-wrapper">

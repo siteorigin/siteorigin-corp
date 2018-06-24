@@ -524,7 +524,7 @@ if ( ! function_exists( 'siteorigin_corp_get_image' ) ) :
 /**
  * Removes the first image from the page.
  */
-function siteorigin_corp_get_image()  {
+function siteorigin_corp_get_image() {
 
 	preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
 
@@ -546,24 +546,23 @@ function siteorigin_corp_strip_image( $content ) {
 endif;
 
 if ( ! function_exists( 'siteorigin_corp_is_post_loop_widget' ) ) :
-	/**
-	 * Checks if we're currently rendering a post loop widget
-	 */
-	function siteorigin_corp_is_post_loop_widget(){
-		return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
-		       SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
-	}
+/**
+ * Checks if we're currently rendering a post loop widget
+ */
+function siteorigin_corp_is_post_loop_widget() {
+	return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) && SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
+}
 endif;
 
 if ( ! function_exists( 'siteorigin_corp_is_post_loop_template' ) ) :
 /**
- * Check if we're currently rendering a specific post loop widget
+ * Check if we're currently rendering a specific post loop widget.
  * @param $check
  *
  * @return bool
  */
-function siteorigin_corp_is_post_loop_template( $check ){
-	if( ! method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'get_current_loop_template' ) ) return false;
+function siteorigin_corp_is_post_loop_template( $check ) {
+	if ( ! method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'get_current_loop_template' ) ) return false;
 
 	switch( $check ) {
 		case 'offset':
@@ -580,19 +579,18 @@ function siteorigin_corp_is_post_loop_template( $check ){
 }
 endif;
 
-if( ! function_exists( 'siteorigin_corp_entry_thumbnail' ) ) :
+if ( ! function_exists( 'siteorigin_corp_entry_thumbnail' ) ) :
 /**
- * Displays the entry thumbnail for all blog loops
+ * Displays the entry thumbnail for all blog loops.
  */
-function siteorigin_corp_entry_thumbnail(){
+function siteorigin_corp_entry_thumbnail() {
 	if ( is_single() && siteorigin_setting( 'blog_post_featured_image' ) ) {
 		?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
 		<?php
-	}
-	elseif (
+	} elseif (
 		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) ||
 		siteorigin_corp_is_post_loop_template( 'grid' )
 	) {
@@ -603,8 +601,7 @@ function siteorigin_corp_entry_thumbnail(){
 			</a>
 		</div>
 		<?php
-	}
-	elseif (
+	} elseif (
 		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) ||
 		siteorigin_corp_is_post_loop_template( 'alternate' )
 	) {
@@ -615,8 +612,7 @@ function siteorigin_corp_entry_thumbnail(){
 			</a>
 		</div>
 		<?php
-	}
-	elseif (
+	} elseif (
 		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' )
 		|| siteorigin_corp_is_post_loop_template( 'masonry' )
 	) {
@@ -628,8 +624,7 @@ function siteorigin_corp_entry_thumbnail(){
 			</a>
 		</div>
 		<?php
-	}
-	elseif ( siteorigin_setting( 'blog_archive_featured_image' ) ) {
+	} elseif ( siteorigin_setting( 'blog_archive_featured_image' ) ) {
 		?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">

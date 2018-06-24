@@ -18,8 +18,8 @@
 		</div>
 	<?php endif; ?>		
 	
-	<?php if( has_post_thumbnail() ) : ?>
-		<?php siteorigin_corp_entry_thumbnail() ?>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<?php siteorigin_corp_entry_thumbnail(); ?>
 	<?php endif; ?>	
 
 	<div class="corp-content-wrapper">

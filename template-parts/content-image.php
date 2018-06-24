@@ -19,8 +19,8 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				<?php echo siteorigin_corp_get_image(); ?>
 			</a>
 		</div>
-	<?php elseif( has_post_thumbnail() ) : ?>
-		<?php siteorigin_corp_entry_thumbnail() ?>
+	<?php elseif ( has_post_thumbnail() ) : ?>
+		<?php siteorigin_corp_entry_thumbnail(); ?>
 	<?php endif; ?>
 
 	<div class="corp-content-wrapper">
