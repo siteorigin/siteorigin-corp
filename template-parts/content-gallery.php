@@ -12,15 +12,6 @@ $content = siteorigin_corp_strip_gallery( get_the_content() );
 $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
 
 $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
-
-$is_page_builder_post_loop_widget = class_exists( 'SiteOrigin_Panels_Widgets_PostLoop' ) &&
-method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
-SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
-
-$is_post_loop_template_offset = class_exists( 'SiteOrigin_Panels' ) && SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-offset.php';
-$is_post_loop_template_grid = class_exists( 'SiteOrigin_Panels' ) && SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-grid.php';
-$is_post_loop_template_alternate = class_exists( 'SiteOrigin_Panels' ) && SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-alternate.php';
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -48,19 +39,19 @@ $is_post_loop_template_alternate = class_exists( 'SiteOrigin_Panels' ) && SiteOr
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
-	<?php elseif ( ! $is_page_builder_post_loop_widget && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' || has_post_thumbnail() && $is_post_loop_template_grid ) : ?>
+	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'grid' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
 			</a>
 		</div>
-	<?php elseif ( ! $is_page_builder_post_loop_widget && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' || has_post_thumbnail() && $is_post_loop_template_alternate ) : ?>
+	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'alternate' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
 			</a>
 		</div>
-	<?php elseif ( ! $is_page_builder_post_loop_widget && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' || has_post_thumbnail() && $is_post_loop_template_masonry ) : ?>
+	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'masonry' ) ) : ?>
 		<div class="entry-thumbnail">
 			<?php if ( siteorigin_setting( 'blog_post_categories' ) ) siteorigin_corp_entry_thumbnail_meta(); ?>
 			<a href="<?php the_permalink(); ?>">

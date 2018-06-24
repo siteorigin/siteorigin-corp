@@ -627,3 +627,25 @@ function siteorigin_corp_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 }
 endif;
+
+function siteorigin_corp_is_post_loop_widget(){
+	return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
+	       SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
+}
+
+function siteorigin_corp_is_post_loop_template( $check ){
+	if( ! method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'get_current_loop_template' ) ) return false;
+
+	switch( $check ) {
+		case 'offset':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-offset.php';
+		case 'grid':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-grid.php';
+		case 'alternate':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-alternate.php';
+		case 'masonry':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-masonry.php';
+	}
+
+	return false;
+}
