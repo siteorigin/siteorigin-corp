@@ -17,36 +17,38 @@
 			<?php siteorigin_corp_offset_post_meta(); ?>
 		</div>
 	<?php endif; ?>		
-
-	<?php if ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div>	
-	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'grid' ) ) : ?>
-		<div class="entry-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
-			</a>
-		</div>
-	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'alternate' ) ) : ?>
-		<div class="entry-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
-			</a>
-		</div>		
-	<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' || has_post_thumbnail() && siteorigin_corp_is_post_loop_template( 'masonry' ) ) : ?>
-		<div class="entry-thumbnail">
-			<?php if ( siteorigin_setting( 'blog_post_categories' ) ) siteorigin_corp_entry_thumbnail_meta(); ?>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail(); ?>	
-			</a>
-		</div>
-	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
-		<div class="entry-thumbnail">
-			<a href="<?php the_permalink(); ?>">
+	
+	<?php if( has_post_thumbnail() ) : ?>
+		<?php if ( is_single() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
+			<div class="entry-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</a>
-		</div>
+			</div>	
+		<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' || siteorigin_corp_is_post_loop_template( 'grid' ) ) : ?>
+			<div class="entry-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
+				</a>
+			</div>
+		<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' || siteorigin_corp_is_post_loop_template( 'alternate' ) ) : ?>
+			<div class="entry-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>	
+				</a>
+			</div>		
+		<?php elseif ( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' || siteorigin_corp_is_post_loop_template( 'masonry' ) ) : ?>
+			<div class="entry-thumbnail">
+				<?php if ( siteorigin_setting( 'blog_post_categories' ) ) siteorigin_corp_entry_thumbnail_meta(); ?>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>	
+				</a>
+			</div>
+		<?php elseif ( siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
+			<div class="entry-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>
+				</a>
+			</div>
+		<?php endif; ?>	
 	<?php endif; ?>	
 
 	<div class="corp-content-wrapper">
