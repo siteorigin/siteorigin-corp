@@ -661,3 +661,64 @@ function siteorigin_corp_is_post_loop_template( $check ){
 	return false;
 }
 endif;
+
+if( ! function_exists( 'siteorigin_corp_entry_thumbnail' ) ) :
+/**
+ * Displays the entry thumbnail for all blog loops
+ */
+function siteorigin_corp_entry_thumbnail(){
+	if ( is_single() && siteorigin_setting( 'blog_post_featured_image' ) ) {
+		?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) ||
+		siteorigin_corp_is_post_loop_template( 'grid' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) ||
+		siteorigin_corp_is_post_loop_template( 'alternate' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' )
+		|| siteorigin_corp_is_post_loop_template( 'masonry' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<?php if ( siteorigin_setting( 'blog_post_categories' ) ) siteorigin_corp_entry_thumbnail_meta(); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif ( siteorigin_setting( 'blog_archive_featured_image' ) ) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		</div>
+		<?php
+	}
+}
+endif;
