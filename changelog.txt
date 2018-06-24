@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.6 - 25 June 2018 =
+* Prevented full screen header search markup from outputting when disabled.
+* Minor styling fixes.
+* Added a new search results design.
+* Added four new blog layouts accessible from `Theme Settings > Blog` and the Page Builder Post Loop widget.
+
 = 1.5.1 - 07 June 2018 =
 * Resolved Customizer color settings bug. Updated Customizer settings CSS.
 * Unified more tag and excerpt more link styling.
