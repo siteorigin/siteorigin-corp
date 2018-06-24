@@ -242,6 +242,18 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the featured image on blog and archive pages.', 'siteorigin-corp' )
 				),
+				'archive_layout' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Archive Layout', 'siteorigin-corp' ),
+					'options' => array(
+						'grid'  => esc_html__( 'Grid', 'siteorigin-corp' ),
+						'standard' => esc_html__( 'Standard', 'siteorigin-corp' ),
+						'offset' => esc_html__( 'Offset', 'siteorigin-corp' ),
+						'alternate' => esc_html__( 'Alternate', 'siteorigin-corp' ),
+						'masonry' => esc_html__( 'Masonry', 'siteorigin-corp' ),
+					),
+					'description' => esc_html__( 'Choose how to display your posts on the blog and archive pages.', 'siteorigin-corp' )
+				),				
 				'archive_content' => array(
 					'type' => 'select',
 					'label' => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
@@ -1459,6 +1471,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['navigation_search_overlay_background']		= '#090d14';
 
 	$defaults['blog_archive_featured_image']				= true;
+	$defaults['blog_archive_layout']						= 'grid';
 	$defaults['blog_archive_content']         				= 'excerpt';
 	$defaults['blog_excerpt_length']          				= 55;
 	$defaults['blog_post_excerpt_read_more_link']			= false;
