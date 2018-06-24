@@ -100,9 +100,9 @@ jQuery( function( $ ) {
 
 	// Header height. 2px to account for header shadow.
 	if ( isStickyHeader && isAdminBar && jQuery( window ).width() > 600 ) { // From 600px the admin bar isn't sticky so we shouldn't take its height into account.
-		headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 2;
+		headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 1;
 	} else if ( isStickyHeader ) {
-		headerHeight = $( 'header' ).outerHeight() - 2;
+		headerHeight = $( 'header' ).outerHeight() - 1;
 	} else {
 		headerHeight = 0;
 	}
@@ -168,7 +168,7 @@ jQuery( function( $ ) {
 			var thisID = '#' + jQuery( this ).attr( 'id' );
 
 			// Distance between top and our section. Minus 2px to compensate for an extra pixel produced when a Page Builder row bottom margin is set to 0.
-			var offset = jQuery( this ).offset().top - 2;
+			var offset = jQuery( this ).offset().top - 1;
 
 			// Section height.
 			var thisHeight = jQuery( this ).outerHeight();
