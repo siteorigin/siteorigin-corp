@@ -627,11 +627,23 @@ function siteorigin_corp_strip_image( $content ) {
 }
 endif;
 
-function siteorigin_corp_is_post_loop_widget(){
-	return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
-	       SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
-}
+if ( ! function_exists( 'siteorigin_corp_is_post_loop_widget' ) ) :
+	/**
+	 * Checks if we're currently rendering a post loop widget
+	 */
+	function siteorigin_corp_is_post_loop_widget(){
+		return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
+		       SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
+	}
+endif;
 
+if ( ! function_exists( 'siteorigin_corp_is_post_loop_template' ) ) :
+/**
+ * Check if we're currently rendering a specific post loop widget
+ * @param $check
+ *
+ * @return bool
+ */
 function siteorigin_corp_is_post_loop_template( $check ){
 	if( ! method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'get_current_loop_template' ) ) return false;
 
@@ -648,3 +660,4 @@ function siteorigin_corp_is_post_loop_template( $check ){
 
 	return false;
 }
+endif;
