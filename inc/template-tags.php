@@ -524,10 +524,9 @@ if ( ! function_exists( 'siteorigin_corp_get_image' ) ) :
 /**
  * Removes the first image from the page.
  */
-function siteorigin_corp_get_image() {
-	$first_image = '';
+function siteorigin_corp_get_image()  {
 
-	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
+	preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
 
 	if ( empty( $images[0] ) ) return false;
 
@@ -543,5 +542,101 @@ if ( ! function_exists( 'siteorigin_corp_strip_image' ) ) :
  */
 function siteorigin_corp_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_corp_is_post_loop_widget' ) ) :
+	/**
+	 * Checks if we're currently rendering a post loop widget
+	 */
+	function siteorigin_corp_is_post_loop_widget(){
+		return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) &&
+		       SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
+	}
+endif;
+
+if ( ! function_exists( 'siteorigin_corp_is_post_loop_template' ) ) :
+/**
+ * Check if we're currently rendering a specific post loop widget
+ * @param $check
+ *
+ * @return bool
+ */
+function siteorigin_corp_is_post_loop_template( $check ){
+	if( ! method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'get_current_loop_template' ) ) return false;
+
+	switch( $check ) {
+		case 'offset':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-offset.php';
+		case 'grid':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-grid.php';
+		case 'alternate':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-alternate.php';
+		case 'masonry':
+			return SiteOrigin_Panels_Widgets_PostLoop::get_current_loop_template() == 'loops/loop-blog-masonry.php';
+	}
+
+	return false;
+}
+endif;
+
+if( ! function_exists( 'siteorigin_corp_entry_thumbnail' ) ) :
+/**
+ * Displays the entry thumbnail for all blog loops
+ */
+function siteorigin_corp_entry_thumbnail(){
+	if ( is_single() && siteorigin_setting( 'blog_post_featured_image' ) ) {
+		?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) ||
+		siteorigin_corp_is_post_loop_template( 'grid' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'alternate' ) ||
+		siteorigin_corp_is_post_loop_template( 'alternate' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif (
+		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'masonry' )
+		|| siteorigin_corp_is_post_loop_template( 'masonry' )
+	) {
+		?>
+		<div class="entry-thumbnail">
+			<?php if ( siteorigin_setting( 'blog_post_categories' ) ) siteorigin_corp_entry_thumbnail_meta(); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		</div>
+		<?php
+	}
+	elseif ( siteorigin_setting( 'blog_archive_featured_image' ) ) {
+		?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+		</div>
+		<?php
+	}
 }
 endif;
