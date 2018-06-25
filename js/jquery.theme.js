@@ -220,7 +220,7 @@ jQuery( function( $ ) {
 			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
 				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
 					e.preventDefault();
-					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
+					$( this ).siblings( '.dropdown-toggle' ).trigger( 'click' );
 				}
 			} );
 
@@ -249,6 +249,8 @@ jQuery( function( $ ) {
 			}
 			$$.removeClass( 'to-close' );
 		} );
+
+		$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
 
 	} );
 
