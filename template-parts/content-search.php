@@ -8,10 +8,9 @@
  * @license GPL 2.0 
  */
 
-$post_class = has_post_thumbnail() ? 'has-post-thumbnail' : '';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
