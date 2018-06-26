@@ -35,17 +35,9 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 				</li>
 			</ul>
 		</div>
-	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div>
-	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_archive_featured_image' ) ) : ?>		
-		<div class="entry-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'siteorigin-corp-551x364-crop' ); ?>		
-			</a>
-		</div>
-	<?php endif; ?>	
+	<?php elseif ( has_post_thumbnail() ) : ?>
+		<?php siteorigin_corp_entry_thumbnail(); ?>
+	<?php endif; ?>
 
 	<div class="corp-content-wrapper">
 		<header class="entry-header">

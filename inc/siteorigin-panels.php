@@ -23,9 +23,11 @@ add_filter( 'siteorigin_panels_local_layouts_directories', 'siteorigin_corp_layo
 function siteorigin_corp_filter_post_loop_widget( $templates ) {
     $disallowed_template_patterns = array(
         'template-parts/content.php',
+        'template-parts/content-alternate.php',
         'template-parts/content-gallery.php',
         'template-parts/content-image.php',
         'template-parts/content-none.php',
+        'template-parts/content-offset.php',
         'template-parts/content-page.php',
         'template-parts/content-search.php',
         'template-parts/content-single.php',
