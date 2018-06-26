@@ -251,8 +251,8 @@ function siteorigin_corp_excerpt() {
 	}
 
 	if ( is_search() ) {
-		$ellipsis = '';
-		$length = 40;
+		$ellipsis = '...';
+		$length = 38;
 	} else {
 		$ellipsis = '...';
 		$length = siteorigin_setting( 'blog_excerpt_length' );
