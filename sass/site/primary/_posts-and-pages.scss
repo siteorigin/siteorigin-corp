@@ -1,11 +1,6 @@
 /*--------------------------------------------------------------
 ## Posts
 --------------------------------------------------------------*/
-body:not(.single) article	{
-	@include clearfix;
-	margin-bottom: 40px;
-}
-
 .entry-header {
 	margin-bottom: 25px;
 }
@@ -356,6 +351,7 @@ body:not(.single) .entry-content p {
 ## Blog Loop: Standard
 --------------------------------------------------------------*/
 .blog-layout-standard article {
+	margin-bottom: 40px;
 
 	.corp-content-wrapper {
 		border: 1px solid $color__background-hr;
@@ -378,6 +374,8 @@ body:not(.single) .entry-content p {
 ## Blog Loop: Offset
 --------------------------------------------------------------*/
 .blog-layout-offset article {
+	@include clearfix;
+	margin-bottom: 40px;
 
 	.entry-header {
 
