@@ -55,7 +55,7 @@ function siteorigin_corp_infinite_scroll_render() {
 			endwhile; ?>
 		</div><?php
 	elseif ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_woocommerce() ) ) :
-		echo '<ul class="products test columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
+		echo '<ul class="products columns-' . esc_attr( wc_get_loop_prop( 'columns' ) ) . '">';
 		while ( have_posts() ) :
 			the_post();
 			wc_get_template_part( 'content', 'product' );
