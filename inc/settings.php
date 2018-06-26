@@ -831,9 +831,6 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	#fullscreen-search .search-close-button .close svg path {
 	fill: ${navigation_search_overlay_text};
 	}
-	body:not(.single) .hentry {
-	border: 1px solid ${typography_border};
-	}
 	.entry-title {
 	color: ${typography_heading};
 	}
@@ -881,6 +878,39 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	}
 	.tags-links a:hover:after,aside.widget.widget_tag_cloud .tagcloud a:hover:after {
 	border-right-color: ${typography_accent};
+	}
+	.blog-layout-grid article {
+	border: 1px solid ${typography_border};
+	}
+	.blog-layout-standard article .corp-content-wrapper {
+	border: 1px solid ${typography_border};
+	}
+	.blog-layout-offset article .entry-header .entry-time {
+	color: ${typography_secondary_text};
+	}
+	.blog-layout-offset article .entry-offset .entry-author-link,.blog-layout-offset article .entry-offset .entry-categories,.blog-layout-offset article .entry-offset .entry-comments {
+	color: ${typography_secondary_text};
+	}
+	.blog-layout-offset article .entry-offset .entry-author-link a,.blog-layout-offset article .entry-offset .entry-categories a,.blog-layout-offset article .entry-offset .entry-comments a {
+	color: ${typography_heading};
+	}
+	.blog-layout-offset article .entry-offset .entry-author-link a:hover,.blog-layout-offset article .entry-offset .entry-categories a:hover,.blog-layout-offset article .entry-offset .entry-comments a:hover {
+	color: ${typography_accent};
+	}
+	.blog-layout-offset article .corp-content-wrapper {
+	border: 1px solid ${typography_border};
+	}
+	.blog-layout-alternate .hentry {
+	border: 1px solid ${typography_border};
+	}
+	.content-area .blog-layout-masonry article .corp-content-wrapper {
+	border: 1px solid ${typography_border};
+	}
+	.search-results .page-title span {
+	color: ${typography_accent};
+	}
+	.search-results .hentry {
+	border: 1px solid ${typography_border};
 	}
 	.search-form button[type="submit"] svg path {
 	fill: ${typography_text};
@@ -978,6 +1008,9 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	}
 	.wp-caption {
 	color: ${typography_secondary_text};
+	}
+	.flexslider {
+	background: ${typography_heading};
 	}
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
@@ -1361,7 +1394,6 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	color: ${typography_heading};
 	}
 	}';
-
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custom_css' );
