@@ -32,7 +32,7 @@ function siteorigin_corp_jetpack_setup() {
 		'container' => 'main',
 		'render' => 'siteorigin_corp_infinite_scroll_render',
 		'footer' => 'page',
-		'posts_per_page' => get_option( 'posts_per_page' ),
+		'posts_per_page' => get_option( 'jetpack_portfolio_posts_per_page' ),
 	) );
 	/*
 	 * Enable support for Jetpack Responsive Videos.
