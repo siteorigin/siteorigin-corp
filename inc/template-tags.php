@@ -672,6 +672,8 @@ function siteorigin_corp_entry_thumbnail() {
 			<?php the_post_thumbnail(); ?>
 		</div>
 		<?php
+	} elseif ( is_single() ) {
+		return;
 	} elseif (
 		( ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_featured_image' ) && siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) ||
 		siteorigin_corp_is_post_loop_template( 'grid' )
