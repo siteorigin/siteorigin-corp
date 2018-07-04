@@ -1835,7 +1835,7 @@ ul.product_list_widget {
     color: rgba(0, 0, 128, 0.7); }
 
 .order-again {
-  margin: 25px 0 0; }
+  margin: 25px 0 0 !important; }
   .order-again .button {
     display: inline-block; }
 
@@ -1844,5 +1844,3 @@ ul.product_list_widget {
 --------------------------------------------------------------*/
 .track_order p {
   margin-bottom: 26px; }
-
-/*# sourceMappingURL=sass/maps/woocommerce.css.map */
