@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.6.1 - 04 July 2018 =
+* Minor WooCommerce styling adjustments.
+* Fixed single post featured image setting.
+* Switched Jetpack Infinite Scroll posts per page to the Jetpack Infinite Scroll setting for posts per page.
+
 = 1.6 - 25 June 2018 =
 * Prevented full screen header search markup from outputting when disabled.
 * Minor styling fixes.
