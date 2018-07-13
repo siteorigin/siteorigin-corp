@@ -10,8 +10,9 @@
 		top: 40%;
 	}
 
-	h3 {
+	span {
 		color: $color__navigation-search-overlay_text;
+		display: block;
 		font-family: $font__main;
 		font-size: 20px;
 		font-weight: 300;
