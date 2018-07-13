@@ -69,7 +69,7 @@
 				<?php if ( siteorigin_setting( 'navigation_menu_search' ) ) : ?>
 					<div id="fullscreen-search">
 						<div class="corp-container">
-							<h3><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></h3>
+							<span><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></span>
 							<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
 								<input type="search" name="s" placeholder="" value="<?php echo get_search_query() ?>" />
 								<button type="submit">

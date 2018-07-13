@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.6.2 - 13 July 2018 =
+* Removed Post Loop H1 screen reader tags.
+* Removed full screen search H3 tag.
+
 = 1.6.1 - 04 July 2018 =
 * Minor WooCommerce styling adjustments.
 * Fixed single post featured image setting.
