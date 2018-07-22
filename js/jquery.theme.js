@@ -108,6 +108,11 @@ jQuery( function( $ ) {
 	}
 
 	$.fn.siteoriginCorpSmoothScroll = function() {
+
+		if ( $( 'body' ).hasClass( 'disable-smooth-scroll' ) ) {
+			return;
+		}
+
 		$( this ).click( function( e ) {
 
 			var hash    = this.hash;
@@ -197,7 +202,7 @@ jQuery( function( $ ) {
 
 	// Mobile Menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function ( e ) {
+	$( '#mobile-menu-button' ).click( function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'to-close' );
@@ -286,8 +291,8 @@ jQuery( function( $ ) {
 	} );
 
 	$( '#fullscreen-search-form' ).submit( function() {
-		$(this).find( 'button svg' ).hide();
-		$(this).find( 'button svg:last-child' ).show();
+		$( this ).find( 'button svg' ).hide();
+		$( this ).find( 'button svg:last-child' ).show();
 	} );
 
 	// Close fullscreen search with close button
@@ -297,7 +302,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Close fullscreen search with escape key.
-	$( document ).keyup( function(e) {
+	$( document ).keyup( function( e ) {
 		if ( e.keyCode === 27 ) { // escape key maps to keycode `27`
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
