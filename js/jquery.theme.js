@@ -98,7 +98,7 @@ jQuery( function( $ ) {
 		isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
 		headerHeight;
 
-	// Header height. 2px to account for header shadow.
+	// Header height. 1px to account for header shadow.
 	if ( isStickyHeader && isAdminBar && jQuery( window ).width() > 600 ) { // From 600px the admin bar isn't sticky so we shouldn't take its height into account.
 		headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 1;
 	} else if ( isStickyHeader ) {
@@ -108,6 +108,11 @@ jQuery( function( $ ) {
 	}
 
 	$.fn.siteoriginCorpSmoothScroll = function() {
+
+		if ( $( 'body' ).hasClass( 'disable-smooth-scroll' ) ) {
+			return;
+		}
+
 		$( this ).click( function( e ) {
 
 			var hash    = this.hash;
@@ -167,7 +172,7 @@ jQuery( function( $ ) {
 			// Section ID.
 			var thisID = '#' + jQuery( this ).attr( 'id' );
 
-			// Distance between top and our section. Minus 2px to compensate for an extra pixel produced when a Page Builder row bottom margin is set to 0.
+			// Distance between top and our section. Minus 1px to compensate for an extra pixel produced when a Page Builder row bottom margin is set to 0.
 			var offset = jQuery( this ).offset().top - 1;
 
 			// Section height.
@@ -197,7 +202,7 @@ jQuery( function( $ ) {
 
 	// Mobile Menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function ( e ) {
+	$( '#mobile-menu-button' ).click( function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'to-close' );
@@ -286,8 +291,8 @@ jQuery( function( $ ) {
 	} );
 
 	$( '#fullscreen-search-form' ).submit( function() {
-		$(this).find( 'button svg' ).hide();
-		$(this).find( 'button svg:last-child' ).show();
+		$( this ).find( 'button svg' ).hide();
+		$( this ).find( 'button svg:last-child' ).show();
 	} );
 
 	// Close fullscreen search with close button
@@ -297,7 +302,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Close fullscreen search with escape key.
-	$( document ).keyup( function(e) {
+	$( document ).keyup( function( e ) {
 		if ( e.keyCode === 27 ) { // escape key maps to keycode `27`
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
