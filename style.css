@@ -1182,6 +1182,11 @@ a {
     display: inline-block;
     float: right; }
 
+.site-content #primary .sharedaddy.sd-like {
+  padding-bottom: 20px; }
+  .site-content #primary .sharedaddy.sd-like h3 {
+    margin-bottom: 10px; }
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/

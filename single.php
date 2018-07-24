@@ -19,6 +19,11 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+				$custom_likes = new Jetpack_Likes;
+				echo $custom_likes->post_likes();
+			}			
+
 			if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) {
 				echo sharing_display();
 			}
