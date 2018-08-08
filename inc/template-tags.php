@@ -472,7 +472,7 @@ function siteorigin_corp_footer_text() {
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
-	echo wp_kses_post( $text );
+	echo wp_kses_post( $text ) . '&nbsp;';
 }
 endif;
 
