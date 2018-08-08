@@ -39,19 +39,22 @@
 		<div class="bottom-bar">
 			<div class="corp-container">
 				<div class="site-info">
-						<?php
-						siteorigin_corp_footer_text();
+					<?php
+					siteorigin_corp_footer_text();
 
-						$credit_text = apply_filters(
-							'siteorigin_corp_footer_credits',
-							sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-corp' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
-						);
+					if ( function_exists( 'the_privacy_policy_link' ) ) {
+						the_privacy_policy_link( '', '.&nbsp;' );
+					}
+					
+					$credit_text = apply_filters(
+						'siteorigin_corp_footer_credits',
+						sprintf( esc_html__( 'Crafted with love by %s.', 'siteorigin-corp' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
+					);
 
-						if ( ! empty( $credit_text ) ) {
-							?>&nbsp;<?php
-							echo wp_kses_post( $credit_text );
-						}
-						?>
+					if ( ! empty( $credit_text ) ) {
+						echo wp_kses_post( $credit_text );
+					}
+					?>
 				</div><!-- .site-info -->
 				<?php 
 					$widget = siteorigin_setting( 'footer_social_widget' ); 
@@ -59,10 +62,10 @@
 					<div class="footer-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'depth' => 1, 'fallback_cb' => '' ) ); ?>
 						<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
-		                		the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget ); 
-		                	} 
-		                ?>					
-					</div><!-- .footer-menu -->					
+							the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget );
+						} 
+					?>
+					</div><!-- .footer-menu -->
 				<?php endif; ?>
 			</div><!-- .corp-container -->
 		</div><!-- .bottom-bar -->

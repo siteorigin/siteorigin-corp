@@ -472,7 +472,7 @@ function siteorigin_corp_footer_text() {
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
-	echo wp_kses_post( $text );
+	echo wp_kses_post( $text ) . '&nbsp;';
 }
 endif;
 
@@ -629,7 +629,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_is_post_loop_widget' ) ) :
 /**
- * Checks if we're currently rendering a post loop widget
+ * Checks if we're currently rendering a post loop widget.
  */
 function siteorigin_corp_is_post_loop_widget() {
 	return method_exists( 'SiteOrigin_Panels_Widgets_PostLoop', 'is_rendering_loop' ) && SiteOrigin_Panels_Widgets_PostLoop::is_rendering_loop();
