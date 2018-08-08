@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.6.4 - 08 August 2018 =
+* Added the privacy page link to the footer if a page is selected.
+* Resolved Jetpack Likes warning.
+
 = 1.6.3 - 24 July 2018 =
 * Added body class option to disable smooth scroll.
 * Added Jetpack Like compatibility.
