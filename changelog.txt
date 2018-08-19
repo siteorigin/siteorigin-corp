@@ -1,7 +1,7 @@
 == Changelog ==
 
 = 1.6.4 - 08 August 2018 =
-* Added the privacy page link to the footer if a page is selected.
+* Added the privacy page link to the bottom bar if a privacy page is selected.
 * Resolved Jetpack Likes warning.
 
 = 1.6.3 - 24 July 2018 =
