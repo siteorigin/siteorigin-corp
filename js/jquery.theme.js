@@ -4,7 +4,7 @@
  * Handles the primary JavaScript functions for the theme.
  */
 
-/* globals jQuery, siteorigin_corp_resp_menu_params */
+/* globals jQuery, siteoriginCorp */
 
 jQuery( function( $ ) {
 
@@ -338,7 +338,7 @@ jQuery( function( $ ) {
 
 		var smSetup = function() {
 
-			if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteorigin_corp_resp_menu_params.collapse ) ) {
+			if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginCorp.collapse ) ) {
 				return;
 			}
 
@@ -388,35 +388,37 @@ jQuery( function( $ ) {
 
 		// Sticky header logo scaling.
 		if ( $mh.data( 'scale-logo' ) ) {
+			var $img = $mh.find( '.site-branding img' ),
+			    imgWidth = $img.width(),
+			    imgHeight = $img.height();
+			    scaledWidth = imgWidth * siteoriginCorp.logoScale;
+			    scaledHeight = imgHeight * siteoriginCorp.logoScale;
+			    
 			var smResizeLogo = function () {
-				var top = window.pageYOffset || document.documentElement.scrollTop;
+				var $branding = $mh.find( '.site-branding > *' ),
+				    top = window.pageYOffset || document.documentElement.scrollTop;
 				top -= pageTop;
 
-				var $img = $mh.find( '.site-branding img' ),
-					$branding = $mh.find( '.site-branding > *' );
-
-				$img.removeAttr( 'style' );
-				var imgWidth = $img.width(),
-					imgHeight = $img.height();
-
 				if ( top > 0 ) {
-					var scale = 0.775 + ( Math.max( 0, 48 - top ) / 48 * ( 1 - 0.775 ) );
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
+						if ( $img.length ) {
+							$img.css( {
+								width: imgWidth * scale,
+								height: imgHeight * scale,
+								'max-width' : 'none'
+							} );
+						}
+						else {
+							$branding.css( 'transform', 'scale(' + scale + ')' );
+						}
 
-					if ( $img.length ) {
-
-						$img.css( {
-							width: imgWidth * scale,
-							height: imgHeight * scale,
-							'max-width' : 'none'
-						} );
-					} else {
-						$branding.css( 'transform', 'scale(' + scale + ')' );
+						$mh.css( {
+							'padding-top': mhPadding.top * scale,
+							'padding-bottom': mhPadding.bottom * scale
+						} ).addClass( 'stuck' );
 					}
-
-					$mh.css( {
-						'padding-top': mhPadding.top * scale,
-						'padding-bottom': mhPadding.bottom * scale
-					} ).addClass( 'stuck' );
 				} else {
 					if ( ! $img.length ) {
 						$branding.css( 'transform', 'scale(1)' );
@@ -437,7 +439,7 @@ jQuery( function( $ ) {
 
 ( function( $ ) {
 	$( window ).load( function() {
-
+		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
 		// Masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
 			$( '.blog-layout-masonry' ).masonry( {

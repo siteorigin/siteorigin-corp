@@ -181,11 +181,12 @@ function siteorigin_corp_scripts() {
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 
-	// Mobile menu collapse localisation.
-	$menu_params = array(
-		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' )
-	);
-	wp_localize_script( 'siteorigin-corp-script', 'siteorigin_corp_resp_menu_params', $menu_params );
+	// Mobile menu collapse and Sticky Logo Scaling localisation.
+	$logo_sticky_scale = apply_filters( 'siteorigin_corp_logo_sticky_scale', 0.755 );
+	wp_localize_script( 'siteorigin-corp-script', 'siteoriginCorp', array(
+		'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' ),
+		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
+	) );
 
 	// Theme icons.
 	wp_enqueue_style( 'siteorigin-corp-icons', get_template_directory_uri() . '/css/siteorigin-corp-icons' . SITEORIGIN_THEME_JS_PREFIX . '.css', array(), SITEORIGIN_THEME_JS_PREFIX );
