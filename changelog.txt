@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.6.5 - 21 August 2018 =
+* Logo Scaling: Added filter to adjust scale and prevent constant rescaling.
+* Removed post meta date formats.
+* Added a check to see if WooCommerce is active before adding the header mini-cart.
+
 = 1.6.4 - 08 August 2018 =
 * Added the privacy page link to the bottom bar if a privacy page is selected.
 * Resolved Jetpack Likes warning.
