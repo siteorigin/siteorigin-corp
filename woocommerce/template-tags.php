@@ -77,10 +77,10 @@ function siteorigin_corp_woocommerce_archive_product_image() { ?>
 		<?php woocommerce_template_loop_product_link_open(); ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
-		<?php if ( siteorigin_setting( 'quick_view' ) && ! ( siteorigin_setting( 'archive_columns' ) == 5 ) ) {
+		<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) {
 			siteorigin_corp_woocommerce_quick_view_button();
 		} ?>		
-		<?php if ( siteorigin_setting( 'add_to_cart' ) && ! ( siteorigin_setting( 'archive_columns' ) == 5 ) ) {
+		<?php if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
 			woocommerce_template_loop_add_to_cart();
 		} ?>
 	</div>
@@ -163,10 +163,10 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_woocommerce_quick_view' ) ) :
 /**
- * Setup quick view modal in the footer.
+ * Setup quick view modal in the footer.`
  */
 function siteorigin_corp_woocommerce_quick_view() { ?>
-	<?php if ( siteorigin_setting( 'quick_view' ) ) : ?>
+	<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) : ?>
 		<!-- WooCommerce Quick View -->
 		<div id="quick-view-container">
 			<div id="product-quick-view" class="quick-view"></div>

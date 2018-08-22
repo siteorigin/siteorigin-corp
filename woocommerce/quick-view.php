@@ -15,6 +15,7 @@ while ( have_posts() ) : the_post();
 	 * Adds the product-quick-view class to the Quick View post.
 	 */
 	function siteorigin_corp_woocommerce_quick_view_class( $classes ) {
+		$classes[] = "product";
 		$classes[] = "product-quick-view";
 		return $classes;
 	}
@@ -22,28 +23,32 @@ while ( have_posts() ) : the_post();
 	add_filter( 'post_class', 'siteorigin_corp_woocommerce_quick_view_class' );
 
 	?>
-	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="woocommerce">
+		
+		<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<div class="product-content-wrapper">
-	
-			<div class="product-image-wrapper">
+			<div class="product-content-wrapper">
+		
+				<div class="product-image-wrapper">
 
-				<?php do_action( 'siteorigin_corp_woocommerce_quick_view_images' ); ?>
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_images' ); ?>
 
-			</div>
+				</div>
 
-			<div class="product-info-wrapper">
+				<div class="product-info-wrapper">
 
-				<a class="quickview-close">
-					<span class="screen-reader-text"><?php esc_html_e( 'Close Quick View modal window', 'siteorigin-corp' ); ?></span>
-					<span class="quickview-close-icon">+</span>
-				</a>
+					<a class="quickview-close">
+						<span class="screen-reader-text"><?php esc_html_e( 'Close Quick View modal window', 'siteorigin-corp' ); ?></span>
+						<span class="quickview-close-icon">+</span>
+					</a>
 
-				<a href="<?php the_permalink(); ?>">
-					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_title' ); ?>
-				</a>
+					<a href="<?php the_permalink(); ?>">
+						<?php do_action( 'siteorigin_corp_woocommerce_quick_view_title' ); ?>
+					</a>
 
-				<?php do_action( 'siteorigin_corp_woocommerce_quick_view_content' ); ?>
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_content' ); ?>
+
+				</div>
 
 			</div>
 

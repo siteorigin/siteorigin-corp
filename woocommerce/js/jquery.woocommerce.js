@@ -73,6 +73,19 @@ jQuery( function( $ ) {
 			}
 		);
 
+		$( document ).ajaxComplete( function() {
+			if ( $.isFunction( $.fn.flexslider ) ) {
+				$( '.product-images-slider' ).flexslider( {
+					animation: 'slide',
+					controlNav: false,
+					customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
+					start: function() {
+						$( '.flexslider .slides img' ).show();
+					}
+				} );
+			}
+		} );
+
 		if ( $( document ).find( $container ).is( ':hidden' ) ) {
 			$( document ).find( $container ).find( $content ).empty();
 		}
@@ -100,8 +113,8 @@ jQuery( function( $ ) {
 				$( 'body' ).css( 'overflow', '' );
 				$( 'body' ).css( 'margin-right', '' );
 			}
-		} );		
+		} );
 
-	} );	
+	} );
 
 } );
