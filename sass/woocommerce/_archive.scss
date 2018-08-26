@@ -88,7 +88,7 @@
 				top: 0;
 				transition: all 0.15s ease-in;
 				transform-origin: center top;
-				transform: scale(0.95);					
+				transform: scale(.95);
 				visibility: hidden;
 				width: 100%;
 				
@@ -235,14 +235,14 @@
 
 				&:nth-child(3n+4) {
 					clear: left;
-				}								
-			}				
+				}
+			}
 		}
 
 		&.columns-4 .product {
 			width: 22.375%;
 			
-			@media (min-width: 769px) {		
+			@media (min-width: 769px) {
 			
 				&:nth-of-type(4n+4) {
 					margin-right: 0;

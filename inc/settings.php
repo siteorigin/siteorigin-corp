@@ -828,7 +828,7 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	#fullscreen-search {
 	background: .rgba( ${navigation_search_overlay_background}, .95);
 	}
-	#fullscreen-search h3 {
+	#fullscreen-search span {
 	color: ${navigation_search_overlay_text};
 	.font( ${typography_body_font} );
 	}
@@ -1132,6 +1132,12 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	.woocommerce .products .product .woocommerce-loop-product__title:hover,.woocommerce .products .product .woocommerce-loop-category__title:hover {
 	color: ${typography_accent};
+	}
+	.woocommerce .products .product .added_to_cart {
+	background: ${typography_accent};
+	}
+	.woocommerce .products .product .added_to_cart:hover {
+	background: .rgba( ${typography_accent}, .8);
 	}
 	.woocommerce .price {
 	color: ${typography_text};
