@@ -386,15 +386,21 @@
 				margin-bottom: 0;
 			}
 
+			.loop-product-buttons {
+				bottom: 20%;
+				position: absolute;
+				text-align: center;
+				width: 100%;
+			}
+
 			// Add to Cart and Quick View buttons.
 			.button,
 			.product-quick-view-button,
 			.added_to_cart {
-				font-size: .9333em;
-				left: 50%; 
+				display: inline-block;
+				font-size: 14px;
+				margin: 0 auto;
 				opacity: 0;
-				position: absolute;
-				transform: translateX(-50%);
 				visibility: hidden;
 				white-space: nowrap;
 				z-index: 2;
@@ -407,7 +413,7 @@
 				content: "";
 				display: block;
 				height: 40px;
-				bottom: 132px;
+				margin: 0 auto 20px;
 				width: 40px;
 				
 				&:hover {
@@ -425,11 +431,6 @@
 				}
 			}
 
-			// Add to Cart button.
-			.add_to_cart_button  {
-				bottom: 71px;
-			}
-
 			// Select Options button.
 			.product_type_variable {
 				padding: 11px 15px;
@@ -438,7 +439,7 @@
 			// Added to Cart button.
 			.added_to_cart {
 				background: $color__accent;
-				bottom: 20px;
+				bottom: 10px;
 				color: #fff;
 				font-size: 12px;
 				font-weight: 500;

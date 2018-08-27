@@ -78,12 +78,22 @@ function siteorigin_corp_woocommerce_archive_product_image() { ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
 		<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) : ?>
-		<div class="corp-wc-overlay"></div>
+			<div class="corp-wc-overlay"></div>
+			<?php siteorigin_corp_woocommerce_archive_product_image_buttons(); ?>
 		<?php endif; ?>
+	</div>
+<?php }
+endif;
+
+if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image_buttons' ) ) :
+/**
+ * Archive product image buttons.
+ */
+function siteorigin_corp_woocommerce_archive_product_image_buttons() { ?>
+	<div class="loop-product-buttons">
 		<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) {
 			siteorigin_corp_woocommerce_quick_view_button();
-		} ?>		
-		<?php if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+		} if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
 			woocommerce_template_loop_add_to_cart();
 		} ?>
 	</div>
