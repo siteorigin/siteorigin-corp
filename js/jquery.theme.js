@@ -295,7 +295,7 @@ jQuery( function( $ ) {
 		$( this ).find( 'button svg:last-child' ).show();
 	} );
 
-	// Close fullscreen search with close button
+	// Close fullscreen search with close button.
 	$( '#fullscreen-search #search-close-button' ).click( function(e) {
 		e.preventDefault();
 		$( '#search-button.close-search' ).trigger( 'click' );
