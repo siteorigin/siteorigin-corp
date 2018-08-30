@@ -439,7 +439,7 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 						'left' => esc_html__( 'Left', 'siteorigin-corp' ),
 						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
 					),
-				),						
+				),
 				'product_gallery' => array(
 					'type' => 'select',
 					'label' => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
@@ -454,7 +454,17 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-corp' ),
-				),				
+				),
+				'quick_view' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Quick View', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
+				),
+				'add_to_cart' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+				),							
 			)
 		)
 	);
@@ -818,7 +828,7 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	#fullscreen-search {
 	background: .rgba( ${navigation_search_overlay_background}, .95);
 	}
-	#fullscreen-search h3 {
+	#fullscreen-search span {
 	color: ${navigation_search_overlay_text};
 	.font( ${typography_body_font} );
 	}
@@ -1122,6 +1132,12 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	.woocommerce .products .product .woocommerce-loop-product__title:hover,.woocommerce .products .product .woocommerce-loop-category__title:hover {
 	color: ${typography_accent};
+	}
+	.woocommerce .products .product .added_to_cart {
+	background: ${typography_accent};
+	}
+	.woocommerce .products .product .added_to_cart:hover {
+	background: .rgba( ${typography_accent}, .8);
 	}
 	.woocommerce .price {
 	color: ${typography_text};
@@ -1541,7 +1557,9 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['woocommerce_shop_sidebar']       			= 'right';
 	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
-	$defaults['woocommerce_mini_cart']						= false;	
+	$defaults['woocommerce_mini_cart']						= false;
+	$defaults['woocommerce_add_to_cart']					= false;
+	$defaults['woocommerce_quick_view']						= false;
 
 	return $defaults;
 }

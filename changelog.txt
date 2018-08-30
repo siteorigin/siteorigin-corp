@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.7 - 30 August 2018 =
+* Added WooCommerce archive Add to Cart and Quick View buttons on hover. Settings located at Customize > Theme Settings > WooCommerce.
+
 = 1.6.5 - 21 August 2018 =
 * Logo Scaling: Added filter to adjust scale and prevent constant rescaling.
 * Removed post meta date formats.

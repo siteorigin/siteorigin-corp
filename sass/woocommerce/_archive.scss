@@ -2,7 +2,7 @@
 	
 	// Page Title.
 	&.archive .page-title {
-		text-align: left		
+		text-align: left
 	}
 
 	// Result count.
@@ -28,7 +28,7 @@
 		float: right;
 
 		select {
-			font-size: 13px;		
+			font-size: 13px;
 		}
 
 		@media (max-width: 768px) {
@@ -88,7 +88,7 @@
 				top: 0;
 				transition: all 0.15s ease-in;
 				transform-origin: center top;
-				transform: scale(0.95);					
+				transform: scale(.95);
 				visibility: hidden;
 				width: 100%;
 				
@@ -110,7 +110,7 @@
 				.ordering-dropdown {
 					opacity: 1;
 					transform: scale(1);
-					visibility: visible;	
+					visibility: visible;
 				}
 
 				svg {
@@ -119,10 +119,10 @@
 					path {
 						fill: $color__text-dark;
 					}
-				}				
+				}
 			}
 		}
-	}	
+	}
 
 	// Sale Sticker.
 	.onsale {
@@ -206,67 +206,67 @@
 		&.columns-9 .product,
 		&.columns-10 .product {
 			float: none;
-			margin-right: 0; 			
+			margin-right: 0;
 		}
 
 		&.columns-2 .product {
 			width: 48.25%;
 				
-			@media (min-width: 769px) {			
+			@media (min-width: 769px) {
 				
 				&:nth-of-type(2n+2) {
-					margin-right: 0; 
-				}	
+					margin-right: 0;
+				}
 
 				&:nth-child(2n+3) {
 					clear: left;
-				}										
-			}			
+				}		
+			}
 		}
 
 		&.columns-3 .product {
-			width: 31%; 
+			width: 31%;
 			
-			@media (min-width: 769px) {			
-			
+			@media (min-width: 769px) {	
+
 				&:nth-of-type(3n+3) {
-					margin-right: 0; 
-				}	
+					margin-right: 0;
+				}
 
 				&:nth-child(3n+4) {
 					clear: left;
-				}										
-			}									
+				}
+			}
 		}
 
 		&.columns-4 .product {
 			width: 22.375%;
 			
-			@media (min-width: 769px) {			
+			@media (min-width: 769px) {
 			
 				&:nth-of-type(4n+4) {
-					margin-right: 0; 
+					margin-right: 0;
 				}
 
 				&:nth-child(4n+5) {
 					clear: left;
-				}											
-			}						
-		}				
+				}
+			}
+		}
 
 		&.columns-5 .product {
 			width: 17.2%;
 			
-			@media (min-width: 769px) {			
+			@media (min-width: 769px) {
 			
 				&:nth-of-type(5n+5) {
-					margin-right: 0; 
-				}	
+					margin-right: 0;
+				}
 
 				&:nth-child(5n+6) {
 					clear: left;
-				}									
-			}					
+				}
+			}
 		}
 
 		@media (max-width: 768px) {
@@ -280,9 +280,8 @@
 
 			.product:nth-of-type(2n+2) {
 				margin-right: 0;
-			}				
-		
-		}				
+			}
+		}
 		
 		@media (max-width: 480px) {
 
@@ -292,21 +291,34 @@
 			&.columns-5 .product {
 				width: 100%;
 			}
-		}							
+		}
 		
 		// Product list item.
 		.product {
 			float: left;
 			margin: 0 3.5% 43px 0;
 			text-align: center;
-			width: 100%;										
-			
+			width: 100%;
 
 			// Product thumbnail container.
 			.loop-product-thumbnail {
 				position: relative;
 				
+				.corp-wc-overlay {
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					transition: .3s;
+					width: 100%;
+					z-index: 0;
+				}
+				
 				&:hover {
+
+					.corp-wc-overlay {
+						background: rgba(0, 0, 0, .7);
+					}
 
 					.add_to_cart_button,
 					.product-quick-view-button,
@@ -333,7 +345,7 @@
 
 					}
 				}
-			}						
+			}
 
 			// Product image.
 			img {
@@ -347,7 +359,7 @@
 			.woocommerce-loop-category__title {
 				font-size: 14px;
 				line-height: normal;
-				text-transform: uppercase;  
+				text-transform: uppercase;
 				margin: 27px 0 2px;
 
 				&:hover {
@@ -371,35 +383,52 @@
 			.price {
 				display: block;
 				font-size: 14px;
-				margin-bottom: 0;							
+				margin-bottom: 0;
+			}
+
+			.loop-product-buttons {
+				bottom: 20%;
+				position: absolute;
+				text-align: center;
+				width: 100%;
 			}
 
 			// Add to Cart and Quick View buttons.
 			.button,
+			.product-quick-view-button,
 			.added_to_cart {
-				font-size: .9333em;
-				left: 50%; 
+				display: inline-block;
+				font-size: 14px;
+				margin: 0 auto;
 				opacity: 0;
-				position: absolute;
-				transform: translateX(-50%);
 				visibility: hidden;
 				white-space: nowrap;
-				z-index: 2;															
-			}
-
-			// Added to Cart button.
-			.added_to_cart {
-				font-size: 0.8em; 
+				z-index: 2;
 			}
 
 			// Quick View button.
 			.product-quick-view-button {
-				top: 25%;																											
-			}
-
-			// Add to Cart button.
-			.add_to_cart_button  {
-				bottom: 25%;																												
+				background: #656970;
+				border-radius: 50%;
+				content: "";
+				display: block;
+				height: 40px;
+				margin: 0 auto 20px;
+				width: 40px;
+				
+				&:hover {
+					background: rgba(101, 105, 112, .8);
+				}
+				
+				svg {
+					height: 16px;
+					margin-top: 12px;
+					width: 16px;
+					
+					path {
+						fill: #fff;
+					}
+				}
 			}
 
 			// Select Options button.
@@ -409,9 +438,21 @@
 			
 			// Added to Cart button.
 			.added_to_cart {
-				bottom: 1%;
+				background: $color__accent;
+				bottom: 10px;
+				color: #fff;
+				font-size: 12px;
+				font-weight: 500;
+				letter-spacing: .5px;
 				opacity: 1;
-				visibility: visible;					
+				padding: 6px 12px 5px;
+				text-transform: uppercase;
+				visibility: visible;
+				
+				&:hover {
+					background: rgba($color__accent, .8);
+					color: #fff;
+				}
 			}
 		}
 	}

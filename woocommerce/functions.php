@@ -39,7 +39,7 @@ function siteorigin_corp_woocommerce_setup() {
 
 	// Remove the default WooCommerce containers.
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
-	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );	
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
 
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_woocommerce_setup' );
@@ -61,7 +61,7 @@ function siteorigin_corp_woocommerce_scripts() {
 		'chevron_down' => '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg>',
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
 	);
-	wp_localize_script( 'siteorigin-corp-woocommerce-script', 'siteorigin_corp_data', $script_data );	
+	wp_localize_script( 'siteorigin-corp-woocommerce-script', 'siteorigin_corp_data', $script_data );
 
 }
 add_action( 'wp_enqueue_scripts', 'siteorigin_corp_woocommerce_scripts' );
