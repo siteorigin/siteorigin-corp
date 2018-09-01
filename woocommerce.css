@@ -540,10 +540,12 @@ input.button.added:after,
       font-size: 14px;
       margin-bottom: 0; }
     .woocommerce .products .product .loop-product-buttons {
-      bottom: 20%;
+      bottom: 25%;
       position: absolute;
       text-align: center;
       width: 100%; }
+    .woocommerce .products .product .buttons-container {
+      position: relative; }
     .woocommerce .products .product .button,
     .woocommerce .products .product .product-quick-view-button,
     .woocommerce .products .product .added_to_cart {
@@ -574,14 +576,17 @@ input.button.added:after,
       padding: 11px 15px; }
     .woocommerce .products .product .added_to_cart {
       background: #f14e4e;
-      bottom: 10px;
+      bottom: -10px;
       color: #fff;
       font-size: 12px;
       font-weight: 500;
+      left: 50%;
       letter-spacing: .5px;
       opacity: 1;
       padding: 6px 12px 5px;
+      position: absolute;
       text-transform: uppercase;
+      transform: translate(-50%, 100%);
       visibility: visible; }
       .woocommerce .products .product .added_to_cart:hover {
         background: rgba(241, 78, 78, 0.8);

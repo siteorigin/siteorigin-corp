@@ -22,11 +22,9 @@ function siteorigin_corp_woocommerce_setup() {
 
 	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
-	}
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
+	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
 		add_theme_support( 'wc-product-gallery-zoom' );
-	}
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
+	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
 	}
@@ -50,7 +48,7 @@ add_action( 'after_setup_theme', 'siteorigin_corp_woocommerce_setup' );
 function siteorigin_corp_woocommerce_scripts() {
 
 	// WooCommerce stylesheet.
-	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// WooCommerce JavaScript.
 	if ( is_woocommerce() || is_cart() ) {

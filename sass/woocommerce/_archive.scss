@@ -387,10 +387,14 @@
 			}
 
 			.loop-product-buttons {
-				bottom: 20%;
+				bottom: 25%;
 				position: absolute;
 				text-align: center;
 				width: 100%;
+			}
+
+			.buttons-container {
+				position: relative;
 			}
 
 			// Add to Cart and Quick View buttons.
@@ -439,14 +443,17 @@
 			// Added to Cart button.
 			.added_to_cart {
 				background: $color__accent;
-				bottom: 10px;
+				bottom: -10px;
 				color: #fff;
 				font-size: 12px;
 				font-weight: 500;
+				left: 50%;
 				letter-spacing: .5px;
 				opacity: 1;
 				padding: 6px 12px 5px;
+				position: absolute;
 				text-transform: uppercase;
+				transform: translate(-50%, 100%);
 				visibility: visible;
 				
 				&:hover {
