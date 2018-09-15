@@ -257,7 +257,7 @@ function siteorigin_corp_excerpt() {
 		$ellipsis = '...';
 		$length = siteorigin_setting( 'blog_excerpt_length' );
 	}
-	
+
 	$excerpt = explode( ' ', get_the_excerpt(), $length );
 
 	if ( $length ) {
@@ -364,7 +364,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 								<?php the_post_thumbnail( 'siteorigin-corp-720x480-crop' ); ?>
 								<div class="corp-content-wrapper">
 									<h3 class="related-post-title"><?php the_title(); ?></h3>
-									<p class="related-post-date"><?php the_date(); ?></p>
+									<p class="related-post-date"><?php the_time( get_option( 'date_format' ) ); ?></p>
 								</div>
 							</a>
 						</li>
