@@ -302,23 +302,10 @@
 
 			// Product thumbnail container.
 			.loop-product-thumbnail {
+				background: #000;
 				position: relative;
 				
-				.corp-wc-overlay {
-					height: 100%;
-					left: 0;
-					position: absolute;
-					top: 0;
-					transition: .3s;
-					width: 100%;
-					z-index: 0;
-				}
-				
 				&:hover {
-
-					.corp-wc-overlay {
-						background: rgba(0, 0, 0, .7);
-					}
 
 					.add_to_cart_button,
 					.product-quick-view-button,
@@ -337,6 +324,7 @@
 					}
 
 					img {
+						opacity: 0.3;
 
 						@at-root .is_mobile#{&} {
 							opacity: 1;

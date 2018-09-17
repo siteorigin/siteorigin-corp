@@ -78,7 +78,6 @@ function siteorigin_corp_woocommerce_archive_product_image() { ?>
 		<?php woocommerce_template_loop_product_thumbnail(); ?>
 		<?php woocommerce_template_loop_product_link_close(); ?>
 		<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) : ?>
-			<div class="corp-wc-overlay"></div>
 			<?php siteorigin_corp_woocommerce_archive_product_image_buttons(); ?>
 		<?php endif; ?>
 	</div>
