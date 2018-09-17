@@ -48,7 +48,7 @@ add_action( 'after_setup_theme', 'siteorigin_corp_woocommerce_setup' );
 function siteorigin_corp_woocommerce_scripts() {
 
 	// WooCommerce stylesheet.
-	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// WooCommerce JavaScript.
 	if ( is_woocommerce() || is_cart() ) {
