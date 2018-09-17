@@ -89,15 +89,11 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image_butto
  * Archive product image buttons.
  */
 function siteorigin_corp_woocommerce_archive_product_image_buttons() { ?>
-	<div class="loop-product-buttons">
-		<div class="buttons-container">
-			<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) {
-				siteorigin_corp_woocommerce_quick_view_button();
-			} if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
-				woocommerce_template_loop_add_to_cart();
-			} ?>
-		</div>
-	</div>
+	<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) {
+		siteorigin_corp_woocommerce_quick_view_button();
+	} if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+		woocommerce_template_loop_add_to_cart();
+	} ?>
 <?php }
 endif;
 
