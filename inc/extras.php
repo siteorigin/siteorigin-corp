@@ -72,7 +72,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	}
 
 	// WooCommerce archive Quick View and Add to Cart.
-	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_product_category() ) && ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) ) {
+	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_product_category() || is_product_tag() ) && ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) ) {
 		$classes[] = 'woocommerce-product-overlay';
 	}
 
