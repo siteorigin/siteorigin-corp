@@ -22,11 +22,9 @@ function siteorigin_corp_woocommerce_setup() {
 
 	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
-	}
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
+	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
 		add_theme_support( 'wc-product-gallery-zoom' );
-	}
-	elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
+	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
 	}
