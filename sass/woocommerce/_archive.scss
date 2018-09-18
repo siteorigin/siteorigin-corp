@@ -320,9 +320,9 @@
 						visibility: visible;
 					}
 
-					img {
+					@at-root .woocommerce-product-overlay#{&} img {
 						opacity: 0.3;
-					}
+					}					
 				}
 			}
 

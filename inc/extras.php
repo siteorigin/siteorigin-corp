@@ -69,7 +69,12 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
 			$classes[] = 'woocommerce-sidebar-left';
 		}			
-	}		
+	}
+
+	// WooCommerce archive Quick View and Add to Cart.
+	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_product_category() ) && ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) ) {
+		$classes[] = 'woocommerce-product-overlay';
+	}
 
 	return $classes;
 }
