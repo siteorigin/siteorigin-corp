@@ -15,7 +15,7 @@
 		<?php while ( have_posts() ) : the_post(); ?>
 			<li>
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-					<?php if ( has_post_thumbnail() ) :?>
+					<?php if ( has_post_thumbnail() ) : ?>
 						<?php the_post_thumbnail( 'related-post' ); ?>
 					<?php endif; ?>
 					<h3 class="related-post-title"><?php the_title(); ?></h3>
