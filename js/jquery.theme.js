@@ -389,10 +389,10 @@ jQuery( function( $ ) {
 		// Sticky header logo scaling.
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-			    imgWidth = $img.width(),
-			    imgHeight = $img.height();
-			    scaledWidth = imgWidth * siteoriginCorp.logoScale;
-			    scaledHeight = imgHeight * siteoriginCorp.logoScale;
+				imgWidth = $img.width(),
+				imgHeight = $img.height();
+				scaledWidth = imgWidth * siteoriginCorp.logoScale;
+				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 			    
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
