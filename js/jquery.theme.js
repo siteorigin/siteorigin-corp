@@ -400,7 +400,7 @@ jQuery( function( $ ) {
 				top -= pageTop;
 
 				if ( top > 0 ) {
-					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled.
 					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
 						if ( $img.length ) {
@@ -409,8 +409,7 @@ jQuery( function( $ ) {
 								height: imgHeight * scale,
 								'max-width' : 'none'
 							} );
-						}
-						else {
+						} else {
 							$branding.css( 'transform', 'scale(' + scale + ')' );
 						}
 
