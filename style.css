@@ -1726,7 +1726,6 @@ a {
     display: inline-block;
     list-style: none;
     margin: 0; }
-  .entry-meta .byline,
   .entry-meta .updated:not(.published) {
     display: none; }
 

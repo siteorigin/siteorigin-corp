@@ -395,7 +395,7 @@ add_filter( 'widget_tag_cloud_args', 'siteorigin_corp_tag_cloud' );
 
 if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
 /**
- * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ * Print HTML with meta information for the sticky status, current post-date/time, author, post categories and comment count.
  */
 function siteorigin_corp_post_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
@@ -408,6 +408,10 @@ function siteorigin_corp_post_meta() {
 
 	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
+	}
+
+	if ( siteorigin_setting( 'blog_post_author' ) ) {
+		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
 	}
 
 	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {

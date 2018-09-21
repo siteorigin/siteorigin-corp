@@ -117,7 +117,7 @@ jQuery( function( $ ) {
 
 			var hash    = this.hash;
 			var idName  = hash.substring( 1 );	// Get ID name.
-			var alink   = this;                 // This button pressed.
+			var alink   = this;					// This button pressed.
 
 			// Check if there is a section that had same id as the button pressed.
 			if ( jQuery( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
@@ -396,7 +396,7 @@ jQuery( function( $ ) {
 			    
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
-				    top = window.pageYOffset || document.documentElement.scrollTop;
+					top = window.pageYOffset || document.documentElement.scrollTop;
 				top -= pageTop;
 
 				if ( top > 0 ) {

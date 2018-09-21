@@ -283,6 +283,11 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Post Date', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' )
 				),
+				'post_author' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Post Author', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the post author on blog, archive and single post pages.', 'siteorigin-corp' )
+				),				
 				'post_categories' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Post Categories', 'siteorigin-corp' ),
@@ -1524,6 +1529,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_excerpt_read_more_link']			= false;
 	$defaults['blog_post_featured_image']					= true;
 	$defaults['blog_post_date']								= true;
+	$defaults['blog_post_author']							= false;
 	$defaults['blog_post_categories']						= true;
 	$defaults['blog_post_comment_count']					= true;
 	$defaults['blog_post_tags']								= true;
