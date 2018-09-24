@@ -116,8 +116,8 @@ jQuery( function( $ ) {
 		$( this ).click( function( e ) {
 
 			var hash    = this.hash;
-			var idName  = hash.substring( 1 );	// Get ID name.
-			var alink   = this;                 // This button pressed.
+			var idName  = hash.substring( 1 ); // Get ID name.
+			var alink   = this;                // This button pressed.
 
 			// Check if there is a section that had same id as the button pressed.
 			if ( jQuery( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
@@ -189,7 +189,7 @@ jQuery( function( $ ) {
 				isInOneSection = 'yes';
 				jQuery( '#site-navigation .current' ).removeClass( 'current' );
 				// Find the menu button with the same ID section.
-				jQuery( '#site-navigation a[href$="' + thisID + '"]' ).parent( 'li' ).addClass( 'current' );	// Find the menu button with the same ID section.
+				jQuery( '#site-navigation a[href$="' + thisID + '"]' ).parent( 'li' ).addClass( 'current' ); // Find the menu button with the same ID section.
 				return false;
 			}
 			if ( isInOneSection === 'no' ) {
@@ -296,7 +296,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Close fullscreen search with close button.
-	$( '#fullscreen-search #search-close-button' ).click( function(e) {
+	$( '#fullscreen-search #search-close-button' ).click( function( e ) {
 		e.preventDefault();
 		$( '#search-button.close-search' ).trigger( 'click' );
 	} );
@@ -388,17 +388,17 @@ jQuery( function( $ ) {
 		// Sticky header logo scaling.
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-			    imgWidth = $img.width(),
-			    imgHeight = $img.height();
-			    scaledWidth = imgWidth * siteoriginCorp.logoScale;
-			    scaledHeight = imgHeight * siteoriginCorp.logoScale;
-			    
+				imgWidth = $img.width(),
+				imgHeight = $img.height();
+				scaledWidth = imgWidth * siteoriginCorp.logoScale;
+				scaledHeight = imgHeight * siteoriginCorp.logoScale;
+
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
-				    top = window.pageYOffset || document.documentElement.scrollTop;
+					top = window.pageYOffset || document.documentElement.scrollTop;
 
-				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
-				if( top > 0 ) {
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class.
+				if ( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * scale,
 						'padding-bottom': mhPadding.bottom * scale
@@ -412,9 +412,8 @@ jQuery( function( $ ) {
 				}
 
 				if ( $img.length ) {
-					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled.
 					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
-						// console.log(2);
 						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
 						$img.css( {
 							width: imgWidth * scale,
