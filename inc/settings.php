@@ -432,7 +432,7 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
 
 	$wc_settings = array(
-		'woocommerce'=> array(
+		'woocommerce' => array(
 			'title' => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
 			'fields' => array(
 
@@ -1425,7 +1425,7 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	// Ensure mobile menu is enabled before outputting any CSS.
 	$navigation_mobile_menu = siteorigin_setting( 'navigation_mobile_menu' );
-	if ( empty( $navigation_mobile_menu ) ){
+	if ( empty( $navigation_mobile_menu ) ) {
 		return;
 	}
 	
