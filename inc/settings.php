@@ -11,16 +11,16 @@
  */
 function siteorigin_corp_settings_localize( $loc ) {
 	return wp_parse_args( array(
-		'section_title' => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
+		'section_title'       => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
 		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-corp' ),
-		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
+		'premium_only'        => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
 
 		// Controls.
-		'variant' => esc_html__( 'Variant', 'siteorigin-corp' ),
-		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
+		'variant'             => esc_html__( 'Variant', 'siteorigin-corp' ),
+		'subset'              => esc_html__( 'Subset', 'siteorigin-corp' ),
 
 		// Settings metabox.
-		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),
+		'meta_box'            => esc_html__( 'Page settings', 'siteorigin-corp' ),
 	), $loc );
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_localize' );
