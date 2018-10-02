@@ -110,11 +110,11 @@ endif;
  * Remove sharing buttons from their default locations
  */
  function siteorigin_corp_remove_share() {
-    remove_filter( 'the_content', 'sharing_display', 19 );
-    remove_filter( 'the_excerpt', 'sharing_display', 19 );
-    if ( class_exists( 'Jetpack_Likes' ) ) {
-        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-    }
+	remove_filter( 'the_content', 'sharing_display', 19 );
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+	if ( class_exists( 'Jetpack_Likes' ) ) {
+		remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+	}
 }
 add_action( 'loop_start', 'siteorigin_corp_remove_share' );
 
@@ -145,3 +145,16 @@ function siteorigin_corp_jetpackme_remove_rp() {
 }
 endif;
 add_filter( 'wp', 'siteorigin_corp_jetpackme_remove_rp', 20 );
+
+// If Jetpack Lazy Images is enabled, prevent the logo from being affected.
+if ( Jetpack::is_module_active( 'lazy-images' ) ) :
+	if ( ! function_exists( 'siteorigin_corp_jetpack_logo_not_lazy' ) ) {
+
+		function siteorigin_corp_jetpack_logo_not_lazy( $blacklisted_classes ) {
+			$blacklisted_classes[] = 'custom-logo';
+
+			return $blacklisted_classes;
+		}
+		add_filter( 'jetpack_lazy_images_blacklisted_classes', 'siteorigin_corp_jetpack_logo_not_lazy' );
+	}
+endif;

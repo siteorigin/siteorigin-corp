@@ -16,7 +16,7 @@
 
 // Content area without sidebar.
 .content-area {
-	width: 100%; 
+	width: 100%;
 }
 
 // Content area with sidebar.
@@ -39,8 +39,8 @@
 		@media (max-width: 768px) {
 			margin: 0 !important;
 		}
- 	}
- }
+	}
+}
 
 // Content area with left sidebar.
 .sidebar-left {
@@ -61,7 +61,7 @@
 	.content-area {
 		float: none;
 		margin: 0;
-		width: 100%; 
+		width: 100%;
 	}
 
 	.site-main {
@@ -84,7 +84,7 @@
 
 	.corp-container {
 		max-width: none;
-		padding: 0;  
+		padding: 0;
 	}
 }
 
@@ -92,18 +92,18 @@
 .widget-area {
 	float: right;
 	padding-left: 2.75%;
-	width: $sidebar__width;	
+	width: $sidebar__width;
 	
 	.sidebar-left & {
 		float: left;
-		padding-right: 2.75%; 
-		padding-left: 0;	
+		padding-right: 2.75%;
+		padding-left: 0;
 	}
 
 	@media (max-width: 768px) {
 		border-top: 1px solid $color__background-hr-dark;
 		margin-top: 50px;
-		padding: 50px 0 0;		
+		padding: 50px 0 0;
 		width: 100% !important;
 	}
 }

@@ -11,16 +11,16 @@
  */
 function siteorigin_corp_settings_localize( $loc ) {
 	return wp_parse_args( array(
-		'section_title' => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
+		'section_title'       => esc_html__( 'Theme Settings', 'siteorigin-corp' ),
 		'section_description' => esc_html__( 'Change settings for your theme.', 'siteorigin-corp' ),
-		'premium_only' => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
+		'premium_only'        => esc_html__( 'Available in Premium', 'siteorigin-corp' ),
 
 		// Controls.
-		'variant' => esc_html__( 'Variant', 'siteorigin-corp' ),
-		'subset' => esc_html__( 'Subset', 'siteorigin-corp' ),
+		'variant'             => esc_html__( 'Variant', 'siteorigin-corp' ),
+		'subset'              => esc_html__( 'Subset', 'siteorigin-corp' ),
 
 		// Settings metabox.
-		'meta_box' => esc_html__( 'Page settings', 'siteorigin-corp' ),
+		'meta_box'            => esc_html__( 'Page settings', 'siteorigin-corp' ),
 	), $loc );
 }
 add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_localize' );
@@ -36,45 +36,45 @@ function siteorigin_corp_settings_init() {
 			'title' => esc_html__( 'Header', 'siteorigin-corp' ),
 			'fields' => array(
 				'retina_logo' => array(
-					'type' => 'media',
-					'label' => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
+					'type'        => 'media',
+					'label'       => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
 					'description' => esc_html__( 'A double sized logo to use on retina devices. Must be used in addition to a regular logo added in the Site Identity section.', 'siteorigin-corp' ),
 				),
 				'site_description' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Tagline', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
+					'type'         => 'checkbox',
+					'label'	       => esc_html__( 'Tagline', 'siteorigin-corp' ),
+					'description'  => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
 				),
 				'sticky' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Sticks the header to the top of the screen on scroll.', 'siteorigin-corp' ),
 				),
-				'scales' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' ),
+				'scales'	=> array(
+					'type'	=> 'checkbox',
+					'label'	=> esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
+					'description'	=> esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' ),
 				),
-				'background' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
-					'live' => true,
+				'background'	=> array(
+					'type'	=> 'color',
+					'label'	=> esc_html__( 'Background Color', 'siteorigin-corp' ),
+					'live'	=> true,
 				),
-				'border' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
-					'live' => true,
+				'border'	=> array(
+					'type'	=> 'color',
+					'label'	=> esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'live'	=> true,
 				),
 				'padding'	=> array(
 					'type'	=> 'measurement',
 					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
+					'description'	=> esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
 					'live'	=> true,
 				),
-				'margin'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
-					'live'	=> true,
+				'margin'    => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
+					'live'  => true,
 				),
 			),
 		),
@@ -83,83 +83,83 @@ function siteorigin_corp_settings_init() {
 			'title' => esc_html__( 'Navigation', 'siteorigin-corp' ),
 			'fields' => array(
 				'header_menu' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Header Menu', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'	      => esc_html__( 'Header Menu', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display header menu.', 'siteorigin-corp' )
 				),
 				'mobile_menu' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Mobile Menu', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Mobile Menu', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Use a mobile menu for small screen devices. Header Menu setting must be enabled.', 'siteorigin-corp' )
 				),
 				'mobile_menu_collapse' => array(
-					'label' => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
-					'type' => 'number',
+					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
+					'type'        => 'number',
 					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' ),
-					'live'	=> true
+					'live'        => true
 				),
-				'menu_search' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Menu Search', 'siteorigin-corp' ),
+				'menu_search'     => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Menu Search', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display a search icon in the header menu.', 'siteorigin-corp' )
 				),
 				'post' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Navigation', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Navigation', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display next/previous navigation on single post pages.', 'siteorigin-corp' )
 				),
 				'scroll_to_top' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Scroll to Top', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Scroll to Top', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the scroll to top button.', 'siteorigin-corp' )
 				),
 				'link' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Link Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Link Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu link color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'link_accent' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Link Hover Accent Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Link Hover Accent Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu accent color used on hover.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'drop_down_link' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Link Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Drop Down Link Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu drop down link color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'drop_down_link_hover' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Link Hover Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Drop Down Link Hover Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu drop down link hover color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'drop_down_divider' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Drop Down Link Divider Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu drop down link divider color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'drop_down_background' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Drop Down Background', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu drop down background color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'search_overlay_text' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Menu Search Overlay Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Menu Search Overlay Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu search overlay text color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'search_overlay_background' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Menu Search Overlay Background', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Header menu search background color.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 			),
 		),
@@ -168,68 +168,68 @@ function siteorigin_corp_settings_init() {
 			'title' => esc_html__( 'Typography', 'siteorigin-corp' ),
 			'fields' => array(
 				'site_title_font' => array(
-					'type' => 'font',
+					'type'  => 'font',
 					'label' => esc_html__( 'Site Title Font', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'site_tagline_font' => array(
-					'type' => 'font',
+					'type'  => 'font',
 					'label' => esc_html__( 'Site Tagline Font', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'heading_font' => array(
-					'type' => 'font',
+					'type'  => 'font',
 					'label' => esc_html__( 'Heading Font', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'body_font' => array(
-					'type' => 'font',
+					'type'  => 'font',
 					'label' => esc_html__( 'Body Font', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'site_title' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Site Title Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'site_tagline' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Site Tagline Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'accent' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Accent Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Accent Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for links, buttons and blockquotes.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'heading' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Heading Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'text' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Text Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'secondary_text' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Secondary Text Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Secondary Text Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for for post meta.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'border' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Border Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for section borders and hr tags.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'border_dark' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Border Dark Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Border Dark Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Used for tables and form fields.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 			),
 		),
@@ -238,81 +238,86 @@ function siteorigin_corp_settings_init() {
 			'title' => esc_html__( 'Blog', 'siteorigin-corp' ),
 			'fields' => array(
 				'archive_featured_image' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the featured image on blog and archive pages.', 'siteorigin-corp' )
 				),
 				'archive_layout' => array(
-					'type' => 'select',
+					'type'  => 'select',
 					'label' => esc_html__( 'Archive Layout', 'siteorigin-corp' ),
 					'options' => array(
-						'grid'  => esc_html__( 'Grid', 'siteorigin-corp' ),
-						'standard' => esc_html__( 'Standard', 'siteorigin-corp' ),
-						'offset' => esc_html__( 'Offset', 'siteorigin-corp' ),
+						'grid'      => esc_html__( 'Grid', 'siteorigin-corp' ),
+						'standard'  => esc_html__( 'Standard', 'siteorigin-corp' ),
+						'offset'    => esc_html__( 'Offset', 'siteorigin-corp' ),
 						'alternate' => esc_html__( 'Alternate', 'siteorigin-corp' ),
-						'masonry' => esc_html__( 'Masonry', 'siteorigin-corp' ),
+						'masonry'   => esc_html__( 'Masonry', 'siteorigin-corp' ),
 					),
 					'description' => esc_html__( 'Choose how to display your posts on the blog and archive pages.', 'siteorigin-corp' )
 				),				
 				'archive_content' => array(
-					'type' => 'select',
+					'type'  => 'select',
 					'label' => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
 					'options' => array(
-						'excerpt'  => esc_html__( 'Post Excerpt', 'siteorigin-corp' ),
-						'full' => esc_html__( 'Full Post Content', 'siteorigin-corp' ),
+						'excerpt' => esc_html__( 'Post Excerpt', 'siteorigin-corp' ),
+						'full'    => esc_html__( 'Full Post Content', 'siteorigin-corp' ),
 					),
 					'description' => esc_html__( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-corp' ),
 				),
 				'excerpt_length' => array(
-					'type' => 'number',
-					'label' => esc_html__( 'Excerpt Length', 'siteorigin-corp' ),
+					'type'        => 'number',
+					'label'       => esc_html__( 'Excerpt Length', 'siteorigin-corp' ),
 					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-corp' ),
 				),
 				'post_excerpt_read_more_link' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-corp' )
 				),
 				'post_featured_image' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the featured image on the single post page.', 'siteorigin-corp' )
 				),
 				'post_date' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Date', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Date', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' )
 				),
+				'post_author' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Author', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the post author on blog, archive and single post pages.', 'siteorigin-corp' )
+				),				
 				'post_categories' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Categories', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Categories', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'siteorigin-corp' )
 				),
 				'post_comment_count' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post comment count on blog, archive and single post pages.', 'siteorigin-corp' )
 				),
 				'post_tags' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Tags', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Tags', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post tags on single post pages.', 'siteorigin-corp' )
 				),
 				'post_author_box' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Post Author Box', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Post Author Box', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post author biographical info on single post pages.', 'siteorigin-corp' )
 				),
 				'related_posts' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Related Posts', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Related Posts', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display related posts on single post pages.', 'siteorigin-corp' )
 				),
 				'ajax_comments' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Ajax Comments', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Ajax Comments', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Keep the conversation flowing with ajax loading comments.', 'siteorigin-corp' ),
-					'teaser' => true,
+					'teaser'      => true,
 				),
 			),
 		),
@@ -320,18 +325,18 @@ function siteorigin_corp_settings_init() {
 		'sidebar' => array(
 			'title' => esc_html__( 'Sidebar', 'siteorigin-corp' ),
 			'fields' => array(
-				'position'	=> array(
-					'type'	=> 'select',
-					'label'	=> esc_html__( 'Position', 'siteorigin-corp' ),
+				'position' => array(
+					'type'    => 'select',
+					'label'   => esc_html__( 'Position', 'siteorigin-corp' ),
 					'options' => array(
 						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
 						'left'  => esc_html__( 'Left', 'siteorigin-corp' ),
 					),
 				),
 				'width' => array(
-					'label'       => esc_html__( 'Width', 'siteorigin-corp' ),
-					'type'        => 'measurement',
-					'live'        => true,
+					'label' => esc_html__( 'Width', 'siteorigin-corp' ),
+					'type'  => 'measurement',
+					'live'  => true,
 				),
 			),
 		),
@@ -340,82 +345,82 @@ function siteorigin_corp_settings_init() {
 			'title' => esc_html__( 'Footer', 'siteorigin-corp' ),
 			'fields' => array(
 				'text' => array(
-					'type' => 'text',
-					'label' => esc_html__( 'Footer Text', 'siteorigin-corp' ),
-					'description' => esc_html__( "{site-title} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
+					'type'              => 'text',
+					'label'             => esc_html__( 'Footer Text', 'siteorigin-corp' ),
+					'description'       => esc_html__( "{site-title} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'attribution' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display a SiteOrigin link in your footer bottom bar.', 'siteorigin-corp' ),
-					'teaser' => true,
+					'teaser'      => true,
 				),
 				'social_widget' => array(
-					'type' => 'widget',
-					'widget_class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
+					'type'          => 'widget',
+					'widget_class'  => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
 					'bundle_widget' => 'social-media-buttons',
-					'plugin' => 'so-widgets-bundle',
-					'plugin_name' => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Add social icons to the bottom bar.', 'siteorigin-corp' ),
+					'plugin'        => 'so-widgets-bundle',
+					'plugin_name'   => esc_html__( 'SiteOrigin Widgets Bundle', 'siteorigin-corp' ),
+					'description'   => esc_html__( 'Add social icons to the bottom bar.', 'siteorigin-corp' ),
 				),
 				'widget_title' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Widget Title Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'widget_text' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Widget Text Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'widget_link' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Widget Link Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'widget_link_hover' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Widget Link Hover Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'background' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Widget Background Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'bottom_bar_text' => array(
-					'type' => 'color',
-					'label' => esc_html__( 'Bottom Bar Text Color', 'siteorigin-corp' ),
+					'type'        => 'color',
+					'label'       => esc_html__( 'Bottom Bar Text Color', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Bottom bar appears below footer widget area.', 'siteorigin-corp' ),
-					'live' => true,
+					'live'        => true,
 				),
 				'bottom_bar_link' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Bottom Bar Link Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'bottom_bar_link_hover' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Bottom Bar Link Hover Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'bottom_bar_background' => array(
-					'type' => 'color',
+					'type'  => 'color',
 					'label' => esc_html__( 'Bottom Bar Background Color', 'siteorigin-corp' ),
-					'live' => true,
+					'live'  => true,
 				),
 				'padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
+					'type'        => 'measurement',
+					'label'       => esc_html__( 'Padding', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer widget area top and bottom padding.', 'siteorigin-corp' ),
-					'live'	=> true,
+					'live'        => true,
 				),
-				'margin'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Top Margin', 'siteorigin-corp' ),
+				'margin' => array(
+					'type'        => 'measurement',
+					'label'       => esc_html__( 'Top Margin', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer top margin. The space between the footer and content.', 'siteorigin-corp' ),
-					'live'	=> true,
+					'live'        => true,
 				),
 			),
 		),
@@ -460,11 +465,11 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 					'label' => esc_html__( 'Quick View', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
 				),
-				'add_to_cart' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
-				),							
+				'add_to_cart'	=> array(
+					'type'	=> 'checkbox',
+					'label'	=> esc_html__( 'Add to Cart', 'siteorigin-corp' ),
+					'description'	=> esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+				),
 			)
 		)
 	);
@@ -483,8 +488,8 @@ add_filter( 'siteorigin_corp_settings_array', 'siteorigin_corp_woocommerce_setti
 function siteorigin_corp_font_settings( $settings ) {
 
 	$settings['typography_site_title_font'] = array(
-		'name'    => 'Montserrat',
-		'weights' => array(
+		'name'	=> 'Montserrat',
+		'weights'	=> array(
 			400,
 			500,
 			600,
@@ -500,14 +505,14 @@ function siteorigin_corp_font_settings( $settings ) {
 		),
 	);
 	$settings['typography_heading_font'] = array(
-		'name'    => 'Montserrat',
-		'weights' => array(
+		'name'	=> 'Montserrat',
+		'weights'	=> array(
 			400,
 		),
 	);
 	$settings['typography_body_font'] = array(
-		'name'    => 'Open Sans',
-		'weights' => array(
+		'name'	=> 'Open Sans',
+		'weights'	=> array(
 			300,
 			400,
 			600,
@@ -1420,8 +1425,8 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	// Ensure mobile menu is enabled before outputting any CSS.
 	$navigation_mobile_menu = siteorigin_setting( 'navigation_mobile_menu' );
-	if( empty( $navigation_mobile_menu ) ){
-		return;	
+	if ( empty( $navigation_mobile_menu ) ) {
+		return;
 	}
 	
 	if ( is_rtl() ) {
@@ -1440,7 +1445,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 
 			#masthead .main-navigation ul:not(.shopping-cart) {
 				display: none;
-			}	
+			}
 
 			#masthead .main-navigation .search-icon {
 				display: none;
@@ -1450,7 +1455,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			#masthead #mobile-navigation {
 				display: none !important;
 			}
-		}';		
+		}';
 	} else {
 		$css .= '@media (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 			#masthead .search-toggle {
@@ -1459,7 +1464,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 
 			.site-header .shopping-cart {
 				margin: 0 37px 0 0;
-			}			
+			}
 
 			#masthead #mobile-menu-button {
 				display: inline-block;
@@ -1477,7 +1482,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			#masthead #mobile-navigation {
 				display: none !important;
 			}
-		}';		
+		}';
 	}
 
 	return $css;
@@ -1493,73 +1498,74 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_c
  */
 function siteorigin_corp_settings_defaults( $defaults ) {
 
-	$defaults['header_retina_logo']							= false;
-	$defaults['header_site_description']					= false;
-	$defaults['header_sticky']								= false;
-	$defaults['header_scales']								= false;
-	$defaults['header_background']							= '#ffffff';
-	$defaults['header_border']								= '#e6e6e6';
-	$defaults['header_padding']								= '25px';
-	$defaults['header_margin']								= '60px';
+	$defaults['header_retina_logo']                   = false;
+	$defaults['header_site_description']              = false;
+	$defaults['header_sticky']                        = false;
+	$defaults['header_scales']                        = false;
+	$defaults['header_background']                    = '#ffffff';
+	$defaults['header_border']                        = '#e6e6e6';
+	$defaults['header_padding']                       = '25px';
+	$defaults['header_margin']                        = '60px';
 
-	$defaults['navigation_header_menu']						= true;
-	$defaults['navigation_mobile_menu']						= true;
-	$defaults['navigation_mobile_menu_collapse']			= 768;
-	$defaults['navigation_menu_search']						= true;
-	$defaults['navigation_post']							= true;
-	$defaults['navigation_scroll_to_top']					= true;
-	$defaults['navigation_link']							= '#2d2d2d';
-	$defaults['navigation_link_accent']						= '#f14e4e';
-	$defaults['navigation_drop_down_link']					= '#b2b2b2';
-	$defaults['navigation_drop_down_link_hover']			= '#ffffff';
-	$defaults['navigation_drop_down_divider']				= '#353538';
-	$defaults['navigation_drop_down_background']			= '#262627';
-	$defaults['navigation_search_overlay_text']				= '#b2b2b2';
-	$defaults['navigation_search_overlay_background']		= '#090d14';
+	$defaults['navigation_header_menu']               = true;
+	$defaults['navigation_mobile_menu']               = true;
+	$defaults['navigation_mobile_menu_collapse']      = 768;
+	$defaults['navigation_menu_search']               = true;
+	$defaults['navigation_post']                      = true;
+	$defaults['navigation_scroll_to_top']             = true;
+	$defaults['navigation_link']                      = '#2d2d2d';
+	$defaults['navigation_link_accent']               = '#f14e4e';
+	$defaults['navigation_drop_down_link']            = '#b2b2b2';
+	$defaults['navigation_drop_down_link_hover']      = '#ffffff';
+	$defaults['navigation_drop_down_divider']         = '#353538';
+	$defaults['navigation_drop_down_background']      = '#262627';
+	$defaults['navigation_search_overlay_text']	      = '#b2b2b2';
+	$defaults['navigation_search_overlay_background'] = '#090d14';
 
-	$defaults['blog_archive_featured_image']				= true;
-	$defaults['blog_archive_layout']						= 'grid';
-	$defaults['blog_archive_content']         				= 'excerpt';
-	$defaults['blog_excerpt_length']          				= 55;
-	$defaults['blog_post_excerpt_read_more_link']			= false;
-	$defaults['blog_post_featured_image']					= true;
-	$defaults['blog_post_date']								= true;
-	$defaults['blog_post_categories']						= true;
-	$defaults['blog_post_comment_count']					= true;
-	$defaults['blog_post_tags']								= true;
-	$defaults['blog_post_author_box']						= true;
-	$defaults['blog_related_posts']							= true;
+	$defaults['blog_archive_featured_image']          = true;
+	$defaults['blog_archive_layout']                  = 'grid';
+	$defaults['blog_archive_content']                 = 'excerpt';
+	$defaults['blog_excerpt_length']                  = 55;
+	$defaults['blog_post_excerpt_read_more_link']     = false;
+	$defaults['blog_post_featured_image']             = true;
+	$defaults['blog_post_date']                       = true;
+	$defaults['blog_post_author']                     = false;
+	$defaults['blog_post_categories']                 = true;
+	$defaults['blog_post_comment_count']              = true;
+	$defaults['blog_post_tags']                       = true;
+	$defaults['blog_post_author_box']                 = true;
+	$defaults['blog_related_posts']                   = true;
 
-	$defaults['typography_site_title']						='#2d2d2d';
-	$defaults['typography_site_tagline']					='#929292';
-	$defaults['typography_accent']							='#f14e4e';
-	$defaults['typography_heading']							='#2d2d2d';
-	$defaults['typography_text']							='#626262';
-	$defaults['typography_secondary_text']					='#929292';
-	$defaults['typography_border']							='#e6e6e6';
-	$defaults['typography_border_dark']						='#d6d6d6';
+	$defaults['typography_site_title']                ='#2d2d2d';
+	$defaults['typography_site_tagline']              ='#929292';
+	$defaults['typography_accent']                    ='#f14e4e';
+	$defaults['typography_heading']                   ='#2d2d2d';
+	$defaults['typography_text']                      ='#626262';
+	$defaults['typography_secondary_text']            ='#929292';
+	$defaults['typography_border']                    ='#e6e6e6';
+	$defaults['typography_border_dark']               ='#d6d6d6';
 
-	$defaults['sidebar_position']							= 'right';
-	$defaults['sidebar_width']								= '34%%';
+	$defaults['sidebar_position']                     = 'right';
+	$defaults['sidebar_width']                        = '34%%';
 
-	$defaults['footer_text']								= esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
-	$defaults['footer_widget_title']						= '#ffffff';
-	$defaults['footer_widget_text']							= '#b4b5b8';
-	$defaults['footer_widget_link']							= '#ffffff';
-	$defaults['footer_widget_link_hover']					= '#b4b5b8';
-	$defaults['footer_background']							= '#363a43';
-	$defaults['footer_bottom_bar_text']						= '#b4b5b8';
-	$defaults['footer_bottom_bar_link']						= '#b4b5b8';
-	$defaults['footer_bottom_bar_link_hover']				= '#ffffff';
-	$defaults['footer_bottom_bar_background']				= '#2f333b';
-	$defaults['footer_padding']								= '95px';
-	$defaults['footer_margin']								= '80px';
+	$defaults['footer_text']                          = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_widget_title']                  = '#ffffff';
+	$defaults['footer_widget_text']                   = '#b4b5b8';
+	$defaults['footer_widget_link']                   = '#ffffff';
+	$defaults['footer_widget_link_hover']             = '#b4b5b8';
+	$defaults['footer_background']                    = '#363a43';
+	$defaults['footer_bottom_bar_text']               = '#b4b5b8';
+	$defaults['footer_bottom_bar_link']               = '#b4b5b8';
+	$defaults['footer_bottom_bar_link_hover']         = '#ffffff';
+	$defaults['footer_bottom_bar_background']         = '#2f333b';
+	$defaults['footer_padding']                       = '95px';
+	$defaults['footer_margin']                        = '80px';
 
-	$defaults['woocommerce_shop_sidebar']       			= 'right';
-	$defaults['woocommerce_product_gallery']    			= 'slider-lightbox';
-	$defaults['woocommerce_mini_cart']						= false;
-	$defaults['woocommerce_add_to_cart']					= false;
-	$defaults['woocommerce_quick_view']						= false;
+	$defaults['woocommerce_shop_sidebar']             = 'right';
+	$defaults['woocommerce_product_gallery']          = 'slider-lightbox';
+	$defaults['woocommerce_mini_cart']                = false;
+	$defaults['woocommerce_add_to_cart']              = false;
+	$defaults['woocommerce_quick_view']               = false;
 
 	return $defaults;
 }
@@ -1574,8 +1580,8 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		'type'    => 'select',
 		'label'   => esc_html__( 'Page Layout', 'siteorigin-corp' ),
 		'options' => array(
-			'default'            	=> esc_html__( 'Default', 'siteorigin-corp' ),
-			'no-sidebar'         	=> esc_html__( 'No Sidebar', 'siteorigin-corp' ),
+			'default'               => esc_html__( 'Default', 'siteorigin-corp' ),
+			'no-sidebar'            => esc_html__( 'No Sidebar', 'siteorigin-corp' ),
 			'full-width-no-sidebar' => esc_html__( 'Full Width, No Sidebar', 'siteorigin-corp' ),
 		),
 	);
@@ -1584,10 +1590,10 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		'type'    => 'select',
 		'label'   => esc_html__( 'Header Overlap', 'siteorigin-corp' ),
 		'options' => array(
-			'disabled'	=> esc_html__( 'Disabled', 'siteorigin-corp' ),
-			'enabled'	=> esc_html__( 'Enabled', 'siteorigin-corp' ),
-			'light'		=> esc_html__( 'Enabled - Light Text', 'siteorigin-corp' ),
-			'dark'		=> esc_html__( 'Enabled - Dark Text', 'siteorigin-corp' ),
+			'disabled' => esc_html__( 'Disabled', 'siteorigin-corp' ),
+			'enabled'  => esc_html__( 'Enabled', 'siteorigin-corp' ),
+			'light'    => esc_html__( 'Enabled - Light Text', 'siteorigin-corp' ),
+			'dark'     => esc_html__( 'Enabled - Dark Text', 'siteorigin-corp' ),
 		),
 	);
 
@@ -1627,12 +1633,12 @@ add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 )
  * Add the default Page Settings.
  */
 function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
-	$defaults['layout']					= 'default';
-	$defaults['overlap']				= 'disabled';
-	$defaults['header_margin']			= true;
-	$defaults['page_title']				= true;
-	$defaults['footer_margin']			= true;
-	$defaults['footer_widgets']			= true;
+	$defaults['layout']         = 'default';
+	$defaults['overlap']        = 'disabled';
+	$defaults['header_margin']  = true;
+	$defaults['page_title']     = true;
+	$defaults['footer_margin']  = true;
+	$defaults['footer_widgets'] = true;
 
 	return $defaults;
 }
@@ -1642,17 +1648,12 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_set
  * Add the about page sections.
  */
 function siteorigin_corp_about_page_sections( $about ) {
-	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
-
-	$about['description'] = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
-
-	$about['review'] = true;
-
-	$about['no_video'] = true;
-
-	$about['video_url'] = 'https://siteorigin.com/theme/corp/';
-
-	$about['sections'] = array(
+	$about['documentation_url']	= 'https://siteorigin.com/corp-documentation/';
+	$about['description']       = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
+	$about['review']            = true;
+	$about['no_video']          = true;
+	$about['video_url']         = 'https://siteorigin.com/theme/corp/';
+	$about['sections']          = array(
 		'free',
 		'woocommerce',
 		'documentation',

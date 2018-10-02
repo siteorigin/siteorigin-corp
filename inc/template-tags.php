@@ -136,19 +136,19 @@ function siteorigin_corp_display_icon( $type ) {
 
 	switch( $type ) {
 
-		case 'cart' : ?>
+		case 'cart': ?>
 			<svg xmlns="http://www.w3.org/2000/svg" width="16.97" height="16" viewBox="0 0 16.97 16">
 			  <path id="cart" class="cls-1" d="M1313.9,36.289l-2.01,6a0.994,0.994,0,0,1-.95.711h-7.35a0.962,0.962,0,0,1-.35-0.072c-0.04-.015-0.07-0.037-0.11-0.056a0.969,0.969,0,0,1-.19-0.131,0.644,0.644,0,0,1-.1-0.1c-0.04-.056-0.08-0.117-0.12-0.184-0.02-.043-0.04-0.084-0.06-0.13-0.01-.024-0.02-0.043-0.03-0.068l-2.09-7.07A1.779,1.779,0,0,0,1298.98,34h-0.99a1,1,0,0,1,0-2h0.99a3.773,3.773,0,0,1,3.49,2.669l0.1,0.332h10.38a1,1,0,0,1,.8.4A0.969,0.969,0,0,1,1313.9,36.289Zm-10.74.71,1.18,4h5.85l1.41-4h-8.44Zm0.81,7a2,2,0,1,1-2,2A2,2,0,0,1,1303.97,44Zm6.99,0a2,2,0,1,1-2,2A2,2,0,0,1,1310.96,44Z" transform="translate(-1297 -32)"/>
 			</svg>
 		<?php break;
 
-		case 'close' : ?>
+		case 'close': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
 				<path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
 			</svg>
 		<?php break;
 
-		case 'left-arrow' : ?>
+		case 'left-arrow': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M18.284 29.705l-2.284 2.285-15.99-15.99 15.99-15.99 2.284 2.285-13.705 13.705z"></path>
 			</svg>
@@ -160,7 +160,7 @@ function siteorigin_corp_display_icon( $type ) {
 			</svg>
 		<?php break;
 
-		case 'right-arrow' : ?>
+		case 'right-arrow': ?>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32">
 				<path fill="#fff" d="M17.589 16l-15.402 15.989-2.2-2.283 13.202-13.706-13.202-13.706 2.2-2.283 13.202 13.704z"></path>
 			</svg>
@@ -395,7 +395,7 @@ add_filter( 'widget_tag_cloud_args', 'siteorigin_corp_tag_cloud' );
 
 if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
 /**
- * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ * Print HTML with meta information for the sticky status, current post-date/time, author, post categories and comment count.
  */
 function siteorigin_corp_post_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
@@ -408,6 +408,10 @@ function siteorigin_corp_post_meta() {
 
 	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
+	}
+
+	if ( siteorigin_setting( 'blog_post_author' ) ) {
+		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
 	}
 
 	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {

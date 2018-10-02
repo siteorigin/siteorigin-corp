@@ -116,8 +116,8 @@ jQuery( function( $ ) {
 		$( this ).click( function( e ) {
 
 			var hash    = this.hash;
-			var idName  = hash.substring( 1 );	// Get ID name.
-			var alink   = this;                 // This button pressed.
+			var idName  = hash.substring( 1 ); // Get ID name.
+			var alink   = this;                // This button pressed.
 
 			// Check if there is a section that had same id as the button pressed.
 			if ( jQuery( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
@@ -189,7 +189,7 @@ jQuery( function( $ ) {
 				isInOneSection = 'yes';
 				jQuery( '#site-navigation .current' ).removeClass( 'current' );
 				// Find the menu button with the same ID section.
-				jQuery( '#site-navigation a[href$="' + thisID + '"]' ).parent( 'li' ).addClass( 'current' );	// Find the menu button with the same ID section.
+				jQuery( '#site-navigation a[href$="' + thisID + '"]' ).parent( 'li' ).addClass( 'current' ); // Find the menu button with the same ID section.
 				return false;
 			}
 			if ( isInOneSection === 'no' ) {
@@ -296,7 +296,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Close fullscreen search with close button.
-	$( '#fullscreen-search #search-close-button' ).click( function(e) {
+	$( '#fullscreen-search #search-close-button' ).click( function( e ) {
 		e.preventDefault();
 		$( '#search-button.close-search' ).trigger( 'click' );
 	} );
@@ -331,7 +331,6 @@ jQuery( function( $ ) {
 	// Sticky header.
 	if ( $( '#masthead' ).hasClass( 'sticky' ) ) {
 		var $mhs = false,
-			pageTop = $( '#page' ).offset().top,
 			$mh = $( '#masthead' ),
 			$tb = $( '#topbar' ),
 			$tbwc = $( '#topbar .woocommerce-store-notice[style*="display: none"]' );
@@ -389,45 +388,45 @@ jQuery( function( $ ) {
 		// Sticky header logo scaling.
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-			    imgWidth = $img.width(),
-			    imgHeight = $img.height();
-			    scaledWidth = imgWidth * siteoriginCorp.logoScale;
-			    scaledHeight = imgHeight * siteoriginCorp.logoScale;
-			    
+				imgWidth = $img.width(),
+				imgHeight = $img.height();
+				scaledWidth = imgWidth * siteoriginCorp.logoScale;
+				scaledHeight = imgHeight * siteoriginCorp.logoScale;
+
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
 				    top = window.pageYOffset || document.documentElement.scrollTop;
-				top -= pageTop;
 
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
 				if ( top > 0 ) {
-					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
-					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
-						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
-						if ( $img.length ) {
-							$img.css( {
-								width: imgWidth * scale,
-								height: imgHeight * scale,
-								'max-width' : 'none'
-							} );
-						}
-						else {
-							$branding.css( 'transform', 'scale(' + scale + ')' );
-						}
+					$mh.css( {
+						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
+						'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
+					} ).addClass( 'stuck' );
 
-						$mh.css( {
-							'padding-top': mhPadding.top * scale,
-							'padding-bottom': mhPadding.bottom * scale
-						} ).addClass( 'stuck' );
-					}
 				} else {
-					if ( ! $img.length ) {
-						$branding.css( 'transform', 'scale(1)' );
-					}
-
 					$mh.css( {
 						'padding-top': mhPadding.top,
 						'padding-bottom': mhPadding.bottom
 					} ).removeClass( 'stuck' );
+				}
+
+				if ( $img.length ) {
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
+						$('.site-branding img').css( {
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
+						} );
+					}
+				} else {
+					if ( top > 0 ) {
+						$branding.css( 'transform', 'scale(' + siteoriginCorp.logoScale + ')' );
+					} else {
+						$branding.css( 'transform', 'scale(1)' );
+					}
 				}
 			};
 			smResizeLogo();

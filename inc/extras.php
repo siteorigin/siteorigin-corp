@@ -69,7 +69,12 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
 			$classes[] = 'woocommerce-sidebar-left';
 		}			
-	}		
+	}
+
+	// WooCommerce archive Quick View and Add to Cart.
+	if ( function_exists( 'is_woocommerce' ) && ( is_shop() || is_product_category() || is_product_tag() ) && ( siteorigin_setting( 'woocommerce_quick_view' ) || siteorigin_setting( 'woocommerce_add_to_cart' ) ) ) {
+		$classes[] = 'woocommerce-product-overlay';
+	}
 
 	return $classes;
 }
@@ -90,19 +95,19 @@ if ( ! function_exists( 'siteorigin_corp_unset_current_menu_class' ) ) :
  * Unset the current menu class.
  */	
 function siteorigin_corp_unset_current_menu_class( $classes ) {
-    $disallowed_class_names = array(
-        'current-menu-item',
-        'current_page_item',
-    );
-    foreach ( $classes as $class ) {
-        if ( in_array( $class, $disallowed_class_names ) ) {
-            $key = array_search( $class, $classes );
-            if ( false !== $key ) {
-                unset( $classes[$key] );
-            }
-        }
-    }
-    return $classes;
+	$disallowed_class_names = array(
+		'current-menu-item',
+		'current_page_item',
+	);
+	foreach ( $classes as $class ) {
+		if ( in_array( $class, $disallowed_class_names ) ) {
+			$key = array_search( $class, $classes );
+			if ( false !== $key ) {
+				unset( $classes[$key] );
+			}
+		}
+	}
+	return $classes;
 }
 endif;
 add_filter( 'nav_menu_css_class', 'siteorigin_corp_unset_current_menu_class', 10, 1 );
