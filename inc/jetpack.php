@@ -148,7 +148,7 @@ add_filter( 'wp', 'siteorigin_corp_jetpackme_remove_rp', 20 );
 
 // If Jetpack Lazy Images is enabled, prevent the logo from being affected.
 if ( Jetpack::is_module_active( 'lazy-images' ) ) :
-	if (  ! function_exists( 'siteorigin_corp_jetpack_logo_not_lazy' ) ) {
+	if ( ! function_exists( 'siteorigin_corp_jetpack_logo_not_lazy' ) ) {
 
 		function siteorigin_corp_jetpack_logo_not_lazy( $blacklisted_classes ) {
 			$blacklisted_classes[] = 'custom-logo';

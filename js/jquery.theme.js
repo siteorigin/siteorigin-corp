@@ -398,7 +398,7 @@ jQuery( function( $ ) {
 				    top = window.pageYOffset || document.documentElement.scrollTop;
 
 				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
-				if( top > 0 ) {
+				if ( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
