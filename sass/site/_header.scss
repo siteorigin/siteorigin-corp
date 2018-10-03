@@ -49,17 +49,19 @@
     }
 
 	.site-header-inner {
-		-ms-flex-align: center;
-		-webkit-align-items: center;
-		-webkit-box-align: center;
-	    align-items: center;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-justify-content: space-between;
-		justify-content: space-between;
 		width: 100%;
-	}	
+	    @media (min-width: 600px) {
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			align-items: center;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: space-between;
+			justify-content: space-between;
+		}
+	}
 	
 	.site-branding {
 		padding-right: 20px;
