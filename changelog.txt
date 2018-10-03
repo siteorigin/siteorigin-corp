@@ -5,7 +5,7 @@
 * Changed YARPP to use `get_the_date()` instead of `the_date()` for post meta.
 * Added a blog post author setting at Customize > Theme Settings > Blog. The setting is disabled by default.
 * Resolved a problem with logo scaling when returning to the top of the page.
-* Resolved a problem with Corp logo scaling and Jetpack Lazy Images.
+* Resolved a problem with logo scaling and Jetpack Lazy Images.
 * Prevented FitVids.js from loading if user is viewing a Gutenberg page.
 * Removed `h1` to `h6` clearing.
 
