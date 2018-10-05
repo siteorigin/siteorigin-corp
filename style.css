@@ -1496,6 +1496,9 @@ a {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%; }
+    @media (max-width: 600px) {
+      .mega-menu-menu-1 .site-header .site-header-inner {
+        display: block; } }
   .site-header .site-branding {
     padding-right: 20px; }
     .site-header .site-branding .site-title {

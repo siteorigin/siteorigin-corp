@@ -59,6 +59,13 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
+		
+		@media (max-width: 600px) {
+				
+			@at-root .mega-menu-menu-1 & {
+				display: block;
+			}
+		}
 	}	
 	
 	.site-branding {
