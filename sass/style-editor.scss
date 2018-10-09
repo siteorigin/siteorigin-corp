@@ -2,22 +2,25 @@
 Version: dev
 */
 
-// Main column width.
-body.gutenberg-editor-page #wpwrap {
+body.gutenberg-editor-page {
 
-	.editor-post-title__block,
-	.editor-default-block-appender,
-	.editor-block-list__block {
-		max-width: 855px;
+	// Main column width.
+	#wpwrap {
+
+		.editor-post-title__block,
+		.editor-default-block-appender,
+		.editor-block-list__block {
+			max-width: 855px;
+		}
 	}
-}
 
-// Width of "wide" blocks.
-body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
-	max-width: 1140px;
-}
+	// Width of "wide" blocks.
+	.editor-block-list__block[data-align="wide"] {
+		max-width: 1140px;
+	}
 
-// Width of "full-wide" blocks.
-body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
-	max-width: none;
+	// Width of "full-wide" blocks.
+	.editor-block-list__block[data-align="full"] {
+		max-width: none;
+	}	
 }

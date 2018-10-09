@@ -92,7 +92,7 @@ function siteorigin_corp_setup() {
 	 * Enable support for Gutenberg Editor Styles.
 	 * https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#editor-styles
 	 */
-	add_theme_support( 'editor-styles' );	
+	add_theme_support( 'editor-styles' );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -215,12 +215,11 @@ function siteorigin_corp_enqueue_flexslider() {
 }
 
 /**
- * Enqueue block editor style
+ * Enqueue Gutenberg block editor style.
  */
 function siteorigin_corp_block_editor_styles() {
-    wp_enqueue_style( 'siteorigin-corp-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-corp-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
 }
-
 add_action( 'enqueue_block_editor_assets', 'siteorigin_corp_block_editor_styles' );
 
 if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) :
