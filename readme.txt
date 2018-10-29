@@ -92,6 +92,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9 - 29 October 2018 =
+* Disabled the header search when a mega menu active.
+* Added initial Gutenberg editor styles.
+* Updated WooCommerce templates to version `3.5.0`.
+* Added a setting for the footer privacy policy link located at `Customize > Theme Settings > Footer`.
+
 = 1.8 - 03 October 2018 =
 * Removed WooCommerce archive overlay unless Quick View or Add to Cart is enabled.
 * Changed YARPP to use `get_the_date()` instead of `the_date()` for post meta.
