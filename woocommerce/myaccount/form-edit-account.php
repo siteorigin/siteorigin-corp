@@ -12,14 +12,14 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.5.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
-<form class="woocommerce-EditAccountForm edit-account" action="" method="post">
+<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action( 'woocommerce_edit_account_form_tag' ); ?> >
 
 	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 
@@ -58,7 +58,6 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		<label for="password_2"><?php esc_html_e( 'Confirm new password', 'siteorigin-corp' ); ?></label>
 		<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2" autocomplete="off" />
 	</p>
-
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_edit_account_form' ); ?>

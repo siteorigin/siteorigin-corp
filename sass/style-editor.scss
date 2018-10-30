@@ -1,0 +1,26 @@
+/*!
+Version: dev
+*/
+
+body.gutenberg-editor-page {
+
+	// Main column width.
+	#wpwrap {
+
+		.editor-post-title__block,
+		.editor-default-block-appender,
+		.editor-block-list__block {
+			max-width: 855px;
+		}
+	}
+
+	// Width of "wide" blocks.
+	.editor-block-list__block[data-align="wide"] {
+		max-width: 1140px;
+	}
+
+	// Width of "full-wide" blocks.
+	.editor-block-list__block[data-align="full"] {
+		max-width: none;
+	}	
+}

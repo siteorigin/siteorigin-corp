@@ -350,6 +350,11 @@ function siteorigin_corp_settings_init() {
 					'description'       => esc_html__( "{site-title} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'privacy_policy_link' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Privacy Policy Link', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the Privacy Policy page link.', 'siteorigin-corp' ),
+				),
 				'attribution' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Display SiteOrigin Attribution', 'siteorigin-corp' ),
@@ -1549,6 +1554,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['sidebar_width']                        = '34%%';
 
 	$defaults['footer_text']                          = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_privacy_policy_link']           = true;
 	$defaults['footer_widget_title']                  = '#ffffff';
 	$defaults['footer_widget_text']                   = '#b4b5b8';
 	$defaults['footer_widget_link']                   = '#ffffff';

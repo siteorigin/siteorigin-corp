@@ -51,7 +51,7 @@
 
 					<?php if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_mini_cart' ) && ! $mega_menu_active ) siteorigin_corp_woocommerce_mini_cart(); ?>	
 
-					<?php if ( siteorigin_setting( 'navigation_menu_search' ) ) : ?>
+					<?php if ( siteorigin_setting( 'navigation_menu_search' ) && ! $mega_menu_active ) : ?>
 		            	<button id="search-button" class="search-toggle">
 		                	<span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
 	                	</button>
