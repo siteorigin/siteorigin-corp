@@ -92,6 +92,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9.1 - 09 November 2018 =
+* Updated header gmpg.org link to https.
+* Resolved mini-cart icon height issue in IE 11.
+
 = 1.9 - 30 October 2018 =
 * Disabled the header search when a mega menu active.
 * Added initial Gutenberg editor styles.

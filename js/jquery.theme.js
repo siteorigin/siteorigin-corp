@@ -87,7 +87,7 @@ jQuery( function( $ ) {
 		}
 		$( window ).scroll( function() {
 			if ( $( '#site-navigation ul li' ).hasClass( 'current' ) ) {
-			   $( '#site-navigation li' ).removeClass( 'current-menu-item' );
+				$( '#site-navigation li' ).removeClass( 'current-menu-item' );
 			}
 		} );
 	} );
@@ -265,7 +265,7 @@ jQuery( function( $ ) {
 		var $$ = $( this );
 		$$.toggleClass( 'close-search' );
 
-		$( "input[type='search']" ).each( function () { $( this ).attr( 'size', $( this ).attr( 'placeholder' ).length ); } );
+		$( "input[type='search']" ).each( function() { $( this ).attr( 'size', $( this ).attr( 'placeholder' ).length ); } );
 
 		var fullscreenSearch = function() {
 			var vpw = $( window ).width(),
@@ -309,7 +309,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Scroll to top.
-	var sttWindowScroll = function () {
+	var sttWindowScroll = function() {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
 
 		if ( top > $( '#masthead' ).outerHeight() ) {
@@ -324,7 +324,7 @@ jQuery( function( $ ) {
 	};
 	sttWindowScroll();
 	$( window ).scroll( sttWindowScroll );
-	$( '#scroll-to-top' ).click( function () {
+	$( '#scroll-to-top' ).click( function() {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
@@ -393,11 +393,11 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginCorp.logoScale;
 				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 
-			var smResizeLogo = function () {
+			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
-				    top = window.pageYOffset || document.documentElement.scrollTop;
+					top = window.pageYOffset || document.documentElement.scrollTop;
 
-				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class.
 				if ( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
@@ -412,7 +412,7 @@ jQuery( function( $ ) {
 				}
 
 				if ( $img.length ) {
-					// If Scale == siteoriginCorp.logoScale, logo is completely scaled
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled.
 					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
 						$('.site-branding img').css( {

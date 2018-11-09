@@ -13,10 +13,10 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -49,13 +49,13 @@
 
 					<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
-					<?php if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_mini_cart' ) && ! $mega_menu_active ) siteorigin_corp_woocommerce_mini_cart(); ?>	
+					<?php if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_mini_cart' ) && ! $mega_menu_active ) siteorigin_corp_woocommerce_mini_cart(); ?>
 
 					<?php if ( siteorigin_setting( 'navigation_menu_search' ) && ! $mega_menu_active ) : ?>
-		            	<button id="search-button" class="search-toggle">
-		                	<span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
-	                	</button>
-	                <?php endif; ?>
+						<button id="search-button" class="search-toggle">
+							<span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
+						</button>
+					<?php endif; ?>
 
 					<?php if ( siteorigin_setting( 'navigation_header_menu' ) && siteorigin_setting( 'navigation_mobile_menu' ) && ! $mega_menu_active ) : ?>
 						<a href="#menu" id="mobile-menu-button">
@@ -80,7 +80,7 @@
 						</div>
 						<button id="search-close-button" class="search-close-button">
 							<span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
-						</button>					
+						</button>
 					</div><!-- #header-search -->
 				<?php endif; ?>
 
