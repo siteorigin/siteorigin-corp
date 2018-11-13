@@ -418,7 +418,6 @@ jQuery( function( $ ) {
 						$('.site-branding img').css( {
 							width: imgWidth * scale,
 							height: imgHeight * scale,
-							'max-width' : 'none'
 						} );
 					}
 				} else {
