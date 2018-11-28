@@ -122,7 +122,7 @@ jQuery( function( $ ) {
 			// Check if there is a section that had same id as the button pressed.
 			if ( jQuery( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
 				jQuery( '#site-navigation .current' ).removeClass('current');
-				jQuery( alink).parent( 'li' ).addClass( 'current' );
+				jQuery( alink ).parent( 'li' ).addClass( 'current' );
 			} else {
 				jQuery( '#site-navigation .current' ).removeClass( 'current' );
 			}

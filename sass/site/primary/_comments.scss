@@ -16,7 +16,7 @@
 			margin-left: 80px;
 
 			.comment-awaiting-moderation {
-				font-weight: bold; 
+				font-weight: bold;
 			}
 		}
 		
@@ -36,8 +36,8 @@
 
 		.author {
 			color: $color__text-dark;
-			font-family: $font__headings; 
-			font-size: 15px; 
+			font-family: $font__headings;
+			font-size: 15px;
 			font-weight: bold;
 
 			a {
@@ -53,9 +53,9 @@
 				content: "\e902";
 				font-family: $font__icon;
 				font-size: 14px;
-				margin-right: 5px;  
-			}			
-		}		
+				margin-right: 5px;
+			}
+		}
 
 		.date {
 			color: $color__text-light;
@@ -63,8 +63,8 @@
 			
 			&:before {
 				content: '\00b7';
-				font-size: 14px; 
-				margin: 0 9px; 
+				font-size: 14px;
+				margin: 0 9px;
 			}
 		}
 
@@ -72,31 +72,31 @@
 			font-size: 14px;
 			
 			p {
-				margin-bottom: 15px; 
-			}			
+				margin-bottom: 15px;
+			}
 
 			a {
 				word-wrap: break-word;
 			}
-		}		
+		}
 
 		.comment-reply-link {
 			color: $color__text-dark;
-			font-family: $font__headings; 
+			font-family: $font__headings;
 			font-size: 12px;
-			font-weight: bold; 
+			font-weight: bold;
 			line-height: normal;
 			text-transform: uppercase;
 
 			&:hover {
 				color: $color__accent;
 			}
-		}		
+		}
 
 		@media (min-width: 481px) {
 			.children {
 				margin-left: 5px;
-			}	
+			}
 		}
 	}
 
@@ -105,9 +105,9 @@
 		
 		.comment-container {
 			list-style: none;
-			margin-left: 0; 
+			margin-left: 0;
 		}
-	}	
+	}
 }
 
 .comments-title, 
@@ -119,21 +119,21 @@
 	margin-bottom: 15px;
 	
 	#cancel-comment-reply-link {
-		color: $color__text-light; 
-		font-size: 13px; 
+		color: $color__text-light;
+		font-size: 13px;
 		margin-left: .25em;
 		
 		&:hover {
 			color: $color__accent;
 		}
-	}	
+	}
 }
 
 #commentform {
 
 	p {
 		line-height: normal;
-		margin-bottom: 25px; 
+		margin-bottom: 25px;
 	}
 
 	label {
@@ -145,7 +145,7 @@
 
 	textarea {
 		width: 100%;
-	}			
+	}
 
 	.comment-form-author, 
 	.comment-form-email, 
@@ -153,7 +153,7 @@
 		box-sizing: border-box;
 		float: left;
 		line-height: 0;
-		margin-bottom: 30px; 
+		margin-bottom: 30px;
 		width: 31%;
 
 		@media (max-width: 768px) {
@@ -170,7 +170,7 @@
 		
 		@media (max-width: 768px) {
 			margin: 0 0 25px;
-		} 
+		}
 	}
 
 	.comment-notes, 
@@ -216,25 +216,25 @@
 		margin: 15px 0 8px;
 		
 		~ p {
-			margin-top: 0; 
+			margin-top: 0;
 		}
 		
 		label {
 			color: $color__text-medium;
 			font-size: 13px;
 			font-weight: normal;
-		}	
-	}		
+		}
+	}
 }
 
 .no-comments {
-	font-size: 14px; 
-	font-weight: bold; 
+	font-size: 14px;
+	font-weight: bold;
 	font-weight: 600;
-	margin: 0; 
+	margin: 0;
 }
 
 .commentform-error {
 	font-size: 14px;
-	margin: 0 0 25px; 
+	margin: 0 0 25px;
 }

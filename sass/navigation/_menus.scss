@@ -40,14 +40,14 @@
 
 				a {
 					background: $color__navigation-drop-down-background;
-	    			border-bottom: 1px solid;
-	    			border-color: $color__navigation-drop-down-divider;
-	    			color: $color__navigation-drop-down-link;
-	    			font-size: 12px;
-	    			font-weight: normal;
-	    			max-width: 100%;
-	    			padding: 12px 20px;
-	    			white-space: nowrap;
+					border-bottom: 1px solid;
+					border-color: $color__navigation-drop-down-divider;
+					color: $color__navigation-drop-down-link;
+					font-size: 12px;
+					font-weight: normal;
+					max-width: 100%;
+					padding: 12px 20px;
+					white-space: nowrap;
 				}
 
 				&:hover > a {
@@ -367,9 +367,9 @@ $sel: '';
 	$sel: if($i == 1, "#mobile-navigation", selector-nest($sel, "ul")) !global;
 
 	#{$sel} {
-    	ul ul li a {
-        	padding-left: 40px * $i;
-      	}
+		ul ul li a {
+			padding-left: 40px * $i;
+		}
 	}
 }
 

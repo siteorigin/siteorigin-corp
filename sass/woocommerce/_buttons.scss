@@ -4,8 +4,8 @@ input.button,
 #respond input#submit {
 
 	&.loading::after {
-  		animation: spin 2s linear infinite;		
-  		content: '\e01c';
+		animation: spin 2s linear infinite;
+		content: '\e01c';
 		font-family: 'WooCommerce';
 		font-size: .9em;
 		font-weight: 400;

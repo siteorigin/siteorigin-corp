@@ -12,25 +12,25 @@
 	padding: 15px 20px;
 	position: relative;
 	word-wrap: break-word;
-	
+
 	@media (max-width: 768px) {
-		font-size: 14px; 
+		font-size: 14px;
 	}
 
 	.button {
 		display: block;
 		float: right;
-						
+
 		@media (max-width: 768px) {
 			font-size: 13px;
-		}		
+		}
 	}
 
 	a:not(.button) {
 		color: $color__text-dark;
 		font-weight: bold;
 		margin-left: 5px;
-		
+
 		&:hover {
 			color: $color__accent;
 		}
@@ -40,16 +40,16 @@
 .woocommerce-error {
 	display: block;
 	color: $error;
-	font-size: 14px; 
+	font-size: 14px;
 	list-style: none;
 	padding: 20px 20px;
 	
 	li {
-		line-height: 2.5; 
+		line-height: 2.5;
 	}
 
 	~ p {
-		margin-bottom: 26px; 
+		margin-bottom: 26px;
 	}
 }
 

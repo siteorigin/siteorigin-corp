@@ -3,7 +3,7 @@
 	form {
 
 		p:first-of-type {
-			margin-bottom: 24px; 
+			margin-bottom: 24px;
 		}
 
 		.form-row {
@@ -11,12 +11,12 @@
 			margin-bottom: 24px;
 			
 			&#billing_address_1_field {
-				margin-bottom: 10px; 
+				margin-bottom: 10px;
 			}
 
 			label {
 				display: block;
-				margin-bottom: 4px;   
+				margin-bottom: 4px;
 
 				.required {
 					color: $error;
@@ -46,7 +46,7 @@
 				label {
 					color: $error;
 				}
-				
+
 				.select2-container,
 				input.input-text,
 				select {
@@ -61,7 +61,7 @@
 				select {
 					border-color: $success;
 				}
-			}			
+			}
 		}
 
 		.form-row-first,
@@ -69,7 +69,7 @@
 			float: left;
 			overflow: visible;
 			width: 47.8260869565%;
-			
+
 			@media (max-width: 768px) {
 				float: none;
 				width: 100%; 
@@ -86,7 +86,7 @@
 	}
 
 	// Login form.
-	.login	{
+	.login {
 
 		.clear ~ .form-row {
 			margin-bottom: 0;
@@ -99,7 +99,6 @@
 		.lost_password {
 			font-size: 0.8666em;
 			margin-bottom: 26px; 
-		}	
-		
+		}
 	}
 }

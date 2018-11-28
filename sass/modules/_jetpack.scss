@@ -21,12 +21,12 @@
 	width: 100%;
 
 	span {
-    	background: inherit;
-    	border-radius: initial;
-    	color: inherit;
-    	cursor: pointer;
-    	font-size: inherit;
-	    padding: 0;
+		background: inherit;
+		border-radius: initial;
+		color: inherit;
+		cursor: pointer;
+		font-size: inherit;
+		padding: 0;
 
 		button {
 			background: transparent;
@@ -34,16 +34,16 @@
 			border-color: $color__text-dark;
 			color: $color__text-dark;
 			display: block;
-			font-size: 13px; 
+			font-size: 13px;
 			letter-spacing: 1px;
 			line-height: normal;
 			margin: 0 auto;
-			padding: 9px 30px; 
+			padding: 9px 30px;
 			transition: .3s;
 			
 			&:hover {
 				border-color: $color__accent;
-				color: $color__accent; 
+				color: $color__accent;
 			}
 		}
 	}
@@ -90,8 +90,8 @@
 			@at-root &:hover {
 				color: $color__accent;
 				text-decoration: none;
-			}		
-		}		
+			}
+		}
 
 		&:hover .jp-relatedposts-post-title a {
 			text-decoration: none;
@@ -99,9 +99,9 @@
 
 		.jp-relatedposts-post-date,
 		.jp-relatedposts-post-context {
-			color: $color__text-medium; 
+			color: $color__text-medium;
 			font-size: 13px; 
-		}			
+		}
 	}
 }
 
@@ -110,8 +110,8 @@
 --------------------------------------------------------------*/
 .site-content #primary .sharedaddy {
 	border-top: 1px solid $color__background-hr;
-	border-right: 0; 
-	border-left: 0;		
+	border-right: 0;
+	border-left: 0;
 	padding: 30px 0;
 
 	h3 {

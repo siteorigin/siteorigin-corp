@@ -13,11 +13,11 @@
 		position: relative;
 		
 		@media (max-width: 768px) {
-			height: 380px; 
+			height: 380px;
 		}
 
 		@media (max-width: 480px) {
-			height: 155px; 
+			height: 155px;
 		}
 
 		.overlay a {
@@ -26,7 +26,7 @@
 			height: 100%;
 			position: absolute;
 			width: 100%;
-		}					
+		}
 
 		.slide-content {
 			text-align: center;
@@ -38,21 +38,21 @@
 			
 			@media (max-width: 480px) {
 				margin-top: -15.5px;
-			}				
+			}
 
 			.entry-meta span {
 				color: #fff;
-				font-size: 20px; 
+				font-size: 20px;
 				margin-bottom: 17px;
 				
 				@media (max-width: 768px) {
-					font-size: 17px; 
-				}					
-						
+					font-size: 17px;
+				}
+
 				@media (max-width: 480px) {
 					display: none;
-				}					
-				
+				}
+
 				a:hover {
 					color: #fff;
 				}
@@ -61,14 +61,14 @@
 					font-size: 18px;
 					
 					@media (max-width: 768px) {
-						font-size: 15px; 
-					}						
+						font-size: 15px;
+					}
 				}
 			}
 
 			.entry-title {
 				font-size: 48px;
-				margin-bottom: 0; 
+				margin-bottom: 0;
 				position: relative;
 				z-index: 3;
 				
@@ -78,12 +78,12 @@
 
 				@media (max-width: 480px) {
 					font-size: 26px;
-				}				
+				}
 
 				a {
 					color: #fff;
 				}
-			}	
+			}
 		}
 	}
 }
