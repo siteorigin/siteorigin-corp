@@ -204,12 +204,23 @@
 						top: 19px !important;
 					}
 
-					label[for=payment_method_stripe] {
-						padding-left: 21.5px
+					.wc-credit-card-form {
+						margin: 0;
+						padding: 1.5em 0.625em 0;
+					}
+
+					.form-row-first,
+					.form-row-last {
+						margin-bottom: 0;
 					}
 
 					p {
 						margin-bottom: 13px;
+					}
+
+					.stripe-icon {
+						display: inline-block;
+						vertical-align: top;
 					}
 				}
 			}
@@ -229,7 +240,8 @@
 			p {
 				margin-bottom: 14px;
 
-				&.validate-required {
+				&.validate-required,
+				&:last-of-type {
 					margin-bottom: 0;
 				}
 			}

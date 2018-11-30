@@ -1688,10 +1688,17 @@ ul.product_list_widget {
       padding: 23px 0; }
     .woocommerce #payment .payment_methods li.payment_method_stripe input {
       top: 19px !important; }
-    .woocommerce #payment .payment_methods li.payment_method_stripe label[for=payment_method_stripe] {
-      padding-left: 21.5px; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe .wc-credit-card-form {
+      margin: 0;
+      padding: 1.5em 0.625em 0; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe .form-row-first,
+    .woocommerce #payment .payment_methods li.payment_method_stripe .form-row-last {
+      margin-bottom: 0; }
     .woocommerce #payment .payment_methods li.payment_method_stripe p {
       margin-bottom: 13px; }
+    .woocommerce #payment .payment_methods li.payment_method_stripe .stripe-icon {
+      display: inline-block;
+      vertical-align: top; }
 
 .woocommerce #payment .form-row select {
   width: auto; }
@@ -1701,7 +1708,7 @@ ul.product_list_widget {
   padding: 14px 0; }
   .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p {
     margin-bottom: 14px; }
-    .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p.validate-required {
+    .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p.validate-required, .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p:last-of-type {
       margin-bottom: 0; }
 
 .woocommerce #payment #place_order {
