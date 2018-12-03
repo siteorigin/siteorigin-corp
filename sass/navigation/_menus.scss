@@ -283,7 +283,7 @@
 	background: $color__navigation-drop-down-background;
 	left: 0;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 	position: absolute;
 	top: 101%;
 	-webkit-overflow-scrolling: touch;
