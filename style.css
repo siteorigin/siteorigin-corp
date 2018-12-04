@@ -1576,7 +1576,7 @@ a {
     top: 40%; }
     @media (max-width: 768px) {
       #fullscreen-search .corp-container {
-        top: 25%; } }
+        top: 20%; } }
   #fullscreen-search span {
     color: #b2b2b2;
     display: block;
