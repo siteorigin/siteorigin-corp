@@ -705,11 +705,16 @@ a {
   background: #262627;
   left: 0;
   overflow-y: scroll;
+  -ms-overflow-style: auto;
   position: absolute;
   top: 101%;
   -webkit-overflow-scrolling: touch;
   width: 100%;
   z-index: 10; }
+
+@-moz-document url-prefix() {
+  #mobile-navigation {
+    overflow: auto; } }
   #mobile-navigation::-webkit-scrollbar {
     width: 4px; }
   #mobile-navigation::-webkit-scrollbar-track {
