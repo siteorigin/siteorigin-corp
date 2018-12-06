@@ -1725,6 +1725,8 @@ ul.product_list_widget {
 
 .woocommerce-order-received p {
   margin: 0 0 25px; }
+  .woocommerce-order-received p.woocommerce-thankyou-order-received {
+    margin: 0 0 25px !important; }
   .woocommerce-order-received p.order-again {
     margin: 25px 0 0; }
 
