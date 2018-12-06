@@ -69,7 +69,6 @@
 				color: $color__text-dark;
 				display: block;
 				font-weight: bold;
-				line-height: 0; 
 
 				&:hover {
 					color: $color__text-medium;
@@ -100,6 +99,7 @@
 			.product-thumbnail {
 
 				img {
+					display: block;
 					height: auto;
 					width: 80px;
 				}
@@ -206,11 +206,21 @@
 			th {
 				color: $color__text-dark;
 				font-size: 14px;
+				padding-right: 16px;
 			}
 
 			td {
 				color: $color__text-medium;
 				text-align: right;
+				
+				ul {
+					list-style: none;
+					margin: 0 0 14px;
+				}
+
+				.woocommerce-shipping-destination {
+					margin-bottom: 14px;
+				}
 			}
 		}
 

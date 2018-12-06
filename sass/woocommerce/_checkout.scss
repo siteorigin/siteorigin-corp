@@ -90,6 +90,11 @@
 			tr {
 				border: none;
 				border-bottom: 1px solid $color__background-hr-dark;
+				
+				ul {
+					list-style: none;
+					margin: 0;
+				}
 			}
 		}
 	}
