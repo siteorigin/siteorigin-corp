@@ -13,13 +13,13 @@ body {
 --------------------------------------------------------------*/
 .main-navigation {
 	text-align: left;
-	
+
 	ul li {
-    	margin: 0 0 -10px 39px;
-    	
-    	&:last-of-type {
+		margin: 0 0 -10px 39px;
+
+		&:last-of-type {
 			margin-left: 0;
-    	}
+		}
 	}
 
 	.search-toggle {
@@ -61,7 +61,7 @@ body {
 ## Header
 --------------------------------------------------------------*/
 .site-header .site-branding {
-    padding: 0 0 0 20px;
+	padding: 0 0 0 20px;
 }
 
 .widget .search-form input[type="search"] {
@@ -181,4 +181,3 @@ body:not(.single) .hentry {
 		}
 	}
 }
-

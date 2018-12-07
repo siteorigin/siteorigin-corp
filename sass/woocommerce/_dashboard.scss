@@ -1,23 +1,23 @@
 .woocommerce-account {
-		
+
 	h2 {
-		font-size: 23px; 
+		font-size: 23px;
 		margin-bottom: 10px;
 	}
-	
+
 	.login {
 
 		@media (min-width: 769px) {
 			max-width: 75%;
 		}
-		
+
 		label[for*="rememberme"] {
 			font-size: 13px; 
-			font-weight: normal; 
+			font-weight: normal;
 			line-height: normal;
 			margin-top: 10px;
 		}
-		
+
 		.lost_password {
 			font-size: 13px;
 			margin-top: -14px;
@@ -35,27 +35,27 @@
 		background: #fff;
 		border: 1px solid $color__background-hr-dark;
 		float: left;
-		margin-right: 4%; 
+		margin-right: 4%;
 		width: 26%;
-		
+
 		@media (max-width: 768px) {
 			float: none;
 			margin: 0;
-			width: 100%; 
-		}		
-		
+			width: 100%;
+		}
+
 		ul {
-			font-size: 14px; 
+			font-size: 14px;
 			list-style: none;
 			margin: 0;
 			padding: 15px 25px;
-			
+
 			li {
 				line-height: 2.5;
-				
+
 				a {
 					color: $color__text-medium;
-					
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -80,7 +80,7 @@
 
 		p {
 			margin-bottom: 26px;
-			
+
 			span em {
 				font-size: 13px;
 			}
@@ -91,12 +91,12 @@
 		.woocommerce-table--order-downloads {
 
 			thead {
-				
+
 				@media (max-width: 768px) {
 					display: none;
 				}
 			}
-			
+
 			tr {
 
 				@media (max-width: 768px) {
@@ -104,23 +104,23 @@
 					td {
 						display: block;
 						padding: 10px 20px;
-						text-align: right;	
-						
+						text-align: right;
+
 						&:before {
-							color: $color__text-dark;	
+							color: $color__text-dark;
 							content: attr(data-title) ": ";
 							font-weight: 600;
 							float: left;
 							font-size: 14px;
 							text-transform: uppercase;
-						}				
+						}
 
 						&:first-of-type {
 							padding-top: 30px;
 						}
 
 						&:last-of-type {
-							padding-bottom: 30px; 
+							padding-bottom: 30px;
 						}
 					}
 				}
@@ -130,41 +130,41 @@
 		// Addresses.
 		.col2-set {
 			float: none;
-			width: 100%; 
+			width: 100%;
 		}
 
 		.woocommerce-Address {
 			float: left;
 			position: relative;
 			width: 50%;
-			
+
 			@media (max-width: 768px) {
 				float: none;
-				width: 100%; 
+				width: 100%;
 			}
-			
+
 			&.col-1 {
 				padding-right: 2.5%;
-					
+
 				@media (max-width: 768px) {
-					padding-right: 0; 
-				}				
+					padding-right: 0;
+				}
 			}
 
 			&.col-2 {
 				padding-left: 2.5%;
-				
+
 				@media (max-width: 768px) {
-					padding-left: 0; 
-				}					
+					padding-left: 0;
+				}
 			}
 		}
 
 		// Password Change.
 		.password-change {
 			margin-bottom: 15px;
-		}	
-	}	
+		}
+	}
 }
 
 // Password Strength.
@@ -197,4 +197,3 @@
 		display: inline-block;
 	}
 }
-

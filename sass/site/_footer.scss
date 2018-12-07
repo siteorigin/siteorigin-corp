@@ -1,10 +1,10 @@
 .site-footer {
-	background: $color__footer-background;	
+	background: $color__footer-background;
 	margin-top: $footer__margin;
 	
 	.no-footer-margin & {
 		margin-top: 0;
-	}		
+	}
 	
 	.widgets {
 		@include clearfix;
@@ -30,7 +30,7 @@
 				
 				~ * {
 					color: $color__footer-widget-text;
-				}				
+				}
 			}
 
 			a {
@@ -53,21 +53,21 @@
 	}
 
 	.site-info {
-		font-size: 13px; 
+		font-size: 13px;
 		text-align: left;
 		
 		@media (max-width: 768px) {
 			float: none;
 			text-align: center;
 			width: 100%;
-		} 		
+		} 
 	}
 
 	.bottom-bar {
 		background: $color__bottom-bar-background;
 		color: $color__bottom-bar-text;
 		overflow: auto;
-		padding: 25px 0;	
+		padding: 25px 0;
 
 		a {
 			color: $color__bottom-bar-link;
@@ -81,7 +81,7 @@
 			-ms-flex-align: center;
 			-webkit-align-items: center;
 			-webkit-box-align: center;
-		    align-items: center;
+			align-items: center;
 			display: -ms-flexbox;
 			display: -webkit-flex;
 			display: flex;
@@ -97,7 +97,7 @@
 				float: none;
 				text-align: center;
 				width: 100%; 
-			}									
+			}
 		}
 
 		.widget {
@@ -109,7 +109,7 @@
 				padding-top: 15px;
 				text-align: center;
 				width: 100%;
-			}			
+			}
 			
 			a {
 

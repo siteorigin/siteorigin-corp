@@ -2,9 +2,9 @@ p {
 	margin: 0 0 26px;
 }
 
-dfn, 
-cite, 
-em, 
+dfn,
+cite,
+em,
 i {
 	font-style: italic;
 }
@@ -12,8 +12,8 @@ i {
 blockquote {
 	border-left: 3px solid $color__accent;
 	font-style: italic;
-	font-size: 16px; 
-	margin: 0 0 26px; 
+	font-size: 16px;
+	margin: 0 0 26px;
 	padding: 15px 0 15px 25px;
 	
 	p {
@@ -24,9 +24,9 @@ blockquote {
 		color: $color__text-medium;
 		display: block;
 		font-weight: bold;
-		font-weight: 600;  
-		font-size: 16px; 
-		margin-top: 15px; 
+		font-weight: 600;
+		font-size: 16px;
+		margin-top: 15px;
 	}
 }
 
@@ -44,20 +44,20 @@ pre {
 	padding: 25px;
 }
 
-code, 
-kbd, 
-tt, 
+code,
+kbd,
+tt,
 var {
 	font: 14px $font__code;
 }
 
-abbr, 
+abbr,
 acronym {
 	border-bottom: 1px dotted $color__text-medium;
 	cursor: help;
 }
 
-mark, 
+mark,
 ins {
 	background: $color__background-ins;
 	text-decoration: none;

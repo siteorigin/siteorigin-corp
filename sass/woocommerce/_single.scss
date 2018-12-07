@@ -9,11 +9,11 @@
 
 		.images {
 			float: left;
-			margin: 0 0 53px; 
+			margin: 0 0 53px;
 			width: 48.68%;
-			
+
 			@media (max-width: 780px) {
-				width: 100%; 
+				width: 100%;
 			}
 
 			&.woocommerce-product-gallery {
@@ -23,10 +23,10 @@
 			.woocommerce-product-gallery__wrapper {
 				margin: 0;
 				transition: all cubic-bezier(0.795, -0.035, 0.000, 1.000) .5s;
-				
+
 				img {
 					display: block;
-					width: 100%; 
+					width: 100%;
 				}
 			}
 
@@ -43,16 +43,16 @@
 					float: left;
 					margin: 25px 25px 0 0;
 					width: 21.624%;
-					
+
 					&:nth-of-type(4n+4) {
-						margin-right: 0; 
+						margin-right: 0;
 					}
 
 					img {
 						display: block;
 						box-shadow: #000 0 0 0;
 						opacity: .5;
-						
+
 						&.flex-active,
 						&:hover {
 							border: 1px solid #828282;
@@ -101,7 +101,7 @@
 					@include transform(rotate(-45deg));
 					box-sizing: content-box;
 				}
-			}			
+			}
 		}
 
 		.summary,
@@ -109,28 +109,28 @@
 			float: right;
 			padding-top: 0;
 			width: 48.68%;
-			
+
 			@media (max-width: 786px) {
 				float: none;
-				width: 100%; 
+				width: 100%;
 			}
-			
+
 			.entry-title {
 				font-size: 24px;
-				text-transform: uppercase; 
+				text-transform: uppercase;
 			}
 
 			.star-rating {
 				float: left;
-				font-size: 14px; 
-				margin: 6px 5px 0 0; 
-			}		
+				font-size: 14px;
+				margin: 6px 5px 0 0;
+			}
 
 			.woocommerce-review-link {
 				color: $color__text-light;
 				font-size: 13px;
 				text-transform: capitalize;
-				
+
 				&:hover {
 					color: $color__accent;
 				}
@@ -138,27 +138,27 @@
 
 			.price {
 				font-size: 24px;
-				font-weight: 500; 
+				font-weight: 500;
 				margin-bottom: 25px;
 			}
 
 			.woocommerce-product-details__short-description {
 				margin-bottom: 35px;
-				
+
 				p {
 					margin-bottom: 26px;
-					
+
 					&:only-of-type,
 					&:last-of-type {
 						margin-bottom: 0;
 					}
 				}
-			}		
+			}
 
 			.variations {
 				font-size: 14px;
-				margin-bottom: 30px; 
-				
+				margin-bottom: 30px;
+
 				tr {
 
 					td {
@@ -172,23 +172,23 @@
 
 				.label {
 					text-transform: capitalize;
-					
+
 					label {
 						color: $color__text-dark;
-						font-size: 14px; 
-						font-weight: bold; 
+						font-size: 14px;
+						font-weight: bold;
 					}
 				}
 
 				select {
-					font-size: 14px; 
+					font-size: 14px;
 				}
 
 				.reset_variations {
 					color: $color__text-medium;
 					font-size: 13px;
-					margin-left: 10px; 
-					
+					margin-left: 10px;
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -197,17 +197,17 @@
 
 			.woocommerce-variation .woocommerce-variation-price .price {
 				display: block;
-				margin-top: -25px; 
+				margin-top: -25px;
 				width: 100%; 
 			}
 
 			.woocommerce-grouped-product-list {
 				margin-bottom: 25px;
-				
+
 				@media (min-width: 481px) {
 					width: 75%;
 				}
-				
+
 				td {
 					
 					input {
@@ -230,8 +230,8 @@
 							color: $color__accent;
 						}
 					}
-				}		
-			}			
+				}
+			}
 
 			.stock {
 				color: $color__accent;
@@ -240,7 +240,7 @@
 			}
 
 			.cart {
-				margin-bottom: 30px; 
+				margin-bottom: 30px;
 			}
 
 			.quantity {
@@ -257,27 +257,27 @@
 			}
 
 			.product_meta {
-				border-top: 1px solid $color__background-hr; 
+				border-top: 1px solid $color__background-hr;
 				color: $color__text-medium;
 				font-size: 13px;
 				padding-top: 25px;
-				
+
 				@media (max-width: 786px) {
-					margin-bottom: 50px; 
+					margin-bottom: 50px;
 				}
-				
+
 				> span {
 					display: block;
 				}
-				
+
 				span span {
-					font-weight: normal; 
+					font-weight: normal;
 				}
 
 				a {
 					color: $color__text-dark;
-					font-weight: normal; 
-				
+					font-weight: normal;
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -288,33 +288,33 @@
 		.woocommerce-tabs {
 			@include clearfix-after;
 			margin-bottom: 60px;
-			
+
 			h2 {
-				color: $color__text-medium; 
-				font-size: 14px; 
+				color: $color__text-medium;
+				font-size: 14px;
 				letter-spacing: 1px;
 				line-height: normal;
 				margin: 0;
-				text-transform: uppercase; 
+				text-transform: uppercase;
 			}
 
 			.wc-tabs {
-				border-bottom: 1px solid $color__background-hr; 
+				border-bottom: 1px solid $color__background-hr;
 				list-style: none;
 				margin: 0;
 
 				li {
 					display: inline-block;
-					font-family: $font__headings; 
+					font-family: $font__headings;
 					margin: 0 34px 0 0;
 					padding-bottom: 7px;
 					text-transform: uppercase;
-					
+
 					a {
 						color: $color__text-medium;
 						font-weight: 600;
 						outline: 0;
-						
+
 						&:hover {
 							color: $color__text-dark;
 						}
@@ -322,8 +322,8 @@
 
 					&.active {
 						box-shadow: 0 2px 0 $color__accent;
-						margin-bottom: 1px; 
-										
+						margin-bottom: 1px;
+
 						a {
 							color: $color__text-dark;
 						}
@@ -332,8 +332,8 @@
 			}
 
 			.wc-tab {
-				padding-top: 25px; 
-			}			
+				padding-top: 25px;
+			}
 		}
 
 		.shop_attributes {
@@ -344,37 +344,37 @@
 					color: $color__text-dark;
 					text-align: left;
 					text-transform: capitalize;
-				}		
-				
+				}
+
 				th,
 				td {
 					padding-bottom: 8px;
-				}	
+				}
 
 				&:last-of-type {
 
 					th,
 					td {
-						padding-bottom: 0 
-					}	
+						padding-bottom: 0;
+					}
 				}
 			}
 		}
 
 		#tab-description p {
 			margin-bottom: 26px;
-			
+
 			&:only-of-type,
 			&:last-of-type {
 				margin-bottom: 0;
-			}			
-		}		
+			}
+		}
 
 		.woocommerce-Reviews {
 
 			.woocommerce-noreviews {
 				font-size: 14px; 
-				margin-bottom: 16px;  
+				margin-bottom: 16px;
 			}
 
 			ol {
@@ -384,65 +384,65 @@
 
 			.comment_container {
 				border-bottom: 1px solid $color__background-hr;
-				padding: 25px 0;			
+				padding: 25px 0;
 			}
 
 			.comment_container img {
 				border-radius: 50%;
 				display: block;
 				float: left;
-			}				
+			}
 
 			.comment-text {
 				margin-left: 80px;
 			}
 
 			.star-rating {
-				margin-bottom: 5px; 
+				margin-bottom: 5px;
 			}
 
 			.meta {
 				color: $color__text-dark;
 				font-size: 14px;
-				font-weight: bold; 
+				font-weight: bold;
 				font-weight: 600;
-				line-height: normal; 
+				line-height: normal;
 
 				a {
 					color: $color__text-dark;
 					text-decoration: none;
-					
+
 					&:hover {
 						color: $color__text-medium;
 					}
-				}				
+				}
 			}
 
 			.comment-date {
 				color: $color__text-light;
-				font-size: 13px; 
+				font-size: 13px;
 				line-height: normal;
-				margin-bottom: 15px; 
+				margin-bottom: 15px;
 			}
 
 			.description {
-				font-size: 14px; 
+				font-size: 14px;
 			}
 
 			.comment-reply-title {
 				color: $color__text-medium;
 				display: block;
 				font-size: 14px;
-				font-weight: bold;  
+				font-weight: bold;
 				letter-spacing: 1px;
 				line-height: normal;
 				margin: 0;
-				padding-bottom: 20px; 
-				text-transform: uppercase; 
+				padding-bottom: 20px;
+				text-transform: uppercase;
 			}
 
 			.comment-respond {
-				margin-top: 25px; 
+				margin-top: 25px;
 			}
 
 			.stars {
@@ -454,7 +454,7 @@
 					text-indent: -999em;
 					display: inline-block;
 					text-decoration: none;
-					
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -509,21 +509,21 @@
 						}
 					}
 				}
-			}			
+			}
 		}
 
 		// Upsells.
 		.upsells {
-			padding-bottom: 15px; 
-			
+			padding-bottom: 15px;
+
 			> h2 {
 				font-size: 20px;
-				margin-bottom: 20px; 
+				margin-bottom: 20px;
 				text-transform: uppercase;
 			}
 
 			.product {
-				margin-bottom: 20px; 
+				margin-bottom: 20px;
 			}
 		}
 
@@ -538,50 +538,49 @@
 
 			.product {
 				margin-bottom: 25px; 
-			}				
-			
+			}
+
 			@media (min-width: 769px) {
-				
+
 				.product {
-					margin-bottom: 0; 
+					margin-bottom: 0;
 				}
 			}
 		}
 
 		// Upsells and related products.
 		.woocommerce-tabs ~ .products .product {
-			margin-right: 3.5%; 
+			margin-right: 3.5%;
 			width: 22.37%;
-			
+
 			@media (min-width: 769px) {
 
 				&:nth-of-type(3n+1) {
 					clear: none;
-				}				
-			
+				}
+
 				&:nth-of-type(3n+3) {
-					margin-right: 3.5%; 
+					margin-right: 3.5%;
 				}
 
 				&:nth-of-type(3n+4) {
-					margin-right: 0; 
-				}											
-			}				
-			
+					margin-right: 0;
+				}
+			}
+
 			@media (max-width: 768px) {
-					
+
 				&:nth-of-type(3n+2) {
-					margin-right: 0; 
-				}	
-				
-				width: 48.25%;		
+					margin-right: 0;
+				}
+
+				width: 48.25%;
 			}
 
 			@media (max-width: 480px) {
 				margin-right: 0;
-				width: 100%; 
-			}				
-
-		}		
+				width: 100%;
+			}
+		}
 	}
 }

@@ -44,14 +44,14 @@
 
 // Content area with left sidebar.
 .sidebar-left {
-	
+
 	.content-area {
 		float: right;
 		margin: 0 0 0 (-$sidebar__width);
 	}
 
 	.site-main {
-		margin: 0 0 0 $sidebar__width;	
+		margin: 0 0 0 $sidebar__width;
 	}
 }
 
@@ -67,7 +67,7 @@
 	.site-main {
 		margin: 0;
 	}
-} 
+}
 
 // Full Width page layout setting.
 .page-layout-full-width-no-sidebar .site-content {
@@ -75,7 +75,7 @@
 	#primary.content-area {
 		float: none;
 		margin: 0;
-		width: 100%; 
+		width: 100%;
 	}
 
 	#main.site-main {

@@ -1,10 +1,10 @@
 .woocommerce-checkout .entry-content {
 	padding: 0;
-	
+
 	h3 {
 		font-size: 24px;
 		font-weight: 500;
-		
+
 		label {
 			font-weight: 600;
 		} 
@@ -18,9 +18,9 @@
 		.form-row-first,
 		.form-row-last {
 			float: left;
-			padding-right: 5px; 
+			padding-right: 5px;
 			width: 25%;
-			
+
 			@media (max-width: 768px) {
 				width: 50%;
 			}
@@ -31,9 +31,8 @@
 			
 			@media (max-width: 768px) {
 				width: 50%;
-			}			
-		}		
-		
+			}
+		}
 	}
 
 	.woocommerce-billing-fields {
@@ -41,9 +40,9 @@
 		@media (max-width: 768px) {
 			padding: 19px 20px 4px;
 		}
-		
+
 		h3 {
-			margin: 20px 0 11px; 
+			margin: 20px 0 11px;
 		}
 	}
 
@@ -51,36 +50,35 @@
 
 		@media (max-width: 768px) {
 			padding: 0 20px 0;
-		}		
+		}
 	}
 
 	.woocommerce-additional-fields {
 
 		@media (max-width: 768px) {
 			padding: 19px 20px 4px;
-		}		
-		
+		}
+
 		h3 {
 			margin: 0 0 11px;
 			padding-top: 25px;
 			
 			@media (max-width: 768px) {
 				padding-top: 0;
-			}				
+			}
 		}
 	}
-	
 
 	// Order review.
 	#order_review {
-		clear: right; 
+		clear: right;
 		float: right;
 		width: 47.8260869565%;
 		
 		@media (max-width: 768px) {
 			clear: none;
 			float: none;
-			width: 100%; 
+			width: 100%;
 		}
 
 		table {
@@ -92,6 +90,11 @@
 			tr {
 				border: none;
 				border-bottom: 1px solid $color__background-hr-dark;
+				
+				ul {
+					list-style: none;
+					margin: 0;
+				}
 			}
 		}
 	}
@@ -100,7 +103,7 @@
 		background: #fff;
 		border: 1px solid $color__background-hr-dark;
 		padding: 19px 20px 4px;
-		
+
 		h3 {
 			margin: 0 0 6px;
 		}
@@ -114,7 +117,7 @@
 
 		tr {
 			border-bottom: 1px solid $color__background-hr-dark; 
-		}		
+		}
 		
 		th,
 		td {
@@ -132,16 +135,16 @@
 				}
 
 				td:last-of-type {
-					padding-bottom: 30px; 
+					padding-bottom: 30px;
 				}
 			}
 		}
-		
+
 		tfoot {
 			color: $color__text-dark;
 
 			tr {
-				border-bottom: 1px solid $color__background-hr-dark; 
+				border-bottom: 1px solid $color__background-hr-dark;
 			}
 		}
 	}
@@ -161,10 +164,10 @@
 				&.woocommerce-notice {
 					padding: 14px;
 				}
-				
+
 				label {
 					font-weight: 600;
-					
+
 					a {
 						font-size: 12px; 
 						font-weight: normal;
@@ -178,17 +181,17 @@
 				
 				img:only-of-type {
 					max-height: 50px;
-				    position: absolute;
-				    right: 0;
-				    top: 8px; 
+					position: absolute;
+					right: 0;
+					top: 8px; 
 				}
 
 				.payment_box {
-					font-size: 14px; 
+					font-size: 14px;
 					padding: 10px 0 0;
 					
 					&.payment_method_paypal {
-						padding-top: 20px; 
+						padding-top: 20px;
 					}
 
 					p {
@@ -206,13 +209,24 @@
 						top: 19px !important;
 					}
 
-					label[for=payment_method_stripe] {
-						padding-left: 21.5px
+					.wc-credit-card-form {
+						margin: 0;
+						padding: 1.5em 0.625em 0;
+					}
+
+					.form-row-first,
+					.form-row-last {
+						margin-bottom: 0;
 					}
 
 					p {
 						margin-bottom: 13px;
-					}	
+					}
+
+					.stripe-icon {
+						display: inline-block;
+						vertical-align: top;
+					}
 				}
 			}
 		}
@@ -230,8 +244,9 @@
 			
 			p {
 				margin-bottom: 14px;
-				
-				&.validate-required {
+
+				&.validate-required,
+				&:last-of-type {
 					margin-bottom: 0;
 				}
 			}

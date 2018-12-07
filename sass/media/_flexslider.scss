@@ -5,7 +5,7 @@
 	.slides,
 	.flex-direction-nav {
 		list-style: none;
-		margin: 0;		
+		margin: 0;
 	}
 
 	.slides {
@@ -44,28 +44,28 @@
 		&:hover {
 			background: rgba(0, 0, 0, .7);
 		}
-		
+
 		@at-root .flexslider:hover .flex-direction-nav a {
 			opacity: 1;
 		}
 
 		&.flex-prev {
-			left: 0; 
-		}		
-			
+			left: 0;
+		}
+
 		&.flex-next {
 			right: 0;
 		}
 
 		&:focus {
-			outline: 0; 
+			outline: 0;
 		}
 
 		svg {
 			height: 20px;
 			margin-top: 14px;
 			width: 11px;
-						
+
 			path {
 				fill: #fff;
 				transition: .3s; 
@@ -79,34 +79,34 @@
 		padding: 0;
 		position: absolute;
 		text-align: center;
-	  	width: 100%;
-	  	
+		width: 100%;
+
 		@media (max-width: 480px) {
 			display: none;
-		}			  	
-	  	
-	  	li {
-	  		display: inline-block;
-	  		margin: 0 5px;
-	  		
-	  		a {
-	  			border: 2px solid #fff;
-	  			border-radius: 20px;
-	  			cursor: pointer;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 5px;
+
+			a {
+				border: 2px solid #fff;
+				border-radius: 20px;
+				cursor: pointer;
 				display: block;
 				height: 10px;
 				text-indent: -9999px;
 				width: 10px;
 
 				&:hover {
-	  				background: #fff;
+					background: #fff;
 				}
 
 				&.flex-active {
-	  				background: #fff;
-	  				cursor: default;
-				}	  			
-	  		}
-	  	} 
+					background: #fff;
+					cursor: default;
+				}
+			}
+		}
 	}
 }

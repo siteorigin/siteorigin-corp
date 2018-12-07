@@ -12,7 +12,7 @@
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
 			font-size: 14px;
-		}		
+		}
 	}
 
 	ul {
@@ -21,12 +21,12 @@
 		
 		li {
 			line-height: 2; 
-		} 
-	}	
+		}
+	}
 
 	input {
-		font-size: 14px; 
-	}			
+		font-size: 14px;
+	}
 }
 
 .widget-area .widget:not(.widget_shopping_cart) {
@@ -56,16 +56,16 @@
 	
 	caption {
 		color: $color__text-dark;
-		font-size: 14px; 
+		font-size: 14px;
 		font-weight: 600;
-		padding-top: 14px; 
+		padding-top: 14px;
 	}
 
 	tr:nth-child(2n+2) {
 		background: none;
-	}	
+	}
 
-	th, 
+	th,
 	td {
 		border: 0;
 		padding: 0;
@@ -98,14 +98,14 @@
 
 				&:hover {
 					color: $color__text-medium;
-				}				
-			}			
-		}			
+				}
+			}
+		}
 	}
 	
 	tfoot {
 
-		#prev, 
+		#prev,
 		#next {
 			padding-top: 4px;
 			padding-bottom: 17px;
@@ -116,7 +116,7 @@
 
 				&:hover {
 					color: $color__accent;
-				}				
+				}
 			}
 		}
 
@@ -125,7 +125,7 @@
 			
 			a {
 				margin: 0 10px 0 0;
-			}		
+			}
 		}
 	}
 }
@@ -147,7 +147,7 @@
 
 		span {
 			color: $color__text-light;
-		}			
+		}
 
 		.children {
 			margin-left: 12px;
@@ -164,7 +164,7 @@
 	margin-bottom: 16px;
 	
 	&:last-of-type {
-		margin-bottom: 0; 
+		margin-bottom: 0;
 	}
 	
 	.comment-author-link {
@@ -175,8 +175,8 @@
 			content: "\e91f";
 			display: inline-block;
 			font-family: $font__icon;
-    		padding: 0 9px 0 0;
-    		vertical-align: top;
+			padding: 0 9px 0 0;
+			vertical-align: top;
 		}
 	}
 	
@@ -216,9 +216,9 @@
 	}
 
 	.rpwe-alignleft {
-	  	float: left;
-    	margin-right: 15px;
-    	padding-bottom: 17px;
+		float: left;
+		margin-right: 15px;
+		padding-bottom: 17px;
 	}
 
 	h3 {
@@ -257,7 +257,7 @@
 		
 		@at-root #secondary & {
 			min-width: 0;
-		}		
+		}
 	}
 }
 
@@ -271,6 +271,6 @@ aside.widget.widget_tag_cloud .tagcloud {
 
 		a:after {
 			background: $color__footer-background;	
-		}		
+		}
 	}
 }

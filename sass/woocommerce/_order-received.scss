@@ -8,6 +8,10 @@
 	p {
 		margin: 0 0 25px;
 		
+		&.woocommerce-thankyou-order-received {
+			margin: 0 0 25px !important;
+		}
+		
 		&.order-again {
 			margin: 25px 0 0;
 		}
@@ -36,9 +40,8 @@
 			}
 
 			&:last-of-type {
-				border: 0; 
+				border: 0;
 			}
 		}
 	}
-	
 }

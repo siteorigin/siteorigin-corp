@@ -9,23 +9,23 @@
 	padding-top: 15px;
 	position: fixed;
 	right: 20px;
-  	transform: scale(0, 0);
-  	transition: .2s;
+	transform: scale(0, 0);
+	transition: .2s;
 	text-align: center;
-	width: 45px; 
+	width: 45px;
 	z-index: 101;
-	
+
 	svg path {
 		fill: #fff;
 	}
 
-	img, 
+	img,
 	svg {
 		display: inline-block;
 		height: 15px;
 		opacity: .6;
 		transition: .3s;
-		width: 15px;	
+		width: 15px;
 	}
 
 	&:hover {
@@ -37,6 +37,6 @@
 
 	&.show {
 		opacity: 1;
-    	transform: scale(1, 1);
+		transform: scale(1, 1);
 	}
 }
