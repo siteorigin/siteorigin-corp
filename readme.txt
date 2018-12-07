@@ -92,6 +92,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9.2 - 07 December 2018 =
+* Minor styling fixes for the WooCommerce Cart, Checkout and Order Received pages.
+* Minor responsive adjustments to the prebuilt Page Builder home page layout.
+* Adjusted the full screen search positioning to avoid the field being covered by mobile browser keyboards.
+* Prevented the mobile menu scroll bar from appearing in Firefox when not required. Added scroll bar styling for WebKit.
+
 = 1.9.1 - 09 November 2018 =
 * Updated header gmpg.org link to https.
 * Resolved mini-cart icon height issue in IE 11.
