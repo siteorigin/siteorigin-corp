@@ -361,9 +361,11 @@ dl {
   dl dd {
     margin: 0 0 0 25px; }
 
-img {
+.site-content img, .site-footer img {
   height: auto;
-  max-width: 100%; }
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
 
 figure {
   margin: 15px 0; }

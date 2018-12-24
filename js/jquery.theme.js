@@ -379,18 +379,34 @@ jQuery( function( $ ) {
 		smShadow();
 		$( window ).scroll( smShadow );
 
+	}
+
+} );
+
+( function( $ ) {
+	$( window ).load( function() {
+		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
+		// Masonry blog layout.
+		if ( $( '.blog-layout-masonry' ).length ) {
+			$( '.blog-layout-masonry' ).masonry( {
+				itemSelector: '.hentry',
+				columnWidth: '.hentry'
+			} );
+		}
+
 		// Header padding to be used if logo scaling is enabled.
-		var mhPadding = {
-			top: parseInt( $mh.css( 'padding-top' ) ),
-			bottom: parseInt( $mh.css( 'padding-bottom' ) )
-		};
+		var $mh = $( '#masthead' ),
+			mhPadding = {
+				top: parseInt( $mh.css( 'padding-top' ) ),
+				bottom: parseInt( $mh.css( 'padding-bottom' ) )
+			};
 
 		// Sticky header logo scaling.
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-				imgWidth = $img.width(),
-				imgHeight = $img.height();
-				scaledWidth = imgWidth * siteoriginCorp.logoScale;
+				imgWidth = $img.attr( 'width' ),
+				imgHeight = $img.attr( 'height' ),
+				scaledWidth = imgWidth * siteoriginCorp.logoScale,
 				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 
 			var smResizeLogo = function() {
@@ -431,22 +447,6 @@ jQuery( function( $ ) {
 			};
 			smResizeLogo();
 			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
-		}
-	}
-
-} );
-
-( function( $ ) {
-	$( window ).load( function() {
-		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
-		// Masonry blog layout.
-		if ( $( '.blog-layout-masonry' ).length ) {
-			$( '.blog-layout-masonry' ).masonry( {
-				itemSelector: '.hentry',
-				columnWidth: '.hentry'
-			} );
-		}
-
+		};
 	} );
-
 } )( jQuery );
