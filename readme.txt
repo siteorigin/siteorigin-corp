@@ -92,6 +92,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9.3 - 24 December 2018 =
+* Minor WooCommerce archive description spacing adjustment.
+* Ensured Retina logo uses regular logo dimensions x 2.
+
 = 1.9.2 - 07 December 2018 =
 * Minor styling fixes for the WooCommerce Cart, Checkout and Order Received pages.
 * Minor responsive adjustments to the prebuilt Page Builder home page layout.
