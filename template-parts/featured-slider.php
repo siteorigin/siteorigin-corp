@@ -33,7 +33,7 @@ if ( empty( $slider ) ) return;
 						<?php siteorigin_corp_post_meta(); ?>
 					</div><!-- .entry-meta -->
 					<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-				</div>				
+				</div>
 			</li>
 
 		<?php endforeach; ?>

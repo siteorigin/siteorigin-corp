@@ -33,12 +33,12 @@ if ( have_posts() ) : ?>
 		the_posts_pagination( array( 
 			'prev_text' => '&rarr;', 
 			'next_text' => '&larr;' 
-		) );		
+		) );
 	else :
 		the_posts_pagination( array( 
 			'prev_text' => '&larr;', 
 			'next_text' => '&rarr;' 
-		) );		
+		) );
 	endif;
 
 else :

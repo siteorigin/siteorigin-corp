@@ -136,7 +136,7 @@ function siteorigin_corp_woocommerce_tag_cloud_widget() {
 	$args['largest'] = 13;
 	$args['smallest'] = 13;
 	$args['taxonomy'] = 'product_tag';
-	return $args;	
+	return $args;
 }
 endif;
 add_filter( 'woocommerce_product_tag_cloud_widget_args', 'siteorigin_corp_woocommerce_tag_cloud_widget' );
