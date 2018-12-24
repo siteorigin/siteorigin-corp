@@ -394,60 +394,59 @@ jQuery( function( $ ) {
 			} );
 		}
 
-	} );
+		// Header padding to be used if logo scaling is enabled.
+		var $mh = $( '#masthead' ),
+			mhPadding = {
+				top: parseInt( $mh.css( 'padding-top' ) ),
+				bottom: parseInt( $mh.css( 'padding-bottom' ) )
+			};
 
-	// Header padding to be used if logo scaling is enabled.
-	var $mh = $( '#masthead' ),
-		mhPadding = {
-			top: parseInt( $mh.css( 'padding-top' ) ),
-			bottom: parseInt( $mh.css( 'padding-bottom' ) )
-		};
+		// Sticky header logo scaling.
+		if ( $mh.data( 'scale-logo' ) ) {
+			var $img = $mh.find( '.site-branding img' ),
+				imgWidth = $img.attr( 'width' ),
+				imgHeight = $img.attr( 'height' ),
+				scaledWidth = imgWidth * siteoriginCorp.logoScale,
+				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 
-	// Sticky header logo scaling.
-	if ( $mh.data( 'scale-logo' ) ) {
-		var $img = $mh.find( '.site-branding img' ),
-			imgWidth = $img[0].naturalWidth,
-			imgHeight = $img[0].naturalHeight,
-			scaledWidth = imgWidth * siteoriginCorp.logoScale,
-			scaledHeight = imgHeight * siteoriginCorp.logoScale;
+			var smResizeLogo = function() {
+				var $branding = $mh.find( '.site-branding > *' ),
+					top = window.pageYOffset || document.documentElement.scrollTop;
 
-		var smResizeLogo = function() {
-			var $branding = $mh.find( '.site-branding > *' ),
-				top = window.pageYOffset || document.documentElement.scrollTop;
-
-			// Check if the menu is meant to be sticky or not, and if it is apply padding/class.
-			if ( top > 0 ) {
-				$mh.css( {
-					'padding-top': mhPadding.top * siteoriginCorp.logoScale,
-					'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
-				} ).addClass( 'stuck' );
-
-			} else {
-				$mh.css( {
-					'padding-top': mhPadding.top,
-					'padding-bottom': mhPadding.bottom
-				} ).removeClass( 'stuck' );
-			}
-
-			if ( $img.length ) {
-				// If Scale == siteoriginCorp.logoScale, logo is completely scaled.
-				if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
-					var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
-					$('.site-branding img').css( {
-						width: imgWidth * scale,
-						height: imgHeight * scale,
-						'max-width' : 'none'
-					} );
-				}
-			} else {
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class.
 				if ( top > 0 ) {
-					$branding.css( 'transform', 'scale(' + siteoriginCorp.logoScale + ')' );
+					$mh.css( {
+						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
+						'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
+					} ).addClass( 'stuck' );
+
 				} else {
-					$branding.css( 'transform', 'scale(1)' );
+					$mh.css( {
+						'padding-top': mhPadding.top,
+						'padding-bottom': mhPadding.bottom
+					} ).removeClass( 'stuck' );
 				}
-			}
+
+				if ( $img.length ) {
+					// If Scale == siteoriginCorp.logoScale, logo is completely scaled.
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						var scale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
+						$('.site-branding img').css( {
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
+						} );
+					}
+				} else {
+					if ( top > 0 ) {
+						$branding.css( 'transform', 'scale(' + siteoriginCorp.logoScale + ')' );
+					} else {
+						$branding.css( 'transform', 'scale(1)' );
+					}
+				}
+			};
+			smResizeLogo();
+			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		};
-		smResizeLogo();
-		$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
-	}
+	} );
 } )( jQuery );
