@@ -125,9 +125,9 @@ add_filter( 'add_to_cart_fragments', 'siteorigin_corp_woocommerce_update_cart_co
  */
 function siteorigin_corp_woocommerce_pagination_args( $array ) {
 	$array = array(
-		'prev_text'	=> '<span class="icon-long-arrow-left"></span>', 
-		'next_text'	=> '<span class="icon-long-arrow-right"></span>',
-		'type'		=> 'list',	
+		'prev_text' => '<span class="icon-long-arrow-left"></span>', 
+		'next_text' => '<span class="icon-long-arrow-right"></span>',
+		'type'      => 'list',
 	);
 	return $array;
 }
@@ -138,11 +138,11 @@ add_filter( 'woocommerce_pagination_args', 'siteorigin_corp_woocommerce_paginati
  * @link https://github.com/woocommerce/woocommerce/wiki/Customizing-image-sizes-in-3.3-
  */
 function siteorigin_corp_woocommerce_single_gallery_thumbnail_size( $size ) {
-    return array(
-        'width'  => 150,
-        'height' => 150,
-        'crop'   => 1,
-    );	
+	return array(
+		'width'  => 150,
+		'height' => 150,
+		'crop'   => 1,
+	);
 }
 add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'siteorigin_corp_woocommerce_single_gallery_thumbnail_size' );
 
