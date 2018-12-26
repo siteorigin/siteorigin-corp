@@ -1705,8 +1705,9 @@ ul.product_list_widget {
     .woocommerce #payment .payment_methods li.payment_method_stripe input {
       top: 19px !important; }
     .woocommerce #payment .payment_methods li.payment_method_stripe .wc-credit-card-form {
+      border: none;
       margin: 0;
-      padding: 1.5em 0.625em 0; }
+      padding: 0; }
     .woocommerce #payment .payment_methods li.payment_method_stripe .form-row-first,
     .woocommerce #payment .payment_methods li.payment_method_stripe .form-row-last {
       margin-bottom: 0; }
@@ -1721,10 +1722,10 @@ ul.product_list_widget {
 
 .woocommerce #payment .woocommerce-terms-and-conditions-wrapper {
   font-size: 14px;
-  padding: 14px 0; }
+  padding: 14px 0 0; }
   .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p {
     margin-bottom: 14px; }
-    .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p.validate-required, .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p:last-of-type {
+    .woocommerce #payment .woocommerce-terms-and-conditions-wrapper p.validate-required {
       margin-bottom: 0; }
 
 .woocommerce #payment #place_order {
