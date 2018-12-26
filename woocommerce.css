@@ -1023,6 +1023,8 @@ input.button.added:after,
     padding: 20px 15px 20px 20px;
     width: 50%; }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
+      height: auto;
+      max-width: 100%;
       vertical-align: middle; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
@@ -1478,6 +1480,8 @@ ul.product_list_widget {
         margin: 0 0 14px; }
       .woocommerce-cart .cart_totals table td .woocommerce-shipping-destination {
         margin-bottom: 14px; }
+  .woocommerce-cart .cart_totals .shipping-calculator-form {
+    margin: 8px 0; }
   .woocommerce-cart .cart_totals form span {
     text-align: left; }
   .woocommerce-cart .cart_totals .checkout-button {
