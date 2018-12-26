@@ -294,6 +294,9 @@ input.button.added:after,
 .woocommerce.archive .page-title {
   text-align: left; }
 
+.woocommerce .term-description {
+  margin: 5px 0 25px; }
+
 .woocommerce .woocommerce-result-count {
   align-items: flex-end;
   color: #929292;

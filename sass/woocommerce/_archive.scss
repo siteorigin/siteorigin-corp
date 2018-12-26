@@ -1,11 +1,13 @@
 .woocommerce {
 	
-	// Page Title.
 	&.archive .page-title {
 		text-align: left
 	}
 
-	// Result count.
+	.term-description {
+		margin: 5px 0 25px;
+	}
+
 	.woocommerce-result-count {
 		align-items: flex-end;
 		color: $color__text-light;
@@ -22,7 +24,6 @@
 		}
 	}
 
-	// Ordering.
 	.woocommerce-ordering {
 		display: block;
 		float: right;

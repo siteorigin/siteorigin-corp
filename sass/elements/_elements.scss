@@ -21,9 +21,11 @@ hr {
 
 @import "lists";
 
-img {
-	height: auto; // Make sure images are scaled correctly.
-	max-width: 100%; // Adhere to container width.
+.site-content, .site-footer {
+	img {
+		height: auto; /* Make sure images are scaled correctly. */
+		max-width: 100%; /* Adhere to container width. */
+	}
 }
 
 figure {

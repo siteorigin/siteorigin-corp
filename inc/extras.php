@@ -24,7 +24,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	// Header margin.
 	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
 		$classes[] = 'no-header-margin';
-	}	
+	}
 
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
@@ -34,7 +34,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	// Non-singlar pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
-	}	
+	}
 
 	// Page settings.
 	$page_settings = siteorigin_page_setting();
@@ -68,7 +68,7 @@ function siteorigin_corp_body_classes( $classes ) {
 
 		if ( siteorigin_setting( 'woocommerce_shop_sidebar' ) == 'left' ) {
 			$classes[] = 'woocommerce-sidebar-left';
-		}			
+		}
 	}
 
 	// WooCommerce archive Quick View and Add to Cart.
