@@ -2336,6 +2336,11 @@ body:not(.single) .entry-content p:only-of-type {
 .comment-list {
   margin: 0 0 30px;
   padding: 0; }
+  .comment-list ol.children {
+    margin: 0; }
+  @media (min-width: 1025px) {
+    .comment-list li .comment {
+      margin-left: 80px; } }
   .comment-list .comment,
   .comment-list .pingback {
     color: #626262;
@@ -2344,15 +2349,17 @@ body:not(.single) .entry-content p:only-of-type {
     .comment-list .pingback .comment-box {
       border-bottom: 1px solid #e6e6e6;
       padding: 25px 0; }
-    .comment-list .comment .comment-container,
-    .comment-list .pingback .comment-container {
-      margin-left: 80px; }
-      .comment-list .comment .comment-container .comment-awaiting-moderation,
-      .comment-list .pingback .comment-container .comment-awaiting-moderation {
-        font-weight: bold; }
+    @media (min-width: 481px) {
+      .comment-list .comment .comment-container,
+      .comment-list .pingback .comment-container {
+        margin-left: 80px; } }
     .comment-list .comment .avatar-container,
     .comment-list .pingback .avatar-container {
       float: left; }
+      @media (max-width: 480px) {
+        .comment-list .comment .avatar-container,
+        .comment-list .pingback .avatar-container {
+          display: none; } }
       .comment-list .comment .avatar-container img,
       .comment-list .pingback .avatar-container img {
         display: block;
