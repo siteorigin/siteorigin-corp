@@ -2404,6 +2404,10 @@ body:not(.single) .entry-content p:only-of-type {
       .comment-list .comment .comment-content a,
       .comment-list .pingback .comment-content a {
         word-wrap: break-word; }
+      .comment-list .comment .comment-content .comment-awaiting-moderation,
+      .comment-list .pingback .comment-content .comment-awaiting-moderation {
+        font-weight: bold;
+        font-weight: 600; }
     .comment-list .comment .comment-reply-link,
     .comment-list .pingback .comment-reply-link {
       color: #2d2d2d;
@@ -2415,10 +2419,6 @@ body:not(.single) .entry-content p:only-of-type {
       .comment-list .comment .comment-reply-link:hover,
       .comment-list .pingback .comment-reply-link:hover {
         color: #f14e4e; }
-    @media (min-width: 481px) {
-      .comment-list .comment .children,
-      .comment-list .pingback .children {
-        margin-left: 5px; } }
   .comment-list .pingback {
     list-style: none; }
     .comment-list .pingback .comment-container {
