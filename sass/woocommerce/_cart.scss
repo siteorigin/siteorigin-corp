@@ -161,6 +161,52 @@
 		width: 100%;
 	}
 
+	.cross-sells {
+		float: left;
+		margin: 40px 0 -50px;
+		padding-right: 5%;
+		width: 50%;
+		
+		@media (max-width: 768px) {
+			padding-right: 0;
+			width: 100%;
+		}		
+		
+		h2 {
+			font-size: 24px;
+			font-weight: 500;
+			margin-top: 0;
+		}
+
+		.product {
+			margin-bottom: 25px;
+			width: 48.25%;
+				
+			@media (min-width: 769px) {
+			
+				&:nth-of-type(2n+2) {
+					margin-right: 0;
+				}	
+
+				&:nth-child(2n+3) {
+					clear: left;
+				}
+			}
+			
+			@media (max-width: 768px) {
+				width: 48.25%;
+
+				&:nth-of-type(2n+2) {
+					margin-right: 0;
+				}
+			}
+			
+			@media (max-width: 480px) {
+				width: 100%;
+			}
+		}
+	}
+
 	.cart_totals {
 		background: #fff;
 		border: 1px solid #d6d6d6;
@@ -168,7 +214,7 @@
 		margin-top: 40px;
 		padding: 23px 20px 30px;
 		text-align: left;
-		width: 40%;
+		width: 50%;
 
 		@media (max-width: 768px) {
 			width: 100%;
