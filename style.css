@@ -361,7 +361,7 @@ dl {
   dl dd {
     margin: 0 0 0 25px; }
 
-.site-content img, .site-footer img {
+img:not(.custom-logo) {
   height: auto;
   max-width: 100%; }
 
