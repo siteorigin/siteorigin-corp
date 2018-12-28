@@ -134,7 +134,7 @@ if ( ! function_exists( 'siteorigin_corp_display_icon' ) ) :
  */
 function siteorigin_corp_display_icon( $type ) {
 
-	switch( $type ) {
+	switch ( $type ) {
 
 		case 'cart': ?>
 			<svg xmlns="http://www.w3.org/2000/svg" width="16.97" height="16" viewBox="0 0 16.97 16">
