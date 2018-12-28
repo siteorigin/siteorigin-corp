@@ -420,8 +420,8 @@ function siteorigin_corp_post_meta() {
 
 	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) {
 		echo '<span class="comments-link">';
-  		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
-  		echo '</span>';
+		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
+		echo '</span>';
 	}
 }
 endif;
