@@ -2483,6 +2483,9 @@ body:not(.single) .entry-content p:only-of-type {
     #commentform .logged-in-as a:hover {
       color: #f14e4e; }
 
+#commentform .comment-respond {
+  margin-top: 25px; }
+
 #commentform .comment-form-cookies-consent {
   align-items: center;
   clear: both;

@@ -2,10 +2,32 @@
 Theme Name: SiteOrigin Corp
 Description: Adds support for languages written in a Right To Left (RTL) direction.
 */
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "mixins/bourbon";
 
 body {
 	direction: rtl;
 	unicode-bidi: embed;
+}
+
+ul, 
+ol {
+	margin: 0 25px 27px 0;
+	padding: 0;
+}
+
+dl {
+
+	dd {
+		margin: 0 25px 0 0;
+	}
+}
+
+blockquote {
+	border-right: 3px solid $color__accent;
+	border-left: none;
+	padding: 15px 25px 15px 0;
 }
 
 /*--------------------------------------------------------------
@@ -66,6 +88,35 @@ body {
 
 .widget .search-form input[type="search"] {
 	padding: 10px 13px 10px 30px;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-list {
+
+	@media (min-width: 1025px) {
+
+		li .comment {
+			margin-right: 80px;
+			margin-left: 0;
+		}
+	}
+
+	.comment {
+
+		.avatar-container {
+			float: right;
+		}
+
+		@media (min-width: 481px) {
+
+			.comment-container {
+				margin-right: 80px;
+				margin-left: 0;
+			}
+		}		
+	}
 }
 
 /*--------------------------------------------------------------
