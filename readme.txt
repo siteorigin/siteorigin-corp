@@ -92,6 +92,14 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9.4 - 30 December 2018 =
+* Minor WooCommerce cart design fixes.
+* Minor WooCommerce checkout page styling improvements.
+* Excluded the logo from the global img selector.
+* Resolved missing WooCommerce cart cross-sells.
+* Resolved threaded comments bug.
+* RTL improvements for comments and lists.
+
 = 1.9.3 - 26 December 2018 =
 * Minor WooCommerce archive description spacing adjustment.
 * Ensured Retina logo uses regular logo dimensions x 2.

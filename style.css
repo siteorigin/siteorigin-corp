@@ -361,11 +361,9 @@ dl {
   dl dd {
     margin: 0 0 0 25px; }
 
-.site-content img, .site-footer img {
+img:not(.custom-logo) {
   height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
+  max-width: 100%; }
 
 figure {
   margin: 15px 0; }
@@ -2338,6 +2336,11 @@ body:not(.single) .entry-content p:only-of-type {
 .comment-list {
   margin: 0 0 30px;
   padding: 0; }
+  .comment-list ol.children {
+    margin: 0; }
+  @media (min-width: 1025px) {
+    .comment-list li .comment {
+      margin-left: 80px; } }
   .comment-list .comment,
   .comment-list .pingback {
     color: #626262;
@@ -2346,15 +2349,17 @@ body:not(.single) .entry-content p:only-of-type {
     .comment-list .pingback .comment-box {
       border-bottom: 1px solid #e6e6e6;
       padding: 25px 0; }
-    .comment-list .comment .comment-container,
-    .comment-list .pingback .comment-container {
-      margin-left: 80px; }
-      .comment-list .comment .comment-container .comment-awaiting-moderation,
-      .comment-list .pingback .comment-container .comment-awaiting-moderation {
-        font-weight: bold; }
+    @media (min-width: 481px) {
+      .comment-list .comment .comment-container,
+      .comment-list .pingback .comment-container {
+        margin-left: 80px; } }
     .comment-list .comment .avatar-container,
     .comment-list .pingback .avatar-container {
       float: left; }
+      @media (max-width: 480px) {
+        .comment-list .comment .avatar-container,
+        .comment-list .pingback .avatar-container {
+          display: none; } }
       .comment-list .comment .avatar-container img,
       .comment-list .pingback .avatar-container img {
         display: block;
@@ -2399,6 +2404,10 @@ body:not(.single) .entry-content p:only-of-type {
       .comment-list .comment .comment-content a,
       .comment-list .pingback .comment-content a {
         word-wrap: break-word; }
+      .comment-list .comment .comment-content .comment-awaiting-moderation,
+      .comment-list .pingback .comment-content .comment-awaiting-moderation {
+        font-weight: bold;
+        font-weight: 600; }
     .comment-list .comment .comment-reply-link,
     .comment-list .pingback .comment-reply-link {
       color: #2d2d2d;
@@ -2410,10 +2419,6 @@ body:not(.single) .entry-content p:only-of-type {
       .comment-list .comment .comment-reply-link:hover,
       .comment-list .pingback .comment-reply-link:hover {
         color: #f14e4e; }
-    @media (min-width: 481px) {
-      .comment-list .comment .children,
-      .comment-list .pingback .children {
-        margin-left: 5px; } }
   .comment-list .pingback {
     list-style: none; }
     .comment-list .pingback .comment-container {
@@ -2477,6 +2482,9 @@ body:not(.single) .entry-content p:only-of-type {
     #commentform .comment-notes a:hover,
     #commentform .logged-in-as a:hover {
       color: #f14e4e; }
+
+#commentform .comment-respond {
+  margin-top: 25px; }
 
 #commentform .comment-form-cookies-consent {
   align-items: center;

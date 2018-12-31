@@ -33,9 +33,6 @@ function siteorigin_corp_woocommerce_change_hooks() {
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 	add_action( 'woocommerce_after_single_product_summary', 'siteorigin_corp_woocommerce_output_upsells', 15 );
 
-	// Remove the cross-sell display.
-	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-
 	// Add Quick View hooks.
 	add_action( 'siteorigin_corp_woocommerce_quick_view_images', 'siteorigin_corp_woocommerce_quick_view_image', 5 );
 	add_action( 'siteorigin_corp_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );

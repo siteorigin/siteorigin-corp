@@ -6,6 +6,19 @@ body {
   direction: rtl;
   unicode-bidi: embed; }
 
+ul,
+ol {
+  margin: 0 25px 27px 0;
+  padding: 0; }
+
+dl dd {
+  margin: 0 25px 0 0; }
+
+blockquote {
+  border-right: 3px solid #f14e4e;
+  border-left: none;
+  padding: 15px 25px 15px 0; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -48,6 +61,22 @@ body {
 
 .widget .search-form input[type="search"] {
   padding: 10px 13px 10px 30px; }
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@media (min-width: 1025px) {
+  .comment-list li .comment {
+    margin-right: 80px;
+    margin-left: 0; } }
+
+.comment-list .comment .avatar-container {
+  float: right; }
+
+@media (min-width: 481px) {
+  .comment-list .comment .comment-container {
+    margin-right: 80px;
+    margin-left: 0; } }
 
 /*--------------------------------------------------------------
 # Widgets
