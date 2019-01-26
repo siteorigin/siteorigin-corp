@@ -404,24 +404,32 @@ jQuery( function( $ ) {
 			};
 			smResizeLogo();
 			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
-		};
+		}
 
 		// Sticky header.
 		if ( $( '#masthead' ).hasClass( 'sticky' ) ) {
-			var $mhs = false,
-				$mh = $( '#masthead' ),
+			var $mh = $( '#masthead' ),
+				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh ),
 				$tb = $( '#topbar' ),
 				$tbwc = $( '#topbar .woocommerce-store-notice[style*="display: none"]' );
 
+			// Sticky header shadow.
+			var smShadow = function() {
+				if ( $( window ).scrollTop() > 0 ) {
+					$( $mh ).addClass( 'stuck' );
+				} else {
+					$( $mh ).removeClass( 'stuck' );
+				}
+			};
+			smShadow();
+			$( window ).scroll( smShadow );
+
 			var smSetup = function() {
+
+				$mhs.css( 'height', $mh.outerHeight() );
 
 				if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginCorp.collapse ) ) {
 					return;
-				}
-
-				if ( $mhs === false ) {
-					$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
-					$mhs.css( 'height', $mh.outerHeight() );
 				}
 
 				if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.siteoriginCorpIsVisible() ) {
@@ -445,17 +453,6 @@ jQuery( function( $ ) {
 			};
 			smSetup();
 			$( window ).resize( smSetup ).scroll( smSetup );
-
-			// Sticky header shadow.
-			var smShadow = function() {
-				if ( $( window ).scrollTop() > 0 ) {
-					$( $mh ).addClass( 'stuck' );
-				} else {
-					$( $mh ).removeClass( 'stuck' );
-				}
-			};
-			smShadow();
-			$( window ).scroll( smShadow );
 
 		}		
 	} );
