@@ -381,9 +381,7 @@ jQuery( function( $ ) {
 						var logoScale = siteoriginCorp.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
 						if ( $img.height() != scaledHeight || $img.width() != scaledWidth || logoScale != siteoriginCorp.logoScale ) {
 							$( '.site-branding img' ).css( {
-								width: imgWidth * logoScale,
-								height: imgHeight * logoScale,
-								'max-width' : 'none'
+								width: logoScale * 100 + '%',
 							} );
 						}
 					} else {
