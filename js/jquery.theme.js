@@ -356,6 +356,8 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginCorp.logoScale,
 				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 
+			$( ".site-branding img" ).wrap( "<div class='custom-logo-wrapper'></div>");	
+
 			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
@@ -388,8 +390,6 @@ jQuery( function( $ ) {
 						// Ensure no scaling is present.
 						$( '.site-branding img' ).css( {
 							width: '',
-							height: '',
-							'max-width' : '',
 						} );
 					}
 
@@ -424,11 +424,13 @@ jQuery( function( $ ) {
 
 			var smSetup = function() {
 
-				$mhs.css( 'height', $mh.outerHeight() );
-
 				if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginCorp.collapse ) ) {
 					return;
 				}
+
+				if ( $mhs !== false ) {
+					$mhs.css( 'height', $mh.outerHeight() );
+				}	
 
 				if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.siteoriginCorpIsVisible() ) {
 					$( 'body' ).addClass( 'topbar-out' );
