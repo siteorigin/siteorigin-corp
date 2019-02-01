@@ -96,7 +96,8 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 * Resolved issue where sub menu bottom border would sometimes disappear.
 * Changed the scaling logo behaviour to only scale after scroll.
 * Ensured the sticky header sentinel is responsive.
-* Updated the Jetpack Related Posts title to be translatable. 
+* Updated the Jetpack Related Posts title to be translatable.
+* Minor adjustment to the site description/tagline spacing.
 
 = 1.9.4 - 30 December 2018 =
 * Minor WooCommerce cart design fixes.
