@@ -125,7 +125,7 @@ if ( ! function_exists( 'siteorigin_corp_jetpackme_related_posts_headline' ) ) :
 function siteorigin_corp_jetpackme_related_posts_headline( $headline ) {
 	$headline = sprintf(
 	    '<h3 class="jp-relatedposts-headline">%s</h3>',
-	    esc_html_e( 'Related Posts', 'siteorigin-corp' )
+	    esc_html__( 'Related Posts', 'siteorigin-corp' )
 	);
 	return $headline;
 }
