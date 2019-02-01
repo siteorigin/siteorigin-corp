@@ -1540,7 +1540,7 @@ a {
       font-weight: normal;
       font-size: 13px;
       line-height: normal;
-      margin: -3px 0 0; }
+      margin: 0; }
     .site-header .site-branding > * {
       transform-origin: left center; }
   @media (max-width: 768px) {
