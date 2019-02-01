@@ -107,7 +107,7 @@ function siteorigin_corp_infinite_scroll_render() {
 endif;
 
 /**
- * Remove sharing buttons from their default locations
+ * Remove sharing buttons from their default locations.
  */
  function siteorigin_corp_remove_share() {
 	remove_filter( 'the_content', 'sharing_display', 19 );
@@ -120,12 +120,12 @@ add_action( 'loop_start', 'siteorigin_corp_remove_share' );
 
 if ( ! function_exists( 'siteorigin_corp_jetpackme_related_posts_headline' ) ) :
 /**
- * Changing the jetpack related posts title
+ * Changing the Jetpack Related Posts title.
  */
 function siteorigin_corp_jetpackme_related_posts_headline( $headline ) {
 	$headline = sprintf(
 	    '<h3 class="jp-relatedposts-headline">%s</h3>',
-	    esc_html( 'Related Posts', 'siteorigin-corp' )
+	    esc_html__( 'Related Posts', 'siteorigin-corp' )
 	);
 	return $headline;
 }
@@ -134,7 +134,7 @@ add_filter( 'jetpack_relatedposts_filter_headline', 'siteorigin_corp_jetpackme_r
 
 if ( ! function_exists( 'siteorigin_corp_jetpackme_remove_rp' ) ) :
 /**
- * Removing jetpack related posts from the bottom of posts
+ * Removing Jetpack Related Posts from the bottom of posts.
  */
 function siteorigin_corp_jetpackme_remove_rp() {
     if ( class_exists( 'Jetpack_RelatedPosts' ) ) {

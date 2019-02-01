@@ -3,7 +3,7 @@
 Contributors: siteorigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.7
-Tested up to: 5.0.2
+Tested up to: 5.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,13 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.9.5 - 01 February 2019 =
+* Resolved issue where sub menu bottom border would sometimes disappear.
+* Changed the scaling logo behaviour to only scale after scroll.
+* Ensured the sticky header sentinel is responsive.
+* Updated the Jetpack Related Posts title to be translatable.
+* Minor adjustment to the site description/tagline spacing.
 
 = 1.9.4 - 30 December 2018 =
 * Minor WooCommerce cart design fixes.

@@ -6,17 +6,17 @@
 	position: relative;
 	width: 100%;
 	z-index: 999;
-	
+
 	body[class*="overlap-"] &:not(.stuck) {
 		background: transparent;
 		border: none;
 		position: absolute;
 	}
-	
+
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
-	
+
 	.topbar-out & {
 		@include clearfix;
 		top: 0;
@@ -59,7 +59,7 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
-		
+
 		@media (max-width: 600px) {
 
 			@at-root .mega-menu-menu-1 & {
@@ -83,6 +83,10 @@
 			}
 		}
 
+		.custom-logo-wrapper {
+			display: inline-block;
+		}
+
 		.custom-logo-link {
 			display: block;
 			line-height: 0;
@@ -91,7 +95,7 @@
 		img {
 			display: inline-block;
 			vertical-align: middle;
-			
+
 			@at-root .tagline#{&} {
 				padding-bottom: 5px;
 			}
@@ -103,7 +107,7 @@
 
 		.alt-logo-scroll {
 			display: none;
-			
+
 			@at-root .stuck#{&} {
 				display: block;
 			}
@@ -115,7 +119,7 @@
 			font-weight: normal; 
 			font-size: 13px; 
 			line-height: normal;
-			margin: -3px 0 0;
+			margin: 0;
 		}
 
 		> * {
@@ -146,7 +150,7 @@
 
 // Overlap.
 .overlap-light .site-header:not(.stuck) .site-branding {
-	
+
 	.site-title a,
 	.site-description {
 		color: #fff;
@@ -164,11 +168,11 @@
 // Sticky header sentinel.
 .masthead-sentinel {
 	margin-bottom: 60px;
-	
+
 	body[class*="overlap-"] & {
 		display: none;
 	}
-	
+
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
