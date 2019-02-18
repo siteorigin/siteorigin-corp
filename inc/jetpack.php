@@ -11,8 +11,8 @@
 /**
  * Jetpack setup function.
  *
+* See https://jetpack.com/support/featured-content/
  * See: https://jetpack.me/support/infinite-scroll/
- * See: https://jetpack.me/support/responsive-videos/
  */
 function siteorigin_corp_jetpack_setup() {
 	/*
@@ -34,11 +34,6 @@ function siteorigin_corp_jetpack_setup() {
 		'footer' => 'page',
 		'posts_per_page' => get_option( 'jetpack_portfolio_posts_per_page' ),
 	) );
-	/*
-	 * Enable support for Jetpack Responsive Videos.
-	 * See https://jetpack.com/support/responsive-videos/
-	 */
-	add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
 

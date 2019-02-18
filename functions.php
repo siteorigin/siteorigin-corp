@@ -173,7 +173,7 @@ function siteorigin_corp_scripts() {
 	// FitVids.
 	wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
 
-	if ( ! class_exists( 'Jetpack' ) && ! ( function_exists( 'has_blocks' ) && has_blocks() ) ) {
+	if ( ! ( function_exists( 'has_blocks' ) && has_blocks() ) ) {
 		wp_enqueue_script( 'jquery-fitvids' );
 	}
 
