@@ -33,12 +33,12 @@ function siteorigin_corp_settings_init() {
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_corp_settings_array', array(
 
 		'header' => array(
-			'title' => esc_html__( 'Header', 'siteorigin-corp' ),
+			'title'  => esc_html__( 'Header', 'siteorigin-corp' ),
 			'fields' => array(
 				'retina_logo' => array(
 					'type'        => 'media',
 					'label'       => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
-					'description' => esc_html__( 'A double sized logo to use on retina devices. Must be used in addition to a regular logo added in the Site Identity section.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'A logo for use on high pixel density displays. Must be used in addition to a regular logo added in the Site Identity section and be exactly double the size.', 'siteorigin-corp' ),
 				),
 				'site_description' => array(
 					'type'         => 'checkbox',
@@ -50,28 +50,28 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Sticks the header to the top of the screen on scroll.', 'siteorigin-corp' ),
 				),
-				'scales'	=> array(
-					'type'	=> 'checkbox',
-					'label'	=> esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
-					'description'	=> esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' ),
+				'scales' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Sticky Header Scales Logo', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Scales the logo down as the header becomes sticky.', 'siteorigin-corp' ),
 				),
-				'background'	=> array(
-					'type'	=> 'color',
-					'label'	=> esc_html__( 'Background Color', 'siteorigin-corp' ),
-					'live'	=> true,
+				'background' => array(
+					'type'  => 'color',
+					'label' => esc_html__( 'Background Color', 'siteorigin-corp' ),
+					'live'  => true,
 				),
-				'border'	=> array(
-					'type'	=> 'color',
-					'label'	=> esc_html__( 'Border Color', 'siteorigin-corp' ),
-					'live'	=> true,
+				'border' => array(
+					'type'  => 'color',
+					'label' => esc_html__( 'Border Color', 'siteorigin-corp' ),
+					'live'  => true,
 				),
-				'padding'	=> array(
-					'type'	=> 'measurement',
-					'label'	=> esc_html__( 'Padding', 'siteorigin-corp' ),
-					'description'	=> esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
-					'live'	=> true,
+				'padding' => array(
+					'type'        => 'measurement',
+					'label'	      => esc_html__( 'Padding', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Top and bottom padding.', 'siteorigin-corp' ),
+					'live'        => true,
 				),
-				'margin'    => array(
+				'margin' => array(
 					'type'  => 'measurement',
 					'label' => esc_html__( 'Bottom Margin', 'siteorigin-corp' ),
 					'live'  => true,
@@ -80,11 +80,11 @@ function siteorigin_corp_settings_init() {
 		),
 
 		'navigation' => array(
-			'title' => esc_html__( 'Navigation', 'siteorigin-corp' ),
+			'title'  => esc_html__( 'Navigation', 'siteorigin-corp' ),
 			'fields' => array(
 				'header_menu' => array(
 					'type'        => 'checkbox',
-					'label'	      => esc_html__( 'Header Menu', 'siteorigin-corp' ),
+					'label'       => esc_html__( 'Header Menu', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display header menu.', 'siteorigin-corp' )
 				),
 				'mobile_menu' => array(
@@ -165,7 +165,7 @@ function siteorigin_corp_settings_init() {
 		),
 
 		'typography' => array(
-			'title' => esc_html__( 'Typography', 'siteorigin-corp' ),
+			'title'  => esc_html__( 'Typography', 'siteorigin-corp' ),
 			'fields' => array(
 				'site_title_font' => array(
 					'type'  => 'font',
@@ -287,7 +287,7 @@ function siteorigin_corp_settings_init() {
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Author', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the post author on blog, archive and single post pages.', 'siteorigin-corp' )
-				),				
+				),
 				'post_categories' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Categories', 'siteorigin-corp' ),
@@ -415,7 +415,7 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Bottom Bar Background Color', 'siteorigin-corp' ),
 					'live'  => true,
 				),
-				'padding'	=> array(
+				'padding' => array(
 					'type'        => 'measurement',
 					'label'       => esc_html__( 'Padding', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer widget area top and bottom padding.', 'siteorigin-corp' ),
@@ -438,42 +438,42 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 
 	$wc_settings = array(
 		'woocommerce' => array(
-			'title' => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
+			'title'  => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
 			'fields' => array(
 
 				'shop_sidebar' => array(
-					'type' => 'select',
-					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
+					'type'        => 'select',
+					'label'       => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Choose the shop sidebar position.', 'siteorigin-corp' ),
 					'options' => array(
-						'left' => esc_html__( 'Left', 'siteorigin-corp' ),
+						'left'  => esc_html__( 'Left', 'siteorigin-corp' ),
 						'right' => esc_html__( 'Right', 'siteorigin-corp' ),
 					),
 				),
 				'product_gallery' => array(
-					'type' => 'select',
-					'label' => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
+					'type'    => 'select',
+					'label'   => esc_html__( 'Product Gallery', 'siteorigin-corp' ),
 					'options' => array(
-						'slider' => esc_html__( 'Gallery Slider', 'siteorigin-corp' ),
-						'slider-lightbox' => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-corp' ),
-						'slider-zoom' => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-corp' ),
+						'slider'               => esc_html__( 'Gallery Slider', 'siteorigin-corp' ),
+						'slider-lightbox'      => esc_html__( 'Gallery Slider + Lightbox', 'siteorigin-corp' ),
+						'slider-zoom'          => esc_html__( 'Gallery Slider + Zoom', 'siteorigin-corp' ),
 						'slider-lightbox-zoom' => esc_html__( 'Gallery Slider + Lightbox + Zoom', 'siteorigin-corp' ),
 					),
 				),
 				'mini_cart' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Mini Cart', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display the WooCommerce mini cart in the header menu.', 'siteorigin-corp' ),
 				),
 				'quick_view' => array(
-					'type' => 'checkbox',
-					'label' => esc_html__( 'Quick View', 'siteorigin-corp' ),
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Quick View', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
 				),
-				'add_to_cart'	=> array(
-					'type'	=> 'checkbox',
-					'label'	=> esc_html__( 'Add to Cart', 'siteorigin-corp' ),
-					'description'	=> esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+				'add_to_cart' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
 				),
 			)
 		)
@@ -493,8 +493,8 @@ add_filter( 'siteorigin_corp_settings_array', 'siteorigin_corp_woocommerce_setti
 function siteorigin_corp_font_settings( $settings ) {
 
 	$settings['typography_site_title_font'] = array(
-		'name'	=> 'Montserrat',
-		'weights'	=> array(
+		'name'    => 'Montserrat',
+		'weights' => array(
 			400,
 			500,
 			600,
@@ -510,14 +510,14 @@ function siteorigin_corp_font_settings( $settings ) {
 		),
 	);
 	$settings['typography_heading_font'] = array(
-		'name'	=> 'Montserrat',
-		'weights'	=> array(
+		'name'    => 'Montserrat',
+		'weights' => array(
 			400,
 		),
 	);
 	$settings['typography_body_font'] = array(
-		'name'	=> 'Open Sans',
-		'weights'	=> array(
+		'name'    => 'Open Sans',
+		'weights' => array(
 			300,
 			400,
 			600,
