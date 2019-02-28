@@ -328,6 +328,39 @@ jQuery( function( $ ) {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
+	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
+		$('body').removeClass('no-touch');
+	}
+	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
+		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
+			$( 'body' ).css( 'cursor', 'pointer' );
+		}
+		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
+			$( this ).click( function( e ) {
+				var link = $( this );
+				e.stopPropagation();
+				link.parent().addClass( 'touch-drop' );
+
+				if ( link.hasClass( 'hover' ) ) {
+					link.unbind( 'click' );
+				} else {
+					link.addClass( 'hover' );
+					e.preventDefault();
+				}
+
+				$( '.main-navigation #primary-menu > .menu-item-has-children:not(.touch-drop) > a' ).click( function() {
+					link.removeClass('hover').parent().removeClass('touch-drop');
+				} );
+
+				$( document ).click( function() {
+					link.removeClass( 'hover' ).parent().removeClass( 'touch-drop' );
+				} );
+
+			} );
+		} );
+	}
+
 } );
 
 ( function( $ ) {
