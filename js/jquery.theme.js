@@ -328,11 +328,8 @@ jQuery( function( $ ) {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
-	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
 	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
-		$('body').removeClass('no-touch');
-	}
-	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
 		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
 		}
