@@ -1727,6 +1727,9 @@ ul.product_list_widget {
         font-size: 12px;
         font-weight: normal;
         margin-left: 5px; }
+        @media (max-width: 480px) {
+          .woocommerce #payment .payment_methods > li label a {
+            margin-left: 0; } }
     .woocommerce #payment .payment_methods > li input {
       margin-right: 5px; }
     .woocommerce #payment .payment_methods > li img:only-of-type {
@@ -1734,6 +1737,11 @@ ul.product_list_widget {
       position: absolute;
       right: 0;
       top: 8px; }
+      @media (max-width: 480px) {
+        .woocommerce #payment .payment_methods > li img:only-of-type {
+          display: block;
+          padding-top: 5px;
+          position: static; } }
     .woocommerce #payment .payment_methods > li .payment_box {
       font-size: 14px;
       padding: 10px 0 0; }
@@ -1755,8 +1763,13 @@ ul.product_list_widget {
     .woocommerce #payment .payment_methods > li.payment_method_stripe p {
       margin-bottom: 13px; }
     .woocommerce #payment .payment_methods > li.payment_method_stripe .stripe-icon {
-      display: inline-block;
-      vertical-align: top; }
+      float: right;
+      margin-left: 5px;
+      padding-left: 0; }
+    .woocommerce #payment .payment_methods > li.payment_method_paylike img {
+      float: right;
+      margin-left: 5px;
+      padding-left: 0; }
   .woocommerce #payment .payment_methods .woocommerce-error {
     clear: both;
     margin-bottom: 0; }

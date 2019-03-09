@@ -171,7 +171,11 @@
 					a {
 						font-size: 12px; 
 						font-weight: normal;
-						margin-left: 5px; 
+						margin-left: 5px;
+						
+						@media (max-width: 480px) {
+							margin-left: 0;
+						}						
 					} 
 				}
 
@@ -183,7 +187,13 @@
 					max-height: 50px;
 					position: absolute;
 					right: 0;
-					top: 8px; 
+					top: 8px;
+					
+					@media (max-width: 480px) {
+						display: block;
+						padding-top: 5px;
+						position: static;
+					}
 				}
 
 				.payment_box {
@@ -225,10 +235,20 @@
 					}
 
 					.stripe-icon {
-						display: inline-block;
-						vertical-align: top;
+						float: right;
+						margin-left: 5px;
+						padding-left: 0;
 					}
 				}
+
+				&.payment_method_paylike {
+
+					img {
+						float: right;
+						margin-left: 5px;
+						padding-left: 0;
+					}
+				}				
 			}
 
 			.woocommerce-error {
