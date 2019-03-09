@@ -155,7 +155,7 @@
 			list-style: none;
 			margin: 0;
 
-			li {
+			> li {
 				border-bottom: 1px solid $color__background-hr-dark;
 				padding: 14px 0;
 				position: relative;
@@ -229,6 +229,11 @@
 						vertical-align: top;
 					}
 				}
+			}
+
+			.woocommerce-error {
+				clear: both;
+				margin-bottom: 0;
 			}
 		}
 
