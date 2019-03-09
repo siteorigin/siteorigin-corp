@@ -309,6 +309,12 @@
 					margin: 0 34px 0 0;
 					padding-bottom: 7px;
 					text-transform: uppercase;
+					
+					@media (max-width: 480px) {
+						display: block;
+						font-size: 0.9333rem;
+						margin-bottom: 10px;
+					}					
 
 					a {
 						color: $color__text-medium;
@@ -326,6 +332,15 @@
 
 						a {
 							color: $color__text-dark;
+						}
+
+						@media (max-width: 480px) {
+							box-shadow: none;
+							margin-bottom: 10px;
+
+							a {
+								color: $color__accent;
+							}
 						}
 					}
 				}
