@@ -575,8 +575,12 @@ a {
         .main-navigation ul .sub-menu li:last-of-type > a,
         .main-navigation ul .children li:last-of-type > a {
           border-bottom: none; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
+    body:not(.ios) .main-navigation ul li:hover > ul,
+    body:not(.ios) .main-navigation ul li.focus > ul {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible; }
+    .main-navigation ul li.hover > ul {
       opacity: 1;
       transform: scale(1);
       visibility: visible; }
