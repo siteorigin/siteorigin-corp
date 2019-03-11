@@ -1210,6 +1210,11 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce .product .woocommerce-tabs .wc-tabs li.active a {
 	color: ${typography_heading};
 	}
+	@media (max-width: 480px) {
+	.woocommerce .product .woocommerce-tabs .wc-tabs li.active a {
+	color: ${typography_accent};
+	}
+	}
 	.woocommerce .product .shop_attributes tr th {
 	color: ${typography_heading};
 	}
@@ -1393,7 +1398,7 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce table.woocommerce-checkout-review-order-table tfoot tr {
 	border-bottom: 1px solid ${typography_border_dark};
 	}
-	.woocommerce #payment .payment_methods li {
+	.woocommerce #payment .payment_methods > li {
 	border-bottom: 1px solid ${typography_border_dark};
 	}
 	.woocommerce-order-received .woocommerce-thankyou-order-details {
