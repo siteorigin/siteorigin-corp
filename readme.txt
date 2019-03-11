@@ -35,7 +35,6 @@ SiteOrigin Corp includes support for the following plugins:
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
-* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
 * [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
@@ -91,6 +90,13 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.9.6 - 11 March 2019 =
+* Removed Jetpack Responsive Videos support in favour of FitVids.
+* WooCommerce single product page responsive improvements.
+* WooCommerc checkout responsive improvements.
+* Allow main menu hovers when Touch UI Layout is enabled.
+* Fixed page number styling issue.
 
 = 1.9.5 - 01 February 2019 =
 * Resolved issue where sub menu bottom border would sometimes disappear.

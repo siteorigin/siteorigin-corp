@@ -29,7 +29,6 @@ function siteorigin_corp_body_classes( $classes ) {
 	// Mobile compatibility classes.
 	$classes[] = 'css3-animations';
 	$classes[] = 'no-js';
-	$classes[] = 'no-touch';
 
 	// Non-singlar pages.
 	if ( ! is_singular() ) {

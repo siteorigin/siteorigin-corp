@@ -72,8 +72,16 @@
 			}
 		}
 
-		li:hover > ul,
-		li.focus > ul {
+		@at-root body:not(.ios) & {
+			li:hover > ul,
+			li.focus > ul {
+				opacity: 1;
+				transform: scale(1);
+				visibility: visible;
+			}
+		}
+
+		li.hover > ul {
 			opacity: 1;
 			transform: scale(1);
 			visibility: visible;
@@ -440,7 +448,8 @@ $sel: '';
 			color: $color__text-medium;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			border-color: $color__accent;
 			color: $color__accent;
 		}

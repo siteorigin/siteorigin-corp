@@ -110,15 +110,15 @@
 	}
 
 	table.woocommerce-checkout-review-order-table {
-		
+
 		thead th {
 			font-size: 14px;
 		}
 
 		tr {
-			border-bottom: 1px solid $color__background-hr-dark; 
+			border-bottom: 1px solid $color__background-hr-dark;
 		}
-		
+
 		th,
 		td {
 			padding: 14px 0 13px;
@@ -127,7 +127,7 @@
 
 		.cart_item {
 			font-size: 14px;
-			
+
 			@media (max-width: 768px) {
 
 				td:first-of-type {
@@ -154,8 +154,8 @@
 		.payment_methods {
 			list-style: none;
 			margin: 0;
-			
-			li {
+
+			> li {
 				border-bottom: 1px solid $color__background-hr-dark;
 				padding: 14px 0;
 				position: relative;
@@ -171,19 +171,29 @@
 					a {
 						font-size: 12px; 
 						font-weight: normal;
-						margin-left: 5px; 
+						margin-left: 5px;
+						
+						@media (max-width: 480px) {
+							margin-left: 0;
+						}						
 					} 
 				}
 
 				input {
 					margin-right: 5px;
 				}
-				
+
 				img:only-of-type {
 					max-height: 50px;
 					position: absolute;
 					right: 0;
-					top: 8px; 
+					top: 8px;
+					
+					@media (max-width: 480px) {
+						display: block;
+						padding-top: 5px;
+						position: static;
+					}
 				}
 
 				.payment_box {
@@ -225,10 +235,25 @@
 					}
 
 					.stripe-icon {
-						display: inline-block;
-						vertical-align: top;
+						float: right;
+						margin-left: 5px;
+						padding-left: 0;
 					}
 				}
+
+				&.payment_method_paylike {
+
+					img {
+						float: right;
+						margin-left: 5px;
+						padding-left: 0;
+					}
+				}
+			}
+
+			.woocommerce-error {
+				clear: both;
+				margin-bottom: 0;
 			}
 		}
 
@@ -242,10 +267,10 @@
 		.woocommerce-terms-and-conditions-wrapper {
 			font-size: 14px;
 			padding: 14px 0 0;
-			
+
 			p {
 				margin-bottom: 14px;
-				
+
 				&.validate-required {
 					margin-bottom: 0;
 				}
