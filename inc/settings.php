@@ -670,7 +670,7 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	.pagination .page-numbers:visited {
 	color: ${typography_text};
 	}
-	.pagination .page-numbers:hover {
+	.pagination .page-numbers:hover,.pagination .page-numbers:focus {
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
@@ -867,28 +867,16 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	color: ${typography_accent};
 	}
 	.page-links .page-links-title {
-	color: ${typography_heading};
-	}
-	.page-links .page-links-title {
 	color: ${typography_text};
 	}
-	.page-links .page-links-title:hover {
-	color: ${typography_text};
-	}
-	.page-links span {
+	.page-links .post-page-numbers {
 	border: 1px solid ${typography_text};
 	color: ${typography_text};
 	.font( ${typography_body_font} );
 	}
-	.page-links span:visited {
-	color: ${typography_text};
-	}
-	.page-links span:hover {
+	.page-links .post-page-numbers:hover,.page-links .post-page-numbers.current {
 	border-color: ${typography_accent};
 	color: ${typography_accent};
-	}
-	.page-links a span {
-	color: ${typography_text};
 	}
 	.tags-links a,aside.widget.widget_tag_cloud .tagcloud a {
 	color: ${typography_text};
