@@ -1779,19 +1779,9 @@ body:not(.single) .entry-content p:only-of-type {
   margin: 26px 0;
   text-align: left; }
   .page-links .page-links-title {
-    color: #2d2d2d;
-    font-size: 14px;
-    font-weight: 500; }
-  .page-links .page-links-title {
-    border: none;
     color: #626262;
-    font-weight: 600;
-    padding: 0;
-    text-transform: none; }
-    .page-links .page-links-title:hover {
-      border: none;
-      color: #626262; }
-  .page-links span {
+    font-weight: 600; }
+  .page-links .post-page-numbers {
     border: 1px solid #626262;
     color: #626262;
     display: inline-block;
@@ -1801,13 +1791,9 @@ body:not(.single) .entry-content p:only-of-type {
     margin-right: 4px;
     padding: 11px 17px;
     transition: .3s; }
-    .page-links span:visited {
-      color: #626262; }
-    .page-links span:hover {
+    .page-links .post-page-numbers:hover, .page-links .post-page-numbers.current {
       border-color: #f14e4e;
       color: #f14e4e; }
-  .page-links a span {
-    color: #626262; }
 
 .single .entry-footer {
   margin: 0 0 40px; }

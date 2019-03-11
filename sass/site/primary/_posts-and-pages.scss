@@ -160,25 +160,11 @@ body:not(.single) .entry-content p {
 	text-align: left;
 
 	.page-links-title {
-		color: $color__text-dark;
-		font-size: 14px;
-		font-weight: 500;
-	}
-
-	.page-links-title {
-		border: none;
 		color: $color__text-medium;
 		font-weight: 600;
-		padding: 0;
-		text-transform: none;
-
-		&:hover {
-			border: none;
-			color: $color__text-medium;
-		}
 	}
 
-	span {
+	.post-page-numbers {
 		border: 1px solid $color__text-medium;
 		color: $color__text-medium;
 		display: inline-block;
@@ -189,18 +175,11 @@ body:not(.single) .entry-content p {
 		padding: 11px 17px;
 		transition: .3s;
 
-		&:visited {
-			color: $color__text-medium;
-		}
-
-		&:hover {
+		&:hover,
+		&.current {
 			border-color: $color__accent;
 			color: $color__accent;
 		}
-	}
-
-	a span {
-		color: $color__text-medium;
 	}
 }
 
