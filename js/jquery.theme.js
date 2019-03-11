@@ -327,7 +327,7 @@ jQuery( function( $ ) {
 			$( this ).on( 'click touchend', function( e ) {
 				var link = $( this );
 				e.stopPropagation();
-				
+
 				if ( e.type == 'click' ) {
 					return;
 				}
