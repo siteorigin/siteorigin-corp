@@ -91,6 +91,13 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.9.6 - 11 March 2019 =
+* Removed Jetpack Responsive Videos support in favour of FitVids.
+* WooCommerce single product page responsive improvements.
+* WooCommerc checkout responsive improvements.
+* Allow main menu hovers when Touch UI Layout is enabled.
+* Fixed page number styling issue.
+
 = 1.9.5 - 01 February 2019 =
 * Resolved issue where sub menu bottom border would sometimes disappear.
 * Changed the scaling logo behaviour to only scale after scroll.
