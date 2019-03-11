@@ -839,7 +839,7 @@ a {
     transition: .3s; }
     .pagination .page-numbers:visited {
       color: #626262; }
-    .pagination .page-numbers:hover {
+    .pagination .page-numbers:hover, .pagination .page-numbers:focus {
       border-color: #f14e4e;
       color: #f14e4e; }
     .pagination .page-numbers.next, .pagination .page-numbers.prev {

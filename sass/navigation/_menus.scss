@@ -440,7 +440,8 @@ $sel: '';
 			color: $color__text-medium;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			border-color: $color__accent;
 			color: $color__accent;
 		}
