@@ -537,7 +537,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  */
 function siteorigin_corp_settings_custom_css( $css ) {
 
-$css .= 'body,button,input,select,optgroup,textarea {
+$css .= '/* style */
+	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
 	}
@@ -1037,7 +1038,8 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
  */
 function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
-	$css .= '.woocommerce.woocommerce-sidebar .content-area {
+	$css .= '/* woocommerce */
+	.woocommerce.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
 	.woocommerce.woocommerce-sidebar .site-main {
