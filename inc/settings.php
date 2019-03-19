@@ -1424,11 +1424,10 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
  */
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	// Ensure mobile menu is enabled before outputting any CSS.
-	$navigation_mobile_menu = siteorigin_setting( 'navigation_mobile_menu' );
-	if ( empty( $navigation_mobile_menu ) ) {
-		return;
+	if ( ! siteorigin_setting( 'navigation_mobile_menu' ) ) {
+		return $css;
 	}
-	
+
 	if ( is_rtl() ) {
 		$css .= '@media (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 			#masthead .search-toggle {
