@@ -59,6 +59,10 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
+		
+		@at-root .centered#{&} {
+			flex-direction: column;
+		}
 
 		@media (max-width: 600px) {
 
@@ -124,6 +128,23 @@
 
 		> * {
 			transform-origin: left center;
+
+			@at-root .centered#{&} {
+				transform-origin: center center;
+			}
+		}
+	}
+
+	&.centered {
+
+		.site-branding {
+			margin: 0 auto 20px auto;
+			padding: 0;
+			text-align: center;
+		}
+
+		.main-navigation {
+			text-align: center;
 		}
 	}
 

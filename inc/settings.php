@@ -45,6 +45,15 @@ function siteorigin_corp_settings_init() {
 					'label'	       => esc_html__( 'Tagline', 'siteorigin-corp' ),
 					'description'  => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
 				),
+				'layout' => array(
+					'type'  => 'select',
+					'label' => esc_html__( 'Header Layout', 'siteorigin-corp' ),
+					'options' => array(
+						'default'  => esc_html__( 'Default', 'siteorigin-corp' ),
+						'centered' => esc_html__( 'Centered', 'siteorigin-corp' ),
+					),
+					'description' => esc_html__( 'Select the header layout.', 'siteorigin-corp' )
+				),
 				'sticky' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
@@ -1499,6 +1508,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['header_retina_logo']                   = false;
 	$defaults['header_site_description']              = false;
+	$defaults['header_layout']                        = 'default';
 	$defaults['header_sticky']                        = false;
 	$defaults['header_scales']                        = false;
 	$defaults['header_background']                    = '#ffffff';
