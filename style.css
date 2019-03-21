@@ -562,7 +562,9 @@ a {
           padding: 12px 20px;
           white-space: nowrap; }
         .main-navigation ul .sub-menu li:hover > a,
-        .main-navigation ul .children li:hover > a {
+        .main-navigation ul .sub-menu li.current-menu-item > a,
+        .main-navigation ul .children li:hover > a,
+        .main-navigation ul .children li.current-menu-item > a {
           color: #fff; }
         .main-navigation ul .sub-menu li:hover > ul,
         .main-navigation ul .sub-menu li.focus > ul,
@@ -654,12 +656,12 @@ a {
   .main-navigation div > ul:not(.cart_list) > li:hover > a {
     border-bottom: 2px solid;
     border-color: #f14e4e; }
-  .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children > a {
+  .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children:not(.current-page-ancestor) > a {
     border-bottom: none; }
   .main-navigation div > ul:not(.cart_list) > li.current > a,
   .main-navigation div > ul:not(.cart_list) > li.current_page_item > a,
   .main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,
-  .main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,
+  .main-navigation div > ul:not(.cart_list) > li.current-page-ancestor > a,
   .main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
     border-color: #f14e4e; }
   .main-navigation .search-toggle {

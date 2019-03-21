@@ -50,7 +50,8 @@
 					white-space: nowrap;
 				}
 
-				&:hover > a {
+				&:hover > a,
+				&.current-menu-item > a {
 					color: $color__navigation-drop-down-link-hover;
 				}
 
@@ -200,14 +201,14 @@
 			border-color: $color__navigation_link_accent;
 		}
 
-		&:not(.current-menu-item).menu-item-has-children > a {
+		&:not(.current-menu-item).menu-item-has-children:not(.current-page-ancestor) > a {
 			border-bottom: none;
 		}
 
 		&.current > a,
 		&.current_page_item > a,
 		&.current-menu-item > a,
-		&.current_page_ancestor > a,
+		&.current-page-ancestor > a,
 		&.current-menu-ancestor > a {
 			border-color: $color__navigation_link_accent;
 		}
