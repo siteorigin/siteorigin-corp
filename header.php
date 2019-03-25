@@ -30,7 +30,7 @@
 		</div><!-- #topbar -->
 	<?php endif; ?>
 	<?php do_action( 'siteorigin_corp_header_before' ); ?>
-	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; if ( siteorigin_setting( 'navigation_mobile_menu' ) ) echo ' mobile-menu'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
+	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_layout' )== 'centered' ) echo ' centered';  if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; if ( siteorigin_setting( 'navigation_mobile_menu' ) ) echo ' mobile-menu'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
 
 		<div class="corp-container">
 

@@ -45,6 +45,15 @@ function siteorigin_corp_settings_init() {
 					'label'	       => esc_html__( 'Tagline', 'siteorigin-corp' ),
 					'description'  => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
 				),
+				'layout' => array(
+					'type'  => 'select',
+					'label' => esc_html__( 'Header Layout', 'siteorigin-corp' ),
+					'options' => array(
+						'default'  => esc_html__( 'Default', 'siteorigin-corp' ),
+						'centered' => esc_html__( 'Centered', 'siteorigin-corp' ),
+					),
+					'description' => esc_html__( 'Select the header layout.', 'siteorigin-corp' )
+				),
 				'sticky' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
@@ -1449,6 +1458,20 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			#masthead .main-navigation .search-icon {
 				display: none;
 			}
+
+			.site-header.centered .site-branding {
+				margin: 0;
+				padding-left: 20px;
+				text-align: right;
+			}
+
+			.centered.site-header .site-header-inner {
+				flex-direction: row; 
+			}
+
+			.site-header.centered .main-navigation {
+				text-align: right;
+			}
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
@@ -1476,6 +1499,20 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			#masthead .main-navigation .search-icon {
 				display: none;
 			}
+
+			.site-header.centered .site-branding {
+				margin: 0;
+				padding-right: 20px;
+				text-align: left;
+			}
+
+			.centered.site-header .site-header-inner {
+				flex-direction: row; 
+			}
+
+			.site-header.centered .main-navigation {
+				text-align: left;
+			}
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
@@ -1499,6 +1536,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['header_retina_logo']                   = false;
 	$defaults['header_site_description']              = false;
+	$defaults['header_layout']                        = 'default';
 	$defaults['header_sticky']                        = false;
 	$defaults['header_scales']                        = false;
 	$defaults['header_background']                    = '#ffffff';

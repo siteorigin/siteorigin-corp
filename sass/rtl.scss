@@ -44,6 +44,7 @@ blockquote {
 		}
 	}
 
+	.shopping-cart,
 	.search-toggle {
 		margin: 0 37px 0 0;
 	}
@@ -82,8 +83,16 @@ blockquote {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header .site-branding {
-	padding: 0 0 0 20px;
+.site-header {
+
+	.site-branding {
+		padding: 0 0 0 20px;
+	}
+
+	&.centered .site-branding {
+		margin: 0 auto 20px auto;
+		padding: 0;
+	}
 }
 
 .widget .search-form input[type="search"] {

@@ -28,6 +28,7 @@ blockquote {
     margin: 0 0 -10px 39px; }
     .main-navigation ul li:last-of-type {
       margin-left: 0; }
+  .main-navigation .shopping-cart,
   .main-navigation .search-toggle {
     margin: 0 37px 0 0; }
 
@@ -58,6 +59,10 @@ blockquote {
 --------------------------------------------------------------*/
 .site-header .site-branding {
   padding: 0 0 0 20px; }
+
+.site-header.centered .site-branding {
+  margin: 0 auto 20px auto;
+  padding: 0; }
 
 .widget .search-form input[type="search"] {
   padding: 10px 13px 10px 30px; }
