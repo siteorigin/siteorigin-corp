@@ -91,6 +91,13 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.10.0 - 26 March 2019 =
+* Resolved Customizer settings bug when mobile menu not enabled.
+* Added a new setting to center the header located at `Customize > Theme Settings > Header > Header Layout`.
+* Indicate selected sub-menu items by showing the parent menu item as selected.
+* Improved search form accessibility.
+* Updated Settings to allow for Page Settings in Jetpack single projects.
+
 = 1.9.6 - 11 March 2019 =
 * Removed Jetpack Responsive Videos support in favour of FitVids.
 * WooCommerce single product page responsive improvements.
