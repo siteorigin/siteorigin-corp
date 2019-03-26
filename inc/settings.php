@@ -45,6 +45,15 @@ function siteorigin_corp_settings_init() {
 					'label'	       => esc_html__( 'Tagline', 'siteorigin-corp' ),
 					'description'  => esc_html__( 'Display the website tagline below the logo or site title.', 'siteorigin-corp' ),
 				),
+				'layout' => array(
+					'type'  => 'select',
+					'label' => esc_html__( 'Header Layout', 'siteorigin-corp' ),
+					'options' => array(
+						'default'  => esc_html__( 'Default', 'siteorigin-corp' ),
+						'centered' => esc_html__( 'Centered', 'siteorigin-corp' ),
+					),
+					'description' => esc_html__( 'Select the header layout.', 'siteorigin-corp' )
+				),
 				'sticky' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Sticky Header', 'siteorigin-corp' ),
@@ -537,7 +546,8 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
  */
 function siteorigin_corp_settings_custom_css( $css ) {
 
-$css .= 'body,button,input,select,optgroup,textarea {
+$css .= '/* style */
+	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
 	}
@@ -613,7 +623,7 @@ $css .= 'body,button,input,select,optgroup,textarea {
 	border-color: ${navigation_drop_down_divider};
 	color: ${navigation_drop_down_link};
 	}
-	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .children li:hover > a {
+	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .sub-menu li.current_page_item > a,.main-navigation ul .sub-menu li.current-menu-item > a,.main-navigation ul .sub-menu li.current_page_ancestor > a,.main-navigation ul .sub-menu li.current-menu-ancestor > a,.main-navigation ul .children li:hover > a,.main-navigation ul .children li.current_page_item > a,.main-navigation ul .children li.current-menu-item > a,.main-navigation ul .children li.current_page_ancestor > a,.main-navigation ul .children li.current-menu-ancestor > a {
 	color: ${navigation_drop_down_link_hover};
 	}
 	.main-navigation ul .sub-menu li:first-of-type,.main-navigation ul .children li:first-of-type {
@@ -1037,7 +1047,8 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
  */
 function siteorigin_corp_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
-	$css .= '.woocommerce.woocommerce-sidebar .content-area {
+	$css .= '/* woocommerce */
+	.woocommerce.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
 	}
 	.woocommerce.woocommerce-sidebar .site-main {
@@ -1422,11 +1433,10 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custo
  */
 function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 	// Ensure mobile menu is enabled before outputting any CSS.
-	$navigation_mobile_menu = siteorigin_setting( 'navigation_mobile_menu' );
-	if ( empty( $navigation_mobile_menu ) ) {
-		return;
+	if ( ! siteorigin_setting( 'navigation_mobile_menu' ) ) {
+		return $css;
 	}
-	
+
 	if ( is_rtl() ) {
 		$css .= '@media (max-width: ' . intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) . 'px) {
 			#masthead .search-toggle {
@@ -1447,6 +1457,20 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 
 			#masthead .main-navigation .search-icon {
 				display: none;
+			}
+
+			.site-header.centered .site-branding {
+				margin: 0;
+				padding-left: 20px;
+				text-align: right;
+			}
+
+			.centered.site-header .site-header-inner {
+				flex-direction: row; 
+			}
+
+			.site-header.centered .main-navigation {
+				text-align: right;
 			}
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
@@ -1475,6 +1499,20 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			#masthead .main-navigation .search-icon {
 				display: none;
 			}
+
+			.site-header.centered .site-branding {
+				margin: 0;
+				padding-right: 20px;
+				text-align: left;
+			}
+
+			.centered.site-header .site-header-inner {
+				flex-direction: row; 
+			}
+
+			.site-header.centered .main-navigation {
+				text-align: left;
+			}
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
@@ -1498,6 +1536,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 
 	$defaults['header_retina_logo']                   = false;
 	$defaults['header_site_description']              = false;
+	$defaults['header_layout']                        = 'default';
 	$defaults['header_sticky']                        = false;
 	$defaults['header_scales']                        = false;
 	$defaults['header_background']                    = '#ffffff';

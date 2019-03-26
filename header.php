@@ -30,7 +30,7 @@
 		</div><!-- #topbar -->
 	<?php endif; ?>
 	<?php do_action( 'siteorigin_corp_header_before' ); ?>
-	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; if ( siteorigin_setting( 'navigation_mobile_menu' ) ) echo ' mobile-menu'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
+	<header id="masthead" class="site-header<?php if ( siteorigin_setting( 'header_layout' )== 'centered' ) echo ' centered';  if ( siteorigin_setting( 'header_sticky' ) ) echo ' sticky'; if ( siteorigin_setting( 'navigation_mobile_menu' ) ) echo ' mobile-menu'; ?>" <?php if ( siteorigin_setting( 'header_scales' ) ) echo 'data-scale-logo="true"' ?> >
 
 		<div class="corp-container">
 
@@ -52,7 +52,7 @@
 					<?php if ( function_exists( 'is_woocommerce' ) && siteorigin_setting( 'woocommerce_mini_cart' ) && ! $mega_menu_active ) siteorigin_corp_woocommerce_mini_cart(); ?>
 
 					<?php if ( siteorigin_setting( 'navigation_menu_search' ) && ! $mega_menu_active ) : ?>
-						<button id="search-button" class="search-toggle">
+						<button id="search-button" class="search-toggle" aria-label="<?php esc_attr_e( 'Open Search', 'siteorigin-corp' ); ?>">
 							<span class="open"><?php siteorigin_corp_display_icon( 'search' ); ?></span>
 						</button>
 					<?php endif; ?>
@@ -71,14 +71,13 @@
 						<div class="corp-container">
 							<span><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></span>
 							<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
-								<input type="search" name="s" placeholder="" value="<?php echo get_search_query() ?>" />
-								<button type="submit">
-									<label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-corp' ); ?></label>
+								<input type="search" name="s" placeholder="" aria-label="<?php esc_attr_e( 'Search for', 'siteorigin-corp' ); ?>" value="<?php echo get_search_query() ?>" />
+								<button type="submit" aria-label="<?php esc_attr_e( 'Search', 'siteorigin-corp' ); ?>">
 									<?php siteorigin_corp_display_icon( 'search' ); ?>
 								</button>
 							</form>
 						</div>
-						<button id="search-close-button" class="search-close-button">
+						<button id="search-close-button" class="search-close-button" aria-label="<?php esc_attr_e( 'Close search', 'siteorigin-corp' ); ?>">
 							<span class="close"><?php siteorigin_corp_display_icon( 'close' ); ?></span>
 						</button>
 					</div><!-- #header-search -->

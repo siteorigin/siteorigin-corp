@@ -562,7 +562,15 @@ a {
           padding: 12px 20px;
           white-space: nowrap; }
         .main-navigation ul .sub-menu li:hover > a,
-        .main-navigation ul .children li:hover > a {
+        .main-navigation ul .sub-menu li.current_page_item > a,
+        .main-navigation ul .sub-menu li.current-menu-item > a,
+        .main-navigation ul .sub-menu li.current_page_ancestor > a,
+        .main-navigation ul .sub-menu li.current-menu-ancestor > a,
+        .main-navigation ul .children li:hover > a,
+        .main-navigation ul .children li.current_page_item > a,
+        .main-navigation ul .children li.current-menu-item > a,
+        .main-navigation ul .children li.current_page_ancestor > a,
+        .main-navigation ul .children li.current-menu-ancestor > a {
           color: #fff; }
         .main-navigation ul .sub-menu li:hover > ul,
         .main-navigation ul .sub-menu li.focus > ul,
@@ -654,7 +662,7 @@ a {
   .main-navigation div > ul:not(.cart_list) > li:hover > a {
     border-bottom: 2px solid;
     border-color: #f14e4e; }
-  .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children > a {
+  .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor) > a {
     border-bottom: none; }
   .main-navigation div > ul:not(.cart_list) > li.current > a,
   .main-navigation div > ul:not(.cart_list) > li.current_page_item > a,
@@ -1509,6 +1517,8 @@ a {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%; }
+    .centered.site-header .site-header-inner {
+      flex-direction: column; }
     @media (max-width: 600px) {
       .mega-menu-menu-1 .site-header .site-header-inner {
         display: block; } }
@@ -1547,6 +1557,14 @@ a {
       margin: 0; }
     .site-header .site-branding > * {
       transform-origin: left center; }
+      .centered.site-header .site-branding > * {
+        transform-origin: center center; }
+  .site-header.centered .site-branding {
+    margin: 0 auto 20px auto;
+    padding: 0;
+    text-align: center; }
+  .site-header.centered .main-navigation {
+    text-align: center; }
   @media (max-width: 768px) {
     .site-header:not(.mobile-menu) .site-header-inner {
       flex-direction: column; }
@@ -2826,5 +2844,3 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
