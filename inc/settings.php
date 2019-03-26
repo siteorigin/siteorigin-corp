@@ -623,7 +623,7 @@ $css .= '/* style */
 	border-color: ${navigation_drop_down_divider};
 	color: ${navigation_drop_down_link};
 	}
-	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .sub-menu li.current-menu-item > a,.main-navigation ul .children li:hover > a,.main-navigation ul .children li.current-menu-item > a {
+	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .sub-menu li.current_page_item > a,.main-navigation ul .sub-menu li.current-menu-item > a,.main-navigation ul .sub-menu li.current_page_ancestor > a,.main-navigation ul .sub-menu li.current-menu-ancestor > a,.main-navigation ul .children li:hover > a,.main-navigation ul .children li.current_page_item > a,.main-navigation ul .children li.current-menu-item > a,.main-navigation ul .children li.current_page_ancestor > a,.main-navigation ul .children li.current-menu-ancestor > a {
 	color: ${navigation_drop_down_link_hover};
 	}
 	.main-navigation ul .sub-menu li:first-of-type,.main-navigation ul .children li:first-of-type {
@@ -644,7 +644,7 @@ $css .= '/* style */
 	.main-navigation div > ul:not(.cart_list) > li:hover > a {
 	border-color: ${navigation_link_accent};
 	}
-	.main-navigation div > ul:not(.cart_list) > li.current > a,.main-navigation div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation div > ul:not(.cart_list) > li.current-page-ancestor > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	.main-navigation div > ul:not(.cart_list) > li.current > a,.main-navigation div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
 	}
 	.main-navigation .search-toggle .open svg path {
