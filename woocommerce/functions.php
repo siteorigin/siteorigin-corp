@@ -118,7 +118,7 @@ function siteorigin_corp_woocommerce_update_cart_count( $fragments ) {
 
 	return $fragments;
 }
-add_filter( 'add_to_cart_fragments', 'siteorigin_corp_woocommerce_update_cart_count' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'siteorigin_corp_woocommerce_update_cart_count' );
 
 /**
  * Filter the product archive pagination.
