@@ -34,6 +34,7 @@ SiteOrigin Corp includes support for the following plugins:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
@@ -76,6 +77,10 @@ Released under the WTFPL license
 FlexSlider, Copyright 2012 WooThemes
 Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [Source](http://www.woothemes.com/flexslider/)
+
+Isotope PACKAGED, Copyright 2017 Metafizzy
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](http://isotope.metafizzy.co)
 
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Released under the [MIT License](http://opensource.org/licenses/MIT)

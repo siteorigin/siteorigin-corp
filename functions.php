@@ -48,6 +48,7 @@ function siteorigin_corp_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Custom image sizes.
+	add_image_size( 'siteorigin-corp-500x500-crop', 500, 500, true );
 	add_image_size( 'siteorigin-corp-720x480-crop', 720, 480, true );
 
 	/*
@@ -183,6 +184,11 @@ function siteorigin_corp_scripts() {
 	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
 		wp_enqueue_script( 'jquery-flexslider' );
 	}
+
+	// Jetpack Portfolio.
+	if ( post_type_exists( 'jetpack-portfolio' ) ) {
+		wp_register_script( 'jquery-isotope', get_template_directory_uri() . '/js/isotope.pkgd' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '3.0.4', true );
+	}	
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-corp-script', get_template_directory_uri() . '/js/jquery.theme' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );

@@ -31,7 +31,9 @@ function siteorigin_corp_filter_post_loop_widget( $templates ) {
 		'template-parts/content-page.php',
 		'template-parts/content-search.php',
 		'template-parts/content-single.php',
-		'template-parts/content-video.php'
+		'template-parts/content-video.php',
+		'template-parts/content-portfolio.php',
+		'template-parts/content-project.php'
 	);
 	foreach ( $templates as $template ) {
 		if ( in_array( $template, $disallowed_template_patterns ) ) {

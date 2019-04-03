@@ -379,6 +379,49 @@ function siteorigin_corp_related_posts( $post_id ) {
 }
 endif;
 
+if ( ! function_exists( 'siteorigin_corp_related_projects' ) ) :
+/**
+ * Displays related posts in single projects.
+ */
+function siteorigin_corp_related_projects( $post_id ) {
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+		echo do_shortcode( '[jetpack-related-posts]' );
+	} else { // The fallback loop.
+		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
+		$first_cat = $categories[0]->term_id;
+		$args=array(
+			'tax_query' => array(
+		        array (
+		            'taxonomy' => 'jetpack-portfolio-type',
+		            'field' => 'term_id',
+		            'terms' => $first_cat,
+		        )
+		    ),
+			'post__not_in' => array( $post_id ),
+			'posts_per_page' => 3,
+			'ignore_sticky_posts' => -1
+		);
+		$related_posts = new WP_Query( $args ); ?>
+
+		<div class="related-projects-section">
+			<h3><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h2>
+			<?php if ( $related_posts->have_posts() ) : ?>
+				<div class="related-projects">
+					<?php if ( $related_posts->have_posts() ) : ?>
+						<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+							<?php get_template_part( 'template-parts/content', 'portfolio' ); ?>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No related projects.', 'siteorigin-corp' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php wp_reset_query();
+	}
+}
+endif;
+
 if ( ! function_exists( 'siteorigin_corp_tag_cloud' ) ) :
 /**
  * Filter the Tag Cloud widget.
@@ -397,7 +440,11 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
 /**
  * Print HTML with meta information for the sticky status, current post-date/time, author, post categories and comment count.
  */
-function siteorigin_corp_post_meta() {
+function siteorigin_corp_post_meta( $cats = true, $post_id = '' ) {
+
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
+
 	if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';
 	}
@@ -414,8 +461,20 @@ function siteorigin_corp_post_meta() {
 		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
 	}
 
-	if ( has_category() && siteorigin_setting( 'blog_post_categories' ) ) {
-		echo '<span>' . get_the_category_list( ', ' ) . '</span>';
+	if ( siteorigin_setting( 'blog_post_categories' ) ) {
+
+		if ( 'jetpack-portfolio' == get_post_type() ) {
+
+			$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
+			if ( $portfolio_terms ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
+			}
+		} else {
+
+			if ( $categories_list && $cats == true ) {
+				printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+		}
 	}
 
 	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) {
@@ -458,9 +517,13 @@ if ( ! function_exists( 'siteorigin_corp_entry_footer' ) ) :
 /**
  * Print HTML with meta information for the post tags.
  */
-function siteorigin_corp_entry_footer() {
+function siteorigin_corp_entry_footer( $post_id = '' ) {
 	if ( is_single() && has_tag() && siteorigin_setting( 'blog_post_tags' ) ) {
 		echo '<footer class="entry-footer"><span class="tags-links">' . get_the_tag_list() . '</span></footer>';
+	}
+	$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-tag', '', '', '' );
+	if ( 'jetpack-portfolio' == get_post_type() && $portfolio_terms ) {
+		printf( '<footer class="entry-footer"><span class="tags-links">' . '%1$s' . '</span></footer>', $portfolio_terms );
 	}
 }
 endif;
