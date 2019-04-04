@@ -2352,7 +2352,8 @@ body:not(.single) .entry-content p:only-of-type {
     background: none;
     border-bottom: 2px solid transparent;
     color: #929292;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 1px;
     margin-right: 34px;
     padding: 0 0 6px 0; }
@@ -2439,7 +2440,8 @@ body:not(.single) .entry-content p:only-of-type {
   .archive-project .entry-project-type {
     color: #929292;
     display: block;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 1px;
     position: absolute;
     text-align: center;
@@ -2469,49 +2471,86 @@ body:not(.single) .entry-content p:only-of-type {
   .jetpack-portfolio-shortcode .portfolio-entry {
     background: #fff;
     border: 1px solid #e6e6e6;
-    margin: 0 0 30px 0;
+    margin: 0 3.5% 30px 0;
     width: 100%; }
-    @media (max-width: 768px) {
-      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
-        width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
+      margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
       width: 48.25%; }
-      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2:nth-child(2n+1) {
-        margin-right: 3.5%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2:nth-child(2n+2) {
+        margin-right: 0; }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
+          margin-right: 0;
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
       margin-right: 3.5%;
       width: 31%; }
       .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(3n+3) {
         margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 768px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
-      margin-right: 3.5%;
       width: 22.375%; }
       .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(4n+4) {
         margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 768px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
-      margin-right: 3.5%;
       width: 17.2%; }
       .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(5n+5) {
         margin-right: 0; }
+      @media (max-width: 1024px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 1024px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
-      margin-right: 3.5%;
       width: 13.75%; }
       .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(6n+6) {
         margin-right: 0; }
-    @media (max-width: 768px) {
-      .jetpack-portfolio-shortcode .portfolio-entry {
-        margin-right: 0 !important;
-        width: 48.25% !important; }
-        .jetpack-portfolio-shortcode .portfolio-entry:nth-child(2n+1) {
-          margin-right: 3.5% !important; } }
-    @media (max-width: 768px) and (max-width: 480px) {
-      .jetpack-portfolio-shortcode .portfolio-entry:nth-child(2n+1) {
-        margin-right: 0 !important; } }
-    @media (max-width: 480px) {
-      .jetpack-portfolio-shortcode .portfolio-entry {
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        width: 100% !important; } }
+      @media (max-width: 1024px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 1024px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+          width: 100%; } }
     .jetpack-portfolio-shortcode .portfolio-entry .portfolio-featured-image {
       display: block;
       line-height: 0;

@@ -8,7 +8,8 @@
 		background: none;
 		border-bottom: 2px solid transparent;
 		color: $color__text-light;
-		font-size: 0.8125rem;
+		font-size: 0.75rem;
+		font-weight: 600;
 		letter-spacing: 1px;
 		margin-right: 34px;
 		padding: 0 0 6px 0;
@@ -118,7 +119,8 @@
 	.entry-project-type {
 		color: $color__text-light;
 		display: block;
-		font-size: 0.8125rem;
+		font-size: 0.75rem;
+		font-weight: 600;
 		letter-spacing: 1px;
 		position: absolute;
 		text-align: center;
@@ -147,7 +149,7 @@
 		
 		.entry-thumbnail {
 			margin-bottom: 0;
-		}	
+		}
 	}
 }
 
@@ -162,23 +164,29 @@
 	.portfolio-entry {
 		background: #fff;
 		border: 1px solid $color__background-hr;
-		margin: 0 0 30px 0;
+		margin: 0 3.5% 30px 0;
 		width: 100%;
 	
 		// One column.
 		&.portfolio-entry-column-1 {
-			
+			margin-right: 0;
+
 			@media (max-width: 768px) {
 				width: 100%;
-			}	
+			}
 		}
 
 		// Two columns.
 		&.portfolio-entry-column-2 {
 			width: 48.25%;
 
-			&:nth-child(2n+1) {
-				margin-right: 3.5%;
+			&:nth-child(2n+2) {
+				margin-right: 0;
+			}
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+				width: 100%;
 			}
 		}
 
@@ -190,54 +198,98 @@
 			&:nth-child(3n+3) {
 				margin-right: 0;
 			}
+
+			@media (max-width: 768px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
 		}
 
 		&.portfolio-entry-column-4 {
-			margin-right: 3.5%;
 			width: 22.375%;
 
 			&:nth-child(4n+4) {
 				margin-right: 0;
 			}
+
+			@media (max-width: 768px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
 		}
 
 		&.portfolio-entry-column-5 {
-			margin-right: 3.5%;
 			width: 17.2%;
 
 			&:nth-child(5n+5) {
 				margin-right: 0;
 			}
+
+			@media (max-width: 1024px) {
+				margin-right: 0;
+				width: 48.25%;
+
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
+
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@media (max-width: 480px) {
+				width: 100%;
+			}
 		}
 
 		&.portfolio-entry-column-6 {
-			margin-right: 3.5%;
 			width: 13.75%;
 
 			&:nth-child(6n+6) {
 				margin-right: 0;
 			}
-		}
 
-		// Two column blog layout below 768px.
-		@media (max-width: 768px) {
-			margin-right: 0 !important;
-			width: 48.25% !important;
+			@media (max-width: 1024px) {
+				margin-right: 0;
+				width: 48.25%;
 
-			&:nth-child(2n+1) {
-				margin-right: 3.5% !important;
+				&:nth-child(2n+1) {
+					margin-right: 3.5%;
 
-				@media (max-width: 480px) {
-					margin-right: 0 !important;
+					@media (max-width: 480px) {
+						margin-right: 0;
+					}
 				}
 			}
-		}
 
-		// One column blog layout below 480px.
-		@media (max-width: 480px) {
-			margin-right: 0 !important;
-			margin-left: 0 !important;
-			width: 100% !important;
+			@media (max-width: 480px) {
+				width: 100%;
+			}
 		}
 
 		.portfolio-featured-image {
