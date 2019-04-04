@@ -2352,7 +2352,7 @@ body:not(.single) .entry-content p:only-of-type {
     background: none;
     border-bottom: 2px solid transparent;
     color: #929292;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     letter-spacing: 1px;
     margin-right: 34px;
     padding: 0 0 6px 0; }
@@ -2439,7 +2439,7 @@ body:not(.single) .entry-content p:only-of-type {
   .archive-project .entry-project-type {
     color: #929292;
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     letter-spacing: 1px;
     position: absolute;
     text-align: center;
@@ -2482,7 +2482,6 @@ body:not(.single) .entry-content p:only-of-type {
       margin-right: 3.5%;
       width: 31%; }
       .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(3n+3) {
-        background: red;
         margin-right: 0; }
     .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
       margin-right: 3.5%;

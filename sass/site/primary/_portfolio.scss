@@ -8,7 +8,7 @@
 		background: none;
 		border-bottom: 2px solid transparent;
 		color: $color__text-light;
-		font-size: 0.75rem;
+		font-size: 0.8125rem;
 		letter-spacing: 1px;
 		margin-right: 34px;
 		padding: 0 0 6px 0;
@@ -118,7 +118,7 @@
 	.entry-project-type {
 		color: $color__text-light;
 		display: block;
-		font-size: 0.75rem;
+		font-size: 0.8125rem;
 		letter-spacing: 1px;
 		position: absolute;
 		text-align: center;
@@ -188,7 +188,6 @@
 			width: 31%;
 
 			&:nth-child(3n+3) {
-				background: red;
 				margin-right: 0;
 			}
 		}
