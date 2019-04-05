@@ -2364,6 +2364,7 @@ body:not(.single) .entry-content p:only-of-type {
       background: none;
       color: #2d2d2d; }
     .portfolio-filter-terms button.active {
+      background: none;
       border-bottom: 2px solid #2d2d2d;
       color: #2d2d2d; }
 

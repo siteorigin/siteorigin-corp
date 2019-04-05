@@ -24,6 +24,7 @@
 		}
 
 		&.active {
+			background: none;
 			border-bottom: 2px solid $color__text-dark;
 			color: $color__text-dark;
 		}
