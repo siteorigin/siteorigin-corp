@@ -81,7 +81,8 @@
 		z-index: 0;
 
 		@at-root .entry-thumbnail:hover .entry-overlay {
-			background-color: rgba(255, 255, 255, .9);
+			background-color: rgba(265, 265, 265, .9);
+			border: 2px solid $color__text-light;
 		}
 	}
 

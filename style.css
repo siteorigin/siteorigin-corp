@@ -3,7 +3,7 @@ Theme Name: SiteOrigin Corp
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/corp/
-Description: A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin, a custom WooCommerce design and five unique blog layouts. A stunning portfolio layout to follow soon.
+Description: A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully stocked with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin, a custom WooCommerce design, five unique blog layouts and a stunning Jetpack Portfolio layout.
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2409,7 +2409,8 @@ body:not(.single) .entry-content p:only-of-type {
     width: 100%;
     z-index: 0; }
     .entry-thumbnail:hover .entry-overlay {
-      background-color: rgba(255, 255, 255, 0.9); }
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #929292; }
   .archive-project .entry-content {
     opacity: 0;
     transition: .3s;
