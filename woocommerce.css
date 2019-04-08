@@ -794,11 +794,7 @@ input.button.added:after,
       border-top: 1px solid #e6e6e6;
       color: #626262;
       font-size: 13px;
-      padding-top: 25px; }
-      @media (max-width: 786px) {
-        .woocommerce .product .summary .product_meta,
-        .woocommerce .product .product-info-wrapper .product_meta {
-          margin-bottom: 50px; } }
+      padding: 25px 0; }
       .woocommerce .product .summary .product_meta > span,
       .woocommerce .product .product-info-wrapper .product_meta > span {
         display: block; }
@@ -826,6 +822,9 @@ input.button.added:after,
       border-bottom: 1px solid #e6e6e6;
       list-style: none;
       margin: 0; }
+      @media (max-width: 786px) {
+        .woocommerce .product .woocommerce-tabs .wc-tabs {
+          margin-top: 25px; } }
       .woocommerce .product .woocommerce-tabs .wc-tabs li {
         display: inline-block;
         font-family: "Montserrat", sans-serif;
