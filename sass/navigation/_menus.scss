@@ -204,7 +204,7 @@
 			border-color: $color__navigation_link_accent;
 		}
 
-		&:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor) > a {
+		&:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
 			border-bottom: none;
 		}
 

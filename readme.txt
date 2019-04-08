@@ -3,7 +3,7 @@
 Contributors: siteorigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.7
-Tested up to: 5.0.3
+Tested up to: 5.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ A modern business theme from SiteOrigin.
 
 == Description ==
 
-A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin, a custom WooCommerce design and five unique blog layouts. A stunning portfolio layout to follow soon.
+A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully stocked with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin, a custom WooCommerce design, five unique blog layouts and a stunning Jetpack Portfolio layout.
 
 == Installation ==
 
@@ -34,6 +34,7 @@ SiteOrigin Corp includes support for the following plugins:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Featured Content](https://jetpack.com/support/featured-content/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Portfolio Custom Post Type](https://jetpack.com/support/custom-content-types/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
@@ -77,6 +78,10 @@ FlexSlider, Copyright 2012 WooThemes
 Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [Source](http://www.woothemes.com/flexslider/)
 
+Isotope PACKAGED, Copyright 2017 Metafizzy
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+[Source](http://isotope.metafizzy.co)
+
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
 Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/necolas/normalize.css/)
@@ -90,6 +95,10 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.11.0 - 08 April 2019 =
+* Current menu indication: accounted for custom links.
+* Added [Jetpack Portfolio support](https://siteorigin.com/corp-documentation/portfolio/).
 
 = 1.10.0 - 26 March 2019 =
 * Resolved Customizer settings bug when mobile menu not enabled.
