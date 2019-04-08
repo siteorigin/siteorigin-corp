@@ -252,7 +252,7 @@ h6 {
   font-size: 16px; }
 
 .sub-heading, .site-content #jp-relatedposts .jp-relatedposts-headline, .site-content #primary .sharedaddy h3, .yarpp-related .related-posts,
-.related-posts-section .related-posts, .comments-title,
+.related-posts-section .related-posts, .related-projects-section h3, .comments-title,
 .comment-reply-title {
   color: #626262;
   font-size: 14px;
@@ -1740,7 +1740,7 @@ a {
           color: #fff;
           line-height: normal; }
 
-.single .entry-thumbnail {
+.single .site-main > article > .entry-thumbnail {
   margin: 0 0 25px; }
 
 .entry-meta {
@@ -2339,6 +2339,243 @@ body:not(.single) .entry-content p:only-of-type {
         .yarpp-related ol li .related-post-date:hover,
         .related-posts-section ol li .related-post-date:hover {
           color: #f14e4e; }
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+### Portfolio Loop
+--------------------------------------------------------------*/
+.portfolio-filter-terms {
+  padding-bottom: 25px; }
+  .portfolio-filter-terms button {
+    background: none;
+    border-bottom: 2px solid transparent;
+    color: #929292;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-right: 34px;
+    padding: 0 0 6px 0; }
+    @media (max-width: 768px) {
+      .portfolio-filter-terms button {
+        margin: 0 10px 5px 0; } }
+    .portfolio-filter-terms button:hover {
+      background: none;
+      color: #2d2d2d; }
+    .portfolio-filter-terms button.active {
+      border-bottom: 2px solid #2d2d2d;
+      color: #2d2d2d; }
+
+#projects-container,
+.portfolio-archive-layout,
+.related-projects {
+  margin-right: -1.1667%;
+  margin-left: -1.1667%; }
+  @media (max-width: 640px) {
+    #projects-container,
+    .portfolio-archive-layout,
+    .related-projects {
+      margin: 0; } }
+
+.archive-project {
+  float: left;
+  margin-right: 1.1667%;
+  margin-bottom: 30px;
+  margin-left: 1.1667%;
+  width: 31%; }
+  @media (max-width: 1175px) {
+    .archive-project {
+      margin-right: 0.875%;
+      margin-left: 0.875%;
+      width: 48.25%; } }
+  @media (max-width: 640px) {
+    .archive-project {
+      clear: none;
+      display: block;
+      margin-right: 0;
+      margin-left: 0;
+      width: 100%; } }
+  .archive-project .entry-thumbnail a {
+    display: block;
+    position: relative; }
+  .archive-project .entry-overlay {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    width: 100%;
+    z-index: 0; }
+    .entry-thumbnail:hover .entry-overlay {
+      background-color: rgba(255, 255, 255, 0.9); }
+  .archive-project .entry-content {
+    opacity: 0;
+    transition: .3s;
+    visibility: hidden;
+    z-index: 10; }
+    .entry-thumbnail:hover .entry-content {
+      opacity: 1;
+      visibility: visible; }
+  .archive-project .entry-title {
+    bottom: 60%;
+    color: #2d2d2d;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%; }
+  .archive-project .entry-divider {
+    border: solid #2d2d2d 1px;
+    bottom: 55.5%;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 30px; }
+  .archive-project .entry-project-type {
+    color: #929292;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50.5%;
+    width: 100%; }
+
+.related-projects-section {
+  float: left;
+  margin-bottom: 30px;
+  width: 100%; }
+  .related-projects-section h3 {
+    margin-bottom: 20px;
+    width: 100%; }
+  .related-projects-section .related-projects article {
+    margin-bottom: 30px; }
+  .related-projects-section .related-projects .entry-thumbnail {
+    margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+### Portfolio Shortcode
+--------------------------------------------------------------*/
+.jetpack-portfolio-shortcode {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -30px; }
+  .jetpack-portfolio-shortcode .portfolio-entry {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    margin: 0 3.5% 30px 0;
+    width: 100%; }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
+      margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-1 {
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
+      width: 48.25%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2:nth-child(2n+2) {
+        margin-right: 0; }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-2 {
+          margin-right: 0;
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+      margin-right: 3.5%;
+      width: 31%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(3n+3) {
+        margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 768px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-3 {
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+      width: 22.375%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(4n+4) {
+        margin-right: 0; }
+      @media (max-width: 768px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 768px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-4 {
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+      width: 17.2%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(5n+5) {
+        margin-right: 0; }
+      @media (max-width: 1024px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 1024px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-5 {
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+      width: 13.75%; }
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(6n+6) {
+        margin-right: 0; }
+      @media (max-width: 1024px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+          margin-right: 0;
+          width: 48.25%; }
+          .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(2n+1) {
+            margin-right: 3.5%; } }
+    @media (max-width: 1024px) and (max-width: 480px) {
+      .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6:nth-child(2n+1) {
+        margin-right: 0; } }
+      @media (max-width: 480px) {
+        .jetpack-portfolio-shortcode .portfolio-entry.portfolio-entry-column-6 {
+          width: 100%; } }
+    .jetpack-portfolio-shortcode .portfolio-entry .portfolio-featured-image {
+      display: block;
+      line-height: 0;
+      margin: -1px;
+      padding-bottom: 25px; }
+    .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-title {
+      font-size: 1rem;
+      padding: 0 30px 0;
+      margin: 0; }
+    .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta {
+      font-size: 0.8125rem;
+      line-height: normal;
+      margin-bottom: 25px;
+      padding: 0 30px 0; }
+      .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta span {
+        color: #929292;
+        display: inline-block; }
+      .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta a {
+        color: #2d2d2d;
+        text-decoration: none; }
+        .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta a:hover {
+          color: #929292; }
+    .jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-content {
+      font-size: 0.875rem;
+      padding: 0 30px 33px; }
 
 /*--------------------------------------------------------------
 ## Comments

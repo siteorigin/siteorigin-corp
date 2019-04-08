@@ -348,6 +348,22 @@ jQuery( function( $ ) {
 		} );
 	}
 
+	// Setup the load more button in portfolio widget loop if there's a portfolio loop present on the page.
+	if ( $( '#portfolio-loop' ).length ) {
+		$infinite_scroll = 0;
+		$( document.body ).on( 'post-load', function() {
+			var $container = $( '#portfolio-loop' );
+
+			$infinite_scroll = $infinite_scroll + 1;
+			var $container = $( '#projects-container' ),
+				$selector = $( '#infinite-view-' + $infinite_scroll ),
+				$elements = $selector.find( '.jetpack-portfolio.post' );
+
+			$elements.hide();
+			$container.append( $elements ).isotope( 'appended', $elements );
+		} );
+	}
+
 } );
 
 ( function( $ ) {
@@ -360,6 +376,27 @@ jQuery( function( $ ) {
 				columnWidth: '.hentry'
 			} );
 		}
+
+		// Portfolio loop filter.
+		var $container = $( '#projects-container' );
+		if ( $( '.portfolio-filter-terms' ).length ) {
+			$container.isotope( {
+				itemSelector: '.post',
+				filter: '*',
+				layoutMode: 'fitRows',
+				resizable: true,
+			} );
+		}
+
+		$( '.portfolio-filter-terms button' ).click( function() {
+			var selector = $( this ).attr( 'data-filter' );
+			$container.isotope( {
+				filter: selector,
+			} );
+			$( '.portfolio-filter-terms button' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			return false;
+		} );
 
 		// Header padding to be used if logo scaling is enabled.
 		var $mh = $( '#masthead' ),

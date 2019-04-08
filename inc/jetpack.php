@@ -32,10 +32,24 @@ function siteorigin_corp_jetpack_setup() {
 		'container' => 'main',
 		'render' => 'siteorigin_corp_infinite_scroll_render',
 		'footer' => 'page',
-		'posts_per_page' => get_option( 'jetpack_portfolio_posts_per_page' ),
 	) );
+
+	/**
+	 * Enable support for Jetpack Portfolio custom post type.
+	 * See https://jetpack.com/support/custom-content-types/
+	 */
+	add_theme_support( 'jetpack-portfolio' );	
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_jetpack_setup' );
+
+/**
+ * Remove the Jetpack stylesheets we don't require.
+ *
+ */
+function siteorigin_corp_remove_jetpack_css() {
+	wp_deregister_style( 'jetpack-portfolio-style' );
+}
+add_action( 'wp_footer', 'siteorigin_corp_remove_jetpack_css' );
 
 if ( ! function_exists( 'siteorigin_corp_infinite_scroll_render' ) ) :
 /**
@@ -55,7 +69,14 @@ function siteorigin_corp_infinite_scroll_render() {
 			the_post();
 			wc_get_template_part( 'content', 'product' );
 		endwhile;
-		echo '</ul>';		
+		echo '</ul>';
+	elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) : ?>
+		<div id="projects-container"><?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', 'portfolio' );
+			endwhile;
+		?></div><?php
 	elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) : ?>
 		<div class="blog-layout-grid"><?php
 			while ( have_posts() ) :
@@ -112,6 +133,17 @@ endif;
 	}
 }
 add_action( 'loop_start', 'siteorigin_corp_remove_share' );
+
+if ( ! function_exists( 'siteorigin_corp_jetpack_related_projects' ) ) :
+/**
+ * Displays jetpack related posts for projects.
+ */
+function siteorigin_corp_jetpack_related_projects( $allowed_post_types ) {
+	$allowed_post_type[] = 'jetpack-portfolio';
+	return $allowed_post_type;
+}
+endif;
+add_filter( 'rest_api_allowed_post_types', 'siteorigin_corp_jetpack_related_projects' );
 
 if ( ! function_exists( 'siteorigin_corp_jetpackme_related_posts_headline' ) ) :
 /**

@@ -20,7 +20,46 @@ get_header(); ?>
 				</header><!-- .page-header -->
 			<?php endif; ?>
 
-			<?php get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) ); ?>
+			<?php
+			if ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
+
+				if ( have_posts() ) : ?>
+
+					<div class="portfolio-archive-layout">
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/content', 'portfolio' );
+
+						endwhile;
+						?>
+					</div><?php
+
+					if ( is_rtl() ) :
+						the_posts_pagination( array( 
+							'prev_text' => '&rarr;', 
+							'next_text' => '&larr;' 
+						) );
+					else :
+						the_posts_pagination( array( 
+							'prev_text' => '&larr;', 
+							'next_text' => '&rarr;' 
+						) );
+					endif;
+					
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif;
+
+			else :
+
+				get_template_part( 'loops/loop', 'blog-' . siteorigin_setting( 'blog_archive_layout' ) );
+
+			endif;
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
