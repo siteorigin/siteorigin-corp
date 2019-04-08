@@ -96,6 +96,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.0 - 08 April 2019 =
+* Current menu indication: accounted for custom links.
+* Added [Jetpack Portfolio support](https://siteorigin.com/corp-documentation/portfolio/).
+
 = 1.10.0 - 26 March 2019 =
 * Resolved Customizer settings bug when mobile menu not enabled.
 * Added a new setting to center the header located at `Customize > Theme Settings > Header > Header Layout`.
