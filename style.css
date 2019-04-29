@@ -2739,7 +2739,8 @@ body:not(.single) .entry-content p:only-of-type {
 #commentform .comment-form-cookies-consent {
   align-items: center;
   clear: both;
-  display: flex; }
+  display: flex;
+  margin: 0 0 8px; }
   #commentform .comment-form-cookies-consent input {
     line-height: 1;
     margin-right: 5px; }
@@ -2749,17 +2750,17 @@ body:not(.single) .entry-content p:only-of-type {
     margin-bottom: 0; }
 
 #commentform .form-submit {
-  display: block;
-  margin: 0;
+  margin: 22px 0 0;
   clear: both; }
 
 #commentform .comment-subscription-form {
-  margin: 15px 0 8px; }
-  #commentform .comment-subscription-form ~ p {
-    margin-top: 0; }
+  display: block;
+  clear: both;
+  margin: 0 0 8px;
+  overflow: auto; }
+  #commentform .comment-subscription-form input {
+    margin-right: 0; }
   #commentform .comment-subscription-form label {
-    color: #626262;
-    font-size: 13px;
     font-weight: normal; }
 
 .no-comments {
