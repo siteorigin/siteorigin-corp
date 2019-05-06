@@ -209,6 +209,7 @@
 		align-items: center;
 		clear: both;
 		display: flex;
+		margin: 0 0 8px;
 
 		input {
 			line-height: 1;
@@ -220,25 +221,25 @@
 			font-weight: normal;
 			margin-bottom: 0;
 		}
-	}	
+	}
 
 	.form-submit {
-		display: block;
-		margin: 0;
+		margin: 22px 0 0;
 		clear: both;
 	}
 
 	// Jetpack Subscriptions.
 	.comment-subscription-form {
-		margin: 15px 0 8px;
+		display: block;
+		clear: both;
+		margin: 0 0 8px;
+		overflow: auto;	
 
-		~ p {
-			margin-top: 0;
+		input {
+			margin-right: 0;
 		}
 
 		label {
-			color: $color__text-medium;
-			font-size: 13px;
 			font-weight: normal;
 		}
 	}
