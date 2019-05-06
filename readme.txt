@@ -96,6 +96,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.1 - 08 April 2019 =
+* Removed WooCommerce mini-cart "Cart" title.
+
 = 1.11.0 - 08 April 2019 =
 * Current menu indication: accounted for custom links.
 * Added [Jetpack Portfolio support](https://siteorigin.com/corp-documentation/portfolio/).
