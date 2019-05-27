@@ -859,10 +859,11 @@ input.button.added:after,
       padding-top: 25px; }
   .woocommerce .product .shop_attributes {
     width: initial; }
-    .woocommerce .product .shop_attributes tr th {
+    .woocommerce .product .shop_attributes tr th.woocommerce-product-attributes-item__label {
       color: #2d2d2d;
       text-align: left;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      padding-left: 0; }
     .woocommerce .product .shop_attributes tr th,
     .woocommerce .product .shop_attributes tr td {
       padding: 8px 16px; }

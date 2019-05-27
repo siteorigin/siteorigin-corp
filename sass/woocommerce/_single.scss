@@ -358,10 +358,11 @@
 
 			tr {
 
-				th {
+				th.woocommerce-product-attributes-item__label {
 					color: $color__text-dark;
 					text-align: left;
 					text-transform: capitalize;
+					padding-left: 0;
 				}
 
 				th,
