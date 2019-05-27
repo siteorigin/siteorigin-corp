@@ -11,16 +11,16 @@ table {
 	thead {
 
 		th {
-			color: $color__text-dark; 
+			color: $color__text-dark;
 			text-transform: uppercase;
 		}
 	}
 
 	th,
 	td {
-		border: 1px solid $color__background-hr;  
+		border: 1px solid $color__background-hr;
 		padding: 8px 16px;
-		
+
 		@media (max-width: 768px) {
 			padding: 2%;
 		}
