@@ -156,57 +156,73 @@ blockquote {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-body:not(.single) .hentry {
+/*--------------------------------------------------------------
+## Blog Loop: Grid
+--------------------------------------------------------------*/
+.blog-layout-grid {
 
-	// 1, 4, 7, 10
-	&:nth-of-type(3n+1) {
-		margin-right: 0;
-		margin-left: 3.5%;
-
-		@media (max-width: 768px) {
-			margin-left: 0;
-		}
-	}
-
-	@media (max-width: 768px) {
-		// 1, 3, 5, 7, 9
-		&:nth-of-type(2n+1) {
-			margin-left: 3.5%;
-		}
-	}
-
-	// 3, 6, 9, 12
-	&:nth-of-type(3n+3) {
-		margin-right: 3.5%;
-		margin-left: 0;
-
-		@media (max-width: 768px) {
-			margin-right: 0;
-			margin-left: 3.5%;
-		}
-	}
-
-	// Two column blog layout when the sidebar is in use.
-	@at-root body.page-layout-default.sidebar:not(.single) .hentry {
+	article {
 
 		// 1, 4, 7, 10
 		&:nth-of-type(3n+1) {
-			margin-left: 0;
-		}
-
-		// 1, 3, 5, 7, 9
-		&:nth-of-type(2n+1) {
 			margin-right: 0;
 			margin-left: 3.5%;
 
-			@media (max-width: 480px) {
+			@media (max-width: 768px) {
+				margin-right: 3.5%;
 				margin-left: 0;
+			}
+
+			@media (max-width: 480px) {
+				margin-right: 0;
+			}			
+		}
+
+		@media (max-width: 768px) {
+			// 1, 3, 5, 7, 9
+			&:nth-of-type(2n+1) {
+				margin-right: 0;
+				margin-left: 3.5%;
+
+				@media (max-width: 480px) {
+					margin-left: 0;
+				}
 			}
 		}
 
 		// 3, 6, 9, 12
 		&:nth-of-type(3n+3) {
-			margin-right: 0;
+			margin-right: 3.5%;
+			margin-left: 0;
+
+			@media (max-width: 768px) {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		// Two column blog layout when the sidebar is in use.
+		@at-root body.page-layout-default.sidebar .blog-layout-grid article {
+
+			// 1, 4, 7, 10
+			&:nth-of-type(3n+1) {
+				margin-left: 0;
+			}
+
+			// 1, 3, 5, 7, 9
+			&:nth-of-type(2n+1) {
+				margin-right: 0;
+				margin-left: 3.5%;
+
+				@media (max-width: 480px) {
+					margin-left: 0;
+				}
+			}
+
+			// 3, 6, 9, 12
+			&:nth-of-type(3n+3) {
+				margin-right: 0;
+			}
 		}
 	}
 }
@@ -240,4 +256,11 @@ body:not(.single) .hentry {
 			}
 		}
 	}
+}
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
+.archive-project {
+	float: right;
 }
