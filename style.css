@@ -1874,6 +1874,9 @@ body:not(.single) .entry-content p:only-of-type {
     @media (max-width: 768px) {
       .blog-layout-grid article:nth-of-type(2n+1) {
         margin-right: 3.5%; } }
+  @media (max-width: 768px) and (max-width: 480px) {
+    .blog-layout-grid article:nth-of-type(2n+1) {
+      margin-right: 0; } }
     .blog-layout-grid article:nth-of-type(3n+3) {
       margin-left: 3.5%; }
       @media (max-width: 768px) {
