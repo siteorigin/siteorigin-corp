@@ -227,18 +227,18 @@ body:not(.single) .entry-content p {
 .blog-layout-grid {
 	display: flex;
 	flex-wrap: wrap;
-	
+
 	// If Archive Post Content is set to Full Post Content, don't use equal height columns.
 	&.blog-full {
 		align-items: flex-start;
 	}
-	
+
 	article {
 		background: #fff;
 		border: 1px solid $color__background-hr;
 		margin: 0 0 30px;
 		width: 31%;
-		
+
 		// Two column blog layout below 768px.
 		@media (max-width: 768px) {
 			width: 48.25%;
