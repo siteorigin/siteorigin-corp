@@ -96,6 +96,14 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.2 - 04 June 2019 =
+* Added a SiteOrigin one pager prebuilt layout.
+* Updated the SiteOrigin Settings framework.
+* Minor WooCommerce product page responsive adjustments.
+* Fixed overlay missing for WooCommerce recommended products.
+* Resolved blog grid spacing issue on mobile.
+* RTL blog grid and portfolio improvements.
+
 = 1.11.1 - 08 April 2019 =
 * Removed WooCommerce mini-cart "Cart" title.
 
