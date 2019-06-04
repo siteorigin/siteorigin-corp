@@ -1585,7 +1585,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['sidebar_position']                     = 'right';
 	$defaults['sidebar_width']                        = '34%%';
 
-	$defaults['footer_text']                          = esc_html__( '{year} &copy; {sitename}.', 'siteorigin-corp' );
+	$defaults['footer_text']                          = esc_html__( '{year} &copy; {sitename}', 'siteorigin-corp' );
 	$defaults['footer_privacy_policy_link']           = true;
 	$defaults['footer_widget_title']                  = '#ffffff';
 	$defaults['footer_widget_text']                   = '#b4b5b8';
