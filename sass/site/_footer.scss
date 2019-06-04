@@ -55,6 +55,22 @@
 	.site-info {
 		font-size: 13px;
 		text-align: left;
+
+		span {
+			
+			&:after {
+				content: "\002d";
+				display: inline-block;
+				padding: 0 5px;
+			}
+
+			&:last-of-type {
+				
+				&:after {
+					content: none;
+				}
+			}
+		}
 		
 		@media (max-width: 768px) {
 			float: none;
