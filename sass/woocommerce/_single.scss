@@ -309,12 +309,14 @@
 					margin: 0 34px 0 0;
 					padding-bottom: 7px;
 					text-transform: uppercase;
-					
-					@media (max-width: 480px) {
+
+					@media (max-width: 768px) {
 						display: block;
 						font-size: 0.9333rem;
-						margin-bottom: 10px;
-					}					
+						margin: 0 0 10px;
+						padding-bottom: 0;
+						width: auto;
+					}
 
 					a {
 						color: $color__text-medium;
@@ -334,7 +336,7 @@
 							color: $color__text-dark;
 						}
 
-						@media (max-width: 480px) {
+						@media (max-width: 768px) {
 							box-shadow: none;
 							margin-bottom: 10px;
 
@@ -352,18 +354,20 @@
 		}
 
 		.shop_attributes {
+			width: initial;
 
 			tr {
 
-				th {
+				th.woocommerce-product-attributes-item__label {
 					color: $color__text-dark;
 					text-align: left;
 					text-transform: capitalize;
+					padding-left: 0;
 				}
 
 				th,
 				td {
-					padding-bottom: 8px;
+					padding: 8px 16px;
 				}
 
 				&:last-of-type {

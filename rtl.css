@@ -105,36 +105,47 @@ blockquote {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-body:not(.single) .hentry:nth-of-type(3n+1) {
+/*--------------------------------------------------------------
+## Blog Loop: Grid
+--------------------------------------------------------------*/
+.blog-layout-grid article:nth-of-type(3n+1) {
   margin-right: 0;
   margin-left: 3.5%; }
   @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-of-type(3n+1) {
+    .blog-layout-grid article:nth-of-type(3n+1) {
+      margin-right: 3.5%;
       margin-left: 0; } }
+  @media (max-width: 480px) {
+    .blog-layout-grid article:nth-of-type(3n+1) {
+      margin-right: 0; } }
 
 @media (max-width: 768px) {
-  body:not(.single) .hentry:nth-of-type(2n+1) {
+  .blog-layout-grid article:nth-of-type(2n+1) {
+    margin-right: 0;
     margin-left: 3.5%; } }
+  @media (max-width: 768px) and (max-width: 480px) {
+    .blog-layout-grid article:nth-of-type(2n+1) {
+      margin-left: 0; } }
 
-body:not(.single) .hentry:nth-of-type(3n+3) {
+.blog-layout-grid article:nth-of-type(3n+3) {
   margin-right: 3.5%;
   margin-left: 0; }
   @media (max-width: 768px) {
-    body:not(.single) .hentry:nth-of-type(3n+3) {
+    .blog-layout-grid article:nth-of-type(3n+3) {
       margin-right: 0;
-      margin-left: 3.5%; } }
+      margin-left: 0; } }
 
-body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+1) {
+body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(3n+1) {
   margin-left: 0; }
 
-body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(2n+1) {
   margin-right: 0;
   margin-left: 3.5%; }
   @media (max-width: 480px) {
-    body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(2n+1) {
+    body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(2n+1) {
       margin-left: 0; } }
 
-body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
+body.page-layout-default.sidebar .blog-layout-grid article:nth-of-type(3n+3) {
   margin-right: 0; }
 
 /*--------------------------------------------------------------
@@ -161,5 +172,11 @@ body.page-layout-default.sidebar:not(.single) .hentry:nth-of-type(3n+3) {
       .related-posts-section ol li:nth-child(3n+3) {
         margin-right: 0;
         margin-left: 0; } }
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
+.archive-project {
+  float: right; }
 
 /*# sourceMappingURL=sass/maps/rtl.css.map */

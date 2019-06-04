@@ -20,7 +20,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php do_action( 'siteorigin_corp_body_top' ); ?>
+<?php if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+do_action( 'siteorigin_corp_body_top' );
+?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-corp' ); ?></a>
 
