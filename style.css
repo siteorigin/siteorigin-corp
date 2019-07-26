@@ -2265,7 +2265,7 @@ body:not(.single) .entry-content p:only-of-type {
 .related-posts-section {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 60px; }
+  margin-bottom: 35px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
     margin-bottom: 20px;
