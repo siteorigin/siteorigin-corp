@@ -2265,7 +2265,7 @@ body:not(.single) .entry-content p:only-of-type {
 .related-posts-section {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 60px; }
+  margin-bottom: 35px; }
   .yarpp-related .related-posts,
   .related-posts-section .related-posts {
     margin-bottom: 20px;
@@ -2586,6 +2586,9 @@ body:not(.single) .entry-content p:only-of-type {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.page #comments {
+  margin-top: 60px; }
+
 .comment-list {
   margin: 0 0 30px;
   padding: 0; }
@@ -2834,6 +2837,12 @@ body:not(.single) .entry-content p:only-of-type {
   .site-footer .site-info {
     font-size: 13px;
     text-align: left; }
+    .site-footer .site-info span:after {
+      content: "\002d";
+      display: inline-block;
+      padding: 0 5px; }
+    .site-footer .site-info span:last-of-type:after {
+      content: none; }
     @media (max-width: 768px) {
       .site-footer .site-info {
         float: none;

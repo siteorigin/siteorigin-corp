@@ -537,9 +537,9 @@ function siteorigin_corp_footer_text() {
 	$text = str_replace(
 		array( '{sitename}', '{year}' ),
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
-		$text
+		'<span>' . $text . '</span>'
 	);
-	echo wp_kses_post( $text ) . '&nbsp;';
+	echo wp_kses_post( $text );
 }
 endif;
 

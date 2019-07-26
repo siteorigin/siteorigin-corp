@@ -1462,9 +1462,9 @@ ul.product_list_widget {
       padding-right: 0;
       width: 100%; } }
   .woocommerce-cart .cross-sells h2 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 0; }
+    font-size: 20px;
+    margin: 0 0 20px;
+    text-transform: uppercase; }
   .woocommerce-cart .cross-sells .product {
     margin-bottom: 25px;
     width: 48.25%; }
@@ -1669,7 +1669,7 @@ ul.product_list_widget {
 .woocommerce #order_review {
   clear: right;
   float: right;
-  width: 47.8260869565%; }
+  width: 48%; }
   @media (max-width: 768px) {
     .woocommerce #order_review {
       clear: none;

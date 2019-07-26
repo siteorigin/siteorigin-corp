@@ -3,7 +3,7 @@
 Contributors: siteorigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.7
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,13 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.11.3 - 26 July 2019 =
+* Change bottom bar link separator to use a hyphen.
+* Updated SiteOrigin Settings framework.
+* Minor WooCommerce cart cross-sells heading style adjustment.
+* Minor styling adjustment to the single post related posts section bottom margin.
+* Ensured pages with comments have spacing below the article, above the comments section.
 
 = 1.11.2 - 04 June 2019 =
 * Added a SiteOrigin one pager prebuilt layout.

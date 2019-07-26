@@ -511,6 +511,6 @@ jQuery( function( $ ) {
 			smSetup();
 			$( window ).resize( smSetup ).scroll( smSetup );
 
-		}		
+		}
 	} );
 } )( jQuery );
