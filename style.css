@@ -2586,6 +2586,9 @@ body:not(.single) .entry-content p:only-of-type {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.page #comments {
+  margin-top: 60px; }
+
 .comment-list {
   margin: 0 0 30px;
   padding: 0; }
