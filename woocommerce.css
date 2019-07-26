@@ -1462,9 +1462,9 @@ ul.product_list_widget {
       padding-right: 0;
       width: 100%; } }
   .woocommerce-cart .cross-sells h2 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 0; }
+    font-size: 20px;
+    margin: 0 0 20px;
+    text-transform: uppercase; }
   .woocommerce-cart .cross-sells .product {
     margin-bottom: 25px;
     width: 48.25%; }
