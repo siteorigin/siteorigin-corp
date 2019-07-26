@@ -96,6 +96,13 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.3 - 26 July 2019 =
+* Change bottom bar link separator to use a hyphen.
+* Updated SiteOrigin Settings framework.
+* Minor WooCommerce cart cross-sells heading style adjustment.
+* Minor styling adjustment to the single post related posts section bottom margin.
+* Ensured pages with comments have spacing below the article, above the comments section.
+
 = 1.11.2 - 04 June 2019 =
 * Added a SiteOrigin one pager prebuilt layout.
 * Updated the SiteOrigin Settings framework.
