@@ -52,6 +52,10 @@
 
 			li {
 				line-height: 2.5;
+				
+				&.is-active a {
+					font-weight: bold;
+				}		
 
 				a {
 					color: $color__text-medium;

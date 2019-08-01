@@ -1872,6 +1872,8 @@ ul.product_list_widget {
     padding: 15px 25px; }
     .woocommerce-account .woocommerce-MyAccount-navigation ul li {
       line-height: 2.5; }
+      .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+        font-weight: bold; }
       .woocommerce-account .woocommerce-MyAccount-navigation ul li a {
         color: #626262; }
         .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
