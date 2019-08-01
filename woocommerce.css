@@ -244,8 +244,8 @@ input.button.added:after,
   margin-bottom: 13px; }
 
 .woocommerce .login .lost_password {
-  font-size: 0.8666em;
-  margin-bottom: 26px; }
+  font-size: 0.8125rem;
+  padding-bottom: 1.625rem; }
 
 /*--------------------------------------------------------------
 # Main
@@ -1649,12 +1649,13 @@ ul.product_list_widget {
     .woocommerce .checkout_coupon .form-row-last {
       width: 50%; } }
 
-@media (max-width: 768px) {
-  .woocommerce .woocommerce-billing-fields {
-    padding: 19px 20px 4px; } }
-
-.woocommerce .woocommerce-billing-fields h3 {
-  margin: 20px 0 11px; }
+.woocommerce .woocommerce-billing-fields {
+  margin-bottom: 1.625rem; }
+  @media (max-width: 768px) {
+    .woocommerce .woocommerce-billing-fields {
+      padding: 19px 20px 0; } }
+  .woocommerce .woocommerce-billing-fields h3 {
+    margin: 20px 0 11px; }
 
 @media (max-width: 768px) {
   .woocommerce .woocommerce-account-fields {
