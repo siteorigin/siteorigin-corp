@@ -558,7 +558,7 @@ $css .= '/* style */
 	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
 	color: ${typography_heading};
 	}
-	.sub-heading,.site-content #jp-relatedposts .jp-relatedposts-headline,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.comments-title,.comment-reply-title {
+	.sub-heading,.site-content #jp-relatedposts .jp-relatedposts-headline,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.related-projects-section h3,.comments-title,.comment-reply-title {
 	color: ${typography_text};
 	}
 	blockquote {
@@ -788,6 +788,18 @@ $css .= '/* style */
 	.widget_recent_comments .recentcomments a {
 	color: ${typography_heading};
 	}
+	.site-footer .widget_recent_comments .recentcomments {
+	color: ${footer_widget_text};
+	}
+	.site-footer .widget_recent_comments .recentcomments .comment-author-link {
+	color: ${footer_widget_text};
+	}
+	.site-footer .widget_recent_comments .recentcomments .comment-author-link:before {
+	color: ${footer_widget_text};
+	}
+	.site-footer .widget_recent_comments .recentcomments a {
+	color: ${footer_widget_link};
+	}
 	.widget_recent_entries li {
 	color: ${typography_secondary_text};
 	}
@@ -954,6 +966,40 @@ $css .= '/* style */
 	.yarpp-related ol li .related-post-date:hover,.related-posts-section ol li .related-post-date:hover {
 	color: ${typography_accent};
 	}
+	.portfolio-filter-terms button {
+	color: ${typography_secondary_text};
+	}
+	.portfolio-filter-terms button:hover {
+	color: ${typography_heading};
+	}
+	.portfolio-filter-terms button.active {
+	border-bottom: 2px solid ${typography_heading};
+	color: ${typography_heading};
+	}
+	.entry-thumbnail:hover .entry-overlay {
+	border: 2px solid ${typography_secondary_text};
+	}
+	.archive-project .entry-title {
+	color: ${typography_heading};
+	}
+	.archive-project .entry-divider {
+	border: solid ${typography_heading} 1px;
+	}
+	.archive-project .entry-project-type {
+	color: ${typography_secondary_text};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry {
+	border: 1px solid ${typography_border};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta span {
+	color: ${typography_secondary_text};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta a {
+	color: ${typography_heading};
+	}
+	.jetpack-portfolio-shortcode .portfolio-entry .portfolio-entry-meta a:hover {
+	color: ${typography_secondary_text};
+	}
 	.comment-list .comment,.comment-list .pingback {
 	color: ${typography_text};
 	}
@@ -991,9 +1037,6 @@ $css .= '/* style */
 	}
 	#commentform .comment-notes a:hover,#commentform .logged-in-as a:hover {
 	color: ${typography_accent};
-	}
-	#commentform .comment-subscription-form label {
-	color: ${typography_text};
 	}
 	.site-footer {
 	background: ${footer_background};
@@ -1209,12 +1252,12 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce .product .woocommerce-tabs .wc-tabs li.active a {
 	color: ${typography_heading};
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
 	.woocommerce .product .woocommerce-tabs .wc-tabs li.active a {
 	color: ${typography_accent};
 	}
 	}
-	.woocommerce .product .shop_attributes tr th {
+	.woocommerce .product .shop_attributes tr th.woocommerce-product-attributes-item__label {
 	color: ${typography_heading};
 	}
 	.woocommerce .product .woocommerce-Reviews .comment_container {
