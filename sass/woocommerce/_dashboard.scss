@@ -68,6 +68,18 @@
 		}
 	}
 
+	.woocommerce .woocommerce-pagination {
+		margin-top: 1.625rem;
+
+		.woocommerce-button--previous {
+			float: left;
+		}
+
+		.woocommerce-button--next {
+			float: right;
+		}
+	}
+
 	.woocommerce-MyAccount-content {
 		float: right;
 		width: 70%;
@@ -88,6 +100,10 @@
 			span em {
 				font-size: 13px;
 			}
+		}
+
+		@at-root body.woocommerce-account .entry-content .woocommerce-notices-wrapper ~ p {
+			margin-bottom: 26px;
 		}
 
 		// Tables
@@ -162,6 +178,10 @@
 					padding-left: 0;
 				}
 			}
+		}
+
+		.woocommerce-address-fields__field-wrapper {
+			margin-bottom: 1.625rem;
 		}
 
 		// Password Change.
