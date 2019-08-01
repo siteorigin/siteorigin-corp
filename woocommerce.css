@@ -1308,6 +1308,11 @@ ul.product_list_widget {
     .woocommerce-info,
     .woocommerce-store-notice {
       font-size: 14px; } }
+  .woocommerce-message.woocommerce-notice,
+  .woocommerce-error.woocommerce-notice,
+  .woocommerce-info.woocommerce-notice,
+  .woocommerce-store-notice.woocommerce-notice {
+    line-height: 1.7333; }
   .woocommerce-message .button,
   .woocommerce-error .button,
   .woocommerce-info .button,
