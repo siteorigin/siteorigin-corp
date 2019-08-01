@@ -1330,6 +1330,15 @@ a {
   .widget_recent_comments .recentcomments a {
     color: #2d2d2d; }
 
+.site-footer .widget_recent_comments .recentcomments {
+  color: #b4b5b8; }
+  .site-footer .widget_recent_comments .recentcomments .comment-author-link {
+    color: #b4b5b8; }
+    .site-footer .widget_recent_comments .recentcomments .comment-author-link:before {
+      color: #b4b5b8; }
+  .site-footer .widget_recent_comments .recentcomments a {
+    color: #ffffff; }
+
 /*--------------------------------------------------------------
 ## Recent Posts Widget
 --------------------------------------------------------------*/
@@ -2828,6 +2837,8 @@ body:not(.single) .entry-content p:only-of-type {
         color: #ffffff; }
         .site-footer .widgets .widget a:hover {
           color: #b4b5b8; }
+      .site-footer .widgets .widget input {
+        min-width: initial; }
       .site-footer .widgets .widget:last-of-type {
         margin-right: 0; }
       @media (max-width: 768px) {
