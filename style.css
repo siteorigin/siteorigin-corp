@@ -1781,10 +1781,10 @@ body:not(.single) .corp-content-wrapper {
     display: table; }
 
 body:not(.single) .entry-content p:last-of-type {
-  margin: 0; }
+  margin-bottom: 0; }
 
 body:not(.single) .entry-content p:only-of-type {
-  margin: 0; }
+  margin-bottom: 0; }
 
 .more-link.excerpt {
   display: block;

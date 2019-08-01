@@ -19,12 +19,15 @@
 		}
 
 		.lost_password {
-			font-size: 13px;
 			margin-top: -14px;
 		}
 	}
 
 	.register {
+
+		p {
+			margin-bottom: 1.5rem;
+		}
 
 		@media (min-width: 769px) {
 			max-width: 75%;

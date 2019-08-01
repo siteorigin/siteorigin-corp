@@ -1650,7 +1650,7 @@ ul.product_list_widget {
       width: 50%; } }
 
 .woocommerce .woocommerce-billing-fields {
-  margin-bottom: 1.625rem; }
+  margin-bottom: 1.5rem; }
   @media (max-width: 768px) {
     .woocommerce .woocommerce-billing-fields {
       padding: 19px 20px 0; } }
@@ -1853,8 +1853,10 @@ ul.product_list_widget {
   margin-top: 10px; }
 
 .woocommerce-account .login .lost_password {
-  font-size: 13px;
   margin-top: -14px; }
+
+.woocommerce-account .register p {
+  margin-bottom: 1.5rem; }
 
 @media (min-width: 769px) {
   .woocommerce-account .register {
