@@ -245,7 +245,7 @@ input.button.added:after,
 
 .woocommerce .login .lost_password {
   font-size: 0.8125rem;
-  padding-bottom: 1.625rem; }
+  padding-bottom: 26px; }
 
 /*--------------------------------------------------------------
 # Main
@@ -1650,7 +1650,7 @@ ul.product_list_widget {
       width: 50%; } }
 
 .woocommerce .woocommerce-billing-fields {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 24px; }
   @media (max-width: 768px) {
     .woocommerce .woocommerce-billing-fields {
       padding: 19px 20px 0; } }
@@ -1856,7 +1856,7 @@ ul.product_list_widget {
   margin-top: -14px; }
 
 .woocommerce-account .register p {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 24px; }
 
 @media (min-width: 769px) {
   .woocommerce-account .register {
@@ -1888,7 +1888,7 @@ ul.product_list_widget {
           color: #f14e4e; }
 
 .woocommerce-account .woocommerce .woocommerce-pagination {
-  margin-top: 1.625rem; }
+  margin-top: 26px; }
   .woocommerce-account .woocommerce .woocommerce-pagination .woocommerce-button--previous {
     float: left; }
   .woocommerce-account .woocommerce .woocommerce-pagination .woocommerce-button--next {
@@ -1905,7 +1905,7 @@ ul.product_list_widget {
   .woocommerce-account .woocommerce-MyAccount-content h3 {
     margin-top: 0; }
   .woocommerce-account .woocommerce-MyAccount-content p {
-    margin-bottom: 26px; }
+    margin-bottom: 24px; }
     .woocommerce-account .woocommerce-MyAccount-content p span em {
       font-size: 13px; }
   body.woocommerce-account .entry-content .woocommerce-notices-wrapper ~ p {
@@ -1956,7 +1956,7 @@ ul.product_list_widget {
         .woocommerce-account .woocommerce-MyAccount-content .woocommerce-Address.col-2 {
           padding-left: 0; } }
   .woocommerce-account .woocommerce-MyAccount-content .woocommerce-address-fields__field-wrapper {
-    margin-bottom: 1.625rem; }
+    margin-bottom: 26px; }
   .woocommerce-account .woocommerce-MyAccount-content .password-change {
     margin-bottom: 15px; }
 
