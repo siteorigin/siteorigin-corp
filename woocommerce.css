@@ -276,9 +276,6 @@ input.button.added:after,
   top: 50%;
   width: 30px; }
 
-.woocommerce .blockOverlay[style] {
-  background-color: transparent !important; }
-
 .woocommerce .woocommerce-breadcrumb {
   color: #929292;
   font-size: 0.8666em;
