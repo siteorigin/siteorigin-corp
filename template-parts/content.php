@@ -17,7 +17,7 @@
 			<?php siteorigin_corp_offset_post_meta(); ?>
 		</div>
 	<?php endif; ?>
-	
+
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php siteorigin_corp_entry_thumbnail(); ?>
 	<?php endif; ?>	
