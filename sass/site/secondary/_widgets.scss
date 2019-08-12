@@ -162,14 +162,14 @@
 .widget_recent_comments .recentcomments {
 	color: $color__text-light;
 	margin-bottom: 16px;
-	
+
 	&:last-of-type {
 		margin-bottom: 0;
 	}
-	
+
 	.comment-author-link {
 		color: $color__text-dark;
-		
+
 		&:before {
 			color: $color__text-light;
 			content: "\e91f";
@@ -179,9 +179,25 @@
 			vertical-align: top;
 		}
 	}
-	
+
 	a {
 		color: $color__text-dark;
+	}
+}
+
+.site-footer .widget_recent_comments .recentcomments {
+	color: $color__footer-widget-text;
+	
+	.comment-author-link {
+		color: $color__footer-widget-text;
+		
+		&:before {
+			color: $color__footer-widget-text;
+		}
+	}
+
+	a {
+		color: $color__footer-widget-link;
 	}
 }
 

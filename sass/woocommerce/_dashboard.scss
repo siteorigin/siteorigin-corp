@@ -19,12 +19,15 @@
 		}
 
 		.lost_password {
-			font-size: 13px;
 			margin-top: -14px;
 		}
 	}
 
 	.register {
+
+		p {
+			margin-bottom: 24px;
+		}
 
 		@media (min-width: 769px) {
 			max-width: 75%;
@@ -52,6 +55,10 @@
 
 			li {
 				line-height: 2.5;
+				
+				&.is-active a {
+					font-weight: bold;
+				}		
 
 				a {
 					color: $color__text-medium;
@@ -61,6 +68,18 @@
 					}
 				}
 			}
+		}
+	}
+
+	.woocommerce .woocommerce-pagination {
+		margin-top: 26px;
+
+		.woocommerce-button--previous {
+			float: left;
+		}
+
+		.woocommerce-button--next {
+			float: right;
 		}
 	}
 
@@ -79,11 +98,15 @@
 		}
 
 		p {
-			margin-bottom: 26px;
+			margin-bottom: 24px;
 
 			span em {
 				font-size: 13px;
 			}
+		}
+
+		@at-root body.woocommerce-account .entry-content .woocommerce-notices-wrapper ~ p {
+			margin-bottom: 26px;
 		}
 
 		// Tables
@@ -158,6 +181,10 @@
 					padding-left: 0;
 				}
 			}
+		}
+
+		.woocommerce-address-fields__field-wrapper {
+			margin-bottom: 26px;
 		}
 
 		// Password Change.

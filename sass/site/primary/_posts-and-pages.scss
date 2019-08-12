@@ -129,11 +129,11 @@ body:not(.single) .corp-content-wrapper {
 body:not(.single) .entry-content p {
 
 	&:last-of-type {
-		margin: 0;
+		margin-bottom: 0;
 	}
 
 	&:only-of-type {
-		margin: 0;
+		margin-bottom: 0;
 	}
 }
 

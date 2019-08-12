@@ -8,7 +8,7 @@
 	table {
 		border: 0;
 		margin: 0;
-		
+
 		th,
 		td {
 			border: 0;
@@ -36,10 +36,6 @@
 		}
 	}
 
-	.blockOverlay[style] {
-		background-color: transparent !important;
-	}
-
 	// Breadcrumbs.
 	.woocommerce-breadcrumb {
 		color: $color__text-light;
@@ -48,7 +44,7 @@
 
 		a {
 			color: $color__text-light;
-			
+
 			&:hover {
 				color: $color__accent;
 			}
