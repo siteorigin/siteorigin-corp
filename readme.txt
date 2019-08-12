@@ -96,6 +96,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.4 - 12 August 2019 =
+* Minor style adjustments to WooCommerce dashboard.
+* Minor style adjustments to WooCommerce checkout and my account login pages.
+* Minor style fixes to ensure sidebar widgets display well in a dark footer.
+* Fixed single post meta display issue when offset blog layout is used.
+
 = 1.11.3 - 26 July 2019 =
 * Change bottom bar link separator to use a hyphen.
 * Updated SiteOrigin Settings framework.
