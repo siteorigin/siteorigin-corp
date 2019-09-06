@@ -450,7 +450,7 @@ function siteorigin_corp_post_meta( $cats = true, $post_id = '' ) {
 	}
 
 	if ( ( is_home() || is_archive() || is_search() ) && siteorigin_setting( 'blog_post_date' ) ) {
-		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
+		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></a></span>';
 	}
 
 	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
