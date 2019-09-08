@@ -120,6 +120,16 @@ jQuery( function( $ ) {
 				if ( target.length ) {
 					jQuery( 'html, body' ).animate( {
 						scrollTop: target.offset().top - headerHeight
+					},
+					{
+						start: function() {
+						   jQuery( 'html, body' ).on('wheel touchmove', function() {
+						       jQuery( 'html, body' ).stop().off( 'wheel touchmove' );
+						   } );
+						},
+						complete: function() {
+							 jQuery( 'html, body' ).off( 'wheel touchmove' );
+						},
 					}, 1200 );
 					return false;
 				}
