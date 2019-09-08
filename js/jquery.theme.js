@@ -81,19 +81,22 @@ jQuery( function( $ ) {
 	} );
 
 	// Smooth scroll from internal page anchors.
-	var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
-		isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
-		isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
-		headerHeight;
+	headerHeight = function() {
+		var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
+			isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
+			isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
+			headerHeight;
 
-	// Header height. 1px to account for header shadow.
-	if ( isStickyHeader && isAdminBar && jQuery( window ).width() > 600 ) { // From 600px the admin bar isn't sticky so we shouldn't take its height into account.
-		headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 1;
-	} else if ( isStickyHeader ) {
-		headerHeight = $( 'header' ).outerHeight() - 1;
-	} else {
-		headerHeight = 0;
-	}
+		// Header height. 1px to account for header shadow.
+		if ( isStickyHeader && isAdminBar && jQuery( window ).width() > 600 ) { // From 600px the admin bar isn't sticky so we shouldn't take its height into account.
+			headerHeight = adminBarHeight + $( 'header' ).outerHeight() - 1;
+		} else if ( isStickyHeader ) {
+			headerHeight = $( 'header' ).outerHeight() - 1;
+		} else {
+			headerHeight = 0;
+		}
+		return headerHeight;
+	};
 
 	$.fn.siteoriginCorpSmoothScroll = function() {
 
@@ -119,7 +122,7 @@ jQuery( function( $ ) {
 				target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
 					jQuery( 'html, body' ).animate( {
-						scrollTop: target.offset().top - headerHeight
+						scrollTop: target.offset().top - headerHeight()
 					}, 1200 );
 					return false;
 				}
@@ -138,7 +141,7 @@ jQuery( function( $ ) {
 			var target = jQuery( window.location.hash );
 			if ( target.length ) {
 				jQuery( 'html, body' ).animate( {
-					scrollTop: target.offset().top - headerHeight
+					scrollTop: target.offset().top - headerHeight()
 				}, 0 );
 				return false;
 			}
@@ -167,10 +170,10 @@ jQuery( function( $ ) {
 			var thisHeight = jQuery( this ).outerHeight();
 
 			// Where the section begins.
-			var thisBegin = offset - headerHeight;
+			var thisBegin = offset - headerHeight();
 
 			// Where the section ends.
-			var thisEnd = offset + thisHeight - headerHeight;
+			var thisEnd = offset + thisHeight - headerHeight();
 
 			// If position of the cursor is inside of the this section.
 			if ( scrollTop >= thisBegin && scrollTop <= thisEnd ) {
