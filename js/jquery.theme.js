@@ -122,6 +122,7 @@ jQuery( function( $ ) {
 						scrollTop: target.offset().top - headerHeight
 					},
 					{
+						duration: 1200,
 						start: function() {
 							jQuery( 'html, body' ).on('wheel touchmove', function() {
 								jQuery( 'html, body' ).stop().off( 'wheel touchmove' );
@@ -130,7 +131,7 @@ jQuery( function( $ ) {
 						complete: function() {
 							 jQuery( 'html, body' ).finish().off( 'wheel touchmove' );
 						},
-					}, 1200 );
+					} );
 					return false;
 				}
 			}
