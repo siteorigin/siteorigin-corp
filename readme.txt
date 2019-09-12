@@ -96,6 +96,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.11.5 - 12 September 2019 =
+* Fixed post meta incorrect closing tag order.
+* Changed sticky header height calculation to allow for re-calculation.
+* Fixed smooth scroll sticky anchor when mobile menu in use.
+
 = 1.11.4 - 12 August 2019 =
 * Minor style adjustments to WooCommerce dashboard.
 * Minor style adjustments to WooCommerce checkout and my account login pages.
