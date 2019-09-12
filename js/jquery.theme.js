@@ -122,8 +122,19 @@ jQuery( function( $ ) {
 				target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
 					jQuery( 'html, body' ).animate( {
-						scrollTop: target.offset().top - headerHeight()
-					}, 1200 );
+						scrollTop: target.offset().top - headerHeight
+					},
+					{
+						duration: 1200,
+						start: function() {
+							jQuery( 'html, body' ).on('wheel touchmove', function() {
+								jQuery( 'html, body' ).stop().off( 'wheel touchmove' );
+							} );
+						},
+						complete: function() {
+							 jQuery( 'html, body' ).finish().off( 'wheel touchmove' );
+						},
+					} );
 					return false;
 				}
 			}
