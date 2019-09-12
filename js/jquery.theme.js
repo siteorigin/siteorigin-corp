@@ -127,7 +127,7 @@ jQuery( function( $ ) {
 					{
 						duration: 1200,
 						start: function() {
-							$( 'html, body' ).on('wheel touchmove', function() {
+							$( 'html, body' ).on( 'wheel touchmove', function() {
 								$( 'html, body' ).stop().off( 'wheel touchmove' );
 							} );
 						},
