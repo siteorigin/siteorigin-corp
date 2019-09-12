@@ -501,7 +501,7 @@ jQuery( function( $ ) {
 
 				if ( $mhs !== false ) {
 					$mhs.css( 'height', $mh.outerHeight() );
-				}	
+				}
 
 				if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.siteoriginCorpIsVisible() ) {
 					$( 'body' ).addClass( 'topbar-out' );
