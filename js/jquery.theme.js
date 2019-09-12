@@ -112,7 +112,7 @@ jQuery( function( $ ) {
 
 			// Check if there is a section that had same id as the button pressed.
 			if ( $( '.panel-grid [id*=' + idName + ']' ).length > 0 ) {
-				$( '#site-navigation .current' ).removeClass('current');
+				$( '#site-navigation .current' ).removeClass( 'current' );
 				$( alink ).parent( 'li' ).addClass( 'current' );
 			} else {
 				$( '#site-navigation .current' ).removeClass( 'current' );
@@ -132,7 +132,7 @@ jQuery( function( $ ) {
 							} );
 						},
 						complete: function() {
-							 $( 'html, body' ).finish().off( 'wheel touchmove' );
+							$( 'html, body' ).finish().off( 'wheel touchmove' );
 						},
 					} );
 					return false;
