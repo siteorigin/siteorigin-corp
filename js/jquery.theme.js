@@ -122,7 +122,7 @@ jQuery( function( $ ) {
 				target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
 					jQuery( 'html, body' ).animate( {
-						scrollTop: target.offset().top - headerHeight
+						scrollTop: target.offset().top - headerHeight()
 					},
 					{
 						duration: 1200,
