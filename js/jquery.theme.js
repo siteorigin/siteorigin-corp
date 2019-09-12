@@ -427,7 +427,7 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginCorp.logoScale,
 				scaledHeight = imgHeight * siteoriginCorp.logoScale;
 
-			$( ".site-branding img" ).wrap( "<div class='custom-logo-wrapper'></div>");	
+			$( ".site-branding img" ).wrap( "<div class='custom-logo-wrapper'></div>" );
 
 			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
