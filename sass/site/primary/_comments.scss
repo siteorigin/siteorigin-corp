@@ -5,7 +5,7 @@
 .comment-list {
 	margin: 0 0 30px;
 	padding: 0;
-	
+
 	ol.children {
 		margin: 0;
 	}
@@ -36,7 +36,7 @@
 
 		.avatar-container {
 			float: left;
-			
+
 			@media (max-width: 480px) {
 				display: none;
 			}
@@ -45,7 +45,7 @@
 				display: block;
 				border-radius: 50%;
 			}
-		}		
+		}
 
 		.info {
 			line-height: normal;
