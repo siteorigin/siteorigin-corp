@@ -3,7 +3,7 @@
 }
 
 .comment-list {
-	margin: 0 0 30px;
+	margin: 0;
 	padding: 0;
 
 	ol.children {
@@ -205,10 +205,6 @@
 		}
 	}
 
-	.comment-respond {
-		margin-top: 25px;
-	}
-
 	.comment-form-cookies-consent {
 		align-items: center;
 		clear: both;
@@ -237,7 +233,7 @@
 		display: block;
 		clear: both;
 		margin: 0 0 8px;
-		overflow: auto;	
+		overflow: auto;
 
 		input {
 			margin-right: 0;
@@ -247,6 +243,10 @@
 			font-weight: normal;
 		}
 	}
+}
+
+.comment-respond {
+	margin-top: 30px;
 }
 
 .no-comments {

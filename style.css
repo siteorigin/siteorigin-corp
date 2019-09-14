@@ -2599,7 +2599,7 @@ body:not(.single) .entry-content p:only-of-type {
   margin-top: 60px; }
 
 .comment-list {
-  margin: 0 0 30px;
+  margin: 0;
   padding: 0; }
   .comment-list ol.children {
     margin: 0; }
@@ -2748,9 +2748,6 @@ body:not(.single) .entry-content p:only-of-type {
     #commentform .logged-in-as a:hover {
       color: #f14e4e; }
 
-#commentform .comment-respond {
-  margin-top: 25px; }
-
 #commentform .comment-form-cookies-consent {
   align-items: center;
   clear: both;
@@ -2777,6 +2774,9 @@ body:not(.single) .entry-content p:only-of-type {
     margin-right: 0; }
   #commentform .comment-subscription-form label {
     font-weight: normal; }
+
+.comment-respond {
+  margin-top: 30px; }
 
 .no-comments {
   font-size: 14px;
