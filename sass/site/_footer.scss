@@ -1,11 +1,11 @@
 .site-footer {
 	background: $color__footer-background;
 	margin-top: $footer__margin;
-	
+
 	.no-footer-margin & {
 		margin-top: 0;
 	}
-	
+
 	.widgets {
 		@include clearfix;
 		padding-top: $footer__padding;
@@ -22,12 +22,12 @@
 			box-sizing: content-box;
 			margin: 0 2.75% 95px 0;
 			float: left;
-			
+
 			.widget-title {
 				color: $color__footer-widget-title;
 				font-size: 1.0666em;
 				font-weight: 500;
-				
+
 				~ * {
 					color: $color__footer-widget-text;
 				}
@@ -35,7 +35,7 @@
 
 			a {
 				color: $color__footer-widget-link;
-				
+
 				&:hover {
 					color: $color__footer-widget-link-hover;
 				}
@@ -61,7 +61,7 @@
 		text-align: left;
 
 		span {
-			
+
 			&:after {
 				content: "\002d";
 				display: inline-block;
@@ -75,7 +75,7 @@
 				}
 			}
 		}
-		
+
 		@media (max-width: 768px) {
 			float: none;
 			text-align: center;
@@ -91,7 +91,7 @@
 
 		a {
 			color: $color__bottom-bar-link;
-			
+
 			&:hover {
 				color: $color__bottom-bar-link-hover;
 			}
@@ -108,7 +108,7 @@
 			-webkit-justify-content: space-between;
 			justify-content: space-between;
 			width: 100%;
-				
+
 			@media (max-width: 768px) {
 				flex-direction: column;
 			}
@@ -123,14 +123,14 @@
 		.widget {
 			display: inline-block;
 			margin: 0 0 0 15px;
-			
+
 			@media (max-width: 768px) {
 				margin: 0;
 				padding-top: 15px;
 				text-align: center;
 				width: 100%;
 			}
-			
+
 			a {
 
 			}
