@@ -2825,14 +2825,13 @@ body:not(.single) .entry-content p:only-of-type {
       width: 7.525%; }
     .site-footer .widgets .widget {
       box-sizing: content-box;
+      color: #b4b5b8;
       margin: 0 2.75% 95px 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
         color: #fff;
         font-size: 1.0666em;
         font-weight: 500; }
-        .site-footer .widgets .widget .widget-title ~ * {
-          color: #b4b5b8; }
       .site-footer .widgets .widget a {
         color: #ffffff; }
         .site-footer .widgets .widget a:hover {
