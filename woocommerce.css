@@ -522,9 +522,8 @@ input.button.added:after,
         background: none; }
     .woocommerce .products .product .star-rating {
       display: block;
-      float: left;
-      font-size: 13px;
-      margin: 0 auto 10px; }
+      font-size: 0.866rem;
+      margin: 6px auto 10px; }
     .woocommerce .products .product .price {
       display: block;
       font-size: 14px;
@@ -682,7 +681,7 @@ input.button.added:after,
   .woocommerce .product .entry-title {
     font-size: 24px;
     text-transform: uppercase; }
-  .woocommerce .product .star-rating {
+  .woocommerce .product .woocommerce-product-rating .star-rating {
     float: left;
     font-size: 14px;
     margin: 6px 5px 0 0; }
