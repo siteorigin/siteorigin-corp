@@ -321,7 +321,7 @@
 						visibility: visible;
 					}
 
-					@at-root .woocommerce-product-overlay#{&} img {
+					@at-root .woocommerce-product-overlay .products .product .loop-product-thumbnail:hover img {
 						opacity: 0.3;
 					}
 				}
