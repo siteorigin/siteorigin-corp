@@ -13,18 +13,18 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_change_hooks' ) ) :
 function siteorigin_corp_woocommerce_change_hooks() {
 
 	// Modify the archive content.
-	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open' );
 	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-	add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_corp_woocommerce_archive_product_image', 10 );
-	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+	add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_corp_woocommerce_archive_product_image' );
+	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open' );
 	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 5 );
 	add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
 	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
@@ -37,7 +37,7 @@ function siteorigin_corp_woocommerce_change_hooks() {
 	add_action( 'siteorigin_corp_woocommerce_quick_view_images', 'siteorigin_corp_woocommerce_quick_view_image', 5 );
 	add_action( 'siteorigin_corp_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
 	add_action( 'siteorigin_corp_woocommerce_quick_view_title', 'woocommerce_template_single_rating', 15 );
-	add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_price', 10 );
+	add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_price' );
 	add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 	add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );	
 
