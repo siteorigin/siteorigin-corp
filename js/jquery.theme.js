@@ -142,7 +142,7 @@ jQuery( function( $ ) {
 	};
 
 	$( window ).load( function() {
-		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
+		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .woocommerce-review-link[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
 	} );
 
 	// Adjust for sticky header when linking from external anchors.
