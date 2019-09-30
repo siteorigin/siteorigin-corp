@@ -96,7 +96,7 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
-= 1.11.6 - 29 September 2019 =
+= 1.11.6 - 30 September 2019 =
 * Minor comments styling improvements.
 * Compatibility fixes for SiteOrigin Premium WooCommerce Template Builder.
 * Added missing product hover overlay for upsells in the cart.
