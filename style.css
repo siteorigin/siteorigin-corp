@@ -2599,7 +2599,7 @@ body:not(.single) .entry-content p:only-of-type {
   margin-top: 60px; }
 
 .comment-list {
-  margin: 0 0 30px;
+  margin: 0;
   padding: 0; }
   .comment-list ol.children {
     margin: 0; }
@@ -2748,9 +2748,6 @@ body:not(.single) .entry-content p:only-of-type {
     #commentform .logged-in-as a:hover {
       color: #f14e4e; }
 
-#commentform .comment-respond {
-  margin-top: 25px; }
-
 #commentform .comment-form-cookies-consent {
   align-items: center;
   clear: both;
@@ -2778,11 +2775,14 @@ body:not(.single) .entry-content p:only-of-type {
   #commentform .comment-subscription-form label {
     font-weight: normal; }
 
+.comment-respond {
+  margin-top: 30px; }
+
 .no-comments {
   font-size: 14px;
   font-weight: bold;
   font-weight: 600;
-  margin: 0; }
+  margin: 30px 0 0; }
 
 .commentform-error {
   font-size: 14px;
@@ -2825,14 +2825,13 @@ body:not(.single) .entry-content p:only-of-type {
       width: 7.525%; }
     .site-footer .widgets .widget {
       box-sizing: content-box;
+      color: #b4b5b8;
       margin: 0 2.75% 95px 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
         color: #fff;
         font-size: 1.0666em;
         font-weight: 500; }
-        .site-footer .widgets .widget .widget-title ~ * {
-          color: #b4b5b8; }
       .site-footer .widgets .widget a {
         color: #ffffff; }
         .site-footer .widgets .widget a:hover {

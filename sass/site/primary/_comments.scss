@@ -3,9 +3,9 @@
 }
 
 .comment-list {
-	margin: 0 0 30px;
+	margin: 0;
 	padding: 0;
-	
+
 	ol.children {
 		margin: 0;
 	}
@@ -36,7 +36,7 @@
 
 		.avatar-container {
 			float: left;
-			
+
 			@media (max-width: 480px) {
 				display: none;
 			}
@@ -45,7 +45,7 @@
 				display: block;
 				border-radius: 50%;
 			}
-		}		
+		}
 
 		.info {
 			line-height: normal;
@@ -205,10 +205,6 @@
 		}
 	}
 
-	.comment-respond {
-		margin-top: 25px;
-	}
-
 	.comment-form-cookies-consent {
 		align-items: center;
 		clear: both;
@@ -237,7 +233,7 @@
 		display: block;
 		clear: both;
 		margin: 0 0 8px;
-		overflow: auto;	
+		overflow: auto;
 
 		input {
 			margin-right: 0;
@@ -249,11 +245,15 @@
 	}
 }
 
+.comment-respond {
+	margin-top: 30px;
+}
+
 .no-comments {
 	font-size: 14px;
 	font-weight: bold;
 	font-weight: 600;
-	margin: 0;
+	margin: 30px 0 0;
 }
 
 .commentform-error {

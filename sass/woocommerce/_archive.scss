@@ -321,7 +321,7 @@
 						visibility: visible;
 					}
 
-					@at-root .woocommerce-product-overlay#{&} img {
+					@at-root .woocommerce-product-overlay .products .product .loop-product-thumbnail:hover img {
 						opacity: 0.3;
 					}
 				}
@@ -354,10 +354,9 @@
 			// Star rating.
 			.star-rating {
 				display: block;
-				float: left;
-				font-size: 13px;
-				margin: 0 auto 10px;
-			}		
+				font-size: 0.866rem;
+				margin: 6px auto 10px;
+			}
 
 			// Product price.
 			.price {

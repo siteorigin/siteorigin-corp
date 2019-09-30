@@ -7,7 +7,7 @@
 
 		label {
 			font-weight: 600;
-		} 
+		}
 	}
 }
 
@@ -28,7 +28,7 @@
 
 		.form-row-last {
 			width: 60%;
-			
+
 			@media (max-width: 768px) {
 				width: 50%;
 			}
@@ -54,6 +54,31 @@
 		}
 	}
 
+	.woocommerce-shipping-fields {
+
+		@media (max-width: 768px) {
+			padding: 0 20px 0;
+		}
+
+		input[type="checkbox"] {
+			margin-right: 5px;
+		}
+
+		.shipping_address {
+			margin-bottom: 30px;
+		}
+	}
+
+	.panel-grid-cell .woocommerce-shipping-fields {
+
+		@media (max-width: 768px) {
+
+			h3 {
+				margin-top: 0;
+			}
+		}
+	}
+
 	.woocommerce-additional-fields {
 
 		@media (max-width: 768px) {
@@ -63,7 +88,7 @@
 		h3 {
 			margin: 0 0 11px;
 			padding-top: 25px;
-			
+
 			@media (max-width: 768px) {
 				padding-top: 0;
 			}
@@ -75,7 +100,7 @@
 		clear: right;
 		float: right;
 		width: 48%;
-		
+
 		@media (max-width: 768px) {
 			clear: none;
 			float: none;
@@ -91,12 +116,24 @@
 			tr {
 				border: none;
 				border-bottom: 1px solid $color__background-hr-dark;
-				
+
 				ul {
 					list-style: none;
 					margin: 0;
 				}
 			}
+		}
+	}
+
+	// Order review heading in SO WC Template Builder.
+	.panel-grid-cell #order_review_heading {
+		clear: right;
+		float: right;
+		width: 48%;
+
+		@media (max-width: 768px) {
+			padding: 0 20px;
+			width: 100%;
 		}
 	}
 
@@ -173,10 +210,10 @@
 						font-size: 12px; 
 						font-weight: normal;
 						margin-left: 5px;
-						
+
 						@media (max-width: 480px) {
 							margin-left: 0;
-						}						
+						}
 					} 
 				}
 
@@ -189,7 +226,7 @@
 					position: absolute;
 					right: 0;
 					top: 8px;
-					
+
 					@media (max-width: 480px) {
 						display: block;
 						padding-top: 5px;
@@ -200,7 +237,7 @@
 				.payment_box {
 					font-size: 14px;
 					padding: 10px 0 0;
-					
+
 					&.payment_method_paypal {
 						padding-top: 20px;
 					}
