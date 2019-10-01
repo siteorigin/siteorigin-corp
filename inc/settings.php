@@ -477,12 +477,28 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 				'quick_view' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Quick View', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a product Quick View button on product archive pages.', 'siteorigin-corp' ),
+				),
+				'quick_view_location' => array(
+					'type'        => 'radio',
+					'label'       => esc_html__( 'Quick View Location', 'siteorigin-corp' ),
+					'options' => array(
+						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
+						'below'  => esc_html__( 'Below Thumbnail', 'siteorigin-corp' ),
+					),
 				),
 				'add_to_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display an Add to Cart button on product archive pages.', 'siteorigin-corp' ),
+				),
+				'add_to_cart_location' => array(
+					'type'        => 'radio',
+					'label'       => esc_html__( 'Add to Cart Location', 'siteorigin-corp' ),
+					'options' => array(
+						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
+						'below'  => esc_html__( 'Below Thumbnail', 'siteorigin-corp' ),
+					),
 				),
 			)
 		)
@@ -1645,8 +1661,10 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['woocommerce_shop_sidebar']             = 'right';
 	$defaults['woocommerce_product_gallery']          = 'slider-lightbox';
 	$defaults['woocommerce_mini_cart']                = false;
-	$defaults['woocommerce_add_to_cart']              = false;
 	$defaults['woocommerce_quick_view']               = false;
+	$defaults['woocommerce_quick_view_location']      = 'hover';
+	$defaults['woocommerce_add_to_cart']              = false;
+	$defaults['woocommerce_add_to_cart_location']     = 'hover';
 
 	return $defaults;
 }
