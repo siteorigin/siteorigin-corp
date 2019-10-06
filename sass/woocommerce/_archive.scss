@@ -445,12 +445,6 @@
 				margin-bottom: 0;
 			}
 
-			// > .button {
-			// 	background: #e4e6eb;
-			// 	color: $color__text-medium;
-			// 	display: inline-block;
-			// }
-
 			> .button,
 			.panel-grid-cell .button {
 				background: transparent;
@@ -474,6 +468,12 @@
 				&:only-of-type {
 					margin-right: 0;
 				}
+			}
+
+			.added_to_cart {
+				display: block;
+				font-size: 14px;
+				margin-top: 6px;
 			}
 		}
 	}

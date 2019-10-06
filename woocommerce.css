@@ -102,7 +102,7 @@ input.button.added:after,
   font-size: .9em;
   font-family: 'WooCommerce';
   content: '\e017';
-  margin-left: 1em;
+  margin-left: 0.5em;
   vertical-align: baseline; }
 
 /*--------------------------------------------------------------
@@ -606,6 +606,10 @@ input.button.added:after,
       .woocommerce .products .product .panel-grid-cell .button:last-of-type,
       .woocommerce .products .product .panel-grid-cell .button:only-of-type {
         margin-right: 0; }
+    .woocommerce .products .product .added_to_cart {
+      display: block;
+      font-size: 14px;
+      margin-top: 6px; }
 
 .woocommerce .price {
   color: #626262; }
