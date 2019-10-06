@@ -1089,16 +1089,18 @@ ul.product_list_widget {
       border: none !important; }
     ul.cart_list li a,
     ul.product_list_widget li a {
-      border: none;
+      border-bottom: none;
       color: #2d2d2d;
       display: block;
       font-size: 14px;
       font-weight: 600;
       line-height: normal;
       letter-spacing: .75px;
+      padding-right: 20px;
       text-transform: uppercase; }
       ul.cart_list li a:hover,
       ul.product_list_widget li a:hover {
+        border-bottom: none;
         color: #f14e4e; }
     ul.cart_list li ins,
     ul.product_list_widget li ins {
@@ -1124,9 +1126,13 @@ ul.product_list_widget {
 .widget_shopping_cart .cart_list li .remove {
   font-size: 20px;
   line-height: 1;
+  padding: 0;
   position: absolute;
   right: 0;
   top: 0; }
+  .widget_shopping_cart .cart_list li .remove:hover {
+    color: #f14e4e;
+    text-decoration: none; }
 
 .widget_shopping_cart .total {
   border-top: 1px solid #e6e6e6;
