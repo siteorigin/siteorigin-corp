@@ -480,7 +480,7 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 					'description' => esc_html__( 'Display a product Quick View button on product archive pages.', 'siteorigin-corp' ),
 				),
 				'quick_view_location' => array(
-					'type'        => 'radio',
+					'type'        => 'select',
 					'label'       => esc_html__( 'Quick View Location', 'siteorigin-corp' ),
 					'options' => array(
 						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
@@ -493,7 +493,7 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 					'description' => esc_html__( 'Display an Add to Cart button on product archive pages.', 'siteorigin-corp' ),
 				),
 				'add_to_cart_location' => array(
-					'type'        => 'radio',
+					'type'        => 'select',
 					'label'       => esc_html__( 'Add to Cart Location', 'siteorigin-corp' ),
 					'options' => array(
 						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
