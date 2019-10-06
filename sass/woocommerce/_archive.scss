@@ -455,18 +455,13 @@
 				font-size: 14px;
 				letter-spacing: 1px;
 				line-height: normal;
-				margin: 6px 10px 0 0;
+				margin: 6px 5px 0;
 				padding: 9px 25px;
 				transition: .3s;
 
 				&:hover {
 					border-color: $color__accent;
 					color: $color__accent;
-				}
-
-				&:last-of-type,
-				&:only-of-type {
-					margin-right: 0;
 				}
 			}
 

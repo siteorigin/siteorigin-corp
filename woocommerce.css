@@ -595,17 +595,13 @@ input.button.added:after,
       font-size: 14px;
       letter-spacing: 1px;
       line-height: normal;
-      margin: 6px 10px 0 0;
+      margin: 6px 5px 0;
       padding: 9px 25px;
       transition: .3s; }
       .woocommerce .products .product > .button:hover,
       .woocommerce .products .product .panel-grid-cell .button:hover {
         border-color: #f14e4e;
         color: #f14e4e; }
-      .woocommerce .products .product > .button:last-of-type, .woocommerce .products .product > .button:only-of-type,
-      .woocommerce .products .product .panel-grid-cell .button:last-of-type,
-      .woocommerce .products .product .panel-grid-cell .button:only-of-type {
-        margin-right: 0; }
     .woocommerce .products .product .added_to_cart {
       display: block;
       font-size: 14px;
