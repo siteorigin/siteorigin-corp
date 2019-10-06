@@ -83,16 +83,18 @@ ul.product_list_widget {
 		}
 
 		a {
-			border: none;
+			border-bottom: none;
 			color: $color__text-dark;
 			display: block;
 			font-size: 14px;
 			font-weight: 600;
 			line-height: normal;
 			letter-spacing: .75px;
+			padding-right: 20px;
 			text-transform: uppercase;
 
 			&:hover {
+				border-bottom: none;
 				color: $color__accent;
 			}
 		}
@@ -131,9 +133,15 @@ ul.product_list_widget {
 			.remove {
 				font-size: 20px;
 				line-height: 1;
+				padding: 0;
 				position: absolute;
 				right: 0;
 				top: 0;
+
+				&:hover {
+					color: $color__accent;
+					text-decoration: none;
+				}	
 			}
 		}
 	}
