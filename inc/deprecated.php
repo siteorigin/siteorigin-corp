@@ -31,3 +31,16 @@ function siteorigin_corp_excerpt_more( $more ) {
 }
 endif;
 add_filter( 'excerpt_more', 'siteorigin_corp_excerpt_more' );
+
+if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image_buttons' ) ) :
+/**
+ * Archive product image buttons.
+ */
+function siteorigin_corp_woocommerce_archive_product_image_buttons() { ?>
+	<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) ) {
+		siteorigin_corp_woocommerce_quick_view_button();
+	} if ( siteorigin_setting( 'woocommerce_add_to_cart' ) ) {
+		woocommerce_template_loop_add_to_cart();
+	} ?>
+<?php }
+endif;

@@ -477,12 +477,28 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 				'quick_view' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Quick View', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display a Quick View button on hover on product archive pages.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display a product Quick View button on product archive pages.', 'siteorigin-corp' ),
+				),
+				'quick_view_location' => array(
+					'type'        => 'select',
+					'label'       => esc_html__( 'Quick View Location', 'siteorigin-corp' ),
+					'options' => array(
+						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
+						'below'  => esc_html__( 'Below Thumbnail', 'siteorigin-corp' ),
+					),
 				),
 				'add_to_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Add to Cart', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display an Add to Cart button on hover on product archive pages.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display an Add to Cart button on product archive pages.', 'siteorigin-corp' ),
+				),
+				'add_to_cart_location' => array(
+					'type'        => 'select',
+					'label'       => esc_html__( 'Add to Cart Location', 'siteorigin-corp' ),
+					'options' => array(
+						'hover'  => esc_html__( 'Thumbnail Hover', 'siteorigin-corp' ),
+						'below'  => esc_html__( 'Below Thumbnail', 'siteorigin-corp' ),
+					),
 				),
 			)
 		)
@@ -1182,14 +1198,22 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce a .star-rating {
 	color: ${typography_accent};
 	}
+	.woocommerce .products .product .loop-product-thumbnail .added_to_cart {
+	background: ${typography_accent};
+	}
+	.woocommerce .products .product .loop-product-thumbnail .added_to_cart:hover {
+	background: .rgba( ${typography_accent}, .8);
+	}
 	.woocommerce .products .product .woocommerce-loop-product__title:hover,.woocommerce .products .product .woocommerce-loop-category__title:hover {
 	color: ${typography_accent};
 	}
-	.woocommerce .products .product .added_to_cart {
-	background: ${typography_accent};
+	.woocommerce .products .product > .button,.woocommerce .products .product .panel-grid-cell .button {
+	border-color: ${typography_heading};
+	color: ${typography_heading};
 	}
-	.woocommerce .products .product .added_to_cart:hover {
-	background: .rgba( ${typography_accent}, .8);
+	.woocommerce .products .product > .button:hover,.woocommerce .products .product .panel-grid-cell .button:hover {
+	border-color: ${typography_accent};
+	color: ${typography_accent};
 	}
 	.woocommerce .price {
 	color: ${typography_text};
@@ -1197,38 +1221,38 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	.woocommerce .price ins {
 	color: ${typography_accent};
 	}
-	.woocommerce .product .summary .woocommerce-review-link,.woocommerce .product .product-info-wrapper .woocommerce-review-link {
+	.woocommerce .product .woocommerce-review-link {
 	color: ${typography_secondary_text};
 	}
-	.woocommerce .product .summary .woocommerce-review-link:hover,.woocommerce .product .product-info-wrapper .woocommerce-review-link:hover {
+	.woocommerce .product .woocommerce-review-link:hover {
 	color: ${typography_accent};
 	}
-	.woocommerce .product .summary .variations .label label,.woocommerce .product .product-info-wrapper .variations .label label {
+	.woocommerce .product .variations .label label {
 	color: ${typography_heading};
 	}
-	.woocommerce .product .summary .variations .reset_variations,.woocommerce .product .product-info-wrapper .variations .reset_variations {
+	.woocommerce .product .variations .reset_variations {
 	color: ${typography_text};
 	}
-	.woocommerce .product .summary .variations .reset_variations:hover,.woocommerce .product .product-info-wrapper .variations .reset_variations:hover {
+	.woocommerce .product .variations .reset_variations:hover {
 	color: ${typography_accent};
 	}
-	.woocommerce .product .summary .woocommerce-grouped-product-list td a,.woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a {
+	.woocommerce .product .woocommerce-grouped-product-list td a {
 	color: ${typography_text};
 	}
-	.woocommerce .product .summary .woocommerce-grouped-product-list td a:hover,.woocommerce .product .product-info-wrapper .woocommerce-grouped-product-list td a:hover {
+	.woocommerce .product .woocommerce-grouped-product-list td a:hover {
 	color: ${typography_accent};
 	}
-	.woocommerce .product .summary .stock,.woocommerce .product .product-info-wrapper .stock {
+	.woocommerce .product .stock {
 	color: ${typography_accent};
 	}
-	.woocommerce .product .summary .product_meta,.woocommerce .product .product-info-wrapper .product_meta {
+	.woocommerce .product .product_meta {
 	border-top: 1px solid ${typography_border};
 	color: ${typography_text};
 	}
-	.woocommerce .product .summary .product_meta a,.woocommerce .product .product-info-wrapper .product_meta a {
+	.woocommerce .product .product_meta a {
 	color: ${typography_heading};
 	}
-	.woocommerce .product .summary .product_meta a:hover,.woocommerce .product .product-info-wrapper .product_meta a:hover {
+	.woocommerce .product .product_meta a:hover {
 	color: ${typography_accent};
 	}
 	.woocommerce .product .woocommerce-tabs h2 {
@@ -1645,8 +1669,10 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['woocommerce_shop_sidebar']             = 'right';
 	$defaults['woocommerce_product_gallery']          = 'slider-lightbox';
 	$defaults['woocommerce_mini_cart']                = false;
-	$defaults['woocommerce_add_to_cart']              = false;
 	$defaults['woocommerce_quick_view']               = false;
+	$defaults['woocommerce_quick_view_location']      = 'hover';
+	$defaults['woocommerce_add_to_cart']              = false;
+	$defaults['woocommerce_add_to_cart_location']     = 'hover';
 
 	return $defaults;
 }
