@@ -8,7 +8,7 @@
 		letter-spacing: 1px; 
 		margin: 0 0 15px;
 		text-transform: uppercase;
-		
+
 		// Set the font size of elements below the widget title to 14px.
 		~ * {
 			font-size: 14px;
@@ -18,7 +18,7 @@
 	ul {
 		list-style: none;
 		margin: 0;
-		
+
 		li {
 			line-height: 2; 
 		}
@@ -33,7 +33,7 @@
 
 	a:not(.button) {
 		color: $color__text-medium;
-		
+
 		&:hover {
 			color: $color__accent;
 		}
@@ -53,7 +53,7 @@
 	border: 0;
 	font-size: 13px;
 	margin: 0;
-	
+
 	caption {
 		color: $color__text-dark;
 		font-size: 14px;
@@ -92,7 +92,7 @@
 		td { 
 			padding-bottom: 8px;
 			text-align: center;
-			
+
 			a {
 				color: $color__accent;
 
@@ -109,7 +109,7 @@
 		#next {
 			padding-top: 4px;
 			padding-bottom: 17px;
-			
+
 			a {
 				color: $color__text-dark;
 				margin-left: 10px;
@@ -138,7 +138,7 @@
 
 	li {
 		color: $color__text-light;
-		
+
 		a {
 			color: $color__text-dark;
 			display: inline-block;
@@ -187,10 +187,10 @@
 
 .site-footer .widget_recent_comments .recentcomments {
 	color: $color__footer-widget-text;
-	
+
 	.comment-author-link {
 		color: $color__footer-widget-text;
-		
+
 		&:before {
 			color: $color__footer-widget-text;
 		}
@@ -207,11 +207,11 @@
 .widget_recent_entries li {
 	color: $color__text-light;
 	margin-bottom: 11px;
-	
+
 	&:last-of-type {
 		margin-bottom: 0; 
 	} 
-	
+
 	a {
 		color: $color__text-dark;
 	}
@@ -248,7 +248,7 @@
 
 		a {
 			color: $color__text-dark;
-			
+
 			&:hover {
 				color: $color__text-medium;
 			}
@@ -270,7 +270,7 @@
 
 	input[type="search"] {
 		width: 100%;
-		
+
 		@at-root #secondary & {
 			min-width: 0;
 		}
@@ -282,7 +282,7 @@
 --------------------------------------------------------------*/
 aside.widget.widget_tag_cloud .tagcloud {
 	@extend .tags-links;
-	
+
 	@at-root .site-footer & {
 
 		a:after {

@@ -15,7 +15,7 @@
 	.widget_tag_cloud .tagcloud a {
 		background: none;
 		border: 1px solid $color__text-medium;
-		
+
 		&:hover {
 			background: $color__text-medium;
 			color: #fff;
@@ -69,7 +69,7 @@ ul.product_list_widget {
 		padding-bottom: 20px;
 		position: relative;
 		width: 100%;
-		
+
 		&:first-of-type {
 			margin-top: 0;
 		}
