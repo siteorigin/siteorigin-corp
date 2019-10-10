@@ -2772,7 +2772,9 @@ body:not(.single) .entry-content p:only-of-type {
   margin: 0 0 8px;
   overflow: auto; }
   #commentform .comment-subscription-form input {
-    margin-right: 0; }
+    margin-right: 0;
+    position: relative;
+    top: -1px; }
   #commentform .comment-subscription-form label {
     font-weight: normal; }
 
