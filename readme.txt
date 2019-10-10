@@ -96,6 +96,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.12.0 - 10 October 2019 =
+* Added new settings to `Customize > Theme Settings > WooCommerce` to display archive buttons below the thumbnail.
+
 = 1.11.6 - 30 September 2019 =
 * Minor comments styling improvements.
 * Compatibility fixes for SiteOrigin Premium WooCommerce Template Builder.
