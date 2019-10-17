@@ -707,10 +707,15 @@ input.button.added:after,
   .woocommerce .product .entry-title {
     font-size: 24px;
     text-transform: uppercase; }
+  .woocommerce .product .panel-grid .woocommerce-product-rating {
+    overflow: auto; }
   .woocommerce .product .woocommerce-product-rating .star-rating {
     float: left;
     font-size: 14px;
     margin: 6px 5px 0 0; }
+    .woocommerce .product .panel-grid .woocommerce-product-rating .star-rating {
+      float: none;
+      margin: 0; }
   .woocommerce .product .woocommerce-review-link {
     color: #929292;
     font-size: 13px;
