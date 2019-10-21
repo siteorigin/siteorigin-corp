@@ -13,7 +13,6 @@
  * @license GPL 2.0 
  */
 
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">
