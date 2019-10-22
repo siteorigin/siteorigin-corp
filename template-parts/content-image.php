@@ -12,7 +12,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+
 	<?php if ( siteorigin_corp_get_image() ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>">
