@@ -129,6 +129,23 @@ function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
 
+if ( class_exists( 'LiteSpeed_Cache' ) ) :
+	if ( ! function_exists( 'siteorigin_corp_litespeed_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 */
+		function siteorigin_corp_litespeed_lazy_exclude( $attr, $attachment ) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+				$attr['data-no-lazy'] = 1;
+			}
+
+			return $attr;
+		}
+	endif;
+	add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_litespeed_lazy_exclude', 10, 2 );
+endif;
+
 if ( ! function_exists( 'siteorigin_corp_display_icon' ) ) :
 /**
  * Displays SVG icons.
