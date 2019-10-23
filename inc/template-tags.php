@@ -130,7 +130,7 @@ function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
 
 if ( class_exists( 'LiteSpeed_Cache' ) ) :
-	if ( ! function_exists( 'siteorigin_unwind_litespeed_lazy_exclude' ) ) :
+	if ( ! function_exists( 'siteorigin_corp_litespeed_lazy_exclude' ) ) :
 		/**
 		 * Exclude Logo from LiteSpeed Cache Lazy Load
 		 */
