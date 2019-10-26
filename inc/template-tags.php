@@ -40,6 +40,7 @@ if ( ! function_exists( 'siteorigin_corp_breadcrumbs' ) ) :
  * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
  */
 function siteorigin_corp_breadcrumbs() {
+	if ( siteorigin_page_setting( 'overlap' ) != 'disabled' ) return;
 	if ( function_exists( 'bcn_display' ) ) {
 		?><div class="breadcrumbs bcn">
 			<?php bcn_display(); ?>
@@ -127,6 +128,23 @@ function siteorigin_corp_display_retina_logo( $attr, $attachment ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_display_retina_logo', 10, 2 );
+
+if ( class_exists( 'LiteSpeed_Cache' ) ) :
+	if ( ! function_exists( 'siteorigin_corp_litespeed_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 */
+		function siteorigin_corp_litespeed_lazy_exclude( $attr, $attachment ) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+				$attr['data-no-lazy'] = 1;
+			}
+
+			return $attr;
+		}
+	endif;
+	add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_corp_litespeed_lazy_exclude', 10, 2 );
+endif;
 
 if ( ! function_exists( 'siteorigin_corp_display_icon' ) ) :
 /**
@@ -341,7 +359,7 @@ if ( ! function_exists( 'siteorigin_corp_related_posts' ) ) :
 function siteorigin_corp_related_posts( $post_id ) {
 	if ( function_exists( 'related_posts' ) ) { // Check for YARPP plugin (https://wordpress.org/plugins/yet-another-related-posts-plugin/).
 		related_posts();
-	} elseif ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	} elseif ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_category( $post_id );
@@ -384,7 +402,7 @@ if ( ! function_exists( 'siteorigin_corp_related_projects' ) ) :
  * Displays related posts in single projects.
  */
 function siteorigin_corp_related_projects( $post_id ) {
-	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'related-posts' ) ) {
+	if ( class_exists( 'Jetpack' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
@@ -534,6 +552,7 @@ if ( ! function_exists( 'siteorigin_corp_footer_text' ) ) :
  */
 function siteorigin_corp_footer_text() {
 	$text = siteorigin_setting( 'footer_text' );
+	if ( empty( $text ) ) return;
 	$text = str_replace(
 		array( '{sitename}', '{year}' ),
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),

@@ -121,10 +121,22 @@
 			text-transform: uppercase;
 		}
 
-		.woocommerce-product-rating .star-rating {
-			float: left;
-			font-size: 14px;
-			margin: 6px 5px 0 0;
+		.woocommerce-product-rating {
+
+			@at-root .woocommerce .product .panel-grid .woocommerce-product-rating {
+				overflow: auto;
+			}
+
+			.star-rating {
+				float: left;
+				font-size: 14px;
+				margin: 6px 5px 0 0;
+
+				@at-root .woocommerce .product .panel-grid .woocommerce-product-rating .star-rating {
+					float: none;
+					margin: 0;
+				}
+			}
 		}
 
 		.woocommerce-review-link {

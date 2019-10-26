@@ -3,7 +3,7 @@
 Contributors: siteorigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,15 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.12.1 - 26 October 2019 =
+* Excluded the logo image from LiteSpeed Cache Lazy Load to ensure sticky header functions normally.
+* Prevented breadcrumbs from outputting when the header overlap page setting is used.
+* Minor WooCommerce Templates Product Rating styling improvements.
+* Prevented markup from outputting when the Footer Text field is empty.
+* Jetpack Subscriptions: Minor styling improvements.
+* Added a bottom margin to page featured images.
+* Improved Jetpack Related posts function check.
 
 = 1.12.0 - 10 October 2019 =
 * Added new settings to `Customize > Theme Settings > WooCommerce` to display archive buttons below the thumbnail.

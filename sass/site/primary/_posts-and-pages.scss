@@ -34,7 +34,7 @@
 	line-height: 0;
 	position: relative;
 	text-align: center;
-	
+
 	a {
 		display: block;
 		line-height: 0;
@@ -51,7 +51,7 @@
 			display: inline-block;
 			list-style: none;
 			margin: 0 5px 0 0;
-			
+
 			li {
 				background: rgba(0, 0, 0, .8);
 				color: #fff;
@@ -70,7 +70,8 @@
 	}
 }
 
-.single .site-main > article > .entry-thumbnail {
+.single .site-main > article > .entry-thumbnail,
+.page .site-main > article > .entry-thumbnail {
 	margin: 0 0 25px;
 }
 

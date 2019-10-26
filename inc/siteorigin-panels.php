@@ -43,6 +43,6 @@ function siteorigin_corp_filter_post_loop_widget( $templates ) {
 			}
 		}
 	}
-	return $templates;	
+	return $templates;
 }
 add_filter( 'siteorigin_panels_postloop_templates', 'siteorigin_corp_filter_post_loop_widget', 10, 1 );
