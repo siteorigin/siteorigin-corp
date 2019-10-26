@@ -96,6 +96,15 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.12.1 - 26 October 2019 =
+* Excluded the logo image from LiteSpeed Cache Lazy Load to ensure sticky header functions normally.
+* Prevented breadcrumbs from outputting when the header overlap page setting is used.
+* Minor WooCommerce Templates Product Rating styling improvements.
+* Prevented markup from outputting when the Footer Text field is empty.
+* Jetpack Subscriptions: Minor styling improvements.
+* Added a bottom margin to page featured images.
+* Improved Jetpack Related posts function check.
+
 = 1.12.0 - 10 October 2019 =
 * Added new settings to `Customize > Theme Settings > WooCommerce` to display archive buttons below the thumbnail.
 
