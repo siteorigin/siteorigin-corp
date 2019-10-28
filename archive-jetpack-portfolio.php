@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+			<?php if ( siteorigin_page_setting( 'page_title' ) && siteorigin_page_setting( 'overlap' ) == 'disabled' ) : ?>
 				<header class="page-header">
 					<?php 
 						the_archive_title( '<h1 class="page-title">', '</h1>' ); 
