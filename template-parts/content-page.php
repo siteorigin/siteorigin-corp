@@ -17,8 +17,12 @@
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
-	
-	<?php if ( siteorigin_page_setting( 'overlap' ) == 'disabled' || siteorigin_page_setting( 'overlap' ) != 'disabled' && ( has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) ) : ?>
+
+	<?php if (
+		siteorigin_page_setting( 'overlap' ) == 'disabled' ||
+		siteorigin_page_setting( 'overlap' ) != 'disabled' &&
+		( has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) ) :
+	?>
 		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
