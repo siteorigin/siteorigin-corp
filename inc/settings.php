@@ -426,16 +426,22 @@ function siteorigin_corp_settings_init() {
 				),
 				'padding' => array(
 					'type'        => 'measurement',
-					'label'       => esc_html__( 'Padding', 'siteorigin-corp' ),
+					'label'       => esc_html__( 'Footer Padding', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer widget area top and bottom padding.', 'siteorigin-corp' ),
 					'live'        => true,
 				),
 				'margin' => array(
 					'type'        => 'measurement',
-					'label'       => esc_html__( 'Top Margin', 'siteorigin-corp' ),
+					'label'       => esc_html__( 'Footer Top Margin', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Footer top margin. The space between the footer and content.', 'siteorigin-corp' ),
 					'live'        => true,
 				),
+				'bottom_bar_padding' => array(
+					'type'        => 'measurement',
+					'label'       => esc_html__( 'Bottom Bar Padding', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Bottom bar top and bottom padding.', 'siteorigin-corp' ),
+					'live'        => true,
+				),				
 			),
 		),
 	) ) );
@@ -1077,6 +1083,7 @@ $css .= '/* style */
 	.site-footer .bottom-bar {
 	background: ${footer_bottom_bar_background};
 	color: ${footer_bottom_bar_text};
+	padding: ${footer_bottom_bar_padding} 0;
 	}
 	.site-footer .bottom-bar a {
 	color: ${footer_bottom_bar_link};
@@ -1669,6 +1676,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['footer_bottom_bar_background']         = '#2f333b';
 	$defaults['footer_padding']                       = '95px';
 	$defaults['footer_margin']                        = '80px';
+	$defaults['footer_bottom_bar_padding']            = '25px';
 
 	$defaults['woocommerce_shop_sidebar']             = 'right';
 	$defaults['woocommerce_product_gallery']          = 'slider-lightbox';

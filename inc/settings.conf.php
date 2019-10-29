@@ -49,6 +49,7 @@ return array(
 		'footer_bottom_bar_background'         => 'color__bottom-bar-background',
 		'footer_padding'                       => 'footer__padding',
 		'footer_margin'                        => 'footer__margin',
+		'footer_bottom_bar_padding'            => 'bottom__bar-padding',
 
 	),
 	'stylesheets' => array(
