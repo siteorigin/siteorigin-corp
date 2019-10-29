@@ -1061,11 +1061,12 @@ $css .= '/* style */
 	.site-footer .widgets {
 	padding-top: ${footer_padding};
 	}
+	.site-footer .widgets .widget {
+	color: ${footer_widget_text};
+	margin: 0 2.75% ${footer_padding} 0;
+	}
 	.site-footer .widgets .widget .widget-title {
 	color: ${footer_widget_title};
-	}
-	.site-footer .widgets .widget .widget-title ~ * {
-	color: ${footer_widget_text};
 	}
 	.site-footer .widgets .widget a {
 	color: ${footer_widget_link};
@@ -1341,6 +1342,9 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	}
 	ul.cart_list li .amount,ul.cart_list li .quantity,ul.product_list_widget li .amount,ul.product_list_widget li .quantity {
 	color: ${typography_text};
+	}
+	.widget_shopping_cart .cart_list li .remove:hover {
+	color: ${typography_accent};
 	}
 	.widget_shopping_cart .total {
 	border-top: 1px solid ${typography_border};
