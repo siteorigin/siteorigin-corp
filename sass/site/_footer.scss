@@ -84,7 +84,7 @@
 		background: $color__bottom-bar-background;
 		color: $color__bottom-bar-text;
 		overflow: auto;
-		padding: 25px 0;
+		padding: $bottom__bar-padding 0;
 
 		a {
 			color: $color__bottom-bar-link;
