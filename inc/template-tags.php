@@ -139,10 +139,7 @@ if (
 		 * Exclude Logo from Lazy Load plugins.
 		 */
 		function siteorigin_corp_lazy_load_exclude( $attr, $attachment ) {
-			$custom_logo_id = siteorigin_setting( 'branding_logo' );
-			if ( empty( $custom_logo_id ) ) {
-				$custom_logo_id = get_theme_mod( 'custom_logo' );
-			}
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 				// Jetpack Lazy Load
 				if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
