@@ -2897,6 +2897,8 @@ body:not(.single) .entry-content p:only-of-type {
           padding-top: 15px;
           text-align: center;
           width: 100%; } }
+      .site-footer .bottom-bar .widget .widgettitle {
+        display: none; }
 
 /*--------------------------------------------------------------
 # Media

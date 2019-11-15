@@ -221,7 +221,7 @@ function siteorigin_corp_enqueue_flexslider() {
 }
 
 /**
- * Enqueue Gutenberg block editor style.
+ * Enqueue Block Editor styles.
  */
 function siteorigin_corp_block_editor_styles() {
 	wp_enqueue_style( 'siteorigin-corp-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );

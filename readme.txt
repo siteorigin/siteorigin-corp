@@ -96,6 +96,14 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.13.0 - 15 November 2019 =
+* Fixed footer bottom padding setting.
+* Removed bottom bar social widget title.
+* Added new Footer > Bottom Bar Padding setting.
+* Fixed Block Editor admin editor styles maximum width setting.
+* Excluded the logo from Smush and Jetpack Lazy Loading.
+* Prevented the page title from outputting when the header overlap page setting is used.
+
 = 1.12.1 - 26 October 2019 =
 * Excluded the logo image from LiteSpeed Cache Lazy Load to ensure sticky header functions normally.
 * Prevented breadcrumbs from outputting when the header overlap page setting is used.

@@ -1,15 +1,11 @@
 /*!
 Version: dev
 */
-body.gutenberg-editor-page #wpwrap .editor-post-title__block,
-body.gutenberg-editor-page #wpwrap .editor-default-block-appender,
-body.gutenberg-editor-page #wpwrap .editor-block-list__block {
+.block-editor-page .wp-block {
   max-width: 855px; }
-
-body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
-  max-width: 1140px; }
-
-body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
-  max-width: none; }
+  .block-editor-page .wp-block[data-align="wide"] {
+    max-width: 1140px; }
+  .block-editor-page .wp-block[data-align="full"] {
+    max-width: none; }
 
 /*# sourceMappingURL=sass/maps/style-editor.css.map */

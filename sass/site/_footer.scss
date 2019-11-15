@@ -21,7 +21,7 @@
 		.widget {
 			box-sizing: content-box;
 			color: $color__footer-widget-text;
-			margin: 0 2.75% 95px 0;
+			margin: 0 2.75% $footer__padding 0;
 			float: left;
 
 			.widget-title {
@@ -77,14 +77,14 @@
 			float: none;
 			text-align: center;
 			width: 100%;
-		} 
+		}
 	}
 
 	.bottom-bar {
 		background: $color__bottom-bar-background;
 		color: $color__bottom-bar-text;
 		overflow: auto;
-		padding: 25px 0;
+		padding: $bottom__bar-padding 0;
 
 		a {
 			color: $color__bottom-bar-link;
@@ -113,7 +113,7 @@
 			div:only-of-type {
 				float: none;
 				text-align: center;
-				width: 100%; 
+				width: 100%;
 			}
 		}
 
@@ -128,9 +128,9 @@
 				width: 100%;
 			}
 
-			a {
-
+			.widgettitle {
+				display: none;
 			}
 		}
-	}	
+	}
 }
