@@ -1553,7 +1553,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
-				display: none !important;
+				display: none;
 			}
 		}';
 	} else {
@@ -1594,7 +1594,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
-				display: none !important;
+				display: none;
 			}
 		}';
 	}
