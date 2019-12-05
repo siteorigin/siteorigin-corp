@@ -71,7 +71,7 @@
 		</div><!-- .bottom-bar -->
 
 	<?php do_action( 'siteorigin_corp_footer_bottom' ); ?>
-		
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
