@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting( 'pages_featured_image' ) ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
@@ -21,7 +21,7 @@
 	<?php if (
 		siteorigin_page_setting( 'overlap' ) == 'disabled' ||
 		siteorigin_page_setting( 'overlap' ) != 'disabled' &&
-		( has_post_thumbnail() && siteorigin_setting( 'blog_post_featured_image' ) ) ) :
+		( has_post_thumbnail() && siteorigin_setting( 'pages_featured_image' ) ) ) :
 	?>
 		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 			<header class="entry-header">
