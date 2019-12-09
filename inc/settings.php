@@ -285,7 +285,7 @@ function siteorigin_corp_settings_init() {
 				'post_featured_image' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on single posts and pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on single posts.', 'siteorigin-corp' )
 				),
 				'post_date' => array(
 					'type'        => 'checkbox',
@@ -327,6 +327,17 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Ajax Comments', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Keep the conversation flowing with ajax loading comments.', 'siteorigin-corp' ),
 					'teaser'      => true,
+				),
+			),
+		),
+
+		'pages' => array(
+			'title' => esc_html__( 'Pages', 'siteorigin-corp' ),
+			'fields' => array(
+				'featured_image' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Featured Image', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the featured on single pages.', 'siteorigin-corp' ),
 				),
 			),
 		),
@@ -1659,6 +1670,8 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['typography_secondary_text']            ='#929292';
 	$defaults['typography_border']                    ='#e6e6e6';
 	$defaults['typography_border_dark']               ='#d6d6d6';
+
+	$defaults['pages_featured_image']                 = true;
 
 	$defaults['sidebar_position']                     = 'right';
 	$defaults['sidebar_width']                        = '34%%';
