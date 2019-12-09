@@ -285,7 +285,7 @@ function siteorigin_corp_settings_init() {
 				'post_featured_image' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on single posts and pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on single posts.', 'siteorigin-corp' )
 				),
 				'post_date' => array(
 					'type'        => 'checkbox',
