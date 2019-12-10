@@ -933,13 +933,13 @@ $css .= '/* style */
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
-	.tags-links a,aside.widget.widget_tag_cloud .tagcloud a {
+	.tags-links .tag-cloud-link,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link {
 	color: ${typography_text};
 	}
-	.tags-links a:hover,aside.widget.widget_tag_cloud .tagcloud a:hover {
+	.tags-links .tag-cloud-link:hover,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover {
 	background: ${typography_accent};
 	}
-	.tags-links a:hover:after,aside.widget.widget_tag_cloud .tagcloud a:hover:after {
+	.tags-links .tag-cloud-link:hover:after,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover:after {
 	border-right-color: ${typography_accent};
 	}
 	.blog-layout-grid article {
