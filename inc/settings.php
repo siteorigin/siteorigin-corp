@@ -285,7 +285,7 @@ function siteorigin_corp_settings_init() {
 				'post_featured_image' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on single posts and pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on single posts.', 'siteorigin-corp' )
 				),
 				'post_date' => array(
 					'type'        => 'checkbox',
@@ -327,6 +327,17 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Ajax Comments', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Keep the conversation flowing with ajax loading comments.', 'siteorigin-corp' ),
 					'teaser'      => true,
+				),
+			),
+		),
+
+		'pages' => array(
+			'title' => esc_html__( 'Pages', 'siteorigin-corp' ),
+			'fields' => array(
+				'featured_image' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Featured Image', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Display the featured on single pages.', 'siteorigin-corp' ),
 				),
 			),
 		),
@@ -922,13 +933,13 @@ $css .= '/* style */
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
-	.tags-links a,aside.widget.widget_tag_cloud .tagcloud a {
+	.tags-links .tag-cloud-link,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link {
 	color: ${typography_text};
 	}
-	.tags-links a:hover,aside.widget.widget_tag_cloud .tagcloud a:hover {
+	.tags-links .tag-cloud-link:hover,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover {
 	background: ${typography_accent};
 	}
-	.tags-links a:hover:after,aside.widget.widget_tag_cloud .tagcloud a:hover:after {
+	.tags-links .tag-cloud-link:hover:after,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover:after {
 	border-right-color: ${typography_accent};
 	}
 	.blog-layout-grid article {
@@ -1553,7 +1564,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
-				display: none !important;
+				display: none;
 			}
 		}';
 	} else {
@@ -1594,7 +1605,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 		}
 		@media (min-width: ' . ( 1 + intval( siteorigin_setting( 'navigation_mobile_menu_collapse' ) ) ) . 'px) {
 			#masthead #mobile-navigation {
-				display: none !important;
+				display: none;
 			}
 		}';
 	}
@@ -1659,6 +1670,8 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['typography_secondary_text']            ='#929292';
 	$defaults['typography_border']                    ='#e6e6e6';
 	$defaults['typography_border_dark']               ='#d6d6d6';
+
+	$defaults['pages_featured_image']                 = true;
 
 	$defaults['sidebar_position']                     = 'right';
 	$defaults['sidebar_width']                        = '34%%';

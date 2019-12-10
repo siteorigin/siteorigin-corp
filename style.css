@@ -1830,7 +1830,7 @@ body:not(.single) .entry-content p:only-of-type {
 .single .entry-footer {
   margin: 0 0 40px; }
 
-.tags-links a, aside.widget.widget_tag_cloud .tagcloud a {
+.tags-links .tag-cloud-link, aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link {
   background: #e4e6eb;
   color: #626262;
   display: inline-block;
@@ -1841,7 +1841,7 @@ body:not(.single) .entry-content p:only-of-type {
   position: relative;
   margin: 0 10px 10px 0;
   transition: .2s; }
-  .tags-links a:after, aside.widget.widget_tag_cloud .tagcloud a:after {
+  .tags-links .tag-cloud-link:after, aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:after {
     background: #f9f9f9;
     border-bottom: 14px solid transparent;
     border-right: 13px solid #e4e6eb;
@@ -1851,10 +1851,10 @@ body:not(.single) .entry-content p:only-of-type {
     left: 0;
     transition: .2s;
     top: 0; }
-  .tags-links a:hover, aside.widget.widget_tag_cloud .tagcloud a:hover {
+  .tags-links .tag-cloud-link:hover, aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover {
     background: #f14e4e;
     color: #fff; }
-  .tags-links a:hover:after, aside.widget.widget_tag_cloud .tagcloud a:hover:after {
+  .tags-links .tag-cloud-link:hover:after, aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover:after {
     border-right-color: #f14e4e; }
 
 /*--------------------------------------------------------------
