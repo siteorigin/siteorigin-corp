@@ -1638,6 +1638,9 @@ ul.product_list_widget {
     .woocommerce-checkout .entry-content h3 label {
       font-weight: 600; }
 
+form.checkout > .blockUI {
+  position: fixed !important; }
+
 .woocommerce .checkout_coupon .form-row-first,
 .woocommerce .checkout_coupon .form-row-last {
   float: left;
