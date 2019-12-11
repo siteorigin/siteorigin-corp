@@ -415,6 +415,10 @@
 				overflow: initial;
 			}
 
+			.blockOverlay[style] {
+				background-color: #fff !important;
+			}
+
 			.woocommerce-mini-cart__empty-message {
 				display: block;
 				font-size: 14px;
