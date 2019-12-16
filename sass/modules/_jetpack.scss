@@ -76,7 +76,7 @@
 
 	.jp-relatedposts-items .jp-relatedposts-post {
 		opacity: 1;
-		
+
 		.jp-relatedposts-post-title a {
 			color: $color__text-dark;
 			display: block;
@@ -117,7 +117,7 @@
 	h3 {
 		@extend .sub-heading;
 		display: inline-block;
-		
+
 		&:before {
 			content: none;
 		}
