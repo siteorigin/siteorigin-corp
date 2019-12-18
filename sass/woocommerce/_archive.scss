@@ -1,5 +1,5 @@
 .woocommerce {
-	
+
 	&.archive .page-title {
 		text-align: left
 	}
@@ -259,7 +259,7 @@
 			width: 17.2%;
 
 			@media (min-width: 769px) {
-			
+
 				&:nth-of-type(5n+5) {
 					margin-right: 0;
 				}
@@ -475,7 +475,7 @@
 
 	.price {
 		color: $color__text-medium;
-		
+
 		ins {
 			background: none;
 			color: $color__accent;
