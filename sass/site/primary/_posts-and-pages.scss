@@ -188,37 +188,40 @@ body:not(.single) .entry-content p {
 	margin: 0 0 40px;
 }
 
-.tags-links .tag-cloud-link {
-	background: #e4e6eb;
-	color: $color__text-medium;
-	display: inline-block;
-	font-size: 12px;
-	height: 28px;
-	line-height: 28px;
-	padding: 0 10px 0 20px;
-	position: relative;
-	margin: 0 10px 10px 0;
-	transition: .2s;
+.tags-links {
 
-	&:after {
-		background: $color__background-body;
-		border-bottom: 14px solid transparent;
-		border-right: 13px solid #e4e6eb;
-		border-top: 14px solid transparent;
-		content: '';
-		position: absolute;
-		left: 0;
+	a {
+		background: #e4e6eb;
+		color: $color__text-medium;
+		display: inline-block;
+		font-size: 12px;
+		height: 28px;
+		line-height: 28px;
+		padding: 0 10px 0 20px;
+		position: relative;
+		margin: 0 10px 10px 0;
 		transition: .2s;
-		top: 0;
-	}
 
-	&:hover {
-		background: $color__accent;
-		color: #fff;
-	}
+		&:after {
+			background: $color__background-body;
+			border-bottom: 14px solid transparent;
+			border-right: 13px solid #e4e6eb;
+			border-top: 14px solid transparent;
+			content: '';
+			position: absolute;
+			left: 0;
+			transition: .2s;
+			top: 0;
+		}
 
-	&:hover:after {
-		border-right-color: $color__accent;
+		&:hover {
+			background: $color__accent;
+			color: #fff;
+		}
+
+		&:hover:after {
+			border-right-color: $color__accent;
+		}
 	}
 }
 

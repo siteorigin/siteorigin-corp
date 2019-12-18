@@ -650,7 +650,7 @@ $css .= '/* style */
 	}
 	a:hover,a:focus,a:active {
 	color: ${typography_text};
-	}
+		}
 	.main-navigation ul .sub-menu li a,.main-navigation ul .children li a {
 	background: ${navigation_drop_down_background};
 	border-color: ${navigation_drop_down_divider};
@@ -776,10 +776,10 @@ $css .= '/* style */
 	.site-content #primary .sharedaddy {
 	border-top: 1px solid ${typography_border};
 	}
-	.widget-area .widget:not(.widget_shopping_cart) a:not(.button) {
+	.widget-area .widget:not(.widget_tag_cloud):not(.widget_shopping_cart) a:not(.button) {
 	color: ${typography_text};
 	}
-	.widget-area .widget:not(.widget_shopping_cart) a:not(.button):hover {
+	.widget-area .widget:not(.widget_tag_cloud):not(.widget_shopping_cart) a:not(.button):hover {
 	color: ${typography_accent};
 	}
 	.calendar_wrap {
@@ -851,8 +851,11 @@ $css .= '/* style */
 	.widget.recent-posts-extended time {
 	color: ${typography_secondary_text};
 	}
-	.site-footer aside.widget.widget_tag_cloud .tagcloud a:after {
+	.site-footer .widget_tag_cloud a:after {
 	background: ${footer_background};
+	}
+	.site-footer .widgets .widget.widget_tag_cloud a {
+	color: ${typography_text};
 	}
 	.sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
@@ -933,13 +936,13 @@ $css .= '/* style */
 	border-color: ${typography_accent};
 	color: ${typography_accent};
 	}
-	.tags-links .tag-cloud-link,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link {
+	.tags-links a,.widget_tag_cloud a {
 	color: ${typography_text};
 	}
-	.tags-links .tag-cloud-link:hover,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover {
+	.tags-links a:hover,.widget_tag_cloud a:hover {
 	background: ${typography_accent};
 	}
-	.tags-links .tag-cloud-link:hover:after,aside.widget.widget_tag_cloud .tagcloud .tag-cloud-link:hover:after {
+	.tags-links a:hover:after,.widget_tag_cloud a:hover:after {
 	border-right-color: ${typography_accent};
 	}
 	.blog-layout-grid article {
@@ -1110,7 +1113,8 @@ $css .= '/* style */
 	}
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
-	}';
+	}
+';
 
 	return $css;
 }
