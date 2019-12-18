@@ -174,7 +174,7 @@ input.button.added:after,
       .woocommerce .woocommerce-pagination ul li .next,
       .woocommerce .woocommerce-pagination ul li .prev {
         font-size: 14px;
-        padding: 12px 14.3px 11px; }
+        padding: 11px 14.3px; }
         .woocommerce .woocommerce-pagination ul li .next span:before,
         .woocommerce .woocommerce-pagination ul li .prev span:before {
           position: relative;
