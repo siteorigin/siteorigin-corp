@@ -27,7 +27,7 @@
 ## Active Product Filters Widget
 --------------------------------------------------------------*/
 .widget.widget_layered_nav_filters {
-	
+
 	.chosen a {
 		padding-left: 20px;
 		position: relative;
@@ -141,7 +141,7 @@ ul.product_list_widget {
 				&:hover {
 					color: $color__accent;
 					text-decoration: none;
-				}	
+				}
 			}
 		}
 	}
@@ -171,13 +171,13 @@ ul.product_list_widget {
 			font-size: 13px;
 			font-weight: normal;
 			padding: 11px 19px;
-			
+
 			&:first-of-type {
 				background: none;
 				border: 2px solid $color__text-dark;
 				color: $color__text-dark;
 				padding: 9px 19px;
-				
+
 				&:hover {
 					background: $color__text-dark;
 					color: #fff;
