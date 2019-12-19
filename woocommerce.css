@@ -174,7 +174,7 @@ input.button.added:after,
       .woocommerce .woocommerce-pagination ul li .next,
       .woocommerce .woocommerce-pagination ul li .prev {
         font-size: 14px;
-        padding: 12px 14.3px 11px; }
+        padding: 11px 14.3px; }
         .woocommerce .woocommerce-pagination ul li .next span:before,
         .woocommerce .woocommerce-pagination ul li .prev span:before {
           position: relative;
@@ -1620,6 +1620,8 @@ ul.product_list_widget {
     overflow-y: auto; }
     .site-header .shopping-cart-dropdown .widget li {
       overflow: initial; }
+    .site-header .shopping-cart-dropdown .widget .blockOverlay[style] {
+      background-color: #fff !important; }
     .site-header .shopping-cart-dropdown .widget .woocommerce-mini-cart__empty-message {
       display: block;
       font-size: 14px;
@@ -1637,6 +1639,9 @@ ul.product_list_widget {
     font-weight: 500; }
     .woocommerce-checkout .entry-content h3 label {
       font-weight: 600; }
+
+form.checkout > .blockUI {
+  position: fixed !important; }
 
 .woocommerce .checkout_coupon .form-row-first,
 .woocommerce .checkout_coupon .form-row-last {

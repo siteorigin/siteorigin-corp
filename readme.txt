@@ -96,6 +96,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.15.0 - 19 December 2019 =
+* WooCommerce: Improved checkout loading overlay.
+* Updated attribution link wording.
+* Minor pagination next/previous style fix.
+* Fixed post tag styling.
+
 = 1.14.0 - 10 December 2019 =
 * Removed mobile menu `!important` rule.
 * Resolved Tag Cloud widget hover color issue.
