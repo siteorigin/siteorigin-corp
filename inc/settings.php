@@ -1113,8 +1113,7 @@ $css .= '/* style */
 	}
 	.featured-posts-slider .slides .slide {
 	background-color: ${typography_text};
-	}
-';
+	}';
 
 	return $css;
 }
