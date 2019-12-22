@@ -519,6 +519,8 @@ input.button.added:after,
         transform: translateX(-50%);
         visibility: hidden;
         white-space: nowrap; }
+      .woocommerce .products .product .loop-product-thumbnail .product_type_external {
+        white-space: normal; }
       .woocommerce .products .product .loop-product-thumbnail .add_to_cart_button,
       .woocommerce .products .product .loop-product-thumbnail .product_type_grouped,
       .woocommerce .products .product .loop-product-thumbnail .product_type_variable,
