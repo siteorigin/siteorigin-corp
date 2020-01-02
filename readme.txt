@@ -79,7 +79,7 @@ Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0
 [Source](http://www.woothemes.com/flexslider/)
 
 Isotope PACKAGED, Copyright 2017 Metafizzy
-Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](http://isotope.metafizzy.co)
 
 Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
@@ -87,7 +87,7 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/necolas/normalize.css/)
 
 TinyColor, Copyright (c), Brian Grinstead
-Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Released under the [MIT License](http://opensource.org/licenses/MIT)
 [Source](https://github.com/bgrins/TinyColor)
 
 == SiteOrigin Settings ==
