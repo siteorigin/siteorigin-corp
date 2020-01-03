@@ -108,7 +108,8 @@ ul.product_list_widget {
 		}
 
 		.amount,
-		.quantity {
+		.quantity,
+		.reviewer {
 			color: $color__text-medium;
 			display: inline-block;
 			font-size: 14px;
@@ -197,9 +198,12 @@ ul.product_list_widget {
 --------------------------------------------------------------*/
 .widget_product_categories .product-categories,
 .woocommerce-widget-layered-nav-list {
+	font-size: 0.933rem;
+	margin: 0;
 
 	li {
 		color: $color__text-light;
+		list-style: none;
 
 		a {
 			color: $color__text-dark;
