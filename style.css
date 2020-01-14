@@ -559,7 +559,6 @@ a {
           border-bottom: 1px solid;
           border-color: #353538;
           color: #b2b2b2;
-          font-size: 12px;
           font-weight: normal;
           max-width: 100%;
           padding: 12px 20px;
@@ -598,7 +597,7 @@ a {
     .main-navigation ul li {
       display: inline-block;
       font-family: "Montserrat", sans-serif;
-      font-size: 12px;
+      font-size: 0.8rem;
       line-height: normal;
       margin: 0 39px -10px 0;
       padding: 0 0 10px;

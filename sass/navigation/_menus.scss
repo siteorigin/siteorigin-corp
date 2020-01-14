@@ -43,7 +43,6 @@
 					border-bottom: 1px solid;
 					border-color: $color__navigation-drop-down-divider;
 					color: $color__navigation-drop-down-link;
-					font-size: 12px;
 					font-weight: normal;
 					max-width: 100%;
 					padding: 12px 20px;
@@ -94,7 +93,7 @@
 		li {
 			display: inline-block;
 			font-family: $font__headings;
-			font-size: 12px;
+			font-size: 0.8rem;
 			line-height: normal;
 			margin: 0 39px -10px 0; // Total right margin is 44px. 5px additional space per item due to inline-block.
 			padding: 0 0 10px;
