@@ -62,7 +62,11 @@
 					left: 100%;
 				}
 
-				&:first-of-type {
+				@at-root .link-underline ul .sub-menu li:first-of-type {
+					border-top: 2px solid $color__navigation_link_accent;
+				}
+
+				@at-root .link-underline ul .children li:first-of-type {
 					border-top: 2px solid $color__navigation_link_accent;
 				}
 
@@ -106,7 +110,6 @@
 			}
 
 			a {
-				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
 				font-weight: bold;
@@ -189,7 +192,6 @@
 	// First level items.
 	div > ul:not(.cart_list) > li {
 
-		// Overlap.
 		.overlap-light .site-header:not(.stuck) & > a {
 			color: #fff;
 		}
@@ -198,9 +200,21 @@
 			color: #2d2d2d;
 		}
 
-		&:hover > a {
+		@at-root [class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+			color: $color__navigation_link_accent;
+		}
+
+		@at-root .link-underline#{&} > a {
+			border-bottom: 2px solid transparent;
+		}
+
+		@at-root .link-underline#{&}:hover > a {
 			border-bottom: 2px solid;
 			border-color: $color__navigation_link_accent;
+		}
+
+		@at-root .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+			color: $color__navigation_link_accent;
 		}
 
 		&:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
@@ -213,6 +227,28 @@
 		&.current_page_ancestor > a,
 		&.current-menu-ancestor > a {
 			border-color: $color__navigation_link_accent;
+		}
+
+		@at-root :not(.link-underline)#{&} {
+
+			&.current > a,
+			&.current_page_item > a,
+			&.current-menu-item > a,
+			&.current_page_ancestor > a,
+			&.current-menu-ancestor > a {
+				color: $color__navigation_link_accent;
+			}
+		}
+
+		@at-root [class*="overlap"] :not(.link-underline)#{&} {
+
+			&.current > a,
+			&.current_page_item > a,
+			&.current-menu-item > a,
+			&.current_page_ancestor > a,
+			&.current-menu-ancestor > a {
+				color: $color__navigation_link_accent;
+			}
 		}
 	}
 
