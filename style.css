@@ -579,9 +579,9 @@ a {
         .main-navigation ul .children li:hover > ul,
         .main-navigation ul .children li.focus > ul {
           left: 100%; }
-        .link-underline ul .sub-menu li:first-of-type {
+        .link-underline.main-navigation ul .sub-menu li:first-of-type {
           border-top: 2px solid #f14e4e; }
-        .link-underline ul .children li:first-of-type {
+        .link-underline.main-navigation ul .children li:first-of-type {
           border-top: 2px solid #f14e4e; }
         .main-navigation ul .sub-menu li:last-of-type > a,
         .main-navigation ul .children li:last-of-type > a {

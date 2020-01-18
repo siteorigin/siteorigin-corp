@@ -664,10 +664,10 @@ $css .= '/* style */
 	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .sub-menu li.current_page_item > a,.main-navigation ul .sub-menu li.current-menu-item > a,.main-navigation ul .sub-menu li.current_page_ancestor > a,.main-navigation ul .sub-menu li.current-menu-ancestor > a,.main-navigation ul .children li:hover > a,.main-navigation ul .children li.current_page_item > a,.main-navigation ul .children li.current-menu-item > a,.main-navigation ul .children li.current_page_ancestor > a,.main-navigation ul .children li.current-menu-ancestor > a {
 	color: ${navigation_drop_down_link_hover};
 	}
-	.link-underline ul .sub-menu li:first-of-type {
+	.link-underline.main-navigation ul .sub-menu li:first-of-type {
 	border-top: 2px solid ${navigation_link_accent};
 	}
-	.link-underline ul .children li:first-of-type {
+	.link-underline.main-navigation ul .children li:first-of-type {
 	border-top: 2px solid ${navigation_link_accent};
 	}
 	.main-navigation ul li {

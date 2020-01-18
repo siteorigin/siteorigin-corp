@@ -62,11 +62,11 @@
 					left: 100%;
 				}
 
-				@at-root .link-underline ul .sub-menu li:first-of-type {
+				@at-root .link-underline.main-navigation ul .sub-menu li:first-of-type {
 					border-top: 2px solid $color__navigation_link_accent;
 				}
 
-				@at-root .link-underline ul .children li:first-of-type {
+				@at-root .link-underline.main-navigation ul .children li:first-of-type {
 					border-top: 2px solid $color__navigation_link_accent;
 				}
 
