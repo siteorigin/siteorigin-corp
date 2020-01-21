@@ -76,9 +76,12 @@ jQuery( function( $ ) {
 		$( window ).scroll( function() {
 			if ( $( '#site-navigation ul li' ).hasClass( 'current' ) ) {
 				$( '#site-navigation li' ).removeClass( 'current-menu-item' );
+				$( '#site-navigation li.current-menu-ancestor' ).removeClass( 'current-menu-ancestor current-menu-parent' );
 			} else {
 				if ( $( document ).scrollTop() == 0 ) {
 					$( '#site-navigation a[href="'+ window.location.href +'"]' ).parent( 'li' ).addClass( 'current-menu-item' );
+					$( '#site-navigation a[href="'+ window.location.href +'"]' ).parents( 'li.menu-item-has-children' ).addClass( 'current-menu-ancestor current-menu-parent' );
+				}
 			}
 		} );
 	} );
