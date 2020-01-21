@@ -107,6 +107,11 @@ function siteorigin_corp_settings_init() {
 					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' ),
 					'live'        => true
 				),
+				'menu_link_hover_underline' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Menu Link Hover Underline', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Underline header menu links on hover.', 'siteorigin-corp' )
+				),
 				'menu_search'     => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Menu Search', 'siteorigin-corp' ),
@@ -650,7 +655,7 @@ $css .= '/* style */
 	}
 	a:hover,a:focus,a:active {
 	color: ${typography_text};
-		}
+	}
 	.main-navigation ul .sub-menu li a,.main-navigation ul .children li a {
 	background: ${navigation_drop_down_background};
 	border-color: ${navigation_drop_down_divider};
@@ -659,7 +664,10 @@ $css .= '/* style */
 	.main-navigation ul .sub-menu li:hover > a,.main-navigation ul .sub-menu li.current_page_item > a,.main-navigation ul .sub-menu li.current-menu-item > a,.main-navigation ul .sub-menu li.current_page_ancestor > a,.main-navigation ul .sub-menu li.current-menu-ancestor > a,.main-navigation ul .children li:hover > a,.main-navigation ul .children li.current_page_item > a,.main-navigation ul .children li.current-menu-item > a,.main-navigation ul .children li.current_page_ancestor > a,.main-navigation ul .children li.current-menu-ancestor > a {
 	color: ${navigation_drop_down_link_hover};
 	}
-	.main-navigation ul .sub-menu li:first-of-type,.main-navigation ul .children li:first-of-type {
+	.link-underline.main-navigation ul .sub-menu li:first-of-type {
+	border-top: 2px solid ${navigation_link_accent};
+	}
+	.link-underline.main-navigation ul .children li:first-of-type {
 	border-top: 2px solid ${navigation_link_accent};
 	}
 	.main-navigation ul li {
@@ -674,11 +682,23 @@ $css .= '/* style */
 	#site-navigation.main-navigation ul .menu-button a:hover {
 	background: .rgba( ${typography_accent}, .8);
 	}
-	.main-navigation div > ul:not(.cart_list) > li:hover > a {
+	[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+	color: ${navigation_link_accent};
+	}
+	.link-underline.main-navigation div > ul:not(.cart_list) > li:hover > a {
 	border-color: ${navigation_link_accent};
+	}
+	.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+	color: ${navigation_link_accent};
 	}
 	.main-navigation div > ul:not(.cart_list) > li.current > a,.main-navigation div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
+	}
+	:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_item > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	color: ${navigation_link_accent};
+	}
+	[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_item > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	color: ${navigation_link_accent};
 	}
 	.main-navigation .search-toggle .open svg path {
 	fill: ${navigation_link};
@@ -1361,7 +1381,7 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	ul.cart_list li a:hover,ul.product_list_widget li a:hover {
 	color: ${typography_accent};
 	}
-	ul.cart_list li .amount,ul.cart_list li .quantity,ul.product_list_widget li .amount,ul.product_list_widget li .quantity {
+	ul.cart_list li .amount,ul.cart_list li .quantity,ul.cart_list li .reviewer,ul.product_list_widget li .amount,ul.product_list_widget li .quantity,ul.product_list_widget li .reviewer {
 	color: ${typography_text};
 	}
 	.widget_shopping_cart .cart_list li .remove:hover {
@@ -1639,6 +1659,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['navigation_header_menu']               = true;
 	$defaults['navigation_mobile_menu']               = true;
 	$defaults['navigation_mobile_menu_collapse']      = 768;
+	$defaults['navigation_menu_link_hover_underline'] = true;
 	$defaults['navigation_menu_search']               = true;
 	$defaults['navigation_post']                      = true;
 	$defaults['navigation_scroll_to_top']             = true;
