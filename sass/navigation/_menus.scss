@@ -229,7 +229,7 @@
 			border-color: $color__navigation_link_accent;
 		}
 
-		@at-root :not(.link-underline)#{&} {
+		@at-root .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li {
 
 			&.current > a,
 			&.current_page_item > a,
@@ -240,7 +240,7 @@
 			}
 		}
 
-		@at-root [class*="overlap"] :not(.link-underline)#{&} {
+		@at-root [class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li {
 
 			&.current > a,
 			&.current_page_item > a,
