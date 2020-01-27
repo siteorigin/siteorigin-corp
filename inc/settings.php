@@ -694,10 +694,10 @@ $css .= '/* style */
 	.main-navigation div > ul:not(.cart_list) > li.current > a,.main-navigation div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	border-color: ${navigation_link_accent};
 	}
-	:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_item > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,:not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	color: ${navigation_link_accent};
 	}
-	[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_item > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-item > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current_page_ancestor > a,[class*="overlap"] :not(.link-underline).main-navigation div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_item > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-item > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_ancestor > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	color: ${navigation_link_accent};
 	}
 	.main-navigation .search-toggle .open svg path {
