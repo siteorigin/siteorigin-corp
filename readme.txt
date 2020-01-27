@@ -96,6 +96,15 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.0 - 27 January 2020 =
+* One page layout: Minor design adjustments.
+* WooCommerce hover buttons: prevented overflow.
+* Established a 15px typography base.
+* Minor WooCommerce widget style adjustments.
+* Changed menu font sizing to rem.
+* Added a new menu hover underline setting located at `Customize > Theme Settings > Navigation > Menu Link Hover Underline`.
+* Minor improvements to the one page menu current page and section indication.
+
 = 1.15.0 - 19 December 2019 =
 * WooCommerce: Improved checkout loading overlay.
 * Updated attribution link wording.
