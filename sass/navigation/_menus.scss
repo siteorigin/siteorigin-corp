@@ -43,7 +43,6 @@
 					border-bottom: 1px solid;
 					border-color: $color__navigation-drop-down-divider;
 					color: $color__navigation-drop-down-link;
-					font-size: 12px;
 					font-weight: normal;
 					max-width: 100%;
 					padding: 12px 20px;
@@ -63,7 +62,11 @@
 					left: 100%;
 				}
 
-				&:first-of-type {
+				@at-root .link-underline.main-navigation ul .sub-menu li:first-of-type {
+					border-top: 2px solid $color__navigation_link_accent;
+				}
+
+				@at-root .link-underline.main-navigation ul .children li:first-of-type {
 					border-top: 2px solid $color__navigation_link_accent;
 				}
 
@@ -94,7 +97,7 @@
 		li {
 			display: inline-block;
 			font-family: $font__headings;
-			font-size: 12px;
+			font-size: 0.8rem;
 			line-height: normal;
 			margin: 0 39px -10px 0; // Total right margin is 44px. 5px additional space per item due to inline-block.
 			padding: 0 0 10px;
@@ -107,7 +110,6 @@
 			}
 
 			a {
-				border-bottom: 2px solid transparent;
 				color: $color__navigation-link;
 				display: block;
 				font-weight: bold;
@@ -190,7 +192,6 @@
 	// First level items.
 	div > ul:not(.cart_list) > li {
 
-		// Overlap.
 		.overlap-light .site-header:not(.stuck) & > a {
 			color: #fff;
 		}
@@ -199,12 +200,24 @@
 			color: #2d2d2d;
 		}
 
-		&:hover > a {
+		@at-root [class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+			color: $color__navigation_link_accent;
+		}
+
+		@at-root .link-underline#{&} > a {
+			border-bottom: 2px solid transparent;
+		}
+
+		@at-root .link-underline#{&}:hover > a {
 			border-bottom: 2px solid;
 			border-color: $color__navigation_link_accent;
 		}
 
-		&:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
+		@at-root .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+			color: $color__navigation_link_accent;
+		}
+
+		@at-root .site-header:not(.sticky) .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
 			border-bottom: none;
 		}
 
@@ -214,6 +227,28 @@
 		&.current_page_ancestor > a,
 		&.current-menu-ancestor > a {
 			border-color: $color__navigation_link_accent;
+		}
+
+		@at-root .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li {
+
+			&.current > a,
+			&.current_page_item > a,
+			&.current-menu-item > a,
+			&.current_page_ancestor > a,
+			&.current-menu-ancestor > a {
+				color: $color__navigation_link_accent;
+			}
+		}
+
+		@at-root [class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li {
+
+			&.current > a,
+			&.current_page_item > a,
+			&.current-menu-item > a,
+			&.current_page_ancestor > a,
+			&.current-menu-ancestor > a {
+				color: $color__navigation_link_accent;
+			}
 		}
 	}
 
@@ -301,7 +336,7 @@
 	-webkit-overflow-scrolling: touch;
 	width: 100%;
 	z-index: 10;
-	
+
 	@-moz-document url-prefix() {
 		overflow: auto;
 	}

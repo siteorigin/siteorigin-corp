@@ -24,7 +24,7 @@ textarea {
 	transition: .3s;
 	max-width: 100%;
 	-webkit-appearance: none;
-	
+
 	&:focus {
 		border-color: rgba($color__background-hr-dark, .8);
 	}
@@ -50,7 +50,7 @@ label {
 
 fieldset legend {
 	color: $color__text-dark;
-	font-family: $font__headings; 
+	font-family: $font__headings;
 	font-size: 18px;
 	padding: 10px 0;
 }
