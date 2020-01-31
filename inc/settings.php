@@ -1103,7 +1103,7 @@ $css .= '/* style */
 	}
 	.site-footer .widgets .widget {
 	color: ${footer_widget_text};
-	margin: 0 2.75% ${footer_padding} 0;
+	margin-bottom: ${footer_padding};
 	}
 	.site-footer .widgets .widget .widget-title {
 	color: ${footer_widget_title};

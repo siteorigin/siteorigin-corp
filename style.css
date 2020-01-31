@@ -2857,7 +2857,10 @@ body:not(.single) .entry-content p:only-of-type {
     .site-footer .widgets .widget {
       box-sizing: content-box;
       color: #b4b5b8;
-      margin: 0 2.75% 95px 0;
+      margin-top: 0;
+      margin-right: 2.75%;
+      margin-bottom: 95px;
+      margin-left: 0;
       float: left; }
       .site-footer .widgets .widget .widget-title {
         color: #fff;

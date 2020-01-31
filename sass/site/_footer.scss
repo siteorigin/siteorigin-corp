@@ -21,7 +21,10 @@
 		.widget {
 			box-sizing: content-box;
 			color: $color__footer-widget-text;
-			margin: 0 2.75% $footer__padding 0;
+			margin-top: 0;
+			margin-right: 2.75%;
+			margin-bottom: $footer__padding;
+			margin-left: 0;
 			float: left;
 
 			.widget-title {
