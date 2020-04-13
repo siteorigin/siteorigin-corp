@@ -4,6 +4,11 @@
 		text-align: left
 	}
 
+	// No products were found matching your selection notification.
+	&.archive .woocommerce-info {
+		margin-top: 30px;
+	}
+
 	.term-description {
 		margin: 5px 0 25px;
 	}
