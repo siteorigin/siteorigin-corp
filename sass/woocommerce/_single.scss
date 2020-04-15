@@ -175,7 +175,7 @@
 			tr {
 
 				td {
-					padding-bottom: 15px; 
+					padding-bottom: 15px;
 				}
 
 				&:only-of-type td {
@@ -210,7 +210,7 @@
 
 		.woocommerce-variation .woocommerce-variation-price .price {
 			display: block;
-			width: 100%; 
+			width: 100%;
 		}
 
 		.woocommerce-grouped-product-list {
@@ -237,7 +237,7 @@
 
 				a {
 					color: $color__text-medium;
-					
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -259,7 +259,7 @@
 			display: inline-block;
 
 			input {
-				margin-right: 5px; 
+				margin-right: 5px;
 				max-width: 60px;
 			}
 		}
@@ -403,7 +403,7 @@
 		.woocommerce-Reviews {
 
 			.woocommerce-noreviews {
-				font-size: 14px; 
+				font-size: 14px;
 				margin-bottom: 16px;
 			}
 
@@ -522,7 +522,7 @@
 				&.selected {
 
 					a.active {
-					
+
 						&:before {
 							content: "\e020";
 						}
