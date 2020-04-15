@@ -758,6 +758,13 @@ input.button.added:after,
       margin-left: 10px; }
       .woocommerce .product .variations .reset_variations:hover {
         color: #f14e4e; }
+    .woocommerce .product .variations .woo-variation-items-wrapper {
+      position: relative; }
+      .woocommerce .product .variations .woo-variation-items-wrapper .reset_variations {
+        bottom: -10px;
+        left: 0;
+        margin-left: 0;
+        position: absolute; }
   .woocommerce .product .woocommerce-variation .woocommerce-variation-price .price {
     display: block;
     width: 100%; }
