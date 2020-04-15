@@ -760,7 +760,6 @@ input.button.added:after,
         color: #f14e4e; }
   .woocommerce .product .woocommerce-variation .woocommerce-variation-price .price {
     display: block;
-    margin-top: -25px;
     width: 100%; }
   .woocommerce .product .woocommerce-grouped-product-list {
     margin-bottom: 25px; }
