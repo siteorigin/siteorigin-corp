@@ -654,8 +654,8 @@ input.button.added:after,
         .woocommerce .product .images .flex-control-thumbs li:nth-of-type(4n+4) {
           margin-right: 0; }
         .woocommerce .product .images .flex-control-thumbs li img {
-          display: block;
           box-shadow: #000 0 0 0;
+          display: block;
           opacity: .5; }
           .woocommerce .product .images .flex-control-thumbs li img.flex-active, .woocommerce .product .images .flex-control-thumbs li img:hover {
             border: 1px solid #828282;
@@ -673,32 +673,32 @@ input.button.added:after,
       width: 36px;
       z-index: 9; }
       .woocommerce .product .images .woocommerce-product-gallery__trigger:before {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 10px;
         border: 2px solid #000;
         border-radius: 100%;
-        position: absolute;
-        top: 9px;
-        left: 9px;
-        box-sizing: content-box; }
-      .woocommerce .product .images .woocommerce-product-gallery__trigger:after {
+        box-sizing: content-box;
         content: "";
         display: block;
-        width: 2px;
-        height: 8px;
+        height: 10px;
+        left: 9px;
+        position: absolute;
+        top: 9px;
+        width: 10px; }
+      .woocommerce .product .images .woocommerce-product-gallery__trigger:after {
         background: #000;
         border-radius: 6px;
+        box-sizing: content-box;
+        content: "";
+        display: block;
+        height: 8px;
+        left: 22px;
         position: absolute;
         top: 19px;
-        left: 22px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        box-sizing: content-box; }
+        width: 2px; }
   .woocommerce .product .summary,
   .woocommerce .product .product-info-wrapper {
     float: right;
@@ -918,25 +918,25 @@ input.button.added:after,
   .woocommerce .product .woocommerce-Reviews .comment-respond {
     margin-top: 25px; }
   .woocommerce .product .woocommerce-Reviews .stars a {
-    position: relative;
-    height: 1em;
-    width: 1em;
-    text-indent: -999em;
     display: inline-block;
-    text-decoration: none; }
+    height: 1em;
+    position: relative;
+    text-decoration: none;
+    text-indent: -999em;
+    width: 1em; }
     .woocommerce .product .woocommerce-Reviews .stars a:hover {
       color: #f14e4e; }
     .woocommerce .product .woocommerce-Reviews .stars a:before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1em;
-      height: 1em;
-      line-height: 1;
-      font-family: "WooCommerce";
       content: "\e021";
-      text-indent: 0; }
+      display: block;
+      font-family: "WooCommerce";
+      height: 1em;
+      left: 0;
+      line-height: 1;
+      position: absolute;
+      text-indent: 0;
+      top: 0;
+      width: 1em; }
     .woocommerce .product .woocommerce-Reviews .stars a:hover ~ a:before {
       content: "\e021"; }
   .woocommerce .product .woocommerce-Reviews .stars:hover a:before {
