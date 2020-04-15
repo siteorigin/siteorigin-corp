@@ -83,6 +83,18 @@
 				line-height: normal; 
 				margin: 0; 
 			}
+
+			.variations .value {
+				position: relative;
+			}
+
+			// Variation Swatches for WooCommerce plugin.
+			.variable-items-wrapper ~ .reset_variations {
+				bottom: -10px;
+				left: 0;
+				margin-left: 0;
+				position: absolute;
+			}
 		}
 	}
 }

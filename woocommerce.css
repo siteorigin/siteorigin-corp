@@ -1061,6 +1061,13 @@ input.button.added:after,
     #quick-view-container .product-content-wrapper .product-info-wrapper .entry-title {
       line-height: normal;
       margin: 0; }
+    #quick-view-container .product-content-wrapper .product-info-wrapper .variations .value {
+      position: relative; }
+    #quick-view-container .product-content-wrapper .product-info-wrapper .variable-items-wrapper ~ .reset_variations {
+      bottom: -10px;
+      left: 0;
+      margin-left: 0;
+      position: absolute; }
 
 /*--------------------------------------------------------------
 # Widgets
