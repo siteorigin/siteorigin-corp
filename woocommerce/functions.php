@@ -51,7 +51,7 @@ function siteorigin_corp_woocommerce_scripts() {
 	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// WooCommerce JavaScript.
-	if ( is_woocommerce() || is_cart() ) {
+	if ( is_woocommerce() || is_cart() || wc_post_content_has_shortcode( 'products' ) ) {
 		wp_enqueue_script( 'siteorigin-corp-woocommerce-script', get_template_directory_uri() . '/woocommerce/js/jquery.woocommerce' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 	}
 

@@ -71,8 +71,10 @@ function siteorigin_corp_body_classes( $classes ) {
 	}
 
 	// WooCommerce archive Quick View and Add to Cart.
-	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() ) && ( siteorigin_setting( 'woocommerce_quick_view' ) && siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover' || siteorigin_setting( 'woocommerce_add_to_cart' ) && siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover' ) ) {
-		$classes[] = 'woocommerce-product-overlay';
+	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || wc_post_content_has_shortcode( 'products' ) ) 
+		&& ( siteorigin_setting( 'woocommerce_quick_view' ) && siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover' 
+		|| siteorigin_setting( 'woocommerce_add_to_cart' ) && siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover' ) ) {
+			$classes[] = 'woocommerce-product-overlay';
 	}
 
 	return $classes;
