@@ -108,7 +108,7 @@ jQuery( function( $ ) {
 		$( document ).keyup( function( e ) {
 			var container = $( $content );
 			if ( e.keyCode == 27 ) { // Escape key maps to keycode 27.
-				$($container).fadeOut( 300 );
+				$( $container ).fadeOut( 300 );
 				// Enable scrolling.
 				$( 'body' ).css( 'overflow', '' );
 				$( 'body' ).css( 'margin-right', '' );
