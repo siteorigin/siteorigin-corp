@@ -49,8 +49,8 @@
 					}
 
 					img {
-						display: block;
 						box-shadow: #000 0 0 0;
+						display: block;
 						opacity: .5;
 
 						&.flex-active,
@@ -76,30 +76,30 @@
 				z-index: 9;
 
 				&:before {
-					content: "";
-					display: block;
-					width: 10px;
-					height: 10px;
 					border: 2px solid #000;
 					border-radius: 100%;
+					box-sizing: content-box;
+					content: "";
+					display: block;
+					height: 10px;
+					left: 9px;
 					position: absolute;
 					top: 9px;
-					left: 9px;
-					box-sizing: content-box;
+					width: 10px;
 				}
 
 				&:after {
-					content: "";
-					display: block;
-					width: 2px;
-					height: 8px;
 					background: #000;
 					border-radius: 6px;
+					box-sizing: content-box;
+					content: "";
+					display: block;
+					height: 8px;
+					left: 22px;
 					position: absolute;
 					top: 19px;
-					left: 22px;
 					@include transform(rotate(-45deg));
-					box-sizing: content-box;
+					width: 2px;
 				}
 			}
 		}
@@ -175,7 +175,7 @@
 			tr {
 
 				td {
-					padding-bottom: 15px; 
+					padding-bottom: 15px;
 				}
 
 				&:only-of-type td {
@@ -206,12 +206,23 @@
 					color: $color__accent;
 				}
 			}
+
+			// Variation Swatches for WooCommerce plugin.
+			.woo-variation-items-wrapper {
+				position: relative;
+
+				.reset_variations {
+					bottom: -10px;
+					left: 0;
+					margin-left: 0;
+					position: absolute;
+				}
+			}
 		}
 
 		.woocommerce-variation .woocommerce-variation-price .price {
 			display: block;
-			margin-top: -25px;
-			width: 100%; 
+			width: 100%;
 		}
 
 		.woocommerce-grouped-product-list {
@@ -238,7 +249,7 @@
 
 				a {
 					color: $color__text-medium;
-					
+
 					&:hover {
 						color: $color__accent;
 					}
@@ -260,7 +271,7 @@
 			display: inline-block;
 
 			input {
-				margin-right: 5px; 
+				margin-right: 5px;
 				max-width: 60px;
 			}
 		}
@@ -404,7 +415,7 @@
 		.woocommerce-Reviews {
 
 			.woocommerce-noreviews {
-				font-size: 14px; 
+				font-size: 14px;
 				margin-bottom: 16px;
 			}
 
@@ -479,28 +490,28 @@
 			.stars {
 
 				a {
-					position: relative;
-					height: 1em;
-					width: 1em;
-					text-indent: -999em;
 					display: inline-block;
+					height: 1em;
+					position: relative;
 					text-decoration: none;
+					text-indent: -999em;
+					width: 1em;
 
 					&:hover {
 						color: $color__accent;
 					}
 
 					&:before {
-						display: block;
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 1em;
-						height: 1em;
-						line-height: 1;
-						font-family: "WooCommerce";
 						content: "\e021";
+						display: block;
+						font-family: "WooCommerce";
+						height: 1em;
+						left: 0;
+						line-height: 1;
+						position: absolute;
 						text-indent: 0;
+						top: 0;
+						width: 1em;
 					}
 
 					&:hover {
@@ -523,7 +534,7 @@
 				&.selected {
 
 					a.active {
-					
+
 						&:before {
 							content: "\e020";
 						}

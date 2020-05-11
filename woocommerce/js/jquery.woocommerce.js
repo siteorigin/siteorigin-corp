@@ -54,7 +54,7 @@ jQuery( function( $ ) {
 		if ( ! $( e.target ).closest( '.ordering-selector-wrapper.open-dropdown' ).length ) {
 			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
 		}
-	} );	
+	} );
 	
 	// Quick View modal.
 	$( '.product-quick-view-button' ).click( function( e ) {
@@ -108,7 +108,7 @@ jQuery( function( $ ) {
 		$( document ).keyup( function( e ) {
 			var container = $( $content );
 			if ( e.keyCode == 27 ) { // Escape key maps to keycode 27.
-				$($container).fadeOut( 300 );
+				$( $container ).fadeOut( 300 );
 				// Enable scrolling.
 				$( 'body' ).css( 'overflow', '' );
 				$( 'body' ).css( 'margin-right', '' );
