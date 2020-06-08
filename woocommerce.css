@@ -1739,14 +1739,10 @@ form.checkout > .blockUI {
       list-style: none;
       margin: 0; }
 
-.woocommerce .panel-grid-cell #order_review_heading {
-  clear: right;
-  float: right;
-  width: 48%; }
-  @media (max-width: 768px) {
-    .woocommerce .panel-grid-cell #order_review_heading {
-      padding: 0 20px;
-      width: 100%; } }
+.woocommerce .panel-grid-cell #order_review {
+  clear: none;
+  float: none;
+  width: 100%; }
 
 .woocommerce .woocommerce-checkout-review-order {
   background: #fff;
