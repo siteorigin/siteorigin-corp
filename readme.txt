@@ -59,7 +59,7 @@ SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](ht
 
 == Images ==
 
-Screenshot image sourced from [Unsplash](https://unsplash.com/photos/KuUxlN0ZjtQ) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/) by [Paul Bence](https://unsplash.com/@bency).
+Theme screenshot image "Business People Shaking Hands in Agreement" from [PxHere.com](https://pxhere.com/en/photo/1443991) by [rawpixel.com](https://pxhere.com/en/photographer/795663) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Fonts and Icons ==
 
