@@ -99,6 +99,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.2 - 22 June 2020 =
+* Updated SiteOrigin Settings framework.
+* WooCommerce: Corrected SiteOrigin Premium WCTB checkout display.
+* Minor code enhancements.
+
 = 1.16.1 - 11 May 2020 =
 * Minor code formatting fixes.
 * WooCommerce: Minor variation pricing spacing adjustment.
