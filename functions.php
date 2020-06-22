@@ -290,7 +290,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/deprecated.php';
 
 /**
- * WooCommerce compatibility.
+ * WooCommerce integration.
  */
 if ( function_exists( 'is_woocommerce' ) ) {
 	require get_template_directory() . '/woocommerce/functions.php';

@@ -112,7 +112,7 @@ form.checkout > .blockUI {
 		}
 
 		table {
-			
+
 			thead {
 				border: none;
 			}
@@ -129,16 +129,11 @@ form.checkout > .blockUI {
 		}
 	}
 
-	// Order review heading in SO WC Template Builder.
-	.panel-grid-cell #order_review_heading {
-		clear: right;
-		float: right;
-		width: 48%;
-
-		@media (max-width: 768px) {
-			padding: 0 20px;
-			width: 100%;
-		}
+	// Order review section in SO WC Template Builder.
+	.panel-grid-cell #order_review {
+		clear: none;
+		float: none;
+		width: 100%;
 	}
 
 	.woocommerce-checkout-review-order {

@@ -1,9 +1,12 @@
 === SiteOrigin Corp ===
 
 Contributors: siteorigin
+
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
+
+Tested up to: 5.5
 Requires at least: 4.7
-Tested up to: 5.3
+Requires PHP: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,7 +59,7 @@ SiteOrigin Corp WordPress Theme is derived from [Underscores WordPress Theme](ht
 
 == Images ==
 
-Screenshot image sourced from [Unsplash](https://unsplash.com/photos/KuUxlN0ZjtQ) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/) by [Paul Bence](https://unsplash.com/@bency).
+Theme screenshot image "Business People Shaking Hands in Agreement" from [PxHere.com](https://pxhere.com/en/photo/1443991) by [rawpixel.com](https://pxhere.com/en/photographer/795663) licensed under [CC0 1.0 Universal (CC0 1.0)](http://creativecommons.org/publicdomain/zero/1.0/).
 
 == Fonts and Icons ==
 
@@ -95,6 +98,11 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.16.2 - 22 June 2020 =
+* Updated SiteOrigin Settings framework.
+* WooCommerce: Corrected SiteOrigin Premium WCTB checkout display.
+* Minor code enhancements.
 
 = 1.16.1 - 11 May 2020 =
 * Minor code formatting fixes.
