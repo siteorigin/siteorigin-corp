@@ -290,9 +290,8 @@ function siteorigin_corp_excerpt() {
 		$length = siteorigin_setting( 'blog_excerpt_length' );
 	}
 
-	$excerpt = explode( ' ', get_the_excerpt(), $length );
-
 	if ( $length ) {
+		$excerpt = explode( ' ', get_the_excerpt(), $length );
 		if ( count( $excerpt ) >= $length ) {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
