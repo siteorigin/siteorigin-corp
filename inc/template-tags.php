@@ -297,7 +297,7 @@ function siteorigin_corp_excerpt() {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
 		} else {
-			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>';
+			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
 		}
 	} else {
 		$excerpt = get_the_excerpt();
