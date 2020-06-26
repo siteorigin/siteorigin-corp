@@ -20,7 +20,7 @@ endif;
 if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
 /**
  * Add a more link to the excerpt.
- * @deprecated 1.4.3 Use siteorigin_corp_excerpt() 
+ * @deprecated 1.4.3 Use siteorigin_corp_excerpt()
  */
 function siteorigin_corp_excerpt_more( $more ) {
 	if ( is_search() ) return;
