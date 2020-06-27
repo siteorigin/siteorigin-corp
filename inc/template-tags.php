@@ -287,7 +287,7 @@ function siteorigin_corp_excerpt() {
 		$length = 38;
 	} else {
 		$ellipsis = '...';
-		$length = siteorigin_setting( 'blog_excerpt_length' );
+		$length = ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
 	}
 
 	if ( $length ) {
@@ -298,8 +298,6 @@ function siteorigin_corp_excerpt() {
 		} else {
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
 		}
-	} else {
-		$excerpt = get_the_excerpt();
 	}
 
 	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
