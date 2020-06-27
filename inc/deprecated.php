@@ -14,7 +14,6 @@ if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
 function siteorigin_corp_excerpt_length( $length ) {
 	return siteorigin_setting( 'blog_excerpt_length' );
 }
-add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
 endif;
 
 if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
@@ -30,7 +29,6 @@ function siteorigin_corp_excerpt_more( $more ) {
 	}
 }
 endif;
-add_filter( 'excerpt_more', 'siteorigin_corp_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image_buttons' ) ) :
 /**
