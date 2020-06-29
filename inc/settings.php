@@ -280,7 +280,7 @@ function siteorigin_corp_settings_init() {
 				'excerpt_length' => array(
 					'type'        => 'number',
 					'label'       => esc_html__( 'Excerpt Length', 'siteorigin-corp' ),
-					'description' => esc_html__( 'If no manual post excerpt is added one will be generated. Choose how many words it should be.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'If a manual post excerpt isn\'t added, one will be generated. Choose how many words it should be.', 'siteorigin-corp' ),
 				),
 				'post_excerpt_read_more_link' => array(
 					'type'        => 'checkbox',
