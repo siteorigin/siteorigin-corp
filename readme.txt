@@ -99,6 +99,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.2.1 - 13 August 2020 =
+* Lowered required PHP version to the WordPress minimum version `5.6.20`.
+
 = 1.16.2 - 22 June 2020 =
 * Updated SiteOrigin Settings framework.
 * WooCommerce: Corrected SiteOrigin Premium WCTB checkout display.
