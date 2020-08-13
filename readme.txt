@@ -6,7 +6,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-
 
 Tested up to: 5.5
 Requires at least: 4.7
-Requires PHP: 7.3
+Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,9 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.16.2.1 - 13 August 2020 =
+* Lowered required PHP version to the WordPress minimum version `5.6.20`.
 
 = 1.16.2 - 22 June 2020 =
 * Updated SiteOrigin Settings framework.
