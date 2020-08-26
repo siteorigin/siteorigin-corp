@@ -67,7 +67,7 @@ module.exports = {
             'style.css',
             'style-editor.css',
             'woocommerce.css',
-            'css/siteorigin-corp-icons.css',
+            'css/*.css',
         ],
     },
     copy: {
