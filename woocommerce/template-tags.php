@@ -158,6 +158,11 @@ function siteorigin_corp_woocommerce_quick_view_button() {
 	} else {
 		echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . esc_html__( 'Quick View', 'siteorigin-corp' ) . '</a>';
 	}
+
+	$gallery = $product->get_gallery_image_ids();
+	if ( ! empty( $gallery ) && ! has_action( 'wp_footer', 'siteorigin_corp_enqueue_flexslider' ) ) {
+		add_action( 'wp_footer', 'siteorigin_corp_enqueue_flexslider' );
+	}
 }
 endif;
 
