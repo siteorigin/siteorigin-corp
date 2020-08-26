@@ -70,6 +70,8 @@ jQuery( function( $ ) {
 			{ action: 'siteorigin_corp_product_quick_view', product_id: id },
 			function( data ) {
 				$( document ).find( $container ).find( $content ).html( data );
+				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
+				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
 			}
 		);
 
