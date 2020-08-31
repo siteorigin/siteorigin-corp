@@ -1068,6 +1068,8 @@ input.button.added:after,
       left: 0;
       margin-left: 0;
       position: absolute; }
+    #quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-variation-description {
+      display: none; }
 
 /*--------------------------------------------------------------
 # Widgets
