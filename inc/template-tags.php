@@ -274,7 +274,6 @@ if ( ! function_exists( 'siteorigin_corp_excerpt' ) ) :
  * Outputs the excerpt.
  */
 function siteorigin_corp_excerpt() {
-
 	if ( ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) && siteorigin_setting( 'blog_post_excerpt_read_more_link', true ) && ! is_search() ) {
 		$read_more_text = esc_html__( 'Continue reading', 'siteorigin-corp' );
 		$read_more_text = '<a class="more-link excerpt" href="' . esc_url( get_permalink() ) . '"><span class="more-text">' . $read_more_text . ' <span class="icon-long-arrow-right"></span></span></a>';
@@ -283,27 +282,31 @@ function siteorigin_corp_excerpt() {
 	}
 
 	if ( is_search() ) {
-		$ellipsis = '...';
-		$length = 38;
+		$length = 30;
 	} else {
-		$ellipsis = '...';
 		$length = ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
 	}
 
-	if ( $length ) {
-		$excerpt = explode( ' ', get_the_excerpt(), $length );
+	$ellipsis = '...';
+	$excerpt = explode( ' ', get_the_content(), $length );
+
+	// If there is a custom excerpt, don't apply the Excerpt Length setting but do still apply the Post Excerpt Read More Link setting.
+	if ( has_excerpt() ) {
+		$excerpt = '<p>' . get_the_excerpt() . '</p>' . $read_more_text;
+	} else {
+		// If the auto excerpt is longer than the Excerpt Length, add the $ellipsis.
 		if ( count( $excerpt ) >= $length ) {
 			array_pop( $excerpt );
 			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
+		// If the auto excerpt isn't longer than the Excerpt Length, don't add the $ellipsis.
 		} else {
-			$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
+			$excerpt = '<p>' . implode( " ", $excerpt ) . '</p>' . $read_more_text;
 		}
 	}
 
-	$excerpt = preg_replace( '`\[[^\]]*\]`','', $excerpt );
+	$excerpt = preg_replace( '`\s\[[^\]]*\]`','', $excerpt );
 
 	echo $excerpt;
-
 }
 endif;
 
