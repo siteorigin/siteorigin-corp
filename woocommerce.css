@@ -1048,6 +1048,8 @@ input.button.added:after,
       #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;
         width: 100%; } }
+    #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .flex-direction-nav a {
+      opacity: 1; }
   #quick-view-container .product-content-wrapper .product-info-wrapper {
     float: right;
     padding: 30px 20px 20px 15px;
