@@ -180,7 +180,6 @@ function siteorigin_corp_scripts() {
 
 	// Flexslider.
 	wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
-	wp_register_style( 'siteorigin-corp-flexslider', get_template_directory_uri() . '/css/flexslider' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), '2.6.3' );
 
 	if ( is_home() && siteorigin_corp_has_featured_posts() ) {
 		wp_enqueue_script( 'jquery-flexslider' );
@@ -219,7 +218,6 @@ add_action( 'wp_enqueue_scripts', 'siteorigin_corp_scripts' );
  */
 function siteorigin_corp_enqueue_flexslider() {
 	wp_enqueue_script( 'jquery-flexslider' );
-	wp_enqueue_style( 'siteorigin-corp-flexslider' );
 }
 
 /**
