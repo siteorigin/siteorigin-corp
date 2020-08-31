@@ -203,6 +203,15 @@ function siteorigin_corp_woocommerce_quick_view_image() {
 				} ?>
 
 			</ul>
+
+			<ul class="flex-direction-nav">
+				<li class="flex-nav-prev">
+					<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
+				</li>
+				<li class="flex-nav-next">
+					<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
+				</li>
+			</ul>
 		</div>
 	<?php
 	}
