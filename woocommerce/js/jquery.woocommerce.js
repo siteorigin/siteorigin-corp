@@ -79,7 +79,6 @@ jQuery( function( $ ) {
 			if ( $.isFunction( $.fn.flexslider ) ) {
 				$( '.product-images-slider' ).flexslider( {
 					animation: 'slide',
-					controlNav: false,
 					customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
 					start: function() {
 						$( '.flexslider .slides img' ).show();
