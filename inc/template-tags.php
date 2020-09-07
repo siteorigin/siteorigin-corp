@@ -140,7 +140,7 @@ if ( ! function_exists( 'siteorigin_corp_lazy_load_exclude' ) ) :
 		}
 		if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
 			// Jetpack Lazy Load
-			if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
+			if ( class_exists( 'Jetpack_Lazy_Images' ) || class_exists( 'Automattic\\Jetpack\\Jetpack_Lazy_Images' ) ) {
 				$attr['class'] .= ' skip-lazy';
 			}
 			// Smush Lazy Load
