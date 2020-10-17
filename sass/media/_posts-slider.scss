@@ -1,17 +1,17 @@
 .featured-posts-slider {
 	margin-bottom: 60px;
-	
+
 	.widget_siteorigin-panels-postloop & {
 		margin-bottom: 0;
 	}
-	 
+
 	.slides .slide {
 		background-color: $color__text-medium;
 		background-position: center;
 		background-size: cover;
 		height: 500px;
 		position: relative;
-		
+
 		@media (max-width: 768px) {
 			height: 380px;
 		}
@@ -30,12 +30,12 @@
 
 		.slide-content {
 			text-align: center;
-			margin-top: -53.5px;
+			margin-top: -59.5px;
 			position: absolute;
 			top: 50%;
-			width: 100%; 
+			width: 100%;
 			z-index: 3;
-			
+
 			@media (max-width: 480px) {
 				margin-top: -15.5px;
 			}
@@ -44,7 +44,7 @@
 				color: #fff;
 				font-size: 20px;
 				margin-bottom: 17px;
-				
+
 				@media (max-width: 768px) {
 					font-size: 17px;
 				}
@@ -59,7 +59,7 @@
 
 				&:not(:last-child):after {
 					font-size: 18px;
-					
+
 					@media (max-width: 768px) {
 						font-size: 15px;
 					}
@@ -71,7 +71,7 @@
 				margin-bottom: 0;
 				position: relative;
 				z-index: 3;
-				
+
 				@media (max-width: 768px) {
 					font-size: 41px;
 				}

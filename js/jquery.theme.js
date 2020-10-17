@@ -91,6 +91,7 @@ jQuery( function( $ ) {
 		var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
 			isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
 			isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
+			$mh = $( '.site-header' ),
 			headerHeight;
 
 		// Header height. 1px to account for header shadow.
@@ -101,6 +102,12 @@ jQuery( function( $ ) {
 		} else {
 			headerHeight = 0;
 		}
+
+		if ( $mh.data( 'scale-logo' ) && ! $mh.hasClass( 'stuck' ) ) {
+			var mhPadding = parseInt( $mh.css( 'padding-bottom' ) );
+			headerHeight += mhPadding - mhPadding * siteoriginCorp.logoScale * 2;
+		}
+
 		return headerHeight;
 	};
 

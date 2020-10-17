@@ -99,6 +99,14 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.3 - 17 October 2020 =
+* WooCommerce Quick View: Added compatibility for the Variation Swatches for WooCommerce plugin.
+* WooCommerce Quick View: Added variation images.
+* Sticky Header: Improved smooth scroll anchor positioning.
+* Updated logo lazy load exclusion to accommodate WP 5.5+ and changes to Jetpack.
+* Posts Slider: Minor text position adjustment.
+* Updated Settings framework.
+
 = 1.16.2.1 - 13 August 2020 =
 * Lowered required PHP version to the WordPress minimum version `5.6.20`.
 
