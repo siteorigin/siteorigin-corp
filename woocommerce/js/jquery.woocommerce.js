@@ -85,7 +85,7 @@ jQuery( function( $ ) {
 					}
 				} );
 
-				// If variation has image, change to flexslider slide
+				// If variation has image, change to flexslider slide.
 				$( '#product-quick-view .variations_form' ).on( 'found_variation.wc-variation-form', function( event, variation ) {
 					if ( variation && variation.image && variation.image.full_src ) {
 						var variationItem = $( '#product-quick-view .product-gallery-image' ).find( 'img[src="' + variation.image.full_src + '"]' );
