@@ -99,6 +99,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.4 - 19 October 2020 =
+* Updated Settings framework to resolve Customizer error.
+
 = 1.16.3 - 17 October 2020 =
 * WooCommerce Quick View: Added compatibility for the Variation Swatches for WooCommerce plugin.
 * WooCommerce Quick View: Added variation images.
