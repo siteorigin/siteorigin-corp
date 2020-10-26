@@ -154,13 +154,10 @@ jQuery( function( $ ) {
 		} );
 	};
 
-	$( window ).load( function() {
+	$( window ).on( 'load', function() {
 		$( '#site-navigation a[href*="#"]:not([href="#"]), .comments-link a[href*="#"]:not([href="#"]), .woocommerce-review-link[href*="#"]:not([href="#"]), .corp-scroll[href*="#"]:not([href="#"])' ).siteoriginCorpSmoothScroll();
-	} );
 
-	// Adjust for sticky header when linking from external anchors.
-	$( window ).load( function() {
-
+		// Adjust for sticky header when linking from external anchors.
 		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
 			var target = $( window.location.hash );
 			if ( target.length ) {
@@ -394,7 +391,7 @@ jQuery( function( $ ) {
 } );
 
 ( function( $ ) {
-	$( window ).load( function() {
+	$( window ).on( 'load', function() {
 		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
 		// Masonry blog layout.
 		if ( $( '.blog-layout-masonry' ).length ) {
