@@ -175,6 +175,7 @@ body:not(.single) .entry-content p {
 		margin-right: 4px;
 		padding: 11px 17px;
 		transition: .3s;
+		vertical-align: top;
 
 		&:hover,
 		&.current {
