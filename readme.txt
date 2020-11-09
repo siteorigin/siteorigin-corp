@@ -99,6 +99,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.5 - 09 November 2020 =
+* Minor JavaScript update for WordPress 5.5.
+* Minor pagination and page links styling improvements.
+
 = 1.16.4 - 19 October 2020 =
 * Updated Settings framework to resolve Customizer error.
 
