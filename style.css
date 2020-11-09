@@ -870,8 +870,10 @@ a {
     font-size: 0.9333em;
     line-height: normal;
     margin-right: 4px;
+    margin-bottom: 4px;
     padding: 11px 17px;
-    transition: .3s; }
+    transition: .3s;
+    vertical-align: top; }
     .pagination .page-numbers:visited {
       color: #626262; }
     .pagination .page-numbers:hover, .pagination .page-numbers:focus {
@@ -1853,7 +1855,8 @@ body:not(.single) .entry-content p:only-of-type {
     line-height: normal;
     margin-right: 4px;
     padding: 11px 17px;
-    transition: .3s; }
+    transition: .3s;
+    vertical-align: top; }
     .page-links .post-page-numbers:hover, .page-links .post-page-numbers.current {
       border-color: #f14e4e;
       color: #f14e4e; }
