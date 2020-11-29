@@ -6,7 +6,7 @@
 
 /* globals jQuery, siteoriginCorp */
 
-jQuery( function( $ ) {
+( function( $ ) {
 
 	// Element viewport visibility.
 	$.fn.siteoriginCorpIsVisible = function() {
@@ -87,7 +87,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Smooth scroll from internal page anchors.
-	headerHeight = function() {
+	var calcHeaderHeight = function() {
 		var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
 			isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
 			isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
@@ -135,7 +135,7 @@ jQuery( function( $ ) {
 				target = target.length ? target : $( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
 					$( 'html, body' ).animate( {
-						scrollTop: target.offset().top - headerHeight()
+						scrollTop: target.offset().top - calcHeaderHeight()
 					},
 					{
 						duration: 1200,
@@ -161,10 +161,20 @@ jQuery( function( $ ) {
 		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
 			var target = $( window.location.hash );
 			if ( target.length ) {
-				$( 'html, body' ).animate( {
-					scrollTop: target.offset().top - headerHeight()
-				}, 0 );
-				return false;
+				setTimeout( function() {
+					$( 'html, body' ).animate(
+						{
+							scrollTop: target.offset().top - calcHeaderHeight()
+						},
+						0,
+						function() {
+							if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+								// Avoid a situation where the logo can be incorrectly sized due to the page jump.
+								smSetup();
+							}
+						}
+					);
+				}, 100 );
 			}
 		}
 	} );
@@ -191,10 +201,10 @@ jQuery( function( $ ) {
 			var thisHeight = $( this ).outerHeight();
 
 			// Where the section begins.
-			var thisBegin = offset - headerHeight();
+			var thisBegin = offset - calcHeaderHeight();
 
 			// Where the section ends.
-			var thisEnd = offset + thisHeight - headerHeight();
+			var thisEnd = offset + thisHeight - calcHeaderHeight();
 
 			// If position of the cursor is inside of the this section.
 			if ( scrollTop >= thisBegin && scrollTop <= thisEnd ) {
@@ -388,9 +398,6 @@ jQuery( function( $ ) {
 		} );
 	}
 
-} );
-
-( function( $ ) {
 	$( window ).on( 'load', function() {
 		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
 		// Masonry blog layout.
