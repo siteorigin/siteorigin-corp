@@ -6,7 +6,7 @@
 
 /* globals jQuery, siteoriginCorp */
 
-jQuery( function( $ ) {
+( function( $ ) {
 
 	// Element viewport visibility.
 	$.fn.siteoriginCorpIsVisible = function() {
@@ -21,7 +21,7 @@ jQuery( function( $ ) {
 
 	// Burst animation.
 	var mousePos = {x: 0, y: 0};
-	$( document ).mousemove( function( e ) {
+	$( document ).on( 'mousemove', function( e ) {
 		mousePos = {
 			x: e.pageX,
 			y: e.pageY
@@ -52,16 +52,16 @@ jQuery( function( $ ) {
 	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
 
 		// Add keyboard access to the menu.
-		$( '.menu-item' ).children( 'a' ).focus( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'focusin', function() {
 			$( this ).parents( 'ul, li' ).addClass( 'focus' );
 		} );
 
 		// Click event fires after focus event.
-		$( '.menu-item' ).children( 'a' ).click( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'click', function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
 
-		$( '.menu-item' ).children( 'a' ).focusout( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'focusout', function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
 	}
@@ -73,7 +73,7 @@ jQuery( function( $ ) {
 		} else {
 			$( '#site-navigation a[href="'+ window.location.href +'"]' ).parent( 'li' ).addClass( 'current-menu-item' );
 		}
-		$( window ).scroll( function() {
+		$( window ).on( 'click', function() {
 			if ( $( '#site-navigation ul li' ).hasClass( 'current' ) ) {
 				$( '#site-navigation li' ).removeClass( 'current-menu-item' );
 				$( '#site-navigation li.current-menu-ancestor' ).removeClass( 'current-menu-ancestor current-menu-parent' );
@@ -87,7 +87,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Smooth scroll from internal page anchors.
-	headerHeight = function() {
+	var calcHeaderHeight = function() {
 		var adminBarHeight = $( '#wpadminbar' ).outerHeight(),
 			isAdminBar = $( 'body' ).hasClass( 'admin-bar' ),
 			isStickyHeader = $( 'header' ).hasClass( 'sticky' ),
@@ -117,7 +117,7 @@ jQuery( function( $ ) {
 			return;
 		}
 
-		$( this ).click( function( e ) {
+		$( this ).on( 'click', function( e ) {
 
 			var hash    = this.hash;
 			var idName  = hash.substring( 1 ); // Get ID name.
@@ -135,7 +135,7 @@ jQuery( function( $ ) {
 				target = target.length ? target : $( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
 					$( 'html, body' ).animate( {
-						scrollTop: target.offset().top - headerHeight()
+						scrollTop: target.offset().top - calcHeaderHeight()
 					},
 					{
 						duration: 1200,
@@ -161,10 +161,20 @@ jQuery( function( $ ) {
 		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
 			var target = $( window.location.hash );
 			if ( target.length ) {
-				$( 'html, body' ).animate( {
-					scrollTop: target.offset().top - headerHeight()
-				}, 0 );
-				return false;
+				setTimeout( function() {
+					$( 'html, body' ).animate(
+						{
+							scrollTop: target.offset().top - calcHeaderHeight()
+						},
+						0,
+						function() {
+							if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+								// Avoid a situation where the logo can be incorrectly sized due to the page jump.
+								smSetup();
+							}
+						}
+					);
+				}, 100 );
 			}
 		}
 	} );
@@ -191,10 +201,10 @@ jQuery( function( $ ) {
 			var thisHeight = $( this ).outerHeight();
 
 			// Where the section begins.
-			var thisBegin = offset - headerHeight();
+			var thisBegin = offset - calcHeaderHeight();
 
 			// Where the section ends.
-			var thisEnd = offset + thisHeight - headerHeight();
+			var thisEnd = offset + thisHeight - calcHeaderHeight();
 
 			// If position of the cursor is inside of the this section.
 			if ( scrollTop >= thisBegin && scrollTop <= thisEnd ) {
@@ -214,7 +224,7 @@ jQuery( function( $ ) {
 
 	// Mobile Menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function( e ) {
+	$( '#mobile-menu-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'to-close' );
@@ -229,12 +239,12 @@ jQuery( function( $ ) {
 			$mobileMenu.find( '.menu-item-has-children > a' ).addClass( 'has-dropdown' );
 			$mobileMenu.find( '.page_item_has_children > a' ).addClass( 'has-dropdown' );
 			$mobileMenu.find( '.has-dropdown' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="icon-angle-down" aria-hidden="true"></i></button>' );
-			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
+			$mobileMenu.find( '.dropdown-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 				$( this ).toggleClass( 'toggle-open' ).next( '.children, .sub-menu' ).slideToggle( 'fast' );
 			} );
 
-			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
+			$mobileMenu.find( '.has-dropdown' ).on( 'click', function( e ) {
 				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
 					e.preventDefault();
 					$( this ).siblings( '.dropdown-toggle' ).trigger( 'click' );
@@ -251,14 +261,14 @@ jQuery( function( $ ) {
 			}
 			mmOverflow();
 
-			$( window ).resize( mmOverflow );
-			$( '#mobile-navigation' ).scroll( mmOverflow );
+			$( window ).on( 'resize', mmOverflow );
+			$( '#mobile-navigation' ).on( 'scroll', mmOverflow );
 
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
 
-		$( '#mobile-navigation a' ).click( function( e ) {
+		$( '#mobile-navigation a' ).on( 'click', function( e ) {
 			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( typeof $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
 				if ( $mobileMenu.is(' :visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
@@ -272,7 +282,7 @@ jQuery( function( $ ) {
 	} );
 
 	// Fullscreen search.
-	$( '#search-button' ).click( function( e ) {
+	$( '#search-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'close-search' );
@@ -285,7 +295,7 @@ jQuery( function( $ ) {
 			$( '#fullscreen-search' ).css( { 'height': vph + 'px', 'width': vpw + 'px' } );
 		};
 		fullscreenSearch();
-		$( window ).resize( fullscreenSearch );
+		$( window ).on( 'resize', fullscreenSearch );
 
 		// Disable scrolling when fullscreen search is open.
 		if ( $$.hasClass( 'close-search' ) ) {
@@ -298,23 +308,23 @@ jQuery( function( $ ) {
 
 		$( '#fullscreen-search' ).slideToggle( 'fast' );
 
-		$( '#fullscreen-search input' ).focus();
+		$( '#fullscreen-search input' ).trigger( 'focus' );
 
 	} );
 
-	$( '#fullscreen-search-form' ).submit( function() {
+	$( '#fullscreen-search-form' ).on( 'submit', function() {
 		$( this ).find( 'button svg' ).hide();
 		$( this ).find( 'button svg:last-child' ).show();
 	} );
 
 	// Close fullscreen search with close button.
-	$( '#fullscreen-search #search-close-button' ).click( function( e ) {
+	$( '#fullscreen-search #search-close-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		$( '#search-button.close-search' ).trigger( 'click' );
 	} );
 
 	// Close fullscreen search with escape key.
-	$( document ).keyup( function( e ) {
+	$( document ).on( 'keyup', function( e ) {
 		if ( e.keyCode === 27 ) { // escape key maps to keycode `27`
 			$( '#search-button.close-search' ).trigger( 'click' );
 		}
@@ -335,8 +345,8 @@ jQuery( function( $ ) {
 		}
 	};
 	sttWindowScroll();
-	$( window ).scroll( sttWindowScroll );
-	$( '#scroll-to-top' ).click( function() {
+	$( window ).on( 'scroll', sttWindowScroll );
+	$( '#scroll-to-top' ).on( 'click', function() {
 		$( 'html, body' ).animate( { scrollTop: 0 } );
 	} );
 
@@ -388,9 +398,6 @@ jQuery( function( $ ) {
 		} );
 	}
 
-} );
-
-( function( $ ) {
 	$( window ).on( 'load', function() {
 		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
 		// Masonry blog layout.
@@ -412,7 +419,7 @@ jQuery( function( $ ) {
 			} );
 		}
 
-		$( '.portfolio-filter-terms button' ).click( function() {
+		$( '.portfolio-filter-terms button' ).on( 'click', function() {
 			var selector = $( this ).attr( 'data-filter' );
 			$container.isotope( {
 				filter: selector,
@@ -482,7 +489,7 @@ jQuery( function( $ ) {
 				}
 			};
 			smResizeLogo();
-			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
+			$( window ).on( 'scroll resize', smResizeLogo );
 		}
 
 		// Sticky header.
@@ -501,7 +508,7 @@ jQuery( function( $ ) {
 				}
 			};
 			smShadow();
-			$( window ).scroll( smShadow );
+			$( window ).on( 'scroll', smShadow );
 
 			var smSetup = function() {
 
@@ -533,7 +540,7 @@ jQuery( function( $ ) {
 
 			};
 			smSetup();
-			$( window ).resize( smSetup ).scroll( smSetup );
+			$( window ).on( 'resize scroll', smSetup );
 
 		}
 	} );

@@ -1,5 +1,5 @@
 /*
- * jQuery FlexSlider v2.6.3
+ * jQuery FlexSlider v2.7.2
  * Copyright 2012 WooThemes
  * Contributing Author: Tyler Smith
  */
@@ -13,12 +13,17 @@
     var slider = $(el);
 
     // making variables public
+
+    //if rtl value was not passed and html is in rtl..enable it by default.
+    if(typeof options.rtl=='undefined' && $('html').attr('dir')=='rtl'){
+      options.rtl=true;
+    }
     slider.vars = $.extend({}, $.flexslider.defaults, options);
 
     var namespace = slider.vars.namespace,
         msGesture = window.navigator && window.navigator.msPointerEnabled && window.MSGesture,
         touch = (( "ontouchstart" in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch) && slider.vars.touch,
-        // depricating this idea, as devices are being released with both of these events
+        // deprecating this idea, as devices are being released with both of these events
         eventType = "click touchend MSPointerUp keyup",
         watchedEvent = "",
         watchedEventClearTimer,
@@ -49,7 +54,7 @@
         slider.syncExists = $(slider.vars.sync).length > 0;
         // SLIDE:
         if (slider.vars.animation === "slide") { slider.vars.animation = "swing"; }
-        slider.prop = (vertical) ? "top" : "marginLeft";
+        slider.prop = (vertical) ? "top" : ( slider.vars.rtl ? "marginRight" : "marginLeft" );
         slider.args = {};
         // SLIDESHOW:
         slider.manualPause = false;
@@ -70,6 +75,7 @@
           }
           return false;
         }());
+        slider.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
         slider.ensureAnimationEnd = '';
         // CONTROLSCONTAINER:
         if (slider.vars.controlsContainer !== "") slider.controlsContainer = $(slider.vars.controlsContainer).length > 0 && $(slider.vars.controlsContainer);
@@ -98,18 +104,24 @@
 
         // KEYBOARD:
         if (slider.vars.keyboard && ($(slider.containerSelector).length === 1 || slider.vars.multipleKeyboard)) {
-          $(document).bind('keyup', function(event) {
+          $(document).on('keyup', function(event) {
             var keycode = event.keyCode;
             if (!slider.animating && (keycode === 39 || keycode === 37)) {
-              var target = (keycode === 39) ? slider.getTarget('next') :
-                           (keycode === 37) ? slider.getTarget('prev') : false;
+              var target = (slider.vars.rtl?
+                                ((keycode === 37) ? slider.getTarget('next') :
+                                (keycode === 39) ? slider.getTarget('prev') : false)
+                                :
+                                ((keycode === 39) ? slider.getTarget('next') :
+                                (keycode === 37) ? slider.getTarget('prev') : false)
+                                )
+                                ;
               slider.flexAnimate(target, slider.vars.pauseOnAction);
             }
           });
         }
         // MOUSEWHEEL:
         if (slider.vars.mousewheel) {
-          slider.bind('mousewheel', function(event, delta, deltaX, deltaY) {
+          slider.on('mousewheel', function(event, delta, deltaX, deltaY) {
             event.preventDefault();
             var target = (delta < 0) ? slider.getTarget('next') : slider.getTarget('prev');
             slider.flexAnimate(target, slider.vars.pauseOnAction);
@@ -125,9 +137,10 @@
         // SLIDSESHOW
         if (slider.vars.slideshow) {
           if (slider.vars.pauseOnHover) {
-            slider.hover(function() {
+            slider.on('mouseenter', function() {
               if (!slider.manualPlay && !slider.manualPause) { slider.pause(); }
-            }, function() {
+            });
+            slider.on('mouseout', function() {
               if (!slider.manualPause && !slider.manualPlay && !slider.stopped) { slider.play(); }
             });
           }
@@ -145,7 +158,7 @@
         if (touch && slider.vars.touch) { methods.touch(); }
 
         // FADE&&SMOOTHHEIGHT || SLIDE:
-        if (!fade || (fade && slider.vars.smoothHeight)) { $(window).bind("resize orientationchange focus", methods.resize); }
+        if (!fade || (fade && slider.vars.smoothHeight)) { $(window).on("resize orientationchange focus", methods.resize); }
 
         slider.find("img").attr("draggable", "false");
 
@@ -165,8 +178,15 @@
                 e.preventDefault();
                 var $slide = $(this),
                     target = $slide.index();
-                var posFromLeft = $slide.offset().left - $(slider).scrollLeft(); // Find position of slide relative to left of slider container
-                if( posFromLeft <= 0 && $slide.hasClass( namespace + 'active-slide' ) ) {
+                var posFromX;
+                if(slider.vars.rtl){
+                  posFromX = -1*($slide.offset().right - $(slider).scrollLeft()); // Find position of slide relative to right of slider container
+                }
+                else
+                {
+                  posFromX = $slide.offset().left - $(slider).scrollLeft(); // Find position of slide relative to left of slider container
+                }
+                if( posFromX <= 0 && $slide.hasClass( namespace + 'active-slide' ) ) {
                   slider.flexAnimate(slider.getTarget("prev"), true);
                 } else if (!$(slider.vars.asNavFor).data('flexslider').animating && !$slide.hasClass(namespace + "active-slide")) {
                   slider.direction = (slider.currentItem < target) ? "next" : "prev";
@@ -217,15 +237,35 @@
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
               slide = slider.slides.eq(i);
-              if ( undefined === slide.attr( 'data-thumb-alt' ) ) { slide.attr( 'data-thumb-alt', '' ); }
-              var altText = ( '' !== slide.attr( 'data-thumb-alt' ) ) ? altText = ' alt="' + slide.attr( 'data-thumb-alt' ) + '"' : '';
-              item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr( 'data-thumb' ) + '"' + altText + '/>' : '<a href="#">' + j + '</a>';
+
+              if ( undefined === slide.attr( 'data-thumb-alt' ) ) { 
+                slide.attr( 'data-thumb-alt', '' ); 
+              }
+              
+              item = $( '<a></a>' ).attr( 'href', '#' ).text( j );
+              if ( slider.vars.controlNav === "thumbnails" ) {
+                item = $( '<img/>' ).attr( 'src', slide.attr( 'data-thumb' ) );
+              }
+              
+              if ( '' !== slide.attr( 'data-thumb-alt' ) ) {
+                item.attr( 'alt', slide.attr( 'data-thumb-alt' ) );
+              }
+
               if ( 'thumbnails' === slider.vars.controlNav && true === slider.vars.thumbCaptions ) {
                 var captn = slide.attr( 'data-thumbcaption' );
-                if ( '' !== captn && undefined !== captn ) { item += '<span class="' + namespace + 'caption">' + captn + '</span>'; }
+                if ( '' !== captn && undefined !== captn ) { 
+                  var caption = $('<span></span>' ).addClass( namespace + 'caption' ).text( captn );
+                  item.append( caption );
+                }
               }
-              slider.controlNavScaffold.append('<li>' + item + '</li>');
+              
+              var liElement = $( '<li>' );
+              item.appendTo( liElement );
+              liElement.append( '</li>' );
+
+              slider.controlNavScaffold.append(liElement);
               j++;
+
             }
           }
 
@@ -235,7 +275,7 @@
 
           methods.controlNav.active();
 
-          slider.controlNavScaffold.delegate('a, img', eventType, function(event) {
+          slider.controlNavScaffold.on('a, img', eventType, function(event) {
             event.preventDefault();
 
             if (watchedEvent === "" || watchedEvent === event.type) {
@@ -260,7 +300,7 @@
           slider.controlNav = slider.manualControls;
           methods.controlNav.active();
 
-          slider.controlNav.bind(eventType, function(event) {
+          slider.controlNav.on(eventType, function(event) {
             event.preventDefault();
 
             if (watchedEvent === "" || watchedEvent === event.type) {
@@ -317,7 +357,7 @@
 
           methods.directionNav.update();
 
-          slider.directionNav.bind(eventType, function(event) {
+          slider.directionNav.on(eventType, function(event) {
             event.preventDefault();
             var target;
 
@@ -365,7 +405,7 @@
 
           methods.pausePlay.update((slider.vars.slideshow) ? namespace + 'pause' : namespace + 'play');
 
-          slider.pausePlay.bind(eventType, function(event) {
+          slider.pausePlay.on(eventType, function(event) {
             event.preventDefault();
 
             if (watchedEvent === "" || watchedEvent === event.type) {
@@ -428,7 +468,6 @@
                          (reverse) ? (slider.last - slider.currentSlide + slider.cloneOffset) * cwidth : (slider.currentSlide + slider.cloneOffset) * cwidth;
                 startX = (vertical) ? localY : localX;
                 startY = (vertical) ? localX : localY;
-
                 el.addEventListener('touchmove', onTouchMove, false);
                 el.addEventListener('touchend', onTouchEnd, false);
               }
@@ -440,9 +479,8 @@
               localX = e.touches[0].pageX;
               localY = e.touches[0].pageY;
 
-              dx = (vertical) ? startX - localY : startX - localX;
+              dx = (vertical) ? startX - localY : (slider.vars.rtl?-1:1)*(startX - localX);
               scrolling = (vertical) ? (Math.abs(dx) < Math.abs(localX - startY)) : (Math.abs(dx) < Math.abs(localY - startY));
-
               var fxms = 500;
 
               if ( ! scrolling || Number( new Date() ) - startT > fxms ) {
@@ -519,7 +557,7 @@
 
                 //Accumulate translations.
                 accDx = accDx + ((vertical) ? transY : transX);
-                dx = accDx;
+                dx = (slider.vars.rtl?-1:1)*accDx;
                 scrolling = (vertical) ? (Math.abs(accDx) < Math.abs(-transX)) : (Math.abs(accDx) < Math.abs(-transY));
 
                 if(e.detail === e.MSGESTURE_FLAG_INERTIA){
@@ -757,8 +795,8 @@
             }
 
             // Unbind previous transitionEnd events and re-bind new transitionEnd event
-            slider.container.unbind("webkitTransitionEnd transitionend");
-            slider.container.bind("webkitTransitionEnd transitionend", function() {
+            slider.container.off("webkitTransitionEnd transitionend");
+            slider.container.on("webkitTransitionEnd transitionend", function() {
               clearTimeout(slider.ensureAnimationEnd);
               slider.wrapup(dimension);
             });
@@ -874,11 +912,15 @@
               }
             }());
 
-            return (posCalc * -1) + "px";
+            return (posCalc * ((slider.vars.rtl)?1:-1)) + "px";
           }());
 
       if (slider.transitions) {
-        target = (vertical) ? "translate3d(0," + target + ",0)" : "translate3d(" + target + ",0,0)";
+        if (slider.isFirefox) {
+          target = (vertical) ? "translate3d(0," + target + ",0)" : "translate3d(" + (parseInt(target)+'px') + ",0,0)";
+        } else {
+          target = (vertical) ? "translate3d(0," + target + ",0)" : "translate3d(" + ((slider.vars.rtl?-1:1)*parseInt(target)+'px') + ",0,0)";
+        }
         dur = (dur !== undefined) ? (dur/1000) + "s" : "0s";
         slider.container.css("-" + slider.pfx + "-transition-duration", dur);
          slider.container.css("transition-duration", dur);
@@ -933,13 +975,28 @@
           slider.setProps(sliderOffset * slider.computedW, "init");
           setTimeout(function(){
             slider.doMath();
-            slider.newSlides.css({"width": slider.computedW, "marginRight" : slider.computedM, "float": "left", "display": "block"});
+          if(slider.vars.rtl){
+            if (slider.isFirefox) {
+              slider.newSlides.css({"width": slider.computedW + 'px', "marginRight" : slider.computedM + 'px', "float": "right", "display": "block"});
+            } else {
+              slider.newSlides.css({"width": slider.computedW + 'px', "marginRight" : slider.computedM + 'px', "float": "left", "display": "block"});
+            }
+              
+           }
+            else{
+              slider.newSlides.css({"width": slider.computedW + 'px', "marginRight" : slider.computedM + 'px', "float": "left", "display": "block"});
+            }
             // SMOOTH HEIGHT:
             if (slider.vars.smoothHeight) { methods.smoothHeight(); }
           }, (type === "init") ? 100 : 0);
         }
       } else { // FADE:
-        slider.slides.css({"width": "100%", "float": "left", "marginRight": "-100%", "position": "relative"});
+        if(slider.vars.rtl){
+          slider.slides.css({"width": "100%", "float": 'right', "marginLeft": "-100%", "position": "relative"});
+        }
+        else{
+          slider.slides.css({"width": "100%", "float": 'left', "marginRight": "-100%", "position": "relative"});
+        }
         if (type === "init") {
           if (!touch) {
             //slider.slides.eq(slider.currentSlide).fadeIn(slider.vars.animationSpeed, slider.vars.easing);
@@ -970,6 +1027,7 @@
           maxItems = slider.vars.maxItems;
 
       slider.w = (slider.viewport===undefined) ? slider.width() : slider.viewport.width();
+      if (slider.isFirefox) { slider.w = slider.width(); }
       slider.h = slide.height();
       slider.boxPadding = slide.outerWidth() - slide.width();
 
@@ -1085,9 +1143,9 @@
   };
 
   // Ensure the slider isn't focussed if the window loses focus.
-  $( window ).blur( function ( e ) {
+  $( window ).on( 'blur', function ( e ) {
     focused = false;
-  }).focus( function ( e ) {
+  }).on( 'focus', function ( e ) {
     focused = true;
   });
 
@@ -1113,7 +1171,7 @@
     // Usability features
     pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
     pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
-    pauseInvisible: true,   		//{NEW} Boolean: Pause the slideshow when tab is invisible, resume when visible. Provides better UX, lower CPU usage.
+    pauseInvisible: true,       //{NEW} Boolean: Pause the slideshow when tab is invisible, resume when visible. Provides better UX, lower CPU usage.
     useCSS: true,                   //{NEW} Boolean: Slider will use CSS3 transitions if available
     touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
     video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
@@ -1147,6 +1205,9 @@
     move: 0,                        //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
     allowOneSlide: true,           //{NEW} Boolean: Whether or not to allow a slider comprised of a single slide
 
+    // Browser Specific
+    isFirefox: false,             // {NEW} Boolean: Set to true when Firefox is the browser used.
+
     // Callback API
     start: function(){},            //Callback: function(slider) - Fires when the slider loads the first slide
     before: function(){},           //Callback: function(slider) - Fires asynchronously with each slider animation
@@ -1154,7 +1215,8 @@
     end: function(){},              //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
     added: function(){},            //{NEW} Callback: function(slider) - Fires after a slide is added
     removed: function(){},           //{NEW} Callback: function(slider) - Fires after a slide is removed
-    init: function() {}             //{NEW} Callback: function(slider) - Fires after the slider is initially setup
+    init: function() {},             //{NEW} Callback: function(slider) - Fires after the slider is initially setup
+  rtl: false             //{NEW} Boolean: Whether or not to enable RTL mode
   };
 
   //FlexSlider: Plugin Function
