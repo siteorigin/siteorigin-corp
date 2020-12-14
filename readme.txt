@@ -99,6 +99,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.6 - 14 December 2020 =
+* Improved Page Jump scrolling on load
+* Developer: Added support for jQuery 3.5
+* Developer: Improved `headerHeight` calculation.
+
 = 1.16.5 - 09 November 2020 =
 * Minor JavaScript update for WordPress 5.5.
 * Minor pagination and page links styling improvements.
