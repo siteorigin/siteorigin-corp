@@ -29,9 +29,9 @@ jQuery( function( $ ) {
 				$( '<li></li>' )
 					.html( $o.html() )
 					.data( 'val', $o.attr( 'value' ) )
-					.click( function() {
+					.on( 'click', function() {
 						$$.val( $( this ).data( 'val' ) );
-						$$.closest( 'form' ).submit();
+						$$.closest( 'form' ).trigger( 'submit' );
 					} )
 			);
 
@@ -45,19 +45,19 @@ jQuery( function( $ ) {
 	} );
 
 	// Open dropdown on click.
-	$( '.ordering-selector-wrapper' ).click( function() {
+	$( '.ordering-selector-wrapper' ).on( 'click', function() {
 		$( this ).toggleClass( 'open-dropdown' );
 	} );
 
 	// Close dropdown on click outside dropdown wrapper.
-	$( window ).click( function( e ) {
+	$( window ).on( 'click', function( e ) {
 		if ( ! $( e.target ).closest( '.ordering-selector-wrapper.open-dropdown' ).length ) {
 			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
 		}
 	} );
 	
 	// Quick View modal.
-	$( '.product-quick-view-button' ).click( function( e ) {
+	$( '.product-quick-view-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 
 		var $container = '#quick-view-container';
@@ -113,7 +113,7 @@ jQuery( function( $ ) {
 		$( 'body' ).css( 'margin-right', ( window.innerWidth - $( 'body' ).width() ) + 'px' );
 		$( 'body' ).css( 'overflow', 'hidden' );
 
-		$( window ).mouseup( function( e ) {
+		$( window ).on( 'mouseup', function( e ) {
 			var container = $( $content );
 			if ( ( ! container.is( e.target ) && container.has( e.target ).length === 0 ) || $( '.quickview-close-icon' ).is( e.target ) ) {
 				$( $container).fadeOut( 300 );
@@ -123,7 +123,7 @@ jQuery( function( $ ) {
 			}
 		} );
 
-		$( document ).keyup( function( e ) {
+		$( document ).on( 'keyup', function( e ) {
 			var container = $( $content );
 			if ( e.keyCode == 27 ) { // Escape key maps to keycode 27.
 				$( $container ).fadeOut( 300 );
