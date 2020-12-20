@@ -101,7 +101,7 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 = 1.16.6 - 14 December 2020 =
 * Improved Page Jump scrolling on load
-* Developer: Added support for jQuery 3.5
+* Developer: Added support for jQuery 3.5.
 * Developer: Improved `headerHeight` calculation.
 
 = 1.16.5 - 09 November 2020 =
