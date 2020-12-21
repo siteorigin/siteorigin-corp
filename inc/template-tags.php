@@ -289,7 +289,7 @@ function siteorigin_corp_excerpt() {
 
 	$excerpt = get_the_excerpt();
 	$excerpt_add_read_more = str_word_count( $excerpt ) >= $length;
-	wp_trim_words( $excerpt, $length, '...' );
+	$excerpt = wp_trim_words( $excerpt, $length, '...' );
 
 	if ( ! empty( $read_more_text ) && ( has_excerpt() || $excerpt_add_read_more ) ) {
 		$excerpt .= $read_more_text;
