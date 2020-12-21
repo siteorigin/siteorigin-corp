@@ -281,7 +281,11 @@ function siteorigin_corp_excerpt() {
 		$read_more_text = '';
 	}
 
-	$length = is_search() ? 30 : siteorigin_setting( 'blog_excerpt_length', 55 );
+	if ( is_search() ) {
+		$length = 30;
+	} else {
+		$length = ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
+	}
 
 	$excerpt = get_the_excerpt();
 	$excerpt_add_read_more = str_word_count( $excerpt ) >= $length;
