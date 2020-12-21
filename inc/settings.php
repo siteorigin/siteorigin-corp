@@ -1820,3 +1820,6 @@ function siteorigin_corp_about_page_sections( $about ) {
 	return $about;
 }
 add_filter( 'siteorigin_about_page', 'siteorigin_corp_about_page_sections' );
+
+// Enable Lazy Load Exclude Logo Settings Extra.
+add_filter( 'siteorigin_settings_lazy_load_exclude_logo', '__return_true' );
