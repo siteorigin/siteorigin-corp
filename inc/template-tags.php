@@ -291,25 +291,15 @@ function siteorigin_corp_excerpt() {
 		$read_more_text = '';
 	}
 
-	if ( is_search() ) {
-		$length = 30;
-	} else {
-		$length = ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
+	$length = is_search() ? 30 : siteorigin_setting( 'blog_excerpt_length', 55 );
+
+	$excerpt = get_the_excerpt();
+	$excerpt_add_read_more = str_word_count( $excerpt ) >= $length;
+	wp_trim_words( $excerpt, $length, '...' );
+
+	if ( ! empty( $read_more_text ) && ( has_excerpt() || $excerpt_add_read_more ) ) {
+		$excerpt .= $read_more_text;
 	}
-
-	$ellipsis = '...';
-	$excerpt = explode( ' ', get_the_excerpt(), $length );
-
-	// If the auto excerpt is longer than the Excerpt Length and there isn't a custom excerpt provided, add the $ellipsis.
-	if ( ! has_excerpt() && count( $excerpt ) >= $length ) {
-		array_pop( $excerpt );
-		$excerpt = '<p>' . implode( " ", $excerpt ) . $ellipsis . '</p>' . $read_more_text;
-	// If the auto excerpt isn't longer than the Excerpt Length, don't add the $ellipsis.
-	} else {
-		$excerpt = '<p>' . implode( " ", $excerpt ) . '</p>' . $read_more_text;
-	}
-
-	$excerpt = preg_replace( '`\s\[[^\]]*\]`','', $excerpt );
 
 	echo $excerpt;
 }
