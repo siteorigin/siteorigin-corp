@@ -1048,7 +1048,7 @@ input.button.added:after,
     #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider {
       background: transparent; }
       #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .flex-viewport {
-        max-height: 555px;
+        max-height: 535px;
         overflow: hidden; }
       #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .slide {
         text-align: center;
