@@ -1043,7 +1043,15 @@ input.button.added:after,
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
       height: auto;
       max-width: 100%;
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: auto; }
+    #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider {
+      background: transparent; }
+      #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .flex-viewport {
+        max-height: 535px;
+        overflow: hidden; }
+      #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .slide {
+        text-align: center; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;

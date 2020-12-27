@@ -59,6 +59,20 @@
 				height: auto;
 				max-width: 100%;
 				vertical-align: middle;
+				width: auto;
+			}
+
+			.flexslider {
+				background: transparent;
+
+				.flex-viewport {
+					max-height: 535px;
+					overflow: hidden;
+				}
+
+				.slide {
+					text-align: center;
+				}
 			}
 
 			@media (max-width: 768px) {
