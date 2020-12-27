@@ -1039,11 +1039,16 @@ input.button.added:after,
   #quick-view-container .product-content-wrapper .product-image-wrapper {
     float: left;
     padding: 20px 15px 20px 20px;
-    width: 50%; }
+    width: 50%;
+    max-height: 555px;
+    overflow: hidden; }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
       height: auto;
       max-width: 100%;
+      width: auto;
       vertical-align: middle; }
+    #quick-view-container .product-content-wrapper .product-image-wrapper .slide {
+      text-align: center; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;
