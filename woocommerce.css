@@ -1039,16 +1039,20 @@ input.button.added:after,
   #quick-view-container .product-content-wrapper .product-image-wrapper {
     float: left;
     padding: 20px 15px 20px 20px;
-    width: 50%;
-    max-height: 555px;
-    overflow: hidden; }
+    width: 50%; }
     #quick-view-container .product-content-wrapper .product-image-wrapper img {
       height: auto;
       max-width: 100%;
       width: auto;
       vertical-align: middle; }
-    #quick-view-container .product-content-wrapper .product-image-wrapper .slide {
-      text-align: center; }
+    #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider {
+      background: transparent; }
+      #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .flex-viewport {
+        max-height: 555px;
+        overflow: hidden; }
+      #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .slide {
+        text-align: center;
+        background: #2d2d2d; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
         float: none;
