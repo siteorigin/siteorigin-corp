@@ -1051,7 +1051,6 @@ input.button.added:after,
         max-height: 535px;
         overflow: hidden; }
       #quick-view-container .product-content-wrapper .product-image-wrapper .flexslider .slide {
-        background: #fff;
         text-align: center; }
     @media (max-width: 768px) {
       #quick-view-container .product-content-wrapper .product-image-wrapper {
