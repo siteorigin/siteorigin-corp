@@ -277,7 +277,7 @@ function siteorigin_corp_excerpt() {
 		$excerpt .= $read_more_text;
 	}
 
-	echo $excerpt;
+	echo '<p>' . wp_kses_post( $excerpt ) . '</p>';
 }
 endif;
 
