@@ -99,6 +99,15 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.16.7 - 29 December 2020 =
+* Post Excerpt: If the `Excerpt Length` field is empty the default 55 word count will be applied.
+* Post Excerpt Read More Link: Applied the read more link to manual excerpts.
+* WooCommerce Quick View: Prevented stretching and a scrollbar due to large images by resizing product images as needed.
+* WooCommerce Quick View: Removed the gallery background color.
+* WooCommerce: Added single product thumbnail navigation support for jQuery 3.5.
+* Updated the SiteOrigin Settings framework.
+* Developer: Refactored `siteorigin_corp_excerpt` to ensure more consistent results.
+
 = 1.16.6 - 14 December 2020 =
 * Improved Page Jump scrolling on load
 * Developer: Added support for jQuery 3.5.
