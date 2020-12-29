@@ -243,7 +243,7 @@ if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
  * Filter the excerpt length.
  */
 function siteorigin_corp_excerpt_length( $length ) {
-	return siteorigin_setting( 'blog_excerpt_length' );
+	return ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
 }
 add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
 endif;
