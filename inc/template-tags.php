@@ -243,7 +243,7 @@ if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
  * Filter the excerpt length.
  */
 function siteorigin_corp_excerpt_length( $length ) {
-	return siteorigin_setting( 'blog_excerpt_length' );
+	return ! empty( siteorigin_setting( 'blog_excerpt_length' ) ) ? siteorigin_setting( 'blog_excerpt_length' ) : 55;
 }
 add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
 endif;
@@ -268,13 +268,16 @@ function siteorigin_corp_excerpt() {
 
 	$excerpt = get_the_excerpt();
 	$excerpt_add_read_more = str_word_count( $excerpt ) >= $length;
-	$excerpt = wp_trim_words( $excerpt, $length, '...' );
+
+	if ( ! has_excerpt() ) {
+		$excerpt = wp_trim_words( $excerpt, $length, '...' );
+	}
 
 	if ( ! empty( $read_more_text ) && ( has_excerpt() || $excerpt_add_read_more ) ) {
 		$excerpt .= $read_more_text;
 	}
 
-	echo $excerpt;
+	echo '<p>' . wp_kses_post( $excerpt ) . '</p>';
 }
 endif;
 
