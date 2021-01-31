@@ -42,9 +42,11 @@ if ( ! function_exists( 'siteorigin_corp_breadcrumbs' ) ) :
 function siteorigin_corp_breadcrumbs() {
 	if ( siteorigin_page_setting( 'overlap' ) != 'disabled' ) return;
 	if ( function_exists( 'bcn_display' ) ) {
-		?><div class="breadcrumbs bcn">
+		?>
+		<div class="breadcrumbs bcn">
 			<?php bcn_display(); ?>
-		</div><?php
+		</div>
+		<?php
 	} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
 		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
 	} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
