@@ -45,9 +45,9 @@ function siteorigin_corp_breadcrumbs() {
 		?><div class="breadcrumbs bcn">
 			<?php bcn_display(); ?>
 		</div><?php
-	} elseif( function_exists( 'yoast_breadcrumb' ) ) {
+	} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
 		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
-	} elseif( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+	} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
 		?>
 		<div class="breadcrumbs bcn">
 			<?php rank_math_the_breadcrumbs(); ?>
