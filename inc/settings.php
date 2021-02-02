@@ -900,8 +900,10 @@ $css .= '/* style */
 	.site-header {
 	background: ${header_background};
 	border-bottom: 1px solid ${header_border};
-	margin-bottom: ${header_margin};
 	padding: ${header_padding} 0;
+	}
+	.site-header,.masthead-sentinel {
+		margin-bottom: ${header_margin};
 	}
 	.site-header .site-branding .site-title {
 	.font( ${typography_site_title_font} );
