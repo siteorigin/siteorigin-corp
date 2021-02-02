@@ -37,16 +37,24 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_breadcrumbs' ) ) :
 /**
- * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
+ * Display's breadcrumbs supported by Breadcrumb NavXT, Rank Math, and Yoast SEO.
  */
 function siteorigin_corp_breadcrumbs() {
 	if ( siteorigin_page_setting( 'overlap' ) != 'disabled' ) return;
 	if ( function_exists( 'bcn_display' ) ) {
-		?><div class="breadcrumbs bcn">
+		?>
+		<div class="breadcrumbs bcn">
 			<?php bcn_display(); ?>
-		</div><?php
-	} elseif( function_exists( 'yoast_breadcrumb' ) ) {
+		</div>
+		<?php
+	} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
 		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
+	} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		?>
+		<div class="breadcrumbs bcn">
+			<?php rank_math_the_breadcrumbs(); ?>
+		</div>
+		<?php
 	}
 }
 endif;
