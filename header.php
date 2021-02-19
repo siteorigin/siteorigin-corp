@@ -75,7 +75,7 @@ do_action( 'siteorigin_corp_body_top' );
 					<div id="fullscreen-search">
 						<div class="corp-container">
 							<span><?php esc_html_e( 'Type and press enter to search', 'siteorigin-corp' ); ?></span>
-							<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( site_url() ) ?>">
+							<form id="fullscreen-search-form" method="get" action="<?php echo esc_url( home_url() ) ?>">
 								<input type="search" name="s" placeholder="" aria-label="<?php esc_attr_e( 'Search for', 'siteorigin-corp' ); ?>" value="<?php echo get_search_query() ?>" />
 								<button type="submit" aria-label="<?php esc_attr_e( 'Search', 'siteorigin-corp' ); ?>">
 									<?php siteorigin_corp_display_icon( 'search' ); ?>
