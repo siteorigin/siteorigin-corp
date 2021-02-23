@@ -100,6 +100,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.17.0 - 23 February 2021 =
+* Added RankMath breadcrumb support.
+* Applied the `Header Bottom Margin` setting to both the header and the sticky header sentinel.
+* Updated the header search to use `home_url` instead of `site_url`.
+* Updated the SiteOrigin Settings framework.
+
 = 1.16.7 - 29 December 2020 =
 * Post Excerpt: If the `Excerpt Length` field is empty the default 55 word count will be applied.
 * Post Excerpt Read More Link: Applied the read more link to manual excerpts.
