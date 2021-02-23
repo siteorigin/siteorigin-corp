@@ -6,17 +6,6 @@
  * @license GPL 2.0
  */
 
-if ( ! function_exists( 'siteorigin_corp_excerpt_length' ) ) :
-/**
- * Filter the excerpt length.
- * @deprecated 1.4.3 Use siteorigin_corp_excerpt()
- */
-function siteorigin_corp_excerpt_length( $length ) {
-	return siteorigin_setting( 'blog_excerpt_length' );
-}
-add_filter( 'excerpt_length', 'siteorigin_corp_excerpt_length', 10 );
-endif;
-
 if ( ! function_exists( 'siteorigin_corp_excerpt_more' ) ) :
 /**
  * Add a more link to the excerpt.
@@ -30,7 +19,6 @@ function siteorigin_corp_excerpt_more( $more ) {
 	}
 }
 endif;
-add_filter( 'excerpt_more', 'siteorigin_corp_excerpt_more' );
 
 if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image_buttons' ) ) :
 /**
