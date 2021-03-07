@@ -1140,7 +1140,7 @@ $css .= '/* style */
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_css' );
 
 /**
- * Add custom CSS for the theme woocommerce elements.
+ * Add custom CSS for the theme WooCommerce elements.
  *
  * @param $css
  *
