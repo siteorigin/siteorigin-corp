@@ -1638,6 +1638,18 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
 
 /**
+ * Add CSS for tags background color.
+ */
+function siteorigin_corp_tags_css( $css, $settings ) {
+	if ( get_theme_mod( 'background_color' ) == '#F9F9F9' || empty( get_theme_mod( 'background_color' ) ) ) return $css;
+
+	$css .= '.tags-links a:after, .widget_tag_cloud a:after { background: #' . get_theme_mod( 'background_color' ) . '; }';
+
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_tags_css', 10, 2 );
+
+/**
  * Add default settings.
  *
  * @param $defaults
