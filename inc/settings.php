@@ -1686,14 +1686,14 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_author_box']                 = true;
 	$defaults['blog_related_posts']                   = true;
 
-	$defaults['typography_site_title']                ='#2d2d2d';
-	$defaults['typography_site_tagline']              ='#929292';
-	$defaults['typography_accent']                    ='#f14e4e';
-	$defaults['typography_heading']                   ='#2d2d2d';
-	$defaults['typography_text']                      ='#626262';
-	$defaults['typography_secondary_text']            ='#929292';
-	$defaults['typography_border']                    ='#e6e6e6';
-	$defaults['typography_border_dark']               ='#d6d6d6';
+	$defaults['typography_site_title']                = '#2d2d2d';
+	$defaults['typography_site_tagline']              = '#929292';
+	$defaults['typography_accent']                    = '#f14e4e';
+	$defaults['typography_heading']                   = '#2d2d2d';
+	$defaults['typography_text']                      = '#626262';
+	$defaults['typography_secondary_text']            = '#929292';
+	$defaults['typography_border']                    = '#e6e6e6';
+	$defaults['typography_border_dark']               = '#d6d6d6';
 
 	$defaults['pages_featured_image']                 = true;
 
