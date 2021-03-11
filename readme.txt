@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.17.1 - 11 March 2021 =
+* Updated post tag background color to match site background color setting.
+* Updated Customizer theme settings outputted CSS.
+
 = 1.17.0 - 23 February 2021 =
 * Added RankMath breadcrumb support.
 * Applied the `Header Bottom Margin` setting to both the header and the sticky header sentinel.
