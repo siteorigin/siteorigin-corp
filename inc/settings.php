@@ -596,7 +596,7 @@ $css .= '/* style */
 	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
 	color: ${typography_heading};
 	}
-	.sub-heading,.site-content #jp-relatedposts .jp-relatedposts-headline,.site-content #primary .sharedaddy h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.related-projects-section h3,.comments-title,.comment-reply-title {
+	.sub-heading,.comments-title,.comment-reply-title,.related-projects-section h3,.yarpp-related .related-posts,.related-posts-section .related-posts,.site-content #primary .sharedaddy h3,.site-content #jp-relatedposts .jp-relatedposts-headline {
 	color: ${typography_text};
 	}
 	blockquote {
@@ -621,20 +621,20 @@ $css .= '/* style */
 	table th,table td {
 	border: 1px solid ${typography_border};
 	}
-	.button,button,input[type="button"],input[type="reset"],input[type="submit"] {
+	.button,button,input[type=button],input[type=reset],input[type=submit] {
 	background: ${typography_accent};
 	.font( ${typography_body_font} );
 	}
-	.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+	.button:hover,button:hover,input[type=button]:hover,input[type=reset]:hover,input[type=submit]:hover {
 	background: .rgba( ${typography_accent}, .8);
 	}
-	.button:active,.button:focus,button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus {
+	.button:active,.button:focus,button:active,button:focus,input[type=button]:active,input[type=button]:focus,input[type=reset]:active,input[type=reset]:focus,input[type=submit]:active,input[type=submit]:focus {
 	background: ${typography_accent};
 	}
-	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea {
+	input[type=text],input[type=email],input[type=url],input[type=password],input[type=search],input[type=number],input[type=tel],input[type=range],input[type=date],input[type=month],input[type=week],input[type=time],input[type=datetime],input[type=datetime-local],input[type=color],textarea {
 	border: 1px solid ${typography_border_dark};
 	}
-	input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus {
+	input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=password]:focus,input[type=search]:focus,input[type=number]:focus,input[type=tel]:focus,input[type=range]:focus,input[type=date]:focus,input[type=month]:focus,input[type=week]:focus,input[type=time]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=color]:focus,textarea:focus {
 	border-color: .rgba( ${typography_border_dark}, .8);
 	}
 	select {
@@ -682,7 +682,7 @@ $css .= '/* style */
 	#site-navigation.main-navigation ul .menu-button a:hover {
 	background: .rgba( ${typography_accent}, .8);
 	}
-	[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
+	[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li:hover > a {
 	color: ${navigation_link_accent};
 	}
 	.link-underline.main-navigation div > ul:not(.cart_list) > li:hover > a {
@@ -697,7 +697,7 @@ $css .= '/* style */
 	.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_item > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-item > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_ancestor > a,.main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	color: ${navigation_link_accent};
 	}
-	[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_item > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-item > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_ancestor > a,[class*="overlap"] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-ancestor > a {
+	[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current > a,[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_item > a,[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-item > a,[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current_page_ancestor > a,[class*=overlap] .main-navigation:not(.link-underline) div > ul:not(.cart_list) > li.current-menu-ancestor > a {
 	color: ${navigation_link_accent};
 	}
 	.main-navigation .search-toggle .open svg path {
@@ -900,10 +900,8 @@ $css .= '/* style */
 	.site-header {
 	background: ${header_background};
 	border-bottom: 1px solid ${header_border};
+	margin-bottom: ${header_margin};
 	padding: ${header_padding} 0;
-	}
-	.site-header,.masthead-sentinel {
-		margin-bottom: ${header_margin};
 	}
 	.site-header .site-branding .site-title {
 	.font( ${typography_site_title_font} );
@@ -925,7 +923,7 @@ $css .= '/* style */
 	#fullscreen-search form {
 	border-bottom: 1px solid ${navigation_search_overlay_text};
 	}
-	#fullscreen-search form button[type="submit"] svg {
+	#fullscreen-search form button[type=submit] svg {
 	fill: ${navigation_search_overlay_text};
 	}
 	#fullscreen-search .search-close-button .close svg path {
@@ -1000,7 +998,7 @@ $css .= '/* style */
 	.search-results .hentry {
 	border: 1px solid ${typography_border};
 	}
-	.search-form button[type="submit"] svg path {
+	.search-form button[type=submit] svg path {
 	fill: ${typography_text};
 	}
 	.author-box {
@@ -1142,7 +1140,7 @@ $css .= '/* style */
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_css' );
 
 /**
- * Add custom CSS for the theme woocommerce elements.
+ * Add custom CSS for the theme WooCommerce elements.
  *
  * @param $css
  *
@@ -1640,6 +1638,18 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_css', 10, 2 );
 
 /**
+ * Add CSS for tags background color.
+ */
+function siteorigin_corp_tags_css( $css, $settings ) {
+	if ( get_theme_mod( 'background_color' ) == '#F9F9F9' || empty( get_theme_mod( 'background_color' ) ) ) return $css;
+
+	$css .= '.tags-links a:after, .widget_tag_cloud a:after { background: #' . get_theme_mod( 'background_color' ) . '; }';
+
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_tags_css', 10, 2 );
+
+/**
  * Add default settings.
  *
  * @param $defaults
@@ -1688,14 +1698,14 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_author_box']                 = true;
 	$defaults['blog_related_posts']                   = true;
 
-	$defaults['typography_site_title']                ='#2d2d2d';
-	$defaults['typography_site_tagline']              ='#929292';
-	$defaults['typography_accent']                    ='#f14e4e';
-	$defaults['typography_heading']                   ='#2d2d2d';
-	$defaults['typography_text']                      ='#626262';
-	$defaults['typography_secondary_text']            ='#929292';
-	$defaults['typography_border']                    ='#e6e6e6';
-	$defaults['typography_border_dark']               ='#d6d6d6';
+	$defaults['typography_site_title']                = '#2d2d2d';
+	$defaults['typography_site_tagline']              = '#929292';
+	$defaults['typography_accent']                    = '#f14e4e';
+	$defaults['typography_heading']                   = '#2d2d2d';
+	$defaults['typography_text']                      = '#626262';
+	$defaults['typography_secondary_text']            = '#929292';
+	$defaults['typography_border']                    = '#e6e6e6';
+	$defaults['typography_border_dark']               = '#d6d6d6';
 
 	$defaults['pages_featured_image']                 = true;
 
@@ -1806,7 +1816,7 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_set
  * Add the about page sections.
  */
 function siteorigin_corp_about_page_sections( $about ) {
-	$about['documentation_url']	= 'https://siteorigin.com/corp-documentation/';
+	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
 	$about['description']       = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
 	$about['review']            = true;
 	$about['no_video']          = true;
