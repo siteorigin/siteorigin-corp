@@ -1517,7 +1517,6 @@ a {
 .site-header {
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
   padding: 25px 0;
   position: relative;
   width: 100%;
@@ -1616,6 +1615,10 @@ a {
       text-align: center; }
     .site-header:not(.mobile-menu) .main-navigation {
       text-align: center; } }
+
+.site-header,
+.masthead-sentinel {
+  margin-bottom: 60px; }
 
 .overlap-light .site-header:not(.stuck) .site-branding .site-title a,
 .overlap-light .site-header:not(.stuck) .site-branding .site-description {

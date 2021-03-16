@@ -1,7 +1,6 @@
 .site-header {
 	background: $color__header-background;
 	border-bottom: 1px solid $color__header-border;
-	margin-bottom: $header__margin;
 	padding: $header__padding 0;
 	position: relative;
 	width: 100%;
@@ -167,6 +166,11 @@
 			}
 		}
 	}
+}
+
+.site-header,
+.masthead-sentinel {
+	margin-bottom: $header__margin;
 }
 
 // Overlap.
