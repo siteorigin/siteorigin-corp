@@ -1,7 +1,6 @@
 .site-header {
 	background: $color__header-background;
 	border-bottom: 1px solid $color__header-border;
-	margin-bottom: $header__margin;
 	padding: $header__padding 0;
 	position: relative;
 	width: 100%;
@@ -188,7 +187,6 @@
 
 // Sticky header sentinel.
 .masthead-sentinel {
-	margin-bottom: 60px;
 
 	body[class*="overlap-"] & {
 		display: none;
@@ -197,6 +195,12 @@
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
+}
+
+// Header and sticky header bottom margin.
+.site-header,
+.masthead-sentinel {
+	margin-bottom: $header__margin;
 }
 
 #topbar {

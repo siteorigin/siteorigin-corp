@@ -900,7 +900,6 @@ $css .= '/* style */
 	.site-header {
 	background: ${header_background};
 	border-bottom: 1px solid ${header_border};
-	margin-bottom: ${header_margin};
 	padding: ${header_padding} 0;
 	}
 	.site-header .site-branding .site-title {
@@ -912,6 +911,9 @@ $css .= '/* style */
 	.site-header .site-branding .site-description {
 	color: ${typography_site_tagline};
 	.font( ${typography_site_tagline_font} );
+	}
+	.site-header,.masthead-sentinel {
+	margin-bottom: ${header_margin};
 	}
 	#fullscreen-search {
 	background: .rgba( ${navigation_search_overlay_background}, .95);

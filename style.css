@@ -1517,7 +1517,6 @@ a {
 .site-header {
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
   padding: 25px 0;
   position: relative;
   width: 100%;
@@ -1625,12 +1624,15 @@ a {
 .overlap-dark .site-header:not(.stuck) .site-branding .site-description {
   color: #2d2d2d; }
 
+body[class*="overlap-"] .masthead-sentinel {
+  display: none; }
+
+.no-header-margin .masthead-sentinel {
+  margin-bottom: 0; }
+
+.site-header,
 .masthead-sentinel {
   margin-bottom: 60px; }
-  body[class*="overlap-"] .masthead-sentinel {
-    display: none; }
-  .no-header-margin .masthead-sentinel {
-    margin-bottom: 0; }
 
 #topbar {
   position: relative;
