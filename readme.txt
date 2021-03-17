@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.17.2 - 17 March 2021 =
+* Resolved a follow-up `Header Bottom Margin` setting issue.
+
 = 1.17.1 - 11 March 2021 =
 * Updated post tag background color to match site background color setting.
 * Updated Customizer theme settings outputted CSS.
