@@ -1616,10 +1616,6 @@ a {
     .site-header:not(.mobile-menu) .main-navigation {
       text-align: center; } }
 
-.site-header,
-.masthead-sentinel {
-  margin-bottom: 60px; }
-
 .overlap-light .site-header:not(.stuck) .site-branding .site-title a,
 .overlap-light .site-header:not(.stuck) .site-branding .site-description {
   color: #fff; }
@@ -1628,12 +1624,15 @@ a {
 .overlap-dark .site-header:not(.stuck) .site-branding .site-description {
   color: #2d2d2d; }
 
+body[class*="overlap-"] .masthead-sentinel {
+  display: none; }
+
+.no-header-margin .masthead-sentinel {
+  margin-bottom: 0; }
+
+.site-header,
 .masthead-sentinel {
   margin-bottom: 60px; }
-  body[class*="overlap-"] .masthead-sentinel {
-    display: none; }
-  .no-header-margin .masthead-sentinel {
-    margin-bottom: 0; }
 
 #topbar {
   position: relative;

@@ -168,11 +168,6 @@
 	}
 }
 
-.site-header,
-.masthead-sentinel {
-	margin-bottom: $header__margin;
-}
-
 // Overlap.
 .overlap-light .site-header:not(.stuck) .site-branding {
 
@@ -192,7 +187,6 @@
 
 // Sticky header sentinel.
 .masthead-sentinel {
-	margin-bottom: 60px;
 
 	body[class*="overlap-"] & {
 		display: none;
@@ -201,6 +195,12 @@
 	.no-header-margin & {
 		margin-bottom: 0;
 	}
+}
+
+// Header and sticky header bottom margin.
+.site-header,
+.masthead-sentinel {
+	margin-bottom: $header__margin;
 }
 
 #topbar {
