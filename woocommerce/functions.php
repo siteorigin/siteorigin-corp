@@ -85,12 +85,8 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_mini_cart' ) ) :
  * Display the WooCommerce mini cart.
  */
 function siteorigin_corp_woocommerce_mini_cart() {
-	if (
-		class_exists( 'Woocommerce' ) &&
-		apply_filters( 'siteorigin_corp_display_mini_cart', ! ( is_cart() || is_checkout() ) )
-	) :
-		global $woocommerce;
-		?>
+	if ( class_exists( 'Woocommerce' ) && ! ( is_cart() || is_checkout() ) ) : ?>
+		<?php global $woocommerce; ?>
 		<ul class="shopping-cart">
 			<li>
 				<a class="shopping-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View shopping cart', 'siteorigin-corp' ); ?>">
