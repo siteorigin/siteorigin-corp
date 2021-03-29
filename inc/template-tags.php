@@ -717,7 +717,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_corp_is_post_loop_template' ) ) :
 /**
- * Check if we're currently rendering a specific post loop widget.
+ * Check if we're currently rendering a specific Page Builder Post Loop widget template.
  * @param $check
  *
  * @return bool
