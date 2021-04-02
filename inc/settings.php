@@ -545,6 +545,7 @@ function siteorigin_corp_font_settings( $settings ) {
 			400,
 			500,
 			600,
+			700,
 		),
 	);
 	$settings['typography_site_tagline_font'] = array(
@@ -559,6 +560,7 @@ function siteorigin_corp_font_settings( $settings ) {
 		'name'    => 'Montserrat',
 		'weights' => array(
 			400,
+			700,
 		),
 	);
 	$settings['typography_body_font'] = array(
@@ -567,7 +569,6 @@ function siteorigin_corp_font_settings( $settings ) {
 			300,
 			400,
 			600,
-			700,
 		),
 	);
 
