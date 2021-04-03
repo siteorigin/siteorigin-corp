@@ -157,12 +157,15 @@ body:not(.single) .entry-content p {
 }
 
 .page-links {
+	align-items: center;
+	display: flex;
 	margin: 26px 0;
 	text-align: left;
 
 	.page-links-title {
 		color: $color__text-medium;
 		font-weight: 600;
+		margin-right: 4px;
 	}
 
 	.post-page-numbers {
@@ -172,7 +175,7 @@ body:not(.single) .entry-content p {
 		font-family: $font__main;
 		font-size: 0.9333em;
 		line-height: normal;
-		margin-right: 4px;
+		margin-right: 8px;
 		padding: 11px 17px;
 		transition: .3s;
 		vertical-align: top;
