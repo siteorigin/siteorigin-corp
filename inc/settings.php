@@ -556,6 +556,7 @@ function siteorigin_corp_font_settings( $settings ) {
 		'weights' => array(
 			500,
 			600,
+			700,
 		),
 	);
 	$settings['typography_body_font'] = array(
