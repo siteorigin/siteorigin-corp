@@ -542,25 +542,20 @@ function siteorigin_corp_font_settings( $settings ) {
 	$settings['typography_site_title_font'] = array(
 		'name'    => 'Montserrat',
 		'weights' => array(
-			400,
-			500,
 			600,
-			700,
 		),
 	);
 	$settings['typography_site_tagline_font'] = array(
 		'name'    => 'Open Sans',
 		'weights' => array(
-			300,
 			400,
-			600,
 		),
 	);
 	$settings['typography_heading_font'] = array(
 		'name'    => 'Montserrat',
 		'weights' => array(
-			400,
-			700,
+			500,
+			600,
 		),
 	);
 	$settings['typography_body_font'] = array(
@@ -568,6 +563,7 @@ function siteorigin_corp_font_settings( $settings ) {
 		'weights' => array(
 			300,
 			400,
+			500,
 			600,
 		),
 	);
