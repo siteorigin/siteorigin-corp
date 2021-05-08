@@ -100,6 +100,13 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.17.3 - 08 May 2021 =
+* Page Links: Minor styling adjustments.
+* Updated default font array to ensure the correct default font-weights are being loaded.
+* Ensured FitVids is loaded for the Block Editor.
+* Updated SiteOrigin Settings submodule.
+* Developer: Added `siteorigin_corp_display_mini_cart` filter.
+
 = 1.17.2 - 17 March 2021 =
 * Resolved a follow-up `Header Bottom Margin` setting issue.
 
