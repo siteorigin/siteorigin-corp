@@ -1843,11 +1843,14 @@ body:not(.single) .entry-content p:only-of-type {
     vertical-align: middle; }
 
 .page-links {
+  align-items: center;
+  display: flex;
   margin: 26px 0;
   text-align: left; }
   .page-links .page-links-title {
     color: #626262;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-right: 4px; }
   .page-links .post-page-numbers {
     border: 1px solid #626262;
     color: #626262;
@@ -1855,7 +1858,7 @@ body:not(.single) .entry-content p:only-of-type {
     font-family: "Open Sans", sans-serif;
     font-size: 0.9333em;
     line-height: normal;
-    margin-right: 4px;
+    margin-right: 8px;
     padding: 11px 17px;
     transition: .3s;
     vertical-align: top; }
