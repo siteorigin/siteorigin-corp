@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.0 - 20 July 2021 =
+* Disabled WP 5.8 Block-Based widgets editor. Can be re-enabled using `add_filter( 'siteorigin_settings_disable_new_widget_area', '__return_false' );`.
+
 = 1.17.3 - 08 May 2021 =
 * Page Links: Minor styling adjustments.
 * Updated default font array to ensure the correct default font-weights are being loaded.
