@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.1 - 17 October 2021 =
+* Scroll to Top: Use alternative offset when the header is not displayed.
+
 = 1.18.0 - 20 July 2021 =
 * Disabled WP 5.8 Block-Based widgets editor. Can be re-enabled using `add_filter( 'siteorigin_settings_disable_new_widget_area', '__return_false' );`.
 
