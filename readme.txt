@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.3 - 25 October 2021 =
+* Updated SiteOrigin Settings framework.
+
 = 1.18.2 - 22 October 2021 =
 * FlexSlider: Prevented a sizing issue when added inside of a Page Builder full-width row.
 * Updated SiteOrigin Settings framework.
