@@ -58,7 +58,7 @@
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
 		width: 100%;
-		
+
 		@at-root .centered#{&} {
 			flex-direction: column;
 		}

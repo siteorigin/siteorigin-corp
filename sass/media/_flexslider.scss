@@ -26,7 +26,7 @@
 		overflow: hidden;
 		position: relative;
 	}
-	
+
 	.flex-direction-nav a {
 		background: rgba(0, 0, 0, .5);
 		cursor: pointer;
@@ -40,7 +40,7 @@
 		transition: all .3s ease-in-out;
 		width: 48px; 
 		z-index: 10;
-		
+
 		&:hover {
 			background: rgba(0, 0, 0, .7);
 		}
