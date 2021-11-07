@@ -203,9 +203,10 @@
 /*--------------------------------------------------------------
 ## Recent Posts Widget
 --------------------------------------------------------------*/
-.widget_recent_entries li {
+.widget.widget_recent_entries ul li {
 	color: $color__text-light;
-	margin-bottom: 11px;
+	line-height: 1.7333;
+	margin-bottom: 25px;
 
 	&:last-of-type {
 		margin-bottom: 0; 
