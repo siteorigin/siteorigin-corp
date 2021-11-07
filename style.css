@@ -1367,14 +1367,15 @@ a {
 /*--------------------------------------------------------------
 ## Recent Posts Widget
 --------------------------------------------------------------*/
-.widget_recent_entries li {
+.widget.widget_recent_entries ul li {
   color: #929292;
-  margin-bottom: 11px; }
-  .widget_recent_entries li:last-of-type {
+  line-height: 1.7333;
+  margin-bottom: 25px; }
+  .widget.widget_recent_entries ul li:last-of-type {
     margin-bottom: 0; }
-  .widget_recent_entries li a {
+  .widget.widget_recent_entries ul li a {
     color: #2d2d2d; }
-  .widget_recent_entries li span {
+  .widget.widget_recent_entries ul li span {
     display: block; }
 
 /*--------------------------------------------------------------
