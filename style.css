@@ -1673,9 +1673,11 @@ body[class*="overlap-"] .masthead-sentinel {
   #fullscreen-search form {
     border-bottom: 1px solid #b2b2b2;
     left: 50%;
-    max-width: 555px;
     position: absolute;
     transform: translate(-50%, -50%); }
+    @media (min-width: 680px) {
+      #fullscreen-search form {
+        width: 555px; } }
     #fullscreen-search form input[type="search"] {
       background: transparent;
       border: 0;
@@ -1684,7 +1686,7 @@ body[class*="overlap-"] .masthead-sentinel {
       font-size: 32px;
       font-weight: normal;
       outline: none;
-      padding: 0 39px 10px 14px;
+      padding: 0 58px 10px 14px;
       text-align: center;
       width: 100%; }
       @media (max-width: 768px) {
