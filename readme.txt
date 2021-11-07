@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.4 - 07 November 2021 =
+* Updated SiteOrigin Settings framework: Restored Page Template settings for templates (Search, 404) and taxonomies.
+* Improved Full Screen Search field styling.
+* Improved Recent Posts widget styling.
+
 = 1.18.3 - 25 October 2021 =
 * Updated SiteOrigin Settings framework.
 
