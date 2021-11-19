@@ -372,7 +372,7 @@ function siteorigin_corp_settings_init() {
 				'text' => array(
 					'type'              => 'text',
 					'label'             => esc_html__( 'Footer Text', 'siteorigin-corp' ),
-					'description'       => esc_html__( "{site-title} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
+					'description'       => esc_html__( "{sitename} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'privacy_policy_link' => array(
