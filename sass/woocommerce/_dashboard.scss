@@ -58,7 +58,7 @@
 				
 				&.is-active a {
 					font-weight: bold;
-				}		
+				}
 
 				a {
 					color: $color__text-medium;
@@ -86,7 +86,7 @@
 	.woocommerce-MyAccount-content {
 		float: right;
 		width: 70%;
-		
+
 		@media (max-width: 768px) {
 			float: none;
 			margin-top: 50px; 

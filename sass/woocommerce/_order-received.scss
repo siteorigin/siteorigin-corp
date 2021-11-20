@@ -7,11 +7,11 @@
 
 	p {
 		margin: 0 0 25px;
-		
+
 		&.woocommerce-thankyou-order-received {
 			margin: 0 0 25px !important;
 		}
-		
+
 		&.order-again {
 			margin: 25px 0 0;
 		}
@@ -23,14 +23,14 @@
 		list-style: none;
 		margin: 0 0 25px;
 		padding: 15px 20px;
-		
+
 		li {
 			border-bottom: 1px solid $color__background-hr-dark;
 			color: $color__text-dark;
 			font-size: 13px; 
 			padding: 13px 0;
 			text-transform: uppercase;
-			
+
 			strong {
 				display: block;
 				color: $color__text-medium;

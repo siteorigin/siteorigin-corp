@@ -247,9 +247,9 @@
 
 		&.columns-4 .product {
 			width: 22.375%;
-			
+
 			@media (min-width: 769px) {
-			
+
 				&:nth-of-type(4n+4) {
 					margin-right: 0;
 				}
