@@ -19,7 +19,7 @@
 		display: flex;
 		float: left;
 		font-size: 14px;
-		height: 37px; 
+		height: 37px;
 		justify-content: left;
 		text-align: left;
 
@@ -198,11 +198,11 @@
 		margin: 0;
 
 		@at-root .post-type-archive-product#{&} {
-			padding-top: 30px; 
+			padding-top: 30px;
 		}
 
 		@at-root .tax-product_cat#{&} {
-			padding-top: 30px; 
+			padding-top: 30px;
 		}
 
 		&.columns-1 .product,

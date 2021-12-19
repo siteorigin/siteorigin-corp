@@ -70,8 +70,8 @@
 	.jp-relatedposts-headline {
 		@extend .sub-heading;
 		float: none;
-		font-family: $font__headings; 
-		margin-bottom: 20px; 
+		font-family: $font__headings;
+		margin-bottom: 20px;
 	}
 
 	.jp-relatedposts-items .jp-relatedposts-post {
@@ -81,8 +81,8 @@
 			color: $color__text-dark;
 			display: block;
 			font-family: $font__headings;
-			font-size: 16px; 
-			font-weight: 500; 
+			font-size: 16px;
+			font-weight: 500;
 			line-height: normal;
 			margin: 15px 0 0;
 			transition: .3s;
@@ -100,7 +100,7 @@
 		.jp-relatedposts-post-date,
 		.jp-relatedposts-post-context {
 			color: $color__text-medium;
-			font-size: 13px; 
+			font-size: 13px;
 		}
 	}
 }
