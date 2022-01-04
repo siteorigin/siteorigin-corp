@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.6 - 04 January 2022 =
+* Archives and Categories Widgets: Improved drop-down field styling.
+* WooCommerce Single Product: Improved variations drop-down field styling.
+
 = 1.18.5 - 20 November 2021 =
 * Updated SiteOrigin Settings framework: Ensured WPML translated theme strings aren't overridden.
 
