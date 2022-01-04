@@ -31,14 +31,14 @@
 		background: rgba(0, 0, 0, .5);
 		cursor: pointer;
 		display: block;
-		height: 48px; 
-		margin-top: -24px; 
+		height: 48px;
+		margin-top: -24px;
 		opacity: 0;
 		position: absolute;
 		text-align: center;
 		top: 50%;
 		transition: all .3s ease-in-out;
-		width: 48px; 
+		width: 48px;
 		z-index: 10;
 
 		&:hover {
@@ -68,7 +68,7 @@
 
 			path {
 				fill: #fff;
-				transition: .3s; 
+				transition: .3s;
 			}
 		}
 	}

@@ -153,6 +153,11 @@
 			margin-left: 12px;
 		}
 	}
+
+	select {
+		font-size: 0.95rem;
+		padding: 5px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -209,7 +214,7 @@
 	margin-bottom: 25px;
 
 	&:last-of-type {
-		margin-bottom: 0; 
+		margin-bottom: 0;
 	}
 
 	a {

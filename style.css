@@ -1335,6 +1335,11 @@ a {
   .widget_categories li .children {
     margin-left: 12px; }
 
+.widget_archive select,
+.widget_categories select {
+  font-size: 0.95rem;
+  padding: 5px; }
+
 /*--------------------------------------------------------------
 ## Recent Comments Widget
 --------------------------------------------------------------*/

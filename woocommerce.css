@@ -751,7 +751,8 @@ input.button.added:after,
         font-size: 14px;
         font-weight: bold; }
     .woocommerce .product .variations select {
-      font-size: 14px; }
+      font-size: 14px;
+      padding: 5px; }
     .woocommerce .product .variations .reset_variations {
       color: #626262;
       font-size: 13px;

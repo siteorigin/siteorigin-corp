@@ -402,12 +402,12 @@ function siteorigin_corp_related_projects( $post_id ) {
 		$first_cat = $categories[0]->term_id;
 		$args=array(
 			'tax_query' => array(
-		        array (
-		            'taxonomy' => 'jetpack-portfolio-type',
-		            'field' => 'term_id',
-		            'terms' => $first_cat,
-		        )
-		    ),
+				array (
+					'taxonomy' => 'jetpack-portfolio-type',
+					'field' => 'term_id',
+					'terms' => $first_cat,
+				)
+			),
 			'post__not_in' => array( $post_id ),
 			'posts_per_page' => 3,
 			'ignore_sticky_posts' => -1
