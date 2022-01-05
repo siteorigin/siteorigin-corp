@@ -356,6 +356,7 @@ function siteorigin_corp_related_posts( $post_id ) {
 		echo do_shortcode( '[jetpack-related-posts]' );
 	} else { // The fallback loop.
 		$categories = get_the_category( $post_id );
+		if ( empty( $categories ) ) return;
 		$first_cat = $categories[0]->cat_ID;
 		$args=array(
 			'category__in' => array( $first_cat ),
