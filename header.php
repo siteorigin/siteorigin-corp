@@ -48,9 +48,9 @@ do_action( 'siteorigin_corp_body_top' );
 					<?php endif ?>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation <?php if ( siteorigin_setting( 'navigation_menu_link_hover_underline' ) ) echo 'link-underline' ?>">
+				<?php $mega_menu_active = function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'menu-1' ); ?>
 
-					<?php $mega_menu_active = function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'menu-1' ); ?>
+				<nav id="site-navigation" class="main-navigation <?php if ( siteorigin_setting( 'navigation_menu_link_hover_underline' ) ) echo 'link-underline '; if ( $mega_menu_active ) echo 'mega-menu' ?>">
 
 					<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 

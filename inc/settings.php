@@ -1563,7 +1563,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: inline-block;
 			}
 
-			#masthead .main-navigation ul:not(.shopping-cart) {
+			#masthead .main-navigation:not(.mega-menu) ul:not(.shopping-cart) {
 				display: none;
 			}
 
@@ -1604,7 +1604,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 				display: inline-block;
 			}
 
-			#masthead .main-navigation ul:not(.shopping-cart) {
+			#masthead .main-navigation:not(.mega-menu) ul:not(.shopping-cart) {
 				display: none;
 			}
 
