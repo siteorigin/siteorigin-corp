@@ -541,9 +541,9 @@ a {
       position: absolute;
       text-align: left;
       top: 20px;
+      transform-origin: center top;
       transform: scale(0.95);
       transition: all .15s ease-in;
-      transform-origin: center top;
       visibility: hidden;
       z-index: 99999; }
       .main-navigation ul .sub-menu ul,
@@ -648,8 +648,8 @@ a {
       padding-bottom: 0; }
       #site-navigation.main-navigation ul .menu-button a {
         background: #f14e4e;
-        border: 0;
         border-radius: 0;
+        border: 0;
         color: #fff;
         letter-spacing: 1px;
         line-height: normal;
@@ -737,13 +737,13 @@ a {
         fill: #fff; }
 
 #mobile-navigation {
+  -ms-overflow-style: auto;
+  -webkit-overflow-scrolling: touch;
   background: #262627;
   left: 0;
   overflow-y: scroll;
-  -ms-overflow-style: auto;
   position: absolute;
   top: 101%;
-  -webkit-overflow-scrolling: touch;
   width: 100%;
   z-index: 10; }
 
@@ -869,8 +869,8 @@ a {
     font-family: "Open Sans", sans-serif;
     font-size: 0.9333em;
     line-height: normal;
-    margin-right: 4px;
     margin-bottom: 4px;
+    margin-right: 4px;
     padding: 11px 17px;
     transition: .3s;
     vertical-align: top; }
@@ -886,8 +886,8 @@ a {
       border: none;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       font-size: 13px;
-      padding-right: 0;
-      padding-left: 0; }
+      padding-left: 0;
+      padding-right: 0; }
       .pagination .page-numbers.dots:hover {
         background: none;
         color: #626262; }
@@ -921,15 +921,15 @@ a {
       display: block;
       font-size: 13px;
       font-weight: 500;
-      text-transform: uppercase;
       letter-spacing: .5px;
       line-height: normal;
-      margin: 8px 0 1px; }
+      margin: 8px 0 1px;
+      text-transform: uppercase; }
     .post-navigation a div {
       color: #2d2d2d;
       font-family: "Montserrat", sans-serif;
-      font-weight: 600;
       font-size: 15px;
+      font-weight: 600;
       line-height: normal;
       transition: .3s; }
     .post-navigation a:hover div {
@@ -952,8 +952,8 @@ a {
   .comment-navigation a {
     color: #626262;
     font-size: 14px;
-    font-weight: bold;
-    font-weight: 600; }
+    font-weight: 600;
+    font-weight: bold; }
     .comment-navigation a:hover {
       color: #f14e4e; }
 

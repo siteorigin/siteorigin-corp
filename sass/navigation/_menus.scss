@@ -21,9 +21,9 @@
 			position: absolute;
 			text-align: left;
 			top: 20px;
+			transform-origin: center top;
 			transform: scale(0.95);
 			transition: all .15s ease-in;
-			transform-origin: center top;
 			visibility: hidden;
 			z-index: 99999;
 
@@ -171,8 +171,8 @@
 
 			a {
 				background: $color__accent;
-				border: 0;
 				border-radius: 0;
+				border: 0;
 				color: #fff;
 				letter-spacing: 1px;
 				line-height: normal;
@@ -327,13 +327,13 @@
 }
 
 #mobile-navigation {
+	-ms-overflow-style: auto;
+	-webkit-overflow-scrolling: touch;
 	background: $color__navigation-drop-down-background;
 	left: 0;
 	overflow-y: scroll;
-	-ms-overflow-style: auto;
 	position: absolute;
 	top: 101%;
-	-webkit-overflow-scrolling: touch;
 	width: 100%;
 	z-index: 10;
 
@@ -479,8 +479,8 @@ $sel: '';
 		font-family: $font__main;
 		font-size: 0.9333em;
 		line-height: normal;
-		margin-right: 4px;
 		margin-bottom: 4px;
+		margin-right: 4px;
 		padding: 11px 17px;
 		transition: .3s;
 		vertical-align: top;
@@ -505,8 +505,8 @@ $sel: '';
 			border: none;
 			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 			font-size: 13px;
-			padding-right: 0;
 			padding-left: 0;
+			padding-right: 0;
 
 			&:hover {
 				background: none;
@@ -555,17 +555,17 @@ $sel: '';
 			display: block;
 			font-size: 13px;
 			font-weight: 500;
-			text-transform: uppercase;
 			letter-spacing: .5px;
 			line-height: normal;
 			margin: 8px 0 1px;
+			text-transform: uppercase;
 		}
 
 		div {
 			color: $color__text-dark;
 			font-family: $font__headings;
-			font-weight: 600;
 			font-size: 15px;
+			font-weight: 600;
 			line-height: normal;
 			transition: .3s;
 		}
@@ -602,8 +602,8 @@ $sel: '';
 	a {
 		color: $color__text-medium;
 		font-size: 14px;
-		font-weight: bold;
 		font-weight: 600;
+		font-weight: bold;
 
 		&:hover {
 			color: $color__accent;
