@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.7 - 16 January 2022 =
+* UberMenu: Fixed mobile menu drop-down list display.
+* Related Posts: Resolved notice if no categories are found.
+
 = 1.18.6 - 04 January 2022 =
 * Archives and Categories Widgets: Improved drop-down field styling.
 * WooCommerce Single Product: Improved variations drop-down field styling.
