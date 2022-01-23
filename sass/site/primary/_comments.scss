@@ -164,8 +164,8 @@
 		width: 100%;
 	}
 
-	.comment-form-author, 
-	.comment-form-email, 
+	.comment-form-author,
+	.comment-form-email,
 	.comment-form-url {
 		box-sizing: border-box;
 		float: left;
@@ -190,7 +190,7 @@
 		}
 	}
 
-	.comment-notes, 
+	.comment-notes,
 	.logged-in-as {
 		font-size: 13px;
 		line-height: 1.6875;
@@ -224,14 +224,14 @@
 	}
 
 	.form-submit {
-		margin: 22px 0 0;
 		clear: both;
+		margin: 22px 0 0;
 	}
 
 	// Jetpack Subscriptions.
 	.comment-subscription-form {
-		display: block;
 		clear: both;
+		display: block;
 		margin: 0 0 8px;
 		overflow: auto;
 
@@ -253,8 +253,8 @@
 
 .no-comments {
 	font-size: 14px;
-	font-weight: bold;
 	font-weight: 600;
+	font-weight: bold;
 	margin: 30px 0 0;
 }
 

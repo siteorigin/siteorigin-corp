@@ -2810,12 +2810,12 @@ body:not(.single) .entry-content p:only-of-type {
     margin-bottom: 0; }
 
 #commentform .form-submit {
-  margin: 22px 0 0;
-  clear: both; }
+  clear: both;
+  margin: 22px 0 0; }
 
 #commentform .comment-subscription-form {
-  display: block;
   clear: both;
+  display: block;
   margin: 0 0 8px;
   overflow: auto; }
   #commentform .comment-subscription-form input {
@@ -2830,8 +2830,8 @@ body:not(.single) .entry-content p:only-of-type {
 
 .no-comments {
   font-size: 14px;
-  font-weight: bold;
   font-weight: 600;
+  font-weight: bold;
   margin: 30px 0 0; }
 
 .commentform-error {
