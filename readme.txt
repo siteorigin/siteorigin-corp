@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.8 - 30 January 2022 =
+* Updated `Tested up to` tag to `5.9`.
+
 = 1.18.7 - 16 January 2022 =
 * UberMenu: Fixed mobile menu drop-down list display.
 * Related Posts: Resolved notice if no categories are found.
