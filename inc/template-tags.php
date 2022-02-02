@@ -452,25 +452,25 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) :
 /**
  * Print HTML with meta information for the sticky status, current post-date/time, author, post categories and comment count.
  */
-function siteorigin_corp_post_meta( $cats = true, $post_id = '' ) {
-
+function siteorigin_corp_post_meta( $cats = true, $post_id = '', $echo = true ) {
+	$output = '';
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
 
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';
+		$output .= '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';
 	}
 
 	if ( ( is_home() || is_archive() || is_search() ) && siteorigin_setting( 'blog_post_date' ) ) {
-		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></a></span>';
+		$output .= '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></a></span>';
 	}
 
 	if ( is_single() && siteorigin_setting( 'blog_post_date' ) ) {
-		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
+		$output .= '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
 	if ( siteorigin_setting( 'blog_post_author' ) ) {
-		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
+		$output .= '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
 	}
 
 	if ( siteorigin_setting( 'blog_post_categories' ) ) {
@@ -479,20 +479,26 @@ function siteorigin_corp_post_meta( $cats = true, $post_id = '' ) {
 
 			$portfolio_terms = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
 			if ( $portfolio_terms ) {
-				printf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
+				$output .= sprintf( '<span class="entry-category">' . '%1$s' . '</span>', $portfolio_terms );
 			}
 		} else {
 
 			if ( $categories_list && $cats == true ) {
-				printf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+				$output .= sprintf( '<span class="entry-category">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 	}
 
 	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) {
-		echo '<span class="comments-link">';
+		$output .= '<span class="comments-link">';
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
-		echo '</span>';
+		$output .= '</span>';
+	}
+
+	if ( $echo ) {
+		echo $output;
+	} else {
+		return $output;
 	}
 }
 endif;
@@ -501,7 +507,7 @@ if ( ! function_exists( 'siteorigin_corp_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function siteorigin_corp_posted_on() {
+	function siteorigin_corp_posted_on( $echo = true ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -520,7 +526,12 @@ if ( ! function_exists( 'siteorigin_corp_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		$output = '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
 
 	}
 endif;
