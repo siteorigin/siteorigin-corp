@@ -23,30 +23,44 @@
 	<?php endif; ?>	
 
 	<div class="corp-content-wrapper">
-
-		<header class="entry-header">
-			<?php 
+		<?php
+		if ( ! empty( get_the_title() ) ) {
 			if ( is_single() ) {
-				if ( siteorigin_page_setting( 'page_title' ) ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
+				if ( siteorigin_page_setting( 'page_title' )  ) {
+					$title = get_the_title( '<h1 class="entry-title">', '</h1>' );
 				}
 			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			} ?>
+				$title = get_the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			}
+		}
 
-			<?php if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php 
-					if ( ! is_single() && ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_layout' ) == 'offset' || siteorigin_corp_is_post_loop_template( 'offset' ) ) :
-						siteorigin_corp_posted_on();
-					else :
-						siteorigin_corp_post_meta();
-					endif; 
-					?>
-			</div><!-- .entry-meta -->
-			<?php
-			endif; ?>
-		</header><!-- .entry-header -->
+		if (
+			! is_single() &&
+			! siteorigin_corp_is_post_loop_widget() &&
+			siteorigin_setting( 'blog_archive_layout' ) == 'offset'
+			|| siteorigin_corp_is_post_loop_template( 'offset' )
+		) {
+			$meta = siteorigin_corp_posted_on( false );
+		} else {
+			$meta = siteorigin_corp_post_meta( true, '', false );
+		}
+		?>
+
+		<?php if ( ! empty( $title ) || ! empty( $entry_meta ) ) : ?>
+			<header class="entry-header">
+				<?php
+				if ( ! empty( $title ) ) {
+					echo $title;
+				}
+				?>
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+							<?php echo $meta; ?>
+					</div><!-- .entry-meta -->
+				<?php
+				endif; ?>
+			</header><!-- .entry-header -->
+		<?php endif; ?>
 
 		<div class="entry-content">
 			<?php
