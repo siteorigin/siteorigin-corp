@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.9 - 03 February 2022 =
+* WooCommerce: Fixed single product variation drop-down alignment.
+* Smooth Scrolling: Update to allow for animation interruption when another page jump is clicked.
+
 = 1.18.8 - 30 January 2022 =
 * Updated `Tested up to` tag to `5.9`.
 
