@@ -741,7 +741,7 @@ input.button.added:after,
     font-size: 14px;
     margin-bottom: 30px; }
     .woocommerce .product .variations tr td {
-      padding-bottom: 15px; }
+      padding: 7.5px 0; }
     .woocommerce .product .variations tr:only-of-type td {
       padding-bottom: 0; }
     .woocommerce .product .variations .label {
