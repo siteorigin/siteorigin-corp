@@ -139,7 +139,7 @@
 				var target = $( this.hash );
 				target = target.length ? target : $( '[name=' + this.hash.slice( 1 ) +']' );
 				if ( target.length ) {
-					$( 'html, body' ).animate( {
+					$( 'html, body' ).stop().animate( {
 						scrollTop: target.offset().top - calcHeaderHeight()
 					},
 					{
@@ -351,7 +351,7 @@
 	sttWindowScroll();
 	$( window ).on( 'scroll', sttWindowScroll );
 	$( '#scroll-to-top' ).on( 'click', function() {
-		$( 'html, body' ).animate( { scrollTop: 0 } );
+		$( 'html, body' ).stop().animate( { scrollTop: 0 } );
 	} );
 
 	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
