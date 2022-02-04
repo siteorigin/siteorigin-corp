@@ -491,7 +491,9 @@ function siteorigin_corp_post_meta( $cats = true, $post_id = '', $echo = true ) 
 
 	if ( comments_open() && siteorigin_setting( 'blog_post_comment_count' ) ) {
 		$output .= '<span class="comments-link">';
+		ob_start();
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-corp' ), esc_html__( 'One Comment', 'siteorigin-corp' ), esc_html__( '% Comments', 'siteorigin-corp' ) );
+		$output .= ob_get_clean();
 		$output .= '</span>';
 	}
 
