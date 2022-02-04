@@ -22,23 +22,29 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 	<?php endif; ?>
 
 	<div class="corp-content-wrapper">
-		<header class="entry-header">
-			<?php
-			if ( is_single() ) :
-				if ( siteorigin_page_setting( 'page_title' ) ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				endif;
-			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
+		<?php
+		$title = siteorigin_corp_get_post_title();
 
-			if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php siteorigin_corp_post_meta(); ?>
-				</div><!-- .entry-meta -->
-			<?php
-			endif; ?>
-		</header><!-- .entry-header -->
+		if ( 'post' === get_post_type() ) {
+			$meta = siteorigin_corp_post_meta( true, '', false );
+		}
+
+		if ( ! empty( $title ) || ! empty( $meta ) ) : ?>
+			<header class="entry-header">
+				<?php
+				if ( ! empty( $title ) ) {
+					echo $title;
+				}
+				?>
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+							<?php echo $meta; ?>
+					</div><!-- .entry-meta -->
+				<?php
+				endif; ?>
+			</header><!-- .entry-header -->
+		<?php endif; ?>
+
 
 		<div class="entry-content">
 			<?php
