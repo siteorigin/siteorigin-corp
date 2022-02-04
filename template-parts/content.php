@@ -24,15 +24,7 @@
 
 	<div class="corp-content-wrapper">
 		<?php
-		if ( ! empty( get_the_title() ) ) {
-			if ( is_single() ) {
-				if ( siteorigin_page_setting( 'page_title' )  ) {
-					$title = get_the_title( '<h1 class="entry-title">', '</h1>' );
-				}
-			} else {
-				$title = get_the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-		}
+		$title = siteorigin_corp_get_post_title();
 
 		if (
 			! is_single() &&

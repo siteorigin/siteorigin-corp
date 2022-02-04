@@ -808,3 +808,20 @@ function siteorigin_corp_entry_thumbnail() {
 	}
 }
 endif;
+
+if ( ! function_exists( 'siteorigin_corp_get_post_title' ) ) :
+/**
+ * Displays the current post title.
+ */
+function siteorigin_corp_get_post_title() {
+	if ( ! empty( get_the_title() ) ) {
+		if ( is_single() ) {
+			if ( siteorigin_page_setting( 'page_title' )  ) {
+				return '<h1 class="entry-title">' . get_the_title() . '</h1>';
+			}
+		} else {
+			return '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . get_the_title() . '</a></h2>';
+		}
+	}
+}
+endif;
