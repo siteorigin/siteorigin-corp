@@ -766,6 +766,18 @@ input.button.added:after,
         left: 0;
         margin-left: 0;
         position: absolute; }
+  .woocommerce .product form.cart table.variations .corp-variations-wrapper {
+    display: inline-block;
+    position: relative; }
+    .woocommerce .product form.cart table.variations .corp-variations-wrapper:before {
+      content: '\005E';
+      display: block;
+      position: absolute;
+      right: 5px;
+      transform: rotate(180deg); }
+  .woocommerce .product form.cart table.variations select {
+    -webkit-appearance: none;
+    padding: 1px 27px 0 10px; }
   .woocommerce .product .woocommerce-variation .woocommerce-variation-price .price {
     display: block;
     width: 100%; }
