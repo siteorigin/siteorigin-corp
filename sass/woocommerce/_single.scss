@@ -222,9 +222,11 @@
 		}
 
 		form.cart table.variations {
+
 			.corp-variations-wrapper {
 				display: inline-block;
 				position: relative;
+
 				&:before {
 					content: '\005E';
 					display: block;
@@ -238,7 +240,6 @@
 				-webkit-appearance: none;
 				padding: 1px 27px 0 10px;
 			}
-
 		}
 
 		.woocommerce-variation .woocommerce-variation-price .price {

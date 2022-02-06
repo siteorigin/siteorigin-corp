@@ -170,7 +170,7 @@ add_filter( 'woocommerce_show_page_title', 'siteorigin_corp_woocommerce_archive_
 include get_template_directory() . '/woocommerce/template-tags.php';
 
 /**
- * Nest Variation select to allow for seamless arrow replacement.
+ * Nest variation select to allow for seamless arrow replacement.
  */
 function siteorigin_corp_woocommerce_nest_variation_select( $html, $args ) {
 	return '<div class="corp-variations-wrapper">' . $html . '</div>';
