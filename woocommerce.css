@@ -769,11 +769,13 @@ input.button.added:after,
   .woocommerce .product form.cart table.variations .corp-variations-wrapper {
     display: inline-block;
     position: relative; }
-    .woocommerce .product form.cart table.variations .corp-variations-wrapper:before {
-      content: '\005E';
+    .woocommerce .product form.cart table.variations .corp-variations-wrapper svg {
       display: block;
+      pointer-events: none;
       position: absolute;
-      right: 5px;
+      right: 14px;
+      top: 9px; }
+    .woocommerce .product form.cart table.variations .corp-variations-wrapper.open-dropdown svg {
       transform: rotate(180deg); }
   .woocommerce .product form.cart table.variations select {
     -webkit-appearance: none;

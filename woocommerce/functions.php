@@ -170,9 +170,10 @@ add_filter( 'woocommerce_show_page_title', 'siteorigin_corp_woocommerce_archive_
 include get_template_directory() . '/woocommerce/template-tags.php';
 
 /**
- * Nest variation select to allow for seamless arrow replacement.
+ * Add SVG arrow to single product variation select.
  */
 function siteorigin_corp_woocommerce_nest_variation_select( $html, $args ) {
-	return '<div class="corp-variations-wrapper">' . $html . '</div>';
+	return '<div class="corp-variations-wrapper"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32"><path d="M30.054 14.429l-13.25 13.232q-0.339 0.339-0.804 0.339t-0.804-0.339l-13.25-13.232q-0.339-0.339-0.339-0.813t0.339-0.813l2.964-2.946q0.339-0.339 0.804-0.339t0.804 0.339l9.482 9.482 9.482-9.482q0.339-0.339 0.804-0.339t0.804 0.339l2.964 2.946q0.339 0.339 0.339 0.813t-0.339 0.813z"></path></svg>' . $html . '</div>';
+
 }
 add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'siteorigin_corp_woocommerce_nest_variation_select', 10, 2 );

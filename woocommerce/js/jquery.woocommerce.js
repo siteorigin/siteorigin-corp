@@ -55,6 +55,18 @@ jQuery( function( $ ) {
 			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
 		}
 	} );
+
+	// WooCommerce Single Product: Open dropdown on click.
+	$( '.corp-variations-wrapper select' ).on( 'click', function() {
+		$( this ).parent().toggleClass( 'open-dropdown' );
+	} );
+
+	// Close single product dropdown on click outside dropdown wrapper.
+	$( window ).on( 'click', function( e ) {
+		if ( ! $( e.target ).closest( '.corp-variations-wrapper.open-dropdown' ).length ) {
+			$( '.corp-variations-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
+		}
+	} );
 	
 	// Quick View modal.
 	$( '.product-quick-view-button' ).on( 'click', function( e ) {

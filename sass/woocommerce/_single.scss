@@ -227,12 +227,16 @@
 				display: inline-block;
 				position: relative;
 
-				&:before {
-					content: '\005E';
+				svg {
 					display: block;
+					pointer-events: none;
 					position: absolute;
-					right: 5px;
-					transform: rotate(180deg);
+					right: 14px;
+					top: 9px;
+				}
+
+				&.open-dropdown svg {
+				 	transform: rotate(180deg);
 				}
 			}
 
