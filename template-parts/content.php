@@ -23,30 +23,36 @@
 	<?php endif; ?>	
 
 	<div class="corp-content-wrapper">
+		<?php
+		$title = siteorigin_corp_get_post_title();
 
-		<header class="entry-header">
-			<?php 
-			if ( is_single() ) {
-				if ( siteorigin_page_setting( 'page_title' ) ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
+		if (
+			! is_single() &&
+			! siteorigin_corp_is_post_loop_widget() &&
+			siteorigin_setting( 'blog_archive_layout' ) == 'offset'
+			|| siteorigin_corp_is_post_loop_template( 'offset' )
+		) {
+			$meta = siteorigin_corp_posted_on( false );
+		} else {
+			$meta = siteorigin_corp_post_meta( true, '', false );
+		}
+		?>
+
+		<?php if ( ! empty( $title ) || ! empty( $entry_meta ) ) : ?>
+			<header class="entry-header">
+				<?php
+				if ( ! empty( $title ) ) {
+					echo $title;
 				}
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			} ?>
-
-			<?php if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php 
-					if ( ! is_single() && ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_layout' ) == 'offset' || siteorigin_corp_is_post_loop_template( 'offset' ) ) :
-						siteorigin_corp_posted_on();
-					else :
-						siteorigin_corp_post_meta();
-					endif; 
-					?>
-			</div><!-- .entry-meta -->
-			<?php
-			endif; ?>
-		</header><!-- .entry-header -->
+				?>
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+							<?php echo $meta; ?>
+					</div><!-- .entry-meta -->
+				<?php
+				endif; ?>
+			</header><!-- .entry-header -->
+		<?php endif; ?>
 
 		<div class="entry-content">
 			<?php
