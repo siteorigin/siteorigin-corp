@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.10 - 11 February 2022 =
+* Single Posts: Update to ensure the `entry-header` container doesn't output when empty.
+
 = 1.18.9 - 03 February 2022 =
 * WooCommerce: Fixed single product variation drop-down alignment.
 * Smooth Scrolling: Update to allow for animation interruption when another page jump is clicked.
