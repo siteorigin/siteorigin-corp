@@ -226,18 +226,6 @@
 			.corp-variations-wrapper {
 				display: inline-block;
 				position: relative;
-
-				svg {
-					display: block;
-					pointer-events: none;
-					position: absolute;
-					right: 14px;
-					top: 9px;
-				}
-
-				&.open-dropdown svg {
-				 	transform: rotate(180deg);
-				}
 			}
 
 			select {

@@ -6,7 +6,7 @@
 jQuery( function( $ ) {
 
 	// Product archive order drop-down.
-	$( '.woocommerce-ordering select' ).each( function() {
+	$( '.woocommerce-ordering select, .corp-variations-wrapper select' ).each( function() {
 		var $$ = $(this);
 
 		var c = $( '<div></div>' )
@@ -30,8 +30,12 @@ jQuery( function( $ ) {
 					.html( $o.html() )
 					.data( 'val', $o.attr( 'value' ) )
 					.on( 'click', function() {
-						$$.val( $( this ).data( 'val' ) );
-						$$.closest( 'form' ).trigger( 'submit' );
+						$$.val( $( this ).data( 'val' ) ).trigger( 'change' );
+						if ( $$.hasClass( 'woocommerce-ordering' ) ) {
+							$$.closest( 'form' ).trigger( 'submit' );
+						} else {
+							c.find( '.current' ).text(  $( this ).text() );
+						}
 					} )
 			);
 
@@ -56,18 +60,6 @@ jQuery( function( $ ) {
 		}
 	} );
 
-	// WooCommerce Single Product: Open dropdown on click.
-	$( '.corp-variations-wrapper select' ).on( 'click', function() {
-		$( this ).parent().toggleClass( 'open-dropdown' );
-	} );
-
-	// Close single product dropdown on click outside dropdown wrapper.
-	$( window ).on( 'click', function( e ) {
-		if ( ! $( e.target ).closest( '.corp-variations-wrapper.open-dropdown' ).length ) {
-			$( '.corp-variations-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
-		}
-	} );
-	
 	// Quick View modal.
 	$( '.product-quick-view-button' ).on( 'click', function( e ) {
 		e.preventDefault();
