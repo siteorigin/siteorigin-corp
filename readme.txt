@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.18.11 - 16 February 2022 =
+* Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
+
 = 1.18.10 - 11 February 2022 =
 * Single Posts: Update to ensure the `entry-header` container doesn't output when empty.
 
