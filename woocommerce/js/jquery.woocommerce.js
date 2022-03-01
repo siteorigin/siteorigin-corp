@@ -6,8 +6,8 @@
 jQuery( function( $ ) {
 
 	// Product archive order drop-down.
-	$( '.woocommerce-ordering select, .corp-variations-wrapper select' ).each( function() {
-		var $$ = $(this);
+	var setupWCDropdowns = function( dropdown ) {
+		var $$ = $( dropdown );
 
 		var c = $( '<div></div>' )
 			.html( '<span class="current">' + $$.find( ':selected' ).html() + '</span>' + siteorigin_corp_data.chevron_down )
@@ -46,10 +46,14 @@ jQuery( function( $ ) {
 		c.find('.current').html( $$.find( ':selected' ).html() ).width( widest );
 
 		$$.hide();
+	}
+
+	$( '.woocommerce-ordering select, .corp-variations-wrapper select' ).each( function() {
+		setupWCDropdowns( this );
 	} );
 
 	// Open dropdown on click.
-	$( '.ordering-selector-wrapper' ).on( 'click', function() {
+	$( document ).on( 'click', '.ordering-selector-wrapper', function() {
 		$( this ).toggleClass( 'open-dropdown' );
 	} );
 
@@ -115,6 +119,10 @@ jQuery( function( $ ) {
 				// Reset flexslider when WordPress wants to
 				$( '#product-quick-view .variations_form' ).on( 'reset_image', function( event, variation ) {
 					$( '.product-images-slider' ).flexslider( 0 );
+				} );
+
+				$( '.corp-variations-wrapper select' ).each( function() {
+					setupWCDropdowns( this );
 				} );
 			}
 		} );
