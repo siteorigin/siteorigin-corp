@@ -60,6 +60,17 @@ jQuery( function( $ ) {
 		}
 	} );
 
+	// Reset dropdown when clicking clear.
+	$( document ).on( 'click', '.woocommerce .product .variations .reset_variations', function() {
+		$( this ).parents( '.variations_form' ).find( '.corp-variations-wrapper' ).each( function() {
+			var $$ = $( this );
+			$$.find( '.current' ).text( $$.find( '.ordering-dropdown li' ).first().text() );
+
+			$$.find( 'option:selected' ).prop( 'selected', false );
+			$$.find( 'select' ).trigger( 'change' );
+		} );
+	} );
+
 	// Quick View modal.
 	$( '.product-quick-view-button' ).on( 'click', function( e ) {
 		e.preventDefault();
