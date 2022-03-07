@@ -91,6 +91,10 @@ jQuery( function( $ ) {
 				$( document ).find( $container ).find( $content ).html( data );
 				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
 				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
+				// Setup variation drop downs to use the Corp WC Drop Down.
+				$( '#quick-view-container .corp-variations-wrapper select' ).each( function() {
+					setupWCDropdowns( this );
+				} );
 			}
 		);
 
@@ -116,14 +120,11 @@ jQuery( function( $ ) {
 					}
 				} );
 
-				// Reset flexslider when WordPress wants to
+				// Reset flexslider when WooCommerce wants to
 				$( '#product-quick-view .variations_form' ).on( 'reset_image', function( event, variation ) {
 					$( '.product-images-slider' ).flexslider( 0 );
 				} );
 
-				$( '.corp-variations-wrapper select' ).each( function() {
-					setupWCDropdowns( this );
-				} );
 			}
 		} );
 
