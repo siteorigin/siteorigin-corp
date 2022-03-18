@@ -1470,6 +1470,8 @@ ul.product_list_widget {
       font-weight: bold; }
       .woocommerce-cart table.cart .cart_item a:hover {
         color: #626262; }
+    .woocommerce-cart table.cart .cart_item dl.variation dd {
+      margin-left: 0; }
     .woocommerce-cart table.cart .cart_item .product-remove {
       font-size: 20px;
       text-align: center; }
