@@ -1806,6 +1806,8 @@ form.checkout > .blockUI {
       padding-top: 30px; }
     .woocommerce table.woocommerce-checkout-review-order-table .cart_item td:last-of-type {
       padding-bottom: 30px; } }
+  .woocommerce table.woocommerce-checkout-review-order-table .cart_item dl.variation dd {
+    margin-left: 0; }
 
 .woocommerce table.woocommerce-checkout-review-order-table tfoot {
   color: #2d2d2d; }
