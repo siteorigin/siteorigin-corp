@@ -83,6 +83,105 @@
 		.form-row-wide {
 			clear: both;
 		}
+
+		&.woocommerce-ordering,
+		.corp-variations-wrapper {
+			select {
+				font-size: 13px;
+			}
+
+			@media (max-width: 768px) {
+				float: none;
+			}
+
+			.ordering-selector-wrapper {
+				border: 1px solid $color__background-hr-dark;
+				border-radius: 2px;
+				cursor: pointer;
+				font-size: 13px;
+				line-height: normal;
+				padding: 10px 15px;
+				position: relative;
+
+				.current {
+					display: inline-block;
+				}
+
+				svg {
+					float: right;
+					margin: 5px 0 0 10px;
+					transform: rotate(0deg);
+
+					path {
+						fill: $color__text-medium;
+					}
+				}
+
+				&:hover {
+					color: $color__text-dark;
+
+					svg path {
+						fill: $color__text-dark;
+					}
+				}
+
+				.ordering-dropdown-container {
+					left: -1px;
+					min-height: 1px;
+					position: absolute;
+					right: -1px;
+					top: 100%;
+					z-index: 999;
+				}
+
+				.ordering-dropdown {
+					background: #fff;
+					border: 1px solid $color__background-hr-dark;
+					box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
+					display: block;
+					list-style: none;
+					margin: 0;
+					opacity: 0;
+					padding: 5px 0;
+					position: absolute;
+					top: 0;
+					transition: all 0.15s ease-in;
+					transform-origin: center top;
+					transform: scale(.95);
+					visibility: hidden;
+					width: 100%;
+
+					li {
+						color: $color__text-light;
+						cursor: pointer;
+						padding: 10px 15px;
+						position: relative;
+						white-space: nowrap;
+
+						&:hover {
+							color: $color__text-dark;
+						}
+					}
+				}
+
+				&.open-dropdown {
+
+					.ordering-dropdown {
+						opacity: 1;
+						transform: scale(1);
+						visibility: visible;
+					}
+
+					svg {
+						transform: rotate(180deg);
+
+						path {
+							fill: $color__text-dark;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// Login form.

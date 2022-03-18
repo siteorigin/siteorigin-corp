@@ -221,6 +221,19 @@
 			}
 		}
 
+		form.cart table.variations {
+
+			.corp-variations-wrapper {
+				display: inline-block;
+				position: relative;
+			}
+
+			select {
+				-webkit-appearance: none;
+				padding: 1px 27px 0 10px;
+			}
+		}
+
 		.woocommerce-variation .woocommerce-variation-price .price {
 			display: block;
 			width: 100%;

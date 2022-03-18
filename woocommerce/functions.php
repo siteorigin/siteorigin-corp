@@ -168,3 +168,12 @@ add_filter( 'woocommerce_show_page_title', 'siteorigin_corp_woocommerce_archive_
  * Custom WooCommerce template tags.
  */
 include get_template_directory() . '/woocommerce/template-tags.php';
+
+/**
+ * Add SVG arrow to single product variation select.
+ */
+function siteorigin_corp_woocommerce_nest_variation_select( $html, $args ) {
+	return '<div class="corp-variations-wrapper">' . $html . '</div>';
+
+}
+add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'siteorigin_corp_woocommerce_nest_variation_select', 10, 2 );
