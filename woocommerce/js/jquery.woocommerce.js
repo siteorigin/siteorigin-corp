@@ -6,8 +6,8 @@
 jQuery( function( $ ) {
 
 	// Product archive order drop-down.
-	$( '.woocommerce-ordering select' ).each( function() {
-		var $$ = $(this);
+	var setupWCDropdowns = function( dropdown ) {
+		var $$ = $( dropdown );
 
 		var c = $( '<div></div>' )
 			.html( '<span class="current">' + $$.find( ':selected' ).html() + '</span>' + siteorigin_corp_data.chevron_down )
@@ -30,8 +30,12 @@ jQuery( function( $ ) {
 					.html( $o.html() )
 					.data( 'val', $o.attr( 'value' ) )
 					.on( 'click', function() {
-						$$.val( $( this ).data( 'val' ) );
-						$$.closest( 'form' ).trigger( 'submit' );
+						$$.val( $( this ).data( 'val' ) ).trigger( 'change' );
+						if ( $$.hasClass( 'woocommerce-ordering' ) ) {
+							$$.closest( 'form' ).trigger( 'submit' );
+						} else {
+							c.find( '.current' ).text(  $( this ).text() );
+						}
 					} )
 			);
 
@@ -42,10 +46,14 @@ jQuery( function( $ ) {
 		c.find('.current').html( $$.find( ':selected' ).html() ).width( widest );
 
 		$$.hide();
+	}
+
+	$( '.woocommerce-ordering select, .corp-variations-wrapper select' ).each( function() {
+		setupWCDropdowns( this );
 	} );
 
 	// Open dropdown on click.
-	$( '.ordering-selector-wrapper' ).on( 'click', function() {
+	$( document ).on( 'click', '.ordering-selector-wrapper', function() {
 		$( this ).toggleClass( 'open-dropdown' );
 	} );
 
@@ -55,7 +63,18 @@ jQuery( function( $ ) {
 			$( '.ordering-selector-wrapper.open-dropdown' ).removeClass( 'open-dropdown' );
 		}
 	} );
-	
+
+	// Reset dropdown when clicking clear.
+	$( document ).on( 'click', '.woocommerce .product .variations .reset_variations', function() {
+		$( this ).parents( '.variations_form' ).find( '.corp-variations-wrapper' ).each( function() {
+			var $$ = $( this );
+			$$.find( '.current' ).text( $$.find( '.ordering-dropdown li' ).first().text() );
+
+			$$.find( 'option:selected' ).prop( 'selected', false );
+			$$.find( 'select' ).trigger( 'change' );
+		} );
+	} );
+
 	// Quick View modal.
 	$( '.product-quick-view-button' ).on( 'click', function( e ) {
 		e.preventDefault();
@@ -72,6 +91,10 @@ jQuery( function( $ ) {
 				$( document ).find( $container ).find( $content ).html( data );
 				$( document ).find( '#product-quick-view .variations_form' ).wc_variation_form();
 				$( document ).find( '#product-quick-view .variations_form' ).trigger( 'check_variations' );
+				// Setup variation drop downs to use the Corp WC Drop Down.
+				$( '#quick-view-container .corp-variations-wrapper select' ).each( function() {
+					setupWCDropdowns( this );
+				} );
 			}
 		);
 
@@ -97,10 +120,11 @@ jQuery( function( $ ) {
 					}
 				} );
 
-				// Reset flexslider when WordPress wants to
+				// Reset flexslider when WooCommerce wants to
 				$( '#product-quick-view .variations_form' ).on( 'reset_image', function( event, variation ) {
 					$( '.product-images-slider' ).flexslider( 0 );
 				} );
+
 			}
 		} );
 

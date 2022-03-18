@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.0 - 18 March 2022 =
+* WooCommerce: Introduced a custom product variation drop-down design.
+* WooCommerce: Minor variation styling adjustment to Cart and Checkout pages.
+
 = 1.18.11 - 16 February 2022 =
 * Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
 
