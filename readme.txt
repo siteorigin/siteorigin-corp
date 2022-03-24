@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.1 - 24 March 2022 =
+* WooCommerce: Left aligned single product variation labels.
+
 = 1.19.0 - 18 March 2022 =
 * WooCommerce: Introduced a custom product variation drop-down design.
 * WooCommerce: Minor variation styling adjustment to Cart and Checkout pages.

@@ -763,6 +763,7 @@ input.button.added:after,
     .woocommerce .product .variations tr:only-of-type td {
       padding-bottom: 0; }
     .woocommerce .product .variations .label {
+      text-align: left;
       text-transform: capitalize; }
       .woocommerce .product .variations .label label {
         color: #2d2d2d;
@@ -2075,3 +2076,5 @@ form.checkout > .blockUI {
 --------------------------------------------------------------*/
 .track_order p {
   margin-bottom: 26px; }
+
+/*# sourceMappingURL=sass/maps/woocommerce.css.map */
