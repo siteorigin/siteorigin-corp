@@ -1238,14 +1238,38 @@ a {
 .widget-area .widget,
 .site-footer .widget {
   margin: 0 0 50px; }
+  .widget-area .widget .wp-block-group__inner-container :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6),
   .widget-area .widget .widget-title,
+  .site-footer .widget .wp-block-group__inner-container :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6),
   .site-footer .widget .widget-title {
     font-size: .9333em;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0 0 15px;
     text-transform: uppercase; }
+    .widget-area .widget .wp-block-group__inner-container :is(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6) ~ *,
     .widget-area .widget .widget-title ~ *,
+    .site-footer .widget .wp-block-group__inner-container :is(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6) ~ *,
     .site-footer .widget .widget-title ~ * {
       font-size: 14px; }
   .widget-area .widget ul,
@@ -2885,6 +2909,12 @@ body:not(.single) .entry-content p:only-of-type {
       margin-bottom: 95px;
       margin-left: 0;
       float: left; }
+      .site-footer .widgets .widget .wp-block-group__inner-container :is(h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6),
       .site-footer .widgets .widget .widget-title {
         color: #fff;
         font-size: 1.0666em;
