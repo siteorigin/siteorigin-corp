@@ -776,6 +776,8 @@ input.button.added:after,
       color: #626262;
       font-size: 13px;
       margin-left: 10px; }
+      .no-js.woocommerce .product .variations .reset_variations {
+        display: none; }
       .woocommerce .product .variations .reset_variations:hover {
         color: #f14e4e; }
     .woocommerce .product .variations .woo-variation-items-wrapper {
@@ -791,6 +793,9 @@ input.button.added:after,
   .woocommerce .product form.cart table.variations select {
     -webkit-appearance: none;
     padding: 1px 27px 0 10px; }
+    .no-js.woocommerce .product form.cart table.variations select {
+      -webkit-appearance: auto;
+      padding: 5px; }
   .woocommerce .product .woocommerce-variation .woocommerce-variation-price .price {
     display: block;
     width: 100%; }

@@ -204,6 +204,10 @@
 				font-size: 13px;
 				margin-left: 10px;
 
+				@at-root .no-js.woocommerce .product .variations .reset_variations {
+					display: none;
+				}
+
 				&:hover {
 					color: $color__accent;
 				}
@@ -232,6 +236,11 @@
 			select {
 				-webkit-appearance: none;
 				padding: 1px 27px 0 10px;
+
+				@at-root .no-js.woocommerce .product form.cart table.variations select {
+					-webkit-appearance: auto;
+					padding: 5px;
+				}
 			}
 		}
 
