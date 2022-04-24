@@ -1238,14 +1238,38 @@ a {
 .widget-area .widget,
 .site-footer .widget {
   margin: 0 0 50px; }
+  .widget-area .widget .wp-block-group__inner-container :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6),
   .widget-area .widget .widget-title,
+  .site-footer .widget .wp-block-group__inner-container :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6),
   .site-footer .widget .widget-title {
     font-size: .9333em;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0 0 15px;
     text-transform: uppercase; }
+    .widget-area .widget .wp-block-group__inner-container :is(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6) ~ *,
     .widget-area .widget .widget-title ~ *,
+    .site-footer .widget .wp-block-group__inner-container :is(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6) ~ *,
     .site-footer .widget .widget-title ~ * {
       font-size: 14px; }
   .widget-area .widget ul,
@@ -1267,55 +1291,59 @@ a {
 /*--------------------------------------------------------------
 ## Calendar Widgets
 --------------------------------------------------------------*/
-.calendar_wrap {
+.widget_calendar .calendar_wrap {
   background: #fff;
   border: 1px solid #e6e6e6;
+  font-size: 0.8666rem;
   padding: 0 10px; }
 
-.widget #wp-calendar {
+.widget_calendar .wp-calendar-table {
   border: 0;
-  font-size: 13px;
   margin: 0; }
-  .widget #wp-calendar caption {
+  .widget_calendar .wp-calendar-table caption {
     color: #2d2d2d;
-    font-size: 14px;
+    font-size: 0.9333rem;
     font-weight: 600;
     padding-top: 14px; }
-  .widget #wp-calendar tr:nth-child(2n+2) {
+  .widget_calendar .wp-calendar-table tr:nth-child(2n+2) {
     background: none; }
-  .widget #wp-calendar th,
-  .widget #wp-calendar td {
+  .widget_calendar .wp-calendar-table th,
+  .widget_calendar .wp-calendar-table td {
     border: 0;
     padding: 0; }
-  .widget #wp-calendar thead tr {
+  .widget_calendar .wp-calendar-table thead tr {
     background: none; }
-  .widget #wp-calendar thead th {
+  .widget_calendar .wp-calendar-table thead th {
     padding: 13px 0 8px;
     text-align: center; }
-  .widget #wp-calendar tbody .pad {
+  .widget_calendar .wp-calendar-table tbody .pad {
     background: none; }
-  .widget #wp-calendar tbody td {
+  .widget_calendar .wp-calendar-table tbody td {
     padding-bottom: 8px;
     text-align: center; }
-    .widget #wp-calendar tbody td a {
+    .widget_calendar .wp-calendar-table tbody td a {
       color: #f14e4e; }
-      .widget #wp-calendar tbody td a:hover {
+      .widget_calendar .wp-calendar-table tbody td a:hover {
         color: #626262; }
-  .widget #wp-calendar tfoot #prev,
-  .widget #wp-calendar tfoot #next {
-    padding-top: 4px;
-    padding-bottom: 17px; }
-    .widget #wp-calendar tfoot #prev a,
-    .widget #wp-calendar tfoot #next a {
-      color: #2d2d2d;
-      margin-left: 10px; }
-      .widget #wp-calendar tfoot #prev a:hover,
-      .widget #wp-calendar tfoot #next a:hover {
-        color: #f14e4e; }
-  .widget #wp-calendar tfoot #next {
-    text-align: right; }
-    .widget #wp-calendar tfoot #next a {
-      margin: 0 10px 0 0; }
+
+.widget_calendar .wp-calendar-nav .wp-calendar-nav-prev,
+.widget_calendar .wp-calendar-nav .wp-calendar-nav-next {
+  display: inline-block;
+  padding-top: 4px;
+  padding-bottom: 17px;
+  width: 48%; }
+  .widget_calendar .wp-calendar-nav .wp-calendar-nav-prev a,
+  .widget_calendar .wp-calendar-nav .wp-calendar-nav-next a {
+    color: #2d2d2d;
+    margin-left: 10px; }
+    .widget_calendar .wp-calendar-nav .wp-calendar-nav-prev a:hover,
+    .widget_calendar .wp-calendar-nav .wp-calendar-nav-next a:hover {
+      color: #f14e4e; }
+
+.widget_calendar .wp-calendar-nav .wp-calendar-nav-next {
+  text-align: right; }
+  .widget_calendar .wp-calendar-nav .wp-calendar-nav-next a {
+    margin: 0 10px 0 0; }
 
 /*--------------------------------------------------------------
 ## Archives and Categories Widgets
@@ -2881,6 +2909,12 @@ body:not(.single) .entry-content p:only-of-type {
       margin-bottom: 95px;
       margin-left: 0;
       float: left; }
+      .site-footer .widgets .widget .wp-block-group__inner-container :is(h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6),
       .site-footer .widgets .widget .widget-title {
         color: #fff;
         font-size: 1.0666em;

@@ -100,6 +100,13 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.2 - 24 April 2022 =
+* Updated Calendar Widget styling.
+* Updated Customizer settings CSS.
+* Added basic styling for sidebar and footer block-based widgets.
+* WooCommerce: Improved single production variation select field styling if JavaScript is disabled.
+* Developer: Added a `function_exists check` for `siteorigin_corp_woocommerce_single_gallery_thumbnail_size`.
+
 = 1.19.1 - 24 March 2022 =
 * WooCommerce: Left aligned single product variation labels.
 
