@@ -46,7 +46,7 @@ jQuery( function( $ ) {
 
 		setTimeout( function() {
 			c.find( '.current' ).html( $$.find( ':selected' ).html() ).width( widest );
-		}, 10);
+		}, 10 );
 
 		$$.hide();
 	}
