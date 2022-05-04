@@ -540,7 +540,7 @@ a {
       opacity: 0;
       position: absolute;
       text-align: left;
-      top: 20px;
+      top: 19.5px;
       transform-origin: center top;
       transform: scale(0.95);
       transition: all .15s ease-in;
