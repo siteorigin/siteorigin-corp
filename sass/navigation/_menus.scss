@@ -217,7 +217,7 @@
 			color: $color__navigation_link_accent;
 		}
 
-		@at-root .site-header:not(.sticky) .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
+		@at-root .site-header .main-navigation div > ul:not(.cart_list) > li:not(.current-menu-item).menu-item-has-children:not(.current_page_ancestor):not(.current-menu-ancestor) > a {
 			border-bottom: none;
 		}
 
