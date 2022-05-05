@@ -789,6 +789,9 @@ input.button.added:after,
         position: absolute; }
   .woocommerce .product form.cart table.variations .corp-variations-wrapper {
     display: inline-block;
+    margin-right: 1em;
+    max-width: 100%;
+    min-width: 75%;
     position: relative; }
   .woocommerce .product form.cart table.variations select {
     -webkit-appearance: none;
