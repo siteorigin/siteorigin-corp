@@ -48,7 +48,7 @@ jQuery( function( $ ) {
 		if ( $select.hasClass( 'woocommerce-ordering' ) ) {
 			$select.closest( 'form' ).trigger( 'submit' );
 		} else {
-			// Handle WC Variation form update after selection.
+			// Handle WC variation form update after selection.
 			$variations = $( this ).parents( '.variations' );
 			if ( $variations.length ) {
 				$variations.find( '.corp-variations-wrapper' ).each( function() {
