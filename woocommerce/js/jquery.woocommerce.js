@@ -29,14 +29,6 @@ jQuery( function( $ ) {
 				$( '<li></li>' )
 					.html( $o.html() )
 					.data( 'val', $o.attr( 'value' ) )
-					.on( 'click', function() {
-						$$.val( $( this ).data( 'val' ) ).trigger( 'change' );
-						if ( $$.hasClass( 'woocommerce-ordering' ) ) {
-							$$.closest( 'form' ).trigger( 'submit' );
-						} else {
-							c.find( '.current' ).text(  $( this ).text() );
-						}
-					} )
 			);
 
 			widest = Math.max( c.find( '.current' ).html( $o.html() ).width(), widest);
@@ -47,6 +39,42 @@ jQuery( function( $ ) {
 
 		$$.hide();
 	}
+
+	// Handle dropdown form submission.
+	$( document ).on( 'click', '.ordering-selector-wrapper .ordering-dropdown li', function() {
+		var $select = $( this ).parents( '.corp-variations-wrapper' ).find( 'select' );
+		$select.val( $( this ).data( 'val' ) ).trigger( 'change' );
+
+		if ( $select.hasClass( 'woocommerce-ordering' ) ) {
+			$select.closest( 'form' ).trigger( 'submit' );
+		} else {
+			// Handle WC Variation form update after selection.
+			$variations = $( this ).parents( '.variations' );
+			if ( $variations.length ) {
+				$variations.find( '.corp-variations-wrapper' ).each( function() {
+					var dropdown = $( this ).find( '.ordering-dropdown' );
+					dropdown.empty();
+
+					// Update variation drop down with correct values.
+					$( this ).find( 'option' ).each( function( index ) {
+						var $$ = $( this );
+						dropdown.append(
+							$( '<li></li>' )
+								.html( $$.html() )
+								.data( 'val', $$.attr( 'value' ) )
+						);
+					} );
+
+					// Update .current if previous current isn't possible anymore.
+					$( this ).find( '.current' ).text(
+						$( this ).find( 'select' ).find( ':selected' ).text()
+					);
+				} );
+			} else {
+				$( this ).parents( '.ordering-selector-wrapper' ).find( '.current' ).text(  $( this ).text() );
+			}
+		}
+	} )
 
 	$( '.woocommerce-ordering select, .corp-variations-wrapper select' ).each( function() {
 		setupWCDropdowns( this );
@@ -70,7 +98,7 @@ jQuery( function( $ ) {
 			var $$ = $( this );
 			$$.find( '.current' ).text( $$.find( '.ordering-dropdown li' ).first().text() );
 
-			$$.find( 'option:selected' ).prop( 'selected', false );
+			$$.find( 'select' ).find( ':selected' ).prop( 'selected', false );
 			$$.find( 'select' ).trigger( 'change' );
 		} );
 	} );
