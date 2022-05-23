@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.3 - 23 May 2022 =
+* Main Navigation: Minor styling improvements.
+* WooCommerce: Improved variation drop-down support and functionality.
+
 = 1.19.2 - 24 April 2022 =
 * Updated Calendar Widget styling.
 * Updated Customizer settings CSS.
