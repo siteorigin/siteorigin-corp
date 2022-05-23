@@ -82,6 +82,9 @@ jQuery( function( $ ) {
 
 	// Open dropdown on click.
 	$( document ).on( 'click', '.ordering-selector-wrapper', function() {
+		// Ensure no other dropdowns are already open.
+		$( '.open-dropdown' ).removeClass( 'open-dropdown' );
+		// Open the clicked dropdown.
 		$( this ).toggleClass( 'open-dropdown' );
 	} );
 
