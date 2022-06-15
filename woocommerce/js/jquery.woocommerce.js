@@ -43,10 +43,9 @@ jQuery( function( $ ) {
 			widest = Math.max( c.find( '.current' ).width(), widest );
 
 		} );
-
-		setTimeout( function() {
-			c.find( '.current' ).html( $$.find( ':selected' ).html() ).width( widest );
-		}, 10 );
+    
+		c.find( '.current' ).html( $$.find( ':selected' ).html() );
+		c.find( '.current' ).width( widest );
 
 		$$.hide();
 	}
