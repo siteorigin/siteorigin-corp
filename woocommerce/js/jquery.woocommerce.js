@@ -22,6 +22,7 @@ jQuery( function( $ ) {
 			.addClass( 'ordering-dropdown' )
 			.appendTo( dropdownContainer );
 
+		var widest = 0;
 		$$.find( 'option' ).each( function() {
 			var $o = $(this);
 			dropdown.append(
@@ -39,7 +40,13 @@ jQuery( function( $ ) {
 			);
 
 			c.find( '.current' ).html( $o.html() );
+			widest = Math.max( c.find( '.current' ).width(), widest );
+
 		} );
+
+		setTimeout( function() {
+			c.find( '.current' ).html( $$.find( ':selected' ).html() ).width( widest );
+		}, 10 );
 
 		$$.hide();
 	}
