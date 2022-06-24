@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.4 - 24 June 2022 =
+* SiteOrigin Settings: Added the `siteorigin_settings_websafe` font filter.
+
 = 1.19.3 - 23 May 2022 =
 * Main Navigation: Minor styling improvements.
 * WooCommerce: Improved variation drop-down support and functionality.
