@@ -42,7 +42,7 @@ jQuery( function( $ ) {
 
 	// Handle dropdown form submission.
 	$( document ).on( 'click', '.ordering-selector-wrapper .ordering-dropdown li', function() {
-		var $select = $( this ).parents( '.corp-variations-wrapper' ).find( 'select' );
+		var $select = $( this ).parents( '.corp-variations-wrapper, .woocommerce-ordering' ).find( 'select' );
 		$select.val( $( this ).data( 'val' ) ).trigger( 'change' );
 
 		if ( $select.hasClass( 'woocommerce-ordering' ) ) {
