@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.5 - 02 July 2022 =
+* WooCommerce: Resolved archive filter sorting issue.
+
 = 1.19.4 - 24 June 2022 =
 * SiteOrigin Settings: Added the `siteorigin_settings_websafe` font filter.
 
