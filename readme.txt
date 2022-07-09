@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.6 - 09 July 2022 =
+* WooCommerce: Improved variation drop-down sizing behavior.
+
 = 1.19.5 - 02 July 2022 =
 * WooCommerce: Resolved archive filter sorting issue.
 
