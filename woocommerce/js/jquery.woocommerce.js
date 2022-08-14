@@ -35,7 +35,7 @@ jQuery( function( $ ) {
 			widest = Math.max( c.find( '.current' ).width(), widest );
 
 		} );
-    
+
 		c.find( '.current' ).html( $$.find( ':selected' ).html() );
 		c.find( '.current' ).width( widest );
 
