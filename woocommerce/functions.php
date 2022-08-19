@@ -167,11 +167,6 @@ function siteorigin_corp_woocommerce_archive_title() {
 add_filter( 'woocommerce_show_page_title', 'siteorigin_corp_woocommerce_archive_title' );
 
 /**
- * Custom WooCommerce template tags.
- */
-include get_template_directory() . '/woocommerce/template-tags.php';
-
-/**
  * Add SVG arrow to single product variation select.
  */
 function siteorigin_corp_woocommerce_nest_variation_select( $html, $args ) {
@@ -179,3 +174,8 @@ function siteorigin_corp_woocommerce_nest_variation_select( $html, $args ) {
 
 }
 add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'siteorigin_corp_woocommerce_nest_variation_select', 10, 2 );
+
+/**
+ * Custom WooCommerce template tags.
+ */
+include get_template_directory() . '/woocommerce/template-tags.php';
