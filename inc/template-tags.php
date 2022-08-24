@@ -457,7 +457,14 @@ function siteorigin_corp_post_meta( $cats = true, $post_id = '', $echo = true ) 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
 
-	if ( is_sticky() && ( is_home() || ! is_main_query() )  && ! is_paged() ) {
+	if (
+		is_sticky() &&
+		! is_paged() &&
+		(
+			is_home() ||
+			! is_main_query()
+		)
+	) {
 		$output .= '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';
 	}
 
