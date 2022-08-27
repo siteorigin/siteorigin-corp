@@ -248,8 +248,8 @@ input.button.added:after,
 
 .woocommerce form.woocommerce-ordering .ordering-selector-wrapper,
 .woocommerce form .corp-variations-wrapper .ordering-selector-wrapper {
-  border: 1px solid #d6d6d6;
   border-radius: 2px;
+  border: 1px solid #d6d6d6;
   cursor: pointer;
   font-size: 13px;
   line-height: normal;
