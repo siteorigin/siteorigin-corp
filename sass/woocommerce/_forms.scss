@@ -86,6 +86,7 @@
 
 		&.woocommerce-ordering,
 		.corp-variations-wrapper {
+	
 			select {
 				font-size: 13px;
 			}
@@ -95,8 +96,8 @@
 			}
 
 			.ordering-selector-wrapper {
-				border: 1px solid $color__background-hr-dark;
 				border-radius: 2px;
+				border: 1px solid $color__background-hr-dark;
 				cursor: pointer;
 				font-size: 13px;
 				line-height: normal;
