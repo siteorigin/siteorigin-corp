@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.7 - 27 August 2022 =
+* Updated post sticky label to display in the Post Loop Widget, Archives, and search results.
+
 = 1.19.6 - 09 July 2022 =
 * WooCommerce: Improved variation drop-down sizing behavior.
 
