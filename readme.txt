@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.8 - 14 September 2022 =
+* WooCommerce: Disabled default styles using an array. 
+
 = 1.19.7 - 27 August 2022 =
 * Updated post sticky label to display in the Post Loop Widget, Archives, and search results.
 
