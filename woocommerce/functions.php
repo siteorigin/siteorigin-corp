@@ -33,7 +33,7 @@ function siteorigin_corp_woocommerce_setup() {
 	 * Remove the default WooCommerce stylesheets.
 	 * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
 	 */
-	add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 	// Remove the default WooCommerce containers.
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
