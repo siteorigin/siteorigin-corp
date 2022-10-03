@@ -1781,10 +1781,10 @@ body[class*="overlap-"] .masthead-sentinel {
   margin: 0 0 5px; }
   @media (max-width: 768px) {
     .entry-title {
-      font-size: 26px; } }
+      font-size: 1.533em; } }
   @media (max-width: 480px) {
     .entry-title {
-      font-size: 23px; } }
+      font-size: 1.467em; } }
   .entry-title a {
     color: inherit;
     text-decoration: none; }
