@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.9 - 05 October 2022 =
+* Page Title: Minor font size adjustment for mobile.
+* SiteOrigin Settings: Added support for `siteorigin_web_font_url` filter.
+* SiteOrigin Settings: Updated the Google Fonts list.
+
 = 1.19.8 - 14 September 2022 =
 * WooCommerce: Disabled default styles using an array. 
 
