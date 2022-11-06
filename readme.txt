@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.10 - 06 November 2022 =
+* WooCommerce: Updated bundled templates to `7.0.1`.
+
 = 1.19.9 - 05 October 2022 =
 * Page Title: Minor font size adjustment for mobile.
 * SiteOrigin Settings: Added support for `siteorigin_web_font_url` filter.
