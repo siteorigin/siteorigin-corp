@@ -2,7 +2,6 @@
 /**
  * Theme settings.
  *
- * @package siteorigin-corp
  * @license GPL 2.0
  */
 
@@ -29,9 +28,7 @@ add_filter( 'siteorigin_settings_localization', 'siteorigin_corp_settings_locali
  * Initialize the settings.
  */
 function siteorigin_corp_settings_init() {
-
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_corp_settings_array', array(
-
 		'header' => array(
 			'title'  => esc_html__( 'Header', 'siteorigin-corp' ),
 			'fields' => array(
@@ -52,7 +49,7 @@ function siteorigin_corp_settings_init() {
 						'default'  => esc_html__( 'Default', 'siteorigin-corp' ),
 						'centered' => esc_html__( 'Centered', 'siteorigin-corp' ),
 					),
-					'description' => esc_html__( 'Select the header layout.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Select the header layout.', 'siteorigin-corp' ),
 				),
 				'sticky' => array(
 					'type'        => 'checkbox',
@@ -94,38 +91,38 @@ function siteorigin_corp_settings_init() {
 				'header_menu' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Header Menu', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display header menu.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display header menu.', 'siteorigin-corp' ),
 				),
 				'mobile_menu' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Mobile Menu', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Use a mobile menu for small screen devices. Header Menu setting must be enabled.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Use a mobile menu for small screen devices. Header Menu setting must be enabled.', 'siteorigin-corp' ),
 				),
 				'mobile_menu_collapse' => array(
 					'label'       => esc_html__( 'Mobile Menu Collapse', 'siteorigin-corp' ),
 					'type'        => 'number',
 					'description' => esc_html__( 'The pixel resolution when the header menu collapses into the mobile menu.', 'siteorigin-corp' ),
-					'live'        => true
+					'live'        => true,
 				),
 				'menu_link_hover_underline' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Menu Link Hover Underline', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Underline header menu links on hover.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Underline header menu links on hover.', 'siteorigin-corp' ),
 				),
 				'menu_search'     => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Menu Search', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display a search icon in the header menu.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display a search icon in the header menu.', 'siteorigin-corp' ),
 				),
 				'post' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Navigation', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display next/previous navigation on single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display next/previous navigation on single post pages.', 'siteorigin-corp' ),
 				),
 				'scroll_to_top' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Scroll to Top', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the scroll to top button.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the scroll to top button.', 'siteorigin-corp' ),
 				),
 				'link' => array(
 					'type'        => 'color',
@@ -254,7 +251,7 @@ function siteorigin_corp_settings_init() {
 				'archive_featured_image' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Archive Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on blog and archive pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on blog and archive pages.', 'siteorigin-corp' ),
 				),
 				'archive_layout' => array(
 					'type'  => 'select',
@@ -266,8 +263,8 @@ function siteorigin_corp_settings_init() {
 						'alternate' => esc_html__( 'Alternate', 'siteorigin-corp' ),
 						'masonry'   => esc_html__( 'Masonry', 'siteorigin-corp' ),
 					),
-					'description' => esc_html__( 'Choose how to display your posts on the blog and archive pages.', 'siteorigin-corp' )
-				),				
+					'description' => esc_html__( 'Choose how to display your posts on the blog and archive pages.', 'siteorigin-corp' ),
+				),
 				'archive_content' => array(
 					'type'  => 'select',
 					'label' => esc_html__( 'Archive Post Content', 'siteorigin-corp' ),
@@ -285,47 +282,47 @@ function siteorigin_corp_settings_init() {
 				'post_excerpt_read_more_link' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Excerpt Read More Link', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the Read More link below the post excerpt.', 'siteorigin-corp' ),
 				),
 				'post_featured_image' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Featured Image', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the featured image on single posts.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the featured image on single posts.', 'siteorigin-corp' ),
 				),
 				'post_date' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Date', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post date on blog, archive and single post pages.', 'siteorigin-corp' ),
 				),
 				'post_author' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Author', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post author on blog, archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post author on blog, archive and single post pages.', 'siteorigin-corp' ),
 				),
 				'post_categories' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Categories', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'siteorigin-corp' ),
 				),
 				'post_comment_count' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Comment Count', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post comment count on blog, archive and single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post comment count on blog, archive and single post pages.', 'siteorigin-corp' ),
 				),
 				'post_tags' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Tags', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post tags on single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post tags on single post pages.', 'siteorigin-corp' ),
 				),
 				'post_author_box' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Post Author Box', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display the post author biographical info on single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display the post author biographical info on single post pages.', 'siteorigin-corp' ),
 				),
 				'related_posts' => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Related Posts', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Display related posts on single post pages.', 'siteorigin-corp' )
+					'description' => esc_html__( 'Display related posts on single post pages.', 'siteorigin-corp' ),
 				),
 				'ajax_comments' => array(
 					'type'        => 'checkbox',
@@ -372,7 +369,7 @@ function siteorigin_corp_settings_init() {
 				'text' => array(
 					'type'              => 'text',
 					'label'             => esc_html__( 'Footer Text', 'siteorigin-corp' ),
-					'description'       => esc_html__( "{sitename} and {year} can be used to display your website title and the current year.", 'siteorigin-corp' ),
+					'description'       => esc_html__( '{sitename} and {year} can be used to display your website title and the current year.', 'siteorigin-corp' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'privacy_policy_link' => array(
@@ -457,7 +454,7 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Bottom Bar Padding', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Bottom bar top and bottom padding.', 'siteorigin-corp' ),
 					'live'        => true,
-				),				
+				),
 			),
 		),
 	) ) );
@@ -465,13 +462,14 @@ function siteorigin_corp_settings_init() {
 add_action( 'siteorigin_settings_init', 'siteorigin_corp_settings_init' );
 
 function siteorigin_corp_woocommerce_settings( $settings ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+	if ( ! function_exists( 'is_woocommerce' ) ) {
+		return $settings;
+	}
 
 	$wc_settings = array(
 		'woocommerce' => array(
 			'title'  => esc_html__( 'WooCommerce', 'siteorigin-corp' ),
 			'fields' => array(
-
 				'shop_sidebar' => array(
 					'type'        => 'select',
 					'label'       => esc_html__( 'Shop Sidebar Position', 'siteorigin-corp' ),
@@ -522,8 +520,8 @@ function siteorigin_corp_woocommerce_settings( $settings ) {
 						'below'  => esc_html__( 'Below Thumbnail', 'siteorigin-corp' ),
 					),
 				),
-			)
-		)
+			),
+		),
 	);
 
 	return array_merge( $settings, $wc_settings );
@@ -533,12 +531,9 @@ add_filter( 'siteorigin_corp_settings_array', 'siteorigin_corp_woocommerce_setti
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
- * @param $settings
- *
  * @return array
  */
 function siteorigin_corp_font_settings( $settings ) {
-
 	$settings['typography_site_title_font'] = array(
 		'name'    => 'Montserrat',
 		'weights' => array(
@@ -576,13 +571,10 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_corp_font_settings'
 /**
  * Add custom CSS for the theme settings.
  *
- * @param $css
- *
  * @return string
  */
 function siteorigin_corp_settings_custom_css( $css ) {
-
-$css .= '/* style */
+	$css .= '/* style */
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
@@ -1142,12 +1134,12 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_settings_custom_c
 /**
  * Add custom CSS for the theme WooCommerce elements.
  *
- * @param $css
- *
  * @return string
  */
 function siteorigin_corp_wc_settings_custom_css( $css ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+	if ( ! function_exists( 'is_woocommerce' ) ) {
+		return $css;
+	}
 	$css .= '/* woocommerce */
 	.woocommerce.woocommerce-sidebar .content-area {
 	margin: 0 -${sidebar_width} 0 0;
@@ -1536,6 +1528,7 @@ function siteorigin_corp_wc_settings_custom_css( $css ) {
 	color: ${typography_heading};
 	}
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_wc_settings_custom_css' );
@@ -1641,7 +1634,9 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_menu_breakpoint_c
  * Add CSS for tags background color.
  */
 function siteorigin_corp_tags_css( $css, $settings ) {
-	if ( get_theme_mod( 'background_color' ) == '#F9F9F9' || empty( get_theme_mod( 'background_color' ) ) ) return $css;
+	if ( get_theme_mod( 'background_color' ) == '#F9F9F9' || empty( get_theme_mod( 'background_color' ) ) ) {
+		return $css;
+	}
 
 	$css .= '.tags-links a:after, .widget_tag_cloud a:after { background: #' . get_theme_mod( 'background_color' ) . '; }';
 
@@ -1651,8 +1646,6 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_corp_tags_css', 10, 2 
 
 /**
  * Add default settings.
- *
- * @param $defaults
  *
  * @return mixed
  */
@@ -1743,7 +1736,6 @@ add_filter( 'siteorigin_settings_defaults', 'siteorigin_corp_settings_defaults' 
  * Setup Page Settings.
  */
 function siteorigin_corp_page_settings( $settings, $type, $id ) {
-
 	$settings['layout'] = array(
 		'type'    => 'select',
 		'label'   => esc_html__( 'Page Layout', 'siteorigin-corp' ),
@@ -1769,28 +1761,28 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
-		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-corp' )
+		'description'    => esc_html__( 'Display the margin below the header.', 'siteorigin-corp' ),
 	);
 
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Page Title', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
-		'description'    => esc_html__( 'Display the page title.', 'siteorigin-corp' )
+		'description'    => esc_html__( 'Display the page title.', 'siteorigin-corp' ),
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Top Margin', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
-		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-corp' )
+		'description'    => esc_html__( 'Display the margin above the footer.', 'siteorigin-corp' ),
 	);
 
 	$settings['footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer Widgets', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
-		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-corp' )
+		'description'    => esc_html__( 'Display the footer widgets.', 'siteorigin-corp' ),
 	);
 
 	return $settings;

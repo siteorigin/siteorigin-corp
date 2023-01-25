@@ -3,7 +3,6 @@
 // An array mapping SCSS variable to a SiteOrigin Settings variable name.
 return array(
 	'variables' => array(
-
 		// Header.
 		'header_background'                    => 'color__header-background',
 		'header_border'                        => 'color__header-border',
@@ -50,10 +49,9 @@ return array(
 		'footer_padding'                       => 'footer__padding',
 		'footer_margin'                        => 'footer__margin',
 		'footer_bottom_bar_padding'            => 'bottom__bar-padding',
-
 	),
 	'stylesheets' => array(
 		'style',
-		'woocommerce'
+		'woocommerce',
 	),
 );

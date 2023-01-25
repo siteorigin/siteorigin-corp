@@ -2,25 +2,23 @@
 /**
  * Template part for displaying posts.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @see https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( ! is_single() && ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_layout' ) == 'offset' || siteorigin_corp_is_post_loop_template( 'offset' ) ) : ?>
+	<?php if ( ! is_single() && ! siteorigin_corp_is_post_loop_widget() && siteorigin_setting( 'blog_archive_layout' ) == 'offset' || siteorigin_corp_is_post_loop_template( 'offset' ) ) { ?>
 		<div class="entry-offset">
 			<?php siteorigin_corp_offset_post_meta(); ?>
 		</div>
-	<?php endif; ?>
+	<?php } ?>
 
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() ) { ?>
 		<?php siteorigin_corp_entry_thumbnail(); ?>
-	<?php endif; ?>	
+	<?php } ?>	
 
 	<div class="corp-content-wrapper">
 		<?php
@@ -38,36 +36,35 @@
 		}
 		?>
 
-		<?php if ( ! empty( $title ) || ! empty( $entry_meta ) ) : ?>
+		<?php if ( ! empty( $title ) || ! empty( $entry_meta ) ) { ?>
 			<header class="entry-header">
 				<?php
 				if ( ! empty( $title ) ) {
 					echo $title;
 				}
 				?>
-				<?php if ( 'post' === get_post_type() ) : ?>
+				<?php if ( 'post' === get_post_type() ) { ?>
 					<div class="entry-meta">
 							<?php echo $meta; ?>
 					</div><!-- .entry-meta -->
-				<?php
-				endif; ?>
+				<?php } ?>
 			</header><!-- .entry-header -->
-		<?php endif; ?>
+		<?php } ?>
 
 		<div class="entry-content">
 			<?php
-				if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
-					the_content();
-				} else {
-					siteorigin_corp_excerpt();
-				}
+			if ( is_single() || ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) ) {
+				the_content();
+			} else {
+				siteorigin_corp_excerpt();
+			}
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
-					'after'  => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-				) );
+			wp_link_pages( array(
+				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
+				'after'  => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			) );
 			?>
 		</div><!-- .entry-content -->
 		

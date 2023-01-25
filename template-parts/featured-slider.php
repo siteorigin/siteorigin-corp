@@ -2,31 +2,36 @@
 /**
  * Template part for displaying Jetpack Featured Content posts slider.
  *
- * @link https://jetpack.com/support/featured-content/
+ * @see https://jetpack.com/support/featured-content/
  *
- * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 // Get our Jetpack Featured Content posts.
 $slider = siteorigin_corp_get_featured_posts();
 
 // Check if Featured Content posts exist.
-if ( empty( $slider ) ) return;
+if ( empty( $slider ) ) {
+	return;
+}
 
-// Looping through our posts. ?>
+// Looping through our posts
+?>
 
 <div class="flexslider featured-posts-slider">
 
 	<ul class="slides">
 
-		<?php foreach ( $slider as $post ) : setup_postdata( $post ); ?>
+		<?php foreach ( $slider as $post ) {
+			setup_postdata( $post ); ?>
 
-			<?php if ( has_post_thumbnail() ) :
+			<?php if ( has_post_thumbnail() ) {
 				$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() );
-			endif; ?>
+			} ?>
 
-			<li class="slide" <?php if ( ! empty( $thumbnail ) ) echo 'style="background-image: url( \''  . esc_url( $thumbnail ) . '\' )"'; ?>>
+			<li class="slide" <?php if ( ! empty( $thumbnail ) ) {
+				echo 'style="background-image: url( \'' . esc_url( $thumbnail ) . '\' )"';
+			} ?>>
 				<div class="overlay"><a href="<?php the_permalink(); ?>"></a></div>
 				<div class="slide-content">
 					<div class="entry-meta">
@@ -36,7 +41,7 @@ if ( empty( $slider ) ) return;
 				</div>
 			</li>
 
-		<?php endforeach; ?>
+		<?php } ?>
 
 	</ul>
 

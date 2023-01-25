@@ -2,15 +2,13 @@
 /**
  * Template part for displaying portfolio projects in portfolio loop.
  *
- * @package siteorigin-corp
  * @license GPL 2.0
  */
 
 // Get Jetpack Portfolio taxonomy terms for portfolio filtering.
 $terms = get_the_terms( $post->ID, 'jetpack-portfolio-type' );
 
-if ( ! is_wp_error( $terms ) ) :
-
+if ( ! is_wp_error( $terms ) ) {
 	$filtering_links = array();
 
 	if ( $terms ) {
@@ -19,12 +17,12 @@ if ( ! is_wp_error( $terms ) ) :
 		}
 	}
 
-	$filtering = join( ", ", $filtering_links );
-	$types = $filtering ? join( " ", $filtering_links ) : ' ';
+	$filtering = join( ', ', $filtering_links );
+	$types = $filtering ? join( ' ', $filtering_links ) : ' ';
 
 	$classes = 'archive-project ' . $types;
-
-endif; ?>
+}
+?>
 
 <article id="post-<?php the_ID(); ?> <?php echo $types; ?>" <?php post_class( $classes ); ?>>
 

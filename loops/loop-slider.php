@@ -2,23 +2,24 @@
 /**
  * Loop Name: Posts Slider
  *
- * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
-
 wp_enqueue_script( 'jquery-flexslider' );
 
-if ( have_posts() ) : ?>
+if ( have_posts() ) { ?>
 
 	<div class="flexslider featured-posts-slider">
 
 		<ul class="slides">
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) {
+				the_post(); ?>
 			<?php $thumbnail = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : false; ?>
 
-				<li class="slide" <?php if ( ! empty( $thumbnail ) ) echo 'style="background-image: url( \''  . esc_url( $thumbnail ) . '\' )"'; ?>>
+				<li class="slide" <?php if ( ! empty( $thumbnail ) ) {
+					echo 'style="background-image: url( \'' . esc_url( $thumbnail ) . '\' )"';
+				} ?>>
 					<div class="overlay"><a href="<?php the_permalink(); ?>"></a></div>
 					<div class="slide-content">
 						<div class="entry-meta">
@@ -28,7 +29,7 @@ if ( have_posts() ) : ?>
 					</div>
 				</li>
 
-			<?php endwhile; ?>
+			<?php } ?>
 
 	</ul>
 
@@ -43,4 +44,4 @@ if ( have_posts() ) : ?>
 
 	</div><!-- .featured-posts-slider -->
 
-<?php endif; ?>
+<?php } ?>
