@@ -4,7 +4,6 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package siteorigin-corp
  * @license GPL 2.0
  */
 
@@ -12,10 +11,10 @@
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ *
  * @return array
  */
 function siteorigin_corp_body_classes( $classes ) {
-
 	// Blog settings.
 	if ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) {
 		$classes[] = 'blog-full';
@@ -39,10 +38,21 @@ function siteorigin_corp_body_classes( $classes ) {
 	$page_settings = siteorigin_page_setting();
 
 	if ( ! empty( $page_settings ) ) {
-		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
-		if ( ! empty( $page_settings['overlap'] ) && ( $page_settings['overlap'] != 'disabled' ) ) $classes[] = 'overlap-' . $page_settings['overlap'];
-		if ( empty( $page_settings['header_margin'] ) ) $classes[] = 'no-header-margin';
-		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'no-footer-margin';
+		if ( ! empty( $page_settings['layout'] ) ) {
+			$classes[] = 'page-layout-' . $page_settings['layout'];
+		}
+
+		if ( ! empty( $page_settings['overlap'] ) && ( $page_settings['overlap'] != 'disabled' ) ) {
+			$classes[] = 'overlap-' . $page_settings['overlap'];
+		}
+
+		if ( empty( $page_settings['header_margin'] ) ) {
+			$classes[] = 'no-header-margin';
+		}
+
+		if ( empty( $page_settings['footer_margin'] ) ) {
+			$classes[] = 'no-footer-margin';
+		}
 	}
 
 	// Sidebar.
@@ -60,7 +70,7 @@ function siteorigin_corp_body_classes( $classes ) {
 	} elseif ( ! class_exists( 'Woocommerce' ) ) {
 		$classes[] = 'no-topbar';
 	}
-	
+
 	// WooCommerce sidebar.
 	if ( is_active_sidebar( 'shop-sidebar' ) && ( function_exists( 'is_woocommerce' ) && is_woocommerce() && siteorigin_page_setting( 'layout' ) == 'default' && ! is_product() ) ) {
 		$classes[] = 'woocommerce-sidebar';
@@ -71,10 +81,21 @@ function siteorigin_corp_body_classes( $classes ) {
 	}
 
 	// WooCommerce archive Quick View and Add to Cart.
-	if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_cart() || wc_post_content_has_shortcode( 'products' ) ) 
-		&& ( siteorigin_setting( 'woocommerce_quick_view' ) && siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover' 
-		|| siteorigin_setting( 'woocommerce_add_to_cart' ) && siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover' ) ) {
-			$classes[] = 'woocommerce-product-overlay';
+	if (
+		function_exists( 'is_woocommerce' ) &&
+		(
+			is_woocommerce() ||
+			is_cart() ||
+			wc_post_content_has_shortcode( 'products' )
+		) &&
+		(
+			siteorigin_setting( 'woocommerce_quick_view' ) &&
+			siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover' ||
+			siteorigin_setting( 'woocommerce_add_to_cart' ) &&
+			siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover'
+		)
+	) {
+		$classes[] = 'woocommerce-product-overlay';
 	}
 
 	return $classes;
@@ -91,47 +112,51 @@ function siteorigin_corp_pingback_header() {
 }
 add_action( 'wp_head', 'siteorigin_corp_pingback_header' );
 
-if ( ! function_exists( 'siteorigin_corp_unset_current_menu_class' ) ) :
-/**
- * Unset the current menu class.
- */
-function siteorigin_corp_unset_current_menu_class( $classes ) {
-	$disallowed_class_names = array(
-		'current-menu-item',
-		'current_page_item',
-	);
-	foreach ( $classes as $class ) {
-		if ( in_array( $class, $disallowed_class_names ) ) {
-			$key = array_search( $class, $classes );
-			if ( false !== $key ) {
-				unset( $classes[$key] );
+if ( ! function_exists( 'siteorigin_corp_unset_current_menu_class' ) ) {
+	/**
+	 * Unset the current menu class.
+	 */
+	function siteorigin_corp_unset_current_menu_class( $classes ) {
+		$disallowed_class_names = array(
+			'current-menu-item',
+			'current_page_item',
+		);
+
+		foreach ( $classes as $class ) {
+			if ( in_array( $class, $disallowed_class_names ) ) {
+				$key = array_search( $class, $classes );
+
+				if ( false !== $key ) {
+					unset( $classes[$key] );
+				}
 			}
 		}
+
+		return $classes;
 	}
-	return $classes;
 }
-endif;
 add_filter( 'nav_menu_css_class', 'siteorigin_corp_unset_current_menu_class', 10, 1 );
 
-if ( ! function_exists( 'siteorigin_corp_post_class_filter' ) ) :
-/**
-* Filter post classes as required.
-* @link https://codex.wordpress.org/Function_Reference/post_class.
-*/
-function siteorigin_corp_post_class_filter( $classes ) {
-	$classes[] = 'post';
+if ( ! function_exists( 'siteorigin_corp_post_class_filter' ) ) {
+	/**
+	 * Filter post classes as required.
+	 *
+	 * @see https://codex.wordpress.org/Function_Reference/post_class.
+	 */
+	function siteorigin_corp_post_class_filter( $classes ) {
+		$classes[] = 'post';
 
-	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
-	if ( is_page() ) {
-		$class_key = array_search( 'hentry', $classes );
+		// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
+		if ( is_page() ) {
+			$class_key = array_search( 'hentry', $classes );
 
-		if ( $class_key !== false) {
-			unset( $classes[ $class_key ] );
+			if ( $class_key !== false ) {
+				unset( $classes[ $class_key ] );
+			}
 		}
-	}
 
-	$classes = array_unique( $classes );
-	return $classes;
+		$classes = array_unique( $classes );
+		return $classes;
+	}
 }
-endif;
 add_filter( 'post_class', 'siteorigin_corp_post_class_filter' );
