@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.11 - 08 February 2023 =
+* PHP coding standards update.
+* SiteOrigin Settings: PHP coding standards update.
+
 = 1.19.10 - 06 November 2022 =
 * WooCommerce: Updated bundled templates to `7.0.1`.
 
