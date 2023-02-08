@@ -7,12 +7,10 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @see https://codex.wordpress.org/Template_Hierarchy
  *
- * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">

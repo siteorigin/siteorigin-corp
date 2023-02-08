@@ -2,12 +2,10 @@
 /**
  * The template for displaying all project posts.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package siteorigin-corp
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -15,12 +13,12 @@ get_header(); ?>
 
 		<?php
 		while ( have_posts() ) {
-			the_post(); 
+			the_post();
 
 			get_template_part( 'template-parts/content', 'project' );
 
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-				$custom_likes = new Jetpack_Likes;
+				$custom_likes = new Jetpack_Likes();
 				echo $custom_likes->post_likes( '' );
 			}
 
@@ -44,8 +42,7 @@ get_header(); ?>
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
 			}
-
-		} // End while.
+		}
 		?>
 
 		</main><!-- #main -->

@@ -2,9 +2,8 @@
 /**
  * Compatibility with Page Builder by SiteOrigin.
  *
- * @link https://wordpress.org/plugins/siteorigin-panels/
+ * @see https://wordpress.org/plugins/siteorigin-panels/
  *
- * @package siteorigin-corp
  * @license GPL 2.0
  */
 
@@ -13,6 +12,7 @@
  */
 function siteorigin_corp_layouts_folder( $layout_folders ) {
 	$layout_folders[] = get_template_directory() . '/inc/layouts';
+
 	return $layout_folders;
 }
 add_filter( 'siteorigin_panels_local_layouts_directories', 'siteorigin_corp_layouts_folder' );
@@ -33,16 +33,19 @@ function siteorigin_corp_filter_post_loop_widget( $templates ) {
 		'template-parts/content-single.php',
 		'template-parts/content-video.php',
 		'template-parts/content-portfolio.php',
-		'template-parts/content-project.php'
+		'template-parts/content-project.php',
 	);
+
 	foreach ( $templates as $template ) {
 		if ( in_array( $template, $disallowed_template_patterns ) ) {
 			$key = array_search( $template, $templates );
+
 			if ( false !== $key ) {
 				unset( $templates[$key] );
 			}
 		}
 	}
+
 	return $templates;
 }
 add_filter( 'siteorigin_panels_postloop_templates', 'siteorigin_corp_filter_post_loop_widget', 10, 1 );
