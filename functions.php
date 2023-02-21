@@ -283,6 +283,9 @@ if ( ! function_exists( 'siteorigin_corp_premium_setup' ) ) {
 			'enabled' => ! siteorigin_setting( 'footer_attribution' ),
 			'siteorigin_setting' => '!footer_attribution',
 		) );
+
+		// Logo Booster.
+		add_theme_support( 'siteorigin-premium-logo-booster' );
 	}
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_premium_setup' );
