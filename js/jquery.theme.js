@@ -455,7 +455,7 @@
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
 				// Check if the menu is meant to be sticky or not, and if it is apply padding/class.
-				if ( top > 0 ) {
+				if ( top > siteoriginCorp.stickyOffset ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
@@ -505,7 +505,7 @@
 
 			// Sticky header shadow.
 			var smShadow = function() {
-				if ( $( window ).scrollTop() > 0 ) {
+				if ( $( window ).scrollTop() > siteoriginCorp.stickyOffset ) {
 					$( $mh ).addClass( 'stuck' );
 				} else {
 					$( $mh ).removeClass( 'stuck' );
@@ -536,8 +536,20 @@
 					$( 'body' ).addClass( 'topbar-out' );
 				}
 
-				if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) || $tbwc.length ) {
-					$mh.css( 'position', 'fixed' );
+				if (
+					$( 'body' ).hasClass( 'no-topbar' ) ||
+					(
+						! $( 'body' ).hasClass( 'no-topbar' ) &&
+						$( 'body' ).hasClass( 'topbar-out' )
+					) ||
+					$tbwc.length
+				) {
+				var top = window.pageYOffset || document.documentElement.scrollTop;
+					if ( top > siteoriginCorp.stickyOffset ) {
+						$mh.css( 'position', 'fixed' );
+					} else {
+						$mh.css( 'position', 'absolute' );
+					}
 				} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $( 'body' ).hasClass( 'topbar-out' ) ) {
 					$mh.css( 'position', 'absolute' );
 				}
