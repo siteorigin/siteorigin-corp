@@ -224,6 +224,7 @@ function siteorigin_corp_scripts() {
 		array(
 			'collapse' => siteorigin_setting( 'navigation_mobile_menu_collapse' ),
 			'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
+			'stickyOffset' => apply_filters( 'siteorigin_corp_header_sticky_offset', 0 ),
 		)
 	);
 
