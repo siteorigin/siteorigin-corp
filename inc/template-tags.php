@@ -22,7 +22,7 @@ if ( ! function_exists( 'siteorigin_corp_author_box' ) ) {
 			<span class="author-posts">
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 					<?php esc_html_e( 'View posts by ', 'siteorigin-corp' );
-		echo get_the_author(); ?>
+					echo get_the_author(); ?>
 				</a>
 			</span>
 			<?php if ( get_the_author_meta( 'description' ) ) { ?>
@@ -42,21 +42,7 @@ if ( ! function_exists( 'siteorigin_corp_breadcrumbs' ) ) {
 			return;
 		}
 
-		if ( function_exists( 'bcn_display' ) ) {
-			?>
-		<div class="breadcrumbs bcn">
-			<?php bcn_display(); ?>
-		</div>
-		<?php
-		} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
-			yoast_breadcrumb( '<div class="breadcrumbs">', '</div>' );
-		} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
-			?>
-		<div class="breadcrumbs">
-			<?php rank_math_the_breadcrumbs(); ?>
-		</div>
-		<?php
-		}
+		siteorigin_settings_breadcrumbs();
 	}
 }
 add_action( 'siteorigin_corp_content_top', 'siteorigin_corp_breadcrumbs' );
