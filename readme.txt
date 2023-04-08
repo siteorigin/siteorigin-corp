@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.13 - 08 April 2023 =
+* Moved breadcrumb functionality to SiteOrigin Settings framework.
+* Developer: Added `siteorigin_corp_header_sticky_offset` filter. Delay when the header becomes sticky.
+
 = 1.19.12 - 02 March 2023 =
 * Added compatibility for the SiteOrigin Premium Logo Booster Addon.
 
