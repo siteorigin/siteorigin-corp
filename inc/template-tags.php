@@ -454,6 +454,7 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) {
 		$output = '';
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
+		$cats = apply_filters( 'siteorigin_corp_display_categories', $cats );
 
 		if ( is_sticky() && ! is_paged() ) {
 			$output .= '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';
