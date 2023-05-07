@@ -25,15 +25,15 @@
 
 		<div class="entry-content">
 			<?php
-				the_content();
+			the_content();
 
-wp_link_pages( array(
-	'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
-	'after'  => '</div>',
-	'link_before' => '<span>',
-	'link_after'  => '</span>',
-) );
-?>
+			wp_link_pages( array(
+				'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'siteorigin-corp' ) . '</span>',
+				'after'  => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			) );
+			?>
 		</div><!-- .entry-content -->
 		
 	</div><!-- .corp-content-wrapper -->
