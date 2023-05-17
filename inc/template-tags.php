@@ -11,27 +11,28 @@ if ( ! function_exists( 'siteorigin_corp_author_box' ) ) {
 	 * Display the post author biographical info on single posts.
 	 */
 	function siteorigin_corp_author_box() { ?>
-	<div class="author-box">
-		<div class="author-avatar">
-			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-				<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
-			</a>
-		</div><!-- .author-avatar -->
-		<div class="author-description">
-			<h3><?php echo get_the_author(); ?></h3>
-			<span class="author-posts">
+		<div class="author-box">
+			<div class="author-avatar">
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-					<?php esc_html_e( 'View posts by ', 'siteorigin-corp' );
-					echo get_the_author(); ?>
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 				</a>
-			</span>
-			<?php if ( get_the_author_meta( 'description' ) ) { ?>
-				<div><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></div>
-			<?php } ?>
-		</div><!-- .author-description -->
-	</div><!-- .author-box -->
-<?php }
+			</div><!-- .author-avatar -->
+			<div class="author-description">
+				<h3><?php echo get_the_author(); ?></h3>
+				<span class="author-posts">
+					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+						<?php esc_html_e( 'View posts by ', 'siteorigin-corp' );
+						echo get_the_author(); ?>
+					</a>
+				</span>
+				<?php if ( get_the_author_meta( 'description' ) ) { ?>
+					<div><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></div>
+				<?php } ?>
+			</div><!-- .author-description -->
+		</div><!-- .author-box -->
+		<?php
 	}
+}
 
 if ( ! function_exists( 'siteorigin_corp_breadcrumbs' ) ) {
 	/**
@@ -454,6 +455,7 @@ if ( ! function_exists( 'siteorigin_corp_post_meta' ) ) {
 		$output = '';
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-corp' ) );
+		$cats = apply_filters( 'siteorigin_corp_display_categories', $cats );
 
 		if ( is_sticky() && ! is_paged() ) {
 			$output .= '<span class="featured-post">' . esc_html__( 'Sticky', 'siteorigin-corp' ) . '</span>';

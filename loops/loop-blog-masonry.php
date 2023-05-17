@@ -5,6 +5,7 @@
  * @license GPL 2.0
  */
 wp_enqueue_script( 'jquery-masonry' );
+add_filter( 'siteorigin_corp_display_categories', '__return_false' );
 ?>
 
 <?php
@@ -40,4 +41,6 @@ if ( have_posts() ) { ?>
 	}
 } else {
 	get_template_part( 'template-parts/content', 'none' );
-} ?>
+}
+
+remove_filter( 'siteorigin_corp_display_categories', '__return_false' );

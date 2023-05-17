@@ -37,13 +37,10 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Retina Logo', 'siteorigin-corp' ),
 					'description' => esc_html__( 'A logo for use on high pixel density displays. Must be used in addition to a regular logo added in the Site Identity section and be exactly double the size.', 'siteorigin-corp' ),
 					'teaser' => array(
-						'text' => __(
-							sprintf(
-								'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster Addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.',
-								'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
-								'</a>'
-							),
-							'siteorigin-corp'
+						'text' => sprintf(
+							__( 'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster Addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.', 'siteorigin-corp' ),
+							'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
+							'</a>'
 						),
 					),
 				),
@@ -1819,7 +1816,7 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_corp_setup_page_set
  */
 function siteorigin_corp_about_page_sections( $about ) {
 	$about['documentation_url'] = 'https://siteorigin.com/corp-documentation/';
-	$about['description']       = esc_html__( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
+	$about['description']       = __( "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully loaded with all the modern theme features you've come to expect and enjoy.", 'siteorigin-corp' );
 	$about['review']            = true;
 	$about['no_video']          = true;
 	$about['video_url']         = 'https://siteorigin.com/theme/corp/';
