@@ -100,6 +100,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.14 - 17 May 2023 =
+* Resolved missing text domain.
+* Changed custom logo wrapper from `div` to `span` tag.
+* Masonry: Corrected layout. Only output categories as a featured image overlay.
+* Developer: Added `siteorigin_corp_display_categories`.
+
 = 1.19.13 - 08 April 2023 =
 * Moved breadcrumb functionality to SiteOrigin Settings framework.
 * Developer: Added `siteorigin_corp_header_sticky_offset` filter. Delay when the header becomes sticky.
