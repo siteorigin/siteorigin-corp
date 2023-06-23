@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.15 - 23 June 2023 =
+* Resolved Related Projects Warning in template-tags.php.
+* Added a fallback message for when there are no related projects.
+* Updated settings in the "inc" directory for improved performance and bug fixes.
+
 = 1.19.14 - 17 May 2023 =
 * Resolved missing text domain.
 * Changed custom logo wrapper from `div` to `span` tag.
