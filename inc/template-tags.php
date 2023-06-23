@@ -398,37 +398,40 @@ if ( ! function_exists( 'siteorigin_corp_related_projects' ) ) {
 			echo do_shortcode( '[jetpack-related-posts]' );
 		} else { // The fallback loop.
 			$categories = get_the_terms( $post_id, 'jetpack-portfolio-type' );
-			$first_cat = $categories[0]->term_id;
-			$args = array(
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'jetpack-portfolio-type',
-						'field' => 'term_id',
-						'terms' => $first_cat,
+			if ( is_array( $categories ) ) {
+				$first_cat = $categories[0]->term_id;
+				$args = array(
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'jetpack-portfolio-type',
+							'field' => 'term_id',
+							'terms' => $first_cat,
+						),
 					),
-				),
-				'post__not_in' => array( $post_id ),
-				'posts_per_page' => 3,
-				'ignore_sticky_posts' => -1,
-			);
-			$related_posts = new WP_Query( $args ); ?>
+					'post__not_in' => array( $post_id ),
+					'posts_per_page' => 3,
+					'ignore_sticky_posts' => -1,
+				);
+				$related_posts = new WP_Query( $args ); ?>
 
-		<div class="related-projects-section">
-			<h3><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h2>
-			<?php if ( $related_posts->have_posts() ) { ?>
-				<div class="related-projects">
+				<div class="related-projects-section">
+					<h3><?php esc_html_e( 'Related Posts', 'siteorigin-corp' ); ?></h2>
 					<?php if ( $related_posts->have_posts() ) { ?>
-						<?php while ( $related_posts->have_posts() ) {
-							$related_posts->the_post(); ?>
-							<?php get_template_part( 'template-parts/content', 'portfolio' ); ?>
-						<?php } ?>
+						<div class="related-projects">
+							<?php if ( $related_posts->have_posts() ) { ?>
+								<?php while ( $related_posts->have_posts() ) {
+									$related_posts->the_post(); ?>
+									<?php get_template_part( 'template-parts/content', 'portfolio' ); ?>
+								<?php } ?>
+							<?php } ?>
+						</div>
+					<?php } else { ?>
+						<p><?php esc_html_e( 'No related projects.', 'siteorigin-corp' ); ?></p>
 					<?php } ?>
 				</div>
-			<?php } else { ?>
-				<p><?php esc_html_e( 'No related projects.', 'siteorigin-corp' ); ?></p>
-			<?php } ?>
-		</div>
-		<?php wp_reset_query();
+				<?php
+				wp_reset_query();
+			}
 		}
 	}
 }
