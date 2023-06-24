@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.16 - 24 June 2023 =
+* SiteOrigin Settings: Corrected Google Fonts array formatting.
+
 = 1.19.15 - 23 June 2023 =
 * Resolved Related Projects Warning in template-tags.php.
 * Added a fallback message for when there are no related projects.
