@@ -98,14 +98,13 @@ if ( ! function_exists( 'siteorigin_corp_display_logo' ) ) {
 			the_custom_logo();
 		} else {
 			$tag = is_front_page() ? 'h1' : 'p';
-			if ( is_front_page() ) { ?>
-				<<?php echo $tag; ?> class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</<?php echo $tag; ?>>
-				<?php
-			}
+			?>
+			<<?php echo $tag; ?> class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</<?php echo $tag; ?>>
+			<?php
 		}
 		do_action( 'siteorigin_corp_logo_after' );
 	}
