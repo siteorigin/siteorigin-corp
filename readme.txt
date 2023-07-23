@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.19.17 - 24 July 2023 =
+* Fixed site title markup to ensure consistent display across all pages.
+* Added `siteorigin_corp_logo_before` and `siteorigin_corp_logo_after` hooks to allow custom actions before and after the logo is displayed.
+* Updated Build submodule reference.
+
 = 1.19.16 - 24 June 2023 =
 * SiteOrigin Settings: Corrected Google Fonts array formatting.
 
