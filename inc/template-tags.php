@@ -93,15 +93,20 @@ if ( ! function_exists( 'siteorigin_corp_display_logo' ) ) {
 	 * Display the logo or site title.
 	 */
 	function siteorigin_corp_display_logo() {
+		do_action( 'siteorigin_corp_logo_before' );
 		if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 			the_custom_logo();
 		} else {
-			if ( is_front_page() ) { ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php } else { ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php }
+			$tag = is_front_page() ? 'h1' : 'p';
+			?>
+			<<?php echo $tag; ?> class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</<?php echo $tag; ?>>
+			<?php
 		}
+		do_action( 'siteorigin_corp_logo_after' );
 	}
 }
 
