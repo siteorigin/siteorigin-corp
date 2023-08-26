@@ -1767,7 +1767,7 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 	$settings['header'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header', 'siteorigin-corp' ),
-		'checkbox_label' => esc_html__( 'Show', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-corp' ),
 		'description'    => esc_html__( 'Display the site header.', 'siteorigin-corp' ),
 	);
 
@@ -1788,7 +1788,7 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 	$settings['footer'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Footer', 'siteorigin-corp' ),
-		'checkbox_label' => esc_html__( 'Show', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-corp' ),
 		'description'    => esc_html__( 'Display the footer widget area and bottom bar.', 'siteorigin-corp' ),
 	);
 
