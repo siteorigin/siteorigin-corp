@@ -53,6 +53,20 @@ function siteorigin_corp_body_classes( $classes ) {
 		if ( empty( $page_settings['footer_margin'] ) ) {
 			$classes[] = 'no-footer-margin';
 		}
+
+
+		if (
+			isset( $page_settings['header'] ) &&
+			empty( $page_settings['header'] )
+		) {
+			$classes[] = 'page-layout-hide-header';
+		}
+		if (
+			isset( $page_settings['footer'] ) &&
+			empty( $page_settings['footer'] )
+		) {
+			$classes[] = 'page-layout-hide-footer';
+		}
 	}
 
 	// Sidebar.
