@@ -1764,6 +1764,13 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		),
 	);
 
+	$settings['header'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Header', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the site header.', 'siteorigin-corp' ),
+	);
+
 	$settings['header_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => esc_html__( 'Header Bottom Margin', 'siteorigin-corp' ),
@@ -1776,6 +1783,13 @@ function siteorigin_corp_page_settings( $settings, $type, $id ) {
 		'label'          => esc_html__( 'Page Title', 'siteorigin-corp' ),
 		'checkbox_label' => esc_html__( 'Enable', 'siteorigin-corp' ),
 		'description'    => esc_html__( 'Display the page title.', 'siteorigin-corp' ),
+	);
+
+	$settings['footer'] = array(
+		'type'           => 'checkbox',
+		'label'          => esc_html__( 'Footer', 'siteorigin-corp' ),
+		'checkbox_label' => esc_html__( 'Display', 'siteorigin-corp' ),
+		'description'    => esc_html__( 'Display the footer widget area and bottom bar.', 'siteorigin-corp' ),
 	);
 
 	$settings['footer_margin'] = array(
@@ -1802,8 +1816,10 @@ add_action( 'siteorigin_page_settings', 'siteorigin_corp_page_settings', 10, 3 )
 function siteorigin_corp_setup_page_setting_defaults( $defaults, $type, $id ) {
 	$defaults['layout']         = 'default';
 	$defaults['overlap']        = 'disabled';
+	$defaults['header']         = true;
 	$defaults['header_margin']  = true;
 	$defaults['page_title']     = true;
+	$defaults['footer']         = true;
 	$defaults['footer_margin']  = true;
 	$defaults['footer_widgets'] = true;
 

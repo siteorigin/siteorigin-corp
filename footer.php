@@ -13,65 +13,69 @@
 		</div><!-- .corp-container -->
 	</div><!-- #content -->
 
-	<?php do_action( 'siteorigin_corp_footer_before' ); ?>
+	<?php
+	if ( siteorigin_page_setting( 'footer', true ) ) {
+		do_action( 'siteorigin_corp_footer_before' );
+		?>
 
-	<footer id="colophon" class="site-footer">
+		<footer id="colophon" class="site-footer">
 
-		<?php do_action( 'siteorigin_corp_footer_top' ); ?>
+			<?php do_action( 'siteorigin_corp_footer_top' ); ?>
 
-		<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) { ?>
-			<div class="corp-container">
-				<?php
-				if ( is_active_sidebar( 'sidebar-footer' ) ) {
-					$corp_sidebars = wp_get_sidebars_widgets();
-					?>
-					<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ); ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
-						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
-					</div>
+			<?php if ( siteorigin_page_setting( 'footer_widgets' ) ) { ?>
+				<div class="corp-container">
 					<?php
-				}
-				?>
-			</div><!-- .corp-container -->
-		<?php } ?>
-
-		<div class="bottom-bar">
-			<div class="corp-container">
-				<div class="site-info">
-					<?php
-					siteorigin_corp_footer_text();
-
-					if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
-						the_privacy_policy_link( '<span>', '</span>' );
-					}
-
-					$credit_text = apply_filters(
-						'siteorigin_corp_footer_credits',
-						'<span>' . sprintf( esc_html__( 'Theme by %s', 'siteorigin-corp' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
-					);
-
-					if ( ! empty( $credit_text ) ) {
-						echo wp_kses_post( $credit_text );
+					if ( is_active_sidebar( 'sidebar-footer' ) ) {
+						$corp_sidebars = wp_get_sidebars_widgets();
+						?>
+						<div class="widgets widgets-<?php echo count( $corp_sidebars['sidebar-footer'] ); ?>" aria-label="<?php esc_attr_e( 'Footer Widgets', 'siteorigin-corp' ); ?>">
+							<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+						</div>
+						<?php
 					}
 					?>
-				</div><!-- .site-info -->
-				<?php
-				$widget = siteorigin_setting( 'footer_social_widget' );
+				</div><!-- .corp-container -->
+			<?php } ?>
 
-				if ( has_nav_menu( 'menu-2' ) || ! empty( $widget['networks'] ) ) { ?>
-					<div class="footer-menu">
-						<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'depth' => 1, 'fallback_cb' => '' ) ); ?>
-						<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
-							the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget );
+			<div class="bottom-bar">
+				<div class="corp-container">
+					<div class="site-info">
+						<?php
+						siteorigin_corp_footer_text();
+
+						if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
+							the_privacy_policy_link( '<span>', '</span>' );
+						}
+
+						$credit_text = apply_filters(
+							'siteorigin_corp_footer_credits',
+							'<span>' . sprintf( esc_html__( 'Theme by %s', 'siteorigin-corp' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
+						);
+
+						if ( ! empty( $credit_text ) ) {
+							echo wp_kses_post( $credit_text );
 						}
 						?>
-					</div><!-- .footer-menu -->
-				<?php } ?>
-			</div><!-- .corp-container -->
-		</div><!-- .bottom-bar -->
+					</div><!-- .site-info -->
+					<?php
+					$widget = siteorigin_setting( 'footer_social_widget' );
 
-	<?php do_action( 'siteorigin_corp_footer_bottom' ); ?>
+					if ( has_nav_menu( 'menu-2' ) || ! empty( $widget['networks'] ) ) { ?>
+						<div class="footer-menu">
+							<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'depth' => 1, 'fallback_cb' => '' ) ); ?>
+							<?php if ( ! empty( $widget['networks'] ) && class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
+								the_widget( 'SiteOrigin_Widget_SocialMediaButtons_Widget', $widget );
+							}
+							?>
+						</div><!-- .footer-menu -->
+					<?php } ?>
+				</div><!-- .corp-container -->
+			</div><!-- .bottom-bar -->
 
-	</footer><!-- #colophon -->
+			<?php do_action( 'siteorigin_corp_footer_bottom' ); ?>
+
+		</footer><!-- #colophon -->
+	<?php } ?>
 </div><!-- #page -->
 
 <?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) { ?>
