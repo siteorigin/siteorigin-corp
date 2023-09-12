@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.0 - 11 September 2023 =
+* Added `Header` and `Footer` settings to Page Settings. These settings allow for more control over the display of the header and footer on individual pages.
+* Updated the Settings submodule.
+
 = 1.19.17 - 24 July 2023 =
 * Fixed site title markup to ensure consistent display across all pages.
 * Added `siteorigin_corp_logo_before` and `siteorigin_corp_logo_after` hooks to allow custom actions before and after the logo is displayed.
