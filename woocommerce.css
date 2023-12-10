@@ -667,7 +667,7 @@ input.button.added:after,
       .woocommerce .product .images .flex-control-thumbs li {
         cursor: pointer;
         float: left;
-        margin: 25px 25px 0 0;
+        margin: 25px 24px 0 0;
         width: 21.624%; }
         .woocommerce .product .images .flex-control-thumbs li:nth-of-type(4n+4) {
           margin-right: 0; }
