@@ -17,13 +17,28 @@ function siteorigin_corp_woocommerce_setup() {
 	 */
 	add_theme_support( 'wc-product-gallery-slider' );
 
+	$wc_disable_block_features = array();
+
 	if ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
+		$wc_disable_block_features[] = 'zoom';
 	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-zoom' ) {
 		add_theme_support( 'wc-product-gallery-zoom' );
+		$wc_disable_block_features[] = 'lightbox';
 	} elseif ( siteorigin_setting( 'woocommerce_product_gallery' ) == 'slider-lightbox-zoom' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
+	} else {
+		$wc_disable_block_features[] = 'zoom';
+		$wc_disable_block_features[] = 'lightbox';
+	}
+
+	if ( in_array( 'zoom', $wc_disable_block_features ) ) {
+		add_filter( 'woocommerce_single_product_zoom_enabled', '__return_false' );
+	}
+
+	if ( in_array( 'lightbox', $wc_disable_block_features ) ) {
+		add_filter( 'woocommerce_single_product_photoswipe_enabled', '__return_false' );
 	}
 
 	/*
