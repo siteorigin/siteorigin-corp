@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Tested up to: 6.2
+Tested up to: 6.4
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -99,6 +99,10 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.20.1 - 31 December 2023 =
+* Updated Google Fonts list.
+* Resolved WooCommerce Product Gallery setting functionality error.
 
 = 1.20.0 - 11 September 2023 =
 * Added `Header` and `Footer` settings to Page Settings. These settings allow for more control over the display of the header and footer on individual pages.
