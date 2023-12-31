@@ -100,6 +100,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.1 - 31 December 2023 =
+* Updated Google Fonts list.
+* Resolved WooCommerce Product Gallery setting functionality error.
+
 = 1.20.0 - 11 September 2023 =
 * Added `Header` and `Footer` settings to Page Settings. These settings allow for more control over the display of the header and footer on individual pages.
 * Updated the Settings submodule.
