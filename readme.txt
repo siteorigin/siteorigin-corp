@@ -100,6 +100,14 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.3 - 15 March 2024 =
+* Added Advanced Woo Labels integration to the Quick View feature in WooCommerce.
+* Enhanced product image display and interaction in Quick View mode.
+* Introduced new function `siteorigin_corp_product_quick_view_awl` for handling product quick view actions.
+* Adjusted product image size and layout for Quick View.
+* Implemented conditional checks to avoid adding buttons in Quick View mode.
+* Updated logic for displaying Add to Cart functionality based on settings.
+
 = 1.20.2 - 11 February 2024 =
 * Updated Page Settings Submodule: Page Settings warning resolution.
 
