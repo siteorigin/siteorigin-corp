@@ -60,19 +60,35 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_product_image' ) ) 
 	 */
 	function siteorigin_corp_woocommerce_archive_product_image() { ?>
 	<div class="loop-product-thumbnail">
-		<?php woocommerce_template_loop_product_link_open(); ?>
-		<?php woocommerce_template_loop_product_thumbnail(); ?>
-		<?php woocommerce_template_loop_product_link_close(); ?>
-		<?php if ( siteorigin_setting( 'woocommerce_quick_view' ) && siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover' ) {
-			siteorigin_corp_woocommerce_quick_view_button();
-		}
+		<?php
+		woocommerce_template_loop_product_link_open();
+		woocommerce_template_loop_product_thumbnail();
+		woocommerce_template_loop_product_link_close();
 
-			if ( siteorigin_setting( 'woocommerce_add_to_cart' ) && siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover' ) {
+		// If this is a quick view, we need to avoid adding buttons.
+		if (
+			empty( $_REQUEST['action'] ) ||
+			$_REQUEST['action'] != 'siteorigin_corp_product_quick_view'
+		) {
+			if (
+				siteorigin_setting( 'woocommerce_quick_view' ) &&
+				siteorigin_setting( 'woocommerce_quick_view_location' ) == 'hover'
+			) {
+				siteorigin_corp_woocommerce_quick_view_button();
+			}
+
+			if (
+				siteorigin_setting( 'woocommerce_add_to_cart' ) &&
+				siteorigin_setting( 'woocommerce_add_to_cart_location' ) == 'hover'
+			) {
 				woocommerce_template_loop_add_to_cart();
-			} ?>
+			}
+		}
+		?>
 	</div>
-<?php }
+	<?php
 	}
+}
 
 if ( ! function_exists( 'siteorigin_corp_woocommerce_archive_buttons' ) ) {
 	/**
@@ -179,45 +195,63 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_quick_view_image' ) ) {
 			return;
 		}
 
+		// Adjust Product Image Size.
+		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+		add_filter( 'single_product_archive_thumbnail_size', 'siteorigin_corp_woocommerce_quick_view_product_image_size' );
+
 		if ( empty( $gallery ) ) {
-			echo woocommerce_get_product_thumbnail( 'shop_single' );
+			do_action( 'woocommerce_before_shop_loop_item_title' );
 		} else {
 			?>
-		<div class="product-images-slider flexslider">
-			<ul class="slides">
-				<?php if ( has_post_thumbnail() ) {
-					$image_title = esc_attr( get_the_title( get_post_thumbnail_id() ) );
-					$image_element = get_the_post_thumbnail( $product->get_id(), apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array( 'title' => $image_title, 'alt' => $image_title ) );
-					echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<li class="slide product-featured-image">%s</li>', $image_element ), $product->get_id() );
-				} ?>
+			<div class="product-images-slider woocommerce-product-gallery flexslider">
+				<ul class="slides">
+					<?php
+					if ( has_post_thumbnail() ) {
+						array_unshift( $gallery, get_post_thumbnail_id() );
+					}
 
-				<?php if ( $gallery ) {
 					foreach ( $gallery as $image ) {
-						$image_link = wp_get_attachment_url( $image );
-						$image_title = esc_attr( get_the_title( $image ) );
 						?>
-
 						<li class="slide product-gallery-image">
-							<img src="<?php echo $image_link; ?>" alt="<?php echo $image_title; ?>" title="<?php echo $image_title; ?>" />
+							<?php
+							echo wp_get_attachment_image(
+								$image,
+								'full',
+								false,
+								array(
+									'class' => 'product-gallery-image',
+									'title' => esc_attr( get_the_title( $image ) ),
+								)
+							);
+							?>
 						</li>
-
 						<?php
 					}
-				} ?>
+					?>
 
-			</ul>
+				</ul>
 
-			<ul class="flex-direction-nav">
-				<li class="flex-nav-prev">
-					<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
-				</li>
-				<li class="flex-nav-next">
-					<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
-				</li>
-			</ul>
-		</div>
-	<?php
+				<ul class="flex-direction-nav">
+					<li class="flex-nav-prev">
+						<a class="flex-prev" href="#"><?php siteorigin_corp_display_icon( 'left-arrow' ); ?></a>
+					</li>
+					<li class="flex-nav-next">
+						<a class="flex-next" href="#"><?php siteorigin_corp_display_icon( 'right-arrow' ); ?></a>
+					</li>
+				</ul>
+			</div>
+		<?php
 		}
+
+		// Restore Product Image Size.
+		add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+		remove_filter( 'woocommerce_get_image_size_thumbnail', 'custom_woocommerce_get_image_size_thumbnail' );
+	}
+}
+
+if ( ! function_exists( 'siteorigin_corp_woocommerce_quick_view' ) ) {
+	function siteorigin_corp_woocommerce_quick_view_product_image_size( $size ) {
+		return apply_filters( 'siteorigin_corp_woocommerce_quick_view_product_image_size', 'shop_single' );
 	}
 }
 
@@ -259,3 +293,30 @@ if ( ! function_exists( 'siteorigin_corp_product_quick_view_ajax' ) ) {
 }
 add_action( 'wp_ajax_siteorigin_corp_product_quick_view', 'siteorigin_corp_product_quick_view_ajax' );
 add_action( 'wp_ajax_nopriv_siteorigin_corp_product_quick_view', 'siteorigin_corp_product_quick_view_ajax' );
+
+if ( ! function_exists( 'siteorigin_corp_product_quick_view_awl' ) ) {
+	function siteorigin_corp_product_quick_view_awl( $hooks ) {
+		if (
+			! empty( $_REQUEST['action'] ) &&
+			$_REQUEST['action'] === 'siteorigin_corp_product_quick_view'
+		) {
+			$hooks['on_image']['archive'] = array(
+				'wp_get_attachment_image' => array(
+					'priority' => 10,
+					'type' => 'filter',
+					'callback' => 'AWL_Integrations_Callbacks::wrap_thumb_container_filter',
+					'args' => 4,
+				)
+			);
+		}
+
+		$hooks['before_title']['archive'] = array(
+			'siteorigin_corp_woocommerce_quick_view_title' => array(
+				'priority' => 10,
+			)
+		);
+
+		return $hooks;
+	}
+	add_filter( 'awl_labels_hooks', 'siteorigin_corp_product_quick_view_awl' );
+}
