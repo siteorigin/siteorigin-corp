@@ -187,9 +187,20 @@
 			margin-bottom: 26px;
 		}
 
-		// Password Change.
 		fieldset {
+			border: none;
+			margin: 0;
 			margin-bottom: 15px;
+			padding: 0;
+
+			legend {
+				color: #2d2d2d;
+				font-family: Montserrat, sans-serif;
+				font-size: 20px;
+				font-weight: 600;
+				margin: 25px 0 15px;
+				padding: 0;
+			}
 		}
 	}
 }
