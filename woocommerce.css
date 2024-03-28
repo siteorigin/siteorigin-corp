@@ -2056,8 +2056,17 @@ form.checkout > .blockUI {
           padding-left: 0; } }
   .woocommerce-account .woocommerce-MyAccount-content .woocommerce-address-fields__field-wrapper {
     margin-bottom: 26px; }
-  .woocommerce-account .woocommerce-MyAccount-content .password-change {
-    margin-bottom: 15px; }
+  .woocommerce-account .woocommerce-MyAccount-content fieldset {
+    border: none;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0; }
+    .woocommerce-account .woocommerce-MyAccount-content fieldset legend {
+      color: #2d2d2d;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px;
+      padding: 0; }
 
 .woocommerce-password-strength {
   font-size: 14px;
@@ -2081,3 +2090,5 @@ form.checkout > .blockUI {
 --------------------------------------------------------------*/
 .track_order p {
   margin-bottom: 26px; }
+
+/*# sourceMappingURL=sass/maps/woocommerce.css.map */
