@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.4 - 28 March 2024 =
+* WooCommerce: Removed the edit account form template and adjusted page styling as required.
+
 = 1.20.3 - 15 March 2024 =
 * Added Advanced Woo Labels integration to the Quick View feature in WooCommerce.
 * Enhanced product image display and interaction in Quick View mode.
