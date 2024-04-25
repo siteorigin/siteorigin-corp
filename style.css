@@ -2904,10 +2904,10 @@ body:not(.single) .entry-content p:only-of-type {
     .site-footer .widgets .widget {
       box-sizing: content-box;
       color: #b4b5b8;
-      margin-top: 0;
+      float: left;
+      margin: 0;
       margin-right: 2.75%;
-      margin-left: 0;
-      float: left; }
+      padding-bottom: 95px; }
       .site-footer .widgets .widget .wp-block-group__inner-container :is(h1,
       h2,
       h3,

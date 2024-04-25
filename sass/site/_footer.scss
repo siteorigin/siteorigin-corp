@@ -21,10 +21,10 @@
 		.widget {
 			box-sizing: content-box;
 			color: $color__footer-widget-text;
-			margin-top: 0;
-			margin-right: 2.75%;
-			margin-left: 0;
 			float: left;
+			margin: 0;
+			margin-right: 2.75%;
+			padding-bottom: $footer__padding;
 
 			.wp-block-group__inner-container :is(h1, h2, h3, h4, h5, h6),
 			.widget-title {
