@@ -2906,8 +2906,7 @@ body:not(.single) .entry-content p:only-of-type {
       color: #b4b5b8;
       float: left;
       margin: 0;
-      margin-right: 2.75%;
-      padding-bottom: 95px; }
+      margin-right: 2.75%; }
       .site-footer .widgets .widget .wp-block-group__inner-container :is(h1,
       h2,
       h3,
