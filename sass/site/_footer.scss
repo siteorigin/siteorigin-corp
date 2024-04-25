@@ -8,7 +8,7 @@
 
 	.widgets {
 		@include clearfix;
-		padding-block: $footer__padding;
+		padding: $footer__padding 0;
 		width: 100%;
 
 		@for $i from 1 through 10 {

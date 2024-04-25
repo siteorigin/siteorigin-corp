@@ -2875,7 +2875,7 @@ body:not(.single) .entry-content p:only-of-type {
   .no-footer-margin .site-footer {
     margin-top: 0; }
   .site-footer .widgets {
-    padding-block: 95px;
+    padding: 95px 0;
     width: 100%; }
     .site-footer .widgets::after {
       clear: both;
