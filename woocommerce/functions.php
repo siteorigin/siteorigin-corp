@@ -57,6 +57,8 @@ add_action( 'after_setup_theme', 'siteorigin_corp_woocommerce_setup' );
  * Enqueue WooCommerce scripts and styles.
  */
 function siteorigin_corp_woocommerce_scripts() {
+	global $post;
+
 	// WooCommerce stylesheet.
 	wp_enqueue_style( 'siteorigin-corp-woocommerce-style', get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
@@ -64,7 +66,12 @@ function siteorigin_corp_woocommerce_scripts() {
 	if (
 		is_woocommerce() ||
 		is_cart() ||
-		strpos( $post->post_content, 'woocommerce-loop-product__link' )
+		wc_post_content_has_shortcode( 'products' ) ||
+		(
+			! empty( $post ) &&
+			! empty( $post->post_content ) &&
+			strpos( $post->post_content, 'woocommerce-loop-product__link' ) !== false
+		)
 	) {
 		wp_enqueue_script( 'siteorigin-corp-woocommerce-script', get_template_directory_uri() . '/woocommerce/js/jquery.woocommerce' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery', 'wc-add-to-cart-variation' ), SITEORIGIN_THEME_VERSION, true );
 	}
