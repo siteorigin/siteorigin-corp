@@ -15,6 +15,8 @@
  * @return array
  */
 function siteorigin_corp_body_classes( $classes ) {
+	global $post;
+
 	// Blog settings.
 	if ( siteorigin_setting( 'blog_archive_content' ) == 'full' ) {
 		$classes[] = 'blog-full';
@@ -100,7 +102,12 @@ function siteorigin_corp_body_classes( $classes ) {
 		(
 			is_woocommerce() ||
 			is_cart() ||
-			wc_post_content_has_shortcode( 'products' )
+			wc_post_content_has_shortcode( 'products' ) ||
+			(
+				! empty( $post ) &&
+				! empty( $post->post_content ) &&
+				strpos( $post->post_content, 'woocommerce-loop-product__link' ) !== false
+			)
 		) &&
 		(
 			siteorigin_setting( 'woocommerce_quick_view' ) &&

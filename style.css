@@ -2875,7 +2875,7 @@ body:not(.single) .entry-content p:only-of-type {
   .no-footer-margin .site-footer {
     margin-top: 0; }
   .site-footer .widgets {
-    padding-top: 95px;
+    padding: 95px 0;
     width: 100%; }
     .site-footer .widgets::after {
       clear: both;
@@ -2904,11 +2904,9 @@ body:not(.single) .entry-content p:only-of-type {
     .site-footer .widgets .widget {
       box-sizing: content-box;
       color: #b4b5b8;
-      margin-top: 0;
-      margin-right: 2.75%;
-      margin-bottom: 95px;
-      margin-left: 0;
-      float: left; }
+      float: left;
+      margin: 0;
+      margin-right: 2.75%; }
       .site-footer .widgets .widget .wp-block-group__inner-container :is(h1,
       h2,
       h3,
@@ -2930,6 +2928,7 @@ body:not(.single) .entry-content p:only-of-type {
       @media (max-width: 768px) {
         .site-footer .widgets .widget {
           float: none;
+          margin-bottom: 6%;
           width: 100% !important; } }
   .site-footer .site-info {
     font-size: 13px;
