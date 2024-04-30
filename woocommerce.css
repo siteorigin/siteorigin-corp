@@ -1040,12 +1040,13 @@ input.button.added:after,
   #quick-view-container .quick-view {
     background: #fff;
     bottom: 0;
-    height: 575px;
     display: inline-block;
+    height: 575px;
     left: 0;
     margin: auto;
     max-width: 1140px;
     min-width: 300px;
+    overflow-x: hidden;
     overflow: auto;
     position: absolute;
     right: 0;
