@@ -24,16 +24,18 @@ while ( have_posts() ) {
 
 	?>
 	<div class="woocommerce">
-		
+
 		<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php do_action( 'siteorigin_corp_woocommerce_quick_view_before_product' ); ?>
 
 			<div class="product-content-wrapper">
-		
+				<?php do_action( 'siteorigin_corp_woocommerce_quick_view_before_image' ); ?>
+
 				<div class="product-image-wrapper">
-
 					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_images' ); ?>
-
 				</div>
+
+				<?php do_action( 'siteorigin_corp_woocommerce_quick_view_after_image' ); ?>
 
 				<div class="product-info-wrapper">
 
@@ -42,15 +44,20 @@ while ( have_posts() ) {
 						<span class="quickview-close-icon">+</span>
 					</a>
 
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_before_title' ); ?>
 					<a href="<?php the_permalink(); ?>">
 						<?php do_action( 'siteorigin_corp_woocommerce_quick_view_title' ); ?>
 					</a>
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_after_title' ); ?>
 
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_before_content' ); ?>
 					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_content' ); ?>
-
+					<?php do_action( 'siteorigin_corp_woocommerce_quick_view_after_content' ); ?>
 				</div>
 
 			</div>
+
+			<?php do_action( 'siteorigin_corp_woocommerce_quick_view_after_product' ); ?>
 
 		</div>
 

@@ -8,7 +8,7 @@
 
 	.widgets {
 		@include clearfix;
-		padding-top: $footer__padding;
+		padding: $footer__padding 0;
 		width: 100%;
 
 		@for $i from 1 through 10 {
@@ -21,11 +21,9 @@
 		.widget {
 			box-sizing: content-box;
 			color: $color__footer-widget-text;
-			margin-top: 0;
-			margin-right: 2.75%;
-			margin-bottom: $footer__padding;
-			margin-left: 0;
 			float: left;
+			margin: 0;
+			margin-right: 2.75%;
 
 			.wp-block-group__inner-container :is(h1, h2, h3, h4, h5, h6),
 			.widget-title {
@@ -52,6 +50,7 @@
 
 			@media (max-width: 768px) {
 				float: none;
+				margin-bottom: 6%;
 				width: 100% !important;
 			}
 		}
@@ -70,7 +69,7 @@
 			}
 
 			&:last-of-type {
-				
+
 				&:after {
 					content: none;
 				}

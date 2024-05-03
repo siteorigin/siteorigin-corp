@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.5 - 03 May 2024 =
+* Footer: Adjusted footer widget mobile spacing.
+* WooCommerce: Improved `[products]` shortcode detection.
+* WooCommerce: Added additional Quick View action hooks.
+
 = 1.20.4 - 28 March 2024 =
 * WooCommerce: Removed the edit account form template and adjusted page styling as required.
 
