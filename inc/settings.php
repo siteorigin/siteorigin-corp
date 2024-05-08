@@ -1098,11 +1098,10 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	margin-top: ${footer_margin};
 	}
 	.site-footer .widgets {
-	padding-top: ${footer_padding};
+	padding: ${footer_padding} 0;
 	}
 	.site-footer .widgets .widget {
 	color: ${footer_widget_text};
-	margin-bottom: ${footer_padding};
 	}
 	.site-footer .widgets .widget .wp-block-group__inner-container :is(h1,h2,h3,h4,h5,h6),.site-footer .widgets .widget .widget-title {
 	color: ${footer_widget_title};
