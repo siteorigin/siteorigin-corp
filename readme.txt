@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.6 - 09 May 2024 =
+* Updated Tested up to tag.
+* Increased requried PHP version.
+* Updated Customizer CSS.
+
 = 1.20.5 - 03 May 2024 =
 * Footer: Adjusted footer widget mobile spacing.
 * WooCommerce: Improved `[products]` shortcode detection.
