@@ -102,7 +102,7 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 = 1.20.6 - 09 May 2024 =
 * Updated Tested up to tag.
-* Increased requried PHP version.
+* Increased required PHP version.
 * Updated Customizer CSS.
 
 = 1.20.5 - 03 May 2024 =
