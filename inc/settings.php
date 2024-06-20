@@ -1579,7 +1579,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			}
 
 			.centered.site-header .site-header-inner {
-				flex-direction: row; 
+				flex-direction: row;
 			}
 
 			.site-header.centered .main-navigation {
@@ -1620,7 +1620,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			}
 
 			.centered.site-header .site-header-inner {
-				flex-direction: row; 
+				flex-direction: row;
 			}
 
 			.site-header.centered .main-navigation {
