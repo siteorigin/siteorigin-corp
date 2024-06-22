@@ -1117,10 +1117,12 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	color: ${footer_bottom_bar_text};
 	padding: ${footer_bottom_bar_padding} 0;
 	}
-	.site-footer .bottom-bar a {
+	.site-footer .bottom-bar a,
+	.site-footer .footer-menu .menu li a {
 	color: ${footer_bottom_bar_link};
 	}
-	.site-footer .bottom-bar a:hover {
+	.site-footer .bottom-bar a:hover,
+	.site-footer .footer-menu .menu li a:hover {
 	color: ${footer_bottom_bar_link_hover};
 	}
 	.wp-caption {
@@ -1577,7 +1579,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			}
 
 			.centered.site-header .site-header-inner {
-				flex-direction: row; 
+				flex-direction: row;
 			}
 
 			.site-header.centered .main-navigation {
@@ -1618,7 +1620,7 @@ function siteorigin_corp_menu_breakpoint_css( $css, $settings ) {
 			}
 
 			.centered.site-header .site-header-inner {
-				flex-direction: row; 
+				flex-direction: row;
 			}
 
 			.site-header.centered .main-navigation {
