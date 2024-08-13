@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.7 - 13 August 2024 =
+* Footer Customizer Settings: Update to apply colors to bottom bar menu link color.
+
 = 1.20.6 - 09 May 2024 =
 * Updated Tested up to tag.
 * Increased required PHP version.
