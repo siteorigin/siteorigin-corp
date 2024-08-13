@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Tested up to: 6.5
+Tested up to: 6.6
 Requires at least: 4.7
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -99,6 +99,9 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.20.7 - 13 August 2024 =
+* Footer Customizer Settings: Update to apply colors to bottom bar menu link color.
 
 = 1.20.6 - 09 May 2024 =
 * Updated Tested up to tag.
