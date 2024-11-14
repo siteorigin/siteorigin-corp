@@ -459,13 +459,12 @@
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginCorp.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginCorp.logoScale
-					} ).addClass( 'stuck' );
-
-				} else {
+					} );
+				} else if ( top < siteoriginCorp.stickyOffset ) {
 					$mh.css( {
 						'padding-top': mhPadding.top,
 						'padding-bottom': mhPadding.bottom
-					} ).removeClass( 'stuck' );
+					} );
 				}
 
 				if ( $img.length ) {
