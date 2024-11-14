@@ -100,6 +100,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.8 - 14 November 2024 =
+* Updated WooCommerce Form Checkout template to version 9.4.0.
+* Update to prevent a potential header flicker on sticky scroll.
+* Updated the Settings submodule.
+
 = 1.20.7 - 13 August 2024 =
 * Footer Customizer Settings: Update to apply colors to bottom bar menu link color.
 
