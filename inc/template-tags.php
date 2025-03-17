@@ -14,7 +14,7 @@ if ( ! function_exists( 'siteorigin_corp_author_box' ) ) {
 		<div class="author-box">
 			<div class="author-avatar">
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 200 ); ?>
 				</a>
 			</div><!-- .author-avatar -->
 			<div class="author-description">
@@ -61,7 +61,7 @@ if ( ! function_exists( 'siteorigin_corp_comment' ) ) {
 		<div class="comment-box">
 			<?php if ( $type == 'comment' ) { ?>
 				<div class="avatar-container">
-					<?php echo get_avatar( get_comment_author_email(), 60 ); ?>
+					<?php echo get_avatar( get_comment_author_email(), 120 ); ?>
 				</div>
 			<?php } ?>
 
@@ -320,7 +320,7 @@ if ( ! function_exists( 'siteorigin_corp_offset_post_meta' ) ) {
 		} ?>
 	<div class="entry-author-avatar">
 		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 140 ); ?>
 		</a>
 	</div>
 	<div class="entry-author-link">
