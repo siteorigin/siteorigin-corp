@@ -44,6 +44,7 @@
 			img {
 				display: block;
 				border-radius: 50%;
+				width: 60px;
 			}
 		}
 
@@ -127,7 +128,7 @@
 	}
 }
 
-.comments-title, 
+.comments-title,
 .comment-reply-title {
 	@extend .sub-heading;
 }

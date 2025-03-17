@@ -2704,7 +2704,8 @@ body:not(.single) .entry-content p:only-of-type {
       .comment-list .comment .avatar-container img,
       .comment-list .pingback .avatar-container img {
         display: block;
-        border-radius: 50%; }
+        border-radius: 50%;
+        width: 60px; }
     .comment-list .comment .info,
     .comment-list .pingback .info {
       line-height: normal;
