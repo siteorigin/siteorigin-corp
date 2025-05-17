@@ -865,29 +865,30 @@ a {
   .pagination .page-numbers {
     border: 1px solid #626262;
     color: #626262;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Open Sans", sans-serif;
     font-size: 0.9333em;
-    line-height: normal;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    padding: 11px 17px;
+    aspect-ratio: 1 / 1;
+    min-width: 3.2em;
+    padding: 0 0.5em;
+    margin-bottom: 0.25em;
+    margin-right: 0.25em;
     transition: .3s;
-    vertical-align: top; }
+    box-sizing: border-box; }
     .pagination .page-numbers:visited {
       color: #626262; }
     .pagination .page-numbers:hover, .pagination .page-numbers:focus {
       border-color: #f14e4e;
       color: #f14e4e; }
     .pagination .page-numbers.next, .pagination .page-numbers.prev {
-      font-family: Verdana;
-      padding: 12px 13px; }
+      font-family: Verdana; }
     .pagination .page-numbers.dots {
       border: none;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-      font-size: 13px;
-      padding-left: 0;
-      padding-right: 0; }
+      min-width: 1.25em;
+      aspect-ratio: auto; }
       .pagination .page-numbers.dots:hover {
         background: none;
         color: #626262; }
@@ -3196,3 +3197,5 @@ object {
             font-size: 26px; } }
         .featured-posts-slider .slides .slide .slide-content .entry-title a {
           color: #fff; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

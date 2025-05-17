@@ -475,15 +475,18 @@ $sel: '';
 	.page-numbers {
 		border: 1px solid $color__text-medium;
 		color: $color__text-medium;
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		font-family: $font__main;
 		font-size: 0.9333em;
-		line-height: normal;
-		margin-bottom: 4px;
-		margin-right: 4px;
-		padding: 11px 17px;
+		aspect-ratio: 1 / 1;
+		min-width: 3.2em;
+		padding: 0 0.5em;
+		margin-bottom: 0.25em;
+		margin-right: 0.25em;
 		transition: .3s;
-		vertical-align: top;
+		box-sizing: border-box;
 
 		&:visited {
 			color: $color__text-medium;
@@ -498,15 +501,13 @@ $sel: '';
 		&.next,
 		&.prev {
 			font-family: Verdana;
-			padding: 12px 13px;
 		}
 
 		&.dots {
 			border: none;
 			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-			font-size: 13px;
-			padding-left: 0;
-			padding-right: 0;
+			min-width: 1.25em;
+			aspect-ratio: auto;
 
 			&:hover {
 				background: none;

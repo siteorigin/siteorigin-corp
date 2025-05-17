@@ -156,13 +156,17 @@ input.button.added:after,
       .woocommerce .woocommerce-pagination ul li > span {
         border: 1px solid #626262;
         color: #626262;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         font-family: "Open Sans", sans-serif;
         font-size: 0.9333em;
-        line-height: normal;
-        margin-right: 4px;
-        padding: 11px 17px;
-        transition: .3s; }
+        aspect-ratio: 1 / 1;
+        min-width: 3.2em;
+        padding: 0 0.5em;
+        margin-right: 0.25em;
+        transition: .3s;
+        box-sizing: border-box; }
         .woocommerce .woocommerce-pagination ul li a.current:hover,
         .woocommerce .woocommerce-pagination ul li > span.current:hover {
           box-shadow: none; }
@@ -173,8 +177,7 @@ input.button.added:after,
           color: #f14e4e; }
       .woocommerce .woocommerce-pagination ul li .next,
       .woocommerce .woocommerce-pagination ul li .prev {
-        font-size: 14px;
-        padding: 11px 14.3px; }
+        font-size: 14px; }
         .woocommerce .woocommerce-pagination ul li .next span:before,
         .woocommerce .woocommerce-pagination ul li .prev span:before {
           position: relative;
