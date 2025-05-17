@@ -473,20 +473,20 @@ $sel: '';
 	width: 100%;
 
 	.page-numbers {
+		align-items: center;
+		aspect-ratio: 1 / 1;
 		border: 1px solid $color__text-medium;
+		box-sizing: border-box;
 		color: $color__text-medium;
 		display: inline-flex;
-		align-items: center;
-		justify-content: center;
 		font-family: $font__main;
 		font-size: 0.9333em;
-		aspect-ratio: 1 / 1;
-		min-width: 3.2em;
-		padding: 0 0.5em;
+		justify-content: center;
 		margin-bottom: 0.25em;
 		margin-right: 0.25em;
+		min-width: 3.2em;
+		padding: 0 0.5em;
 		transition: .3s;
-		box-sizing: border-box;
 
 		&:visited {
 			color: $color__text-medium;
@@ -504,10 +504,10 @@ $sel: '';
 		}
 
 		&.dots {
+			aspect-ratio: auto;
 			border: none;
 			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 			min-width: 1.25em;
-			aspect-ratio: auto;
 
 			&:hover {
 				background: none;

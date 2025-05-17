@@ -863,20 +863,20 @@ a {
   text-align: center;
   width: 100%; }
   .pagination .page-numbers {
+    align-items: center;
+    aspect-ratio: 1 / 1;
     border: 1px solid #626262;
+    box-sizing: border-box;
     color: #626262;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-family: "Open Sans", sans-serif;
     font-size: 0.9333em;
-    aspect-ratio: 1 / 1;
-    min-width: 3.2em;
-    padding: 0 0.5em;
+    justify-content: center;
     margin-bottom: 0.25em;
     margin-right: 0.25em;
-    transition: .3s;
-    box-sizing: border-box; }
+    min-width: 3.2em;
+    padding: 0 0.5em;
+    transition: .3s; }
     .pagination .page-numbers:visited {
       color: #626262; }
     .pagination .page-numbers:hover, .pagination .page-numbers:focus {
@@ -885,10 +885,10 @@ a {
     .pagination .page-numbers.next, .pagination .page-numbers.prev {
       font-family: Verdana; }
     .pagination .page-numbers.dots {
+      aspect-ratio: auto;
       border: none;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-      min-width: 1.25em;
-      aspect-ratio: auto; }
+      min-width: 1.25em; }
       .pagination .page-numbers.dots:hover {
         background: none;
         color: #626262; }

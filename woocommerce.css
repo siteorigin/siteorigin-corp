@@ -150,23 +150,23 @@ input.button.added:after,
   .woocommerce .woocommerce-pagination ul {
     margin: 0; }
     .woocommerce .woocommerce-pagination ul li {
-      display: inline-block;
-      border: none !important; }
+      border: none !important;
+      display: inline-block; }
       .woocommerce .woocommerce-pagination ul li a,
       .woocommerce .woocommerce-pagination ul li > span {
+        align-items: center;
+        aspect-ratio: 1 / 1;
         border: 1px solid #626262;
+        box-sizing: border-box;
         color: #626262;
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
         font-family: "Open Sans", sans-serif;
         font-size: 0.9333em;
-        aspect-ratio: 1 / 1;
+        justify-content: center;
+        margin-right: 0.25em;
         min-width: 3.2em;
         padding: 0 0.5em;
-        margin-right: 0.25em;
-        transition: .3s;
-        box-sizing: border-box; }
+        transition: .3s; }
         .woocommerce .woocommerce-pagination ul li a.current:hover,
         .woocommerce .woocommerce-pagination ul li > span.current:hover {
           box-shadow: none; }

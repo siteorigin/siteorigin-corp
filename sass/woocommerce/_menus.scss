@@ -24,24 +24,24 @@
 			margin: 0;
 
 			li {
-				display: inline-block;
 				border: none !important;
+				display: inline-block;
 
 				a,
 				> span {
+					align-items: center;
+					aspect-ratio: 1 / 1;
 					border: 1px solid $color__text-medium;
+					box-sizing: border-box;
 					color: $color__text-medium;
 					display: inline-flex;
-					align-items: center;
-					justify-content: center;
 					font-family: $font__main;
 					font-size: 0.9333em;
-					aspect-ratio: 1 / 1;
+					justify-content: center;
+					margin-right: 0.25em;
 					min-width: 3.2em;
 					padding: 0 0.5em;
-					margin-right: 0.25em;
 					transition: .3s;
-					box-sizing: border-box;
 
 					&.current:hover {
 						box-shadow: none;
