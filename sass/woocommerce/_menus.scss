@@ -24,19 +24,23 @@
 			margin: 0;
 
 			li {
-				display: inline-block;
 				border: none !important;
+				display: inline-block;
 
 				a,
 				> span {
+					align-items: center;
+					aspect-ratio: 1 / 1;
 					border: 1px solid $color__text-medium;
+					box-sizing: border-box;
 					color: $color__text-medium;
-					display: inline-block;
+					display: inline-flex;
 					font-family: $font__main;
 					font-size: 0.9333em;
-					line-height: normal;
-					margin-right: 4px;
-					padding: 11px 17px;
+					justify-content: center;
+					margin-right: 0.25em;
+					min-width: 3.2em;
+					padding: 0 0.5em;
 					transition: .3s;
 
 					&.current:hover {
@@ -53,7 +57,6 @@
 				.next,
 				.prev {
 					font-size: 14px;
-					padding: 11px 14.3px;
 
 					span:before {
 						position: relative;
