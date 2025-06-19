@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Tested up to: 6.7
+Tested up to: 6.8
 Requires at least: 4.7
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -99,6 +99,12 @@ Released under the [MIT License](http://opensource.org/licenses/MIT)
 This theme makes use of the [SiteOrigin Settings Framework](https://github.com/siteorigin/settings) contained in the /inc/settings folder. All code is licensed under GPL 2.0 and copyright 2016 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.20.10 - 19 June 2025 =
+* Pagination: Improved pagination responsiveness by adapting to font size changes.
+* Doubled avatar image source sizes for sharper display on high-resolution screens.
+* SiteOrigin Settings: Updated framework.
+* Developer: Adjusted CSS property ordering for consistency.
 
 = 1.20.9 - 28 January 2025 =
 * WooCommerce: Updated upsell template.
