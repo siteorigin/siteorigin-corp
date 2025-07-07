@@ -30,12 +30,20 @@ if ( ! function_exists( 'siteorigin_corp_woocommerce_change_hooks' ) ) {
 		add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_price' );
 		add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 		add_action( 'siteorigin_corp_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
-
-		// Remove store notice hook.
-		remove_action( 'wp_footer', 'woocommerce_demo_store' );
 	}
 }
 add_action( 'after_setup_theme', 'siteorigin_corp_woocommerce_change_hooks' );
+
+if ( ! function_exists( 'siteorigin_corp_remove_duplicate_store_notice' ) ) {
+	/**
+	 * Remove duplicate store notice with high priority.
+	 */
+	function siteorigin_corp_remove_duplicate_store_notice() {
+		remove_action( 'wp_body_open', 'woocommerce_demo_store' );
+		remove_action( 'wp_footer', 'woocommerce_demo_store' );
+	}
+}
+add_action( 'init', 'siteorigin_corp_remove_duplicate_store_notice', 100 );
 
 /**
  * Output the store notification.
