@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.11 - 26 July 2025 =
+* Resolved duplicate WooCommerce notice.
+
 = 1.20.10 - 19 June 2025 =
 * Pagination: Improved pagination responsiveness by adapting to font size changes.
 * Doubled avatar image source sizes for sharper display on high-resolution screens.
