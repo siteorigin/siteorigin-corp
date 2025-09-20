@@ -100,6 +100,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 
 == Changelog ==
 
+= 1.20.12 - 20 September 2025 =
+* SiteOrigin Settings: Updated Google Fonts array.
+
 = 1.20.11 - 26 July 2025 =
 * Resolved duplicate WooCommerce notice.
 
