@@ -601,7 +601,7 @@ a {
     .main-navigation ul li {
       display: inline-block;
       font-family: "Montserrat", sans-serif;
-      font-size: 0.8rem;
+      font-size: 12px;
       line-height: normal;
       margin: 0 39px -10px 0;
       padding: 0 0 10px;

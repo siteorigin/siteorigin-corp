@@ -97,7 +97,7 @@
 		li {
 			display: inline-block;
 			font-family: $font__headings;
-			font-size: 0.8rem;
+			font-size: $font__size-navigation;
 			line-height: normal;
 			margin: 0 39px -10px 0; // Total right margin is 44px. 5px additional space per item due to inline-block.
 			padding: 0 0 10px;
@@ -361,7 +361,7 @@
 
 		li {
 			font-family: $font__headings;
-			font-size: 12px;
+			font-size: $font__size-navigation;
 			letter-spacing: 1px;
 			line-height: 3.4;
 			position: relative;

@@ -9,7 +9,7 @@ select,
 optgroup,
 textarea {
 	color: $color__text-medium;
-	font-size: 15px;
+	font-size: $font__size-body;
 	font-family: $font__main;
 	@include font-smoothing(subpixel-antialiased);
 	line-height: $font__line-height-body;
