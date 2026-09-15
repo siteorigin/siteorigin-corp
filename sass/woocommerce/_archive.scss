@@ -318,6 +318,25 @@
 					top: 50%;
 					transform: translate(-50%, -50%);
 				}
+
+				// Touch devices can't hover, so the overlay buttons can't be
+				// reached and a tap can leave the image stuck dimmed. Remove
+				// the overlay there, as Unwind does.
+				@media (hover: none) {
+
+					.add_to_cart_button,
+					.product-quick-view-button,
+					.product_type_simple,
+					.product_type_grouped,
+					.product_type_variable,
+					.product_type_external {
+						display: none;
+					}
+
+					@at-root .woocommerce-product-overlay .products .product .loop-product-thumbnail:hover img {
+						opacity: 1;
+					}
+				}
 			} // End .loop-product-thumbnail
 
 			// Product image.
