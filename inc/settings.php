@@ -254,7 +254,7 @@ function siteorigin_corp_settings_init() {
 				'body_font_size' => array(
 					'type'        => 'measurement',
 					'label'       => esc_html__( 'Body Font Size', 'siteorigin-corp' ),
-					'description' => esc_html__( 'Applies to text, buttons and form fields.', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Buttons and form fields scale with it.', 'siteorigin-corp' ),
 					'live'        => true,
 				),
 				'site_title' => array(
@@ -636,8 +636,10 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	$css .= '/* style */
 	body,button,input,select,optgroup,textarea {
 	color: ${typography_text};
-	font-size: ${typography_body_font_size};
 	.font( ${typography_body_font} );
+	}
+	body {
+	font-size: ${typography_body_font_size};
 	}
 	h1,h2,h3,h4,h5,h6 {
 	color: ${typography_heading};
