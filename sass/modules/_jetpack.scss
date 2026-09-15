@@ -60,6 +60,11 @@
 	}
 }
 
+// Keep the loader clear of Jetpack's fixed footer bar in scroll mode.
+.infinite-scroll.neverending .infinite-loader {
+	margin-bottom: 60px;
+}
+
 /*--------------------------------------------------------------
 ## Related Posts
 --------------------------------------------------------------*/

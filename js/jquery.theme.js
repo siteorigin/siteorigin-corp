@@ -34,13 +34,32 @@
 	}
 
 	// FlexSlider.
-	$( document ).ready( function() {
-		$( '.flexslider' ).each( function() {
-			$( this ).flexslider( {
+	// Set up every slider in $scope that hasn't been set up yet. Runs on load
+	// and again for posts added by Jetpack Infinite Scroll.
+	var siteoriginCorpSetupFlexSliders = function( $scope ) {
+		if ( typeof $.fn.flexslider === 'undefined' ) {
+			return;
+		}
+
+		$scope.find( '.flexslider' ).addBack( '.flexslider' ).each( function() {
+			var $slider = $( this );
+
+			if ( $slider.data( 'flexslider' ) ) {
+				return;
+			}
+
+			$slider.flexslider( {
 				animation: 'slide',
-				customDirectionNav: $( this ).find( '.flex-direction-nav a' ),
+				customDirectionNav: $slider.find( '.flex-direction-nav a' ),
 				start: function() {
-					$( '.flexslider .slides img' ).show();
+					$slider.find( '.slides img' ).show();
+
+					// The slider changes its post's height, so re-run Masonry if it's active.
+					var $masonry = $slider.closest( '.blog-layout-masonry' );
+
+					if ( $masonry.length && typeof $.fn.masonry !== 'undefined' && $masonry.data( 'masonry' ) ) {
+						$masonry.masonry( 'layout' );
+					}
 				}
 			} );
 
@@ -49,6 +68,63 @@
 				$( 'body:not(.siteorigin-panels-css-container) .siteorigin-panels-stretch .flexslider' ).flexslider().resize();
 			} );
 		} );
+	};
+
+	$( document ).ready( function() {
+		siteoriginCorpSetupFlexSliders( $( document.body ) );
+	} );
+
+	// Jetpack Infinite Scroll appends new posts and fires post-load.
+	$( document.body ).on( 'post-load', function() {
+		var $posts = $( '.infinite-wrap .hentry' );
+
+		if ( ! $posts.length ) {
+			return;
+		}
+
+		// Gallery post format sliders. If the first page had no gallery posts,
+		// Jetpack loads FlexSlider alongside the new posts, so wait for it.
+		if ( typeof $.fn.flexslider === 'undefined' ) {
+			var flexsliderScript = document.getElementById( 'jquery-flexslider' );
+
+			if ( flexsliderScript ) {
+				flexsliderScript.addEventListener( 'load', function() {
+					siteoriginCorpSetupFlexSliders( $posts );
+				} );
+			}
+		} else {
+			siteoriginCorpSetupFlexSliders( $posts );
+		}
+
+		// Masonry blog layout. Move the new posts into the first Masonry
+		// container so there's only ever one. If Masonry hasn't been set up
+		// yet (post-load can fire before window load), the setup below picks
+		// the posts up.
+		var $masonry = $( '.blog-layout-masonry' ).first(),
+			$newContainers = $( '.infinite-wrap .blog-layout-masonry' ),
+			$items = $newContainers.children( '.hentry' );
+
+		if ( ! $masonry.length || ! $items.length ) {
+			return;
+		}
+
+		$masonry.append( $items );
+		$newContainers.remove();
+
+		if ( typeof $.fn.masonry === 'undefined' || ! $masonry.data( 'masonry' ) ) {
+			return;
+		}
+
+		// Position the new posts right away so the container grows before
+		// Jetpack measures the page, then correct the layout once their
+		// images have loaded.
+		$masonry.masonry( 'appended', $items );
+
+		if ( typeof $.fn.imagesLoaded !== 'undefined' ) {
+			$items.imagesLoaded( function() {
+				$masonry.masonry( 'layout' );
+			} );
+		}
 	} );
 
 	// Main menu.
@@ -404,9 +480,10 @@
 
 	$( window ).on( 'load', function() {
 		siteoriginCorp.logoScale = parseFloat( siteoriginCorp.logoScale );
-		// Masonry blog layout.
+		// Masonry blog layout. Only the first container; post-load moves any
+		// Infinite Scroll posts into it.
 		if ( $( '.blog-layout-masonry' ).length ) {
-			$( '.blog-layout-masonry' ).masonry( {
+			$( '.blog-layout-masonry' ).first().masonry( {
 				itemSelector: '.hentry',
 				columnWidth: '.hentry'
 			} );
