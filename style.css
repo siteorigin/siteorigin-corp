@@ -1181,6 +1181,9 @@ a {
   .infinite-scroll .infinite-loader .spinner {
     margin: 0 auto; }
 
+.infinite-scroll.neverending .infinite-loader {
+  margin-bottom: 60px; }
+
 /*--------------------------------------------------------------
 ## Related Posts
 --------------------------------------------------------------*/
