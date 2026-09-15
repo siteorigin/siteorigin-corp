@@ -622,6 +622,16 @@ input.button.added:after,
         bottom: auto;
         top: 50%;
         transform: translate(-50%, -50%); }
+      @media (hover: none) {
+        .woocommerce .products .product .loop-product-thumbnail .add_to_cart_button,
+        .woocommerce .products .product .loop-product-thumbnail .product-quick-view-button,
+        .woocommerce .products .product .loop-product-thumbnail .product_type_simple,
+        .woocommerce .products .product .loop-product-thumbnail .product_type_grouped,
+        .woocommerce .products .product .loop-product-thumbnail .product_type_variable,
+        .woocommerce .products .product .loop-product-thumbnail .product_type_external {
+          display: none; }
+        .woocommerce-product-overlay .products .product .loop-product-thumbnail:hover img {
+          opacity: 1; } }
     .woocommerce .products .product img {
       display: block;
       margin: 0 auto;
