@@ -76,7 +76,7 @@
 
 		.site-title {
 			font-family: $font__site-title;
-			font-size: 29px;
+			font-size: $font__size-site-title;
 			font-weight: 600;
 			line-height: normal;
 			margin: 0;
@@ -120,7 +120,7 @@
 			color: $color__site_tagline;
 			font-family: $font__site-tagline;
 			font-weight: normal;
-			font-size: 13px;
+			font-size: $font__size-site-tagline;
 			line-height: normal;
 			margin: 0;
 		}

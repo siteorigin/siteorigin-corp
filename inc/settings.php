@@ -116,6 +116,12 @@ function siteorigin_corp_settings_init() {
 					'label'       => esc_html__( 'Menu Link Hover Underline', 'siteorigin-corp' ),
 					'description' => esc_html__( 'Underline header menu links on hover.', 'siteorigin-corp' ),
 				),
+				'font_size' => array(
+					'type'        => 'measurement',
+					'label'       => esc_html__( 'Menu Font Size', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Header menu font size.', 'siteorigin-corp' ),
+					'live'        => true,
+				),
 				'menu_search'     => array(
 					'type'        => 'checkbox',
 					'label'       => esc_html__( 'Menu Search', 'siteorigin-corp' ),
@@ -190,9 +196,19 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Site Title Font', 'siteorigin-corp' ),
 					'live'  => true,
 				),
+				'site_title_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'Site Title Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
 				'site_tagline_font' => array(
 					'type'  => 'font',
 					'label' => esc_html__( 'Site Tagline Font', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'site_tagline_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'Site Tagline Font Size', 'siteorigin-corp' ),
 					'live'  => true,
 				),
 				'heading_font' => array(
@@ -200,10 +216,46 @@ function siteorigin_corp_settings_init() {
 					'label' => esc_html__( 'Heading Font', 'siteorigin-corp' ),
 					'live'  => true,
 				),
+				'h1_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H1 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'h2_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H2 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'h3_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H3 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'h4_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H4 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'h5_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H5 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
+				'h6_font_size' => array(
+					'type'  => 'measurement',
+					'label' => esc_html__( 'H6 Font Size', 'siteorigin-corp' ),
+					'live'  => true,
+				),
 				'body_font' => array(
 					'type'  => 'font',
 					'label' => esc_html__( 'Body Font', 'siteorigin-corp' ),
 					'live'  => true,
+				),
+				'body_font_size' => array(
+					'type'        => 'measurement',
+					'label'       => esc_html__( 'Body Font Size', 'siteorigin-corp' ),
+					'description' => esc_html__( 'Buttons and form fields scale with it.', 'siteorigin-corp' ),
+					'live'        => true,
 				),
 				'site_title' => array(
 					'type'  => 'color',
@@ -586,9 +638,30 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	color: ${typography_text};
 	.font( ${typography_body_font} );
 	}
+	body {
+	font-size: ${typography_body_font_size};
+	}
 	h1,h2,h3,h4,h5,h6 {
 	color: ${typography_heading};
 	.font( ${typography_heading_font} );
+	}
+	h1 {
+	font-size: ${typography_h1_font_size};
+	}
+	h2 {
+	font-size: ${typography_h2_font_size};
+	}
+	h3 {
+	font-size: ${typography_h3_font_size};
+	}
+	h4 {
+	font-size: ${typography_h4_font_size};
+	}
+	h5 {
+	font-size: ${typography_h5_font_size};
+	}
+	h6 {
+	font-size: ${typography_h6_font_size};
 	}
 	h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited {
 	color: ${typography_heading};
@@ -669,6 +742,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.main-navigation ul li {
 	.font( ${typography_heading_font} );
+	font-size: ${navigation_font_size};
 	}
 	.main-navigation ul li a {
 	color: ${navigation_link};
@@ -708,6 +782,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	#mobile-navigation ul li {
 	.font( ${typography_heading_font} );
+	font-size: ${navigation_font_size};
 	}
 	#mobile-navigation ul li a {
 	border-color: ${navigation_drop_down_divider};
@@ -901,6 +976,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	}
 	.site-header .site-branding .site-title {
 	.font( ${typography_site_title_font} );
+	font-size: ${typography_site_title_font_size};
 	}
 	.site-header .site-branding .site-title a {
 	color: ${typography_site_title};
@@ -908,6 +984,7 @@ function siteorigin_corp_settings_custom_css( $css ) {
 	.site-header .site-branding .site-description {
 	color: ${typography_site_tagline};
 	.font( ${typography_site_tagline_font} );
+	font-size: ${typography_site_tagline_font_size};
 	}
 	.site-header,.masthead-sentinel {
 	margin-bottom: ${header_margin};
@@ -1673,6 +1750,7 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['navigation_mobile_menu']               = true;
 	$defaults['navigation_mobile_menu_collapse']      = 768;
 	$defaults['navigation_menu_link_hover_underline'] = true;
+	$defaults['navigation_font_size']                 = '12px';
 	$defaults['navigation_menu_search']               = true;
 	$defaults['navigation_post']                      = true;
 	$defaults['navigation_scroll_to_top']             = true;
@@ -1699,6 +1777,15 @@ function siteorigin_corp_settings_defaults( $defaults ) {
 	$defaults['blog_post_author_box']                 = true;
 	$defaults['blog_related_posts']                   = true;
 
+	$defaults['typography_site_title_font_size']      = '29px';
+	$defaults['typography_site_tagline_font_size']    = '13px';
+	$defaults['typography_h1_font_size']              = '29px';
+	$defaults['typography_h2_font_size']              = '26px';
+	$defaults['typography_h3_font_size']              = '23px';
+	$defaults['typography_h4_font_size']              = '20px';
+	$defaults['typography_h5_font_size']              = '18px';
+	$defaults['typography_h6_font_size']              = '16px';
+	$defaults['typography_body_font_size']            = '15px';
 	$defaults['typography_site_title']                = '#2d2d2d';
 	$defaults['typography_site_tagline']              = '#929292';
 	$defaults['typography_accent']                    = '#f14e4e';
